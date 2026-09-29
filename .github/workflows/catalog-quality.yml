@@ -9,6 +9,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -24,7 +27,26 @@ jobs:
       - name: Validate catalogue when CLI is present
         if: ${{ hashFiles('tools/catalog/cli.py') != '' }}
         run: python -m tools.catalog.cli validate --root . --allow-incomplete-required
+      - name: Check generated catalogue drift without modifying files
+        run: python -m tools.catalog.cli generate --root . --check
 
-# Generated-document drift becomes mandatory after Task 8. Task 18 replaces
-# the temporary incomplete-required flag with terminal-research and
-# release-readiness gates.
+  rust-host-evidence:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: spikes/mobile/core
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Install the pinned official Rust toolchain
+        run: rustup toolchain install 1.90.0 --profile minimal --component rustfmt
+      - name: Check formatting
+        run: cargo +1.90.0 fmt --check
+      - name: Check all targets against the lockfile
+        run: cargo +1.90.0 check --locked --all-targets
+      - name: Test synthetic host evidence against the lockfile
+        run: cargo +1.90.0 test --locked
+
+# Host compilation/vectors do not prove physical mobile or clean-machine readiness.
+# Filesystem interruption probes remain opt-in and are never enabled in this CI.
+# Task 18 replaces the temporary incomplete-required flag with terminal-research
+# and release-readiness gates.
