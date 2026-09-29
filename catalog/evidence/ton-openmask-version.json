@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-openmask-version",
+  "source_type": "official-source",
+  "claim": "package.json identifies @openmask/extension version 0.22.0 and tonweb-mnemonic ^1.0.1; a range does not pin the installed dependency. Reviewed 2026-09-29; byte SHA-256 5c4d9320793ae712801603af2bccd294dbd1beaf5bae2739de280dd3fca2fa6a. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/OpenProduct/openmask-extension/9150d57d530296f8b27ae59e4dfce865be81550e/package.json",
+  "revision": "9150d57d530296f8b27ae59e4dfce865be81550e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "openmask"
+  ]
+}

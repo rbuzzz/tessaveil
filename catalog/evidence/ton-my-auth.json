@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "ton-my-auth",
+  "source_type": "official-source",
+  "claim": "generateMnemonic(isBip39) selects BIP39 or native generation; not a product-name-wide assumption. Reviewed 2026-09-29; byte SHA-256 c6401d8455eb936f01cf951ba523eba8a19d69b386e3b116af256dc2a5b578a1. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/mytonwallet-org/mytonwallet/f042bcc06b84f0cec928a29795f1cb8bf60a3e9c/src/api/methods/auth.ts",
+  "revision": "f042bcc06b84f0cec928a29795f1cb8bf60a3e9c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "mytonwallet",
+    "mytonwallet-native"
+  ]
+}

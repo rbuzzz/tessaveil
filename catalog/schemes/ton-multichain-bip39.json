@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "ton-multichain-bip39",
+  "display_name": {
+    "en": "TON multichain — BIP39 12/24 words",
+    "ru": "TON multichain — BIP39 12/24 words"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "ton-tep3",
+    "bip39-spec",
+    "bip39-vectors",
+    "ton-my-path",
+    "ton-my-derive"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "fe8a154e4dad9f5c0bf7240df278cb50ec6cd908",
+    "max": "fe8a154e4dad9f5c0bf7240df278cb50ec6cd908"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    24
+  ],
+  "position_rules": [
+    "The same dictionary is eligible at every word position. Phrase checksum or seed validity is never evaluated by Tessaveil."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "A scheme passphrase is external and never stored by Tessaveil. A wallet PIN or application password is not proof of a mnemonic passphrase; verify support in the exact source wallet."
+  },
+  "semantic_distinction": "TEP-3 BIP39 then SLIP-0010 Ed25519 at hardened path components 44, 607, 0, with indexed subwallet paths. 12 and 24 are import/profile lengths; TEP discourages new 24-word multichain generation. BIP39 public vectors verify only its seed stage. An independent published full TON derivation-path known answer has not been reproduced in this batch, so this scheme remains documented and not selectable.",
+  "test_vector_ids": [
+    "bip39-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

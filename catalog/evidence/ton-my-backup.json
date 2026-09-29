@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "ton-my-backup",
+  "source_type": "official-source",
+  "claim": "BackupSecretWords retrieves fetchMnemonic and renders SecretWordsContent, proving the reviewed mnemonic modes expose manual backup in this web source. Reviewed 2026-09-29; byte SHA-256 724207d342eefabc654f030fc5df8720a96c8267c04ca5da822baa0fbd7325b1. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/mytonwallet-org/mytonwallet/f042bcc06b84f0cec928a29795f1cb8bf60a3e9c/src/components/settings/backup/BackupSecretWords.tsx",
+  "revision": "f042bcc06b84f0cec928a29795f1cb8bf60a3e9c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "mytonwallet",
+    "mytonwallet-native"
+  ]
+}

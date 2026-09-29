@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "ton-my-derive",
+  "source_type": "official-source",
+  "claim": "TON auth.ts generates 24 native words, rerolling BIP39 ambiguity; explicit bip39 accounts use BIP39 seed and Ed25519 path derivation. Stored native words use TON default seed without implicit normalization. Reviewed 2026-09-29; byte SHA-256 35286bbfb6c1d6022569738a054dd32d060b1fc48c6a1143dab1df705a218211. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/mytonwallet-org/mytonwallet/f042bcc06b84f0cec928a29795f1cb8bf60a3e9c/src/api/chains/ton/auth.ts",
+  "revision": "f042bcc06b84f0cec928a29795f1cb8bf60a3e9c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "mytonwallet",
+    "mytonwallet-native",
+    "ton-multichain-bip39"
+  ]
+}

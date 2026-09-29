@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-native-vectors",
+  "source_type": "public-test-vector",
+  "claim": "Five public mnemonic.spec.ts vectors independently provide 24 English words and expected Ed25519 secretKey. Fixture retains zero-based dictionary indices and the first 32 bytes of each published secretKey (seed). Offline standard-library HMAC/PBKDF2 checks those published seeds and the basic-seed predicate; it does not test Ed25519 public keys or addresses. Reviewed 2026-09-29; byte SHA-256 ba6936664624168caf454df777b4ef8354c034c49b121a493c44237e4880cd83. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/ton-org/ton-crypto/c3435833a0da52a96f674c352c4c6f91fcc07f6d/src/mnemonic/mnemonic.spec.ts",
+  "revision": "c3435833a0da52a96f674c352c4c6f91fcc07f6d",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "ton-native"
+  ]
+}

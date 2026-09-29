@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-gram-store",
+  "source_type": "official-documentation",
+  "claim": "Publisher-provided listing identifies My Wallet Apps Ltd., Android package io.gramwallet.app, September 7 2026 update and shared My Wallet engine. It does not establish exact mnemonic generation/export or version boundary; user reviews are not evidence. Reviewed 2026-09-29; byte SHA-256 3f2c0e813940801893d846b36313173f6e7a2865b1bc41d80cc74fd1c90a2518. See docs/research/batches/bip39-ton.md.",
+  "url": "https://play.google.com/store/apps/details?hl=en_US&id=io.gramwallet.app",
+  "revision": "sha256:3f2c0e813940801893d846b36313173f6e7a2865b1bc41d80cc74fd1c90a2518",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "gram-wallet"
+  ]
+}

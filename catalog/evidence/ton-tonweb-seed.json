@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-tonweb-seed",
+  "source_type": "official-source",
+  "claim": "tonweb-mnemonic uses TON entropy, PBKDF2 with TON default seed and returns the first 32 bytes, not BIP39 seed derivation. Reviewed 2026-09-29; byte SHA-256 c2e34f6888d3b8b3192567bbe6dbdb1fc1e4a1db51228089a62c4c2e8e8f70b7. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/toncenter/tonweb-mnemonic/a338a00d4ca0ed833431e0e49e4cfad766ac713c/src/functions/mnemonic-to-seed.ts",
+  "revision": "a338a00d4ca0ed833431e0e49e4cfad766ac713c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "openmask"
+  ]
+}

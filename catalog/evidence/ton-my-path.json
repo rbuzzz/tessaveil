@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "ton-my-path",
+  "source_type": "official-source",
+  "claim": "TON_BIP39_PATH is hardened path components 44, 607, account index; slot zero is the TEP-3 main-account path. Reviewed 2026-09-29; byte SHA-256 5d799c9d1ec5fc23bf85245a477772a744cbf19a0ef7bef0aa8ecf9c1bd1c670. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/mytonwallet-org/mytonwallet/f042bcc06b84f0cec928a29795f1cb8bf60a3e9c/src/api/chains/ton/derivationConstants.ts",
+  "revision": "f042bcc06b84f0cec928a29795f1cb8bf60a3e9c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "mytonwallet",
+    "ton-multichain-bip39"
+  ]
+}

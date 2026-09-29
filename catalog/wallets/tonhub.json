@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "tonhub",
+  "display_name": {
+    "en": "Tonhub",
+    "ru": "Tonhub"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "tonhub-create",
+    "tonhub-derive",
+    "tonhub-version",
+    "tonhub-identity",
+    "ton-tep3",
+    "ton-native-source"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "2.5.45-source-a2503f79d14868d65349ad7035d18389c6e2f996",
+    "max": "2.5.45-source-a2503f79d14868d65349ad7035d18389c6e2f996"
+  },
+  "product_id": "tonhub",
+  "product_name": "Tonhub",
+  "aliases": [
+    "Tonhub Wallet"
+  ],
+  "platform": "android",
+  "mode_id": "ton-native-generated",
+  "network_ids": [
+    "ton"
+  ],
+  "scheme_id": "ton-native",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Exact React Native Android source snapshot only; creation invokes native mnemonicNew and displays its 24-word result before backup confirmation. Derivation uses mnemonicToWalletKey.",
+    "Hardware/Ledger, imported accounts, iOS binaries and other app versions are not covered by this profile. Wallet contract version changes do not establish mnemonic changes."
+  ],
+  "guidance": "Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website."
+}

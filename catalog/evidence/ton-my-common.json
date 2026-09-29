@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-my-common",
+  "source_type": "official-source",
+  "claim": "generateBip39Mnemonic uses bip39.generateMnemonic(128), hence 12 words; getMnemonic exports a stored secret. Import validation is a separate operation. Reviewed 2026-09-29; byte SHA-256 e435194f56181b0b9c1ac44934c1adf96b1518d53cbe76ac6a27ba455af432c6. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/mytonwallet-org/mytonwallet/f042bcc06b84f0cec928a29795f1cb8bf60a3e9c/src/api/common/mnemonic.ts",
+  "revision": "f042bcc06b84f0cec928a29795f1cb8bf60a3e9c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "mytonwallet"
+  ]
+}

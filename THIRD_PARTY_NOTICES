@@ -1,7 +1,8 @@
 Tessaveil third-party notices
 ============================
 
-No third-party code or word lists are bundled at this foundation stage.
+This research foundation bundles the BIP39 word lists and public test-vector
+projections listed below. It does not bundle third-party application code.
 
 Development-only tools are not distributed as application components. Before
 any third-party code, dictionary, or other asset is bundled, this file must
@@ -22,3 +23,96 @@ research-only and leaves distribution review pending. References, lockfile
 entries and test dependencies are not declarations that those components are
 shipped. Add actual upstream notices and license copies when an approved payload
 is selected; this policy text supplies no third-party clearance or attribution.
+
+BIP39 exact word lists and public vector projections (Task 10)
+------------------------------------------------------------
+Distributed files: wordlists/bip39-{en,ja,ko,es,zh-hans,zh-hant,fr,it,cs,pt}/
+3a10b5b5f0a7586df8928d580a3009744ebb2079.txt and the BIP39 public-vector
+projection in tests/catalog/fixtures/public/bip39-ton.json.
+
+Authoritative source: https://github.com/bitcoin/bips/tree/3a10b5b5f0a7586df8928d580a3009744ebb2079/bip-0039
+BIP39 authors: Marek Palatinus, Pavol Rusnak, Aaron Voisine, Sean Bowe.
+BIP39 declares MIT in its specification. For explicit repository permission,
+each of the ten exact list byte streams was also compared with the reference
+implementation linked by BIP39:
+https://github.com/trezor/python-mnemonic/tree/b57a5ad77a981e743f4167ab2f7927a55c1e82a8/src/mnemonic/wordlist
+All ten are byte-identical. Public BIP39 vector projections originate from its
+vectors.json at that same revision (240 cases, all ten languages).
+License source: https://raw.githubusercontent.com/trezor/python-mnemonic/b57a5ad77a981e743f4167ab2f7927a55c1e82a8/LICENSE
+License SHA-256: d5e3c7c62a84e80073201e2f6e5130e9e6804fa05f8ac4f8b26a13c7d3969697
+
+Additional language credits from the pinned BIP39 word-list guidance:
+French: @Kirvx @NicolasDorier @ecdsa @EricLarch.
+Italian: @paoloaga @Polve.
+Czech: @zizelevak (Jan Lansky).
+Portuguese: @alegotardo @bitmover-studio @brenorb @kuthullu @ninjastic
+@sabotag3x @Trimegistus.
+All other upstream BIP39 word-list contributors retain their authorship.
+The original word-list bytes, order, LF endings and final newline are unchanged.
+The test projection changes representation to entropy and published normalized
+mnemonic fingerprints and expected seeds; it includes no user data.
+
+Local component decisions: repository_redistribution=allowed;
+signpath_compatible=compatible. MIT permits the intended source/data distribution
+with this retained notice. MIT is OSI approved; no proprietary executable or
+commercial dual-license condition accompanies this selected material.
+This assessment is not SignPath acceptance, certification or release permission.
+Per-file hashes and verification method: docs/research/batches/bip39-ton.md.
+
+The MIT License (MIT)
+
+Copyright (c) 2013-2016 Pavol Rusnak
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+TON public test-vector projections (Task 10)
+------------------------------------------
+Distributed: TON vector projection in tests/catalog/fixtures/public/bip39-ton.json.
+Source: https://github.com/ton-org/ton-crypto/blob/c3435833a0da52a96f674c352c4c6f91fcc07f6d/src/mnemonic/mnemonic.spec.ts
+Source SHA-256: ba6936664624168caf454df777b4ef8354c034c49b121a493c44237e4880cd83
+License source: https://raw.githubusercontent.com/ton-org/ton-crypto/c3435833a0da52a96f674c352c4c6f91fcc07f6d/LICENSE
+License SHA-256: 33578b9ea1522de18164cf1d1ef8e52f50d748ae17c7d38b4fa5e6f50207f8eb
+
+Five public test cases are represented by English dictionary indices and the
+first 32 bytes of each published secretKey (the expected Ed25519 seed).
+This is an explicitly labeled public, non-funded research test projection.
+No TON library implementation, wallet source or wallet binary is redistributed.
+Local decisions for this MIT test data: allowed / compatible, under the same
+limited source-data assessment described above and never Foundation acceptance.
+
+Copyright (c) 2021-2023 Whales Corp.
+
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

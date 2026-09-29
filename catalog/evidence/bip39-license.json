@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "bip39-license",
+  "source_type": "official-source",
+  "claim": "Local license review by Codex: the actual MIT license of the BIP39 reference implementation permits redistribution with copyright and permission notice. Every bundled bitcoin/bips list is byte-identical to src/mnemonic/wordlist at this licensed reference revision; vectors.json is in the same repository. No directory-specific exception was found. Notices preserve the license and attribution. repository_redistribution=allowed for these exact bytes and public test projections, not arbitrary BIPs material. Reviewed 2026-09-29; byte SHA-256 d5e3c7c62a84e80073201e2f6e5130e9e6804fa05f8ac4f8b26a13c7d3969697. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/trezor/python-mnemonic/b57a5ad77a981e743f4167ab2f7927a55c1e82a8/LICENSE",
+  "revision": "b57a5ad77a981e743f4167ab2f7927a55c1e82a8",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "bip39-en",
+    "bip39-ja",
+    "bip39-ko",
+    "bip39-es",
+    "bip39-zh-hans",
+    "bip39-zh-hant",
+    "bip39-fr",
+    "bip39-it",
+    "bip39-cs",
+    "bip39-pt"
+  ]
+}

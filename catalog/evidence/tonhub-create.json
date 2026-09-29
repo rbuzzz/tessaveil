@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "tonhub-create",
+  "source_type": "official-source",
+  "claim": "WalletCreateFragment invokes @ton/crypto mnemonicNew and displays the result in MnemonicsView before backup confirmation; native default is 24 words. Reviewed 2026-09-29; byte SHA-256 dafdd9c99b91982918502e45f077b9d5af518e6c531aa878fb666bc2ad9a1329. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/tonwhales/wallet/a2503f79d14868d65349ad7035d18389c6e2f996/app/fragments/onboarding/WalletCreateFragment.tsx",
+  "revision": "a2503f79d14868d65349ad7035d18389c6e2f996",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tonhub"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-openmask-create",
+  "source_type": "official-source",
+  "claim": "CreateWallet.tsx calls tonweb-mnemonic.generateMnemonic, displays recovery words, and checks selected words before wallet creation. Reviewed 2026-09-29; byte SHA-256 12d7e29578a4c58d76665375cc4ab498e010b5871baa290e0aaba24819a11362. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/OpenProduct/openmask-extension/9150d57d530296f8b27ae59e4dfce865be81550e/src/view/screen/import/CreateWallet.tsx",
+  "revision": "9150d57d530296f8b27ae59e4dfce865be81550e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "openmask"
+  ]
+}

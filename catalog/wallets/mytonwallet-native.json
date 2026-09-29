@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "mytonwallet-native",
+  "display_name": {
+    "en": "My Wallet / MyTonWallet — TON only",
+    "ru": "My Wallet / MyTonWallet — TON only"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "ton-my-auth",
+    "ton-my-create",
+    "ton-my-backup",
+    "ton-my-version",
+    "ton-my-derive",
+    "ton-tep3",
+    "ton-native-source"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "26.9.8-source-f042bcc06b84f0cec928a29795f1cb8bf60a3e9c",
+    "max": "26.9.8-source-f042bcc06b84f0cec928a29795f1cb8bf60a3e9c"
+  },
+  "product_id": "mytonwallet",
+  "product_name": "My Wallet / MyTonWallet — TON only",
+  "aliases": [
+    "MyTonWallet TON only"
+  ],
+  "platform": "web",
+  "mode_id": "ton-native-generated",
+  "network_ids": [
+    "ton"
+  ],
+  "scheme_id": "ton-native",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Exact source snapshot only. forceAddingTonOnlyAccount chooses native generation; native generator returns 24 words and rejects BIP39-ambiguous candidates. This mode coexists with BIP39 in the same source version.",
+    "No assertion that all builds or older/newer installed versions expose the same mode."
+  ],
+  "guidance": "Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website."
+}

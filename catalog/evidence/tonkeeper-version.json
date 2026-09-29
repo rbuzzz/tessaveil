@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "tonkeeper-version",
+  "source_type": "official-source",
+  "claim": "Extension manifest version is 3.0.0 at this exact source commit; web package 0.0.0 is not a deployed-version identifier. Reviewed 2026-09-29; byte SHA-256 7d8f4c2373bd7dcf5a3d5cd3e11407848baa178efef1ddda12b60b9c2c82b600. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/tonkeeper/tonkeeper-web/4942adcdcddf55d57e3d3fc3676f019caf87357e/apps/extension/public/manifest.json",
+  "revision": "4942adcdcddf55d57e3d3fc3676f019caf87357e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tonkeeper-classic"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-keeper-doc",
+  "source_type": "official-documentation",
+  "claim": "Keeper vendor explains Tonkeeper rebranding, new multichain-wallet creation and inability to directly convert existing native 24-word accounts. Documentation omits generation count, platform and exact app release boundary. Reviewed 2026-09-29; byte SHA-256 d7091696af9e14b254c181906e1a8e8b48a339835ae65ac753593cabcbcb768a. See docs/research/batches/bip39-ton.md.",
+  "url": "https://keeperwallet.helpscoutdocs.com/article/181-rebranding",
+  "revision": "sha256:d7091696af9e14b254c181906e1a8e8b48a339835ae65ac753593cabcbcb768a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tonkeeper-multichain"
+  ]
+}

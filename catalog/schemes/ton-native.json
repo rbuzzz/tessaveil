@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "ton-native",
+  "display_name": {
+    "en": "TON native — 24 words",
+    "ru": "TON native — 24 words"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "ton-tep3",
+    "ton-native-source",
+    "ton-native-wordlist",
+    "ton-native-vectors",
+    "ton-native-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "fe8a154e4dad9f5c0bf7240df278cb50ec6cd908",
+    "max": "fe8a154e4dad9f5c0bf7240df278cb50ec6cd908"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    24
+  ],
+  "position_rules": [
+    "The same dictionary is eligible at every word position. Phrase checksum or seed validity is never evaluated by Tessaveil."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "A scheme passphrase is external and never stored by Tessaveil. A wallet PIN or application password is not proof of a mnemonic passphrase; verify support in the exact source wallet."
+  },
+  "semantic_distinction": "English BIP39 vocabulary only; TON HMAC/PBKDF2 seed and seed-version constraints differ from BIP39 checksum and seed derivation. Native 24 words are not automatically BIP39-compatible. V3/V4/V5 are smart-contract versions, not mnemonic scheme versions. Tests cover public seed derivation only, not addresses.",
+  "test_vector_ids": [
+    "ton-native-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

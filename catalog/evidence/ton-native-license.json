@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-native-license",
+  "source_type": "official-source",
+  "claim": "The actual MIT license permits the five public vector projections with retained Copyright (c) 2021-2023 Whales Corp. and permission notice in THIRD_PARTY_NOTICES. No TON implementation code or wallet binaries are bundled. Reviewed 2026-09-29; byte SHA-256 33578b9ea1522de18164cf1d1ef8e52f50d748ae17c7d38b4fa5e6f50207f8eb. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/ton-org/ton-crypto/c3435833a0da52a96f674c352c4c6f91fcc07f6d/LICENSE",
+  "revision": "c3435833a0da52a96f674c352c4c6f91fcc07f6d",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "ton-native"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-space-doc",
+  "source_type": "official-documentation",
+  "claim": "Current vendor DeFi Account page, reached from legacy TON Space URL, describes creation and separate manual/email backup; W5/v4R2 are contract versions and do not pin app mnemonic semantics. Reviewed 2026-09-29; byte SHA-256 506a3bc3c0a4861601fc606c90320acac8d4a2bd91a639b27190567530006d37. See docs/research/batches/bip39-ton.md.",
+  "url": "https://help.wallet.tg/article/1032-welcome-to-defi-account",
+  "revision": "sha256:506a3bc3c0a4861601fc606c90320acac8d4a2bd91a639b27190567530006d37",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "ton-space"
+  ]
+}

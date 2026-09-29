@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "tonkeeper-multichain",
+  "display_name": {
+    "en": "Keeper / Tonkeeper Multichain",
+    "ru": "Keeper / Tonkeeper Multichain"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "ton-keeper-doc",
+    "tonkeeper-derive",
+    "ton-tep3"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "documentation-snapshot-2026-09-29-version-unresolved",
+    "max": "documentation-snapshot-2026-09-29-version-unresolved"
+  },
+  "product_id": "tonkeeper",
+  "product_name": "Keeper / Tonkeeper Multichain",
+  "aliases": [
+    "Keeper",
+    "Tonkeeper multichain"
+  ],
+  "platform": "cross-platform",
+  "mode_id": "bip39-multichain-generated",
+  "network_ids": [
+    "ton"
+  ],
+  "scheme_id": "ton-multichain-bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Official rebranding documentation confirms a separate new multichain wallet and says old native 24 words cannot be converted. It does not pin app platform/version or generation word count.",
+    "Pinned web source proves BIP39 import derivation, not that its new-wallet screen generates this mode. Exact first/last mobile versions and full-path known answer remain unproven; 12/24 are scheme lengths, not asserted generation lengths.",
+    "Keeper (formerly Tonkeeper) is not the unrelated Waves Keeper product; Pro MAM is excluded."
+  ],
+  "guidance": "Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website."
+}

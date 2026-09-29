@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "ton-space",
+  "display_name": {
+    "en": "TON Space / DeFi Account",
+    "ru": "TON Space / DeFi Account"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "ton-space-doc",
+    "ton-space-security"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "documentation-snapshot-2026-09-29-version-unresolved",
+    "max": "documentation-snapshot-2026-09-29-version-unresolved"
+  },
+  "product_id": "wallet-tg-defi-account",
+  "product_name": "TON Space / DeFi Account",
+  "aliases": [
+    "TON Space",
+    "TON Wallet",
+    "DeFi Account"
+  ],
+  "platform": "web",
+  "mode_id": "manual-mnemonic-backup",
+  "network_ids": [
+    "ton"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Legacy TON Space help URL redirects to current DeFi Account documentation. Manual backup exposes 24 words; current official security page calls it BIP-39 but supplies no derivation path, source revision or product version transition.",
+    "Native TON versus multichain semantics cannot be resolved from that wording. No scheme is selected; do not substitute historical TON-native assumptions.",
+    "Email backup and custodial Crypto Wallet are separate modes and cannot be represented by this manual-mnemonic profile. Contract W5/v4R2 is not an app version or mnemonic scheme boundary."
+  ],
+  "guidance": "Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website."
+}

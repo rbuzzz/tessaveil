@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "tonhub-identity",
+  "source_type": "official-source",
+  "claim": "Upstream README identifies this repository as Tonhub Wallet. Its GPL/distribution text is not permission to bundle wallet code; no wallet code is included. Reviewed 2026-09-29; byte SHA-256 59da82be7e3db101c4a8f72ee2b4e618ba6db87f9edaa5b9f939dd87f0a4c74b. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/tonwhales/wallet/a2503f79d14868d65349ad7035d18389c6e2f996/README.md",
+  "revision": "a2503f79d14868d65349ad7035d18389c6e2f996",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tonhub"
+  ]
+}

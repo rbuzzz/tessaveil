@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-openmask-identity",
+  "source_type": "official-source",
+  "claim": "OpenProduct repository README identifies OpenMask Chrome/Chromium extension and its official openmask.app website. Reviewed 2026-09-29; byte SHA-256 007ec00e241abeb6d6aa354fe8251a3d6e5cc340af53847a140a885ac6e82249. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/OpenProduct/openmask-extension/9150d57d530296f8b27ae59e4dfce865be81550e/README.md",
+  "revision": "9150d57d530296f8b27ae59e4dfce865be81550e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "openmask"
+  ]
+}

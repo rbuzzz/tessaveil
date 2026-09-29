@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "mytonwallet",
+  "display_name": {
+    "en": "My Wallet / MyTonWallet",
+    "ru": "My Wallet / MyTonWallet"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "ton-my-common",
+    "ton-my-auth",
+    "ton-my-create",
+    "ton-my-backup",
+    "ton-my-version",
+    "ton-my-derive",
+    "ton-my-path",
+    "ton-tep3"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "26.9.8-source-f042bcc06b84f0cec928a29795f1cb8bf60a3e9c",
+    "max": "26.9.8-source-f042bcc06b84f0cec928a29795f1cb8bf60a3e9c"
+  },
+  "product_id": "mytonwallet",
+  "product_name": "My Wallet / MyTonWallet",
+  "aliases": [
+    "My Wallet",
+    "MyTonWallet"
+  ],
+  "platform": "web",
+  "mode_id": "bip39-multichain-generated",
+  "network_ids": [
+    "ton"
+  ],
+  "scheme_id": "ton-multichain-bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Exact source snapshot supports default 128-bit BIP39 generation (12 words), native-mode override and backup display. Import of 24-word BIP39 does not imply new 24-word generation.",
+    "Full TON-path public known answer not reproduced; no blanket mapping to installed web/mobile releases or historical version intervals."
+  ],
+  "guidance": "Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website."
+}

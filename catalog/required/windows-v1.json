@@ -8,9 +8,11 @@
         "en": "BIP39 en",
         "ru": "BIP39 — Английский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39-en"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -19,9 +21,11 @@
         "en": "BIP39 ja",
         "ru": "BIP39 — Японский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39-ja"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -30,9 +34,11 @@
         "en": "BIP39 ko",
         "ru": "BIP39 — Корейский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39-ko"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -41,9 +47,11 @@
         "en": "BIP39 es",
         "ru": "BIP39 — Испанский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39-es"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -52,9 +60,11 @@
         "en": "BIP39 zh-hans",
         "ru": "BIP39 — Китайский упрощённый"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39-zh-hans"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -63,9 +73,11 @@
         "en": "BIP39 zh-hant",
         "ru": "BIP39 — Китайский традиционный"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39-zh-hant"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -74,9 +86,11 @@
         "en": "BIP39 fr",
         "ru": "BIP39 — Французский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39-fr"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -85,9 +99,11 @@
         "en": "BIP39 it",
         "ru": "BIP39 — Итальянский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39-it"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -96,9 +112,11 @@
         "en": "BIP39 cs",
         "ru": "BIP39 — Чешский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39-cs"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -107,9 +125,11 @@
         "en": "BIP39 pt",
         "ru": "BIP39 — Португальский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39-pt"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -437,9 +457,11 @@
         "en": "bip39",
         "ru": "bip39"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bip39"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -448,9 +470,11 @@
         "en": "ton native",
         "ru": "ton native"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "ton-native"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -459,9 +483,11 @@
         "en": "ton multichain bip39",
         "ru": "ton multichain bip39"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "ton-multichain-bip39"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -734,9 +760,11 @@
         "en": "tonkeeper classic",
         "ru": "tonkeeper classic"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "tonkeeper-classic"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -745,9 +773,11 @@
         "en": "tonkeeper multichain",
         "ru": "tonkeeper multichain"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "tonkeeper-multichain"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -756,9 +786,11 @@
         "en": "gram wallet",
         "ru": "gram wallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "gram-wallet"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -767,9 +799,11 @@
         "en": "mytonwallet",
         "ru": "mytonwallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "mytonwallet"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -778,9 +812,11 @@
         "en": "ton space",
         "ru": "ton space"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "ton-space"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -789,9 +825,11 @@
         "en": "tonhub",
         "ru": "tonhub"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "tonhub"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -800,9 +838,11 @@
         "en": "openmask",
         "ru": "openmask"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "openmask"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {

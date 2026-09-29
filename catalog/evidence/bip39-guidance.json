@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "bip39-guidance",
+  "source_type": "official-specification",
+  "claim": "BIP39 links exactly ten language lists and language-specific guidance; Japanese generation uses ideographic spaces, which NFKD converts to ASCII spaces. Original source line order and bytes are preserved. Reviewed 2026-09-29; byte SHA-256 363a51bc4748d95541bb156e0439de7b51f28b260433c09874e5891dd3b0f883. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/bitcoin/bips/3a10b5b5f0a7586df8928d580a3009744ebb2079/bip-0039/bip-0039-wordlists.md",
+  "revision": "3a10b5b5f0a7586df8928d580a3009744ebb2079",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "bip39-en",
+    "bip39-ja",
+    "bip39-ko",
+    "bip39-es",
+    "bip39-zh-hans",
+    "bip39-zh-hant",
+    "bip39-fr",
+    "bip39-it",
+    "bip39-cs",
+    "bip39-pt"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "ton-native-source",
+  "source_type": "official-source",
+  "claim": "TON crypto mnemonic.ts: mnemonicNew defaults to 24; entropy is HMAC-SHA512(key=space-joined words, message=optional password), then PBKDF2-HMAC-SHA512 with TON default seed salt and 100000 iterations; first 32 bytes seed Ed25519. Basic-seed check uses TON seed version and 390 iterations. Native lowercase/trim behavior is not a universal BIP39 NFKD rule. Reviewed 2026-09-29; byte SHA-256 79518c5f905daaa4e64f09454e8a82dbb1c8d1b310305ef84b25e85b2c77126a. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/ton-org/ton-crypto/c3435833a0da52a96f674c352c4c6f91fcc07f6d/src/mnemonic/mnemonic.ts",
+  "revision": "c3435833a0da52a96f674c352c4c6f91fcc07f6d",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "ton-native",
+    "tonkeeper-classic",
+    "mytonwallet-native",
+    "tonhub"
+  ]
+}
