@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-en",
+  "display_name": {
+    "en": "Synthetic English",
+    "ru": "Синтетический английский"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "synthetic-evidence"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "1.0",
+    "max": null
+  },
+  "language": "en",
+  "script": "Latn",
+  "source": {
+    "url": "https://example.invalid/synthetic-list",
+    "revision": "fixture-v1"
+  },
+  "license": {
+    "spdx_or_name": "CC0-1.0",
+    "source_url": "https://example.invalid/synthetic-license",
+    "attribution": "Synthetic test fixture",
+    "repository_redistribution": "allowed",
+    "signpath_compatible": "compatible"
+  },
+  "encoding": "UTF-8",
+  "normalization": "NFKD",
+  "word_count": 36,
+  "sha256": "4f2213b4ccae7ee69045b50db7844921a710309021ec61a982e067485f84cf4b",
+  "order_rule": "Source line order",
+  "position_rules": [],
+  "duplicate_analysis": {
+    "normalized_unique_count": 36,
+    "collisions": []
+  },
+  "test_vector_ids": [
+    "synthetic-evidence"
+  ],
+  "wordlist_path": "wordlists/synthetic-en/v1.txt"
+}

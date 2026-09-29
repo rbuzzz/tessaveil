@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tessaveil:schema:scheme:v1",
+  "title": "scheme",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "display_name",
+    "status",
+    "historical",
+    "evidence_ids",
+    "verified_on",
+    "version_interval",
+    "dictionary_ids",
+    "supported_lengths",
+    "position_rules",
+    "external_secret",
+    "semantic_distinction",
+    "test_vector_ids",
+    "no_key_derivation",
+    "no_complete_phrase_validation"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "display_name": {
+      "type": "object",
+      "required": [
+        "en",
+        "ru"
+      ],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ru": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "documented",
+        "blocked",
+        "no-mnemonic-confirmed"
+      ]
+    },
+    "historical": {
+      "type": "boolean"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "verified_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "version_interval": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "string",
+          "minLength": 1
+        },
+        "max": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "dictionary_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "supported_lengths": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "position_rules": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "external_secret": {
+      "type": "object",
+      "required": [
+        "kind",
+        "stored"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "none",
+            "optional-passphrase",
+            "required-passphrase",
+            "other"
+          ]
+        },
+        "stored": {
+          "const": false
+        },
+        "guidance": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "semantic_distinction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "test_vector_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "no_key_derivation": {
+      "const": true
+    },
+    "no_complete_phrase_validation": {
+      "const": true
+    }
+  },
+  "additionalProperties": false
+}

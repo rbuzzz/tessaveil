@@ -1,0 +1,1799 @@
+{
+  "schema_version": 1,
+  "id": "windows-v1",
+  "requirements": [
+    {
+      "id": "dictionary-bip39-en",
+      "display_name": {
+        "en": "BIP39 en",
+        "ru": "BIP39 — Английский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-bip39-ja",
+      "display_name": {
+        "en": "BIP39 ja",
+        "ru": "BIP39 — Японский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-bip39-ko",
+      "display_name": {
+        "en": "BIP39 ko",
+        "ru": "BIP39 — Корейский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-bip39-es",
+      "display_name": {
+        "en": "BIP39 es",
+        "ru": "BIP39 — Испанский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-bip39-zh-hans",
+      "display_name": {
+        "en": "BIP39 zh-hans",
+        "ru": "BIP39 — Китайский упрощённый"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-bip39-zh-hant",
+      "display_name": {
+        "en": "BIP39 zh-hant",
+        "ru": "BIP39 — Китайский традиционный"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-bip39-fr",
+      "display_name": {
+        "en": "BIP39 fr",
+        "ru": "BIP39 — Французский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-bip39-it",
+      "display_name": {
+        "en": "BIP39 it",
+        "ru": "BIP39 — Итальянский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-bip39-cs",
+      "display_name": {
+        "en": "BIP39 cs",
+        "ru": "BIP39 — Чешский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-bip39-pt",
+      "display_name": {
+        "en": "BIP39 pt",
+        "ru": "BIP39 — Португальский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-en",
+      "display_name": {
+        "en": "MONERO en",
+        "ru": "MONERO — Английский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-de",
+      "display_name": {
+        "en": "MONERO de",
+        "ru": "MONERO — Немецкий"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-es",
+      "display_name": {
+        "en": "MONERO es",
+        "ru": "MONERO — Испанский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-fr",
+      "display_name": {
+        "en": "MONERO fr",
+        "ru": "MONERO — Французский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-it",
+      "display_name": {
+        "en": "MONERO it",
+        "ru": "MONERO — Итальянский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-nl",
+      "display_name": {
+        "en": "MONERO nl",
+        "ru": "MONERO — Нидерландский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-pt",
+      "display_name": {
+        "en": "MONERO pt",
+        "ru": "MONERO — Португальский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-ru",
+      "display_name": {
+        "en": "MONERO ru",
+        "ru": "MONERO — Русский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-ja",
+      "display_name": {
+        "en": "MONERO ja",
+        "ru": "MONERO — Японский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-zh-hans",
+      "display_name": {
+        "en": "MONERO zh-hans",
+        "ru": "MONERO — Китайский упрощённый"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-eo",
+      "display_name": {
+        "en": "MONERO eo",
+        "ru": "MONERO — Эсперанто"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-jbo",
+      "display_name": {
+        "en": "MONERO jbo",
+        "ru": "MONERO — Ложбан"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-monero-en-old",
+      "display_name": {
+        "en": "MONERO en-old",
+        "ru": "MONERO — Старый английский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "dictionary-polyseed-en",
+      "display_name": {
+        "en": "POLYSEED en",
+        "ru": "POLYSEED — Английский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-polyseed-ja",
+      "display_name": {
+        "en": "POLYSEED ja",
+        "ru": "POLYSEED — Японский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-polyseed-ko",
+      "display_name": {
+        "en": "POLYSEED ko",
+        "ru": "POLYSEED — Корейский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-polyseed-es",
+      "display_name": {
+        "en": "POLYSEED es",
+        "ru": "POLYSEED — Испанский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-polyseed-fr",
+      "display_name": {
+        "en": "POLYSEED fr",
+        "ru": "POLYSEED — Французский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-polyseed-it",
+      "display_name": {
+        "en": "POLYSEED it",
+        "ru": "POLYSEED — Итальянский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-polyseed-cs",
+      "display_name": {
+        "en": "POLYSEED cs",
+        "ru": "POLYSEED — Чешский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-polyseed-pt",
+      "display_name": {
+        "en": "POLYSEED pt",
+        "ru": "POLYSEED — Португальский"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-polyseed-zh-hans",
+      "display_name": {
+        "en": "POLYSEED zh-hans",
+        "ru": "POLYSEED — Китайский упрощённый"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-polyseed-zh-hant",
+      "display_name": {
+        "en": "POLYSEED zh-hant",
+        "ru": "POLYSEED — Китайский традиционный"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-slip39-en",
+      "display_name": {
+        "en": "slip39 en",
+        "ru": "slip39 en"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-electrum-v1-en",
+      "display_name": {
+        "en": "electrum v1 en",
+        "ru": "electrum v1 en"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "dictionary-pgp-even",
+      "display_name": {
+        "en": "pgp even",
+        "ru": "pgp even"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-pgp-odd",
+      "display_name": {
+        "en": "pgp odd",
+        "ru": "pgp odd"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-zano-en",
+      "display_name": {
+        "en": "zano en",
+        "ru": "zano en"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "dictionary-sia-legacy",
+      "display_name": {
+        "en": "sia legacy",
+        "ru": "sia legacy"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "scheme-bip39",
+      "display_name": {
+        "en": "bip39",
+        "ru": "bip39"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-ton-native",
+      "display_name": {
+        "en": "ton native",
+        "ru": "ton native"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-ton-multichain-bip39",
+      "display_name": {
+        "en": "ton multichain bip39",
+        "ru": "ton multichain bip39"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-monero-legacy",
+      "display_name": {
+        "en": "monero legacy",
+        "ru": "monero legacy"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-mymonero",
+      "display_name": {
+        "en": "mymonero",
+        "ru": "mymonero"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-polyseed",
+      "display_name": {
+        "en": "polyseed",
+        "ru": "polyseed"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-slip39-share",
+      "display_name": {
+        "en": "slip39 share",
+        "ru": "slip39 share"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-algorand-25",
+      "display_name": {
+        "en": "algorand 25",
+        "ru": "algorand 25"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-cardano-byron",
+      "display_name": {
+        "en": "cardano byron",
+        "ru": "cardano byron"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "scheme-cardano-icarus",
+      "display_name": {
+        "en": "cardano icarus",
+        "ru": "cardano icarus"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-cardano-hardware",
+      "display_name": {
+        "en": "cardano hardware",
+        "ru": "cardano hardware"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-cardano-daedalus-27",
+      "display_name": {
+        "en": "cardano daedalus 27",
+        "ru": "cardano daedalus 27"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "scheme-electrum-v1",
+      "display_name": {
+        "en": "electrum v1",
+        "ru": "electrum v1"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "scheme-electrum-v2",
+      "display_name": {
+        "en": "electrum v2",
+        "ru": "electrum v2"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-substrate-bip39",
+      "display_name": {
+        "en": "substrate bip39",
+        "ru": "substrate bip39"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-decred-pgp33",
+      "display_name": {
+        "en": "decred pgp33",
+        "ru": "decred pgp33"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-decred-bip39",
+      "display_name": {
+        "en": "decred bip39",
+        "ru": "decred bip39"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-decred-15",
+      "display_name": {
+        "en": "cake decred 15",
+        "ru": "cake decred 15"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-zano-modern",
+      "display_name": {
+        "en": "zano modern",
+        "ru": "zano modern"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-zano-legacy-24",
+      "display_name": {
+        "en": "zano legacy 24",
+        "ru": "zano legacy 24"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "scheme-zano-legacy-25",
+      "display_name": {
+        "en": "zano legacy 25",
+        "ru": "zano legacy 25"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "scheme-sia-bip39",
+      "display_name": {
+        "en": "sia bip39",
+        "ru": "sia bip39"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-sia-legacy-28",
+      "display_name": {
+        "en": "sia legacy 28",
+        "ru": "sia legacy 28"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "scheme-sia-legacy-29",
+      "display_name": {
+        "en": "sia legacy 29",
+        "ru": "sia legacy 29"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "scheme-zcash-bip39",
+      "display_name": {
+        "en": "zcash bip39",
+        "ru": "zcash bip39"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-zcash-non-mnemonic",
+      "display_name": {
+        "en": "zcash non mnemonic",
+        "ru": "zcash non mnemonic"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "scheme-chia-bip39",
+      "display_name": {
+        "en": "chia bip39",
+        "ru": "chia bip39"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-tonkeeper-classic",
+      "display_name": {
+        "en": "tonkeeper classic",
+        "ru": "tonkeeper classic"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-tonkeeper-multichain",
+      "display_name": {
+        "en": "tonkeeper multichain",
+        "ru": "tonkeeper multichain"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-gram-wallet",
+      "display_name": {
+        "en": "gram wallet",
+        "ru": "gram wallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-mytonwallet",
+      "display_name": {
+        "en": "mytonwallet",
+        "ru": "mytonwallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-ton-space",
+      "display_name": {
+        "en": "ton space",
+        "ru": "ton space"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-tonhub",
+      "display_name": {
+        "en": "tonhub",
+        "ru": "tonhub"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-openmask",
+      "display_name": {
+        "en": "openmask",
+        "ru": "openmask"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-phantom",
+      "display_name": {
+        "en": "phantom",
+        "ru": "phantom"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-solflare",
+      "display_name": {
+        "en": "solflare",
+        "ru": "solflare"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-backpack",
+      "display_name": {
+        "en": "backpack",
+        "ru": "backpack"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-glow",
+      "display_name": {
+        "en": "glow",
+        "ru": "glow"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet",
+      "display_name": {
+        "en": "cake wallet",
+        "ru": "cake wallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-trust-wallet",
+      "display_name": {
+        "en": "trust wallet",
+        "ru": "trust wallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-metamask",
+      "display_name": {
+        "en": "metamask",
+        "ru": "metamask"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-coinbase-wallet",
+      "display_name": {
+        "en": "coinbase wallet",
+        "ru": "coinbase wallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-exodus",
+      "display_name": {
+        "en": "exodus",
+        "ru": "exodus"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-atomic-wallet",
+      "display_name": {
+        "en": "atomic wallet",
+        "ru": "atomic wallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-onekey",
+      "display_name": {
+        "en": "onekey",
+        "ru": "onekey"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-ledger",
+      "display_name": {
+        "en": "ledger",
+        "ru": "ledger"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-trezor",
+      "display_name": {
+        "en": "trezor",
+        "ru": "trezor"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-trezor-model-t",
+      "display_name": {
+        "en": "trezor model t",
+        "ru": "trezor model t"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-trezor-safe-3",
+      "display_name": {
+        "en": "trezor safe 3",
+        "ru": "trezor safe 3"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-trezor-safe-5",
+      "display_name": {
+        "en": "trezor safe 5",
+        "ru": "trezor safe 5"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-trezor-safe-7",
+      "display_name": {
+        "en": "trezor safe 7",
+        "ru": "trezor safe 7"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-okx-wallet",
+      "display_name": {
+        "en": "okx wallet",
+        "ru": "okx wallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-bitget-wallet",
+      "display_name": {
+        "en": "bitget wallet",
+        "ru": "bitget wallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-safepal",
+      "display_name": {
+        "en": "safepal",
+        "ru": "safepal"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-tangem-seed",
+      "display_name": {
+        "en": "tangem seed",
+        "ru": "tangem seed"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-keystone",
+      "display_name": {
+        "en": "keystone",
+        "ru": "keystone"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-bitbox02",
+      "display_name": {
+        "en": "bitbox02",
+        "ru": "bitbox02"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-ellipal",
+      "display_name": {
+        "en": "ellipal",
+        "ru": "ellipal"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-coinomi",
+      "display_name": {
+        "en": "coinomi",
+        "ru": "coinomi"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-guarda",
+      "display_name": {
+        "en": "guarda",
+        "ru": "guarda"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-tokenpocket",
+      "display_name": {
+        "en": "tokenpocket",
+        "ru": "tokenpocket"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-imtoken",
+      "display_name": {
+        "en": "imtoken",
+        "ru": "imtoken"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-rabby",
+      "display_name": {
+        "en": "rabby",
+        "ru": "rabby"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-rainbow",
+      "display_name": {
+        "en": "rainbow",
+        "ru": "rainbow"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-zerion",
+      "display_name": {
+        "en": "zerion",
+        "ru": "zerion"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-electrum",
+      "display_name": {
+        "en": "electrum",
+        "ru": "electrum"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-sparrow",
+      "display_name": {
+        "en": "sparrow",
+        "ru": "sparrow"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-bluewallet",
+      "display_name": {
+        "en": "bluewallet",
+        "ru": "bluewallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-coldcard",
+      "display_name": {
+        "en": "coldcard",
+        "ru": "coldcard"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-blockstream-jade",
+      "display_name": {
+        "en": "blockstream jade",
+        "ru": "blockstream jade"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-passport",
+      "display_name": {
+        "en": "passport",
+        "ru": "passport"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-seedsigner",
+      "display_name": {
+        "en": "seedsigner",
+        "ru": "seedsigner"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-keplr",
+      "display_name": {
+        "en": "keplr",
+        "ru": "keplr"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-leap",
+      "display_name": {
+        "en": "leap",
+        "ru": "leap"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-cosmostation",
+      "display_name": {
+        "en": "cosmostation",
+        "ru": "cosmostation"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-yoroi",
+      "display_name": {
+        "en": "yoroi",
+        "ru": "yoroi"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-daedalus",
+      "display_name": {
+        "en": "daedalus",
+        "ru": "daedalus"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-lace",
+      "display_name": {
+        "en": "lace",
+        "ru": "lace"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-eternl",
+      "display_name": {
+        "en": "eternl",
+        "ru": "eternl"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-nami",
+      "display_name": {
+        "en": "nami",
+        "ru": "nami"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-typhon",
+      "display_name": {
+        "en": "typhon",
+        "ru": "typhon"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-monero-gui-cli",
+      "display_name": {
+        "en": "monero gui cli",
+        "ru": "monero gui cli"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-mymonero",
+      "display_name": {
+        "en": "mymonero",
+        "ru": "mymonero"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-feather",
+      "display_name": {
+        "en": "feather",
+        "ru": "feather"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-exodus-monero",
+      "display_name": {
+        "en": "exodus monero",
+        "ru": "exodus monero"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-pera-wallet",
+      "display_name": {
+        "en": "pera wallet",
+        "ru": "pera wallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-defly",
+      "display_name": {
+        "en": "defly",
+        "ru": "defly"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-decrediton",
+      "display_name": {
+        "en": "decrediton",
+        "ru": "decrediton"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-zano-wallet",
+      "display_name": {
+        "en": "zano wallet",
+        "ru": "zano wallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-zano",
+      "display_name": {
+        "en": "cake wallet zano",
+        "ru": "cake wallet zano"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-decred",
+      "display_name": {
+        "en": "cake wallet decred",
+        "ru": "cake wallet decred"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-siad",
+      "display_name": {
+        "en": "siad",
+        "ru": "siad"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "wallet-sia-ui",
+      "display_name": {
+        "en": "sia ui",
+        "ru": "sia ui"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "wallet-walletd",
+      "display_name": {
+        "en": "walletd",
+        "ru": "walletd"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": true
+    },
+    {
+      "id": "wallet-zallet",
+      "display_name": {
+        "en": "zallet",
+        "ru": "zallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-zcash-official",
+      "display_name": {
+        "en": "zcash official",
+        "ru": "zcash official"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-chia-wallet",
+      "display_name": {
+        "en": "chia wallet",
+        "ru": "chia wallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-polkadot-js",
+      "display_name": {
+        "en": "polkadot js",
+        "ru": "polkadot js"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-subwallet",
+      "display_name": {
+        "en": "subwallet",
+        "ru": "subwallet"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-talisman",
+      "display_name": {
+        "en": "talisman",
+        "ru": "talisman"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-temple",
+      "display_name": {
+        "en": "temple",
+        "ru": "temple"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "wallet-kukai",
+      "display_name": {
+        "en": "kukai",
+        "ru": "kukai"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-bitcoin",
+      "display_name": {
+        "en": "bitcoin",
+        "ru": "bitcoin"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-ethereum",
+      "display_name": {
+        "en": "ethereum",
+        "ru": "ethereum"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-base",
+      "display_name": {
+        "en": "base",
+        "ru": "base"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-bnb-chain",
+      "display_name": {
+        "en": "bnb chain",
+        "ru": "bnb chain"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-polygon",
+      "display_name": {
+        "en": "polygon",
+        "ru": "polygon"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-avalanche",
+      "display_name": {
+        "en": "avalanche",
+        "ru": "avalanche"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-arbitrum",
+      "display_name": {
+        "en": "arbitrum",
+        "ru": "arbitrum"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-solana",
+      "display_name": {
+        "en": "solana",
+        "ru": "solana"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-tron",
+      "display_name": {
+        "en": "tron",
+        "ru": "tron"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-cosmos",
+      "display_name": {
+        "en": "cosmos",
+        "ru": "cosmos"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-tezos",
+      "display_name": {
+        "en": "tezos",
+        "ru": "tezos"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-polkadot",
+      "display_name": {
+        "en": "polkadot",
+        "ru": "polkadot"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-kusama",
+      "display_name": {
+        "en": "kusama",
+        "ru": "kusama"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-cardano",
+      "display_name": {
+        "en": "cardano",
+        "ru": "cardano"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-algorand",
+      "display_name": {
+        "en": "algorand",
+        "ru": "algorand"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-monero",
+      "display_name": {
+        "en": "monero",
+        "ru": "monero"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-zcash",
+      "display_name": {
+        "en": "zcash",
+        "ru": "zcash"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-chia",
+      "display_name": {
+        "en": "chia",
+        "ru": "chia"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-decred",
+      "display_name": {
+        "en": "decred",
+        "ru": "decred"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-zano",
+      "display_name": {
+        "en": "zano",
+        "ru": "zano"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-sia",
+      "display_name": {
+        "en": "sia",
+        "ru": "sia"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    },
+    {
+      "id": "network-ton",
+      "display_name": {
+        "en": "ton",
+        "ru": "ton"
+      },
+      "record_ids": [],
+      "research_state": "pending",
+      "status": null,
+      "historical": false
+    }
+  ]
+}

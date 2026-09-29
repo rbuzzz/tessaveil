@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-evidence",
+  "source_type": "public-test-vector",
+  "claim": "Synthetic records and word list are test fixtures only.",
+  "url": "https://example.invalid/synthetic-vector",
+  "revision": "fixture-v1",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "synthetic-en",
+    "synthetic-blocked",
+    "synthetic-scheme",
+    "synthetic-wallet"
+  ]
+}

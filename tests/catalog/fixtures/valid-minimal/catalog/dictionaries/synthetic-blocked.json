@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-blocked",
+  "display_name": {
+    "en": "Synthetic blocked dictionary",
+    "ru": "Синтетический заблокированный словарь"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "synthetic-evidence"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "1.0",
+    "max": null
+  },
+  "language": "en",
+  "script": "Latn",
+  "source": null,
+  "license": {
+    "spdx_or_name": null,
+    "source_url": null,
+    "attribution": null,
+    "repository_redistribution": "pending",
+    "signpath_compatible": "pending",
+    "decision_evidence": [
+      "synthetic-evidence"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "NFKD",
+  "word_count": null,
+  "sha256": null,
+  "order_rule": null,
+  "position_rules": [],
+  "duplicate_analysis": null,
+  "test_vector_ids": [],
+  "wordlist_path": null
+}
