@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-non-mnemonic",
+  "display_name": {
+    "en": "Synthetic non-mnemonic mode",
+    "ru": "Синтетический режим без мнемоники"
+  },
+  "status": "no-mnemonic-confirmed",
+  "historical": false,
+  "evidence_ids": [
+    "synthetic-evidence"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "1.0",
+    "max": null
+  },
+  "dictionary_ids": [],
+  "supported_lengths": [],
+  "position_rules": [],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "Unknown format; use the source wallet's backup procedure."
+  },
+  "semantic_distinction": "This test-only mode does not expose a mnemonic.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

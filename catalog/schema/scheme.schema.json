@@ -100,7 +100,7 @@
         "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
       },
       "uniqueItems": true,
-      "minItems": 1
+      "minItems": 0
     },
     "supported_lengths": {
       "type": "array",
@@ -109,7 +109,7 @@
         "minimum": 1
       },
       "uniqueItems": true,
-      "minItems": 1
+      "minItems": 0
     },
     "position_rules": {
       "type": "array",
@@ -154,7 +154,7 @@
         "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
       },
       "uniqueItems": true,
-      "minItems": 1
+      "minItems": 0
     },
     "no_key_derivation": {
       "const": true
@@ -163,5 +163,13 @@
       "const": true
     }
   },
+  "allOf": [{
+    "if": {"properties": {"status": {"const": "verified"}}, "required": ["status"]},
+    "then": {"properties": {
+      "dictionary_ids": {"minItems": 1},
+      "supported_lengths": {"minItems": 1},
+      "test_vector_ids": {"minItems": 1}
+    }}
+  }],
   "additionalProperties": false
 }

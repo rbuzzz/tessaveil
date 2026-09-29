@@ -10,6 +10,8 @@
     "synthetic-en",
     "synthetic-blocked",
     "synthetic-scheme",
+    "synthetic-blocked-scheme",
+    "synthetic-non-mnemonic",
     "synthetic-wallet"
   ]
 }

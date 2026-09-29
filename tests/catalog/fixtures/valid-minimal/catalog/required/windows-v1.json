@@ -29,6 +29,32 @@
       "historical": false
     },
     {
+      "id": "scheme-synthetic-blocked-scheme",
+      "display_name": {
+        "en": "Synthetic blocked scheme",
+        "ru": "Синтетическая заблокированная схема"
+      },
+      "record_ids": [
+        "synthetic-blocked-scheme"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-synthetic-non-mnemonic",
+      "display_name": {
+        "en": "Synthetic non-mnemonic mode",
+        "ru": "Синтетический режим без мнемоники"
+      },
+      "record_ids": [
+        "synthetic-non-mnemonic"
+      ],
+      "research_state": "terminal",
+      "status": "no-mnemonic-confirmed",
+      "historical": false
+    },
+    {
       "id": "wallet-synthetic-wallet",
       "display_name": {
         "en": "wallet:synthetic-wallet",

@@ -31,6 +31,14 @@ class SchemaCliTests(unittest.TestCase):
         result = self._check("dictionary", instance)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
+    def test_terminal_schemes_can_record_absent_mnemonic_details(self):
+        for name in ("synthetic-blocked-scheme", "synthetic-non-mnemonic"):
+            with self.subTest(name=name):
+                instance = FIXTURES / "valid-minimal" / "catalog" / "schemes" / f"{name}.json"
+                self.assertTrue(instance.is_file())
+                result = self._check("scheme", instance)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_repository_required_manifest_matches_schema(self):
         result = self._check("required-set", ROOT / "catalog" / "required" / "windows-v1.json")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
@@ -41,6 +49,7 @@ class SchemaCliTests(unittest.TestCase):
             ("wallet", "unknown-field/catalog/wallets/synthetic-wallet.json"),
             ("dictionary", "missing-license-decision/catalog/dictionaries/synthetic-en.json"),
             ("required-set", "duplicate-required-ids/catalog/required/windows-v1.json"),
+            ("scheme", "verified-scheme-incomplete/catalog/schemes/synthetic-scheme.json"),
         ):
             with self.subTest(case=relative):
                 instance = FIXTURES / "invalid-schema" / relative
