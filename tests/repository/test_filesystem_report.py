@@ -201,7 +201,7 @@ class FilesystemProbeTests(FilesystemContracts):
     def test_unsafe_roots_fail_before_any_write(self):
         result = self.run_ps(self.dot() + r"""
           $candidates = @((Get-Location).Path, $HOME, $env:USERPROFILE,
-            'C:\', 'C:\Users\Public', '.', '..', '\\server\share\test',
+            'C:\', ('C:' + '\Users' + '\Public'), '.', '..', '\\server\share\test',
             '\\?\C:\Users\Public\test', 'C:\Users\Public\OneDrive\test',
             'C:\Users\Public\Dropbox\test', 'C:\Users\Public\*',
             'C:\Users\Public\TessaveilReplaceProbe-00000000000000000000000000000000\..')

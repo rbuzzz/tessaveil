@@ -30,6 +30,23 @@ class SensitiveMaterialTests(unittest.TestCase):
                       '["' + '", "'.join(["abandon"] * 12) + '"]'):
             self.assertIn("mnemonic-like", scan.inspect_text("fixture.json", value, words))
 
+    def test_public_exception_requires_exact_windows_path_component(self):
+        for drive in ("C", "d", "Z"):
+            for separator in ("\\", "/"):
+                for users, public in (("Users", "Public"), ("uSeRs", "pUbLiC")):
+                    prefix = drive + ":" + separator + users + separator
+                    for suffix in (".Alice", "-Alice", " Alice", "_Alice", "'Alice"):
+                        with self.subTest(drive=drive, separator=separator, suffix=suffix):
+                            value = prefix + public + suffix + separator + "file"
+                            self.assertIn("personal-path", scan.inspect_text("sample.txt", value, frozenset()))
+                    for tail in ("", separator + "file"):
+                        with self.subTest(drive=drive, separator=separator, tail=tail):
+                            value = prefix + public + tail
+                            self.assertNotIn("personal-path", scan.inspect_text("sample.txt", value, frozenset()))
+        # The common Windows Public directory is not a POSIX profile exception.
+        for prefix in ("/" + "Users/", "/" + "home/"):
+            self.assertIn("personal-path", scan.inspect_text("sample.txt", prefix + "Public/file", frozenset()))
+
     def test_key_material_and_index_fixtures_require_exact_reviewed_hash(self):
         for value in ('{"seed_' + 'hex": "' + "ab" * 32 + '"}',
                       '{"indi' + 'ces": [1,2,3,4,5,6,7,8,9,10,11,12]}'):

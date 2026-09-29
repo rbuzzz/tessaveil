@@ -30,7 +30,7 @@ PATTERNS = {
     "private-key": re.compile(r"-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY(?: BLOCK)?-----"),
     "github-token": re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})"),
     "figma-token": re.compile(r"\bfig[du]_[A-Za-z0-9_-]{20,}"),
-    "personal-path": re.compile(r"(?:[A-Za-z]:[\\/]+Users[\\/]+(?!Public(?:[\\/]|\b))[^\s\\/\"']+|/(?:home|Users)/[^\s/\"']+)", re.I),
+    "personal-path": re.compile(r"(?:[A-Za-z]:[\\/]+Users[\\/]+(?!Public(?:[\\/]|\Z))[^\s\\/\"']+|(?<![:/\\])/(?:home|Users)/[^\s/\"']+)", re.I),
 }
 VECTOR = re.compile(r'"(?:seed_hex|secret_key|private_key|mnemonic|phrase|indices|word_indices)"\s*:\s*(?:"[^"\n]+"|\[\s*\d)', re.I)
 
