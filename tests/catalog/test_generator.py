@@ -17,6 +17,16 @@ from tools.catalog.loader import load_catalog
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURE = Path(__file__).parent / "fixtures" / "valid-minimal"
+UNC_GUIDANCE = (
+    "//synthetic-host/private-share/backup",
+    "Backup: //synthetic-host/private-share/backup",
+    "Backup://synthetic-host/private-share/backup",
+    'Backup "//synthetic-host/private-share/backup".',
+    "Backup (//synthetic-host/private-share/backup).",
+    "Backup\n//synthetic-host/private-share/backup",
+    r"Backup \\synthetic-host\private-share\backup",
+    r"Backup: \\synthetic-host/private-share\backup",
+)
 
 
 class GeneratorTests(unittest.TestCase):
@@ -106,6 +116,29 @@ class GeneratorTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.render(replace(catalog, wallets=(modified,)))
 
+    def test_unc_metadata_in_prose_is_rejected_in_both_locales(self):
+        catalog = load_catalog(FIXTURE)
+        wallet = catalog.wallets[0]
+        for locale in ("en", "ru"):
+            for guidance in UNC_GUIDANCE:
+                with self.subTest(locale=locale, guidance=guidance):
+                    modified = replace(wallet, data={**wallet.data, "guidance": guidance})
+                    with self.assertRaises(ValueError):
+                        self.render(replace(catalog, wallets=(modified,)), locale)
+
+    def test_normal_https_metadata_remains_renderable_in_both_locales(self):
+        catalog = load_catalog(FIXTURE)
+        wallet = catalog.wallets[0]
+        for locale in ("en", "ru"):
+            for url in ("https://example.invalid/backup", "HTTPS://example.invalid:8443/backup",
+                        "https://example.invalid/backup?next=/help#restore",
+                        "https://[2001:db8::1]/backup"):
+                with self.subTest(locale=locale, url=url):
+                    modified = replace(wallet, data={**wallet.data, "guidance": f"See ({url}) for official guidance."})
+                    output = self.render(replace(catalog, wallets=(modified,)), locale)
+                    self.assertIn("for official guidance.", output)
+                    self.assertNotIn(url, output)  # Remains escaped, not an autolink.
+
 
 class GenerationCliTests(unittest.TestCase):
     def setUp(self):
@@ -150,6 +183,38 @@ class GenerationCliTests(unittest.TestCase):
             self.assertNotIn(str(self.root), result.stdout + result.stderr)
             for name in ("catalog.md", "catalog.ru.md"):
                 self.assertEqual((docs / name).read_bytes(), b"previous\n")
+
+    def test_unc_guidance_fails_before_any_output_mutation(self):
+        for guidance in (UNC_GUIDANCE[1], UNC_GUIDANCE[-2]):
+            for existing in (False, True):
+                with self.subTest(guidance=guidance, existing=existing), tempfile.TemporaryDirectory() as directory:
+                    self.root = Path(directory)
+                    shutil.copytree(FIXTURE, self.root, dirs_exist_ok=True)
+                    docs = self.root / "docs"
+                    if existing:
+                        docs.mkdir()
+                        for name in ("catalog.md", "catalog.ru.md"):
+                            (docs / name).write_bytes(b"previous\n")
+                    path = self.root / "catalog/wallets/synthetic-wallet.json"
+                    data = json.loads(path.read_text(encoding="utf-8"))
+                    data["guidance"] = guidance
+                    path.write_text(json.dumps(data), encoding="utf-8")
+
+                    def snapshot():
+                        return {p.relative_to(self.root): (p.stat().st_mtime_ns,
+                                p.read_bytes() if p.is_file() else None)
+                                for p in self.root.rglob("*")}
+
+                    before = snapshot()
+                    for args in ((), ("--check",)):
+                        result = self.cli(*args)
+                        self.assertNotEqual(result.returncode, 0)
+                        diagnostic = result.stdout + result.stderr
+                        self.assertLess(len(diagnostic), 256)
+                        self.assertNotIn("synthetic-host", diagnostic)
+                        self.assertNotIn(str(self.root), diagnostic)
+                        self.assertNotIn("Traceback", diagnostic)
+                        self.assertEqual(before, snapshot())
 
     def test_second_output_obstruction_does_not_replace_first(self):
         docs = self.root / "docs"

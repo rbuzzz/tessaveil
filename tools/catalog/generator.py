@@ -1,9 +1,10 @@
 """Deterministic, offline catalogue metadata; never render word-list payloads."""
 
 import html
+from pathlib import PurePosixPath, PureWindowsPath
 import re
 from typing import Literal
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 
 from .model import Catalog, Record
 from .validator import validate_catalog
@@ -16,9 +17,21 @@ def _text(value) -> str:
     if isinstance(value, bool):
         return str(value).lower()
     value = str(value)
-    if re.search(r"(?<!\w)[A-Za-z]:[\\/]|\\\\|file:/|(?<![\w:/])/(?!/)\S+|(?<!\w)~/",
-                 value, re.IGNORECASE):
-        raise ValueError("absolute path in rendered metadata")
+    # Tokenize URLs first: their authority, IPv6 literals and query paths are
+    # URI components, not local filesystem paths. Other prose delimiters (also
+    # a label's colon) separate path candidates; retain Windows drive prefixes.
+    tokens = re.findall(r'''https?://[^\s<>"'`(){}]+|(?:[A-Za-z]:)?[^\s<>"'`()\[\]{}=:,;]+''',
+                        value, re.IGNORECASE)
+    for token in tokens:
+        if token.lower().startswith(("https://", "http://")):
+            url = urlsplit(token)
+            if url.hostname and "\\" not in token:
+                continue
+            raise ValueError("invalid URL in rendered metadata")
+        if len(token) > 1 and (PurePosixPath(token).is_absolute() or
+                               PureWindowsPath(token).is_absolute() or
+                               token.startswith(("\\\\", "~/"))):
+            raise ValueError("absolute path in rendered metadata")
     value = html.escape(" ".join(value.split()), quote=False)
     for character in "\\`*_{}[]()#+!|:":
         value = value.replace(character, "\\" + character)
