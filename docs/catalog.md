@@ -32,11 +32,11 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | Cake Wallet Zano — native seed import / [cake-wallet-zano](#wallet-cake-wallet-zano) | android / native26-import | zano | [zano-modern](#scheme-zano-modern) | documented |
 | Cake Wallet Zano — BIP39 creation / [cake-wallet-zano-bip39](#wallet-cake-wallet-zano-bip39) | android / bip39-derived-create | zano | [cake-zano-bip39](#scheme-cake-zano-bip39) | blocked |
 | Chia reference wallet — default English24 / [chia-wallet](#wallet-chia-wallet) | windows / english24-generate | chia | [chia-bip39](#scheme-chia-bip39) | documented |
-| Coinbase Wallet / [coinbase-wallet](#wallet-coinbase-wallet) | web / mnemonic-imported | bitcoin, ethereum, solana | — | documented |
+| Coinbase Wallet / [coinbase-wallet](#wallet-coinbase-wallet) | mobile-app / mnemonic-imported | bitcoin, ethereum, solana | — | documented |
 | Coinbase Wallet / [coinbase-wallet-cloud-backup](#wallet-coinbase-wallet-cloud-backup) | ios / legacy-cloud-backup | multi-chain | — | documented |
 | Coinbase Wallet / [coinbase-wallet-passkey](#wallet-coinbase-wallet-passkey) | web / smart-wallet-passkey | base, ethereum | — | documented |
 | Coinbase Wallet / [coinbase-wallet-smart-recovery](#wallet-coinbase-wallet-smart-recovery) | web / smart-recovery-signer | base, ethereum | — | documented |
-| Coinbase Wallet / [coinbase-wallet-social-login](#wallet-coinbase-wallet-social-login) | web / cdp-social-login | bitcoin, ethereum, solana | — | documented |
+| Coinbase Wallet / [coinbase-wallet-social-login](#wallet-coinbase-wallet-social-login) | mobile-app / cdp-social-login | bitcoin, ethereum, solana | — | documented |
 | Coinomi / [coinomi](#wallet-coinomi) | android / mnemonic-imported | multi-chain | [bip39](#scheme-bip39) | documented |
 | COLDCARD / [coldcard](#wallet-coldcard) | hardware / mnemonic-generated | bitcoin | [bip39](#scheme-bip39) | documented |
 | Cosmostation / [cosmostation](#wallet-cosmostation) | web / mnemonic-generated | cosmos | [bip39](#scheme-bip39) | documented |
@@ -113,6 +113,7 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | OKX Wallet / [okx-wallet-mnemonic-import](#wallet-okx-wallet-mnemonic-import) | android / mnemonic-imported | multi-chain | — | documented |
 | OKX Wallet / [okx-wallet-mpc](#wallet-okx-wallet-mpc) | android / mpc-existing-wallet | multi-chain | — | documented |
 | OKX Wallet / [okx-wallet-private-key](#wallet-okx-wallet-private-key) | android / private-key-imported | multi-chain | — | documented |
+| OKX Wallet / [okx-wallet-social-login](#wallet-okx-wallet-social-login) | mobile-app / social-login | multi-chain | — | documented |
 | OneKey Pro / [onekey](#wallet-onekey) | hardware / pro-mnemonic-generated | multi-chain | — | documented |
 | OpenMask / [openmask](#wallet-openmask) | web / ton-native-generated | ton | [ton-native](#scheme-ton-native) | documented |
 | Passport / [passport](#wallet-passport) | hardware / mnemonic-generated | bitcoin | — | documented |
@@ -191,7 +192,7 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - kusama: [network-guide-kusama](#wallet-network-guide-kusama), [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
 - liquid: [blockstream-jade](#wallet-blockstream-jade)
 - monero: [cake-wallet-monero](#wallet-cake-wallet-monero), [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39), [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy), [exodus-monero-export](#wallet-exodus-monero-export), [feather](#wallet-feather), [feather-legacy-import](#wallet-feather-legacy-import), [monero-cli-polyseed](#wallet-monero-cli-polyseed), [monero-gui](#wallet-monero-gui), [monero-gui-cli](#wallet-monero-gui-cli), [mymonero](#wallet-mymonero), [mymonero-generated](#wallet-mymonero-generated), [network-guide-monero](#wallet-network-guide-monero)
-- multi-chain: [atomic-wallet](#wallet-atomic-wallet), [backpack](#wallet-backpack), [backpack-import](#wallet-backpack-import), [backpack-private-key](#wallet-backpack-private-key), [bitget-wallet](#wallet-bitget-wallet), [bitget-wallet-cloud-backup](#wallet-bitget-wallet-cloud-backup), [bitget-wallet-mpc](#wallet-bitget-wallet-mpc), [coinbase-wallet-cloud-backup](#wallet-coinbase-wallet-cloud-backup), [coinomi](#wallet-coinomi), [ellipal](#wallet-ellipal), [ellipal-import](#wallet-ellipal-import), [exodus](#wallet-exodus), [exodus-passkey](#wallet-exodus-passkey), [guarda](#wallet-guarda), [guarda-mnemonic-import](#wallet-guarda-mnemonic-import), [keystone](#wallet-keystone), [keystone-mnemonic-import](#wallet-keystone-mnemonic-import), [keystone-shamir](#wallet-keystone-shamir), [keystone-shamir-import](#wallet-keystone-shamir-import), [ledger](#wallet-ledger), [okx-wallet](#wallet-okx-wallet), [okx-wallet-cloud-backup](#wallet-okx-wallet-cloud-backup), [okx-wallet-mnemonic-import](#wallet-okx-wallet-mnemonic-import), [okx-wallet-mpc](#wallet-okx-wallet-mpc), [okx-wallet-private-key](#wallet-okx-wallet-private-key), [onekey](#wallet-onekey), [tangem-seed](#wallet-tangem-seed), [tangem-seed-import](#wallet-tangem-seed-import), [tangem-seedless](#wallet-tangem-seedless), [tokenpocket](#wallet-tokenpocket), [tokenpocket-import](#wallet-tokenpocket-import), [tokenpocket-private-key](#wallet-tokenpocket-private-key), [trezor-model-t](#wallet-trezor-model-t), [trezor-model-t-multi-share](#wallet-trezor-model-t-multi-share), [trezor-safe-3](#wallet-trezor-safe-3), [trezor-safe-3-multi-share](#wallet-trezor-safe-3-multi-share), [trezor-safe-5](#wallet-trezor-safe-5), [trezor-safe-5-multi-share](#wallet-trezor-safe-5-multi-share), [trezor-safe-7](#wallet-trezor-safe-7), [trezor-safe-7-multi-share](#wallet-trezor-safe-7-multi-share), [trust-wallet](#wallet-trust-wallet)
+- multi-chain: [atomic-wallet](#wallet-atomic-wallet), [backpack](#wallet-backpack), [backpack-import](#wallet-backpack-import), [backpack-private-key](#wallet-backpack-private-key), [bitget-wallet](#wallet-bitget-wallet), [bitget-wallet-cloud-backup](#wallet-bitget-wallet-cloud-backup), [bitget-wallet-mpc](#wallet-bitget-wallet-mpc), [coinbase-wallet-cloud-backup](#wallet-coinbase-wallet-cloud-backup), [coinomi](#wallet-coinomi), [ellipal](#wallet-ellipal), [ellipal-import](#wallet-ellipal-import), [exodus](#wallet-exodus), [exodus-passkey](#wallet-exodus-passkey), [guarda](#wallet-guarda), [guarda-mnemonic-import](#wallet-guarda-mnemonic-import), [keystone](#wallet-keystone), [keystone-mnemonic-import](#wallet-keystone-mnemonic-import), [keystone-shamir](#wallet-keystone-shamir), [keystone-shamir-import](#wallet-keystone-shamir-import), [ledger](#wallet-ledger), [okx-wallet](#wallet-okx-wallet), [okx-wallet-cloud-backup](#wallet-okx-wallet-cloud-backup), [okx-wallet-mnemonic-import](#wallet-okx-wallet-mnemonic-import), [okx-wallet-mpc](#wallet-okx-wallet-mpc), [okx-wallet-private-key](#wallet-okx-wallet-private-key), [okx-wallet-social-login](#wallet-okx-wallet-social-login), [onekey](#wallet-onekey), [tangem-seed](#wallet-tangem-seed), [tangem-seed-import](#wallet-tangem-seed-import), [tangem-seedless](#wallet-tangem-seedless), [tokenpocket](#wallet-tokenpocket), [tokenpocket-import](#wallet-tokenpocket-import), [tokenpocket-private-key](#wallet-tokenpocket-private-key), [trezor-model-t](#wallet-trezor-model-t), [trezor-model-t-multi-share](#wallet-trezor-model-t-multi-share), [trezor-safe-3](#wallet-trezor-safe-3), [trezor-safe-3-multi-share](#wallet-trezor-safe-3-multi-share), [trezor-safe-5](#wallet-trezor-safe-5), [trezor-safe-5-multi-share](#wallet-trezor-safe-5-multi-share), [trezor-safe-7](#wallet-trezor-safe-7), [trezor-safe-7-multi-share](#wallet-trezor-safe-7-multi-share), [trust-wallet](#wallet-trust-wallet)
 - polkadot: [network-guide-polkadot](#wallet-network-guide-polkadot), [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
 - polygon: [network-guide-polygon](#wallet-network-guide-polygon)
 - sia: [network-guide-sia](#wallet-network-guide-sia), [sia-ui](#wallet-sia-ui), [sia-ui-29](#wallet-sia-ui-29), [sia-walletd](#wallet-sia-walletd), [siad](#wallet-siad), [siad-29](#wallet-siad-29)
@@ -656,11 +657,11 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Verified on: 2026-09-29
 - Historical: false
 - Evidence: [wallet-coinbase-wallet](../catalog/evidence/wallet-coinbase-wallet.json)
-- Evidence claim: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed. The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets. The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode.
+- Evidence claim: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed. The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets. The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode. Mnemonic import and CDP email/social modes are described in the Coinbase Wallet app; only smart wallet is explicitly assigned web access here.
 - Aliases: —
 - Scheme: —
 - Generates mnemonic / import only: false / true
-- Limitations: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Limitations: The cited table places this mode in the Coinbase Wallet app; it does not establish web availability or bind this observation to a particular mobile OS/version. The mobile-app label scopes app evidence, not tested compatibility across devices.; The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
 - Profile guidance: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-coinbase-wallet-cloud-backup"></a>
@@ -694,7 +695,7 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Verified on: 2026-09-29
 - Historical: false
 - Evidence: [wallet-coinbase-wallet](../catalog/evidence/wallet-coinbase-wallet.json)
-- Evidence claim: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed. The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets. The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode.
+- Evidence claim: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed. The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets. The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode. Mnemonic import and CDP email/social modes are described in the Coinbase Wallet app; only smart wallet is explicitly assigned web access here.
 - Aliases: —
 - Scheme: —
 - Generates mnemonic / import only: false / false
@@ -732,11 +733,11 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Verified on: 2026-09-29
 - Historical: false
 - Evidence: [wallet-coinbase-wallet](../catalog/evidence/wallet-coinbase-wallet.json)
-- Evidence claim: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed. The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets. The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode.
+- Evidence claim: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed. The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets. The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode. Mnemonic import and CDP email/social modes are described in the Coinbase Wallet app; only smart wallet is explicitly assigned web access here.
 - Aliases: —
 - Scheme: —
 - Generates mnemonic / import only: false / false
-- Limitations: The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Limitations: The cited table places this mode in the Coinbase Wallet app; it does not establish web availability or bind this observation to a particular mobile OS/version. The mobile-app label scopes app evidence, not tested compatibility across devices.; The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
 - Profile guidance: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-coinomi"></a>
@@ -1052,7 +1053,7 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Verified on: 2026-09-29
 - Historical: false
 - Evidence: [wallet-exodus](../catalog/evidence/wallet-exodus.json)
-- Evidence claim: Exodus documents 12-word generation using the BIP39 list and separate Desktop backup steps; the global phrase is distinct from its Monero export. The secret-key guide documents passkey backup and says Web3 Wallet lacks that feature. This backup mode is distinct from phrase generation; exact mobile version and recovery dependencies remain unverified.
+- Evidence claim: Exodus documents 12-word generation using the BIP39 list and separate Desktop backup steps; the global phrase is distinct from its Monero export. The Mobile section recommends a separate passkey backup. The Web3 exception concerns screenshot and screen-recording protection, not passkey backup availability. This source does not establish Web3 passkey support or its absence; exact mobile version and recovery dependencies remain unverified.
 - Aliases: —
 - Scheme: [bip39](#scheme-bip39)
 - Generates mnemonic / import only: true / false
@@ -1090,11 +1091,11 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Verified on: 2026-09-29
 - Historical: false
 - Evidence: [wallet-exodus](../catalog/evidence/wallet-exodus.json)
-- Evidence claim: Exodus documents 12-word generation using the BIP39 list and separate Desktop backup steps; the global phrase is distinct from its Monero export. The secret-key guide documents passkey backup and says Web3 Wallet lacks that feature. This backup mode is distinct from phrase generation; exact mobile version and recovery dependencies remain unverified.
+- Evidence claim: Exodus documents 12-word generation using the BIP39 list and separate Desktop backup steps; the global phrase is distinct from its Monero export. The Mobile section recommends a separate passkey backup. The Web3 exception concerns screenshot and screen-recording protection, not passkey backup availability. This source does not establish Web3 passkey support or its absence; exact mobile version and recovery dependencies remain unverified.
 - Aliases: —
 - Scheme: —
 - Generates mnemonic / import only: false / false
-- Limitations: The secret-key guide documents passkey backup and says Web3 Wallet lacks that feature. This backup mode is distinct from phrase generation; exact mobile version and recovery dependencies remain unverified.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Limitations: The Mobile section recommends a separate passkey backup. The Web3 exception concerns screenshot and screen-recording protection, not passkey backup availability. This source does not establish Web3 passkey support or its absence; exact mobile version and recovery dependencies remain unverified.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
 - Profile guidance: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-feather"></a>
@@ -2139,7 +2140,7 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Verified on: 2026-09-29
 - Historical: false
 - Evidence: [wallet-okx-wallet](../catalog/evidence/wallet-okx-wallet.json)
-- Evidence claim: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic.
+- Evidence claim: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic. The app guide describes wallet creation on first sign-in with Google, Apple or email without manual seed phrase backup. It does not establish the presence or absence of an underlying mnemonic, its scheme, exact mobile OS version or recovery dependencies.
 - Aliases: —
 - Scheme: —
 - Generates mnemonic / import only: true / false
@@ -2158,7 +2159,7 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Verified on: 2026-09-29
 - Historical: false
 - Evidence: [wallet-okx-wallet](../catalog/evidence/wallet-okx-wallet.json)
-- Evidence claim: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic.
+- Evidence claim: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic. The app guide describes wallet creation on first sign-in with Google, Apple or email without manual seed phrase backup. It does not establish the presence or absence of an underlying mnemonic, its scheme, exact mobile OS version or recovery dependencies.
 - Aliases: —
 - Scheme: —
 - Generates mnemonic / import only: false / false
@@ -2177,7 +2178,7 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Verified on: 2026-09-29
 - Historical: false
 - Evidence: [wallet-okx-wallet](../catalog/evidence/wallet-okx-wallet.json)
-- Evidence claim: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic.
+- Evidence claim: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic. The app guide describes wallet creation on first sign-in with Google, Apple or email without manual seed phrase backup. It does not establish the presence or absence of an underlying mnemonic, its scheme, exact mobile OS version or recovery dependencies.
 - Aliases: —
 - Scheme: —
 - Generates mnemonic / import only: false / true
@@ -2215,11 +2216,30 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Verified on: 2026-09-29
 - Historical: false
 - Evidence: [wallet-okx-wallet](../catalog/evidence/wallet-okx-wallet.json)
-- Evidence claim: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic.
+- Evidence claim: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic. The app guide describes wallet creation on first sign-in with Google, Apple or email without manual seed phrase backup. It does not establish the presence or absence of an underlying mnemonic, its scheme, exact mobile OS version or recovery dependencies.
 - Aliases: —
 - Scheme: —
 - Generates mnemonic / import only: false / true
 - Limitations: App import includes private keys, separate from phrase wallets. A private-key backup is not a word table.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Profile guidance: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-okx-wallet-social-login"></a>
+
+### OKX Wallet — social-login — okx-wallet-social-login
+
+- Source record: [okx-wallet-social-login](../catalog/wallets/okx-wallet-social-login.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): version-unresolved-doc-2026-09-29-b06df9a2d93a / version-unresolved-doc-2026-09-29-b06df9a2d93a
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [wallet-okx-wallet](../catalog/evidence/wallet-okx-wallet.json)
+- Evidence claim: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic. The app guide describes wallet creation on first sign-in with Google, Apple or email without manual seed phrase backup. It does not establish the presence or absence of an underlying mnemonic, its scheme, exact mobile OS version or recovery dependencies.
+- Aliases: —
+- Scheme: —
+- Generates mnemonic / import only: false / false
+- Limitations: The app guide describes wallet creation on first sign-in with Google, Apple or email without manual seed phrase backup. It does not establish the presence or absence of an underlying mnemonic, its scheme, exact mobile OS version or recovery dependencies.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
 - Profile guidance: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-onekey"></a>
@@ -5880,7 +5900,7 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-mymonero — mymonero | terminal | documented | [mymonero](../catalog/wallets/mymonero.json) |
 | wallet-mytonwallet — mytonwallet | terminal | documented | [mytonwallet](../catalog/wallets/mytonwallet.json) |
 | wallet-nami — nami | terminal | documented | [nami](../catalog/wallets/nami.json) |
-| wallet-okx-wallet — okx wallet | terminal | documented | [okx-wallet](../catalog/wallets/okx-wallet.json), [okx-wallet-cloud-backup](../catalog/wallets/okx-wallet-cloud-backup.json), [okx-wallet-mnemonic-import](../catalog/wallets/okx-wallet-mnemonic-import.json), [okx-wallet-mpc](../catalog/wallets/okx-wallet-mpc.json), [okx-wallet-private-key](../catalog/wallets/okx-wallet-private-key.json) |
+| wallet-okx-wallet — okx wallet | terminal | documented | [okx-wallet](../catalog/wallets/okx-wallet.json), [okx-wallet-cloud-backup](../catalog/wallets/okx-wallet-cloud-backup.json), [okx-wallet-mnemonic-import](../catalog/wallets/okx-wallet-mnemonic-import.json), [okx-wallet-mpc](../catalog/wallets/okx-wallet-mpc.json), [okx-wallet-private-key](../catalog/wallets/okx-wallet-private-key.json), [okx-wallet-social-login](../catalog/wallets/okx-wallet-social-login.json) |
 | wallet-onekey — onekey | terminal | documented | [onekey](../catalog/wallets/onekey.json) |
 | wallet-openmask — openmask | terminal | documented | [openmask](../catalog/wallets/openmask.json) |
 | wallet-passport — passport | terminal | documented | [passport](../catalog/wallets/passport.json), [passport-microsd](../catalog/wallets/passport-microsd.json) |

@@ -1,25 +1,25 @@
 {
   "schema_version": 1,
-  "id": "exodus-passkey",
+  "id": "okx-wallet-social-login",
   "display_name": {
-    "en": "Exodus — passkey-backup",
-    "ru": "Exodus — passkey-backup"
+    "en": "OKX Wallet — social-login",
+    "ru": "OKX Wallet — social-login"
   },
   "status": "documented",
   "historical": false,
   "evidence_ids": [
-    "wallet-exodus"
+    "wallet-okx-wallet"
   ],
   "verified_on": "2026-09-29",
   "version_interval": {
-    "min": "version-unresolved-doc-2026-09-29-069661f51ab1",
-    "max": "version-unresolved-doc-2026-09-29-069661f51ab1"
+    "min": "version-unresolved-doc-2026-09-29-b06df9a2d93a",
+    "max": "version-unresolved-doc-2026-09-29-b06df9a2d93a"
   },
-  "product_id": "exodus",
-  "product_name": "Exodus",
+  "product_id": "okx-wallet",
+  "product_name": "OKX Wallet",
   "aliases": [],
-  "platform": "ios",
-  "mode_id": "passkey-backup",
+  "platform": "mobile-app",
+  "mode_id": "social-login",
   "network_ids": [
     "multi-chain"
   ],
@@ -27,7 +27,7 @@
   "generates_mnemonic": false,
   "import_only": false,
   "limitations": [
-    "The Mobile section recommends a separate passkey backup. The Web3 exception concerns screenshot and screen-recording protection, not passkey backup availability. This source does not establish Web3 passkey support or its absence; exact mobile version and recovery dependencies remain unverified.",
+    "The app guide describes wallet creation on first sign-in with Google, Apple or email without manual seed phrase backup. It does not establish the presence or absence of an underlying mnemonic, its scheme, exact mobile OS version or recovery dependencies.",
     "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
   ],
   "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."

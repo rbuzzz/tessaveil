@@ -48,6 +48,12 @@ def _versions_overlap(left: Mapping, right: Mapping) -> bool:
     return True  # Incomparable or open bounds cannot establish disjointness.
 
 
+def _platforms_overlap(left: str, right: str) -> bool:
+    if left == right or "cross-platform" in (left, right):
+        return True
+    return "mobile-app" in (left, right) and {left, right} <= {"mobile-app", "ios", "android"}
+
+
 def _schema_supported(schema: Any) -> bool:
     if not isinstance(schema, Mapping) or any(key not in SUPPORTED_SCHEMA_KEYS for key in schema):
         return False
@@ -290,7 +296,7 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
             b = right.data
             if a["mode_id"] != b["mode_id"]:
                 continue
-            if a["platform"] != b["platform"] and "cross-platform" not in (a["platform"], b["platform"]):
+            if not _platforms_overlap(a["platform"], b["platform"]):
                 continue
             if not _versions_overlap(a["version_interval"], b["version_interval"]):
                 continue

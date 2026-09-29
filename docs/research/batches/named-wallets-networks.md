@@ -7,12 +7,22 @@ already researched model-specific Task12 profiles. This completes terminal
 research coverage, not wallet recovery support. New records are documented
 and non-selectable. Earlier verified TON profiles are unchanged.
 
+The 163/163 terminal result is current-manifest mechanics only and cannot close Task16.
+The generic Cake requirement predates Task15 and only references the existing
+`cake-wallet-monero` profile; other earlier Cake profiles likewise are not a
+complete current-format inventory. Task16 still requires official research of
+every current Cake network/mnemonic mode, new evidence or explicit blockers,
+and its independent completeness audit. Task15 does not change that scope.
+
 ## Identity and evidence boundaries
 
 Identity is normalized product ID + platform + overlapping version interval
 + concrete mode ID. NFKC, case folding, hyphen/space normalization and collapsed
 whitespace apply to identity/alias comparisons. Different simultaneous modes
-are allowed. Cross-platform overlaps every concrete platform. Closed numeric
+are allowed. Cross-platform overlaps every concrete platform.
+Mobile-app is an app-scoped observation without an exact mobile OS binding;
+it overlaps iOS, Android and cross-platform for conflict detection, not web or
+desktop. It does not claim tested support for both mobile systems. Closed numeric
 intervals compare component-wise (1.0 equals 1.0.0); touching endpoints overlap.
 Open or incomparable intervals fail closed. Opaque singleton commits/snapshot
 IDs are evidence observations, not chronological release ranges; distinct pins
@@ -45,9 +55,16 @@ TON, Cardano, Algorand, Monero, Zano, Sia and Chia distinctions are preserved.
 - Coinbase's current table gives mnemonic **import**, smart passkey and CDP
   social-login wallets separately. The optional smart recovery phrase adds an
   on-chain signer and has per-chain setup dependencies; it is not EOA recovery.
+  The mnemonic and CDP routes are app-scoped; the smart-wallet web route must
+  not be transferred to them. Exact mobile OS/version remains unresolved.
+- Exodus recommends passkey backup in its Mobile section. Its Web3 exception
+  concerns screenshot/screen-recording protection, not passkey availability;
+  neither Web3 passkey support nor its absence is established by that sentence.
 - OKX stopped new MPC creation on 2025-05-23 and extension service on 2025-04-07.
   Existing app MPC recovery, phrase backup, private-key import and cloud backup
   are distinct. The MPC record is historical rather than a promise of creation.
+  A separate social-login mode creates a wallet on Google/Apple/email sign-in
+  without manual seed backup; this is not proof that no underlying mnemonic exists.
 - Bitget's guide separates 12/24-word creation from email/password MPC and
   cloud backup of that mode. SWIFT is Trust Wallet's passkey smart wallet.
 - Tangem's FAQ simultaneously says 12/24-word creation exists and elsewhere
@@ -133,9 +150,9 @@ a research scope, not a tested recovery compatibility statement.
 | [metamask-social-login](../../../catalog/wallets/metamask-social-login.json) | MetaMask | web | social-login-srp | true / false | unresolved / not mnemonic |
 | [metamask-private-key](../../../catalog/wallets/metamask-private-key.json) | MetaMask | web | private-key-imported | false / true | unresolved / not mnemonic |
 | [metamask-passkey-unlock](../../../catalog/wallets/metamask-passkey-unlock.json) | MetaMask | web | passkey-local-unlock | false / false | unresolved / not mnemonic |
-| [coinbase-wallet](../../../catalog/wallets/coinbase-wallet.json) | Coinbase Wallet | web | mnemonic-imported | false / true | unresolved / not mnemonic |
+| [coinbase-wallet](../../../catalog/wallets/coinbase-wallet.json) | Coinbase Wallet | mobile-app | mnemonic-imported | false / true | unresolved / not mnemonic |
 | [coinbase-wallet-passkey](../../../catalog/wallets/coinbase-wallet-passkey.json) | Coinbase Wallet | web | smart-wallet-passkey | false / false | unresolved / not mnemonic |
-| [coinbase-wallet-social-login](../../../catalog/wallets/coinbase-wallet-social-login.json) | Coinbase Wallet | web | cdp-social-login | false / false | unresolved / not mnemonic |
+| [coinbase-wallet-social-login](../../../catalog/wallets/coinbase-wallet-social-login.json) | Coinbase Wallet | mobile-app | cdp-social-login | false / false | unresolved / not mnemonic |
 | [coinbase-wallet-smart-recovery](../../../catalog/wallets/coinbase-wallet-smart-recovery.json) | Coinbase Wallet | web | smart-recovery-signer | true / false | unresolved / not mnemonic |
 | [coinbase-wallet-cloud-backup](../../../catalog/wallets/coinbase-wallet-cloud-backup.json) | Coinbase Wallet | ios | legacy-cloud-backup | false / false | unresolved / not mnemonic |
 | [exodus](../../../catalog/wallets/exodus.json) | Exodus | windows | global-mnemonic-generated | true / false | bip39 |
@@ -144,6 +161,7 @@ a research scope, not a tested recovery compatibility statement.
 | [onekey](../../../catalog/wallets/onekey.json) | OneKey Pro | hardware | pro-mnemonic-generated | true / false | unresolved / not mnemonic |
 | [ledger](../../../catalog/wallets/ledger.json) | Ledger | hardware | device-bip39-generated | true / false | bip39 |
 | [okx-wallet](../../../catalog/wallets/okx-wallet.json) | OKX Wallet | android | mnemonic-generated | true / false | unresolved / not mnemonic |
+| [okx-wallet-social-login](../../../catalog/wallets/okx-wallet-social-login.json) | OKX Wallet | mobile-app | social-login | false / false | unresolved / not mnemonic |
 | [okx-wallet-mnemonic-import](../../../catalog/wallets/okx-wallet-mnemonic-import.json) | OKX Wallet | android | mnemonic-imported | false / true | unresolved / not mnemonic |
 | [okx-wallet-private-key](../../../catalog/wallets/okx-wallet-private-key.json) | OKX Wallet | android | private-key-imported | false / true | unresolved / not mnemonic |
 | [okx-wallet-cloud-backup](../../../catalog/wallets/okx-wallet-cloud-backup.json) | OKX Wallet | android | mnemonic-cloud-backup | false / false | unresolved / not mnemonic |

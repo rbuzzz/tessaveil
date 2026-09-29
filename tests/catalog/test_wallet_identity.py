@@ -134,6 +134,58 @@ class WalletIdentityTests(unittest.TestCase):
             self.assertEqual(record.data["status"], "documented")
         self.assertTrue(all(r.data["status"] != "verified" for r in profiles))
 
+    def test_mobile_app_scope_overlaps_mobile_not_web(self):
+        for platform, overlaps in (("ios", True), ("android", True), ("cross-platform", True), ("web", False)):
+            with self.subTest(platform=platform):
+                catalog = self.pair(platform=platform)
+                catalog.wallets[0].data["platform"] = "mobile-app"
+                codes = self.codes(catalog)
+                self.assertNotIn("schema", codes)
+                self.assertEqual("wallet-identity-overlap" in codes, overlaps)
+
+    def test_okx_social_login_has_own_evidenced_nonselectable_mode(self):
+        catalog = load_catalog(ROOT)
+        wallets = {r.id: r.data for r in catalog.wallets}
+        self.assertIn("okx-wallet-social-login", set(wallets))
+        data = wallets["okx-wallet-social-login"]
+        self.assertEqual(data["mode_id"], "social-login")
+        self.assertEqual(data["status"], "documented")
+        self.assertFalse(data["generates_mnemonic"])
+        self.assertFalse(data["import_only"])
+        self.assertIsNone(data["scheme_id"])
+        text = " ".join(data["limitations"])
+        for term in ("Google", "Apple", "email", "manual", "underlying mnemonic"):
+            self.assertIn(term, text)
+        evidence = next(r.data for r in catalog.evidence if r.id == "wallet-okx-wallet")
+        self.assertIn(data["id"], evidence["record_ids"])
+        requirement = next(r.data for r in catalog.required_sets[0].requirements if r.id == "wallet-okx-wallet")
+        self.assertIn(data["id"], requirement["record_ids"])
+
+    def test_coinbase_app_modes_do_not_inherit_smart_wallet_web_scope(self):
+        wallets = {r.id: r.data for r in load_catalog(ROOT).wallets}
+        for identifier in ("coinbase-wallet", "coinbase-wallet-social-login"):
+            self.assertEqual(wallets[identifier]["platform"], "mobile-app")
+            self.assertIn("not establish web", " ".join(wallets[identifier]["limitations"]))
+        for identifier in ("coinbase-wallet-passkey", "coinbase-wallet-smart-recovery"):
+            self.assertEqual(wallets[identifier]["platform"], "web")
+
+    def test_exodus_screen_protection_is_not_passkey_availability(self):
+        catalog = load_catalog(ROOT)
+        wallet = next(r.data for r in catalog.wallets if r.id == "exodus-passkey")
+        evidence = next(r.data for r in catalog.evidence if r.id == "wallet-exodus")
+        for text in (" ".join(wallet["limitations"]), evidence["claim"]):
+            self.assertNotIn("Web3 Wallet lacks that feature", text)
+            self.assertIn("screen-recording", text)
+            self.assertIn("not passkey", text)
+
+    def test_current_manifest_terminal_does_not_close_task16_cake_inventory(self):
+        # This tests the Task15 boundary, NOT completeness of current Cake modes.
+        note = (ROOT / "docs/research/batches/named-wallets-networks.md").read_text(encoding="utf-8")
+        self.assertIn("163/163", note)
+        self.assertIn("current-manifest mechanics only", note)
+        self.assertIn("cannot close Task16", note)
+        self.assertIn("generic Cake requirement predates Task15", note)
+
 
 if __name__ == "__main__":
     unittest.main()

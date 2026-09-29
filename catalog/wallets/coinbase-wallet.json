@@ -18,7 +18,7 @@
   "product_id": "coinbase-wallet",
   "product_name": "Coinbase Wallet",
   "aliases": [],
-  "platform": "web",
+  "platform": "mobile-app",
   "mode_id": "mnemonic-imported",
   "network_ids": [
     "ethereum",
@@ -29,6 +29,7 @@
   "generates_mnemonic": false,
   "import_only": true,
   "limitations": [
+    "The cited table places this mode in the Coinbase Wallet app; it does not establish web availability or bind this observation to a particular mobile OS/version. The mobile-app label scopes app evidence, not tested compatibility across devices.",
     "The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed.",
     "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
   ],

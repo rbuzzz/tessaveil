@@ -1203,7 +1203,8 @@
         "okx-wallet-cloud-backup",
         "okx-wallet-mnemonic-import",
         "okx-wallet-mpc",
-        "okx-wallet-private-key"
+        "okx-wallet-private-key",
+        "okx-wallet-social-login"
       ],
       "research_state": "terminal",
       "status": "documented",

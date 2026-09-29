@@ -119,6 +119,7 @@
         "linux",
         "android",
         "ios",
+        "mobile-app",
         "web",
         "hardware",
         "cross-platform"
