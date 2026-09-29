@@ -1,0 +1,10 @@
+{
+  "filename": "synthetic-vault-v0.bin",
+  "status": "BLOCKED",
+  "sha256": null,
+  "rust_execution_verified": false,
+  "independent_crypto_verified": false,
+  "blocker": "Rust/Cargo absent from PATH and standard Cargo locations; no executed Rust fixture generator or independent cryptographic verification for this envelope exists.",
+  "source": "core/examples/fixture.rs",
+  "synthetic_only": true
+}
