@@ -41,7 +41,8 @@
   "sha256": "eaa6bce7dd92f4d6dd74f224264e0ef4ad21095d68ec77616b26ceb599baf4f7",
   "order_rule": "EnglishDictionary array order, zero-based; UTF-8 LF with final newline.",
   "position_rules": [
-    "All positions use full list; unique3-character English prefixes; not Monero triplet semantics."
+    "Shared 1626-entry vocabulary with unique 3-character English prefixes; eligible indices depend on position and encoded payload length, not Monero triplet semantics.",
+    "38-byte length envelope: a 28-word encoding requires final zero-based index 253..1625; a 29-word encoding requires final index 0..39. Boundary indices 253 and 39 additionally depend on lower positions. Checksum validity is a separate constraint."
   ],
   "duplicate_analysis": {
     "normalized_unique_count": 1626,

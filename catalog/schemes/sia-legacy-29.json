@@ -24,7 +24,10 @@
     29
   ],
   "position_rules": [
-    "32-byte seed plus6-byte BLAKE2b checksum becomes28 or29 words under the SAME variable-length codec."
+    "32-byte seed plus 6-byte BLAKE2b checksum becomes 28 or 29 words under the SAME variable-length codec.",
+    "positions 1..28: each can use zero-based dictionary indices 0..1625 within the length envelope, subject to the whole-payload bound.",
+    "position 29: zero-based dictionary indices 0..39 (necessary 38-byte length envelope only).",
+    "At final index 39, lower positions must stay below the 38-byte maximum; some combinations decode to 39 bytes. Final index 40 always exceeds 38 bytes. The BLAKE2b checksum is a separate constraint; these ranges do not assert checksum-valid candidate eligibility."
   ],
   "external_secret": {
     "kind": "none",

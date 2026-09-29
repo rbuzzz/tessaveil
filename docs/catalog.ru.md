@@ -1820,12 +1820,12 @@
 - Дата проверки: 2026-09-29
 - Историческая запись: true
 - Доказательства: [sia-codec](../catalog/evidence/sia-codec.json), [sia-siad-dependency](../catalog/evidence/sia-siad-dependency.json), [sia-siad-seed](../catalog/evidence/sia-siad-seed.json)
-- Подтверждаемое утверждение: Legacy codec is a length-preserving bijective base256/base1626 conversion with little-endian digit order, not Monero three-word chunks; per-word NFC and English prefix matching; FromString splits literal spaces.
+- Подтверждаемое утверждение: Legacy codec is a length-preserving bijective base256/base1626 conversion with little-endian digit order, not Monero three-word chunks; per-word NFC and English prefix matching; FromString splits literal spaces. Mathematical consequence for 38 decoded bytes\: final zero-based index is 253..1625 for 28 words or 0..39 for 29 words. Boundary indices 253 and 39 also constrain lower positions; this is a length envelope, not checksum validity. Derivation and synthetic counterexamples are in the batch note.
 - Подтверждаемое утверждение: siad pins gitlab.com/NebulousLabs/entropy-mnemonics pseudo-version7532f67e3500, resolved through official GitLab to7532f67e35008b0f36bbebb20d5a6ee8f14a22f5.
 - Подтверждаемое утверждение: SeedToString appends first6 bytes of crypto.HashObject\(seed\) to32-byte seed then entropy-mnemonics conversion. StringToSeed requires28/29 English words, exact formatting/lowercase and38 decoded bytes before checksum. Both lengths are one variable-length codec, not two incompatible algorithms.
 - Словари: [sia-legacy](#dictionary-sia-legacy)
 - Допустимые длины: 28
-- Позиционные правила: 32-byte seed plus6-byte BLAKE2b checksum becomes28 or29 words under the SAME variable-length codec.
+- Позиционные правила: 32-byte seed plus 6-byte BLAKE2b checksum becomes 28 or 29 words under the SAME variable-length codec.; positions 1..27\: each can use zero-based dictionary indices 0..1625 within the length envelope, subject to the whole-payload bound.; position 28\: zero-based dictionary indices 253..1625 \(necessary 38-byte length envelope only\).; At final index 253, lower positions must reach the 38-byte minimum; some combinations still decode to 37 bytes. The BLAKE2b checksum is a separate constraint; these ranges do not assert checksum-valid candidate eligibility.
 - Семантика: Length is output-dependent; not separate generations, not Monero triplets or BIP39. Exact historical release coverage/recovery remains unverified.
 - Внешний секрет / сохраняется: none / false
 - Рекомендация о внешнем секрете: No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil.
@@ -1843,12 +1843,12 @@
 - Дата проверки: 2026-09-29
 - Историческая запись: true
 - Доказательства: [sia-codec](../catalog/evidence/sia-codec.json), [sia-siad-dependency](../catalog/evidence/sia-siad-dependency.json), [sia-siad-seed](../catalog/evidence/sia-siad-seed.json)
-- Подтверждаемое утверждение: Legacy codec is a length-preserving bijective base256/base1626 conversion with little-endian digit order, not Monero three-word chunks; per-word NFC and English prefix matching; FromString splits literal spaces.
+- Подтверждаемое утверждение: Legacy codec is a length-preserving bijective base256/base1626 conversion with little-endian digit order, not Monero three-word chunks; per-word NFC and English prefix matching; FromString splits literal spaces. Mathematical consequence for 38 decoded bytes\: final zero-based index is 253..1625 for 28 words or 0..39 for 29 words. Boundary indices 253 and 39 also constrain lower positions; this is a length envelope, not checksum validity. Derivation and synthetic counterexamples are in the batch note.
 - Подтверждаемое утверждение: siad pins gitlab.com/NebulousLabs/entropy-mnemonics pseudo-version7532f67e3500, resolved through official GitLab to7532f67e35008b0f36bbebb20d5a6ee8f14a22f5.
 - Подтверждаемое утверждение: SeedToString appends first6 bytes of crypto.HashObject\(seed\) to32-byte seed then entropy-mnemonics conversion. StringToSeed requires28/29 English words, exact formatting/lowercase and38 decoded bytes before checksum. Both lengths are one variable-length codec, not two incompatible algorithms.
 - Словари: [sia-legacy](#dictionary-sia-legacy)
 - Допустимые длины: 29
-- Позиционные правила: 32-byte seed plus6-byte BLAKE2b checksum becomes28 or29 words under the SAME variable-length codec.
+- Позиционные правила: 32-byte seed plus 6-byte BLAKE2b checksum becomes 28 or 29 words under the SAME variable-length codec.; positions 1..28\: each can use zero-based dictionary indices 0..1625 within the length envelope, subject to the whole-payload bound.; position 29\: zero-based dictionary indices 0..39 \(necessary 38-byte length envelope only\).; At final index 39, lower positions must stay below the 38-byte maximum; some combinations decode to 39 bytes. Final index 40 always exceeds 38 bytes. The BLAKE2b checksum is a separate constraint; these ranges do not assert checksum-valid candidate eligibility.
 - Семантика: Length is output-dependent; not separate generations, not Monero triplets or BIP39. Exact historical release coverage/recovery remains unverified.
 - Внешний секрет / сохраняется: none / false
 - Рекомендация о внешнем секрете: No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil.
@@ -3308,7 +3308,7 @@
 - Дата проверки: 2026-09-29
 - Историческая запись: true
 - Доказательства: [sia-codec](../catalog/evidence/sia-codec.json), [sia-codec-vectors](../catalog/evidence/sia-codec-vectors.json), [sia-license](../catalog/evidence/sia-license.json), [sia-list](../catalog/evidence/sia-list.json)
-- Подтверждаемое утверждение: Legacy codec is a length-preserving bijective base256/base1626 conversion with little-endian digit order, not Monero three-word chunks; per-word NFC and English prefix matching; FromString splits literal spaces.
+- Подтверждаемое утверждение: Legacy codec is a length-preserving bijective base256/base1626 conversion with little-endian digit order, not Monero three-word chunks; per-word NFC and English prefix matching; FromString splits literal spaces. Mathematical consequence for 38 decoded bytes\: final zero-based index is 253..1625 for 28 words or 0..39 for 29 words. Boundary indices 253 and 39 also constrain lower positions; this is a length envelope, not checksum validity. Derivation and synthetic counterexamples are in the batch note.
 - Подтверждаемое утверждение: Ten published codec boundary cases project to byte inputs and dictionary indices; \[90,5\] maps to\[0,0\]. These are codec vectors, not28/29-word wallet recovery vectors.
 - Подтверждаемое утверждение: Codex2026-09-29 reviewed MIT root grant \(Copyright2015 Nebulous\) and cumulative Monero2014-2015 BSD-3-Clause english.go terms; full notices retained for list and modified public codec projections. Data-only redistribution allowed, local SignPath OSS compatibility assessed compatible, not Foundation acceptance.
 - Подтверждаемое утверждение: Exact siad go.mod dependency\: 1626 English words, source order, unique3-character prefixes, NFC. Explicit Monero BSD-3-Clause file grant; UTF-8 LF extraction changes representation only.
@@ -3319,7 +3319,7 @@
 - Количество слов: 1626
 - SHA-256: eaa6bce7dd92f4d6dd74f224264e0ef4ad21095d68ec77616b26ceb599baf4f7
 - Порядок слов: EnglishDictionary array order, zero-based; UTF-8 LF with final newline.
-- Позиционные правила: All positions use full list; unique3-character English prefixes; not Monero triplet semantics.
+- Позиционные правила: Shared 1626-entry vocabulary with unique 3-character English prefixes; eligible indices depend on position and encoded payload length, not Monero triplet semantics.; 38-byte length envelope\: a 28-word encoding requires final zero-based index 253..1625; a 29-word encoding requires final index 0..39. Boundary indices 253 and 39 additionally depend on lower positions. Checksum validity is a separate constraint.
 - Ревизия источника: 7532f67e35008b0f36bbebb20d5a6ee8f14a22f5
 - Лицензия: BSD-3-Clause AND MIT
 - Атрибуция: Copyright2014-2015 The Monero Project; Copyright2015 Nebulous. Full terms in THIRD\_PARTY\_NOTICES; modified UTF-8 LF projection.

@@ -139,6 +139,36 @@ value=(value-1626)//1626 until the last index remains. This naturally gives
 28 or29 words for the38-byte payload; the lengths are **not successive format
 versions**. Separate required scheme IDs preserve the two research identities.
 
+The vocabulary does **not** make all 1626 indices eligible at every position.
+For base b and digit count k, define the bijective length offset
+`O(b,k) = sum(b**i for i in 1..k-1) = (b**k-b)/(b-1)`.
+Every 38-byte payload represents an integer in the inclusive interval
+`L = O(256,38)` through `U = L + 256**38 - 1`.
+A k-word sequence represents `O(1626,k) + sum(index[i]*1626**i)`,
+with positions counted from zero in that formula. These are mathematical
+consequences of the pinned codec, not a separate upstream specification.
+
+For a fixed last index d, the lower k-1 indices span
+`[O(1626,k) + d*1626**(k-1), O(1626,k) + (d+1)*1626**(k-1) - 1]`.
+Intersecting this interval with [L,U] gives these necessary final-row ranges:
+
+| Encoding | Final position (one-based) | Zero-based final index |
+| --- | ---: | --- |
+| 28 words | 28 | 253..1625 |
+| 29 words | 29 | 0..39 |
+
+For 28 words at d=253, the lower-position value must be at least
+`L - O(1626,28) - 253*1626**27`; smaller values decode to 37 bytes.
+For 29 words at d=39, that value must be at most
+`U - O(1626,29) - 39*1626**28`; larger values decode to 39 bytes.
+Index252 at position28 cannot reach 38 bytes even with every lower index1625;
+index40 at position29 exceeds 38 bytes even with every lower index0.
+Other positions can individually span the full vocabulary within this length
+envelope, but lower rows are not independent at the boundary.
+These constraints do not establish checksum-valid candidate eligibility:
+the separate six-byte BLAKE2b checksum still constrains the complete payload.
+Schemes remain documented/non-selectable and Tessaveil validates no user phrase.
+
 The English list has1626 unique entries and unique3-character prefixes. The
 dependency normalizes each word to NFC and matches its prefix. siad adds
 stricter lowercase, character, exact-space/length and checksum checks; do not
@@ -217,6 +247,25 @@ independent full Sia12, Sia28/29, Cake Zano or Zano recovery was established;
 those schemes remain non-selectable. Tests never derive addresses/private keys
 or accept user phrases. No runtime wallet implementation is added.
 
+Fix round1 adds six original synthetic length-boundary projections separately
+under sia_length_boundaries, for 41 total cases. All-zero38 bytes and all-ff38
+bytes exercise the exact inclusive endpoints. All-ff37 and all-zero39 exercise
+their immediate integer neighbors; final indices remain253 and39 respectively,
+proving that the final-index range alone is insufficient. The other two cases
+are the maximum lower rows at final252 and minimum lower rows at final40.
+These are arbitrary byte payloads, deliberately **not checksum-valid seeds**.
+Tests explicitly reject checksum eligibility for the two 38-byte endpoints.
+
+The six fixture expectations were independently constructed with JavaScript
+BigInt using the closed-form offsets above: subtract the offset and expand the
+remaining integer as ordinary base1626/base256 digits. Python tests instead
+reconstruct the bijective integer with Horner recurrence and decode using the
+source's iterative subtract-base/divide rule. They also exhaust all1626 final
+indices against the interval intersection and compare the ranges rendered by
+the actual catalogue metadata. This catches off-by-one range changes, payload
+length errors and the original unrestricted-final-row claim without asserting
+that the synthetic fixtures came from upstream public wallet vectors.
+
 Chia projections retain Apache-2.0 (Chia Network2026) and existing Trezor/MIT
 attribution; Apache license text already resides in notices/root LICENSE.
 bip0039 uses the MIT alternative, full Qinxuan Chen2020 notice included.
@@ -227,7 +276,9 @@ binaries, application dependencies or the complete signing application.
 
 Use Python3.14.2 standard-library tests:
 `python -m unittest tests.catalog.test_zano_sia_zcash_chia -v`.
-The six contracts first failed for missing profiles, then passed after records.
+The original six contracts first failed for missing profiles, then passed after
+records. Two regression contracts first failed for missing final-row ranges
+and missing 38-byte fixtures, then passed after the narrow fix (eight total).
 The full non-empty suite runs via `python tools/run_tests.py`.
 Catalogue validation: `python -m tools.catalog.cli validate --root . --allow-incomplete-required`.
 Regenerate both documents with `python -m tools.catalog.cli generate --root .`,
