@@ -6,7 +6,7 @@ guarantee, or Windows release readiness. Removable NTFS/exFAT remain **NO-GO**.
 
 | Filesystem / device class | Result and claim scope | Exact blocker / policy |
 | --- | --- | --- |
-| local NTFS | PASS: complete authenticated old-or-new image at all six injected process boundaries and normal control; only this development environment/API/image size | No power-loss, kernel crash, hardware-unplug, mid-system-call or general atomicity promise; research scope only |
+| local fixed NTFS | PASS: process interruption at named boundaries only; local fixed development volume; Windows version 10.0.26200 x64, build 26200.9457 (25H2); PowerShell 7.6.5, .NET 10.0.11; File.Replace; 4140-byte images; 7/7 matrix rows; evidence 2026-09-29T13:00:49Z | No all-NTFS, removable-media, power-loss, mid-syscall or general atomicity guarantee; research scope only |
 | removable NTFS | unapproved / NO-GO | Zero USB/SD disks and zero removable volumes were visible. No pre-provisioned empty physical media or separately safe NTFS and exFAT test paths were supplied. |
 | removable exFAT | unapproved / NO-GO | Zero USB/SD disks and zero removable volumes were visible. No pre-provisioned empty physical media or separately safe NTFS and exFAT test paths were supplied. |
 | FAT32 | no atomicity promise | no silent in-place update; read-only or Save As to a separately verified target |
