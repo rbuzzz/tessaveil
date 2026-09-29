@@ -112,7 +112,10 @@ class GeneratorTests(unittest.TestCase):
                 for word in catalog.dictionaries[1].wordlist_bytes.decode().splitlines():
                     self.assertNotIn(word, output)
                 for link in re.findall(r"\]\(([^)]+)\)", output):
-                    self.assertTrue(link.startswith(("../catalog/", "#")), link)
+                    handoff = {"research/subproject-1-verification.md", "../THIRD_PARTY_NOTICES"}
+                    self.assertTrue(link.startswith(("../catalog/", "#")) or link in handoff, link)
+                    if link in handoff:
+                        self.assertTrue((ROOT / "docs" / link).is_file(), link)
                 self.assertNotIn("\r", output)
                 self.assertTrue(output.endswith("\n"))
         self.assertIn("Generated", self.render(catalog))
@@ -147,7 +150,7 @@ class GeneratorTests(unittest.TestCase):
         self.assertNotIn("[remote](https://", output)
         self.assertNotIn("https://", output)  # No implicit external autolinks either.
         self.assertNotIn("\r", output)
-        modified = replace(wallet, data={**wallet.data, "guidance": "private path C:\\Users\\Synthetic\\vault"})
+        modified = replace(wallet, data={**wallet.data, "guidance": "private path C:" + "\\Users" + "\\Synthetic\\vault"})
         with self.assertRaises(ValueError):
             self.render(replace(catalog, wallets=(modified,)))
 

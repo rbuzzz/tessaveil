@@ -20971,6 +20971,8 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - License evidence: [zano-license](../catalog/evidence/zano-license.json)
 - Test vectors: —
 
+Research handoff and independent release gate: [verification report](research/subproject-1-verification.md). Bundled-list decisions and preserved license texts: [third-party notices](../THIRD_PARTY_NOTICES).
+
 ## Evidence revisions
 
 - [algorand-algorithm](../catalog/evidence/algorand-algorithm.json): official-source; 189855d43cba5d20e66248693d74332052ccb08e; 2026-09-29

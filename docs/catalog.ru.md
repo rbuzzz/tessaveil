@@ -20971,6 +20971,8 @@
 - Доказательства лицензии: [zano-license](../catalog/evidence/zano-license.json)
 - Тестовые векторы: —
 
+Итоги исследования и отдельный допуск релиза: [отчёт проверки](research/subproject-1-verification.md). Решения по распространяемым словарям и тексты лицензий: [сторонние уведомления](../THIRD_PARTY_NOTICES).
+
 ## Ревизии доказательств
 
 - [algorand-algorithm](../catalog/evidence/algorand-algorithm.json): official-source; 189855d43cba5d20e66248693d74332052ccb08e; 2026-09-29

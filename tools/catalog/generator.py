@@ -303,6 +303,8 @@ def render_catalog(catalog: Catalog, locale: Literal["en", "ru"]) -> str:
         field("License evidence", "Доказательства лицензии", ", ".join(source(evidence[i]) for i in sorted(license_data["decision_evidence"])))
         field("Test vectors", "Тестовые векторы", ", ".join(source(evidence[i]) for i in sorted(d["test_vector_ids"])) or "—")
         lines.append("")
+    lines.extend([tr("Research handoff and independent release gate: [verification report](research/subproject-1-verification.md). Bundled-list decisions and preserved license texts: [third-party notices](../THIRD_PARTY_NOTICES).",
+                     "Итоги исследования и отдельный допуск релиза: [отчёт проверки](research/subproject-1-verification.md). Решения по распространяемым словарям и тексты лицензий: [сторонние уведомления](../THIRD_PARTY_NOTICES)."), ""])
     section("Evidence revisions", "Ревизии доказательств")
     for record in sorted(catalog.evidence, key=lambda r: r.id):
         d = record.data
