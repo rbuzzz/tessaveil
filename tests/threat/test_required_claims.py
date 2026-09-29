@@ -31,6 +31,10 @@ SCENARIOS = {
 # Each independently specified clause is required in the matching language.
 # Keep negations and objects together: a keyword alone cannot pass these checks.
 CLAUSES = {
+    "matrix": (
+        ("UI delays, attempt counters and self-destruction cannot restrict a copied file",),
+        ("Задержки UI, счётчики и самоуничтожение не ограничивают скопированный файл",),
+    ),
     "boundary": (
         ("briefly sees the current word and column", "cannot defeat a compromised OS",
          "does not validate complete phrases", "does not replace a separate cold backup or trusted hardware-wallet process",
@@ -71,9 +75,11 @@ CLAUSES = {
     ),
     "save-contract": (
         ("clear technical header plus authenticated ciphertext", "no plaintext payload", "no rollback detection",
+         "No password attempt limit or self-destruction policy prevents offline guessing of copies.",
          "local NTFS", "removable NTFS", "removable exFAT", "FAT32", "network shares", "cloud-synchronized folders",
          "read-only or Save As to a verified target", "does not prove power-loss durability"),
         ("открытый технический заголовок и аутентифицированный шифротекст", "без открытого содержимого полезной нагрузки",
+         "Ограничение попыток пароля или самоуничтожение не предотвращает офлайн-подбор копий.",
          "обнаружение отката не обещается", "локальный NTFS", "съёмный NTFS", "съёмный exFAT", "FAT32",
          "сетевые ресурсы", "папки облачной синхронизации", "только чтение или Save As на проверенный носитель",
          "не доказывает сохранность при потере питания"),
@@ -138,6 +144,14 @@ def contract_errors(text):
         r"(?:tessaveil|spin) (?:неуязвим|неразличим)",
         r"(?:обновление|рандомизация) (?:строки|таблицы) устраняет риск",
         r"(?:гарантирует безопасное стирание|гарантирует обнаружение отката|атомарно на всех файловых системах)",
+        # Start at a sentence/cell boundary so the real negative statement
+        # "No ... self-destruction policy prevents ..." remains permitted.
+        r"(?:^|[.!?]\s+|\|\s*)(?:password attempt limits? (?:or|and) self-destruction(?: policy)?|"
+        r"(?:ui delays, )?attempt counters(?: and self-destruction)?|self-destruction(?: policy)?) "
+        r"(?:prevents? offline guessing of copies|protects? copied ciphertext from offline guessing|can restrict a copied file)",
+        r"самоуничтожение (?:предотвращает офлайн-подбор копий|ограничивают скопированный файл|"
+        r"защищает скопированный шифротекст от офлайн-подбора)",
+        r"счётчики попыток защищают скопированный шифротекст от офлайн-подбора",
     ):
         if re.search(claim, normalized(text)):
             errors.append(f"overclaim:{claim}")
@@ -194,6 +208,54 @@ class RequiredClaimsTests(unittest.TestCase):
                 self.assertRegex(text, r"\[[^\]]+\]\(THREAT_MODEL\.md(?:#[^)]+)?\)")
                 for clause in README_CLAUSES[index]:
                     self.assertIn(normalized(clause), normalized(text))
+
+    def test_offline_copy_limits_reject_deletion_and_bilingual_inversion(self):
+        text = self.read_model()
+        changes = (
+            ("en:save-contract",
+             "No password attempt limit or self-destruction policy prevents offline guessing of copies.",
+             "Password attempt limit or self-destruction policy prevents offline guessing of copies."),
+            ("ru:save-contract",
+             "Ограничение попыток пароля или самоуничтожение не предотвращает офлайн-подбор копий.",
+             "Ограничение попыток пароля или самоуничтожение предотвращает офлайн-подбор копий."),
+            ("en:matrix",
+             "UI delays, attempt counters and self-destruction cannot restrict a copied file",
+             "UI delays, attempt counters and self-destruction can restrict a copied file"),
+            ("ru:matrix",
+             "Задержки UI, счётчики и самоуничтожение не ограничивают скопированный файл",
+             "Задержки UI, счётчики и самоуничтожение ограничивают скопированный файл"),
+        )
+        inverted = text
+        for anchor, warning, overclaim in changes:
+            inverted = inverted.replace(warning, overclaim)
+            with self.subTest(anchor=anchor):
+                self.assertIn(warning, section(text, anchor))
+                for replacement in ("[limitation omitted]", overclaim):
+                    errors = contract_errors(text.replace(warning, replacement))
+                    self.assertTrue(any(error.startswith(anchor + ":") for error in errors))
+        # The review reproduction changes both languages and both locations.
+        # Assert language-local failures, not just disappearance of a topic token.
+        errors = contract_errors(inverted)
+        for anchor, _, _ in changes:
+            with self.subTest(simultaneous_inversion=anchor):
+                self.assertTrue(any(error.startswith(anchor + ":") for error in errors))
+
+    def test_offline_copy_overclaims_fail_with_original_warnings_intact(self):
+        text = self.read_model()
+        for claim in (
+            "Password attempt limit or self-destruction policy prevents offline guessing of copies.",
+            "Password attempt limits and self-destruction prevent offline guessing of copies.",
+            "UI delays, attempt counters and self-destruction can restrict a copied file.",
+            "Attempt counters protect copied ciphertext from offline guessing.",
+            "Self-destruction protects copied ciphertext from offline guessing.",
+            "Ограничение попыток пароля или самоуничтожение предотвращает офлайн-подбор копий.",
+            "Задержки UI, счётчики и самоуничтожение ограничивают скопированный файл.",
+            "Счётчики попыток защищают скопированный шифротекст от офлайн-подбора.",
+            "Самоуничтожение защищает скопированный шифротекст от офлайн-подбора.",
+        ):
+            with self.subTest(claim=claim):
+                errors = contract_errors(text + "\n" + claim)
+                self.assertTrue(any(error.startswith("overclaim:") for error in errors))
 
 
 if __name__ == "__main__":
