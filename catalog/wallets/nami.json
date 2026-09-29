@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "nami",
+  "display_name": {
+    "en": "Nami — extension24 creation",
+    "ru": "Nami — extension24 creation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cardano-nami-create",
+    "cardano-nami-derive",
+    "cardano-nami-version"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "3.9.6-source-e52e0bdb02eb1ec224db26f48b0192685a30f99e",
+    "max": "3.9.6-source-e52e0bdb02eb1ec224db26f48b0192685a30f99e"
+  },
+  "product_id": "nami",
+  "product_name": "Nami",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "icarus-24-created",
+  "network_ids": [
+    "cardano"
+  ],
+  "scheme_id": "cardano-icarus-24",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Source-only Chrome extension; Icarus-like from_bip39_entropy with empty password. Library lock/artifact binding and wallet-level recovery not reproduced; no claim of current maintenance.",
+    "Non-selectable: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence."
+  ],
+  "guidance": "Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil."
+}

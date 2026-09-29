@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "algorand-defly-create",
+  "source_type": "official-documentation",
+  "claim": "Create a New Account section describes new account and subsequent mnemonic display via backup reminder; import, Ledger and watch paths are separate. Exact word count, dictionary/derivation, app version and platform-specific behavior not in retrieved text. Do not infer25 from Algorand name. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.",
+  "url": "https://defly.gitbook.io/defly-manual/app/add-an-account",
+  "revision": "reviewed-2026-09-29-version-unpublished",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "defly"
+  ]
+}

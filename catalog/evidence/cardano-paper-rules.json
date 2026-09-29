@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "cardano-paper-rules",
+  "source_type": "official-source",
+  "claim": "getScrambledInput separates first18 scrambled certificate words and last9 password words. PBKDF2-HMAC-SHA512 of nine-word suffix with mnemonic salt, 2048 rounds, 32 bytes; rust-cardano-crypto performs unscrambling. This is not a 27-word BIP39 phrase. Nine words are inside27, not an extra user secret. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 02c137b08bf4394f95afeaf6e81a538ff39b15719fe326b8dbf1728c1a04cfd4.",
+  "url": "https://raw.githubusercontent.com/input-output-hk/daedalus/6c57eb94753211f66d3a63f49d031bf746044755/source/renderer/app/utils/crypto.ts",
+  "revision": "6c57eb94753211f66d3a63f49d031bf746044755",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cardano-daedalus-27",
+    "daedalus-paper-27"
+  ]
+}

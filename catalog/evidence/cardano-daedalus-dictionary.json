@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "cardano-daedalus-dictionary",
+  "source_type": "official-source",
+  "claim": "Extracted 2048 literal words match verified bip39-en in exact order; no duplicated file committed. crypto.ts explicitly passes this English list to generation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 6a445ce64e8068dc7f523546e4f7788c0315365ff1561b389eea524629e18386.",
+  "url": "https://raw.githubusercontent.com/input-output-hk/daedalus/6c57eb94753211f66d3a63f49d031bf746044755/source/common/config/crypto/valid-words.en.ts",
+  "revision": "6c57eb94753211f66d3a63f49d031bf746044755",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cardano-daedalus-27",
+    "cardano-icarus-24"
+  ]
+}

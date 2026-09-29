@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "id": "slip39-en",
+  "display_name": {
+    "en": "SLIP-39 — English",
+    "ru": "SLIP-39 — English"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "slip39-list",
+    "slip39-spec",
+    "slip39-license",
+    "slip39-signpath",
+    "slip39-osi-mit",
+    "slip39-rules",
+    "slip39-vectors"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "17fcce14736afe498871d3018e4fa9330443471a",
+    "max": "17fcce14736afe498871d3018e4fa9330443471a"
+  },
+  "language": "en",
+  "script": "Latn",
+  "source": {
+    "url": "https://raw.githubusercontent.com/trezor/python-shamir-mnemonic/17fcce14736afe498871d3018e4fa9330443471a/shamir_mnemonic/wordlist.txt",
+    "revision": "17fcce14736afe498871d3018e4fa9330443471a"
+  },
+  "license": {
+    "spdx_or_name": "MIT",
+    "source_url": "https://raw.githubusercontent.com/trezor/python-shamir-mnemonic/17fcce14736afe498871d3018e4fa9330443471a/LICENSE",
+    "attribution": "Copyright 2019 SatoshiLabs. Complete MIT notice in THIRD_PARTY_NOTICES.",
+    "repository_redistribution": "allowed",
+    "signpath_compatible": "compatible",
+    "decision_evidence": [
+      "slip39-license",
+      "slip39-signpath",
+      "slip39-osi-mit"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "none",
+  "word_count": 1024,
+  "sha256": "bcc4555340332d169718aed8bf31dd9d5248cb7da6e5d355140ef4f1e601eec3",
+  "order_rule": "Unchanged upstream UTF-8 LF bytes including final LF. Zero-based 10-bit indices in source order; no sort, normalization or case rewriting.",
+  "position_rules": [
+    "Same 1024-word vocabulary at every share position. First four words encode metadata, last three are RS1024 checksum; metadata is not BIP39 entropy.",
+    "Only ASCII words; source input lowercases and splits whitespace. Never combine shares or evaluate user-share validity in Tessaveil."
+  ],
+  "duplicate_analysis": {
+    "normalized_unique_count": 1024,
+    "collisions": []
+  },
+  "test_vector_ids": [
+    "slip39-vectors"
+  ],
+  "wordlist_path": "wordlists/slip39-en/17fcce14736afe498871d3018e4fa9330443471a.txt"
+}

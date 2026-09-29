@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cardano-nami-version",
+  "source_type": "official-source",
+  "claim": "Source package3.9.6. Historical snapshot scope only; no claim of maintained/current released app or binary recovery. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 81438dedcb3b9b8223148da27f89c7e5e5cb215ff0cffb6ed01527c0231d6ef4.",
+  "url": "https://raw.githubusercontent.com/input-output-hk/nami/e52e0bdb02eb1ec224db26f48b0192685a30f99e/package.json",
+  "revision": "e52e0bdb02eb1ec224db26f48b0192685a30f99e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "nami"
+  ]
+}

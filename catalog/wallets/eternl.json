@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "eternl",
+  "display_name": {
+    "en": "Eternl — recovery24 unresolved",
+    "ru": "Eternl — recovery24 unresolved"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "cardano-eternl-doc"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "app-version-unresolved-doc-2026-09-29",
+    "max": "app-version-unresolved-doc-2026-09-29"
+  },
+  "product_id": "eternl",
+  "product_name": "Eternl",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "software-recovery-24-unresolved",
+  "network_ids": [
+    "cardano"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "24-word recovery described, but generation versus later export, exact web version and derivation remain unproven. false generation is no evidence-backed claim, not a claim that Eternl cannot create wallets.",
+    "Non-selectable: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence."
+  ],
+  "guidance": "Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil."
+}

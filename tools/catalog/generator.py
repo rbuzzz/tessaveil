@@ -265,7 +265,7 @@ def render_catalog(catalog: Catalog, locale: Literal["en", "ru"]) -> str:
         d = record.data
         common(record, "scheme")
         field("Dictionaries", "Словари", refs("dictionary", d["dictionary_ids"]))
-        field("Supported lengths", "Допустимые длины", _text(", ".join(map(str, sorted(d["supported_lengths"])))))
+        field("Supported lengths", "Допустимые длины", _text(", ".join(map(str, sorted(d["supported_lengths"]))) or None))
         field("Position rules", "Позиционные правила", _text("; ".join(d["position_rules"])))
         field("Semantics", "Семантика", _text(d["semantic_distinction"]))
         secret = d["external_secret"]

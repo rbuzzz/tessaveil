@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cardano-hardware-rules",
+  "source_type": "official-specification",
+  "claim": "Ledger/BitBox02 use a BIP39 seed then a distinct HMAC/rejection scheme, unlike Icarus-Trezor. Hardware is not a single phrase format. No model/firmware/creation length binding researched here: umbrella record blocked with empty dictionary/length lists. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 164975c4556ae04fa00377f431e37be35b6fdd2b84b0fd7843a859093c3fe62f.",
+  "url": "https://raw.githubusercontent.com/cardano-foundation/CIPs/4ca4dcefccc7143672cf07a0b760d9e5abfc7797/CIP-0003/Ledger_BitBox02.md",
+  "revision": "4ca4dcefccc7143672cf07a0b760d9e5abfc7797",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cardano-hardware"
+  ]
+}

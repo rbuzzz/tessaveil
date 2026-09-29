@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cardano-byron-rules",
+  "source_type": "official-specification",
+  "claim": "Deprecated Daedalus random/Byron root format uses iterative HMAC/SHA512 with Root Seed Chain domain and rejection/tweaking; differs from Icarus. Public examples are 12 words; current/historical wallet scope is separately sourced. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 0d46c673348dccdaf32f1cc3732a744745494478417cb6e2388247ecd12a25d6.",
+  "url": "https://raw.githubusercontent.com/cardano-foundation/CIPs/4ca4dcefccc7143672cf07a0b760d9e5abfc7797/CIP-0003/Byron.md",
+  "revision": "4ca4dcefccc7143672cf07a0b760d9e5abfc7797",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cardano-byron"
+  ]
+}

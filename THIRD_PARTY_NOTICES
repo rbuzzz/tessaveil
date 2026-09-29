@@ -1028,3 +1028,68 @@ MyMonero public test projection: 9637c91cbe5f46e67156c66c739932294808109d
 // INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 // STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+SLIP-39 / Algorand / Daedalus public research projections (Task12)
+================================================================
+
+SLIP-39 dictionary: exact UTF-8 LF file, no changes. Public vectors modified
+into indices/fingerprints; no share recovery or runtime implementation bundled.
+Trezor python-shamir-mnemonic 17fcce14736afe498871d3018e4fa9330443471a
+Copyright 2019 SatoshiLabs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software and associated documentation files (the "Software"), to deal in the Software
+without restriction, including without limitation the rights to use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
+OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+Algorand public zero-vector and synthetic source-based projection; no SDK/list
+copy bundled. https://raw.githubusercontent.com/algorand/py-algorand-sdk/189855d43cba5d20e66248693d74332052ccb08e/LICENSE
+MIT License
+
+Copyright (c) 2020 Algorand
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Daedalus synthetic certificate projection: Input Output Global, source revision
+6c57eb94753211f66d3a63f49d031bf746044755. Modified to indices and fingerprints.
+Apache-2.0 license text is retained in this file (Polyseed Apache section) and
+in root LICENSE; obligations include notices and modification marking. Source
+fixture includes no additional copyright/header; no wallet implementation bundled.
+CIP3 CC-BY-4.0 material is cited only; its document/vector bytes are not bundled.
+Full source ledger and limitations: docs/research/batches/slip39-algorand-cardano.md.
+
+Daedalus LICENSE NOTICE (blank-line trailing spaces removed):
+Copyright 2019 IOHK
+
+Licensed under the Apache License, Version 2.0 (the "License”). You may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.txt
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "slip39-list",
+  "source_type": "official-source",
+  "claim": "Exact 1024-entry English dictionary. Byte-identical to normative SLIP-0039 list. No transformation or sorting. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 bcc4555340332d169718aed8bf31dd9d5248cb7da6e5d355140ef4f1e601eec3.",
+  "url": "https://raw.githubusercontent.com/trezor/python-shamir-mnemonic/17fcce14736afe498871d3018e4fa9330443471a/shamir_mnemonic/wordlist.txt",
+  "revision": "17fcce14736afe498871d3018e4fa9330443471a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "slip39-en"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cardano-yoroi-backup",
+  "source_type": "official-source",
+  "claim": "Creation requests recovery phrase, initiates backup display, and finishes using that same phrase. This establishes creation/backup separately from import. Extension scope only. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 330e545c3035cc251c40ae6dd7895495a48f530cbe58d664159c6e0e87579c16.",
+  "url": "https://raw.githubusercontent.com/Emurgo/yoroi-frontend/91febfc95a288d3436b891356c87645611ea603a/packages/yoroi-extension/app/stores/ada/MnemonicWalletCreationStore.js",
+  "revision": "91febfc95a288d3436b891356c87645611ea603a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "yoroi"
+  ]
+}

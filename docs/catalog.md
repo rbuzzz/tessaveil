@@ -13,10 +13,17 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | Cake Wallet Monero / [cake-wallet-monero](#wallet-cake-wallet-monero) | android / polyseed-16-generated | monero | [polyseed-16](#scheme-polyseed-16) | documented |
 | Cake Wallet Monero / [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39) | android / bip39-monero-generated-unresolved | monero | — | documented |
 | Cake Wallet Monero / [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy) | android / legacy-25-generated | monero | [monero-legacy](#scheme-monero-legacy) | documented |
+| Daedalus / [daedalus](#wallet-daedalus) | windows / icarus-24-created | cardano | [cardano-icarus-24](#scheme-cardano-icarus-24) | documented |
+| Daedalus / [daedalus-byron](#wallet-daedalus-byron) | windows / byron-12-import | cardano | [cardano-byron](#scheme-cardano-byron) | documented |
+| Daedalus / [daedalus-paper-27](#wallet-daedalus-paper-27) | windows / byron-paper-27-import | cardano | [cardano-daedalus-27](#scheme-cardano-daedalus-27) | documented |
+| Daedalus / [daedalus-yoroi-15](#wallet-daedalus-yoroi-15) | windows / icarus-15-import | cardano | [cardano-icarus-15](#scheme-cardano-icarus-15) | documented |
+| Defly / [defly](#wallet-defly) | android / native-account-created-backup-unresolved | algorand | — | blocked |
+| Eternl / [eternl](#wallet-eternl) | web / software-recovery-24-unresolved | cardano | — | blocked |
 | Exodus / [exodus-monero-export](#wallet-exodus-monero-export) | windows / monero-25-export | monero | [monero-legacy](#scheme-monero-legacy) | documented |
 | Feather / [feather](#wallet-feather) | windows / polyseed-16-generated | monero | [polyseed-16](#scheme-polyseed-16) | documented |
 | Feather / [feather-legacy-import](#wallet-feather-legacy-import) | windows / legacy-25-import | monero | [monero-legacy](#scheme-monero-legacy) | documented |
 | Gram Wallet / [gram-wallet](#wallet-gram-wallet) | android / mnemonic-backup-unresolved | ton | — | documented |
+| Lace / [lace](#wallet-lace) | web / software-24-created-unresolved | cardano | — | documented |
 | Monero CLI / [monero-cli-polyseed](#wallet-monero-cli-polyseed) | windows / polyseed-16-generated | monero | [polyseed-16](#scheme-polyseed-16) | documented |
 | Monero CLI / [monero-gui-cli](#wallet-monero-gui-cli) | windows / legacy-25-generated | monero | [monero-legacy](#scheme-monero-legacy) | documented |
 | Monero GUI / [monero-gui](#wallet-monero-gui) | windows / generated-seed-unresolved | monero | — | documented |
@@ -24,15 +31,31 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | MyMonero / [mymonero-generated](#wallet-mymonero-generated) | windows / generated-backup-unresolved | monero | — | documented |
 | My Wallet / MyTonWallet / [mytonwallet](#wallet-mytonwallet) | web / bip39-multichain-generated | ton | [ton-multichain-bip39](#scheme-ton-multichain-bip39) | documented |
 | My Wallet / MyTonWallet — TON only / [mytonwallet-native](#wallet-mytonwallet-native) | web / ton-native-generated | ton | [ton-native](#scheme-ton-native) | verified |
+| Nami / [nami](#wallet-nami) | web / icarus-24-created | cardano | [cardano-icarus-24](#scheme-cardano-icarus-24) | documented |
 | OpenMask / [openmask](#wallet-openmask) | web / ton-native-generated | ton | [ton-native](#scheme-ton-native) | documented |
+| Pera Wallet / [pera-wallet](#wallet-pera-wallet) | ios / legacy-algo25-existing-backup-export | algorand | [algorand-25](#scheme-algorand-25) | documented |
+| Pera Wallet / [pera-wallet-universal](#wallet-pera-wallet-universal) | ios / universal-hd24-created | algorand | — | documented |
 | Tonhub / [tonhub](#wallet-tonhub) | android / ton-native-generated | ton | [ton-native](#scheme-ton-native) | verified |
 | Tonkeeper Classic / [tonkeeper-classic](#wallet-tonkeeper-classic) | web / ton-native-generated | ton | [ton-native](#scheme-ton-native) | verified |
 | Keeper / Tonkeeper Multichain / [tonkeeper-multichain](#wallet-tonkeeper-multichain) | cross-platform / bip39-multichain-generated | ton | [ton-multichain-bip39](#scheme-ton-multichain-bip39) | documented |
+| Trezor Model T / [trezor-model-t](#wallet-trezor-model-t) | hardware / suite-single-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
+| Trezor Model T / [trezor-model-t-multi-share](#wallet-trezor-model-t-multi-share) | hardware / suite-multi-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
+| Trezor Safe3 / [trezor-safe-3](#wallet-trezor-safe-3) | hardware / suite-single-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
+| Trezor Safe3 / [trezor-safe-3-multi-share](#wallet-trezor-safe-3-multi-share) | hardware / suite-multi-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
+| Trezor Safe5 / [trezor-safe-5](#wallet-trezor-safe-5) | hardware / suite-single-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
+| Trezor Safe5 / [trezor-safe-5-multi-share](#wallet-trezor-safe-5-multi-share) | hardware / suite-multi-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
+| Trezor Safe7 / [trezor-safe-7](#wallet-trezor-safe-7) | hardware / suite-single-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
+| Trezor Safe7 / [trezor-safe-7-multi-share](#wallet-trezor-safe-7-multi-share) | hardware / suite-multi-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
+| Typhon / [typhon](#wallet-typhon) | web / web-mnemonic-created-unresolved | cardano | — | blocked |
 | TON Space / DeFi Account / [ton-space](#wallet-ton-space) | web / manual-mnemonic-backup | ton | — | documented |
+| Yoroi / [yoroi](#wallet-yoroi) | web / icarus-15-created | cardano | [cardano-icarus-15](#scheme-cardano-icarus-15) | documented |
 
 ## Network index
 
+- algorand: [defly](#wallet-defly), [pera-wallet](#wallet-pera-wallet), [pera-wallet-universal](#wallet-pera-wallet-universal)
+- cardano: [daedalus](#wallet-daedalus), [daedalus-byron](#wallet-daedalus-byron), [daedalus-paper-27](#wallet-daedalus-paper-27), [daedalus-yoroi-15](#wallet-daedalus-yoroi-15), [eternl](#wallet-eternl), [lace](#wallet-lace), [nami](#wallet-nami), [typhon](#wallet-typhon), [yoroi](#wallet-yoroi)
 - monero: [cake-wallet-monero](#wallet-cake-wallet-monero), [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39), [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy), [exodus-monero-export](#wallet-exodus-monero-export), [feather](#wallet-feather), [feather-legacy-import](#wallet-feather-legacy-import), [monero-cli-polyseed](#wallet-monero-cli-polyseed), [monero-gui](#wallet-monero-gui), [monero-gui-cli](#wallet-monero-gui-cli), [mymonero](#wallet-mymonero), [mymonero-generated](#wallet-mymonero-generated)
+- multi-chain: [trezor-model-t](#wallet-trezor-model-t), [trezor-model-t-multi-share](#wallet-trezor-model-t-multi-share), [trezor-safe-3](#wallet-trezor-safe-3), [trezor-safe-3-multi-share](#wallet-trezor-safe-3-multi-share), [trezor-safe-5](#wallet-trezor-safe-5), [trezor-safe-5-multi-share](#wallet-trezor-safe-5-multi-share), [trezor-safe-7](#wallet-trezor-safe-7), [trezor-safe-7-multi-share](#wallet-trezor-safe-7-multi-share)
 - ton: [gram-wallet](#wallet-gram-wallet), [mytonwallet](#wallet-mytonwallet), [mytonwallet-native](#wallet-mytonwallet-native), [openmask](#wallet-openmask), [ton-space](#wallet-ton-space), [tonhub](#wallet-tonhub), [tonkeeper-classic](#wallet-tonkeeper-classic), [tonkeeper-multichain](#wallet-tonkeeper-multichain)
 
 ## Wallet profiles
@@ -103,6 +126,129 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Generates mnemonic / import only: true / false
 - Limitations: Separate legacy creation branch delegates native createWallet; UI labels 25 words. FFI/dependency artifact binding and full recovery vector remain unresolved; no iOS/desktop claim.; Documented, not selectable\: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately.
 - Profile guidance: Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website.
+
+<a id="wallet-daedalus"></a>
+
+### Daedalus — Windows24 creation — daedalus
+
+- Source record: [daedalus](../catalog/wallets/daedalus.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755 / 11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-daedalus-create](../catalog/evidence/cardano-daedalus-create.json), [cardano-daedalus-lengths](../catalog/evidence/cardano-daedalus-lengths.json), [cardano-daedalus-version](../catalog/evidence/cardano-daedalus-version.json)
+- Evidence claim: getWalletRecoveryPhrase calls generateAccountMnemonics\(WALLET\_RECOVERY\_PHRASE\_WORD\_COUNT\); cryptoConfig defines24. English list supplied in crypto.ts. No current27-word creation inferred. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 55fdbd3fd1851cf46fee7444bb90323ff440e46f99dbe30fb67d2cfc36991d7c.
+- Evidence claim: Explicit constants distinguish regular 24, legacy12, Yoroi15 and paper 27, split18 printed plus9 written. Constants do not prove creation routes; api and restore mapping evidence are separate. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 58d94791c7826fca095e4f56e213ea04cd69a4cd915eab0b7cb3103b8f35a265.
+- Evidence claim: Source package version11.4.0 at full SHA; this is a source singleton, not attestation of downloaded binary. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 4af61443fb0bf72a23c1ee4aa5faaf70adc5cced3a3d6e358e91f4cdf2bf73c8.
+- Aliases: —
+- Scheme: [cardano-icarus-24](#scheme-cardano-icarus-24)
+- Generates mnemonic / import only: true / false
+- Limitations: Regular software creation uses 24 English words. Exact backend dependency/binary recovery not verified. Separate legacy/foreign restore modes are not new-wallet choices. Seed display at creation does not establish later export.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-daedalus-byron"></a>
+
+### Daedalus — byron-12-import — daedalus-byron
+
+- Source record: [daedalus-byron](../catalog/wallets/daedalus-byron.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755 / 11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [cardano-daedalus-lengths](../catalog/evidence/cardano-daedalus-lengths.json), [cardano-daedalus-restore](../catalog/evidence/cardano-daedalus-restore.json), [cardano-daedalus-version](../catalog/evidence/cardano-daedalus-version.json)
+- Evidence claim: Explicit constants distinguish regular 24, legacy12, Yoroi15 and paper 27, split18 printed plus9 written. Constants do not prove creation routes; api and restore mapping evidence are separate. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 58d94791c7826fca095e4f56e213ea04cd69a4cd915eab0b7cb3103b8f35a265.
+- Evidence claim: Restore options map regular24, legacy Byron 12, Yoroi15, and certificate 27 separately. Import capability is not evidence of current12/15/27 creation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 2535b05897dc65e3dbb3654462c426ca07ad12eb62f957dbbf88f77321b93e85.
+- Evidence claim: Source package version11.4.0 at full SHA; this is a source singleton, not attestation of downloaded binary. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 4af61443fb0bf72a23c1ee4aa5faaf70adc5cced3a3d6e358e91f4cdf2bf73c8.
+- Aliases: —
+- Scheme: [cardano-byron](#scheme-cardano-byron)
+- Generates mnemonic / import only: false / true
+- Limitations: Historical random/Byron 12 import.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-daedalus-paper-27"></a>
+
+### Daedalus — byron-paper-27-import — daedalus-paper-27
+
+- Source record: [daedalus-paper-27](../catalog/wallets/daedalus-paper-27.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755 / 11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [cardano-daedalus-lengths](../catalog/evidence/cardano-daedalus-lengths.json), [cardano-daedalus-restore](../catalog/evidence/cardano-daedalus-restore.json), [cardano-daedalus-version](../catalog/evidence/cardano-daedalus-version.json), [cardano-paper-rules](../catalog/evidence/cardano-paper-rules.json)
+- Evidence claim: Explicit constants distinguish regular 24, legacy12, Yoroi15 and paper 27, split18 printed plus9 written. Constants do not prove creation routes; api and restore mapping evidence are separate. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 58d94791c7826fca095e4f56e213ea04cd69a4cd915eab0b7cb3103b8f35a265.
+- Evidence claim: Restore options map regular24, legacy Byron 12, Yoroi15, and certificate 27 separately. Import capability is not evidence of current12/15/27 creation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 2535b05897dc65e3dbb3654462c426ca07ad12eb62f957dbbf88f77321b93e85.
+- Evidence claim: Source package version11.4.0 at full SHA; this is a source singleton, not attestation of downloaded binary. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 4af61443fb0bf72a23c1ee4aa5faaf70adc5cced3a3d6e358e91f4cdf2bf73c8.
+- Evidence claim: getScrambledInput separates first18 scrambled certificate words and last9 password words. PBKDF2-HMAC-SHA512 of nine-word suffix with mnemonic salt, 2048 rounds, 32 bytes; rust-cardano-crypto performs unscrambling. This is not a 27-word BIP39 phrase. Nine words are inside27, not an extra user secret. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 02c137b08bf4394f95afeaf6e81a538ff39b15719fe326b8dbf1728c1a04cfd4.
+- Aliases: —
+- Scheme: [cardano-daedalus-27](#scheme-cardano-daedalus-27)
+- Generates mnemonic / import only: false / true
+- Limitations: Historical18\+9 paper certificate import; no current reachable paper creation proven.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-daedalus-yoroi-15"></a>
+
+### Daedalus — icarus-15-import — daedalus-yoroi-15
+
+- Source record: [daedalus-yoroi-15](../catalog/wallets/daedalus-yoroi-15.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755 / 11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-daedalus-lengths](../catalog/evidence/cardano-daedalus-lengths.json), [cardano-daedalus-restore](../catalog/evidence/cardano-daedalus-restore.json), [cardano-daedalus-version](../catalog/evidence/cardano-daedalus-version.json)
+- Evidence claim: Explicit constants distinguish regular 24, legacy12, Yoroi15 and paper 27, split18 printed plus9 written. Constants do not prove creation routes; api and restore mapping evidence are separate. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 58d94791c7826fca095e4f56e213ea04cd69a4cd915eab0b7cb3103b8f35a265.
+- Evidence claim: Restore options map regular24, legacy Byron 12, Yoroi15, and certificate 27 separately. Import capability is not evidence of current12/15/27 creation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 2535b05897dc65e3dbb3654462c426ca07ad12eb62f957dbbf88f77321b93e85.
+- Evidence claim: Source package version11.4.0 at full SHA; this is a source singleton, not attestation of downloaded binary. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 4af61443fb0bf72a23c1ee4aa5faaf70adc5cced3a3d6e358e91f4cdf2bf73c8.
+- Aliases: —
+- Scheme: [cardano-icarus-15](#scheme-cardano-icarus-15)
+- Generates mnemonic / import only: false / true
+- Limitations: Yoroi15 import is separate from Daedalus24 creation.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-defly"></a>
+
+### Defly — native account backup unresolved — defly
+
+- Source record: [defly](../catalog/wallets/defly.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): app-version-unresolved-doc-2026-09-29 / app-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [algorand-defly-create](../catalog/evidence/algorand-defly-create.json)
+- Evidence claim: Create a New Account section describes new account and subsequent mnemonic display via backup reminder; import, Ledger and watch paths are separate. Exact word count, dictionary/derivation, app version and platform-specific behavior not in retrieved text. Do not infer25 from Algorand name. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: —
+- Generates mnemonic / import only: true / false
+- Limitations: Manual proves account creation and mnemonic display; exact Android artifact, word count and semantics not proven.25-word mapping remains blocked. Android is the scoped research target, not proof of parity with iOS.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-eternl"></a>
+
+### Eternl — recovery24 unresolved — eternl
+
+- Source record: [eternl](../catalog/wallets/eternl.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): app-version-unresolved-doc-2026-09-29 / app-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-eternl-doc](../catalog/evidence/cardano-eternl-doc.json)
+- Evidence claim: Official recovery-phrase FAQ identifies24-word recovery. Retrieved text does not establish exact app version, concrete generation/export path or root-key algorithm. No inherited Cardano/Icarus support. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: —
+- Generates mnemonic / import only: false / false
+- Limitations: 24-word recovery described, but generation versus later export, exact web version and derivation remain unproven. false generation is no evidence-backed claim, not a claim that Eternl cannot create wallets.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
 
 <a id="wallet-exodus-monero-export"></a>
 
@@ -183,6 +329,25 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Generates mnemonic / import only: false / false
 - Limitations: Identity fixed to My Wallet Apps Ltd., Android package io.gramwallet.app linked by gramwallet.io. Publisher says it uses My Wallet's engine; this does not prove a shared mnemonic algorithm or backup flow.; No exact app version, exportable phrase length, generation method or source-to-package binding established. generates\_mnemonic=false means generation is not confirmed, not that the product has no mnemonic.; Do not inherit the behavior of Telegram's historical Gram test wallet or other similarly named products.
 - Profile guidance: Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website.
+
+<a id="wallet-lace"></a>
+
+### Lace — extension24 creation — lace
+
+- Source record: [lace](../catalog/wallets/lace.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): app-version-unresolved-doc-2026-07-14 / app-version-unresolved-doc-2026-07-14
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-lace-create](../catalog/evidence/cardano-lace-create.json)
+- Evidence claim: Edited 2026-07-14 Route B\: browser-extension software wallet creates/displays24-word backup. Route A hardware connection creates no new phrase in Lace. Exact app version/derivation unspecified. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 ce02d32706cf597d8f3861e3040d487d7e8862020069ccdf6e40aa48b7a83f19.
+- Aliases: —
+- Scheme: —
+- Generates mnemonic / import only: true / false
+- Limitations: 24-word generation/display confirmed. No exact version or algorithm/library binding to Icarus established; leave unmapped. Modern PGP paper backup is not Daedalus27. Hardware pairing, import and mobile are distinct.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
 
 <a id="wallet-monero-cli-polyseed"></a>
 
@@ -333,6 +498,27 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Exact source snapshot only. forceAddingTonOnlyAccount chooses native generation; native generator returns 24 words and rejects BIP39-ambiguous candidates. This mode coexists with BIP39 in the same source version.; No assertion that all builds or older/newer installed versions expose the same mode.
 - Profile guidance: Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website.
 
+<a id="wallet-nami"></a>
+
+### Nami — extension24 creation — nami
+
+- Source record: [nami](../catalog/wallets/nami.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 3.9.6-source-e52e0bdb02eb1ec224db26f48b0192685a30f99e / 3.9.6-source-e52e0bdb02eb1ec224db26f48b0192685a30f99e
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-nami-create](../catalog/evidence/cardano-nami-create.json), [cardano-nami-derive](../catalog/evidence/cardano-nami-derive.json), [cardano-nami-version](../catalog/evidence/cardano-nami-version.json)
+- Evidence claim: Creation calls generateMnemonic\(256\), displays indexed words then verifies chosen positions before createWallet. Restore branch separate. Establishes24-word creation, not later re-export. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 d79776a12f8f7c4c6a4dc93e159c58110509494e169f84f2c556f139ccaf109c.
+- Evidence claim: createWallet converts BIP39 mnemonic to entropy, then from\_bip39\_entropy\(entropy, empty bytes\). Local encryption password is separate; hardware helpers not same mode. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 8c50628956578649ab228d7cfb6a29dcf8ac104e53f2c0a4fa67731ac913ce57.
+- Evidence claim: Source package3.9.6. Historical snapshot scope only; no claim of maintained/current released app or binary recovery. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 81438dedcb3b9b8223148da27f89c7e5e5cb215ff0cffb6ed01527c0231d6ef4.
+- Aliases: —
+- Scheme: [cardano-icarus-24](#scheme-cardano-icarus-24)
+- Generates mnemonic / import only: true / false
+- Limitations: Source-only Chrome extension; Icarus-like from\_bip39\_entropy with empty password. Library lock/artifact binding and wallet-level recovery not reproduced; no claim of current maintenance.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
 <a id="wallet-openmask"></a>
 
 ### OpenMask — openmask
@@ -357,6 +543,46 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Generates mnemonic / import only: true / false
 - Limitations: OpenProduct's Chrome extension source creates and displays a tonweb-mnemonic phrase. Package declares tonweb-mnemonic ^1.0.1; reviewed library 1.0.1 defaults to native 24.; Exact deployed extension/dependency artifact binding and a wallet-level reproducible recovery vector remain unproven; this source-backed mapping is documented, not selectable. Ledger and imported modes excluded.
 - Profile guidance: Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website.
+
+<a id="wallet-pera-wallet"></a>
+
+### Pera Wallet — existing legacy25 backup export — pera-wallet
+
+- Source record: [pera-wallet](../catalog/wallets/pera-wallet.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): app-version-unresolved-doc-2026-08-31 / app-version-unresolved-doc-2026-08-31
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [algorand-pera-backup](../catalog/evidence/algorand-pera-backup.json), [algorand-pera-migration](../catalog/evidence/algorand-pera-migration.json)
+- Evidence claim: Updated 2026-08-31\: mobile backup at creation and later view are described separately; article includes24 and 25 without exact app version. Scope iOS only in records; no equivalence between formats. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 4fad7c798ef8891ca31f4ee64051c570fd8d4952665f70738635c26eb425c9d6.
+- Evidence claim: Updated 2026-05-28\: distinguishes24-word Universal and 25-word Legacy Algo 25 recovery. Restoration does not prove new legacy generation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 30fa382990ea359398ccde9c9a4ccdd2e031b6b83721f9aede4cb46cb57c506b.
+- Aliases: —
+- Scheme: [algorand-25](#scheme-algorand-25)
+- Generates mnemonic / import only: false / false
+- Limitations: 25-word legacy recovery is documented; backup page permits later viewing. Record is export of an existing key; new25-word creation at current versions is unproven. Universal 24 is a separate mode. No web/Android/rekeyed/Ledger/Quantum generalization.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-pera-wallet-universal"></a>
+
+### Pera Wallet — Universal 24 creation — pera-wallet-universal
+
+- Source record: [pera-wallet-universal](../catalog/wallets/pera-wallet-universal.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): app-version-unresolved-doc-2025-06-04 / app-version-unresolved-doc-2025-06-04
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [algorand-pera-backup](../catalog/evidence/algorand-pera-backup.json), [algorand-pera-universal](../catalog/evidence/algorand-pera-universal.json)
+- Evidence claim: Updated 2026-08-31\: mobile backup at creation and later view are described separately; article includes24 and 25 without exact app version. Scope iOS only in records; no equivalence between formats. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 4fad7c798ef8891ca31f4ee64051c570fd8d4952665f70738635c26eb425c9d6.
+- Evidence claim: Updated 2025-06-04\: iOS onboarding generates24-word BIP39 HD Universal wallets; Android described as forthcoming there. Dated source not generalized to current Android. Exact derivation/dependency binding not established. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 d54c39508a76f426bd3958cfbae5600d8f737aa05d4356540be617986a4c0b81.
+- Aliases: —
+- Scheme: —
+- Generates mnemonic / import only: true / false
+- Limitations: Official FAQ is dated 2025-06-04;24-word HD phrase is not Algorand25. Full Algorand HD derivation research and exact app version absent; leave scheme unmapped.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
 
 <a id="wallet-ton-space"></a>
 
@@ -444,7 +670,222 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Official rebranding documentation confirms a separate new multichain wallet and says old native 24 words cannot be converted. It does not pin app platform/version or generation word count.; Pinned web source proves BIP39 import derivation, not that its new-wallet screen generates this mode. Exact first/last mobile versions and full-path known answer remain unproven; 12/24 are scheme lengths, not asserted generation lengths.; Keeper \(formerly Tonkeeper\) is not the unrelated Waves Keeper product; Pro MAM is excluded.
 - Profile guidance: Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website.
 
+<a id="wallet-trezor-model-t"></a>
+
+### Trezor Model T — suite-single-share-20-created — trezor-model-t
+
+- Source record: [trezor-model-t](../catalog/wallets/trezor-model-t.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): suite-firmware-version-unresolved-doc-2026-09-29 / suite-firmware-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-trezor-model-t](../catalog/evidence/slip39-trezor-model-t.json)
+- Evidence claim: Trezor Model T\: device-specific table row confirms20-word SLIP39 single/multi backup options. 12-word BIP39 is default; SLIP39 is an explicit choice. Exact Suite/firmware versions unpublished in article; no33-word Suite creation or cross-model inference. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: [slip39-share-20](#scheme-slip39-share-20)
+- Generates mnemonic / import only: true / false
+- Limitations: 12-word BIP39 is default; SLIP39 is an explicit choice. Hardware platform only; Suite host OS/version and firmware bounds unresolved. No promise for all firmware, Model One, 33-word Suite creation or CLI advanced groups. See exact device row.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-trezor-model-t-multi-share"></a>
+
+### Trezor Model T — suite-multi-share-20-created — trezor-model-t-multi-share
+
+- Source record: [trezor-model-t-multi-share](../catalog/wallets/trezor-model-t-multi-share.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): suite-firmware-version-unresolved-doc-2026-09-29 / suite-firmware-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-trezor-model-t](../catalog/evidence/slip39-trezor-model-t.json)
+- Evidence claim: Trezor Model T\: device-specific table row confirms20-word SLIP39 single/multi backup options. 12-word BIP39 is default; SLIP39 is an explicit choice. Exact Suite/firmware versions unpublished in article; no33-word Suite creation or cross-model inference. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: [slip39-share-20](#scheme-slip39-share-20)
+- Generates mnemonic / import only: true / false
+- Limitations: 12-word BIP39 is default; SLIP39 is an explicit choice. Hardware platform only; Suite host OS/version and firmware bounds unresolved. No promise for all firmware, Model One, 33-word Suite creation or CLI advanced groups. See exact device row.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-trezor-safe-3"></a>
+
+### Trezor Safe 3 — suite-single-share-20-created — trezor-safe-3
+
+- Source record: [trezor-safe-3](../catalog/wallets/trezor-safe-3.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): suite-firmware-version-unresolved-doc-2026-09-29 / suite-firmware-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-trezor-safe-3](../catalog/evidence/slip39-trezor-safe-3.json)
+- Evidence claim: Trezor Safe 3\: device-specific table row confirms20-word SLIP39 single/multi backup options. before June2024 BIP39 default; from June2024 SLIP39 default; dates describe setup era, not a firmware number. Exact Suite/firmware versions unpublished in article; no33-word Suite creation or cross-model inference. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: [slip39-share-20](#scheme-slip39-share-20)
+- Generates mnemonic / import only: true / false
+- Limitations: before June2024 BIP39 default; from June2024 SLIP39 default; dates describe setup era, not a firmware number. Hardware platform only; Suite host OS/version and firmware bounds unresolved. No promise for all firmware, Model One, 33-word Suite creation or CLI advanced groups. See exact device row.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-trezor-safe-3-multi-share"></a>
+
+### Trezor Safe 3 — suite-multi-share-20-created — trezor-safe-3-multi-share
+
+- Source record: [trezor-safe-3-multi-share](../catalog/wallets/trezor-safe-3-multi-share.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): suite-firmware-version-unresolved-doc-2026-09-29 / suite-firmware-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-trezor-safe-3](../catalog/evidence/slip39-trezor-safe-3.json)
+- Evidence claim: Trezor Safe 3\: device-specific table row confirms20-word SLIP39 single/multi backup options. before June2024 BIP39 default; from June2024 SLIP39 default; dates describe setup era, not a firmware number. Exact Suite/firmware versions unpublished in article; no33-word Suite creation or cross-model inference. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: [slip39-share-20](#scheme-slip39-share-20)
+- Generates mnemonic / import only: true / false
+- Limitations: before June2024 BIP39 default; from June2024 SLIP39 default; dates describe setup era, not a firmware number. Hardware platform only; Suite host OS/version and firmware bounds unresolved. No promise for all firmware, Model One, 33-word Suite creation or CLI advanced groups. See exact device row.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-trezor-safe-5"></a>
+
+### Trezor Safe 5 — suite-single-share-20-created — trezor-safe-5
+
+- Source record: [trezor-safe-5](../catalog/wallets/trezor-safe-5.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): suite-firmware-version-unresolved-doc-2026-09-29 / suite-firmware-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-trezor-safe-5](../catalog/evidence/slip39-trezor-safe-5.json)
+- Evidence claim: Trezor Safe 5\: device-specific table row confirms20-word SLIP39 single/multi backup options. 20-word single-share is documented default. Exact Suite/firmware versions unpublished in article; no33-word Suite creation or cross-model inference. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: [slip39-share-20](#scheme-slip39-share-20)
+- Generates mnemonic / import only: true / false
+- Limitations: 20-word single-share is documented default. Hardware platform only; Suite host OS/version and firmware bounds unresolved. No promise for all firmware, Model One, 33-word Suite creation or CLI advanced groups. See exact device row.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-trezor-safe-5-multi-share"></a>
+
+### Trezor Safe 5 — suite-multi-share-20-created — trezor-safe-5-multi-share
+
+- Source record: [trezor-safe-5-multi-share](../catalog/wallets/trezor-safe-5-multi-share.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): suite-firmware-version-unresolved-doc-2026-09-29 / suite-firmware-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-trezor-safe-5](../catalog/evidence/slip39-trezor-safe-5.json)
+- Evidence claim: Trezor Safe 5\: device-specific table row confirms20-word SLIP39 single/multi backup options. 20-word single-share is documented default. Exact Suite/firmware versions unpublished in article; no33-word Suite creation or cross-model inference. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: [slip39-share-20](#scheme-slip39-share-20)
+- Generates mnemonic / import only: true / false
+- Limitations: 20-word single-share is documented default. Hardware platform only; Suite host OS/version and firmware bounds unresolved. No promise for all firmware, Model One, 33-word Suite creation or CLI advanced groups. See exact device row.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-trezor-safe-7"></a>
+
+### Trezor Safe 7 — suite-single-share-20-created — trezor-safe-7
+
+- Source record: [trezor-safe-7](../catalog/wallets/trezor-safe-7.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): suite-firmware-version-unresolved-doc-2026-09-29 / suite-firmware-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-trezor-safe-7](../catalog/evidence/slip39-trezor-safe-7.json)
+- Evidence claim: Trezor Safe 7\: device-specific table row confirms20-word SLIP39 single/multi backup options. 20-word single-share is documented default. Exact Suite/firmware versions unpublished in article; no33-word Suite creation or cross-model inference. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: [slip39-share-20](#scheme-slip39-share-20)
+- Generates mnemonic / import only: true / false
+- Limitations: 20-word single-share is documented default. Hardware platform only; Suite host OS/version and firmware bounds unresolved. No promise for all firmware, Model One, 33-word Suite creation or CLI advanced groups. See exact device row.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-trezor-safe-7-multi-share"></a>
+
+### Trezor Safe 7 — suite-multi-share-20-created — trezor-safe-7-multi-share
+
+- Source record: [trezor-safe-7-multi-share](../catalog/wallets/trezor-safe-7-multi-share.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): suite-firmware-version-unresolved-doc-2026-09-29 / suite-firmware-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-trezor-safe-7](../catalog/evidence/slip39-trezor-safe-7.json)
+- Evidence claim: Trezor Safe 7\: device-specific table row confirms20-word SLIP39 single/multi backup options. 20-word single-share is documented default. Exact Suite/firmware versions unpublished in article; no33-word Suite creation or cross-model inference. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: [slip39-share-20](#scheme-slip39-share-20)
+- Generates mnemonic / import only: true / false
+- Limitations: 20-word single-share is documented default. Hardware platform only; Suite host OS/version and firmware bounds unresolved. No promise for all firmware, Model One, 33-word Suite creation or CLI advanced groups. See exact device row.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-typhon"></a>
+
+### Typhon — web mnemonic creation unresolved — typhon
+
+- Source record: [typhon](../catalog/wallets/typhon.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): app-version-unresolved-doc-2026-09-29 / app-version-unresolved-doc-2026-09-29
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-typhon-create](../catalog/evidence/cardano-typhon-create.json)
+- Evidence claim: Official help distinguishes web/extension creation, import and hardware connection. Web Create Wallet creates a new mnemonic. Retrieved article does not give exact mnemonic count or algorithm/version. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.
+- Aliases: —
+- Scheme: —
+- Generates mnemonic / import only: true / false
+- Limitations: Creation supported by official help, but12/15/24 selector and derivation not established by primary retrieved article. Import choices and testnet UI are not production generation evidence. No extension/mobile inference.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-yoroi"></a>
+
+### Yoroi — extension15 creation — yoroi
+
+- Source record: [yoroi](../catalog/wallets/yoroi.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-91febfc95a288d3436b891356c87645611ea603a / source-91febfc95a288d3436b891356c87645611ea603a
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-yoroi-backup](../catalog/evidence/cardano-yoroi-backup.json), [cardano-yoroi-create](../catalog/evidence/cardano-yoroi-create.json)
+- Evidence claim: Creation requests recovery phrase, initiates backup display, and finishes using that same phrase. This establishes creation/backup separately from import. Extension scope only. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 330e545c3035cc251c40ae6dd7895495a48f530cbe58d664159c6e0e87579c16.
+- Evidence claim: generateAdaMnemonic explicitly generates160 bits/15 words; generateWalletRootKey passes BIP39 entropy and empty mnemonic password to from\_bip39\_entropy. Distinct Ledger helper is not default software generation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 cb4e95b9bc4e8a30ecd3f6520424e556560155503ad03456988bf5a3fed4fa21.
+- Aliases: —
+- Scheme: [cardano-icarus-15](#scheme-cardano-icarus-15)
+- Generates mnemonic / import only: true / false
+- Limitations: Chrome-family extension source singleton; no mobile or all-releases claim.15 words, empty mnemonic password; spending password separately encrypts local wallet. Later seed re-export not established.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
+- Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
 ## Schemes
+
+<a id="scheme-algorand-25"></a>
+
+### Algorand — legacy25 account key — algorand-25
+
+- Source record: [algorand-25](../catalog/schemes/algorand-25.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 189855d43cba5d20e66248693d74332052ccb08e / 189855d43cba5d20e66248693d74332052ccb08e
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [algorand-algorithm](../catalog/evidence/algorand-algorithm.json), [algorand-dictionary](../catalog/evidence/algorand-dictionary.json), [algorand-license](../catalog/evidence/algorand-license.json), [algorand-vectors](../catalog/evidence/algorand-vectors.json)
+- Evidence claim: Legacy account key representation\: 32 seed bytes become 24 little-endian 11-bit indices with eight zero padding bits; word 25 is the first little-endian 11 bits of SHA-512/256\(seed\). The 24th data index is 0..7, not any of 2048. No BIP39 checksum, PBKDF2 seed or universal-HD mapping is implied. from\_private\_key exports the first 32 bytes separately from generation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 6d9387e3ee7213c14a1dec9f53a22f2880ee80b00df8457430f5ecae21f2c74e.
+- Evidence claim: Extracted word\_list\_raw literal equals verified bip39-en entry-for-entry and in order \(2048\); LF serialization matches SHA-256 2f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse existing dictionary reference; no second word file. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 bacc048829f092449fea722912b268ec9d6f5494776ca4ece50f463bb80e77d7.
+- Evidence claim: MIT \(c\)2020 Algorand applies to public-vector projection. Retain license in THIRD\_PARTY\_NOTICES. No SDK or SDK dictionary file bundled. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 32b60f70e2a09ff695719af28a8ff60a8188d79de889d03913965f0d4b3d6055.
+- Evidence claim: TestMnemonic.test\_zero\_mnemonic publishes the all-zero key fixed answer. Two additional clearly synthetic seeds \(ascending bytes and all FF\) are projected using the reviewed pinned upstream \_from\_key functions, independently of offline integer-based tests. No account/provider calls. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 9d1ae77d906174a845979221cf483b01e8756aeadf5e3d66d5f45ca6aca1d79f.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 25
+- Position rules: Words1-23 are11-bit little-endian indices. Word24 holds the remaining3 seed bits \(indices0..7\); eight padding bits must be zero.; Word25 is an11-bit SHA-512/256 checksum index from the same dictionary; it is not a passphrase or a repeated Monero checksum word. Tessaveil never checks complete user phrases.
+- Semantics: Shares BIP39 English words only; legacy32-byte account seed encoding differs from BIP39 and Pera Universal 24 HD. Public tests establish encoding only; no independent wallet recovery demonstrated.
+- External secret / stored: none / false
+- External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
+- Test vectors: [algorand-vectors](../catalog/evidence/algorand-vectors.json)
 
 <a id="scheme-bip39"></a>
 
@@ -466,6 +907,147 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - External secret / stored: optional-passphrase / false
 - External-secret guidance: A scheme passphrase is external and never stored by Tessaveil. A wallet PIN or application password is not proof of a mnemonic passphrase; verify support in the exact source wallet.
 - Test vectors: [bip39-vectors](../catalog/evidence/bip39-vectors.json)
+
+<a id="scheme-cardano-byron"></a>
+
+### Cardano — historical Daedalus Byron 12 — cardano-byron
+
+- Source record: [cardano-byron](../catalog/schemes/cardano-byron.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 4ca4dcefccc7143672cf07a0b760d9e5abfc7797 / 4ca4dcefccc7143672cf07a0b760d9e5abfc7797
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [cardano-byron-rules](../catalog/evidence/cardano-byron-rules.json), [cardano-cip3](../catalog/evidence/cardano-cip3.json), [cardano-daedalus-lengths](../catalog/evidence/cardano-daedalus-lengths.json)
+- Evidence claim: Deprecated Daedalus random/Byron root format uses iterative HMAC/SHA512 with Root Seed Chain domain and rejection/tweaking; differs from Icarus. Public examples are 12 words; current/historical wallet scope is separately sourced. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 0d46c673348dccdaf32f1cc3732a744745494478417cb6e2388247ecd12a25d6.
+- Evidence claim: Recovery phrase conversion follows BIP39, but Byron, Icarus, Icarus-Trezor and Ledger/BitBox02 master-key algorithms are distinct. CIP 3 names Yoroi/Daedalus explicitly. Citation only; CC-BY-4.0 document and vector bytes are not redistributed. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 84a4abe37702847073aac805452c570ac8bc80a8723d89875826f3d5f1f034e4.
+- Evidence claim: Explicit constants distinguish regular 24, legacy12, Yoroi15 and paper 27, split18 printed plus9 written. Constants do not prove creation routes; api and restore mapping evidence are separate. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 58d94791c7826fca095e4f56e213ea04cd69a4cd915eab0b7cb3103b8f35a265.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 12
+- Position rules: Twelve BIP39 dictionary words encode entropy/checksum; legacy random/Byron master-key semantics, not Icarus or Ledger.
+- Semantics: Deprecated random-address Daedalus mode; initial entropy preprocessing, backend artifact and full fixed recovery not reproduced. Non-selectable.
+- External secret / stored: none / false
+- External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
+- Test vectors: —
+
+<a id="scheme-cardano-daedalus-27"></a>
+
+### Daedalus — historical paper 27 — cardano-daedalus-27
+
+- Source record: [cardano-daedalus-27](../catalog/schemes/cardano-daedalus-27.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 6c57eb94753211f66d3a63f49d031bf746044755 / 6c57eb94753211f66d3a63f49d031bf746044755
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [cardano-daedalus-dictionary](../catalog/evidence/cardano-daedalus-dictionary.json), [cardano-daedalus-lengths](../catalog/evidence/cardano-daedalus-lengths.json), [cardano-paper-license](../catalog/evidence/cardano-paper-license.json), [cardano-paper-rules](../catalog/evidence/cardano-paper-rules.json), [cardano-paper-vector](../catalog/evidence/cardano-paper-vector.json)
+- Evidence claim: Extracted 2048 literal words match verified bip39-en in exact order; no duplicated file committed. crypto.ts explicitly passes this English list to generation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 6a445ce64e8068dc7f523546e4f7788c0315365ff1561b389eea524629e18386.
+- Evidence claim: Explicit constants distinguish regular 24, legacy12, Yoroi15 and paper 27, split18 printed plus9 written. Constants do not prove creation routes; api and restore mapping evidence are separate. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 58d94791c7826fca095e4f56e213ea04cd69a4cd915eab0b7cb3103b8f35a265.
+- Evidence claim: Codex review 2026-09-29\: Daedalus root Apache-2.0 LICENSE and LICENSE NOTICE at the same revision cover the explicitly synthetic public certificate fixture. Intended redistribution is only modified indices/fingerprints, with modification notice, complete Apache text \(root LICENSE and THIRD\_PARTY\_NOTICES\) and Copyright 2019 IOHK notice retained. Repository redistribution allowed; local SignPath component license compatible, not Foundation acceptance or release approval. No CC-BY CIP vector bytes or runtime crypto dependency bundled. NOTICE SHA-256 d7fe15fe73be69f2543950c5b87a9c3964bd31ccbaa51a6127e7d88aea877190. See docs/research/batches/slip39-algorand-cardano.md.
+- Evidence claim: getScrambledInput separates first18 scrambled certificate words and last9 password words. PBKDF2-HMAC-SHA512 of nine-word suffix with mnemonic salt, 2048 rounds, 32 bytes; rust-cardano-crypto performs unscrambling. This is not a 27-word BIP39 phrase. Nine words are inside27, not an extra user secret. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 02c137b08bf4394f95afeaf6e81a538ff39b15719fe326b8dbf1728c1a04cfd4.
+- Evidence claim: Upstream explicitly synthetic, never-funded public certificate \(2026-08-27\), projected to 27 indices and sentence/password hashes. Tests verify partition and password input only, NOT unscrambling or recovery. Source notes creation retirement but retained source helpers are not proof of reachable creation UI. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 2c7449afaf97bf85b62537c655323def5bb6f328755dae303ac3f52a6465e13b.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 27
+- Position rules: Positions1-18\: scrambled paper-certificate mnemonic. Positions19-27\: nine-word input to certificate-password KDF. All use English dictionary; concatenation is not a BIP39 mnemonic.
+- Semantics: Historical27 =18\+9 certificate for a Byron 12 wallet. Never concatenate into Icarus, generic BIP39 or modern Lace PGP paper mode. Offline vector only verifies dictionary/partition/password; full rust-cardano-crypto unscrambling remains unverified.
+- External secret / stored: none / false
+- External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
+- Test vectors: [cardano-paper-vector](../catalog/evidence/cardano-paper-vector.json)
+
+<a id="scheme-cardano-hardware"></a>
+
+### Cardano — unresolved hardware-specific modes — cardano-hardware
+
+- Source record: [cardano-hardware](../catalog/schemes/cardano-hardware.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 4ca4dcefccc7143672cf07a0b760d9e5abfc7797 / 4ca4dcefccc7143672cf07a0b760d9e5abfc7797
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-cip3](../catalog/evidence/cardano-cip3.json), [cardano-hardware-rules](../catalog/evidence/cardano-hardware-rules.json), [cardano-icarus-rules](../catalog/evidence/cardano-icarus-rules.json)
+- Evidence claim: Recovery phrase conversion follows BIP39, but Byron, Icarus, Icarus-Trezor and Ledger/BitBox02 master-key algorithms are distinct. CIP 3 names Yoroi/Daedalus explicitly. Citation only; CC-BY-4.0 document and vector bytes are not redistributed. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 84a4abe37702847073aac805452c570ac8bc80a8723d89875826f3d5f1f034e4.
+- Evidence claim: Ledger/BitBox02 use a BIP39 seed then a distinct HMAC/rejection scheme, unlike Icarus-Trezor. Hardware is not a single phrase format. No model/firmware/creation length binding researched here\: umbrella record blocked with empty dictionary/length lists. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 164975c4556ae04fa00377f431e37be35b6fdd2b84b0fd7843a859093c3fe62f.
+- Evidence claim: Icarus uses PBKDF2-HMAC-SHA512, 4096 iterations, entropy as salt, optional separate mnemonic password, 96 output bytes then bit tweaks. Icarus-Trezor retains the extra checksum byte for 24-word input; below 24 it matches Icarus. Never substitute a generic BIP39 seed derivation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 f83da5fbdc6865a0de83edb7219208908e109b2a50671c8a9682d7c3d1179a85.
+- Dictionaries: —
+- Supported lengths: —
+- Position rules: No shared selectable hardware dictionary or length set. Match exact vendor/model/firmware/backup and derivation mode first.
+- Semantics: Icarus-Trezor and Ledger/BitBox02 differ, including Trezor 24 checksum-byte handling. Generic hardware label is blocked; SLIP39 device support does not prove Cardano derivation. No universal length/mapping asserted.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
+- Test vectors: —
+
+<a id="scheme-cardano-icarus"></a>
+
+### Cardano — Icarus 15/24 — cardano-icarus
+
+- Source record: [cardano-icarus](../catalog/schemes/cardano-icarus.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 4ca4dcefccc7143672cf07a0b760d9e5abfc7797 / 4ca4dcefccc7143672cf07a0b760d9e5abfc7797
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-cip3](../catalog/evidence/cardano-cip3.json), [cardano-daedalus-lengths](../catalog/evidence/cardano-daedalus-lengths.json), [cardano-icarus-rules](../catalog/evidence/cardano-icarus-rules.json)
+- Evidence claim: Recovery phrase conversion follows BIP39, but Byron, Icarus, Icarus-Trezor and Ledger/BitBox02 master-key algorithms are distinct. CIP 3 names Yoroi/Daedalus explicitly. Citation only; CC-BY-4.0 document and vector bytes are not redistributed. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 84a4abe37702847073aac805452c570ac8bc80a8723d89875826f3d5f1f034e4.
+- Evidence claim: Explicit constants distinguish regular 24, legacy12, Yoroi15 and paper 27, split18 printed plus9 written. Constants do not prove creation routes; api and restore mapping evidence are separate. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 58d94791c7826fca095e4f56e213ea04cd69a4cd915eab0b7cb3103b8f35a265.
+- Evidence claim: Icarus uses PBKDF2-HMAC-SHA512, 4096 iterations, entropy as salt, optional separate mnemonic password, 96 output bytes then bit tweaks. Icarus-Trezor retains the extra checksum byte for 24-word input; below 24 it matches Icarus. Never substitute a generic BIP39 seed derivation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 f83da5fbdc6865a0de83edb7219208908e109b2a50671c8a9682d7c3d1179a85.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 15, 24
+- Position rules: Same BIP39 English dictionary at every position; entropy/checksum packing is BIP39, master-key derivation is Icarus.; 15-word Yoroi creation and 24-word Daedalus creation are separate exact source modes; listed lengths are scoped profiles, not all theoretical Icarus inputs.
+- Semantics: Icarus 96-byte root, 4096-round PBKDF2, entropy salt, separate optional mnemonic password. Yoroi/Nami examined source uses empty mnemonic password; spending password is not this secret. No wallet-level recovery vector independently reproduced. Trezor 24 checksum deviation is excluded.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
+- Test vectors: —
+
+<a id="scheme-cardano-icarus-15"></a>
+
+### Cardano — Icarus 15 — cardano-icarus-15
+
+- Source record: [cardano-icarus-15](../catalog/schemes/cardano-icarus-15.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 4ca4dcefccc7143672cf07a0b760d9e5abfc7797 / 4ca4dcefccc7143672cf07a0b760d9e5abfc7797
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-cip3](../catalog/evidence/cardano-cip3.json), [cardano-icarus-rules](../catalog/evidence/cardano-icarus-rules.json), [cardano-yoroi-create](../catalog/evidence/cardano-yoroi-create.json)
+- Evidence claim: Recovery phrase conversion follows BIP39, but Byron, Icarus, Icarus-Trezor and Ledger/BitBox02 master-key algorithms are distinct. CIP 3 names Yoroi/Daedalus explicitly. Citation only; CC-BY-4.0 document and vector bytes are not redistributed. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 84a4abe37702847073aac805452c570ac8bc80a8723d89875826f3d5f1f034e4.
+- Evidence claim: Icarus uses PBKDF2-HMAC-SHA512, 4096 iterations, entropy as salt, optional separate mnemonic password, 96 output bytes then bit tweaks. Icarus-Trezor retains the extra checksum byte for 24-word input; below 24 it matches Icarus. Never substitute a generic BIP39 seed derivation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 f83da5fbdc6865a0de83edb7219208908e109b2a50671c8a9682d7c3d1179a85.
+- Evidence claim: generateAdaMnemonic explicitly generates160 bits/15 words; generateWalletRootKey passes BIP39 entropy and empty mnemonic password to from\_bip39\_entropy. Distinct Ledger helper is not default software generation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 cb4e95b9bc4e8a30ecd3f6520424e556560155503ad03456988bf5a3fed4fa21.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 15
+- Position rules: Same BIP39 English dictionary at every position; entropy/checksum packing is BIP39, master-key derivation is Icarus.; 15-word Yoroi creation and 24-word Daedalus creation are separate exact source modes; listed lengths are scoped profiles, not all theoretical Icarus inputs.
+- Semantics: Icarus 96-byte root, 4096-round PBKDF2, entropy salt, separate optional mnemonic password. Yoroi/Nami examined source uses empty mnemonic password; spending password is not this secret. No wallet-level recovery vector independently reproduced. Trezor 24 checksum deviation is excluded.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
+- Test vectors: —
+
+<a id="scheme-cardano-icarus-24"></a>
+
+### Cardano — Icarus 24 — cardano-icarus-24
+
+- Source record: [cardano-icarus-24](../catalog/schemes/cardano-icarus-24.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 4ca4dcefccc7143672cf07a0b760d9e5abfc7797 / 4ca4dcefccc7143672cf07a0b760d9e5abfc7797
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cardano-cip3](../catalog/evidence/cardano-cip3.json), [cardano-daedalus-dictionary](../catalog/evidence/cardano-daedalus-dictionary.json), [cardano-daedalus-lengths](../catalog/evidence/cardano-daedalus-lengths.json), [cardano-icarus-rules](../catalog/evidence/cardano-icarus-rules.json)
+- Evidence claim: Recovery phrase conversion follows BIP39, but Byron, Icarus, Icarus-Trezor and Ledger/BitBox02 master-key algorithms are distinct. CIP 3 names Yoroi/Daedalus explicitly. Citation only; CC-BY-4.0 document and vector bytes are not redistributed. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 84a4abe37702847073aac805452c570ac8bc80a8723d89875826f3d5f1f034e4.
+- Evidence claim: Extracted 2048 literal words match verified bip39-en in exact order; no duplicated file committed. crypto.ts explicitly passes this English list to generation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 6a445ce64e8068dc7f523546e4f7788c0315365ff1561b389eea524629e18386.
+- Evidence claim: Explicit constants distinguish regular 24, legacy12, Yoroi15 and paper 27, split18 printed plus9 written. Constants do not prove creation routes; api and restore mapping evidence are separate. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 58d94791c7826fca095e4f56e213ea04cd69a4cd915eab0b7cb3103b8f35a265.
+- Evidence claim: Icarus uses PBKDF2-HMAC-SHA512, 4096 iterations, entropy as salt, optional separate mnemonic password, 96 output bytes then bit tweaks. Icarus-Trezor retains the extra checksum byte for 24-word input; below 24 it matches Icarus. Never substitute a generic BIP39 seed derivation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 f83da5fbdc6865a0de83edb7219208908e109b2a50671c8a9682d7c3d1179a85.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 24
+- Position rules: Same BIP39 English dictionary at every position; entropy/checksum packing is BIP39, master-key derivation is Icarus.; 15-word Yoroi creation and 24-word Daedalus creation are separate exact source modes; listed lengths are scoped profiles, not all theoretical Icarus inputs.
+- Semantics: Icarus 96-byte root, 4096-round PBKDF2, entropy salt, separate optional mnemonic password. Yoroi/Nami examined source uses empty mnemonic password; spending password is not this secret. No wallet-level recovery vector independently reproduced. Trezor 24 checksum deviation is excluded.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
+- Test vectors: —
 
 <a id="scheme-monero-legacy"></a>
 
@@ -532,6 +1114,52 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - External secret / stored: optional-passphrase / false
 - External-secret guidance: Keep any supported seed offset/encryption passphrase separately. Tessaveil never stores it. App login passwords/PINs are not automatically mnemonic secrets; verify exact wallet mode.
 - Test vectors: [monero-polyseed-vectors](../catalog/evidence/monero-polyseed-vectors.json)
+
+<a id="scheme-slip39-share"></a>
+
+### SLIP-39 — individual share — slip39-share
+
+- Source record: [slip39-share](../catalog/schemes/slip39-share.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 570ed55b7fde158f1116be34fc2faa35dada5912 / 570ed55b7fde158f1116be34fc2faa35dada5912
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-rules](../catalog/evidence/slip39-rules.json), [slip39-spec](../catalog/evidence/slip39-spec.json), [slip39-vectors](../catalog/evidence/slip39-vectors.json)
+- Evidence claim: Big-endian 10-bit indices; 4 metadata words, padded share value, 3 checksum words; threshold/count fields are encoded minus one. All positions use the same list. Source-native input lowercases and splits whitespace, without Unicode normalization. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 3ee6f46415ba34dd8c1bc5f92601b17151854a35425e098d1de857ca714205c5.
+- Evidence claim: Format of the share mnemonic, Two-level scheme, Checksum and Passphrase sections define 20/33 words for 128/256 bits; 15-bit ID, extendable flag, exponent, group/member fields and three RS1024 words. Standard allows other lengths; catalogue scope only 20/33. Tessaveil stores neither complete shares nor thresholds as recovered secrets and never combines/reconstructs shares. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 7b4269f66f10f03ac685ea7c76f742bfbf56211af1af29339eadef9acba1f856.
+- Evidence claim: Public cases 1, 4, 17, 20, 42, 44 projected into indices/fingerprints; tests check individual-share metadata/padding/RS1024 only. No combining, master-secret recovery, decryption or wallet derivation is executed. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 13ebecebdd869dd2bc2cdf69e7ce3a158cf106cac76c39d17682b1c6cdabbdc4.
+- Dictionaries: [slip39-en](#dictionary-slip39-en)
+- Supported lengths: 20, 33
+- Position rules: Words1-2\:15-bit identifier, extendable flag, 4-bit iteration exponent. Words3-4\:4-bit group index, group threshold-1, group count-1, member index, member threshold-1.; Words5 through last-3 encode left-zero-padded share bytes; last3 encode RS1024 checksum. Same list all positions. Standard 128/256 bits gives 20/33 words.
+- Semantics: Individual share profile, never a whole reconstructed wallet secret. Tessaveil never combines/reconstructs shares, derives keys or validates a complete user share. Optional passphrase is separate. Documented\: vectors cover share encoding/metadata only, not wallet recovery.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
+- Test vectors: [slip39-vectors](../catalog/evidence/slip39-vectors.json)
+
+<a id="scheme-slip39-share-20"></a>
+
+### SLIP-39 — individual share \(20-word Suite mode\) — slip39-share-20
+
+- Source record: [slip39-share-20](../catalog/schemes/slip39-share-20.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 570ed55b7fde158f1116be34fc2faa35dada5912 / 570ed55b7fde158f1116be34fc2faa35dada5912
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-rules](../catalog/evidence/slip39-rules.json), [slip39-spec](../catalog/evidence/slip39-spec.json), [slip39-vectors](../catalog/evidence/slip39-vectors.json)
+- Evidence claim: Big-endian 10-bit indices; 4 metadata words, padded share value, 3 checksum words; threshold/count fields are encoded minus one. All positions use the same list. Source-native input lowercases and splits whitespace, without Unicode normalization. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 3ee6f46415ba34dd8c1bc5f92601b17151854a35425e098d1de857ca714205c5.
+- Evidence claim: Format of the share mnemonic, Two-level scheme, Checksum and Passphrase sections define 20/33 words for 128/256 bits; 15-bit ID, extendable flag, exponent, group/member fields and three RS1024 words. Standard allows other lengths; catalogue scope only 20/33. Tessaveil stores neither complete shares nor thresholds as recovered secrets and never combines/reconstructs shares. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 7b4269f66f10f03ac685ea7c76f742bfbf56211af1af29339eadef9acba1f856.
+- Evidence claim: Public cases 1, 4, 17, 20, 42, 44 projected into indices/fingerprints; tests check individual-share metadata/padding/RS1024 only. No combining, master-secret recovery, decryption or wallet derivation is executed. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 13ebecebdd869dd2bc2cdf69e7ce3a158cf106cac76c39d17682b1c6cdabbdc4.
+- Dictionaries: [slip39-en](#dictionary-slip39-en)
+- Supported lengths: 20
+- Position rules: Words1-2\:15-bit identifier, extendable flag, 4-bit iteration exponent. Words3-4\:4-bit group index, group threshold-1, group count-1, member index, member threshold-1.; Words5 through last-3 encode left-zero-padded share bytes; last3 encode RS1024 checksum. Same list all positions. Standard 128/256 bits gives 20/33 words.
+- Semantics: Individual share profile, never a whole reconstructed wallet secret. Tessaveil never combines/reconstructs shares, derives keys or validates a complete user share. Optional passphrase is separate. Documented\: vectors cover share encoding/metadata only, not wallet recovery.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
+- Test vectors: [slip39-vectors](../catalog/evidence/slip39-vectors.json)
 
 <a id="scheme-ton-multichain-bip39"></a>
 
@@ -1687,14 +2315,76 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - License evidence: [monero-osi-apache](../catalog/evidence/monero-osi-apache.json), [monero-polyseed-license](../catalog/evidence/monero-polyseed-license.json), [monero-polyseed-notice](../catalog/evidence/monero-polyseed-notice.json), [monero-signpath](../catalog/evidence/monero-signpath.json), [polyseed-zh-hant-source](../catalog/evidence/polyseed-zh-hant-source.json)
 - Test vectors: —
 
+<a id="dictionary-slip39-en"></a>
+
+### SLIP-39 — English — slip39-en
+
+- Source record: [slip39-en](../catalog/dictionaries/slip39-en.json)
+- Status: verified
+- Reason: Verified research record; not a release or security guarantee.
+- Version interval (min / max): 17fcce14736afe498871d3018e4fa9330443471a / 17fcce14736afe498871d3018e4fa9330443471a
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [slip39-license](../catalog/evidence/slip39-license.json), [slip39-list](../catalog/evidence/slip39-list.json), [slip39-osi-mit](../catalog/evidence/slip39-osi-mit.json), [slip39-rules](../catalog/evidence/slip39-rules.json), [slip39-signpath](../catalog/evidence/slip39-signpath.json), [slip39-spec](../catalog/evidence/slip39-spec.json), [slip39-vectors](../catalog/evidence/slip39-vectors.json)
+- Evidence claim: Codex review 2026-09-29\: MIT covers this repository word-list and public-vector projection; retain SatoshiLabs 2019 copyright and full permission/disclaimer in THIRD\_PARTY\_NOTICES. No implementation library is bundled. Repository redistribution allowed for these exact bytes. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 332f92f7f90a1c957b473b902a5daf39ad5eb179d8828e0304b4c40faa0123c0.
+- Evidence claim: Exact 1024-entry English dictionary. Byte-identical to normative SLIP-0039 list. No transformation or sorting. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 bcc4555340332d169718aed8bf31dd9d5248cb7da6e5d355140ef4f1e601eec3.
+- Evidence claim: Official OSI page inspected through web retrieval on 2026-09-29 confirms MIT as an OSI-approved license. Direct HTTP fetch returned 403; no new raw-body fingerprint or immutable capture asserted. This corroborates component classification, not Foundation acceptance.
+- Evidence claim: Big-endian 10-bit indices; 4 metadata words, padded share value, 3 checksum words; threshold/count fields are encoded minus one. All positions use the same list. Source-native input lowercases and splits whitespace, without Unicode normalization. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 3ee6f46415ba34dd8c1bc5f92601b17151854a35425e098d1de857ca714205c5.
+- Evidence claim: Codex local component assessment\: MIT data and public test projections impose no proprietary or commercial dual-license requirement; required attribution/license are retained. Compatible only at component-license level. Foundation acceptance and project/release eligibility remain unproven. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 6610cf889bbe0dc7533abaa310bc7a5cc9a61ae6c2ce0798a08109c925b46c51.
+- Evidence claim: Format of the share mnemonic, Two-level scheme, Checksum and Passphrase sections define 20/33 words for 128/256 bits; 15-bit ID, extendable flag, exponent, group/member fields and three RS1024 words. Standard allows other lengths; catalogue scope only 20/33. Tessaveil stores neither complete shares nor thresholds as recovered secrets and never combines/reconstructs shares. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 7b4269f66f10f03ac685ea7c76f742bfbf56211af1af29339eadef9acba1f856.
+- Evidence claim: Public cases 1, 4, 17, 20, 42, 44 projected into indices/fingerprints; tests check individual-share metadata/padding/RS1024 only. No combining, master-secret recovery, decryption or wallet derivation is executed. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 13ebecebdd869dd2bc2cdf69e7ce3a158cf106cac76c39d17682b1c6cdabbdc4.
+- Language: en
+- Script: Latn
+- Encoding: UTF-8
+- Normalization: none
+- Word count: 1024
+- SHA-256: bcc4555340332d169718aed8bf31dd9d5248cb7da6e5d355140ef4f1e601eec3
+- Order rule: Unchanged upstream UTF-8 LF bytes including final LF. Zero-based 10-bit indices in source order; no sort, normalization or case rewriting.
+- Position rules: Same 1024-word vocabulary at every share position. First four words encode metadata, last three are RS1024 checksum; metadata is not BIP39 entropy.; Only ASCII words; source input lowercases and splits whitespace. Never combine shares or evaluate user-share validity in Tessaveil.
+- Source revision: 17fcce14736afe498871d3018e4fa9330443471a
+- License: MIT
+- Attribution: Copyright 2019 SatoshiLabs. Complete MIT notice in THIRD\_PARTY\_NOTICES.
+- Repository redistribution: allowed
+- SignPath compatibility: compatible
+- License evidence: [slip39-license](../catalog/evidence/slip39-license.json), [slip39-osi-mit](../catalog/evidence/slip39-osi-mit.json), [slip39-signpath](../catalog/evidence/slip39-signpath.json)
+- Test vectors: [slip39-vectors](../catalog/evidence/slip39-vectors.json)
+
 ## Evidence revisions
 
+- [algorand-algorithm](../catalog/evidence/algorand-algorithm.json): official-source; 189855d43cba5d20e66248693d74332052ccb08e; 2026-09-29
+- [algorand-defly-create](../catalog/evidence/algorand-defly-create.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
+- [algorand-dictionary](../catalog/evidence/algorand-dictionary.json): official-source; 189855d43cba5d20e66248693d74332052ccb08e; 2026-09-29
+- [algorand-license](../catalog/evidence/algorand-license.json): official-source; 189855d43cba5d20e66248693d74332052ccb08e; 2026-09-29
+- [algorand-pera-backup](../catalog/evidence/algorand-pera-backup.json): official-documentation; snapshot-2026-09-29-sha256-4fad7c798ef8891ca31f4ee64051c570fd8d4952665f70738635c26eb425c9d6; 2026-09-29
+- [algorand-pera-migration](../catalog/evidence/algorand-pera-migration.json): official-documentation; snapshot-2026-09-29-sha256-30fa382990ea359398ccde9c9a4ccdd2e031b6b83721f9aede4cb46cb57c506b; 2026-09-29
+- [algorand-pera-universal](../catalog/evidence/algorand-pera-universal.json): official-documentation; snapshot-2026-09-29-sha256-d54c39508a76f426bd3958cfbae5600d8f737aa05d4356540be617986a4c0b81; 2026-09-29
+- [algorand-vectors](../catalog/evidence/algorand-vectors.json): public-test-vector; 189855d43cba5d20e66248693d74332052ccb08e; 2026-09-29
 - [bip39-guidance](../catalog/evidence/bip39-guidance.json): official-specification; 3a10b5b5f0a7586df8928d580a3009744ebb2079; 2026-09-29
 - [bip39-license](../catalog/evidence/bip39-license.json): official-source; b57a5ad77a981e743f4167ab2f7927a55c1e82a8; 2026-09-29
 - [bip39-osi-mit](../catalog/evidence/bip39-osi-mit.json): official-documentation; sha256\:004c79db0a335488afc87600d89f447dce7fb4d24d510af15ed4381a24be848c; 2026-09-29
 - [bip39-signpath](../catalog/evidence/bip39-signpath.json): official-documentation; sha256\:6610cf889bbe0dc7533abaa310bc7a5cc9a61ae6c2ce0798a08109c925b46c51; 2026-09-29
 - [bip39-spec](../catalog/evidence/bip39-spec.json): official-specification; 3a10b5b5f0a7586df8928d580a3009744ebb2079; 2026-09-29
 - [bip39-vectors](../catalog/evidence/bip39-vectors.json): public-test-vector; b57a5ad77a981e743f4167ab2f7927a55c1e82a8; 2026-09-29
+- [cardano-byron-rules](../catalog/evidence/cardano-byron-rules.json): official-specification; 4ca4dcefccc7143672cf07a0b760d9e5abfc7797; 2026-09-29
+- [cardano-cip3](../catalog/evidence/cardano-cip3.json): official-specification; 4ca4dcefccc7143672cf07a0b760d9e5abfc7797; 2026-09-29
+- [cardano-daedalus-create](../catalog/evidence/cardano-daedalus-create.json): official-source; 6c57eb94753211f66d3a63f49d031bf746044755; 2026-09-29
+- [cardano-daedalus-dictionary](../catalog/evidence/cardano-daedalus-dictionary.json): official-source; 6c57eb94753211f66d3a63f49d031bf746044755; 2026-09-29
+- [cardano-daedalus-lengths](../catalog/evidence/cardano-daedalus-lengths.json): official-source; 6c57eb94753211f66d3a63f49d031bf746044755; 2026-09-29
+- [cardano-daedalus-restore](../catalog/evidence/cardano-daedalus-restore.json): official-source; 6c57eb94753211f66d3a63f49d031bf746044755; 2026-09-29
+- [cardano-daedalus-version](../catalog/evidence/cardano-daedalus-version.json): official-source; 6c57eb94753211f66d3a63f49d031bf746044755; 2026-09-29
+- [cardano-eternl-doc](../catalog/evidence/cardano-eternl-doc.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
+- [cardano-hardware-rules](../catalog/evidence/cardano-hardware-rules.json): official-specification; 4ca4dcefccc7143672cf07a0b760d9e5abfc7797; 2026-09-29
+- [cardano-icarus-rules](../catalog/evidence/cardano-icarus-rules.json): official-specification; 4ca4dcefccc7143672cf07a0b760d9e5abfc7797; 2026-09-29
+- [cardano-lace-create](../catalog/evidence/cardano-lace-create.json): official-documentation; snapshot-2026-09-29-sha256-ce02d32706cf597d8f3861e3040d487d7e8862020069ccdf6e40aa48b7a83f19; 2026-09-29
+- [cardano-nami-create](../catalog/evidence/cardano-nami-create.json): official-source; e52e0bdb02eb1ec224db26f48b0192685a30f99e; 2026-09-29
+- [cardano-nami-derive](../catalog/evidence/cardano-nami-derive.json): official-source; e52e0bdb02eb1ec224db26f48b0192685a30f99e; 2026-09-29
+- [cardano-nami-version](../catalog/evidence/cardano-nami-version.json): official-source; e52e0bdb02eb1ec224db26f48b0192685a30f99e; 2026-09-29
+- [cardano-paper-license](../catalog/evidence/cardano-paper-license.json): official-source; 6c57eb94753211f66d3a63f49d031bf746044755; 2026-09-29
+- [cardano-paper-rules](../catalog/evidence/cardano-paper-rules.json): official-source; 6c57eb94753211f66d3a63f49d031bf746044755; 2026-09-29
+- [cardano-paper-vector](../catalog/evidence/cardano-paper-vector.json): public-test-vector; 6c57eb94753211f66d3a63f49d031bf746044755; 2026-09-29
+- [cardano-typhon-create](../catalog/evidence/cardano-typhon-create.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
+- [cardano-yoroi-backup](../catalog/evidence/cardano-yoroi-backup.json): official-source; 91febfc95a288d3436b891356c87645611ea603a; 2026-09-29
+- [cardano-yoroi-create](../catalog/evidence/cardano-yoroi-create.json): official-source; 91febfc95a288d3436b891356c87645611ea603a; 2026-09-29
 - [monero-cake-export](../catalog/evidence/monero-cake-export.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [monero-cake-seed](../catalog/evidence/monero-cake-seed.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [monero-cake-ui](../catalog/evidence/monero-cake-ui.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
@@ -1752,6 +2442,17 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - [polyseed-pt-source](../catalog/evidence/polyseed-pt-source.json): official-source; 56f634647d4f75596de20a6259b0cf1933949fdc; 2026-09-29
 - [polyseed-zh-hans-source](../catalog/evidence/polyseed-zh-hans-source.json): official-source; 56f634647d4f75596de20a6259b0cf1933949fdc; 2026-09-29
 - [polyseed-zh-hant-source](../catalog/evidence/polyseed-zh-hant-source.json): official-source; 56f634647d4f75596de20a6259b0cf1933949fdc; 2026-09-29
+- [slip39-license](../catalog/evidence/slip39-license.json): official-source; 17fcce14736afe498871d3018e4fa9330443471a; 2026-09-29
+- [slip39-list](../catalog/evidence/slip39-list.json): official-source; 17fcce14736afe498871d3018e4fa9330443471a; 2026-09-29
+- [slip39-osi-mit](../catalog/evidence/slip39-osi-mit.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
+- [slip39-rules](../catalog/evidence/slip39-rules.json): official-source; 17fcce14736afe498871d3018e4fa9330443471a; 2026-09-29
+- [slip39-signpath](../catalog/evidence/slip39-signpath.json): official-documentation; snapshot-2026-09-29-sha256-6610cf889bbe0dc7533abaa310bc7a5cc9a61ae6c2ce0798a08109c925b46c51; 2026-09-29
+- [slip39-spec](../catalog/evidence/slip39-spec.json): official-specification; 570ed55b7fde158f1116be34fc2faa35dada5912; 2026-09-29
+- [slip39-trezor-model-t](../catalog/evidence/slip39-trezor-model-t.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
+- [slip39-trezor-safe-3](../catalog/evidence/slip39-trezor-safe-3.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
+- [slip39-trezor-safe-5](../catalog/evidence/slip39-trezor-safe-5.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
+- [slip39-trezor-safe-7](../catalog/evidence/slip39-trezor-safe-7.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
+- [slip39-vectors](../catalog/evidence/slip39-vectors.json): public-test-vector; 17fcce14736afe498871d3018e4fa9330443471a; 2026-09-29
 - [ton-gram-identity](../catalog/evidence/ton-gram-identity.json): official-documentation; sha256\:c498efe1d81425f59fb294f1184c5a64ddd913c5cc22784759d2bd58691e7da2; 2026-09-29
 - [ton-gram-store](../catalog/evidence/ton-gram-store.json): official-documentation; sha256\:3f2c0e813940801893d846b36313173f6e7a2865b1bc41d80cc74fd1c90a2518; 2026-09-29
 - [ton-keeper-doc](../catalog/evidence/ton-keeper-doc.json): official-documentation; sha256\:d7091696af9e14b254c181906e1a8e8b48a339835ae65ac753593cabcbcb768a; 2026-09-29
@@ -1828,7 +2529,7 @@ Pending is an unfinished research state, not a support status. Missing records r
 | dictionary-polyseed-zh-hans — POLYSEED zh-hans | terminal | documented | [polyseed-zh-hans](../catalog/dictionaries/polyseed-zh-hans.json) |
 | dictionary-polyseed-zh-hant — POLYSEED zh-hant | terminal | documented | [polyseed-zh-hant](../catalog/dictionaries/polyseed-zh-hant.json) |
 | dictionary-sia-legacy — sia legacy | pending | — | — |
-| dictionary-slip39-en — slip39 en | pending | — | — |
+| dictionary-slip39-en — slip39 en | terminal | verified | [slip39-en](../catalog/dictionaries/slip39-en.json) |
 | dictionary-zano-en — zano en | pending | — | — |
 | network-algorand — algorand | pending | — | — |
 | network-arbitrum — arbitrum | pending | — | — |
@@ -1852,13 +2553,13 @@ Pending is an unfinished research state, not a support status. Missing records r
 | network-tron — tron | pending | — | — |
 | network-zano — zano | pending | — | — |
 | network-zcash — zcash | pending | — | — |
-| scheme-algorand-25 — algorand 25 | pending | — | — |
+| scheme-algorand-25 — algorand 25 | terminal | documented | [algorand-25](../catalog/schemes/algorand-25.json) |
 | scheme-bip39 — bip39 | terminal | verified | [bip39](../catalog/schemes/bip39.json) |
 | scheme-cake-decred-15 — cake decred 15 | pending | — | — |
-| scheme-cardano-byron — cardano byron | pending | — | — |
-| scheme-cardano-daedalus-27 — cardano daedalus 27 | pending | — | — |
-| scheme-cardano-hardware — cardano hardware | pending | — | — |
-| scheme-cardano-icarus — cardano icarus | pending | — | — |
+| scheme-cardano-byron — cardano byron | terminal | documented | [cardano-byron](../catalog/schemes/cardano-byron.json) |
+| scheme-cardano-daedalus-27 — cardano daedalus 27 | terminal | documented | [cardano-daedalus-27](../catalog/schemes/cardano-daedalus-27.json) |
+| scheme-cardano-hardware — cardano hardware | terminal | blocked | [cardano-hardware](../catalog/schemes/cardano-hardware.json) |
+| scheme-cardano-icarus — cardano icarus | terminal | documented | [cardano-icarus](../catalog/schemes/cardano-icarus.json) |
 | scheme-chia-bip39 — chia bip39 | pending | — | — |
 | scheme-decred-bip39 — decred bip39 | pending | — | — |
 | scheme-decred-pgp33 — decred pgp33 | pending | — | — |
@@ -1870,7 +2571,7 @@ Pending is an unfinished research state, not a support status. Missing records r
 | scheme-sia-bip39 — sia bip39 | pending | — | — |
 | scheme-sia-legacy-28 — sia legacy 28 | pending | — | — |
 | scheme-sia-legacy-29 — sia legacy 29 | pending | — | — |
-| scheme-slip39-share — slip39 share | pending | — | — |
+| scheme-slip39-share — slip39 share | terminal | documented | [slip39-share](../catalog/schemes/slip39-share.json) |
 | scheme-substrate-bip39 — substrate bip39 | pending | — | — |
 | scheme-ton-multichain-bip39 — ton multichain bip39 | terminal | documented | [ton-multichain-bip39](../catalog/schemes/ton-multichain-bip39.json) |
 | scheme-ton-native — ton native | terminal | verified | [ton-native](../catalog/schemes/ton-native.json) |
@@ -1893,12 +2594,12 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-coinomi — coinomi | pending | — | — |
 | wallet-coldcard — coldcard | pending | — | — |
 | wallet-cosmostation — cosmostation | pending | — | — |
-| wallet-daedalus — daedalus | pending | — | — |
+| wallet-daedalus — daedalus | terminal | documented | [daedalus](../catalog/wallets/daedalus.json) |
 | wallet-decrediton — decrediton | pending | — | — |
-| wallet-defly — defly | pending | — | — |
+| wallet-defly — defly | terminal | blocked | [defly](../catalog/wallets/defly.json) |
 | wallet-electrum — electrum | pending | — | — |
 | wallet-ellipal — ellipal | pending | — | — |
-| wallet-eternl — eternl | pending | — | — |
+| wallet-eternl — eternl | terminal | blocked | [eternl](../catalog/wallets/eternl.json) |
 | wallet-exodus — exodus | pending | — | — |
 | wallet-exodus-monero — exodus monero | terminal | documented | [exodus-monero-export](../catalog/wallets/exodus-monero-export.json) |
 | wallet-feather — feather | terminal | documented | [feather](../catalog/wallets/feather.json) |
@@ -1909,19 +2610,19 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-keplr — keplr | pending | — | — |
 | wallet-keystone — keystone | pending | — | — |
 | wallet-kukai — kukai | pending | — | — |
-| wallet-lace — lace | pending | — | — |
+| wallet-lace — lace | terminal | documented | [lace](../catalog/wallets/lace.json) |
 | wallet-leap — leap | pending | — | — |
 | wallet-ledger — ledger | pending | — | — |
 | wallet-metamask — metamask | pending | — | — |
 | wallet-monero-gui-cli — monero gui cli | terminal | documented | [monero-gui-cli](../catalog/wallets/monero-gui-cli.json) |
 | wallet-mymonero — mymonero | terminal | documented | [mymonero](../catalog/wallets/mymonero.json) |
 | wallet-mytonwallet — mytonwallet | terminal | documented | [mytonwallet](../catalog/wallets/mytonwallet.json) |
-| wallet-nami — nami | pending | — | — |
+| wallet-nami — nami | terminal | documented | [nami](../catalog/wallets/nami.json) |
 | wallet-okx-wallet — okx wallet | pending | — | — |
 | wallet-onekey — onekey | pending | — | — |
 | wallet-openmask — openmask | terminal | documented | [openmask](../catalog/wallets/openmask.json) |
 | wallet-passport — passport | pending | — | — |
-| wallet-pera-wallet — pera wallet | pending | — | — |
+| wallet-pera-wallet — pera wallet | terminal | documented | [pera-wallet](../catalog/wallets/pera-wallet.json) |
 | wallet-phantom — phantom | pending | — | — |
 | wallet-polkadot-js — polkadot js | pending | — | — |
 | wallet-rabby — rabby | pending | — | — |
@@ -1942,14 +2643,14 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-tonkeeper-classic — tonkeeper classic | terminal | verified | [tonkeeper-classic](../catalog/wallets/tonkeeper-classic.json) |
 | wallet-tonkeeper-multichain — tonkeeper multichain | terminal | documented | [tonkeeper-multichain](../catalog/wallets/tonkeeper-multichain.json) |
 | wallet-trezor — trezor | pending | — | — |
-| wallet-trezor-model-t — trezor model t | pending | — | — |
-| wallet-trezor-safe-3 — trezor safe 3 | pending | — | — |
-| wallet-trezor-safe-5 — trezor safe 5 | pending | — | — |
-| wallet-trezor-safe-7 — trezor safe 7 | pending | — | — |
+| wallet-trezor-model-t — trezor model t | terminal | documented | [trezor-model-t](../catalog/wallets/trezor-model-t.json) |
+| wallet-trezor-safe-3 — trezor safe 3 | terminal | documented | [trezor-safe-3](../catalog/wallets/trezor-safe-3.json) |
+| wallet-trezor-safe-5 — trezor safe 5 | terminal | documented | [trezor-safe-5](../catalog/wallets/trezor-safe-5.json) |
+| wallet-trezor-safe-7 — trezor safe 7 | terminal | documented | [trezor-safe-7](../catalog/wallets/trezor-safe-7.json) |
 | wallet-trust-wallet — trust wallet | pending | — | — |
-| wallet-typhon — typhon | pending | — | — |
+| wallet-typhon — typhon | terminal | blocked | [typhon](../catalog/wallets/typhon.json) |
 | wallet-walletd — walletd | pending | — | — |
-| wallet-yoroi — yoroi | pending | — | — |
+| wallet-yoroi — yoroi | terminal | documented | [yoroi](../catalog/wallets/yoroi.json) |
 | wallet-zallet — zallet | pending | — | — |
 | wallet-zano-wallet — zano wallet | pending | — | — |
 | wallet-zcash-official — zcash official | pending | — | — |

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "cardano-daedalus-lengths",
+  "source_type": "official-source",
+  "claim": "Explicit constants distinguish regular 24, legacy12, Yoroi15 and paper 27, split18 printed plus9 written. Constants do not prove creation routes; api and restore mapping evidence are separate. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 58d94791c7826fca095e4f56e213ea04cd69a4cd915eab0b7cb3103b8f35a265.",
+  "url": "https://raw.githubusercontent.com/input-output-hk/daedalus/6c57eb94753211f66d3a63f49d031bf746044755/source/renderer/app/config/cryptoConfig.ts",
+  "revision": "6c57eb94753211f66d3a63f49d031bf746044755",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cardano-byron",
+    "cardano-icarus",
+    "cardano-icarus-24",
+    "cardano-daedalus-27",
+    "daedalus",
+    "daedalus-byron",
+    "daedalus-paper-27",
+    "daedalus-yoroi-15"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "algorand-vectors",
+  "source_type": "public-test-vector",
+  "claim": "TestMnemonic.test_zero_mnemonic publishes the all-zero key fixed answer. Two additional clearly synthetic seeds (ascending bytes and all FF) are projected using the reviewed pinned upstream _from_key functions, independently of offline integer-based tests. No account/provider calls. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 9d1ae77d906174a845979221cf483b01e8756aeadf5e3d66d5f45ca6aca1d79f.",
+  "url": "https://raw.githubusercontent.com/algorand/py-algorand-sdk/189855d43cba5d20e66248693d74332052ccb08e/tests/unit_tests/test_other.py",
+  "revision": "189855d43cba5d20e66248693d74332052ccb08e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "algorand-25"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "slip39-share",
+  "display_name": {
+    "en": "SLIP-39 — individual share",
+    "ru": "SLIP-39 — individual share"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "slip39-spec",
+    "slip39-rules",
+    "slip39-vectors"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "570ed55b7fde158f1116be34fc2faa35dada5912",
+    "max": "570ed55b7fde158f1116be34fc2faa35dada5912"
+  },
+  "dictionary_ids": [
+    "slip39-en"
+  ],
+  "supported_lengths": [
+    20,
+    33
+  ],
+  "position_rules": [
+    "Words1-2:15-bit identifier, extendable flag, 4-bit iteration exponent. Words3-4:4-bit group index, group threshold-1, group count-1, member index, member threshold-1.",
+    "Words5 through last-3 encode left-zero-padded share bytes; last3 encode RS1024 checksum. Same list all positions. Standard 128/256 bits gives 20/33 words."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred."
+  },
+  "semantic_distinction": "Individual share profile, never a whole reconstructed wallet secret. Tessaveil never combines/reconstructs shares, derives keys or validates a complete user share. Optional passphrase is separate. Documented: vectors cover share encoding/metadata only, not wallet recovery.",
+  "test_vector_ids": [
+    "slip39-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

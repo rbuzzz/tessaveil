@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "cardano-icarus-rules",
+  "source_type": "official-specification",
+  "claim": "Icarus uses PBKDF2-HMAC-SHA512, 4096 iterations, entropy as salt, optional separate mnemonic password, 96 output bytes then bit tweaks. Icarus-Trezor retains the extra checksum byte for 24-word input; below 24 it matches Icarus. Never substitute a generic BIP39 seed derivation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 f83da5fbdc6865a0de83edb7219208908e109b2a50671c8a9682d7c3d1179a85.",
+  "url": "https://raw.githubusercontent.com/cardano-foundation/CIPs/4ca4dcefccc7143672cf07a0b760d9e5abfc7797/CIP-0003/Icarus.md",
+  "revision": "4ca4dcefccc7143672cf07a0b760d9e5abfc7797",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cardano-icarus",
+    "cardano-icarus-15",
+    "cardano-icarus-24",
+    "cardano-hardware"
+  ]
+}

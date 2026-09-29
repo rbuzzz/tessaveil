@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cardano-paper-vector",
+  "source_type": "public-test-vector",
+  "claim": "Upstream explicitly synthetic, never-funded public certificate (2026-08-27), projected to 27 indices and sentence/password hashes. Tests verify partition and password input only, NOT unscrambling or recovery. Source notes creation retirement but retained source helpers are not proof of reachable creation UI. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 2c7449afaf97bf85b62537c655323def5bb6f328755dae303ac3f52a6465e13b.",
+  "url": "https://raw.githubusercontent.com/input-output-hk/daedalus/6c57eb94753211f66d3a63f49d031bf746044755/source/renderer/app/utils/__fixtures__/paper-wallet-certificate.json",
+  "revision": "6c57eb94753211f66d3a63f49d031bf746044755",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cardano-daedalus-27"
+  ]
+}

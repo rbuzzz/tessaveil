@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "algorand-license",
+  "source_type": "official-source",
+  "claim": "MIT (c)2020 Algorand applies to public-vector projection. Retain license in THIRD_PARTY_NOTICES. No SDK or SDK dictionary file bundled. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 32b60f70e2a09ff695719af28a8ff60a8188d79de889d03913965f0d4b3d6055.",
+  "url": "https://raw.githubusercontent.com/algorand/py-algorand-sdk/189855d43cba5d20e66248693d74332052ccb08e/LICENSE",
+  "revision": "189855d43cba5d20e66248693d74332052ccb08e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "algorand-25"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "cardano-cip3",
+  "source_type": "official-specification",
+  "claim": "Recovery phrase conversion follows BIP39, but Byron, Icarus, Icarus-Trezor and Ledger/BitBox02 master-key algorithms are distinct. CIP 3 names Yoroi/Daedalus explicitly. Citation only; CC-BY-4.0 document and vector bytes are not redistributed. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 84a4abe37702847073aac805452c570ac8bc80a8723d89875826f3d5f1f034e4.",
+  "url": "https://raw.githubusercontent.com/cardano-foundation/CIPs/4ca4dcefccc7143672cf07a0b760d9e5abfc7797/CIP-0003/README.md",
+  "revision": "4ca4dcefccc7143672cf07a0b760d9e5abfc7797",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cardano-byron",
+    "cardano-icarus",
+    "cardano-icarus-15",
+    "cardano-icarus-24",
+    "cardano-hardware"
+  ]
+}

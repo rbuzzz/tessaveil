@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "cardano-hardware",
+  "display_name": {
+    "en": "Cardano — unresolved hardware-specific modes",
+    "ru": "Cardano — unresolved hardware-specific modes"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "cardano-cip3",
+    "cardano-icarus-rules",
+    "cardano-hardware-rules"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "4ca4dcefccc7143672cf07a0b760d9e5abfc7797",
+    "max": "4ca4dcefccc7143672cf07a0b760d9e5abfc7797"
+  },
+  "dictionary_ids": [],
+  "supported_lengths": [],
+  "position_rules": [
+    "No shared selectable hardware dictionary or length set. Match exact vendor/model/firmware/backup and derivation mode first."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred."
+  },
+  "semantic_distinction": "Icarus-Trezor and Ledger/BitBox02 differ, including Trezor 24 checksum-byte handling. Generic hardware label is blocked; SLIP39 device support does not prove Cardano derivation. No universal length/mapping asserted.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

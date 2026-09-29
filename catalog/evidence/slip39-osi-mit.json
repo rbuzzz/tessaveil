@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "slip39-osi-mit",
+  "source_type": "official-documentation",
+  "claim": "Official OSI page inspected through web retrieval on 2026-09-29 confirms MIT as an OSI-approved license. Direct HTTP fetch returned 403; no new raw-body fingerprint or immutable capture asserted. This corroborates component classification, not Foundation acceptance.",
+  "url": "https://opensource.org/license/mit",
+  "revision": "reviewed-2026-09-29-version-unpublished",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "slip39-en"
+  ]
+}

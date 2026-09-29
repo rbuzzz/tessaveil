@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "algorand-pera-migration",
+  "source_type": "official-documentation",
+  "claim": "Updated 2026-05-28: distinguishes24-word Universal and 25-word Legacy Algo 25 recovery. Restoration does not prove new legacy generation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 30fa382990ea359398ccde9c9a4ccdd2e031b6b83721f9aede4cb46cb57c506b.",
+  "url": "https://support.perawallet.app/en/article/device-migration-moving-pera-to-a-new-phone-1thj6od/",
+  "revision": "snapshot-2026-09-29-sha256-30fa382990ea359398ccde9c9a4ccdd2e031b6b83721f9aede4cb46cb57c506b",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pera-wallet"
+  ]
+}

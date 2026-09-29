@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "slip39-trezor-model-t",
+  "source_type": "official-documentation",
+  "claim": "Trezor Model T: device-specific table row confirms20-word SLIP39 single/multi backup options. 12-word BIP39 is default; SLIP39 is an explicit choice. Exact Suite/firmware versions unpublished in article; no33-word Suite creation or cross-model inference. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.",
+  "url": "https://trezor.io/learn/security-privacy/personal-security-standards/understanding-trezor-wallet-backups-12-20-or-24-words",
+  "revision": "reviewed-2026-09-29-version-unpublished",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "trezor-model-t",
+    "trezor-model-t-multi-share"
+  ]
+}

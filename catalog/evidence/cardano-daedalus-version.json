@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "cardano-daedalus-version",
+  "source_type": "official-source",
+  "claim": "Source package version11.4.0 at full SHA; this is a source singleton, not attestation of downloaded binary. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 4af61443fb0bf72a23c1ee4aa5faaf70adc5cced3a3d6e358e91f4cdf2bf73c8.",
+  "url": "https://raw.githubusercontent.com/input-output-hk/daedalus/6c57eb94753211f66d3a63f49d031bf746044755/package.json",
+  "revision": "6c57eb94753211f66d3a63f49d031bf746044755",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "daedalus",
+    "daedalus-byron",
+    "daedalus-paper-27",
+    "daedalus-yoroi-15"
+  ]
+}
