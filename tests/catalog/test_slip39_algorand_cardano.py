@@ -14,6 +14,22 @@ SCHEMES = {'slip39-share', 'algorand-25', 'cardano-byron', 'cardano-icarus',
            'cardano-hardware', 'cardano-daedalus-27'}
 
 class Slip39AlgorandCardanoTests(unittest.TestCase):
+    def test_algorand_dictionary_provenance_preserves_existing_final_lf(self):
+        _, records = self.batch()
+        blob = records['bip39-en'].wordlist_bytes
+        # Independently extracted from word_list_raw() at the pinned SDK revision;
+        # no upstream wordlist copy or network dependency belongs in this suite.
+        self.assertEqual(len(blob), 13116)
+        self.assertTrue(blob.endswith(b'\n'))
+        unchanged = hashlib.sha256(blob).hexdigest()
+        extra_lf = hashlib.sha256(blob + b'\n').hexdigest()
+        self.assertEqual(unchanged, '2f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda')
+        self.assertEqual(extra_lf, '24ce42c2fd4a95c1b86bbee9bce1e1cf255bd0022e19bab6bd591afd68b7efdb')
+        self.assertNotEqual(unchanged, extra_lf)
+        note = ' '.join((ROOT / 'docs/research/batches/slip39-algorand-cardano.md').read_text('utf-8').split())
+        self.assertIn('The literal already includes a final LF; its unchanged UTF-8 bytes', note)
+        self.assertNotIn('Appending a final LF', note)
+
     def test_unmapped_hardware_lengths_render_as_absent_in_both_locales(self):
         catalog, _ = self.batch()
         for locale, label in [('en', 'Supported lengths'), ('ru', 'Допустимые длины')]:

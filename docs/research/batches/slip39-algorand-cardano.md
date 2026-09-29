@@ -62,9 +62,9 @@ trezorctl; this batch does not create a CLI wallet profile.
 
 ## Algorand format and product separation
 
-The Algorand SDK's word_list_raw literal was compared entry-for-entry with
-verified bip39-en: 2048 words in the same order. Appending a final LF to that
-literal reproduces existing BIP39 file SHA-256
+The Algorand SDK's word_list_raw() literal was compared entry-for-entry with
+verified bip39-en: 2048 words in the same order. The literal already includes a
+final LF; its unchanged UTF-8 bytes reproduce existing BIP39 file SHA-256
 `2f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda`.
 Only the existing dictionary is referenced; no Algorand/Cardano copy is added.
 
