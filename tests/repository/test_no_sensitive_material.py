@@ -80,6 +80,28 @@ class SensitiveMaterialTests(unittest.TestCase):
                       public + "\n" + private + "\n" + public):
             self.assertIn("personal-path", scan.inspect_text("sample.txt", value, frozenset()))
 
+    def test_uri_scheme_continuations_cannot_create_a_public_drive_exception(self):
+        for scheme in ("file+x", "file-x", "file.x", "x+y", "a-Z", "a.B", "a_", "аx"):
+            with self.subTest(scheme=scheme):
+                value = scheme + ":" + "/" * 3 + "Users" + "/Public/file"
+                self.assertIn("personal-path", scan.inspect_text("sample.txt", value, frozenset()))
+
+    def test_drive_exemption_is_ascii_despite_case_insensitive_users(self):
+        for fake_drive in ("İ", "ı", "ſ", "K"):
+            with self.subTest(fake_drive=fake_drive):
+                value = fake_drive + ":" + "/Users" + "/Public/file"
+                self.assertIn("personal-path", scan.inspect_text("sample.txt", value, frozenset()))
+
+    def test_real_ascii_drive_after_text_markdown_and_path_delimiters(self):
+        for prefix in ("", " ", "\n", "`", '"', "'", "(", "[", "/", "\\"):
+            for drive in ("C", "d"):
+                with self.subTest(prefix=prefix, drive=drive):
+                    root = prefix + drive + ":" + "/uSeRs" + "/pUbLiC"
+                    self.assertNotIn("personal-path", scan.inspect_text("sample.txt", root, frozenset()))
+                    self.assertNotIn("personal-path", scan.inspect_text("sample.txt", root + "/file", frozenset()))
+                    for suffix in (".Alice", "-Alice"):
+                        self.assertIn("personal-path", scan.inspect_text("sample.txt", root + suffix + "/file", frozenset()))
+
     def test_key_material_and_index_fixtures_require_exact_reviewed_hash(self):
         for value in ('{"seed_' + 'hex": "' + "ab" * 32 + '"}',
                       '{"indi' + 'ces": [1,2,3,4,5,6,7,8,9,10,11,12]}'):

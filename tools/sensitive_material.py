@@ -31,7 +31,7 @@ PATTERNS = {
     "github-token": re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})"),
     "figma-token": re.compile(r"\bfig[du]_[A-Za-z0-9_-]{20,}"),
 }
-WINDOWS_USER_CANDIDATE = re.compile(r"[A-Za-z]:[\\/]+Users[\\/]+(?P<profile>[^\s\\/\"']+)", re.I)
+WINDOWS_USER_CANDIDATE = re.compile(r"[A-Za-z]:[\\/]+(?i:Users)[\\/]+(?P<profile>[^\s\\/\"']+)")
 POSIX_USER_PATH = re.compile(r"/(?:home|Users)/+[^\s/\"']+", re.I)
 VECTOR = re.compile(r'"(?:seed_hex|secret_key|private_key|mnemonic|phrase|indices|word_indices)"\s*:\s*(?:"[^"\n]+"|\[\s*\d)', re.I)
 
@@ -45,9 +45,10 @@ def has_personal_path(text):
     public_spans = []
     for match in WINDOWS_USER_CANDIDATE.finditer(text):
         start, end = match.span()
-        # A suffix of a word/scheme (notably the e in file:) is not a drive.
+        # A suffix of a word/scheme (including URI scheme punctuation) is not a drive.
         # Such ambiguous candidates stay findings instead of gaining exemption.
-        drive_boundary = start == 0 or not (text[start - 1].isalnum() or text[start - 1] == "_")
+        drive_boundary = start == 0 or not (
+            text[start - 1].isalnum() or text[start - 1] in "_+.-")
         exact_public = (drive_boundary and match["profile"].casefold() == "public"
                         and (end == len(text) or text[end] in "/\\"))
         if not exact_public:
