@@ -198,6 +198,45 @@ class SensitiveMaterialTests(unittest.TestCase):
             git("commit", "-qam", "detached candidate")
             self.assertIn("figma-token", {kind for _, kind in history.scan_history(root)})
 
+    def test_history_reads_original_blob_hidden_by_replacement(self):
+        from tools import history_sensitive_material as history
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            def git(*args, input=None):
+                return subprocess.run(["git", *args], cwd=root, input=input, check=True,
+                                      capture_output=True).stdout.strip().decode("ascii")
+            git("init", "-q")
+            git("config", "user.name", "Synthetic Test")
+            git("config", "user.email", "synthetic@example.invalid")
+            (root / "fixture.txt").write_text("ghp" + "_" + "x" * 36, encoding="utf-8")
+            git("add", "fixture.txt")
+            git("commit", "-qm", "synthetic original")
+            original = git("rev-parse", "HEAD:fixture.txt")
+            safe = git("hash-object", "-w", "--stdin", input=b"safe replacement")
+            git("replace", original, safe)
+            reachable = git("--no-replace-objects", "rev-list", "--objects", "HEAD")
+            self.assertIn(original, reachable)
+            self.assertIn("github-token", {kind for _, kind in history.scan_history(root)})
+
+    def test_history_does_not_audit_replacement_only_blob(self):
+        from tools import history_sensitive_material as history
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            def git(*args, input=None):
+                return subprocess.run(["git", *args], cwd=root, input=input, check=True,
+                                      capture_output=True).stdout.strip().decode("ascii")
+            git("init", "-q")
+            git("config", "user.name", "Synthetic Test")
+            git("config", "user.email", "synthetic@example.invalid")
+            (root / "fixture.txt").write_text("safe original", encoding="utf-8")
+            git("add", "fixture.txt")
+            git("commit", "-qm", "synthetic safe original")
+            original = git("rev-parse", "HEAD:fixture.txt")
+            replacement = git("hash-object", "-w", "--stdin",
+                              input=("figd" + "_" + "x" * 40).encode("ascii"))
+            git("replace", original, replacement)
+            self.assertEqual(history.scan_history(root), ())
+
 
 if __name__ == "__main__":
     unittest.main()

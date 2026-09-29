@@ -2,10 +2,13 @@
 
 Findings contain object IDs and classes only; blob contents and paths are never
 printed. A full checkout is required so CI cannot silently scan a shallow slice.
+Replacement refs are excluded as roots, and original objects are read even when
+local replacement mappings exist.
 """
 
 import argparse
 import hashlib
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -37,7 +40,7 @@ REVIEWED_HISTORICAL_VECTOR_BLOBS = frozenset({
 
 def _git(root, *args, input=None):
     return subprocess.run(["git", *args], cwd=root, input=input, capture_output=True,
-                          check=True).stdout
+                          check=True, env={**os.environ, "GIT_NO_REPLACE_OBJECTS": "1"}).stdout
 
 
 def scan_history(root, *, max_blob_bytes=MAX_BLOB_BYTES, words=None):
@@ -57,7 +60,10 @@ def scan_history(root, *, max_blob_bytes=MAX_BLOB_BYTES, words=None):
         words = frozenset()
     if _git(root, "rev-parse", "--is-shallow-repository").strip() != b"false":
         return (("history", "shallow-checkout"),)
-    listed = _git(root, "rev-list", "--objects", "--all").splitlines()
+    # Replacement refs are local object substitutions, not audited history roots.
+    # Resolve original objects for both enumeration and reads, and exclude the
+    # replacements' target blobs from the refs being enumerated.
+    listed = _git(root, "rev-list", "--objects", "--exclude=refs/replace/*", "--all").splitlines()
     oids = sorted({line.split(b" ", 1)[0] for line in listed})
     if not oids or any(not OID.fullmatch(oid) for oid in oids):
         return (("history", "invalid-object-list"),)
@@ -82,7 +88,8 @@ def scan_history(root, *, max_blob_bytes=MAX_BLOB_BYTES, words=None):
     allowed_binary_hashes = frozenset(SYNTHETIC_BINARIES.values())
     with subprocess.Popen(["git", "cat-file", "--batch"], cwd=root,
                           stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                          stderr=subprocess.DEVNULL) as process:
+                          stderr=subprocess.DEVNULL,
+                          env={**os.environ, "GIT_NO_REPLACE_OBJECTS": "1"}) as process:
         for oid, size in blobs:
             process.stdin.write(oid.encode("ascii") + b"\n")
             process.stdin.flush()
