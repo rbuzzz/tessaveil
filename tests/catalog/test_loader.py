@@ -86,6 +86,18 @@ class LoaderTests(unittest.TestCase):
                 load_catalog(self.root, LoadLimits(max_records=1))
         self.assertEqual(yielded, ["first.json", "second.json"])
 
+    def test_rejects_case_variant_json_suffix_during_streaming(self):
+        folder = self.root / "catalog/wallets"
+        (folder / "notes.txt").write_text("not a record", encoding="utf-8")
+        for suffix in (".JSON", ".JsOn"):
+            with self.subTest(suffix=suffix):
+                candidate = folder / f"untrusted{suffix}"
+                candidate.write_bytes(b"\xff")
+                with self.assertRaisesRegex(ValueError, "record suffix"):
+                    load_catalog(self.root)
+                candidate.unlink()
+        self.assertEqual(load_catalog(self.root).wallets[0].id, "synthetic-wallet")
+
     def test_rejects_long_nested_string(self):
         payload = json.loads(self.wallet.read_text(encoding="utf-8"))
         payload["guidance"] = "x" * (16 * 1024 + 1)

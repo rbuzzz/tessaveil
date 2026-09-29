@@ -120,7 +120,9 @@ def load_catalog(root: Path, limits: LoadLimits = DEFAULT_LIMITS) -> Catalog:
         if directory.is_dir():
             with os.scandir(directory) as entries:
                 for entry in entries:
-                    if entry.name.endswith(".json"):
+                    if entry.name.casefold().endswith(".json"):
+                        if not entry.name.endswith(".json"):
+                            raise ValueError("unsupported record suffix")
                         files.append((folder, directory / entry.name))
                         if len(files) > limits.max_records:
                             raise ValueError("record count exceeds limit")

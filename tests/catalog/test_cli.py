@@ -57,6 +57,17 @@ class CliTests(unittest.TestCase):
             self.assertIn("nesting", result.stdout)
             self.assertNotIn("Traceback", result.stdout + result.stderr)
 
+    def test_case_variant_json_suffix_is_bounded_cli_error(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            shutil.copytree(FIXTURE, root, dirs_exist_ok=True)
+            (root / "catalog/wallets/untrusted.JSON").write_bytes(b"\xff")
+            result = self.run_cli(root)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("error loader: unsupported record suffix", result.stdout)
+            self.assertNotIn("Traceback", result.stdout + result.stderr)
+            self.assertNotIn("untrusted", result.stdout + result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()
