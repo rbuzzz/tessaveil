@@ -12,7 +12,13 @@
     "monero-cake-ui",
     "monero-cake-export",
     "monero-cake-seed",
-    "monero-cake-version"
+    "monero-cake-version",
+    "cake-wallet-inventory",
+    "cake-wallet-monero-service",
+    "cake-wallet-monero-doc",
+    "cake-wallet-build-android",
+    "cake-wallet-version-android",
+    "cake-wallet-language-ui"
   ],
   "verified_on": "2026-09-29",
   "version_interval": {
@@ -31,8 +37,8 @@
   "generates_mnemonic": true,
   "import_only": false,
   "limitations": [
-    "Separate legacy creation branch delegates native createWallet; UI labels 25 words. FFI/dependency artifact binding and full recovery vector remain unresolved; no iOS/desktop claim.",
-    "Documented, not selectable: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately."
+    "Monero selector scope only: Polyseed16 en/ja/ko/es/fr/it/cs/pt/zh-hans/zh-hant; legacy25 en/de/es/fr/it/nl/pt/ru/ja/zh-hans. Separate language records carry precise dictionary. FFI prefix/checksumless import and passphrase normalization not independently recovered. ",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
   ],
   "guidance": "Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website."
 }

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "cake-nano-hd-create",
+  "display_name": {
+    "en": "cake-nano-hd-create",
+    "ru": "cake-nano-hd-create"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-nano-service",
+    "cake-wallet-nano-derive",
+    "cake-wallet-nano-dependency",
+    "cake-wallet-bip39-list"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    24
+  ],
+  "position_rules": [
+    "Source-order indices; complete phrase checksum/derivation is outside Tessaveil. HD Nano uses fixed mnemonic salt and hardened 44, hardened 165, hardened index; supplied UI passphrase is not forwarded. Exact binary recovery unverified."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "External recovery secrets are never stored by Tessaveil. HD Nano uses fixed mnemonic salt and hardened 44, hardened 165, hardened index; supplied UI passphrase is not forwarded. Exact binary recovery unverified."
+  },
+  "semantic_distinction": "HD Nano uses fixed mnemonic salt and hardened 44, hardened 165, hardened index; supplied UI passphrase is not forwarded. Exact binary recovery unverified.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

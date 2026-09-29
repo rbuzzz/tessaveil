@@ -8,6 +8,11 @@
   "verified_on": "2026-09-29",
   "record_ids": [
     "cake-decred-bip39-12-24",
-    "cake-wallet-decred-bip39"
+    "cake-wallet-decred-bip39",
+    "cake-wallet-decred-bip39-create-ios",
+    "cake-wallet-decred-bip39-group-android",
+    "cake-wallet-decred-bip39-group-ios",
+    "cake-wallet-decred-bip39-import-android",
+    "cake-wallet-decred-bip39-import-ios"
   ]
 }

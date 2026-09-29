@@ -91,6 +91,13 @@ This is a provenance blocker, not an assertion of infringement.
 
 ## Cake Zano is not a native26 creation profile
 
+Task16 follow-up: official Cake documentation now explicitly dates native26
+creation before v6.4.3 and documents current12/24. The locked Dart BIP39 list
+was independently compared and normalization reviewed in
+[the complete Cake matrix](cake-wallet.md). This closes the source-list
+identity gap below, not native dependency, binary or recovery verification;
+the earlier blocked scheme remains blocked.
+
 At the shared Cake source pin, create() chooses128 or256-bit BIP39 generation
 and restores from a computed derivation. The helper applies BIP39, then BIP32
 `m/44'/128'/0'/0/0`, interprets the private bytes as little-endian and reduces

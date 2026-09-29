@@ -17,7 +17,7 @@ KINDS = (("dictionaries", "dictionary"), ("schemes", "scheme"),
          ("wallets", "wallet"), ("evidence", "evidence"), ("required_sets", "required-set"))
 TERMINAL = {"verified", "documented", "blocked", "no-mnemonic-confirmed"}
 PRIMARY_EVIDENCE = {"official-specification", "official-documentation", "official-source"}
-SUPPORTED_LENGTHS = {12, 13, 15, 16, 18, 20, 21, 24, 25, 26, 27, 28, 29, 33}
+SUPPORTED_LENGTHS = {12, 13, 14, 15, 16, 18, 20, 21, 24, 25, 26, 27, 28, 29, 33}
 SUPPORTED_SCHEMA_KEYS = frozenset({
     "$schema", "$id", "title", "type", "required", "properties", "additionalProperties",
     "const", "enum", "minLength", "pattern", "uniqueItems", "minItems", "maxItems",

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "cake-nano-native",
+  "display_name": {
+    "en": "cake-nano-native",
+    "ru": "cake-nano-native"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-nano-service",
+    "cake-wallet-nano-derive",
+    "cake-wallet-nano-dependency",
+    "cake-wallet-bip39-list"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    24
+  ],
+  "position_rules": [
+    "Source-order indices; complete phrase checksum/derivation is outside Tessaveil. Native Nano32-byte entropy is encoded as24 English words; no BIP39 sentence-to-seed step and no recovery passphrase."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "External recovery secrets are never stored by Tessaveil. Native Nano32-byte entropy is encoded as24 English words; no BIP39 sentence-to-seed step and no recovery passphrase."
+  },
+  "semantic_distinction": "Native Nano32-byte entropy is encoded as24 English words; no BIP39 sentence-to-seed step and no recovery passphrase.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

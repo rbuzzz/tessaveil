@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "feather-tevador-import",
+  "display_name": {
+    "en": "Feather — historical Tevador14 import",
+    "ru": "Feather — historical Tevador14 import"
+  },
+  "status": "blocked",
+  "historical": true,
+  "evidence_ids": [
+    "cake-audit-feather14",
+    "cake-audit-feather14-code"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-948773cf13c7486ee230eb67b6bac06b2f94c874",
+    "max": "source-948773cf13c7486ee230eb67b6bac06b2f94c874"
+  },
+  "product_id": "feather",
+  "product_name": "Feather",
+  "aliases": [],
+  "platform": "linux",
+  "mode_id": "tevador-14-import",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": "tevador-14-unresolved",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Task11 omitted this explicit14-word import route. Exact monero_seed dependency/list/license, normalization/passphrase and independent recovery unresolved. No vocabulary or binaries bundled."
+  ],
+  "guidance": "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
+}

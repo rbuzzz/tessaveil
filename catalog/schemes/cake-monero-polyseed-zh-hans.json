@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "cake-monero-polyseed-zh-hans",
+  "display_name": {
+    "en": "cake-monero-polyseed-zh-hans",
+    "ru": "cake-monero-polyseed-zh-hans"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-language-ui",
+    "cake-wallet-monero-service"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "polyseed-zh-hans"
+  ],
+  "supported_lengths": [
+    16
+  ],
+  "position_rules": [
+    "Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed zh-hans selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "External recovery secrets are never stored by Tessaveil. polyseed zh-hans selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified."
+  },
+  "semantic_distinction": "polyseed zh-hans selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

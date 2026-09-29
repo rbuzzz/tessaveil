@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "tevador-14-unresolved",
+  "display_name": {
+    "en": "tevador-14-unresolved",
+    "ru": "tevador-14-unresolved"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "cake-audit-feather14",
+    "cake-audit-feather14-code"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [],
+  "supported_lengths": [
+    14
+  ],
+  "position_rules": [
+    "Source-order indices; complete phrase checksum/derivation is outside Tessaveil. 14-word Tevador recovery discovered in mandatory Feather and Cake Wownero export. Dependency list, normalization, language, passphrase and license binding unresolved. No bytes bundled."
+  ],
+  "external_secret": {
+    "kind": "other",
+    "stored": false,
+    "guidance": "External recovery secrets are never stored by Tessaveil. 14-word Tevador recovery discovered in mandatory Feather and Cake Wownero export. Dependency list, normalization, language, passphrase and license binding unresolved. No bytes bundled."
+  },
+  "semantic_distinction": "14-word Tevador recovery discovered in mandatory Feather and Cake Wownero export. Dependency list, normalization, language, passphrase and license binding unresolved. No bytes bundled.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

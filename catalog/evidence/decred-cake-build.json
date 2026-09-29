@@ -7,9 +7,9 @@
   "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
   "verified_on": "2026-09-29",
   "record_ids": [
-    "cake-wallet-decred",
-    "cake-wallet-decred-bip39",
     "cake-decred-15",
-    "cake-decred-bip39-12-24"
+    "cake-decred-bip39-12-24",
+    "cake-wallet-decred",
+    "cake-wallet-decred-bip39"
   ]
 }

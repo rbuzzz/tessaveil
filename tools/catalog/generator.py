@@ -235,6 +235,16 @@ def render_catalog(catalog: Catalog, locale: Literal["en", "ru"]) -> str:
             item = evidence[identifier]
             field("Evidence claim", "Подтверждаемое утверждение", _text(item.data["claim"]))
 
+    section("Required release blockers", "Обязательные блокеры релиза")
+    blocked = sorted((item for required in catalog.required_sets for item in required.requirements
+                      if item.data["status"] == "blocked"), key=lambda item: item.id)
+    lines.append(tr(f"{len(blocked)} required items remain blocked. Terminal research is not release approval.",
+                    f"Заблокировано обязательных пунктов: {len(blocked)}. Завершённое исследование не разрешает релиз."))
+    lines.append("")
+    for item in blocked:
+        links = ", ".join(source(records[i]) for i in sorted(item.data["record_ids"]))
+        lines.append(f"- {_text(item.id)}: {links}")
+    lines.append("")
     section("Product index", "Индекс продуктов")
     lines.extend([tr("| Product / profile | Platform / mode | Networks | Scheme | Status |",
                      "| Продукт / профиль | Платформа / режим | Сети | Схема | Статус |"),

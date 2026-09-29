@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-nano-hex32-import-macos",
+  "display_name": {
+    "en": "Cake Wallet nano — hex32-import (macos)",
+    "ru": "Cake Wallet nano — hex32-import (macos)"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-inventory",
+    "cake-wallet-nano-service",
+    "cake-wallet-nano-doc",
+    "cake-wallet-build-macos",
+    "cake-wallet-version-macos",
+    "cake-wallet-nano-derive",
+    "cake-wallet-restore-ui"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet",
+  "aliases": [],
+  "platform": "macos",
+  "mode_id": "nano-hex32-import",
+  "network_ids": [
+    "nano"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "64 hex characters/32 bytes may be re-encoded to24 English native words; this is imported entropy, not new mnemonic creation. ",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
+  ],
+  "guidance": "Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil."
+}

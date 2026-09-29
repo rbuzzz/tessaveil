@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-zcash-doc",
+  "source_type": "official-documentation",
+  "claim": "Official zcash per-cryptocurrency Seed Format/Seed Types and recovery guidance, retrieved2026-09-29. Source snapshot controls exact implementation; mutable documentation is not a binary attestation. Decred native15 predates6.4.2; Zano native26 predates6.4.3 where applicable.",
+  "url": "https://docs.cakewallet.com/cryptos/zcash/",
+  "revision": "HTTP-body-sha256-66df590f8e69c5fe186c8cb4c8860467e4d3693b8efb5e3771a985d24ece7d29",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-zcash-bip39-create-android",
+    "cake-wallet-zcash-bip39-create-ios",
+    "cake-wallet-zcash-bip39-group-android",
+    "cake-wallet-zcash-bip39-group-ios",
+    "cake-wallet-zcash-bip39-import-android",
+    "cake-wallet-zcash-bip39-import-ios",
+    "cake-wallet-zcash-private-key-android",
+    "cake-wallet-zcash-private-key-ios",
+    "cake-zcash-create",
+    "cake-zcash-import"
+  ]
+}

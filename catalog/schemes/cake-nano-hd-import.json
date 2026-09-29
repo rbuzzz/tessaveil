@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "cake-nano-hd-import",
+  "display_name": {
+    "en": "cake-nano-hd-import",
+    "ru": "cake-nano-hd-import"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-nano-service",
+    "cake-wallet-nano-derive",
+    "cake-wallet-nano-dependency",
+    "cake-wallet-bip39-list"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    15,
+    18,
+    21,
+    24
+  ],
+  "position_rules": [
+    "Source-order indices; complete phrase checksum/derivation is outside Tessaveil. HD Nano parser accepts five BIP39 lengths but creation only12/24. Recovery passphrase is not passed; no external extension supported by inspected route."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "External recovery secrets are never stored by Tessaveil. HD Nano parser accepts five BIP39 lengths but creation only12/24. Recovery passphrase is not passed; no external extension supported by inspected route."
+  },
+  "semantic_distinction": "HD Nano parser accepts five BIP39 lengths but creation only12/24. Recovery passphrase is not passed; no external extension supported by inspected route.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

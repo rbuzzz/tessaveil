@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "cake-bip39-import",
+  "display_name": {
+    "en": "cake-bip39-import",
+    "ru": "cake-bip39-import"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-lock",
+    "cake-wallet-bip39-list",
+    "cake-wallet-bip39-code",
+    "cake-wallet-bip39-pbkdf"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    15,
+    18,
+    21,
+    24
+  ],
+  "position_rules": [
+    "Source-order indices; complete phrase checksum/derivation is outside Tessaveil. Dependency parser accepts five lengths, beyond the12/24 creation choices. UI/native acceptance remains scoped per wallet. Missing NFKD means Unicode passphrases are not normative BIP39."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "External recovery secrets are never stored by Tessaveil. Dependency parser accepts five lengths, beyond the12/24 creation choices. UI/native acceptance remains scoped per wallet. Missing NFKD means Unicode passphrases are not normative BIP39."
+  },
+  "semantic_distinction": "Dependency parser accepts five lengths, beyond the12/24 creation choices. UI/native acceptance remains scoped per wallet. Missing NFKD means Unicode passphrases are not normative BIP39.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

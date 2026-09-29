@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-decred-doc",
+  "source_type": "official-documentation",
+  "claim": "Official decred per-cryptocurrency Seed Format/Seed Types and recovery guidance, retrieved2026-09-29. Source snapshot controls exact implementation; mutable documentation is not a binary attestation. Decred native15 predates6.4.2; Zano native26 predates6.4.3 where applicable.",
+  "url": "https://docs.cakewallet.com/cryptos/decred/",
+  "revision": "HTTP-body-sha256-60b015b6925b3c3e8af1cde9b06e34f017f4eb5c53ad8ebc76d2f4fe37100854",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-decred",
+    "cake-wallet-decred-bip39",
+    "cake-wallet-decred-bip39-create-ios",
+    "cake-wallet-decred-bip39-group-android",
+    "cake-wallet-decred-bip39-group-ios",
+    "cake-wallet-decred-bip39-import-android",
+    "cake-wallet-decred-bip39-import-ios",
+    "cake-wallet-decred-native-import-ios",
+    "cake-wallet-decred-view-only-android",
+    "cake-wallet-decred-view-only-ios"
+  ]
+}

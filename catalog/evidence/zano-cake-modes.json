@@ -7,8 +7,8 @@
   "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
   "verified_on": "2026-09-29",
   "record_ids": [
-    "cake-zano-bip39",
     "cake-wallet-zano",
-    "cake-wallet-zano-bip39"
+    "cake-wallet-zano-bip39",
+    "cake-zano-bip39"
   ]
 }

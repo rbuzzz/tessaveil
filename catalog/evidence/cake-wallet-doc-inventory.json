@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-doc-inventory",
+  "source_type": "official-documentation",
+  "claim": "Official current cryptocurrency index lists 16 chains, tokens under parent chains, removed Haven and export-only Wownero. Retrieved decoded HTTP body; no released-binary attestation.",
+  "url": "https://docs.cakewallet.com/cryptos/",
+  "revision": "HTTP-body-sha256-54d4d514f42d6b4ade94209c2a4fa26e21ba9ae5c809ec6e93c1ef75cce6a14a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-banano-excluded",
+    "cake-wallet-haven-excluded"
+  ]
+}

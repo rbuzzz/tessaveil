@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-bip39-list",
+  "source_type": "official-source",
+  "claim": "Literal English2048 order independently compared to existing bip39-en bytes; unchanged token projection SHA2562f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse vocabulary only, not Unicode/derivation semantics.",
+  "url": "https://raw.githubusercontent.com/anicdh/bip39/3633daa2026b98c523ae9a091322be2903f7a8ab/lib/src/wordlists/english.dart",
+  "revision": "3633daa2026b98c523ae9a091322be2903f7a8ab",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-bip39-create",
+    "cake-bip39-import",
+    "cake-monero-bip39-create",
+    "cake-monero-bip39-import",
+    "cake-nano-hd-create",
+    "cake-nano-hd-import",
+    "cake-nano-native",
+    "cake-wallet-monero-bip39-12-create-android",
+    "cake-wallet-monero-bip39-12-create-ios",
+    "cake-wallet-monero-bip39-12-create-linux",
+    "cake-wallet-monero-bip39-12-create-macos"
+  ]
+}

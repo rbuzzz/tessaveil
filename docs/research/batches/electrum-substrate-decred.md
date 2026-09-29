@@ -137,14 +137,16 @@ binary seed and hex externally for native restoration; this is not direct
 Decrediton BIP39 phrase import or generation. No universal path, hardware
 model, passphrase equivalence or wallet compatibility is inferred.
 
-## Cake's actual native15 and conflicting current behavior
+## Cake's actual native15 and current behavior
 
-The dated [Cake documentation](https://docs.cakewallet.com/cryptos/decred/)
-says 15-word creation/restoration without an app-version interval. Current
-pinned service source instead creates 128-bit/12-word or 256-bit/24-word
-BIP39-shaped mnemonics. Both statements remain visible; the documentation is
-not silently treated as current source behavior. Exact historical 15-word
-creation releases remain unresolved.
+Task16 corrected the initial reading of the dated
+[Cake documentation](https://docs.cakewallet.com/cryptos/decred/): the same
+retrieved body explicitly describes current12/24 BIP39, optional passphrase,
+native15 creation before v6.4.2, and continued15-word restoration. The source
+also creates128-bit/12-word or256-bit/24-word BIP39-shaped mnemonics. The
+previous claim of an unversioned documentation/source conflict was incorrect.
+Exact historical binary intervals remain unverified; see the independent
+[Cake matrix](cake-wallet.md) for platform/version boundaries.
 
 For Android, the build pins libwallet, whose go.mod pins dcrdex v1.0.5. Its
 native15 decoder is reached for **every 15-word input**, even an ordinary

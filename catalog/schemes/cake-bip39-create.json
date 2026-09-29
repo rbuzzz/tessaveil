@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "cake-bip39-create",
+  "display_name": {
+    "en": "cake-bip39-create",
+    "ru": "cake-bip39-create"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-lock",
+    "cake-wallet-bip39-list",
+    "cake-wallet-bip39-code",
+    "cake-wallet-bip39-pbkdf"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    24
+  ],
+  "position_rules": [
+    "Source-order indices; complete phrase checksum/derivation is outside Tessaveil. English creation lengths only. Locked Cake dependency omits NFKD for the optional passphrase; entropy RNG and released artifact not audited. Shared words do not establish generic BIP39 equivalence."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "External recovery secrets are never stored by Tessaveil. English creation lengths only. Locked Cake dependency omits NFKD for the optional passphrase; entropy RNG and released artifact not audited. Shared words do not establish generic BIP39 equivalence."
+  },
+  "semantic_distinction": "English creation lengths only. Locked Cake dependency omits NFKD for the optional passphrase; entropy RNG and released artifact not audited. Shared words do not establish generic BIP39 equivalence.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-ethereum-hardware-android",
+  "display_name": {
+    "en": "Cake Wallet ethereum — hardware (android)",
+    "ru": "Cake Wallet ethereum — hardware (android)"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-inventory",
+    "cake-wallet-ethereum-service",
+    "cake-wallet-ethereum-doc",
+    "cake-wallet-build-android",
+    "cake-wallet-version-android",
+    "cake-wallet-restore-ui"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "ethereum-hardware",
+  "network_ids": [
+    "ethereum"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "External hardware signer route; Cake does not generate that signer backup. Device/model/transport/firmware/OS compatibility unverified; never infer device mnemonic list from this route. ",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
+  ],
+  "guidance": "Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil."
+}

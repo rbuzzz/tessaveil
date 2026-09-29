@@ -14,7 +14,12 @@
     "decred-cake-dependency",
     "decred-cake-native",
     "decred-cake-seed",
-    "decred-cake-doc"
+    "decred-cake-doc",
+    "cake-wallet-inventory",
+    "cake-wallet-decred-service",
+    "cake-wallet-decred-doc",
+    "cake-wallet-build-android",
+    "cake-wallet-version-android"
   ],
   "verified_on": "2026-09-29",
   "version_interval": {
@@ -33,8 +38,8 @@
   "generates_mnemonic": false,
   "import_only": true,
   "limitations": [
-    "Source-bound native15 restore. Documentation15 creation is unversioned and conflicts with current12/24 creation; exact historical creation interval unresolved. No iOS/macOS parity or BIP39-15 compatibility.",
-    "Non-selectable: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise."
+    "English native15 imported, never current creation. Embedded birthday; no recovery passphrase. Android native dispatch pinned in Task13; iOS dependency parity unverified. ",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
   ],
   "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
 }

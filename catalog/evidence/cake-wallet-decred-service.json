@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-decred-service",
+  "source_type": "official-source",
+  "claim": "decred source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_decred/lib/wallet_service.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-decred",
+    "cake-wallet-decred-bip39",
+    "cake-wallet-decred-bip39-create-ios",
+    "cake-wallet-decred-bip39-group-android",
+    "cake-wallet-decred-bip39-group-ios",
+    "cake-wallet-decred-bip39-import-android",
+    "cake-wallet-decred-bip39-import-ios",
+    "cake-wallet-decred-native-import-ios",
+    "cake-wallet-decred-view-only-android",
+    "cake-wallet-decred-view-only-ios"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "cake-monero-bip39-import",
+  "display_name": {
+    "en": "cake-monero-bip39-import",
+    "ru": "cake-monero-bip39-import"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-lock",
+    "cake-wallet-bip39-list",
+    "cake-wallet-bip39-code",
+    "cake-wallet-bip39-pbkdf",
+    "cake-wallet-monero-bip39-derive"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    15,
+    18,
+    21,
+    24
+  ],
+  "position_rules": [
+    "Source-order indices; complete phrase checksum/derivation is outside Tessaveil. Monero-specific BIP32 path and scalar conversion. Imported/group phrase may be longer than fresh12. Missing NFKD remains a compatibility blocker."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "External recovery secrets are never stored by Tessaveil. Monero-specific BIP32 path and scalar conversion. Imported/group phrase may be longer than fresh12. Missing NFKD remains a compatibility blocker."
+  },
+  "semantic_distinction": "Monero-specific BIP32 path and scalar conversion. Imported/group phrase may be longer than fresh12. Missing NFKD remains a compatibility blocker.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

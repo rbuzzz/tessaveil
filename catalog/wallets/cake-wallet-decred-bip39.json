@@ -11,7 +11,15 @@
     "decred-cake-create",
     "decred-cake-build",
     "decred-cake-nfc",
-    "decred-cake-doc"
+    "decred-cake-doc",
+    "cake-wallet-inventory",
+    "cake-wallet-decred-service",
+    "cake-wallet-decred-doc",
+    "cake-wallet-build-android",
+    "cake-wallet-version-android",
+    "cake-wallet-create-ui",
+    "cake-wallet-lock",
+    "cake-wallet-bip39-pbkdf"
   ],
   "verified_on": "2026-09-29",
   "version_interval": {
@@ -30,8 +38,8 @@
   "generates_mnemonic": true,
   "import_only": false,
   "limitations": [
-    "Blocked NFC versus normative BIP39 NFKD passphrase behavior; Dart prevalidation is not native format proof. No released-binary/Unicode recovery verified.",
-    "Non-selectable: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise."
+    "English12/24; native layer uses NFC passphrase, not normative NFKD. Native15 dispatch is separate and rejects recovery passphrase. Current docs date native15 creation before6.4.2. ",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
   ],
   "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
 }

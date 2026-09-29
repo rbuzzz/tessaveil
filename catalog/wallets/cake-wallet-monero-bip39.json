@@ -10,7 +10,16 @@
   "evidence_ids": [
     "monero-cake-wallet-monero-bip39-wallet",
     "monero-cake-ui",
-    "monero-cake-version"
+    "monero-cake-version",
+    "cake-wallet-inventory",
+    "cake-wallet-monero-service",
+    "cake-wallet-monero-doc",
+    "cake-wallet-build-android",
+    "cake-wallet-version-android",
+    "cake-wallet-create-ui",
+    "cake-wallet-lock",
+    "cake-wallet-bip39-pbkdf",
+    "cake-wallet-monero-bip39-derive"
   ],
   "verified_on": "2026-09-29",
   "version_interval": {
@@ -29,8 +38,8 @@
   "generates_mnemonic": true,
   "import_only": false,
   "limitations": [
-    "Distinct 12-word BIP39-derived mode exists in source; Monero derivation path/transform is not generic BIP39 wallet compatibility. Full mode research outside this three-scheme batch; leave unmapped and non-selectable, never substitute for Polyseed/legacy.",
-    "Documented, not selectable: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately."
+    "English fresh12; group/import accepts locked BIP39 lengths12/15/18/21/24. Path hardened 44, hardened 128, hardened account, then 0 and 0 then little-endian scalar reduction; missing NFKD means Unicode extension compatibility blocked. ",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
   ],
   "guidance": "Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website."
 }

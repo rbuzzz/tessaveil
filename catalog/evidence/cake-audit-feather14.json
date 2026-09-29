@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "cake-audit-feather14",
+  "source_type": "official-source",
+  "claim": "Task11 omission: explicit14-word Tevador restore option, separate from16 Polyseed and25 legacy. Completer uses monero_seed wordlist::english; exact dependency vocabulary/normalization/license not bound here. Blocked metadata, no copied list.",
+  "url": "https://raw.githubusercontent.com/feather-wallet/feather/948773cf13c7486ee230eb67b6bac06b2f94c874/src/wizard/PageWalletRestoreSeed.cpp",
+  "revision": "948773cf13c7486ee230eb67b6bac06b2f94c874",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "feather-tevador-import",
+    "tevador-14-unresolved"
+  ]
+}
