@@ -4,6 +4,7 @@ Missing scenarios, lost negations and translation drift are publication bugs.
 These intentionally narrow copy checks supplement human semantic review.
 """
 
+from html import unescape
 from pathlib import Path
 import re
 import unittest
@@ -114,14 +115,17 @@ def section(text, anchor):
 def claim_text(text):
     """Expose ordinary Markdown wording before checking selected overclaims.
 
-    Keep punctuation and list/quote boundaries; formatting must not split a
-    subject from its verb, nor hide the English negative quantifier "No".
+    Preserve visible words and whitespace across quote continuations, hard
+    breaks and HTML entities, including negative quantifiers such as No/не.
     This is a bounded copy guard, not a complete Markdown or language parser.
     """
+    text = re.sub(r"\\\r?\n", "\n", text)
+    text = re.sub(r"(?m)^[ \t]*(?:>[ \t]*)+", "", text)
     text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)
+    text = re.sub(r"<br\b[^>]*>", "\n", text, flags=re.I)
     text = re.sub(r"<[^>]+>", "", text)
     text = re.sub(r"[*_`]", "", text)
-    return normalized(text)
+    return normalized(unescape(text))
 
 
 def contract_errors(text):
@@ -323,6 +327,44 @@ class RequiredClaimsTests(unittest.TestCase):
             for wrapper in ("- {}", "> **{}**", "Existing statement; {}"):
                 with self.subTest(warning=warning, wrapper=wrapper):
                     self.assertEqual([], contract_errors(text + "\n" + wrapper.format(warning)))
+
+    def test_visible_breaks_preserve_positive_and_negative_claim_polarity(self):
+        text = self.read_model()
+        cases = (
+            ("Attempt counters", "protect copied ciphertext from offline guessing.", True),
+            ("Самоуничтожение", "защищает скопированный шифротекст от офлайн-подбора.", True),
+            ("No", "password attempt limit or self-destruction policy prevents offline guessing of copies.", False),
+            ("Самоуничтожение не", "защищает скопированный шифротекст от офлайн-подбора.", False),
+        )
+        for head, tail, overclaim in cases:
+            for separator in ("\n> ", "\n> > ", "<br>", "<br/>", "<BR />", "&nbsp;",
+                              "&#160;", "&#xA0;", "\\\n", "\\\r\n", "  \n"):
+                with self.subTest(head=head, separator=separator):
+                    rendered = "> " + head + separator + tail
+                    # Literal unformatted wording is the independent expectation.
+                    # In particular, normalization must not lose No/не or join words.
+                    self.assertEqual((head + " " + tail).casefold(), claim_text(rendered))
+                    errors = contract_errors(text + "\n" + rendered)
+                    if overclaim:
+                        self.assertTrue(any(error.startswith("overclaim:") for error in errors))
+                    else:
+                        self.assertEqual([], errors)
+
+    def test_composed_quote_break_entity_and_negation_cases(self):
+        text = self.read_model()
+        cases = (
+            ("> **Attempt counters**\\\n> protect&nbsp;copied ciphertext from offline guessing.", True),
+            ("> **Самоуничтожение**<br>защищает&#160;скопированный шифротекст от офлайн-подбора.", True),
+            ("> **No**\\\n> password&nbsp;attempt limit or self-destruction policy prevents offline guessing of copies.", False),
+            ("> Самоуничтожение **не**<br>защищает&nbsp;скопированный шифротекст от офлайн-подбора.", False),
+        )
+        for rendered, overclaim in cases:
+            with self.subTest(rendered=rendered):
+                errors = contract_errors(text + "\n" + rendered)
+                if overclaim:
+                    self.assertTrue(any(error.startswith("overclaim:") for error in errors))
+                else:
+                    self.assertEqual([], errors)
 
 
 if __name__ == "__main__":
