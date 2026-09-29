@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "sia-web-create",
+  "source_type": "official-source",
+  "claim": "walletd UI0.36.2 source generates via SDK.generateSeedPhrase and validates12-word seed. This UI seed mode excludes legacy28/29; release binary binding not tested.",
+  "url": "https://raw.githubusercontent.com/SiaFoundation/web/f4e3ff774c4f6a5b9830abf1767485215a26a349/apps/walletd/dialogs/WalletAddNewDialog/index.tsx",
+  "revision": "f4e3ff774c4f6a5b9830abf1767485215a26a349",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sia-walletd"
+  ]
+}

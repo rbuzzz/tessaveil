@@ -15,6 +15,9 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | Cake Wallet Monero / [cake-wallet-monero](#wallet-cake-wallet-monero) | android / polyseed-16-generated | monero | [polyseed-16](#scheme-polyseed-16) | documented |
 | Cake Wallet Monero / [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39) | android / bip39-monero-generated-unresolved | monero | — | documented |
 | Cake Wallet Monero / [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy) | android / legacy-25-generated | monero | [monero-legacy](#scheme-monero-legacy) | documented |
+| Cake Wallet Zano — native seed import / [cake-wallet-zano](#wallet-cake-wallet-zano) | android / native26-import | zano | [zano-modern](#scheme-zano-modern) | documented |
+| Cake Wallet Zano — BIP39 creation / [cake-wallet-zano-bip39](#wallet-cake-wallet-zano-bip39) | android / bip39-derived-create | zano | [cake-zano-bip39](#scheme-cake-zano-bip39) | blocked |
+| Chia reference wallet — default English24 / [chia-wallet](#wallet-chia-wallet) | windows / english24-generate | chia | [chia-bip39](#scheme-chia-bip39) | documented |
 | Daedalus / [daedalus](#wallet-daedalus) | windows / icarus-24-created | cardano | [cardano-icarus-24](#scheme-cardano-icarus-24) | documented |
 | Daedalus / [daedalus-byron](#wallet-daedalus-byron) | windows / byron-12-import | cardano | [cardano-byron](#scheme-cardano-byron) | documented |
 | Daedalus / [daedalus-paper-27](#wallet-daedalus-paper-27) | windows / byron-paper-27-import | cardano | [cardano-daedalus-27](#scheme-cardano-daedalus-27) | documented |
@@ -42,6 +45,11 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | Pera Wallet / [pera-wallet](#wallet-pera-wallet) | ios / legacy-algo25-existing-backup-export | algorand | [algorand-25](#scheme-algorand-25) | documented |
 | Pera Wallet / [pera-wallet-universal](#wallet-pera-wallet-universal) | ios / universal-hd24-created | algorand | — | documented |
 | Polkadot.js extension / [polkadot-js](#wallet-polkadot-js) | web / sr25519-default-12 | kusama, polkadot | [substrate-bip39](#scheme-substrate-bip39) | documented |
+| Sia-UI v1.3.3 — legacy import / [sia-ui](#wallet-sia-ui) | windows / legacy28-import | sia | [sia-legacy-28](#scheme-sia-legacy-28) | documented |
+| Sia-UI v1.3.3 — legacy29 import / [sia-ui-29](#wallet-sia-ui-29) | windows / legacy29-import | sia | [sia-legacy-29](#scheme-sia-legacy-29) | documented |
+| Sia walletd UI0.36.2 — seed mode / [sia-walletd](#wallet-sia-walletd) | web / english12-create | sia | [sia-bip39](#scheme-sia-bip39) | documented |
+| siad — legacy28 seed export / [siad](#wallet-siad) | linux / legacy28-export | sia | [sia-legacy-28](#scheme-sia-legacy-28) | documented |
+| siad — legacy29 seed export / [siad-29](#wallet-siad-29) | linux / legacy29-export | sia | [sia-legacy-29](#scheme-sia-legacy-29) | documented |
 | SubWallet / [subwallet](#wallet-subwallet) | web / general-sr25519 | kusama, polkadot | [substrate-bip39](#scheme-substrate-bip39) | documented |
 | Talisman / [talisman](#wallet-talisman) | web / substrate-sr25519-12-24 | kusama, polkadot | [substrate-bip39](#scheme-substrate-bip39) | documented |
 | Tonhub / [tonhub](#wallet-tonhub) | android / ton-native-generated | ton | [ton-native](#scheme-ton-native) | verified |
@@ -58,18 +66,27 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | Typhon / [typhon](#wallet-typhon) | web / web-mnemonic-created-unresolved | cardano | — | blocked |
 | TON Space / DeFi Account / [ton-space](#wallet-ton-space) | web / manual-mnemonic-backup | ton | — | documented |
 | Yoroi / [yoroi](#wallet-yoroi) | web / icarus-15-created | cardano | [cardano-icarus-15](#scheme-cardano-icarus-15) | documented |
+| Zallet — English24 generation / [zallet](#wallet-zallet) | linux / english24-generate | zcash | [zcash-bip39](#scheme-zcash-bip39) | documented |
+| Zano CLI — native26 / [zano-wallet](#wallet-zano-wallet) | linux / native26 | zano | [zano-modern](#scheme-zano-modern) | documented |
+| Zano CLI — legacy25 import / [zano-wallet-legacy25](#wallet-zano-wallet-legacy25) | linux / legacy25-import | zano | [zano-legacy-25](#scheme-zano-legacy-25) | documented |
+| zcashd — English mnemonic mode / [zcash-official](#wallet-zcash-official) | linux / zip339-english24 | zcash | [zcash-bip39](#scheme-zcash-bip39) | documented |
+| zcashd — standalone key export / [zcash-official-standalone](#wallet-zcash-official-standalone) | linux / standalone-key-export | zcash | — | no-mnemonic-confirmed |
 
 ## Network index
 
 - algorand: [defly](#wallet-defly), [pera-wallet](#wallet-pera-wallet), [pera-wallet-universal](#wallet-pera-wallet-universal)
 - bitcoin: [electrum](#wallet-electrum), [electrum-bip39-import](#wallet-electrum-bip39-import), [electrum-v1-import](#wallet-electrum-v1-import)
 - cardano: [daedalus](#wallet-daedalus), [daedalus-byron](#wallet-daedalus-byron), [daedalus-paper-27](#wallet-daedalus-paper-27), [daedalus-yoroi-15](#wallet-daedalus-yoroi-15), [eternl](#wallet-eternl), [lace](#wallet-lace), [nami](#wallet-nami), [typhon](#wallet-typhon), [yoroi](#wallet-yoroi)
+- chia: [chia-wallet](#wallet-chia-wallet)
 - decred: [cake-wallet-decred](#wallet-cake-wallet-decred), [cake-wallet-decred-bip39](#wallet-cake-wallet-decred-bip39), [decrediton](#wallet-decrediton)
 - kusama: [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
 - monero: [cake-wallet-monero](#wallet-cake-wallet-monero), [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39), [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy), [exodus-monero-export](#wallet-exodus-monero-export), [feather](#wallet-feather), [feather-legacy-import](#wallet-feather-legacy-import), [monero-cli-polyseed](#wallet-monero-cli-polyseed), [monero-gui](#wallet-monero-gui), [monero-gui-cli](#wallet-monero-gui-cli), [mymonero](#wallet-mymonero), [mymonero-generated](#wallet-mymonero-generated)
 - multi-chain: [trezor-model-t](#wallet-trezor-model-t), [trezor-model-t-multi-share](#wallet-trezor-model-t-multi-share), [trezor-safe-3](#wallet-trezor-safe-3), [trezor-safe-3-multi-share](#wallet-trezor-safe-3-multi-share), [trezor-safe-5](#wallet-trezor-safe-5), [trezor-safe-5-multi-share](#wallet-trezor-safe-5-multi-share), [trezor-safe-7](#wallet-trezor-safe-7), [trezor-safe-7-multi-share](#wallet-trezor-safe-7-multi-share)
 - polkadot: [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
+- sia: [sia-ui](#wallet-sia-ui), [sia-ui-29](#wallet-sia-ui-29), [sia-walletd](#wallet-sia-walletd), [siad](#wallet-siad), [siad-29](#wallet-siad-29)
 - ton: [gram-wallet](#wallet-gram-wallet), [mytonwallet](#wallet-mytonwallet), [mytonwallet-native](#wallet-mytonwallet-native), [openmask](#wallet-openmask), [ton-space](#wallet-ton-space), [tonhub](#wallet-tonhub), [tonkeeper-classic](#wallet-tonkeeper-classic), [tonkeeper-multichain](#wallet-tonkeeper-multichain)
+- zano: [cake-wallet-zano](#wallet-cake-wallet-zano), [cake-wallet-zano-bip39](#wallet-cake-wallet-zano-bip39), [zano-wallet](#wallet-zano-wallet), [zano-wallet-legacy25](#wallet-zano-wallet-legacy25)
+- zcash: [zallet](#wallet-zallet), [zcash-official](#wallet-zcash-official), [zcash-official-standalone](#wallet-zcash-official-standalone)
 
 ## Wallet profiles
 
@@ -186,6 +203,65 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Generates mnemonic / import only: true / false
 - Limitations: Separate legacy creation branch delegates native createWallet; UI labels 25 words. FFI/dependency artifact binding and full recovery vector remain unresolved; no iOS/desktop claim.; Documented, not selectable\: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately.
 - Profile guidance: Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website.
+
+<a id="wallet-cake-wallet-zano"></a>
+
+### Cake Wallet Zano — native seed import — cake-wallet-zano
+
+- Source record: [cake-wallet-zano](../catalog/wallets/cake-wallet-zano.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 9679f91a8c9f63d00500c2b7cc18daf00949bdef / 9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zano-cake-modes](../catalog/evidence/zano-cake-modes.json)
+- Evidence claim: Pinned Cake Android-targeted source creates12/24 BIP39 mnemonics, dispatches BIP39 restore separately from native Zano seed restore. No current native26 creation assertion; native backend release binding unresolved.
+- Aliases: —
+- Scheme: [zano-modern](#scheme-zano-modern)
+- Generates mnemonic / import only: false / true
+- Limitations: Native seed restore dispatch shown; native library pin/accepted lengths unresolved. No current native26 creation claim.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-cake-wallet-zano-bip39"></a>
+
+### Cake Wallet Zano — BIP39 creation — cake-wallet-zano-bip39
+
+- Source record: [cake-wallet-zano-bip39](../catalog/wallets/cake-wallet-zano-bip39.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 9679f91a8c9f63d00500c2b7cc18daf00949bdef / 9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zano-cake-bip39](../catalog/evidence/zano-cake-bip39.json), [zano-cake-modes](../catalog/evidence/zano-cake-modes.json)
+- Evidence claim: Cake calls bip39 then BIP32 hardened44, hardened128, hardened0, child0, child0 and reduces private-key bytes as a little-endian integer modulo Ed25519 order. Exact Dart dependency byte/normalization and native binary binding not verified; own blocked scheme, no native26 compatibility inference.
+- Evidence claim: Pinned Cake Android-targeted source creates12/24 BIP39 mnemonics, dispatches BIP39 restore separately from native Zano seed restore. No current native26 creation assertion; native backend release binding unresolved.
+- Aliases: —
+- Scheme: [cake-zano-bip39](#scheme-cake-zano-bip39)
+- Generates mnemonic / import only: true / false
+- Limitations: 12/24 creation source differs from native26; dependency normalization and binary parity unresolved.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-chia-wallet"></a>
+
+### Chia reference wallet — default English24 — chia-wallet
+
+- Source record: [chia-wallet](../catalog/wallets/chia-wallet.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): af0d7eab5fb12bbd8af51f47a7123ee700d74c2a / af0d7eab5fb12bbd8af51f47a7123ee700d74c2a
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [chia-source](../catalog/evidence/chia-source.json), [chia-vectors](../catalog/evidence/chia-vectors.json)
+- Evidence claim: generate\_mnemonic uses32 random bytes =&gt;24 BIP39-English words. mnemonic\_to\_seed normalizes NFKD, PBKDF2-HMAC-SHA5122048, salt mnemonic with no user extension. Master keyring passphrase is separate; BLS derivation is not BIP32.
+- Evidence claim: 24 published English entropy/mnemonic/empty-passphrase seed vectors projected to indices and expected seed fingerprints. Includes12/18/24 primitive cases; generation profile remains24 only.
+- Aliases: —
+- Scheme: [chia-bip39](#scheme-chia-bip39)
+- Generates mnemonic / import only: true / false
+- Limitations: Keyring master password does not extend mnemonic. Import primitive lengths/prefixes do not prove GUI generation choices.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
 
 <a id="wallet-daedalus"></a>
 
@@ -748,6 +824,108 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Default UI12 only; scheme lists primitive input lengths, not UI generation choices. Dependency/backend and released extension binding unverified; exclude Ethereum/JSON/hardware.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
 - Profile guidance: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
 
+<a id="wallet-sia-ui"></a>
+
+### Sia-UI v1.3.3 — legacy import — sia-ui
+
+- Source record: [sia-ui](../catalog/wallets/sia-ui.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): cd7e221b98fc7a395de25bd8dfaa4f4de2a6e3d2 / cd7e221b98fc7a395de25bd8dfaa4f4de2a6e3d2
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [sia-siad-seed](../catalog/evidence/sia-siad-seed.json), [sia-ui-history](../catalog/evidence/sia-ui-history.json)
+- Evidence claim: SeedToString appends first6 bytes of crypto.HashObject\(seed\) to32-byte seed then entropy-mnemonics conversion. StringToSeed requires28/29 English words, exact formatting/lowercase and38 decoded bytes before checksum. Both lengths are one variable-length codec, not two incompatible algorithms.
+- Evidence claim: Sia-UI v1.3.3 source restores a supplied seed and trims seed/password separately. Custom password is local wallet encryption, not mnemonic derivation extension. Precise shipped siad binary and historical creation behavior unresolved.
+- Aliases: —
+- Scheme: [sia-legacy-28](#scheme-sia-legacy-28)
+- Generates mnemonic / import only: false / true
+- Limitations: Historical GUI accepts seed string; exact bundled siad version unverified. Paired29 profile preserves variable-length codec identity; no current network support promised.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-sia-ui-29"></a>
+
+### Sia-UI v1.3.3 — legacy29 import — sia-ui-29
+
+- Source record: [sia-ui-29](../catalog/wallets/sia-ui-29.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): cd7e221b98fc7a395de25bd8dfaa4f4de2a6e3d2 / cd7e221b98fc7a395de25bd8dfaa4f4de2a6e3d2
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [sia-siad-seed](../catalog/evidence/sia-siad-seed.json), [sia-ui-history](../catalog/evidence/sia-ui-history.json)
+- Evidence claim: SeedToString appends first6 bytes of crypto.HashObject\(seed\) to32-byte seed then entropy-mnemonics conversion. StringToSeed requires28/29 English words, exact formatting/lowercase and38 decoded bytes before checksum. Both lengths are one variable-length codec, not two incompatible algorithms.
+- Evidence claim: Sia-UI v1.3.3 source restores a supplied seed and trims seed/password separately. Custom password is local wallet encryption, not mnemonic derivation extension. Precise shipped siad binary and historical creation behavior unresolved.
+- Aliases: —
+- Scheme: [sia-legacy-29](#scheme-sia-legacy-29)
+- Generates mnemonic / import only: false / true
+- Limitations: Historical GUI route only; exact bundled backend dependency unresolved.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-sia-walletd"></a>
+
+### Sia walletd UI0.36.2 — seed mode — sia-walletd
+
+- Source record: [sia-walletd](../catalog/wallets/sia-walletd.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): f4e3ff774c4f6a5b9830abf1767485215a26a349 / f4e3ff774c4f6a5b9830abf1767485215a26a349
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [sia-current-codec](../catalog/evidence/sia-current-codec.json), [sia-server-boundary](../catalog/evidence/sia-server-boundary.json), [sia-web-create](../catalog/evidence/sia-web-create.json), [sia-web-sdk](../catalog/evidence/sia-web-sdk.json)
+- Evidence claim: coreutils v0.24.1 supports only12 words, English BIP39 entropy/checksum encoding; ordered list equals existing BIP39-English. SeedFromPhrase hashes16-byte entropy with BLAKE2b-256, not BIP39 PBKDF2. No extra passphrase; case-sensitive lookup and strings.Fields whitespace.
+- Evidence claim: walletd server README explicitly permits externally derived keys from12-word, legacy28-word, Ledger or other methods. This does not imply its embedded UI accepts legacy phrases; retain both scopes and older hardfork documentation warning.
+- Evidence claim: walletd UI0.36.2 source generates via SDK.generateSeedPhrase and validates12-word seed. This UI seed mode excludes legacy28/29; release binary binding not tested.
+- Evidence claim: UI SDK routes phrase generation and seed parsing to coreutils/wallet; sdk/go.mod pins v0.24.1. This is the12-word UI route; generic walletd server can track externally derived legacy addresses.
+- Aliases: —
+- Scheme: [sia-bip39](#scheme-sia-bip39)
+- Generates mnemonic / import only: true / false
+- Limitations: This UI seed mode accepts12 only; legacy28/29 cannot be entered here. Generic walletd server remains seed-agnostic and may track/sign externally prepared legacy transactions.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-siad"></a>
+
+### siad — legacy28 seed export — siad
+
+- Source record: [siad](../catalog/wallets/siad.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 66e7fc630585887c30033379d2a0a8bf5c618177 / 66e7fc630585887c30033379d2a0a8bf5c618177
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [sia-siad-dependency](../catalog/evidence/sia-siad-dependency.json), [sia-siad-seed](../catalog/evidence/sia-siad-seed.json)
+- Evidence claim: siad pins gitlab.com/NebulousLabs/entropy-mnemonics pseudo-version7532f67e3500, resolved through official GitLab to7532f67e35008b0f36bbebb20d5a6ee8f14a22f5.
+- Evidence claim: SeedToString appends first6 bytes of crypto.HashObject\(seed\) to32-byte seed then entropy-mnemonics conversion. StringToSeed requires28/29 English words, exact formatting/lowercase and38 decoded bytes before checksum. Both lengths are one variable-length codec, not two incompatible algorithms.
+- Aliases: —
+- Scheme: [sia-legacy-28](#scheme-sia-legacy-28)
+- Generates mnemonic / import only: true / false
+- Limitations: Legacy codec can produce28 or29 depending on input; separate profile29 covers other length. Historical software, not a current network-support promise.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-siad-29"></a>
+
+### siad — legacy29 seed export — siad-29
+
+- Source record: [siad-29](../catalog/wallets/siad-29.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 66e7fc630585887c30033379d2a0a8bf5c618177 / 66e7fc630585887c30033379d2a0a8bf5c618177
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [sia-siad-dependency](../catalog/evidence/sia-siad-dependency.json), [sia-siad-seed](../catalog/evidence/sia-siad-seed.json)
+- Evidence claim: siad pins gitlab.com/NebulousLabs/entropy-mnemonics pseudo-version7532f67e3500, resolved through official GitLab to7532f67e35008b0f36bbebb20d5a6ee8f14a22f5.
+- Evidence claim: SeedToString appends first6 bytes of crypto.HashObject\(seed\) to32-byte seed then entropy-mnemonics conversion. StringToSeed requires28/29 English words, exact formatting/lowercase and38 decoded bytes before checksum. Both lengths are one variable-length codec, not two incompatible algorithms.
+- Aliases: —
+- Scheme: [sia-legacy-29](#scheme-sia-legacy-29)
+- Generates mnemonic / import only: true / false
+- Limitations: Same32-byte seed\+6-byte checksum codec as28; do not interpret length as release version.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
 <a id="wallet-subwallet"></a>
 
 ### SubWallet — extension general sr25519 creation — subwallet
@@ -1064,6 +1242,106 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Chrome-family extension source singleton; no mobile or all-releases claim.15 words, empty mnemonic password; spending password separately encrypts local wallet. Later seed re-export not established.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
 - Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
 
+<a id="wallet-zallet"></a>
+
+### Zallet — English24 generation — zallet
+
+- Source record: [zallet](../catalog/wallets/zallet.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): f9dcd4d31439feb813c95ac2516814421f5b04df / f9dcd4d31439feb813c95ac2516814421f5b04df
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zcash-zallet-create](../catalog/evidence/zcash-zallet-create.json), [zcash-zallet-empty](../catalog/evidence/zcash-zallet-empty.json), [zcash-zallet-export](../catalog/evidence/zcash-zallet-export.json)
+- Evidence claim: generate-mnemonic chooses Count\:\:Words24 and English from32 random bytes; encrypted storage and backup confirmation are separate. Source-only beta scope, not tested released wallet.
+- Evidence claim: Keystore reconstructs BIP39 mnemonic.to\_seed\(""\) and separately retains legacy non-mnemonic HD seeds. age identity passphrase encrypts storage and is not a BIP39 derivation passphrase.
+- Evidence claim: Official book distinguishes mnemonic accounts from z\_importkey and standalone migrated keys; encrypted mnemonic export also requires its age identity. Exported phrase alone does not cover all wallet material.
+- Aliases: —
+- Scheme: [zcash-bip39](#scheme-zcash-bip39)
+- Generates mnemonic / import only: true / false
+- Limitations: Beta source; age-encrypted mnemonic export also needs age identity. Extra standalone keys are outside mnemonic backup.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-zano-wallet"></a>
+
+### Zano CLI — native26 — zano-wallet
+
+- Source record: [zano-wallet](../catalog/wallets/zano-wallet.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): e55c8ec47b76ed809162a958cf4600e03256a96a / e55c8ec47b76ed809162a958cf4600e03256a96a
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zano-modes](../catalog/evidence/zano-modes.json), [zano-timestamp-password](../catalog/evidence/zano-timestamp-password.json)
+- Evidence claim: get\_seed\_phrase emits 24 data words, timestamp/password-flag word25 and checksum/auditable word26. restore\_from\_seed\_phrase accepts25/26 and rejects24 at this exact commit. Seed password encrypts binary seed with legacy ChaCha; it is not BIP39 extension.
+- Evidence claim: Timestamp is quantized with WALLET\_BRAIN\_DATE\_QUANTUM; word25 carries password-use flag. validate\_password uses a restricted ASCII regex; no Unicode NFKD or BIP39 salt is applied.
+- Aliases: —
+- Scheme: [zano-modern](#scheme-zano-modern)
+- Generates mnemonic / import only: true / false
+- Limitations: Native26 creation shown in core; Linux CLI entry-to-binary boundary unverified. Legacy24 rejected;25 import must preserve timestamp/password context.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-zano-wallet-legacy25"></a>
+
+### Zano CLI — legacy25 import — zano-wallet-legacy25
+
+- Source record: [zano-wallet-legacy25](../catalog/wallets/zano-wallet-legacy25.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): e55c8ec47b76ed809162a958cf4600e03256a96a / e55c8ec47b76ed809162a958cf4600e03256a96a
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [zano-history-vector](../catalog/evidence/zano-history-vector.json), [zano-modes](../catalog/evidence/zano-modes.json)
+- Evidence claim: Pinned public wallet\_seed\_entries explicitly marks legacy24 invalid and old25 valid; includes26 checksum cases. Reviewed as upstream tests only, not executed recovery or evidence of which old release generated24.
+- Evidence claim: get\_seed\_phrase emits 24 data words, timestamp/password-flag word25 and checksum/auditable word26. restore\_from\_seed\_phrase accepts25/26 and rejects24 at this exact commit. Seed password encrypts binary seed with legacy ChaCha; it is not BIP39 extension.
+- Aliases: —
+- Scheme: [zano-legacy-25](#scheme-zano-legacy-25)
+- Generates mnemonic / import only: false / true
+- Limitations: Historical25 accepted by current source; no historical generation interval proven.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-zcash-official"></a>
+
+### zcashd — English mnemonic mode — zcash-official
+
+- Source record: [zcash-official](../catalog/wallets/zcash-official.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 558f686599586f55def3db86955d74d3be44605e / 558f686599586f55def3db86955d74d3be44605e
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zcash-create](../catalog/evidence/zcash-create.json), [zcash-ffi](../catalog/evidence/zcash-ffi.json)
+- Evidence claim: zcashd mnemonic source constructs BIP39 phrase from32-byte entropy, checks Zcash account derivability; FromLegacySeed creates a NEW mnemonic seed with nonce adjustment, not an identity-preserving conversion of every old key.
+- Evidence claim: ZIP339 interface selects BIP39 languages and explicitly derives with empty passphrase. This batch is English24 only; standalone keys and legacy raw HD seeds are separate.
+- Aliases: —
+- Scheme: [zcash-bip39](#scheme-zcash-bip39)
+- Generates mnemonic / import only: true / false
+- Limitations: Exact mnemonic source only; old raw HD seeds and imported standalone keys need separate backups. zcashd bip0039 dependency version not bound to Zallet's.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-zcash-official-standalone"></a>
+
+### zcashd — standalone key export — zcash-official-standalone
+
+- Source record: [zcash-official-standalone](../catalog/wallets/zcash-official-standalone.json)
+- Status: no-mnemonic-confirmed
+- Reason: This mode does not expose a supported mnemonic backup.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 558f686599586f55def3db86955d74d3be44605e / 558f686599586f55def3db86955d74d3be44605e
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zcash-standalone](../catalog/evidence/zcash-standalone.json)
+- Evidence claim: dumpprivkey and z\_exportkey export standalone transparent or shielded private-key encodings. These are not mnemonic word-table profiles; mnemonic backup cannot be assumed to cover imported keys.
+- Aliases: —
+- Scheme: —
+- Generates mnemonic / import only: false / false
+- Limitations: No mnemonic word table. Native dumpprivkey/z\_exportkey formats and full wallet backups retain necessary material.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
+- Profile guidance: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
 ## Schemes
 
 <a id="scheme-algorand-25"></a>
@@ -1161,6 +1439,28 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Semantics: Blocked\: general BIP39 compatibility is not established for Unicode passphrases; keep separate from both native15 and normative Decred BIP39.
 - External secret / stored: optional-passphrase / false
 - External-secret guidance: Any supported recovery passphrase and derivation path stay outside Tessaveil. Local encryption/unlock passwords are distinct.
+- Test vectors: —
+
+<a id="scheme-cake-zano-bip39"></a>
+
+### Cake Zano BIP39-derived12/24 — cake-zano-bip39
+
+- Source record: [cake-zano-bip39](../catalog/schemes/cake-zano-bip39.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 9679f91a8c9f63d00500c2b7cc18daf00949bdef / 9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zano-cake-bip39](../catalog/evidence/zano-cake-bip39.json), [zano-cake-modes](../catalog/evidence/zano-cake-modes.json)
+- Evidence claim: Cake calls bip39 then BIP32 hardened44, hardened128, hardened0, child0, child0 and reduces private-key bytes as a little-endian integer modulo Ed25519 order. Exact Dart dependency byte/normalization and native binary binding not verified; own blocked scheme, no native26 compatibility inference.
+- Evidence claim: Pinned Cake Android-targeted source creates12/24 BIP39 mnemonics, dispatches BIP39 restore separately from native Zano seed restore. No current native26 creation assertion; native backend release binding unresolved.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 12, 24
+- Position rules: Dart BIP39 mnemonic -&gt; BIP32 hardened44, hardened128, hardened0, child0, child0 -&gt; little-endian modulo Ed25519 order.
+- Semantics: Unverified Dart dependency normalization and native derivation binding; separate from native Zano26.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Exact original seed password and mode are required for recovery when used; never store the secret in Tessaveil.
 - Test vectors: —
 
 <a id="scheme-cardano-byron"></a>
@@ -1303,6 +1603,29 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - External secret / stored: optional-passphrase / false
 - External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
 - Test vectors: —
+
+<a id="scheme-chia-bip39"></a>
+
+### Chia default English24 — chia-bip39
+
+- Source record: [chia-bip39](../catalog/schemes/chia-bip39.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): af0d7eab5fb12bbd8af51f47a7123ee700d74c2a / af0d7eab5fb12bbd8af51f47a7123ee700d74c2a
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [chia-license](../catalog/evidence/chia-license.json), [chia-source](../catalog/evidence/chia-source.json), [chia-vectors](../catalog/evidence/chia-vectors.json)
+- Evidence claim: Apache-2.0 Copyright2026 Chia Network Inc. covers modified public test projections; original Trezor BIP39 provenance and existing MIT notice retained too. Full Apache terms already in THIRD\_PARTY\_NOTICES/root LICENSE. Codex2026-09-29 data-only allowed/local SignPath compatible, not acceptance.
+- Evidence claim: generate\_mnemonic uses32 random bytes =&gt;24 BIP39-English words. mnemonic\_to\_seed normalizes NFKD, PBKDF2-HMAC-SHA5122048, salt mnemonic with no user extension. Master keyring passphrase is separate; BLS derivation is not BIP32.
+- Evidence claim: 24 published English entropy/mnemonic/empty-passphrase seed vectors projected to indices and expected seed fingerprints. Includes12/18/24 primitive cases; generation profile remains24 only.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 24
+- Position rules: Default generation24; primitive import also accepts12/15/18/21/24 and4-character English prefixes.
+- Semantics: BIP39 encoding and empty-passphrase PBKDF2 feed BLS keys; no BIP32 or generic wallet compatibility implied.
+- External secret / stored: none / false
+- External-secret guidance: No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil.
+- Test vectors: [chia-vectors](../catalog/evidence/chia-vectors.json)
 
 <a id="scheme-decred-bip39"></a>
 
@@ -1463,6 +1786,74 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - External-secret guidance: Keep any supported seed offset/encryption passphrase separately. Tessaveil never stores it. App login passwords/PINs are not automatically mnemonic secrets; verify exact wallet mode.
 - Test vectors: [monero-polyseed-vectors](../catalog/evidence/monero-polyseed-vectors.json)
 
+<a id="scheme-sia-bip39"></a>
+
+### Sia12 — BIP39 encoding, BLAKE2b entropy seed — sia-bip39
+
+- Source record: [sia-bip39](../catalog/schemes/sia-bip39.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 024db888b8bb80b5e54876baaf868c03c9aa0902 / 024db888b8bb80b5e54876baaf868c03c9aa0902
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [sia-current-codec](../catalog/evidence/sia-current-codec.json), [sia-web-sdk](../catalog/evidence/sia-web-sdk.json)
+- Evidence claim: coreutils v0.24.1 supports only12 words, English BIP39 entropy/checksum encoding; ordered list equals existing BIP39-English. SeedFromPhrase hashes16-byte entropy with BLAKE2b-256, not BIP39 PBKDF2. No extra passphrase; case-sensitive lookup and strings.Fields whitespace.
+- Evidence claim: UI SDK routes phrase generation and seed parsing to coreutils/wallet; sdk/go.mod pins v0.24.1. This is the12-word UI route; generic walletd server can track externally derived legacy addresses.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 12
+- Position rules: 128 entropy bits and4 SHA256 checksum bits;12 English11-bit indices.
+- Semantics: BLAKE2b-256 over entropy yields Sia32-byte seed. Not standard BIP39 sentence PBKDF2; no passphrase.
+- External secret / stored: none / false
+- External-secret guidance: No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil.
+- Test vectors: —
+
+<a id="scheme-sia-legacy-28"></a>
+
+### Sia legacy28 — bijective base1626 — sia-legacy-28
+
+- Source record: [sia-legacy-28](../catalog/schemes/sia-legacy-28.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 66e7fc630585887c30033379d2a0a8bf5c618177 / 66e7fc630585887c30033379d2a0a8bf5c618177
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [sia-codec](../catalog/evidence/sia-codec.json), [sia-siad-dependency](../catalog/evidence/sia-siad-dependency.json), [sia-siad-seed](../catalog/evidence/sia-siad-seed.json)
+- Evidence claim: Legacy codec is a length-preserving bijective base256/base1626 conversion with little-endian digit order, not Monero three-word chunks; per-word NFC and English prefix matching; FromString splits literal spaces.
+- Evidence claim: siad pins gitlab.com/NebulousLabs/entropy-mnemonics pseudo-version7532f67e3500, resolved through official GitLab to7532f67e35008b0f36bbebb20d5a6ee8f14a22f5.
+- Evidence claim: SeedToString appends first6 bytes of crypto.HashObject\(seed\) to32-byte seed then entropy-mnemonics conversion. StringToSeed requires28/29 English words, exact formatting/lowercase and38 decoded bytes before checksum. Both lengths are one variable-length codec, not two incompatible algorithms.
+- Dictionaries: [sia-legacy](#dictionary-sia-legacy)
+- Supported lengths: 28
+- Position rules: 32-byte seed plus6-byte BLAKE2b checksum becomes28 or29 words under the SAME variable-length codec.
+- Semantics: Length is output-dependent; not separate generations, not Monero triplets or BIP39. Exact historical release coverage/recovery remains unverified.
+- External secret / stored: none / false
+- External-secret guidance: No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil.
+- Test vectors: —
+
+<a id="scheme-sia-legacy-29"></a>
+
+### Sia legacy29 — bijective base1626 — sia-legacy-29
+
+- Source record: [sia-legacy-29](../catalog/schemes/sia-legacy-29.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 66e7fc630585887c30033379d2a0a8bf5c618177 / 66e7fc630585887c30033379d2a0a8bf5c618177
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [sia-codec](../catalog/evidence/sia-codec.json), [sia-siad-dependency](../catalog/evidence/sia-siad-dependency.json), [sia-siad-seed](../catalog/evidence/sia-siad-seed.json)
+- Evidence claim: Legacy codec is a length-preserving bijective base256/base1626 conversion with little-endian digit order, not Monero three-word chunks; per-word NFC and English prefix matching; FromString splits literal spaces.
+- Evidence claim: siad pins gitlab.com/NebulousLabs/entropy-mnemonics pseudo-version7532f67e3500, resolved through official GitLab to7532f67e35008b0f36bbebb20d5a6ee8f14a22f5.
+- Evidence claim: SeedToString appends first6 bytes of crypto.HashObject\(seed\) to32-byte seed then entropy-mnemonics conversion. StringToSeed requires28/29 English words, exact formatting/lowercase and38 decoded bytes before checksum. Both lengths are one variable-length codec, not two incompatible algorithms.
+- Dictionaries: [sia-legacy](#dictionary-sia-legacy)
+- Supported lengths: 29
+- Position rules: 32-byte seed plus6-byte BLAKE2b checksum becomes28 or29 words under the SAME variable-length codec.
+- Semantics: Length is output-dependent; not separate generations, not Monero triplets or BIP39. Exact historical release coverage/recovery remains unverified.
+- External secret / stored: none / false
+- External-secret guidance: No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil.
+- Test vectors: —
+
 <a id="scheme-slip39-share"></a>
 
 ### SLIP-39 — individual share — slip39-share
@@ -1580,6 +1971,126 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - External secret / stored: optional-passphrase / false
 - External-secret guidance: A scheme passphrase is external and never stored by Tessaveil. A wallet PIN or application password is not proof of a mnemonic passphrase; verify support in the exact source wallet.
 - Test vectors: [ton-native-vectors](../catalog/evidence/ton-native-vectors.json)
+
+<a id="scheme-zano-legacy-24"></a>
+
+### Zano historical24 — rejected by inspected current core — zano-legacy-24
+
+- Source record: [zano-legacy-24](../catalog/schemes/zano-legacy-24.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): e55c8ec47b76ed809162a958cf4600e03256a96a / e55c8ec47b76ed809162a958cf4600e03256a96a
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [zano-codec](../catalog/evidence/zano-codec.json), [zano-history-vector](../catalog/evidence/zano-history-vector.json), [zano-modes](../catalog/evidence/zano-modes.json)
+- Evidence claim: Exact 1626 English indices; eight native little-endian 32-bit groups become 24 words in eight dependent modulo-1626 triplets. List equals Electrum v1 tuple in order, not Monero current English or BIP39. Case-sensitive membership; no lowercase or Unicode normalization is applied by this codec.
+- Evidence claim: Pinned public wallet\_seed\_entries explicitly marks legacy24 invalid and old25 valid; includes26 checksum cases. Reviewed as upstream tests only, not executed recovery or evidence of which old release generated24.
+- Evidence claim: get\_seed\_phrase emits 24 data words, timestamp/password-flag word25 and checksum/auditable word26. restore\_from\_seed\_phrase accepts25/26 and rejects24 at this exact commit. Seed password encrypts binary seed with legacy ChaCha; it is not BIP39 extension.
+- Dictionaries: [zano-en](#dictionary-zano-en)
+- Supported lengths: 24
+- Position rules: Historical24 has no timestamp/checksum words. Inspected restore explicitly rejects24.
+- Semantics: Historical generating release and password behavior unresolved; length is research identity, not accepted current input.
+- External secret / stored: other / false
+- External-secret guidance: Exact original seed password and mode are required for recovery when used; never store the secret in Tessaveil.
+- Test vectors: [zano-history-vector](../catalog/evidence/zano-history-vector.json)
+
+<a id="scheme-zano-legacy-25"></a>
+
+### Zano historical25 import — zano-legacy-25
+
+- Source record: [zano-legacy-25](../catalog/schemes/zano-legacy-25.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): e55c8ec47b76ed809162a958cf4600e03256a96a / e55c8ec47b76ed809162a958cf4600e03256a96a
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [zano-history-vector](../catalog/evidence/zano-history-vector.json), [zano-modes](../catalog/evidence/zano-modes.json), [zano-timestamp-password](../catalog/evidence/zano-timestamp-password.json)
+- Evidence claim: Pinned public wallet\_seed\_entries explicitly marks legacy24 invalid and old25 valid; includes26 checksum cases. Reviewed as upstream tests only, not executed recovery or evidence of which old release generated24.
+- Evidence claim: get\_seed\_phrase emits 24 data words, timestamp/password-flag word25 and checksum/auditable word26. restore\_from\_seed\_phrase accepts25/26 and rejects24 at this exact commit. Seed password encrypts binary seed with legacy ChaCha; it is not BIP39 extension.
+- Evidence claim: Timestamp is quantized with WALLET\_BRAIN\_DATE\_QUANTUM; word25 carries password-use flag. validate\_password uses a restricted ASCII regex; no Unicode NFKD or BIP39 salt is applied.
+- Dictionaries: [zano-en](#dictionary-zano-en)
+- Supported lengths: 25
+- Position rules: Words1..24 binary data; word25 timestamp/password flag; no word26 checksum.
+- Semantics: Accepted by inspected current core; original historical generation boundary not established. Not Monero25.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Exact original seed password and mode are required for recovery when used; never store the secret in Tessaveil.
+- Test vectors: [zano-history-vector](../catalog/evidence/zano-history-vector.json)
+
+<a id="scheme-zano-modern"></a>
+
+### Zano native26 — zano-modern
+
+- Source record: [zano-modern](../catalog/schemes/zano-modern.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): e55c8ec47b76ed809162a958cf4600e03256a96a / e55c8ec47b76ed809162a958cf4600e03256a96a
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zano-codec](../catalog/evidence/zano-codec.json), [zano-history-vector](../catalog/evidence/zano-history-vector.json), [zano-modes](../catalog/evidence/zano-modes.json), [zano-timestamp-password](../catalog/evidence/zano-timestamp-password.json)
+- Evidence claim: Exact 1626 English indices; eight native little-endian 32-bit groups become 24 words in eight dependent modulo-1626 triplets. List equals Electrum v1 tuple in order, not Monero current English or BIP39. Case-sensitive membership; no lowercase or Unicode normalization is applied by this codec.
+- Evidence claim: Pinned public wallet\_seed\_entries explicitly marks legacy24 invalid and old25 valid; includes26 checksum cases. Reviewed as upstream tests only, not executed recovery or evidence of which old release generated24.
+- Evidence claim: get\_seed\_phrase emits 24 data words, timestamp/password-flag word25 and checksum/auditable word26. restore\_from\_seed\_phrase accepts25/26 and rejects24 at this exact commit. Seed password encrypts binary seed with legacy ChaCha; it is not BIP39 extension.
+- Evidence claim: Timestamp is quantized with WALLET\_BRAIN\_DATE\_QUANTUM; word25 carries password-use flag. validate\_password uses a restricted ASCII regex; no Unicode NFKD or BIP39 salt is applied.
+- Dictionaries: [zano-en](#dictionary-zano-en)
+- Supported lengths: 26
+- Position rules: Words1..24 encode32 bytes; word25 is timestamp/password flag; word26 is checksum/auditable flag.
+- Semantics: Native Zano; not BIP39, Monero25 or Cake BIP39. Dictionary provenance blocks selection; no local recovery test.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Exact original seed password and mode are required for recovery when used; never store the secret in Tessaveil.
+- Test vectors: [zano-history-vector](../catalog/evidence/zano-history-vector.json)
+
+<a id="scheme-zcash-bip39"></a>
+
+### Zcash English24 mnemonic mode — zcash-bip39
+
+- Source record: [zcash-bip39](../catalog/schemes/zcash-bip39.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): f9dcd4d31439feb813c95ac2516814421f5b04df / f9dcd4d31439feb813c95ac2516814421f5b04df
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zcash-bip0039](../catalog/evidence/zcash-bip0039.json), [zcash-bip0039-vector](../catalog/evidence/zcash-bip0039-vector.json), [zcash-create](../catalog/evidence/zcash-create.json), [zcash-ffi](../catalog/evidence/zcash-ffi.json), [zcash-vector-license](../catalog/evidence/zcash-vector-license.json), [zcash-zallet-create](../catalog/evidence/zcash-zallet-create.json), [zcash-zallet-empty](../catalog/evidence/zcash-zallet-empty.json)
+- Evidence claim: Zallet Cargo.lock pins bip0039 0.12.0; downloaded crate SHA256 matches568b6890865156d9043af490d4c4081c385dd68ea10acd6ca15733d511e6b51c and vcs commit. NFKD PBKDF2-HMAC-SHA512/2048, salt mnemonic\+passphrase. English ordered list equals existing BIP39-English. zcashd dependency binding is not inferred from Zallet's lock.
+- Evidence claim: Published to\_seed\(""\) doc-test projected to12 word indices plus literal expected64-byte seed. Primitive corroboration only, not24-word Zallet recovery.
+- Evidence claim: zcashd mnemonic source constructs BIP39 phrase from32-byte entropy, checks Zcash account derivability; FromLegacySeed creates a NEW mnemonic seed with nonce adjustment, not an identity-preserving conversion of every old key.
+- Evidence claim: ZIP339 interface selects BIP39 languages and explicitly derives with empty passphrase. This batch is English24 only; standalone keys and legacy raw HD seeds are separate.
+- Evidence claim: MIT branch chosen for modified public doc-test projection, Copyright2020 Qinxuan Chen; full notice retained. Codex2026-09-29 data redistribution allowed/local SignPath compatible. No Rust dependency or wallet binary bundled.
+- Evidence claim: generate-mnemonic chooses Count\:\:Words24 and English from32 random bytes; encrypted storage and backup confirmation are separate. Source-only beta scope, not tested released wallet.
+- Evidence claim: Keystore reconstructs BIP39 mnemonic.to\_seed\(""\) and separately retains legacy non-mnemonic HD seeds. age identity passphrase encrypts storage and is not a BIP39 derivation passphrase.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 24
+- Position rules: 256-bit entropy plus8 checksum bits;24 English words. Account/network/ZIP32 context remains essential.
+- Semantics: Exact English mnemonic mode with empty BIP39 extension. Imported standalone keys and old HD seed bytes are not covered.
+- External secret / stored: none / false
+- External-secret guidance: No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil.
+- Test vectors: [zcash-bip0039-vector](../catalog/evidence/zcash-bip0039-vector.json)
+
+<a id="scheme-zcash-non-mnemonic"></a>
+
+### Zcash standalone keys / raw legacy HD seed — no word table — zcash-non-mnemonic
+
+- Source record: [zcash-non-mnemonic](../catalog/schemes/zcash-non-mnemonic.json)
+- Status: no-mnemonic-confirmed
+- Reason: This mode does not expose a supported mnemonic backup.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 558f686599586f55def3db86955d74d3be44605e / 558f686599586f55def3db86955d74d3be44605e
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zcash-standalone](../catalog/evidence/zcash-standalone.json), [zcash-zallet-empty](../catalog/evidence/zcash-zallet-empty.json), [zcash-zallet-export](../catalog/evidence/zcash-zallet-export.json)
+- Evidence claim: dumpprivkey and z\_exportkey export standalone transparent or shielded private-key encodings. These are not mnemonic word-table profiles; mnemonic backup cannot be assumed to cover imported keys.
+- Evidence claim: Keystore reconstructs BIP39 mnemonic.to\_seed\(""\) and separately retains legacy non-mnemonic HD seeds. age identity passphrase encrypts storage and is not a BIP39 derivation passphrase.
+- Evidence claim: Official book distinguishes mnemonic accounts from z\_importkey and standalone migrated keys; encrypted mnemonic export also requires its age identity. Exported phrase alone does not cover all wallet material.
+- Dictionaries: —
+- Supported lengths: —
+- Position rules: Not applicable\: non-mnemonic material has no word positions or candidate table.
+- Semantics: Non-mnemonic key material requires native wallet backup/export and any encryption identity. No vocabulary, word count, table, or universal mnemonic conversion.
+- External secret / stored: other / false
+- External-secret guidance: Exact original seed password and mode are required for recovery when used; never store the secret in Tessaveil.
+- Test vectors: —
 
 ## Dictionaries (one entry per ID)
 
@@ -2786,6 +3297,37 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - License evidence: [monero-osi-apache](../catalog/evidence/monero-osi-apache.json), [monero-polyseed-license](../catalog/evidence/monero-polyseed-license.json), [monero-polyseed-notice](../catalog/evidence/monero-polyseed-notice.json), [monero-signpath](../catalog/evidence/monero-signpath.json), [polyseed-zh-hant-source](../catalog/evidence/polyseed-zh-hant-source.json)
 - Test vectors: —
 
+<a id="dictionary-sia-legacy"></a>
+
+### Sia legacy English1626 — sia-legacy
+
+- Source record: [sia-legacy](../catalog/dictionaries/sia-legacy.json)
+- Status: verified
+- Reason: Verified research record; not a release or security guarantee.
+- Version interval (min / max): 7532f67e35008b0f36bbebb20d5a6ee8f14a22f5 / 7532f67e35008b0f36bbebb20d5a6ee8f14a22f5
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [sia-codec](../catalog/evidence/sia-codec.json), [sia-codec-vectors](../catalog/evidence/sia-codec-vectors.json), [sia-license](../catalog/evidence/sia-license.json), [sia-list](../catalog/evidence/sia-list.json)
+- Evidence claim: Legacy codec is a length-preserving bijective base256/base1626 conversion with little-endian digit order, not Monero three-word chunks; per-word NFC and English prefix matching; FromString splits literal spaces.
+- Evidence claim: Ten published codec boundary cases project to byte inputs and dictionary indices; \[90,5\] maps to\[0,0\]. These are codec vectors, not28/29-word wallet recovery vectors.
+- Evidence claim: Codex2026-09-29 reviewed MIT root grant \(Copyright2015 Nebulous\) and cumulative Monero2014-2015 BSD-3-Clause english.go terms; full notices retained for list and modified public codec projections. Data-only redistribution allowed, local SignPath OSS compatibility assessed compatible, not Foundation acceptance.
+- Evidence claim: Exact siad go.mod dependency\: 1626 English words, source order, unique3-character prefixes, NFC. Explicit Monero BSD-3-Clause file grant; UTF-8 LF extraction changes representation only.
+- Language: en
+- Script: Latn
+- Encoding: UTF-8
+- Normalization: NFC
+- Word count: 1626
+- SHA-256: eaa6bce7dd92f4d6dd74f224264e0ef4ad21095d68ec77616b26ceb599baf4f7
+- Order rule: EnglishDictionary array order, zero-based; UTF-8 LF with final newline.
+- Position rules: All positions use full list; unique3-character English prefixes; not Monero triplet semantics.
+- Source revision: 7532f67e35008b0f36bbebb20d5a6ee8f14a22f5
+- License: BSD-3-Clause AND MIT
+- Attribution: Copyright2014-2015 The Monero Project; Copyright2015 Nebulous. Full terms in THIRD\_PARTY\_NOTICES; modified UTF-8 LF projection.
+- Repository redistribution: allowed
+- SignPath compatibility: compatible
+- License evidence: [sia-license](../catalog/evidence/sia-license.json), [sia-list](../catalog/evidence/sia-list.json)
+- Test vectors: [sia-codec-vectors](../catalog/evidence/sia-codec-vectors.json)
+
 <a id="dictionary-slip39-en"></a>
 
 ### SLIP-39 — English — slip39-en
@@ -2819,6 +3361,36 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - SignPath compatibility: compatible
 - License evidence: [slip39-license](../catalog/evidence/slip39-license.json), [slip39-osi-mit](../catalog/evidence/slip39-osi-mit.json), [slip39-signpath](../catalog/evidence/slip39-signpath.json)
 - Test vectors: [slip39-vectors](../catalog/evidence/slip39-vectors.json)
+
+<a id="dictionary-zano-en"></a>
+
+### Zano English — provenance blocked — zano-en
+
+- Source record: [zano-en](../catalog/dictionaries/zano-en.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): e55c8ec47b76ed809162a958cf4600e03256a96a / e55c8ec47b76ed809162a958cf4600e03256a96a
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [zano-codec](../catalog/evidence/zano-codec.json), [zano-license](../catalog/evidence/zano-license.json)
+- Evidence claim: Exact 1626 English indices; eight native little-endian 32-bit groups become 24 words in eight dependent modulo-1626 triplets. List equals Electrum v1 tuple in order, not Monero current English or BIP39. Case-sensitive membership; no lowercase or Unicode normalization is applied by this codec.
+- Evidence claim: Reviewed root MIT-like grant and mnemonic file BSD-3-Clause header. Exact list matches Electrum-old's Wiktionary-derived vocabulary; original frequency-list data-license provenance remains unresolved. Codex2026-09-29\: unclear redistribution/pending SignPath, no list bytes bundled.
+- Language: en
+- Script: Latn
+- Encoding: UTF-8
+- Normalization: none
+- Word count: 1626
+- SHA-256: —
+- Order rule: Exact numeric indices; matches Electrum-old tuple. No approved committed byte artifact.
+- Position rules: Triplets encode32-bit groups; metadata words25/26 also use same1626 indices.
+- Source revision: e55c8ec47b76ed809162a958cf4600e03256a96a
+- License: BSD-3-Clause file; original frequency-list rights unresolved
+- Attribution: Monero2014; Zano/Louisdor2014-2018; Electrum-old/Wiktionary source chain requires review.
+- Repository redistribution: unclear
+- SignPath compatibility: pending
+- License evidence: [zano-license](../catalog/evidence/zano-license.json)
+- Test vectors: —
 
 ## Evidence revisions
 
@@ -2856,6 +3428,9 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - [cardano-typhon-create](../catalog/evidence/cardano-typhon-create.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
 - [cardano-yoroi-backup](../catalog/evidence/cardano-yoroi-backup.json): official-source; 91febfc95a288d3436b891356c87645611ea603a; 2026-09-29
 - [cardano-yoroi-create](../catalog/evidence/cardano-yoroi-create.json): official-source; 91febfc95a288d3436b891356c87645611ea603a; 2026-09-29
+- [chia-license](../catalog/evidence/chia-license.json): official-source; af0d7eab5fb12bbd8af51f47a7123ee700d74c2a; 2026-09-29
+- [chia-source](../catalog/evidence/chia-source.json): official-source; af0d7eab5fb12bbd8af51f47a7123ee700d74c2a; 2026-09-29
+- [chia-vectors](../catalog/evidence/chia-vectors.json): public-test-vector; af0d7eab5fb12bbd8af51f47a7123ee700d74c2a; 2026-09-29
 - [decred-bip39-doc](../catalog/evidence/decred-bip39-doc.json): official-source; 30e042a46a97cf78f9766904d3ca4e5ed253266d; 2026-09-29
 - [decred-cake-build](../catalog/evidence/decred-cake-build.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [decred-cake-create](../catalog/evidence/decred-cake-create.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
@@ -2942,6 +3517,17 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - [polyseed-pt-source](../catalog/evidence/polyseed-pt-source.json): official-source; 56f634647d4f75596de20a6259b0cf1933949fdc; 2026-09-29
 - [polyseed-zh-hans-source](../catalog/evidence/polyseed-zh-hans-source.json): official-source; 56f634647d4f75596de20a6259b0cf1933949fdc; 2026-09-29
 - [polyseed-zh-hant-source](../catalog/evidence/polyseed-zh-hant-source.json): official-source; 56f634647d4f75596de20a6259b0cf1933949fdc; 2026-09-29
+- [sia-codec](../catalog/evidence/sia-codec.json): official-source; 7532f67e35008b0f36bbebb20d5a6ee8f14a22f5; 2026-09-29
+- [sia-codec-vectors](../catalog/evidence/sia-codec-vectors.json): public-test-vector; 7532f67e35008b0f36bbebb20d5a6ee8f14a22f5; 2026-09-29
+- [sia-current-codec](../catalog/evidence/sia-current-codec.json): official-source; 024db888b8bb80b5e54876baaf868c03c9aa0902; 2026-09-29
+- [sia-license](../catalog/evidence/sia-license.json): official-source; 7532f67e35008b0f36bbebb20d5a6ee8f14a22f5; 2026-09-29
+- [sia-list](../catalog/evidence/sia-list.json): official-source; 7532f67e35008b0f36bbebb20d5a6ee8f14a22f5; 2026-09-29
+- [sia-server-boundary](../catalog/evidence/sia-server-boundary.json): official-source; aa523f95c5b2a106a3c0d9675205c90305d2d9d9; 2026-09-29
+- [sia-siad-dependency](../catalog/evidence/sia-siad-dependency.json): official-source; 66e7fc630585887c30033379d2a0a8bf5c618177; 2026-09-29
+- [sia-siad-seed](../catalog/evidence/sia-siad-seed.json): official-source; 66e7fc630585887c30033379d2a0a8bf5c618177; 2026-09-29
+- [sia-ui-history](../catalog/evidence/sia-ui-history.json): official-source; cd7e221b98fc7a395de25bd8dfaa4f4de2a6e3d2; 2026-09-29
+- [sia-web-create](../catalog/evidence/sia-web-create.json): official-source; f4e3ff774c4f6a5b9830abf1767485215a26a349; 2026-09-29
+- [sia-web-sdk](../catalog/evidence/sia-web-sdk.json): official-source; f4e3ff774c4f6a5b9830abf1767485215a26a349; 2026-09-29
 - [slip39-license](../catalog/evidence/slip39-license.json): official-source; 17fcce14736afe498871d3018e4fa9330443471a; 2026-09-29
 - [slip39-list](../catalog/evidence/slip39-list.json): official-source; 17fcce14736afe498871d3018e4fa9330443471a; 2026-09-29
 - [slip39-osi-mit](../catalog/evidence/slip39-osi-mit.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
@@ -2992,6 +3578,22 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - [tonkeeper-create](../catalog/evidence/tonkeeper-create.json): official-source; 4942adcdcddf55d57e3d3fc3676f019caf87357e; 2026-09-29
 - [tonkeeper-derive](../catalog/evidence/tonkeeper-derive.json): official-source; 4942adcdcddf55d57e3d3fc3676f019caf87357e; 2026-09-29
 - [tonkeeper-version](../catalog/evidence/tonkeeper-version.json): official-source; 4942adcdcddf55d57e3d3fc3676f019caf87357e; 2026-09-29
+- [zano-cake-bip39](../catalog/evidence/zano-cake-bip39.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
+- [zano-cake-modes](../catalog/evidence/zano-cake-modes.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
+- [zano-codec](../catalog/evidence/zano-codec.json): official-source; e55c8ec47b76ed809162a958cf4600e03256a96a; 2026-09-29
+- [zano-history-vector](../catalog/evidence/zano-history-vector.json): public-test-vector; e55c8ec47b76ed809162a958cf4600e03256a96a; 2026-09-29
+- [zano-license](../catalog/evidence/zano-license.json): official-source; e55c8ec47b76ed809162a958cf4600e03256a96a; 2026-09-29
+- [zano-modes](../catalog/evidence/zano-modes.json): official-source; e55c8ec47b76ed809162a958cf4600e03256a96a; 2026-09-29
+- [zano-timestamp-password](../catalog/evidence/zano-timestamp-password.json): official-source; e55c8ec47b76ed809162a958cf4600e03256a96a; 2026-09-29
+- [zcash-bip0039](../catalog/evidence/zcash-bip0039.json): official-source; 1a6cc63a53721781aabd695307cc41b82ca76813; 2026-09-29
+- [zcash-bip0039-vector](../catalog/evidence/zcash-bip0039-vector.json): public-test-vector; 1a6cc63a53721781aabd695307cc41b82ca76813; 2026-09-29
+- [zcash-create](../catalog/evidence/zcash-create.json): official-source; 558f686599586f55def3db86955d74d3be44605e; 2026-09-29
+- [zcash-ffi](../catalog/evidence/zcash-ffi.json): official-source; 558f686599586f55def3db86955d74d3be44605e; 2026-09-29
+- [zcash-standalone](../catalog/evidence/zcash-standalone.json): official-source; 558f686599586f55def3db86955d74d3be44605e; 2026-09-29
+- [zcash-vector-license](../catalog/evidence/zcash-vector-license.json): official-source; 1a6cc63a53721781aabd695307cc41b82ca76813; 2026-09-29
+- [zcash-zallet-create](../catalog/evidence/zcash-zallet-create.json): official-source; f9dcd4d31439feb813c95ac2516814421f5b04df; 2026-09-29
+- [zcash-zallet-empty](../catalog/evidence/zcash-zallet-empty.json): official-source; f9dcd4d31439feb813c95ac2516814421f5b04df; 2026-09-29
+- [zcash-zallet-export](../catalog/evidence/zcash-zallet-export.json): official-source; f9dcd4d31439feb813c95ac2516814421f5b04df; 2026-09-29
 
 ## Mandatory research coverage
 
@@ -3037,9 +3639,9 @@ Pending is an unfinished research state, not a support status. Missing records r
 | dictionary-polyseed-pt — POLYSEED pt | terminal | documented | [polyseed-pt](../catalog/dictionaries/polyseed-pt.json) |
 | dictionary-polyseed-zh-hans — POLYSEED zh-hans | terminal | documented | [polyseed-zh-hans](../catalog/dictionaries/polyseed-zh-hans.json) |
 | dictionary-polyseed-zh-hant — POLYSEED zh-hant | terminal | documented | [polyseed-zh-hant](../catalog/dictionaries/polyseed-zh-hant.json) |
-| dictionary-sia-legacy — sia legacy | pending | — | — |
+| dictionary-sia-legacy — sia legacy | terminal | verified | [sia-legacy](../catalog/dictionaries/sia-legacy.json) |
 | dictionary-slip39-en — slip39 en | terminal | verified | [slip39-en](../catalog/dictionaries/slip39-en.json) |
-| dictionary-zano-en — zano en | pending | — | — |
+| dictionary-zano-en — zano en | terminal | blocked | [zano-en](../catalog/dictionaries/zano-en.json) |
 | network-algorand — algorand | pending | — | — |
 | network-arbitrum — arbitrum | pending | — | — |
 | network-avalanche — avalanche | pending | — | — |
@@ -3047,7 +3649,7 @@ Pending is an unfinished research state, not a support status. Missing records r
 | network-bitcoin — bitcoin | pending | — | — |
 | network-bnb-chain — bnb chain | pending | — | — |
 | network-cardano — cardano | pending | — | — |
-| network-chia — chia | pending | — | — |
+| network-chia — chia | terminal | documented | [chia-wallet](../catalog/wallets/chia-wallet.json) |
 | network-cosmos — cosmos | pending | — | — |
 | network-decred — decred | terminal | documented | [decrediton](../catalog/wallets/decrediton.json) |
 | network-ethereum — ethereum | pending | — | — |
@@ -3055,13 +3657,13 @@ Pending is an unfinished research state, not a support status. Missing records r
 | network-monero — monero | pending | — | — |
 | network-polkadot — polkadot | terminal | documented | [polkadot-js](../catalog/wallets/polkadot-js.json), [subwallet](../catalog/wallets/subwallet.json), [talisman](../catalog/wallets/talisman.json) |
 | network-polygon — polygon | pending | — | — |
-| network-sia — sia | pending | — | — |
+| network-sia — sia | terminal | documented | [sia-walletd](../catalog/wallets/sia-walletd.json) |
 | network-solana — solana | pending | — | — |
 | network-tezos — tezos | pending | — | — |
 | network-ton — ton | pending | — | — |
 | network-tron — tron | pending | — | — |
-| network-zano — zano | pending | — | — |
-| network-zcash — zcash | pending | — | — |
+| network-zano — zano | terminal | documented | [zano-wallet](../catalog/wallets/zano-wallet.json) |
+| network-zcash — zcash | terminal | documented | [zallet](../catalog/wallets/zallet.json) |
 | scheme-algorand-25 — algorand 25 | terminal | documented | [algorand-25](../catalog/schemes/algorand-25.json) |
 | scheme-bip39 — bip39 | terminal | verified | [bip39](../catalog/schemes/bip39.json) |
 | scheme-cake-decred-15 — cake decred 15 | terminal | documented | [cake-decred-15](../catalog/schemes/cake-decred-15.json) |
@@ -3069,7 +3671,7 @@ Pending is an unfinished research state, not a support status. Missing records r
 | scheme-cardano-daedalus-27 — cardano daedalus 27 | terminal | documented | [cardano-daedalus-27](../catalog/schemes/cardano-daedalus-27.json) |
 | scheme-cardano-hardware — cardano hardware | terminal | blocked | [cardano-hardware](../catalog/schemes/cardano-hardware.json) |
 | scheme-cardano-icarus — cardano icarus | terminal | documented | [cardano-icarus](../catalog/schemes/cardano-icarus.json) |
-| scheme-chia-bip39 — chia bip39 | pending | — | — |
+| scheme-chia-bip39 — chia bip39 | terminal | documented | [chia-bip39](../catalog/schemes/chia-bip39.json) |
 | scheme-decred-bip39 — decred bip39 | terminal | documented | [decred-bip39](../catalog/schemes/decred-bip39.json) |
 | scheme-decred-pgp33 — decred pgp33 | terminal | documented | [decred-pgp33](../catalog/schemes/decred-pgp33.json) |
 | scheme-electrum-v1 — electrum v1 | terminal | blocked | [electrum-v1](../catalog/schemes/electrum-v1.json) |
@@ -3077,18 +3679,18 @@ Pending is an unfinished research state, not a support status. Missing records r
 | scheme-monero-legacy — monero legacy | terminal | documented | [monero-legacy](../catalog/schemes/monero-legacy.json) |
 | scheme-mymonero — mymonero | terminal | documented | [mymonero-13](../catalog/schemes/mymonero-13.json) |
 | scheme-polyseed — polyseed | terminal | documented | [polyseed-16](../catalog/schemes/polyseed-16.json) |
-| scheme-sia-bip39 — sia bip39 | pending | — | — |
-| scheme-sia-legacy-28 — sia legacy 28 | pending | — | — |
-| scheme-sia-legacy-29 — sia legacy 29 | pending | — | — |
+| scheme-sia-bip39 — sia bip39 | terminal | documented | [sia-bip39](../catalog/schemes/sia-bip39.json) |
+| scheme-sia-legacy-28 — sia legacy 28 | terminal | documented | [sia-legacy-28](../catalog/schemes/sia-legacy-28.json) |
+| scheme-sia-legacy-29 — sia legacy 29 | terminal | documented | [sia-legacy-29](../catalog/schemes/sia-legacy-29.json) |
 | scheme-slip39-share — slip39 share | terminal | documented | [slip39-share](../catalog/schemes/slip39-share.json) |
 | scheme-substrate-bip39 — substrate bip39 | terminal | documented | [substrate-bip39](../catalog/schemes/substrate-bip39.json) |
 | scheme-ton-multichain-bip39 — ton multichain bip39 | terminal | documented | [ton-multichain-bip39](../catalog/schemes/ton-multichain-bip39.json) |
 | scheme-ton-native — ton native | terminal | verified | [ton-native](../catalog/schemes/ton-native.json) |
-| scheme-zano-legacy-24 — zano legacy 24 | pending | — | — |
-| scheme-zano-legacy-25 — zano legacy 25 | pending | — | — |
-| scheme-zano-modern — zano modern | pending | — | — |
-| scheme-zcash-bip39 — zcash bip39 | pending | — | — |
-| scheme-zcash-non-mnemonic — zcash non mnemonic | pending | — | — |
+| scheme-zano-legacy-24 — zano legacy 24 | terminal | blocked | [zano-legacy-24](../catalog/schemes/zano-legacy-24.json) |
+| scheme-zano-legacy-25 — zano legacy 25 | terminal | blocked | [zano-legacy-25](../catalog/schemes/zano-legacy-25.json) |
+| scheme-zano-modern — zano modern | terminal | blocked | [zano-modern](../catalog/schemes/zano-modern.json) |
+| scheme-zcash-bip39 — zcash bip39 | terminal | documented | [zcash-bip39](../catalog/schemes/zcash-bip39.json) |
+| scheme-zcash-non-mnemonic — zcash non mnemonic | terminal | no-mnemonic-confirmed | [zcash-non-mnemonic](../catalog/schemes/zcash-non-mnemonic.json) |
 | wallet-atomic-wallet — atomic wallet | pending | — | — |
 | wallet-backpack — backpack | pending | — | — |
 | wallet-bitbox02 — bitbox02 | pending | — | — |
@@ -3097,8 +3699,8 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-bluewallet — bluewallet | pending | — | — |
 | wallet-cake-wallet — cake wallet | terminal | documented | [cake-wallet-monero](../catalog/wallets/cake-wallet-monero.json) |
 | wallet-cake-wallet-decred — cake wallet decred | terminal | documented | [cake-wallet-decred](../catalog/wallets/cake-wallet-decred.json) |
-| wallet-cake-wallet-zano — cake wallet zano | pending | — | — |
-| wallet-chia-wallet — chia wallet | pending | — | — |
+| wallet-cake-wallet-zano — cake wallet zano | terminal | documented | [cake-wallet-zano](../catalog/wallets/cake-wallet-zano.json) |
+| wallet-chia-wallet — chia wallet | terminal | documented | [chia-wallet](../catalog/wallets/chia-wallet.json) |
 | wallet-coinbase-wallet — coinbase wallet | pending | — | — |
 | wallet-coinomi — coinomi | pending | — | — |
 | wallet-coldcard — coldcard | pending | — | — |
@@ -3138,8 +3740,8 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-rainbow — rainbow | pending | — | — |
 | wallet-safepal — safepal | pending | — | — |
 | wallet-seedsigner — seedsigner | pending | — | — |
-| wallet-sia-ui — sia ui | pending | — | — |
-| wallet-siad — siad | pending | — | — |
+| wallet-sia-ui — sia ui | terminal | documented | [sia-ui](../catalog/wallets/sia-ui.json) |
+| wallet-siad — siad | terminal | documented | [siad](../catalog/wallets/siad.json) |
 | wallet-solflare — solflare | pending | — | — |
 | wallet-sparrow — sparrow | pending | — | — |
 | wallet-subwallet — subwallet | terminal | documented | [subwallet](../catalog/wallets/subwallet.json) |
@@ -3158,9 +3760,9 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-trezor-safe-7 — trezor safe 7 | terminal | documented | [trezor-safe-7](../catalog/wallets/trezor-safe-7.json) |
 | wallet-trust-wallet — trust wallet | pending | — | — |
 | wallet-typhon — typhon | terminal | blocked | [typhon](../catalog/wallets/typhon.json) |
-| wallet-walletd — walletd | pending | — | — |
+| wallet-walletd — walletd | terminal | documented | [sia-walletd](../catalog/wallets/sia-walletd.json) |
 | wallet-yoroi — yoroi | terminal | documented | [yoroi](../catalog/wallets/yoroi.json) |
-| wallet-zallet — zallet | pending | — | — |
-| wallet-zano-wallet — zano wallet | pending | — | — |
-| wallet-zcash-official — zcash official | pending | — | — |
+| wallet-zallet — zallet | terminal | documented | [zallet](../catalog/wallets/zallet.json) |
+| wallet-zano-wallet — zano wallet | terminal | documented | [zano-wallet](../catalog/wallets/zano-wallet.json) |
+| wallet-zcash-official — zcash official | terminal | documented | [zcash-official](../catalog/wallets/zcash-official.json) |
 | wallet-zerion — zerion | pending | — | — |

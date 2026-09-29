@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "sia-siad-seed",
+  "source_type": "official-source",
+  "claim": "SeedToString appends first6 bytes of crypto.HashObject(seed) to32-byte seed then entropy-mnemonics conversion. StringToSeed requires28/29 English words, exact formatting/lowercase and38 decoded bytes before checksum. Both lengths are one variable-length codec, not two incompatible algorithms.",
+  "url": "https://raw.githubusercontent.com/SiaFoundation/siad/66e7fc630585887c30033379d2a0a8bf5c618177/modules/wallet.go",
+  "revision": "66e7fc630585887c30033379d2a0a8bf5c618177",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sia-legacy-28",
+    "sia-legacy-29",
+    "sia-ui",
+    "sia-ui-29",
+    "siad",
+    "siad-29"
+  ]
+}

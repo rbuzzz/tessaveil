@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "zallet",
+  "display_name": {
+    "en": "Zallet — English24 generation",
+    "ru": "Zallet — English24 generation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "zcash-zallet-create",
+    "zcash-zallet-empty",
+    "zcash-zallet-export"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "f9dcd4d31439feb813c95ac2516814421f5b04df",
+    "max": "f9dcd4d31439feb813c95ac2516814421f5b04df"
+  },
+  "product_id": "zallet",
+  "product_name": "Zallet — English24 generation",
+  "aliases": [],
+  "platform": "linux",
+  "mode_id": "english24-generate",
+  "network_ids": [
+    "zcash"
+  ],
+  "scheme_id": "zcash-bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Beta source; age-encrypted mnemonic export also needs age identity. Extra standalone keys are outside mnemonic backup.",
+    "Non-selectable: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

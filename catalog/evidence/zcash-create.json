@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "zcash-create",
+  "source_type": "official-source",
+  "claim": "zcashd mnemonic source constructs BIP39 phrase from32-byte entropy, checks Zcash account derivability; FromLegacySeed creates a NEW mnemonic seed with nonce adjustment, not an identity-preserving conversion of every old key.",
+  "url": "https://raw.githubusercontent.com/zcash/zcash/558f686599586f55def3db86955d74d3be44605e/src/zcash/address/mnemonic.cpp",
+  "revision": "558f686599586f55def3db86955d74d3be44605e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zcash-bip39",
+    "zcash-official"
+  ]
+}

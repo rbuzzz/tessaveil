@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "zano-cake-bip39",
+  "source_type": "official-source",
+  "claim": "Cake calls bip39 then BIP32 hardened44, hardened128, hardened0, child0, child0 and reduces private-key bytes as a little-endian integer modulo Ed25519 order. Exact Dart dependency byte/normalization and native binary binding not verified; own blocked scheme, no native26 compatibility inference.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_zano/lib/bip39_seed.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-zano-bip39",
+    "cake-wallet-zano-bip39"
+  ]
+}

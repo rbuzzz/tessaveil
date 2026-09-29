@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "chia-bip39",
+  "display_name": {
+    "en": "Chia default English24",
+    "ru": "Chia default English24"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "chia-source",
+    "chia-vectors",
+    "chia-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "af0d7eab5fb12bbd8af51f47a7123ee700d74c2a",
+    "max": "af0d7eab5fb12bbd8af51f47a7123ee700d74c2a"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    24
+  ],
+  "position_rules": [
+    "Default generation24; primitive import also accepts12/15/18/21/24 and4-character English prefixes."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil."
+  },
+  "semantic_distinction": "BIP39 encoding and empty-passphrase PBKDF2 feed BLS keys; no BIP32 or generic wallet compatibility implied.",
+  "test_vector_ids": [
+    "chia-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

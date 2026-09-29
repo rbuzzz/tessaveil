@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "zcash-bip39",
+  "display_name": {
+    "en": "Zcash English24 mnemonic mode",
+    "ru": "Zcash English24 mnemonic mode"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "zcash-create",
+    "zcash-ffi",
+    "zcash-zallet-create",
+    "zcash-zallet-empty",
+    "zcash-bip0039",
+    "zcash-bip0039-vector",
+    "zcash-vector-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "f9dcd4d31439feb813c95ac2516814421f5b04df",
+    "max": "f9dcd4d31439feb813c95ac2516814421f5b04df"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    24
+  ],
+  "position_rules": [
+    "256-bit entropy plus8 checksum bits;24 English words. Account/network/ZIP32 context remains essential."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil."
+  },
+  "semantic_distinction": "Exact English mnemonic mode with empty BIP39 extension. Imported standalone keys and old HD seed bytes are not covered.",
+  "test_vector_ids": [
+    "zcash-bip0039-vector"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

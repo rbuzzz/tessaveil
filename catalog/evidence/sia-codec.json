@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "sia-codec",
+  "source_type": "official-source",
+  "claim": "Legacy codec is a length-preserving bijective base256/base1626 conversion with little-endian digit order, not Monero three-word chunks; per-word NFC and English prefix matching; FromString splits literal spaces.",
+  "url": "https://gitlab.com/NebulousLabs/entropy-mnemonics/-/blob/7532f67e35008b0f36bbebb20d5a6ee8f14a22f5/mnemonics.go",
+  "revision": "7532f67e35008b0f36bbebb20d5a6ee8f14a22f5",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sia-legacy-28",
+    "sia-legacy-29",
+    "sia-legacy"
+  ]
+}

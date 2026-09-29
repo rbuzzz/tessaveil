@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-zano-bip39",
+  "display_name": {
+    "en": "Cake Wallet Zano — BIP39 creation",
+    "ru": "Cake Wallet Zano — BIP39 creation"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "zano-cake-modes",
+    "zano-cake-bip39"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet Zano — BIP39 creation",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "bip39-derived-create",
+  "network_ids": [
+    "zano"
+  ],
+  "scheme_id": "cake-zano-bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "12/24 creation source differs from native26; dependency normalization and binary parity unresolved.",
+    "Non-selectable: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

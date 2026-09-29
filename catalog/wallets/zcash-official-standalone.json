@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "zcash-official-standalone",
+  "display_name": {
+    "en": "zcashd — standalone key export",
+    "ru": "zcashd — standalone key export"
+  },
+  "status": "no-mnemonic-confirmed",
+  "historical": false,
+  "evidence_ids": [
+    "zcash-standalone"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "558f686599586f55def3db86955d74d3be44605e",
+    "max": "558f686599586f55def3db86955d74d3be44605e"
+  },
+  "product_id": "zcashd",
+  "product_name": "zcashd — standalone key export",
+  "aliases": [],
+  "platform": "linux",
+  "mode_id": "standalone-key-export",
+  "network_ids": [
+    "zcash"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "No mnemonic word table. Native dumpprivkey/z_exportkey formats and full wallet backups retain necessary material.",
+    "Non-selectable: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "sia-legacy-28",
+  "display_name": {
+    "en": "Sia legacy28 — bijective base1626",
+    "ru": "Sia legacy28 — bijective base1626"
+  },
+  "status": "documented",
+  "historical": true,
+  "evidence_ids": [
+    "sia-siad-seed",
+    "sia-siad-dependency",
+    "sia-codec"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "66e7fc630585887c30033379d2a0a8bf5c618177",
+    "max": "66e7fc630585887c30033379d2a0a8bf5c618177"
+  },
+  "dictionary_ids": [
+    "sia-legacy"
+  ],
+  "supported_lengths": [
+    28
+  ],
+  "position_rules": [
+    "32-byte seed plus6-byte BLAKE2b checksum becomes28 or29 words under the SAME variable-length codec."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil."
+  },
+  "semantic_distinction": "Length is output-dependent; not separate generations, not Monero triplets or BIP39. Exact historical release coverage/recovery remains unverified.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

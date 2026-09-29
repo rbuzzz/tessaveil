@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "zano-history-vector",
+  "source_type": "public-test-vector",
+  "claim": "Pinned public wallet_seed_entries explicitly marks legacy24 invalid and old25 valid; includes26 checksum cases. Reviewed as upstream tests only, not executed recovery or evidence of which old release generated24.",
+  "url": "https://raw.githubusercontent.com/hyle-team/zano/e55c8ec47b76ed809162a958cf4600e03256a96a/tests/unit_tests/wallet_seed_test.cpp",
+  "revision": "e55c8ec47b76ed809162a958cf4600e03256a96a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zano-modern",
+    "zano-legacy-24",
+    "zano-legacy-25",
+    "zano-wallet-legacy25"
+  ]
+}

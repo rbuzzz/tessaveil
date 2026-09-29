@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "sia-ui-history",
+  "source_type": "official-source",
+  "claim": "Sia-UI v1.3.3 source restores a supplied seed and trims seed/password separately. Custom password is local wallet encryption, not mnemonic derivation extension. Precise shipped siad binary and historical creation behavior unresolved.",
+  "url": "https://raw.githubusercontent.com/NebulousLabs/Sia-UI/cd7e221b98fc7a395de25bd8dfaa4f4de2a6e3d2/plugins/Wallet/js/components/initseedform.js",
+  "revision": "cd7e221b98fc7a395de25bd8dfaa4f4de2a6e3d2",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sia-ui",
+    "sia-ui-29"
+  ]
+}

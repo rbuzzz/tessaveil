@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "zcash-zallet-empty",
+  "source_type": "official-source",
+  "claim": "Keystore reconstructs BIP39 mnemonic.to_seed(\"\") and separately retains legacy non-mnemonic HD seeds. age identity passphrase encrypts storage and is not a BIP39 derivation passphrase.",
+  "url": "https://raw.githubusercontent.com/zcash/zallet/f9dcd4d31439feb813c95ac2516814421f5b04df/zallet-core/src/components/keystore.rs",
+  "revision": "f9dcd4d31439feb813c95ac2516814421f5b04df",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zcash-bip39",
+    "zcash-non-mnemonic",
+    "zallet"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "sia-walletd",
+  "display_name": {
+    "en": "Sia walletd UI0.36.2 — seed mode",
+    "ru": "Sia walletd UI0.36.2 — seed mode"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "sia-web-create",
+    "sia-web-sdk",
+    "sia-current-codec",
+    "sia-server-boundary"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "f4e3ff774c4f6a5b9830abf1767485215a26a349",
+    "max": "f4e3ff774c4f6a5b9830abf1767485215a26a349"
+  },
+  "product_id": "sia-walletd",
+  "product_name": "Sia walletd UI0.36.2 — seed mode",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "english12-create",
+  "network_ids": [
+    "sia"
+  ],
+  "scheme_id": "sia-bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "This UI seed mode accepts12 only; legacy28/29 cannot be entered here. Generic walletd server remains seed-agnostic and may track/sign externally prepared legacy transactions.",
+    "Non-selectable: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

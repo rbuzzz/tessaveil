@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "chia-wallet",
+  "display_name": {
+    "en": "Chia reference wallet — default English24",
+    "ru": "Chia reference wallet — default English24"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "chia-source",
+    "chia-vectors"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "af0d7eab5fb12bbd8af51f47a7123ee700d74c2a",
+    "max": "af0d7eab5fb12bbd8af51f47a7123ee700d74c2a"
+  },
+  "product_id": "chia-reference",
+  "product_name": "Chia reference wallet — default English24",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "english24-generate",
+  "network_ids": [
+    "chia"
+  ],
+  "scheme_id": "chia-bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Keyring master password does not extend mnemonic. Import primitive lengths/prefixes do not prove GUI generation choices.",
+    "Non-selectable: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

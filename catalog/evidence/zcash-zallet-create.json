@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "zcash-zallet-create",
+  "source_type": "official-source",
+  "claim": "generate-mnemonic chooses Count::Words24 and English from32 random bytes; encrypted storage and backup confirmation are separate. Source-only beta scope, not tested released wallet.",
+  "url": "https://raw.githubusercontent.com/zcash/zallet/f9dcd4d31439feb813c95ac2516814421f5b04df/zallet-core/src/commands/generate_mnemonic.rs",
+  "revision": "f9dcd4d31439feb813c95ac2516814421f5b04df",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zcash-bip39",
+    "zallet"
+  ]
+}

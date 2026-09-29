@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "chia-vectors",
+  "source_type": "public-test-vector",
+  "claim": "24 published English entropy/mnemonic/empty-passphrase seed vectors projected to indices and expected seed fingerprints. Includes12/18/24 primitive cases; generation profile remains24 only.",
+  "url": "https://raw.githubusercontent.com/Chia-Network/chia-blockchain/af0d7eab5fb12bbd8af51f47a7123ee700d74c2a/chia/_tests/util/bip39_test_vectors.json",
+  "revision": "af0d7eab5fb12bbd8af51f47a7123ee700d74c2a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "chia-bip39",
+    "chia-wallet"
+  ]
+}

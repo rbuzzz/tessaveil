@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "sia-server-boundary",
+  "source_type": "official-source",
+  "claim": "walletd server README explicitly permits externally derived keys from12-word, legacy28-word, Ledger or other methods. This does not imply its embedded UI accepts legacy phrases; retain both scopes and older hardfork documentation warning.",
+  "url": "https://raw.githubusercontent.com/SiaFoundation/walletd/aa523f95c5b2a106a3c0d9675205c90305d2d9d9/README.md",
+  "revision": "aa523f95c5b2a106a3c0d9675205c90305d2d9d9",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sia-walletd"
+  ]
+}

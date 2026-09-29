@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "zano-license",
+  "source_type": "official-source",
+  "claim": "Reviewed root MIT-like grant and mnemonic file BSD-3-Clause header. Exact list matches Electrum-old's Wiktionary-derived vocabulary; original frequency-list data-license provenance remains unresolved. Codex2026-09-29: unclear redistribution/pending SignPath, no list bytes bundled.",
+  "url": "https://raw.githubusercontent.com/hyle-team/zano/e55c8ec47b76ed809162a958cf4600e03256a96a/LICENSE",
+  "revision": "e55c8ec47b76ed809162a958cf4600e03256a96a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zano-en"
+  ]
+}

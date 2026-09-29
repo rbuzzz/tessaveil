@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-zano",
+  "display_name": {
+    "en": "Cake Wallet Zano — native seed import",
+    "ru": "Cake Wallet Zano — native seed import"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "zano-cake-modes"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet Zano — native seed import",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "native26-import",
+  "network_ids": [
+    "zano"
+  ],
+  "scheme_id": "zano-modern",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Native seed restore dispatch shown; native library pin/accepted lengths unresolved. No current native26 creation claim.",
+    "Non-selectable: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

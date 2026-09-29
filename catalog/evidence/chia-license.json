@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "chia-license",
+  "source_type": "official-source",
+  "claim": "Apache-2.0 Copyright2026 Chia Network Inc. covers modified public test projections; original Trezor BIP39 provenance and existing MIT notice retained too. Full Apache terms already in THIRD_PARTY_NOTICES/root LICENSE. Codex2026-09-29 data-only allowed/local SignPath compatible, not acceptance.",
+  "url": "https://raw.githubusercontent.com/Chia-Network/chia-blockchain/af0d7eab5fb12bbd8af51f47a7123ee700d74c2a/LICENSE",
+  "revision": "af0d7eab5fb12bbd8af51f47a7123ee700d74c2a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "chia-bip39"
+  ]
+}

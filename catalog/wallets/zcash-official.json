@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "zcash-official",
+  "display_name": {
+    "en": "zcashd — English mnemonic mode",
+    "ru": "zcashd — English mnemonic mode"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "zcash-create",
+    "zcash-ffi"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "558f686599586f55def3db86955d74d3be44605e",
+    "max": "558f686599586f55def3db86955d74d3be44605e"
+  },
+  "product_id": "zcashd",
+  "product_name": "zcashd — English mnemonic mode",
+  "aliases": [],
+  "platform": "linux",
+  "mode_id": "zip339-english24",
+  "network_ids": [
+    "zcash"
+  ],
+  "scheme_id": "zcash-bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Exact mnemonic source only; old raw HD seeds and imported standalone keys need separate backups. zcashd bip0039 dependency version not bound to Zallet's.",
+    "Non-selectable: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

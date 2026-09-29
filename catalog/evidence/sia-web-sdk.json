@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "sia-web-sdk",
+  "source_type": "official-source",
+  "claim": "UI SDK routes phrase generation and seed parsing to coreutils/wallet; sdk/go.mod pins v0.24.1. This is the12-word UI route; generic walletd server can track externally derived legacy addresses.",
+  "url": "https://raw.githubusercontent.com/SiaFoundation/web/f4e3ff774c4f6a5b9830abf1767485215a26a349/sdk/wallet.go",
+  "revision": "f4e3ff774c4f6a5b9830abf1767485215a26a349",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sia-bip39",
+    "sia-walletd"
+  ]
+}

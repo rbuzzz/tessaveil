@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "sia-current-codec",
+  "source_type": "official-source",
+  "claim": "coreutils v0.24.1 supports only12 words, English BIP39 entropy/checksum encoding; ordered list equals existing BIP39-English. SeedFromPhrase hashes16-byte entropy with BLAKE2b-256, not BIP39 PBKDF2. No extra passphrase; case-sensitive lookup and strings.Fields whitespace.",
+  "url": "https://raw.githubusercontent.com/SiaFoundation/coreutils/024db888b8bb80b5e54876baaf868c03c9aa0902/wallet/seed.go",
+  "revision": "024db888b8bb80b5e54876baaf868c03c9aa0902",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sia-bip39",
+    "sia-walletd"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "zano-wallet",
+  "display_name": {
+    "en": "Zano CLI — native26",
+    "ru": "Zano CLI — native26"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "zano-modes",
+    "zano-timestamp-password"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "e55c8ec47b76ed809162a958cf4600e03256a96a",
+    "max": "e55c8ec47b76ed809162a958cf4600e03256a96a"
+  },
+  "product_id": "zano-cli",
+  "product_name": "Zano CLI — native26",
+  "aliases": [],
+  "platform": "linux",
+  "mode_id": "native26",
+  "network_ids": [
+    "zano"
+  ],
+  "scheme_id": "zano-modern",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Native26 creation shown in core; Linux CLI entry-to-binary boundary unverified. Legacy24 rejected;25 import must preserve timestamp/password context.",
+    "Non-selectable: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

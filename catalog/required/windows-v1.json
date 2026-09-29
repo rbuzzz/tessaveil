@@ -489,9 +489,11 @@
         "en": "zano en",
         "ru": "zano en"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zano-en"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
       "historical": false
     },
     {
@@ -500,9 +502,11 @@
         "en": "sia legacy",
         "ru": "sia legacy"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "sia-legacy"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": true
     },
     {
@@ -745,9 +749,11 @@
         "en": "zano modern",
         "ru": "zano modern"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zano-modern"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
       "historical": false
     },
     {
@@ -756,9 +762,11 @@
         "en": "zano legacy 24",
         "ru": "zano legacy 24"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zano-legacy-24"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
       "historical": true
     },
     {
@@ -767,9 +775,11 @@
         "en": "zano legacy 25",
         "ru": "zano legacy 25"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zano-legacy-25"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
       "historical": true
     },
     {
@@ -778,9 +788,11 @@
         "en": "sia bip39",
         "ru": "sia bip39"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "sia-bip39"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -789,9 +801,11 @@
         "en": "sia legacy 28",
         "ru": "sia legacy 28"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "sia-legacy-28"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": true
     },
     {
@@ -800,9 +814,11 @@
         "en": "sia legacy 29",
         "ru": "sia legacy 29"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "sia-legacy-29"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": true
     },
     {
@@ -811,9 +827,11 @@
         "en": "zcash bip39",
         "ru": "zcash bip39"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zcash-bip39"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -822,9 +840,11 @@
         "en": "zcash non mnemonic",
         "ru": "zcash non mnemonic"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zcash-non-mnemonic"
+      ],
+      "research_state": "terminal",
+      "status": "no-mnemonic-confirmed",
       "historical": false
     },
     {
@@ -833,9 +853,11 @@
         "en": "chia bip39",
         "ru": "chia bip39"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "chia-bip39"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1567,9 +1589,11 @@
         "en": "zano wallet",
         "ru": "zano wallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zano-wallet"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1578,9 +1602,11 @@
         "en": "cake wallet zano",
         "ru": "cake wallet zano"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "cake-wallet-zano"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1602,9 +1628,11 @@
         "en": "siad",
         "ru": "siad"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "siad"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": true
     },
     {
@@ -1613,9 +1641,11 @@
         "en": "sia ui",
         "ru": "sia ui"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "sia-ui"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": true
     },
     {
@@ -1624,10 +1654,12 @@
         "en": "walletd",
         "ru": "walletd"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
-      "historical": true
+      "record_ids": [
+        "sia-walletd"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
     },
     {
       "id": "wallet-zallet",
@@ -1635,9 +1667,11 @@
         "en": "zallet",
         "ru": "zallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zallet"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1646,9 +1680,11 @@
         "en": "zcash official",
         "ru": "zcash official"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zcash-official"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1657,9 +1693,11 @@
         "en": "chia wallet",
         "ru": "chia wallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "chia-wallet"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1913,9 +1951,11 @@
         "en": "zcash",
         "ru": "zcash"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zallet"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1924,9 +1964,11 @@
         "en": "chia",
         "ru": "chia"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "chia-wallet"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1948,9 +1990,11 @@
         "en": "zano",
         "ru": "zano"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zano-wallet"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1959,9 +2003,11 @@
         "en": "sia",
         "ru": "sia"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "sia-walletd"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
