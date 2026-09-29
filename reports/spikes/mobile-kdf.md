@@ -1,58 +1,99 @@
 # Mobile vault/KDF feasibility — Task 6
 
-Verified (UTC): 2026-09-29. Format freeze: NO-GO. KDF freeze: NO-GO.
-Result: source contracts and blocked evidence; no physical compatibility claim.
-Baseline: `c028d0419b95411fa272003b98ef38cceba29cbc` on
+Verified UTC: 2026-09-29. Format freeze: NO-GO. KDF freeze: NO-GO.
+Windows GNU Rust build/tests: PASS. Native/physical compatibility: BLOCKED.
+Continuation baseline: `226b612096d01a5e79daaeea4c63210ab65890f3` on
 `feature/tessaveil-research-foundation`, origin `git@github.com:rbuzzz/tessaveil.git`.
 
-## Implemented scope and actual evidence
+## Executed host evidence
 
-The [disposable Rust source](../../spikes/mobile/core/src/lib.rs) specifies bounded
-parsing, pre-KDF profile rejection, Rust NFC UTF-8, Argon2id, wrapped DEK and
-authenticated synthetic CBOR through `probe_open_vault`. Kotlin/JNI and Swift
-source adapters pass explicit byte lengths and return only status/duration/memory.
-They contain no native normalization or password persistence. Neither adapter is
-a complete app/build project; secure UI and lifecycle integration remain pending.
+The [Rust probe](../../spikes/mobile/core/src/lib.rs) implements bounded parsing,
+pre-KDF profile rejection, Rust NFC UTF-8, Argon2id, wrapped DEK and authenticated
+synthetic CBOR through `probe_open_vault`. Kotlin/JNI and Swift remain source
+contracts, passing explicit byte lengths and returning only status/duration/memory.
+No native normalization or password persistence is implemented. Native build hosts,
+secure UI and lifecycle integration remain pending.
 
-Read-only discovery found rustc/cargo/rustup/adb/xcodebuild/xcrun/gradle/java/swift/
-clang absent from PATH; standard Cargo compiler/executable locations also absent.
-No configured alternate toolchain was supplied. This is bounded discovery, not
-proof that no installation exists anywhere. No toolchain was installed, VM or
-emulator launched, device contacted, remote target used or package fetched.
+The original task recorded no Cargo. The owner then explicitly authorized an
+isolated Rust installation and necessary dependency downloads. Rust/Cargo are now
+available; earlier absence is historical, not a current blocker. The
+[official Rust 1.90.0 release](https://blog.rust-lang.org/2025/09/18/Rust-1.90.0/)
+is an exact research pin, not a claim to be latest. GNU was chosen because
+[official Windows guidance](https://rust-lang.github.io/rustup/installation/windows.html)
+permits basic use without Visual Studio. Sources checked 2026-09-29 UTC.
 
-Rust/Cargo execution, native platform compilation and runtime tests: BLOCKED.
-There is no generated Cargo.lock, resolved transitive tree, compiler version or
-artifact hash. Direct pins do not prove a locked or reproducible build.
-No physical wall time, process peak memory, OOM/failure or thermal result exists.
-The core's memory sentinel and JSON null values mean unmeasured, not zero cost.
+| Component | Observed exact version |
+| --- | --- |
+| rustup | 1.28.2, e4f3ad6f8, 2025-04-28 |
+| rustc | 1.90.0, 1159e78c4747b02ef996e55082b704c09b970588, 2025-09-14 |
+| Cargo | 1.90.0, 840b83a10, 2025-07-30 |
+| rustfmt | 1.8.0-stable, 1159e78c47, 2025-09-14 |
+| LLVM | 20.1.8 |
+| Host/target | x86_64-pc-windows-gnu |
 
-The repository contract test was first observed RED with four missing-artifact
-failures. Its later GREEN result checks data/report contracts only. Python checks
-literal Unicode fixture bytes independently with its standard normalization
-library; it is not a vault implementation and does not establish Rust/native NFC
-agreement. Rust behavioral tests were authored first but could not run RED/GREEN.
+Installation is under ignored `spikes/mobile/tmp/rust-local`, with separate explicit
+`RUSTUP_HOME` and `CARGO_HOME`. The archived
+[official executable](https://static.rust-lang.org/rustup/archive/1.28.2/x86_64-pc-windows-gnu/rustup-init.exe)
+was checked against its [.sha256](https://static.rust-lang.org/rustup/archive/1.28.2/x86_64-pc-windows-gnu/rustup-init.exe.sha256):
+`ccbfd951d8024856043b3a0c3903a59f39937bce8d3074768b0d3da55f21e817`.
+It ran as `rustup.exe` in manager mode, not the setup installer; self-update was
+disabled in isolated settings. Installed `1.90.0-x86_64-pc-windows-gnu --profile
+minimal --component rustfmt`. No global PATH, registry/profile integration or system
+SDK/admin installation occurred. See official [manual methods](https://rust-lang.github.io/rustup/installation/other.html)
+and [separate-home guidance](https://rust-lang.github.io/rustup/installation/index.html).
 
-## Cryptographic fixture blocker
+The bundled GNU linker initially failed on existing files under Cyrillic paths.
+Short-path homes and explicit `--sysroot=<short toolchain path>` fixed check;
+Cargo still canonicalized some linked dependency paths. A trial of bundled rust-lld
+failed on DLL entry-point `_DllMainCRTStartup` and is not the final setup. The
+successful GNU setup uses the short sysroot and a separate task-specific ASCII-path
+build-output directory under the public profile. Only synthetic build outputs live
+there; no source moved. PATH/RUSTFLAGS/RUSTDOCFLAGS/CARGO_TARGET_DIR are process-local.
+This is developer-host evidence, not clean Windows packaging or mobile evidence.
 
-`synthetic-vault-v0.bin`: BLOCKED, intentionally absent. Rust/Cargo is unavailable,
-so the source generator has not executed. No independently verified cryptographic
-fixture or expected ciphertext has been obtained. Local Python library discovery
-found PyNaCl/cryptography but no argon2 module; no Python crypto code was used and
-no inference of an exact lanes=4 interoperable fixture is made. A source generator
-plus same-library round trip is not independent verification.
+`core/rust-toolchain.toml` pins Rust; Cargo.lock records 47 registry packages and
+checksums. Commands ran with that isolated environment:
 
-The [fixture status](../../spikes/mobile/vectors/fixture-status.json) explicitly
-records null SHA-256 and false Rust/independent execution flags. Do not create a
-placeholder, random byte blob, plaintext `.bin`, or claim that the planned file was
-opened. Before promotion, generate it with Rust, independently verify the exact
-Argon2id and both XChaCha20-Poly1305 layers with pinned licensed tooling, record
-known-answer evidence and hash, then replay unchanged bytes on both native hosts.
+- `cargo fmt --manifest-path spikes/mobile/core/Cargo.toml --check`: initial
+  formatting differences; `cargo fmt` applied formatting; final PASS.
+- `cargo check --locked --manifest-path spikes/mobile/core/Cargo.toml --all-targets`:
+  PASS after the environment fix, with no source type/API errors.
+- Initial executable `cargo test --locked --manifest-path spikes/mobile/core/Cargo.toml`:
+  2 unit and 4 vector tests passed; shared-file test failed as designed because the
+  fixture was absent. The independent shared-file test also failed before generation.
+- `cargo run --locked --manifest-path spikes/mobile/core/Cargo.toml --example fixture`:
+  generated the deterministic synthetic file through the committed Rust example.
+- Final locked Rust tests: PASS, 2 unit + 5 vector + 2 independent crypto tests,
+  none skipped/ignored; doc-tests 0. Correctness execution is not a benchmark.
+
+## Shared fixture and independent verification
+
+`synthetic-vault-v0.bin`: VERIFIED_HOST, 172 bytes, SHA-256:
+`2a18dd58f2711fa3ca3cbbc2433df3dea48cc9596765ee9fbfe676ad3ee2d50c`.
+Public deterministic password/salt/DEK/nonces are synthetic; the payload is canonical
+CBOR `{ "synthetic": true }`. No mnemonic, wallet, funds or user data exists.
+The generator refuses overwrite. Tests compare regenerated bytes, open equivalent
+composed/decomposed passwords and reject corrupted authenticated regions.
+
+`core/tests/independent_crypto.rs` imports neither RustCrypto nor shared builders.
+[SRU rust-argon2 3.0.0](https://docs.rs/rust-argon2/3.0.0/argon2/struct.Config.html)
+derives the KEK at explicit 65536 KiB / 3 / 4 / v19 / 32-byte output. It also
+matches [RFC 9106 section 5.3](https://www.rfc-editor.org/rfc/rfc9106#section-5.3):
+32 KiB is a primitive known-answer test only, never a vault allowlist entry.
+[Orion 0.17.11](https://github.com/orion-rs/orion/blob/0.17.11/src/hazardous/aead/xchacha20poly1305.rs)
+authenticates/decrypts both layers with distinct nonces and exact AAD, checks the
+expected DEK/CBOR marker and rejects both corrupted tags. Both independent tests
+passed. They are separately maintained primitive implementations, but share
+non-primitive utilities and the compiler/host. This is fixture interoperability
+evidence, not an external audit, formal crypto proof or mobile execution.
+
+The updated Python contract was observed RED for the missing binary before generation.
+It checks structure/hash, Unicode data, lock/pins and honest physical gates only.
+Python is not a vault implementation. Native NFC agreement remains unmeasured.
 
 ## Physical candidate matrix
 
-Candidate set contains only the specification's provisional 64 MiB / 3 / 4 tuple;
-no alternative cost was selected or implicitly weakened. The following table
-applies to that candidate. Each missing measurement is explicitly unknown.
+Only candidate: provisional 64 MiB / 3 / 4. No lower profile selected.
 
 | Required class | Model / OS | Open / NFC match | Wall time / peak memory | OOM / failure / thermal | Result |
 | --- | --- | --- | --- | --- | --- |
@@ -70,49 +111,35 @@ Exact blockers copied from [Task 4](equipment-availability.md):
 - I2: No present portable-device entry and no accessible Mac/Xcode host; current physical iPhone class and access were not supplied.
 - M: Current host is Windows; local Xcode command-line tools are absent and no configured Mac/Xcode host access was supplied.
 
-No simulator, developer desktop, macOS runner or CI build substitutes for any
-physical row. Task 5's constant-call contracts do not establish vault interoperability.
+No device, simulator, emulator, VM or remote host was contacted. Native projects
+remain source contracts, not verified builds. No peak-memory/thermal result is
+inferred from test duration or Argon2 parameters. UINT64_MAX / JNI -1 and JSON nulls
+mean unmeasured, never zero. CI/developer-host evidence cannot replace physical
+rows or Task 5 clean-machine requirements.
 
-## Provisional policy, provenance and license review
+## Policy, dependencies and remaining decision
 
 Absolute encoded bounds remain 64–256 MiB / 3–6 / 1–8, output 32 bytes, salt 16
-bytes. Outside bounds rejects before password processing/KDF; in-bound tuples
-outside the single allowlist return UnsupportedProfile, never AuthenticationFailed
-and never clamped. Wrong password and authentication corruption share one class.
-NFC is performed only in Rust. Vectors cover composed/decomposed, reordered combining
-marks, Cyrillic, Japanese, non-BMP, empty normalization and embedded-NUL rejection.
+bytes. Out-of-bounds values reject before password processing/KDF. In-bound tuples
+outside the single allowlist return UnsupportedProfile, not AuthenticationFailed,
+and are never clamped. Wrong password and corrupted authentication share a class.
+Rust NFC vectors cover composed/decomposed, reordered combining marks, Cyrillic,
+Japanese, non-BMP, empty normalization and NUL rejection. Unlock separately requires
+15 normalized scalar values. [JNI byte arrays](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/types.html)
+avoid modified UTF-8; Swift uses [UTF8View](https://developer.apple.com/documentation/swift/string/utf8view).
+These native source contracts still need execution.
 
-Primary references inspected on 2026-09-29 UTC; these are exact source/API planning
-pins, not installed, independently audited or release-approved libraries:
+[Dependency review](../../spikes/mobile/dependency-review.md) records locked versions,
+license expressions, runtime/build closure and independent implementation provenance.
+Review used Cargo metadata/tree and selected license files, not a full legal/security
+audit. No third-party source/binary is committed. Full notices/SBOM, vulnerability
+review and SignPath eligibility remain pending before redistribution.
 
-| Dependency / reference | Exact pin and primary provenance | License / disposition |
-| --- | --- | --- |
-| RustCrypto Argon2 | [argon2 0.5.3](https://docs.rs/argon2/0.5.3/argon2/) | MIT OR Apache-2.0; planned Apache-2.0 option, transitive audit pending |
-| RustCrypto XChaCha20-Poly1305 | [chacha20poly1305 0.10.1](https://docs.rs/chacha20poly1305/0.10.1/chacha20poly1305/) | MIT OR Apache-2.0; planned Apache-2.0 option, transitive audit pending |
-| Unicode NFC | [unicode-normalization v0.1.24 manifest](https://github.com/unicode-rs/unicode-normalization/blob/v0.1.24/Cargo.toml) | MIT/Apache-2.0; upstream Unicode data and tinyvec review pending |
-| RustCrypto zeroization | [zeroize 1.8.1](https://docs.rs/crate/zeroize/1.8.1) | MIT OR Apache-2.0; planned Apache-2.0 option |
-| Test-only JSON reader | [serde_json 1.0.145](https://docs.rs/crate/serde_json/1.0.145), [Apache license](https://docs.rs/crate/serde_json/1.0.145/source/LICENSE-APACHE) | Apache-2.0 option; development-only |
-| Provisional Argon2id profile | [RFC 9106](https://www.rfc-editor.org/rfc/rfc9106), section 4 | 64 MiB / 3 / 4 recommendation; device feasibility still unmeasured |
-| JNI byte boundary | [Oracle JNI types, JDK 8](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/types.html) | JNI strings use modified UTF-8; source contract uses byte arrays |
-| Swift UTF-8 view | [Apple String.UTF8View](https://developer.apple.com/documentation/swift/string/utf8view) | Standard UTF-8 view; deployment toolchain remains unselected |
-
-No third-party source or binary was copied/bundled; original probe source remains
-Apache-2.0. Before distribution: resolve/lock all dependencies, review notices,
-vulnerabilities and Unicode data licenses, add full attribution/SBOM and obtain the
-separate SignPath compatibility decision. No final license or signing approval is
-claimed. Exact pins are research candidates, not a claim they are latest versions.
-
-## Decision and reopening
-
-The [ADR](../../docs/adr/0002-kdf-envelope-bounds.md) retains format/KDF NO-GO.
-Provision a Rust toolchain and both native build hosts, produce/independently verify
-the fixture, pass Rust/native vectors and collect all four physical device results.
-Record fixture hash, core commit, locked library revisions, model/OS, repeated
-wall time, process peak memory, OOM/failure and thermal evidence for each candidate.
-Then conduct security review before changing the freeze decision.
-
-If a required target cannot reliably run 64 MiB / 3 / 4, stop and obtain a separate
-owner/security decision: explicitly exclude/change that target acceptance criterion
-or approve a revised format/KDF security design with measured offline-guessing and
-compatibility consequences. No exclusion, lower profile or freeze is authorized by
-this blocked research result. Windows release readiness remains NO-GO.
+The [ADR](../../docs/adr/0002-kdf-envelope-bounds.md) retains both freezes at NO-GO.
+Provision native build hosts and four physical classes; replay the exact fixture/hash
+and native normalization vectors, recording model/OS, core commit, locked libraries,
+repeated wall time, process peak memory, OOM/failure and thermal observations.
+A class that cannot reliably run 64 MiB / 3 / 4 requires a separate explicit
+owner/security decision on target exclusion or revised KDF/format design and its
+offline-guessing/compatibility consequences. No exclusion, automatic cost reduction
+or freeze is authorized by these host results. Windows release readiness is NO-GO.

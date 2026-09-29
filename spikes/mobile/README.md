@@ -1,11 +1,12 @@
-# Synthetic mobile KDF probe — source contract, not a product
+# Synthetic mobile KDF probe — host tested, not a product
 
-Format freeze: NO-GO. KDF freeze: NO-GO. Execution/build evidence: BLOCKED.
+Format freeze: NO-GO. KDF freeze: NO-GO. Windows GNU Rust execution: PASS.
+Native Android/iOS builds and physical measurements: BLOCKED.
 The [report](../../reports/spikes/mobile-kdf.md) and
 [ADR](../../docs/adr/0002-kdf-envelope-bounds.md) distinguish available repository
-checks from unavailable Rust, native builds, crypto fixture and physical evidence.
+checks and actual host crypto execution from unavailable native/physical evidence.
 
-`core` contains a Rust implementation candidate and unexecuted behavioral tests.
+`core` contains a Rust implementation candidate and nine passing host tests.
 `android` and `ios` contain explicit-length adapter source contracts, not complete
 platform build projects. No APK, IPA, product UI or production vault is delivered.
 Every input is invented synthetic data. Never use a real password, phrase or vault.
@@ -61,25 +62,30 @@ salt, DEK and distinct nonces; production creation must never reuse this recipe.
 Rust clears its owned normalized buffer/keys/plaintext best-effort. Wrapper/OS
 copies, allocator internals and process termination/OOM remain limitations.
 
-## Reproduction after toolchains become available
+## Reproduction and remaining native gates
 
-Current commands below are instructions, not recorded successful executions.
-Review exact direct dependency pins and resolve/audit transitive dependencies,
-then generate and commit a Cargo.lock and record the exact Rust compiler/targets.
+Rust 1.90.0 is pinned in `core/rust-toolchain.toml`; `core/Cargo.lock` records all
+47 registry packages/checksums, including test-only independent implementations.
+The tested host is Windows GNU x64, not Android or iOS. The isolated installation
+and Unicode-path linker workaround are in the [execution report](../../reports/spikes/mobile-kdf.md).
+License inventory and its limits are in [dependency-review.md](dependency-review.md).
 
-1. Run `cargo check --manifest-path spikes/mobile/core/Cargo.toml --all-targets`.
-2. Run `cargo run --manifest-path spikes/mobile/core/Cargo.toml --example fixture`.
-   It creates a candidate `vectors/synthetic-vault-v0.bin` without overwriting an
-   existing file. No binary is currently committed: see `fixture-status.json`.
-3. Independently derive the KEK at the exact tuple and decrypt both layers using a
-   separately maintained implementation; record tool/library pins, licenses, known
-   answer validation, fixture SHA-256 and expected plaintext. A Rust self-generated
-   round trip alone is insufficient. Do not mark the fixture verified until this passes.
-4. Run `cargo test --manifest-path spikes/mobile/core/Cargo.toml`. The shared-file
+1. Run `cargo fmt --manifest-path spikes/mobile/core/Cargo.toml --check` and
+   `cargo check --locked --manifest-path spikes/mobile/core/Cargo.toml --all-targets`.
+2. The 172-byte `vectors/synthetic-vault-v0.bin` was generated with
+   `cargo run --locked --manifest-path spikes/mobile/core/Cargo.toml --example fixture`.
+   It refuses to overwrite an existing fixture: regenerate only in a disposable
+   copy with the fixture absent, then compare its hash with `fixture-status.json`.
+3. `tests/independent_crypto.rs` uses separately maintained rust-argon2 3.0.0 and
+   Orion 0.17.11 (test-only, exact pins) to derive the KEK, authenticate both AAD
+   layers, recover the expected DEK/CBOR marker and reject corrupted tags. The
+   independent Argon2 primitive also matches RFC 9106 section 5.3. These checks
+   passed on the host; they are not a security audit or a native-platform result.
+4. Run `cargo test --locked --manifest-path spikes/mobile/core/Cargo.toml`. The shared-file
    test deliberately fails if the binary is absent; no ignored success substitutes.
    Tests cover normalized equivalence, NUL/invalid UTF-8/empty/limits, bounds before
    KDF, distinct unsupported in-bound profiles, corrupted authenticated regions,
-   format bounds and FFI null/length checks. They have not executed here.
+   format bounds and FFI null/length checks. All nine tests passed on Windows GNU.
 5. Complete the two disposable native build hosts described in their READMEs,
    build both, verify ABI/statuses and replay shared vectors through each wrapper.
 6. Run the exact same fixture/hash on all four required physical classes. For the
@@ -89,6 +95,6 @@ then generate and commit a Cargo.lock and record the exact Rust compiler/targets
    to device logs. Unknowns remain null. Failed targets keep freeze at NO-GO.
 
 `python -m unittest tests.repository.test_mobile_spike_report -v` validates fixture
-data, Cargo pins and honest report gates only. It does not compile or exercise Rust,
+data, Cargo lock/pins and honest report gates only. It does not compile or exercise Rust,
 cryptography, JNI, Swift or a physical device. Python's normalization here is an
 independent repository-level data check, never the product implementation.

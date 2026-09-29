@@ -3,6 +3,16 @@
   "format_freeze": "NO-GO",
   "kdf_freeze": "NO-GO",
   "candidate_profiles": [[65536, 3, 4]],
+  "host_rust": {
+    "target": "x86_64-pc-windows-gnu",
+    "rustc": "1.90.0",
+    "cargo": "1.90.0",
+    "rustfmt": "1.8.0-stable",
+    "locked_check": "PASS",
+    "tests": "PASS: 2 unit + 5 vector + 2 independent crypto",
+    "native_android_build": "BLOCKED",
+    "native_ios_build": "BLOCKED"
+  },
   "targets": [
     {
       "class": "physical arm64 Android 4 GiB lower-bound",

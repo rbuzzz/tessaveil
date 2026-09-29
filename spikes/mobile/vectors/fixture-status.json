@@ -1,10 +1,13 @@
 {
   "filename": "synthetic-vault-v0.bin",
-  "status": "BLOCKED",
-  "sha256": null,
-  "rust_execution_verified": false,
-  "independent_crypto_verified": false,
-  "blocker": "Rust/Cargo absent from PATH and standard Cargo locations; no executed Rust fixture generator or independent cryptographic verification for this envelope exists.",
+  "status": "VERIFIED_HOST",
+  "sha256": "2a18dd58f2711fa3ca3cbbc2433df3dea48cc9596765ee9fbfe676ad3ee2d50c",
+  "size_bytes": 172,
+  "rust_execution_verified": true,
+  "independent_crypto_verified": true,
+  "verification_scope": "Windows GNU host only; rust-argon2 3.0.0 derives KEK and Orion 0.17.11 verifies both AEAD layers; no mobile execution or security audit",
+  "verified_utc": "2026-09-29",
+  "blocker": null,
   "source": "core/examples/fixture.rs",
   "synthetic_only": true
 }

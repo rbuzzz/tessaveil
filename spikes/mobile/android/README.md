@@ -2,7 +2,8 @@
 
 `Probe.kt` and `probe_jni.c` define the disposable adapter. They are not a Gradle
 project, APK, running UI or verified JNI linkage. Android SDK/NDK, Java/Gradle,
-Rust and both physical target classes are unavailable in the inspected environment.
+and both physical target classes are unavailable in the inspected environment.
+Rust now runs locally on Windows GNU; Android-target compilation is still unverified.
 
 When provisioned, create a disposable arm64 Android host with a masked transient
 input; compile the C shim against the NDK and statically link Rust's

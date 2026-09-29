@@ -1,6 +1,8 @@
 """Repository contracts only: these tests do not execute Rust or mobile code."""
 import json
+import hashlib
 from pathlib import Path
+import struct
 import tomllib
 import unicodedata
 import unittest
@@ -34,16 +36,24 @@ class MobileSpikeTests(unittest.TestCase):
                     self.assertEqual(unicodedata.normalize("NFC", value).encode().hex(), row["nfc_utf8_hex"])
         self.assertEqual(by_id["composed"]["nfc_utf8_hex"], by_id["decomposed"]["nfc_utf8_hex"])
 
-    def test_absent_binary_is_blocked_not_a_fake_crypto_success(self):
+    def test_verified_binary_matches_hash_and_bounded_synthetic_envelope(self):
         fixture = self.read_json("vectors/fixture-status.json")
-        self.assertEqual(fixture["status"], "BLOCKED")
-        self.assertFalse((MOBILE / "vectors/synthetic-vault-v0.bin").exists())
-        self.assertIsNone(fixture["sha256"])
-        self.assertFalse(fixture["rust_execution_verified"])
-        self.assertFalse(fixture["independent_crypto_verified"])
-        self.assertIn("Rust/Cargo", fixture["blocker"])
+        path = MOBILE / "vectors/synthetic-vault-v0.bin"
+        self.assertTrue(path.is_file(), "shared synthetic binary absent")
+        image = path.read_bytes()
+        self.assertEqual(fixture["status"], "VERIFIED_HOST")
+        self.assertEqual(fixture["sha256"], hashlib.sha256(image).hexdigest())
+        self.assertTrue(fixture["rust_execution_verified"])
+        self.assertTrue(fixture["independent_crypto_verified"])
+        self.assertIsNone(fixture["blocker"])
+        self.assertEqual(len(image), 172)
+        self.assertEqual(image[:12], b"TVSPIKE0\0\0\x01\x01")
+        self.assertEqual(struct.unpack_from("<IIIHH", image, 12), (65536, 3, 4, 32, 16))
+        self.assertEqual(struct.unpack_from("<I", image, 92), (28,))
+        self.assertNotEqual(image[44:68], image[68:92])
+        self.assertNotIn(b"synthetic", image)
 
-    def test_dependency_contract_is_exact_and_not_a_claim_of_locked_build(self):
+    def test_dependency_pins_match_complete_lock_and_toolchain(self):
         path = MOBILE / "core/Cargo.toml"
         self.assertTrue(path.is_file(), "Rust Cargo contract absent")
         manifest = tomllib.loads(path.read_text(encoding="utf-8"))
@@ -52,6 +62,20 @@ class MobileSpikeTests(unittest.TestCase):
             version = dep if isinstance(dep, str) else dep["version"]
             self.assertRegex(version, r"^=\d+\.\d+\.\d+$")
         self.assertEqual(set(manifest["lib"]["crate-type"]), {"rlib", "staticlib", "cdylib"})
+        lock_path = MOBILE / "core/Cargo.lock"
+        self.assertTrue(lock_path.is_file(), "Cargo.lock absent")
+        lock = tomllib.loads(lock_path.read_text(encoding="utf-8"))
+        packages = {(row["name"], row["version"]) for row in lock["package"]}
+        for name, dep in (manifest["dependencies"] | manifest["dev-dependencies"]).items():
+            package = name if isinstance(dep, str) else dep.get("package", name)
+            version = dep if isinstance(dep, str) else dep["version"]
+            self.assertIn((package, version.removeprefix("=")), packages)
+        for row in lock["package"]:
+            if "source" in row:
+                self.assertEqual(row["source"], "registry+https://github.com/rust-lang/crates.io-index")
+                self.assertRegex(row["checksum"], r"^[a-f0-9]{64}$")
+        toolchain = tomllib.loads((MOBILE / "core/rust-toolchain.toml").read_text(encoding="utf-8"))
+        self.assertEqual(toolchain["toolchain"]["channel"], "1.90.0")
 
     def test_physical_evidence_cannot_clear_freeze(self):
         evidence = self.read_json("evidence-status.json")
