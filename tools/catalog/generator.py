@@ -2,12 +2,93 @@
 
 import html
 from pathlib import PurePosixPath, PureWindowsPath
-import re
 from typing import Literal
+import unicodedata
 from urllib.parse import quote, urlsplit
 
+from .loader import DEFAULT_LIMITS
 from .model import Catalog, Record
 from .validator import validate_catalog
+
+
+def _uri_end(value: str, start: int) -> int:
+    """Consume one URI, retaining balanced path/query parentheses and IPv6.
+
+    Unmatched outer closers belong to prose/Markdown. Quotes, whitespace and
+    markup delimiters end the URI; backslashes and malformed authority reject.
+    The caller bounds the entire string; each character is scanned at most once.
+    """
+    end = start
+    closers = []
+    single_quoted = start > 0 and value[start - 1] == "'"
+    while end < len(value):
+        char = value[end]
+        if (char.isspace() or char in '<>"`{}' or
+                (single_quoted and char == "'") or
+                (unicodedata.category(char) in ("Pi", "Pf", "Ps", "Pe") and char not in "()[]")):
+            break
+        if char == "\\":
+            raise ValueError("invalid URL in rendered metadata")
+        if char in "([":
+            closers.append(")" if char == "(" else "]")
+        elif char in ")]":
+            if not closers:
+                break
+            if char != closers.pop():
+                raise ValueError("unbalanced URL in rendered metadata")
+        end += 1
+    if closers:
+        raise ValueError("unbalanced URL in rendered metadata")
+    url = urlsplit(value[start:end])
+    if not url.hostname or any(char in url.netloc for char in '\\(){}<>"\''):
+        raise ValueError("invalid URL authority in rendered metadata")
+    _ = url.port  # urlsplit otherwise defers malformed/range-invalid port errors.
+    return end
+
+
+def _check_metadata(value: str) -> None:
+    """Bounded offline scanner: isolate complete URIs, then inspect prose paths."""
+    if len(value.encode("utf-8")) > DEFAULT_LIMITS.max_string_bytes:
+        raise ValueError("rendered metadata exceeds limit")
+    if any(unicodedata.category(c).startswith("C") and c not in "\r\n\t" for c in value):
+        raise ValueError("control character in rendered metadata")
+
+    def check_candidate(chars):
+        token = "".join(chars)
+        # Preserve explicit relative paths; dots used as surrounding prose may
+        # not conceal an otherwise absolute candidate.
+        if not token.startswith(("./", "../")):
+            token = token.lstrip(".")
+        if len(token) > 1 and (PurePosixPath(token).is_absolute() or
+                              PureWindowsPath(token).is_absolute() or
+                              token.startswith(("\\", "~/"))):
+            raise ValueError("absolute path in rendered metadata")
+
+    candidate = []
+    index = 0
+    while index < len(value):
+        if (index == 0 or not value[index - 1].isalnum()) and (
+                value[index:index + 8].lower().startswith(("https://", "http://"))):
+            check_candidate(candidate)
+            candidate = []
+            index = _uri_end(value, index)
+            continue
+        char = value[index]
+        # Unicode punctuation and symbols include guillemets, smart/fullwidth
+        # quotes and Markdown wrappers. Path separators and relative/home roots
+        # retain their meaning. Labels split at ':'; Windows drive roots do not.
+        drive_colon = (char == ":" and len(candidate) == 1 and
+                       candidate[0] in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" and
+                       value[index + 1:index + 2] in ("/", "\\"))
+        boundary = char.isspace() or (unicodedata.category(char)[0] in "PS" and
+                                     char not in "/\\.~" and not drive_colon)
+        if boundary:
+            check_candidate(candidate)
+            candidate = []
+        else:
+            candidate.append(char)
+        index += 1
+    check_candidate(candidate)
 
 
 def _text(value) -> str:
@@ -17,21 +98,7 @@ def _text(value) -> str:
     if isinstance(value, bool):
         return str(value).lower()
     value = str(value)
-    # Tokenize URLs first: their authority, IPv6 literals and query paths are
-    # URI components, not local filesystem paths. Other prose delimiters (also
-    # a label's colon) separate path candidates; retain Windows drive prefixes.
-    tokens = re.findall(r'''https?://[^\s<>"'`(){}]+|(?:[A-Za-z]:)?[^\s<>"'`()\[\]{}=:,;]+''',
-                        value, re.IGNORECASE)
-    for token in tokens:
-        if token.lower().startswith(("https://", "http://")):
-            url = urlsplit(token)
-            if url.hostname and "\\" not in token:
-                continue
-            raise ValueError("invalid URL in rendered metadata")
-        if len(token) > 1 and (PurePosixPath(token).is_absolute() or
-                               PureWindowsPath(token).is_absolute() or
-                               token.startswith(("\\\\", "~/"))):
-            raise ValueError("absolute path in rendered metadata")
+    _check_metadata(value)
     value = html.escape(" ".join(value.split()), quote=False)
     for character in "\\`*_{}[]()#+!|:":
         value = value.replace(character, "\\" + character)

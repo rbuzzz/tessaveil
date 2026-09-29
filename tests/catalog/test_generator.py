@@ -27,6 +27,23 @@ UNC_GUIDANCE = (
     r"Backup \\synthetic-host\private-share\backup",
     r"Backup: \\synthetic-host/private-share\backup",
 )
+WRAPPED_PATHS = (
+    "«//synthetic-host/private-share/backup»",
+    r'“C:\Synthetic\backup”',
+    r'‘\\synthetic-host\private-share\backup’',
+    "**/synthetic-vault**", "__/synthetic-vault__", "`/synthetic-vault`",
+    "[/synthetic-vault]", "（/synthetic-vault）", "…/synthetic-vault…",
+    "Backup:«**//synthetic-host/private-share/backup**»",
+    r"Backup=‘__C:\Synthetic\backup__’",
+    "[backup](//synthetic-host/private-share/backup)",
+    "（https://example.invalid）//synthetic-host/private-share/backup",
+)
+BALANCED_URLS = (
+    "https://example.invalid/help/(synthetic)/path",
+    "http://example.invalid/search?q=(/help)&next=(nested(one))/end",
+    "https://[2001:db8::1]/(synthetic)/path?next=(/help)",
+    "https://example.invalid/search?q='/help'&next=(one)/end",
+)
 
 
 class GeneratorTests(unittest.TestCase):
@@ -139,6 +156,50 @@ class GeneratorTests(unittest.TestCase):
                     self.assertIn("for official guidance.", output)
                     self.assertNotIn(url, output)  # Remains escaped, not an autolink.
 
+    def test_wrapped_absolute_paths_are_rejected_in_both_locales(self):
+        catalog = load_catalog(FIXTURE)
+        wallet = catalog.wallets[0]
+        for locale in ("en", "ru"):
+            for guidance in WRAPPED_PATHS:
+                with self.subTest(locale=locale, guidance=guidance):
+                    modified = replace(wallet, data={**wallet.data, "guidance": guidance})
+                    with self.assertRaises(ValueError):
+                        self.render(replace(catalog, wallets=(modified,)), locale)
+
+    def test_balanced_parentheses_in_http_uris_are_preserved_in_both_locales(self):
+        catalog = load_catalog(FIXTURE)
+        wallet = catalog.wallets[0]
+        for locale in ("en", "ru"):
+            for url in BALANCED_URLS:
+                with self.subTest(locale=locale, url=url):
+                    modified = replace(wallet, data={**wallet.data,
+                        "guidance": f"See [official source]({url}) for details."})
+                    output = self.render(replace(catalog, wallets=(modified,)), locale)
+                    self.assertIn("for details.", output)
+                    self.assertIn("example.invalid" if "example.invalid" in url else "2001", output)
+                    self.assertIn("\\(", output)
+
+    def test_metadata_scanner_rejects_control_characters_and_excess_size(self):
+        catalog = load_catalog(FIXTURE)
+        wallet = catalog.wallets[0]
+        for guidance in ("https://example.invalid/path\x00suffix", "x" * (16 * 1024 + 1)):
+            with self.subTest(case="control" if "\x00" in guidance else "size"):
+                modified = replace(wallet, data={**wallet.data, "guidance": guidance})
+                with self.assertRaises(ValueError):
+                    self.render(replace(catalog, wallets=(modified,)))
+
+    def test_uri_authority_and_invalid_separators_fail_closed(self):
+        catalog = load_catalog(FIXTURE)
+        wallet = catalog.wallets[0]
+        for locale in ("en", "ru"):
+            for guidance in ("https:///path", "https://example.invalid:invalid/(one)",
+                             "https://example.invalid:65536/(one)",
+                             r"https://example.invalid/path\private", "https://example.invalid/path(one"):
+                with self.subTest(locale=locale, guidance=guidance):
+                    modified = replace(wallet, data={**wallet.data, "guidance": guidance})
+                    with self.assertRaises(ValueError):
+                        self.render(replace(catalog, wallets=(modified,)), locale)
+
 
 class GenerationCliTests(unittest.TestCase):
     def setUp(self):
@@ -185,7 +246,7 @@ class GenerationCliTests(unittest.TestCase):
                 self.assertEqual((docs / name).read_bytes(), b"previous\n")
 
     def test_unc_guidance_fails_before_any_output_mutation(self):
-        for guidance in (UNC_GUIDANCE[1], UNC_GUIDANCE[-2]):
+        for guidance in (UNC_GUIDANCE[1], UNC_GUIDANCE[-2], WRAPPED_PATHS[0]):
             for existing in (False, True):
                 with self.subTest(guidance=guidance, existing=existing), tempfile.TemporaryDirectory() as directory:
                     self.root = Path(directory)
@@ -215,6 +276,21 @@ class GenerationCliTests(unittest.TestCase):
                         self.assertNotIn(str(self.root), diagnostic)
                         self.assertNotIn("Traceback", diagnostic)
                         self.assertEqual(before, snapshot())
+
+    def test_balanced_url_generates_both_locales_and_check_is_nonmutating(self):
+        path = self.root / "catalog/wallets/synthetic-wallet.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["guidance"] = f"See ({BALANCED_URLS[0]}) for details."
+        path.write_text(json.dumps(data), encoding="utf-8")
+        result = self.cli()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        docs = self.root / "docs"
+        before = {p.name: (p.read_bytes(), p.stat().st_mtime_ns) for p in docs.iterdir()}
+        self.assertEqual(set(before), {"catalog.md", "catalog.ru.md"})
+        for content, _ in before.values():
+            self.assertIn(b"/\\(synthetic\\)/path", content)
+        self.assertEqual(self.cli("--check").returncode, 0)
+        self.assertEqual(before, {p.name: (p.read_bytes(), p.stat().st_mtime_ns) for p in docs.iterdir()})
 
     def test_second_output_obstruction_does_not_replace_first(self):
         docs = self.root / "docs"
