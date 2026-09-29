@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "polyseed-16",
+  "display_name": {
+    "en": "polyseed-16",
+    "ru": "polyseed-16"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-polyseed-16-scheme",
+    "monero-polyseed-vectors"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "56f634647d4f75596de20a6259b0cf1933949fdc",
+    "max": "56f634647d4f75596de20a6259b0cf1933949fdc"
+  },
+  "dictionary_ids": [
+    "polyseed-en",
+    "polyseed-ja",
+    "polyseed-ko",
+    "polyseed-es",
+    "polyseed-fr",
+    "polyseed-it",
+    "polyseed-cs",
+    "polyseed-pt",
+    "polyseed-zh-hans",
+    "polyseed-zh-hant"
+  ],
+  "supported_lengths": [
+    16
+  ],
+  "position_rules": [
+    "One dictionary per phrase; same vocabulary at each position. Last word is repeated checksum for 25/13; first word is Polyseed checksum for 16. No complete user phrase validation."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Keep any supported seed offset/encryption passphrase separately. Tessaveil never stores it. App login passwords/PINs are not automatically mnemonic secrets; verify exact wallet mode."
+  },
+  "semantic_distinction": "Sixteen 11-bit indices: first is GF(2048) checksum, remaining words interleave 150 secret bits, 5 feature bits and 10 birthday bits. Coin domain separation and PBKDF2-HMAC-SHA256 (10000) differ from BIP39; modified Spanish/Japanese/Czech orders must be preserved. Optional seed encryption passphrase is not an app password. Documented: offline tests establish encoding/checksum only; full independent key derivation and exact wallet artifact binding are not established.",
+  "test_vector_ids": [
+    "monero-polyseed-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

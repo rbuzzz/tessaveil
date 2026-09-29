@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-en-old-source",
+  "source_type": "official-source",
+  "claim": "Exact ordered dictionary array and applicable file-level license header reviewed. Source-token extraction and byte hashes are independently checked against the public fixture; no complete phrase is stored here. Reviewed 2026-09-29; response byte SHA-256 20c9090994c5b441f2e550cddbf266d604b64e495d9b172e45a8031e1aa5d578. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/mnemonics/english_old.h",
+  "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "monero-en-old"
+  ]
+}

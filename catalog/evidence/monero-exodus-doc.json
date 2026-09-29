@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-exodus-doc",
+  "source_type": "official-documentation",
+  "url": "https://www.exodus.com/support/en/articles/10862085-support-for-monero-xmr-has-ended",
+  "revision": "published-update-2026-01-20-reviewed-2026-09-29",
+  "verified_on": "2026-09-29",
+  "claim": "Official article updated January 20 2026: XMR support ended August 18 2025, but Desktop Settings/Assets/Monero Private Keys still exports a 25-word mnemonic. Mobile users must sync to Desktop. Cake restore instructions select Legacy 25 English. Article gives no app version interval; direct body retrieval was blocked (HTTP 403), so no body hash or immutable snapshot is claimed. Read through web retrieval.",
+  "record_ids": [
+    "exodus-monero-export"
+  ]
+}

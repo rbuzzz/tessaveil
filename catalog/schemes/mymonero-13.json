@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "mymonero-13",
+  "display_name": {
+    "en": "mymonero-13",
+    "ru": "mymonero-13"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-mymonero-13-scheme",
+    "monero-mymonero-vectors"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "9637c91cbe5f46e67156c66c739932294808109d",
+    "max": "9637c91cbe5f46e67156c66c739932294808109d"
+  },
+  "dictionary_ids": [
+    "monero-en"
+  ],
+  "supported_lengths": [
+    13
+  ],
+  "position_rules": [
+    "One dictionary per phrase; same vocabulary at each position. Last word is repeated checksum for 25/13; first word is Polyseed checksum for 16. No complete user phrase validation."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "Keep any supported seed offset/encryption passphrase separately. Tessaveil never stores it. App login passwords/PINs are not automatically mnemonic secrets; verify exact wallet mode."
+  },
+  "semantic_distinction": "Legacy MyMonero: four 32-bit chunks encode a 16-byte seed as 12 words plus prefix CRC32 checksum. Keccak expansion before scalar reduction differs from 32-byte Monero legacy. Current core new_wallet creates a 32-byte/25-word seed; 13 words are retained for legacy decoding. English vector only; other language/product mappings are not verified. Documented: offline tests establish encoding/checksum only; full independent key derivation and exact wallet artifact binding are not established.",
+  "test_vector_ids": [
+    "monero-mymonero-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

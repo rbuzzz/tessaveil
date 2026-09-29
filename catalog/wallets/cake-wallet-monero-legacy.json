@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-monero-legacy",
+  "display_name": {
+    "en": "Cake Wallet Monero — legacy creation",
+    "ru": "Cake Wallet Monero — legacy creation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-cake-wallet-monero-legacy-wallet",
+    "monero-cake-ui",
+    "monero-cake-export",
+    "monero-cake-seed",
+    "monero-cake-version"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet Monero",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "legacy-25-generated",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": "monero-legacy",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Separate legacy creation branch delegates native createWallet; UI labels 25 words. FFI/dependency artifact binding and full recovery vector remain unresolved; no iOS/desktop claim.",
+    "Documented, not selectable: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately."
+  ],
+  "guidance": "Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website."
+}

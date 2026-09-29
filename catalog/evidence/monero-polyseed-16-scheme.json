@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-polyseed-16-scheme",
+  "source_type": "official-source",
+  "claim": "Sixteen 11-bit indices: first is GF(2048) checksum, remaining words interleave 150 secret bits, 5 feature bits and 10 birthday bits. Coin domain separation and PBKDF2-HMAC-SHA256 (10000) differ from BIP39; modified Spanish/Japanese/Czech orders must be preserved. Optional seed encryption passphrase is not an app password. Reviewed 2026-09-29; response byte SHA-256 51abea48365ac1e4f8fb364be55a69550f81e265d6d96487c418e223789845d8. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/tevador/polyseed/56f634647d4f75596de20a6259b0cf1933949fdc/README.md",
+  "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "polyseed-16"
+  ]
+}

@@ -1,6 +1,7 @@
 """The one shared fixture corpus must agree with the pinned schema engine."""
 
 from pathlib import Path
+import json
 import shutil
 import subprocess
 import sys
@@ -18,6 +19,23 @@ KINDS = {"dictionaries": "dictionary", "schemes": "scheme", "wallets": "wallet",
 
 
 class SchemaParityTests(unittest.TestCase):
+    def test_source_native_normalization_matches_schema_engine(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            shutil.copytree(FIXTURES / 'valid-minimal', root, dirs_exist_ok=True)
+            path = root / 'catalog/dictionaries/synthetic-en.json'
+            record = json.loads(path.read_text('utf-8'))
+            for normalization, accepted in [('none', True), ('identity', False)]:
+                record['normalization'] = normalization
+                path.write_text(json.dumps(record), encoding='utf-8')
+                result = subprocess.run([
+                    sys.executable, '-m', 'check_jsonschema', '--schemafile',
+                    str(ROOT / 'catalog/schema/dictionary.schema.json'), str(path),
+                ], capture_output=True, text=True, check=False)
+                python_ok = not any(f.code == 'schema' for f in validate_catalog(load_catalog(root)))
+                self.assertEqual(result.returncode == 0, accepted)
+                self.assertEqual(python_ok, accepted)
+
     def test_shared_fixture_cases(self):
         cases = [None, *sorted((FIXTURES / "invalid-schema").iterdir())]
         for overlay in cases:

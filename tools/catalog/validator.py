@@ -226,8 +226,8 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
         if len(words) != data.get("word_count"):
             add("word-count", record, "word-list count mismatch")
         normalization = data.get("normalization")
-        if normalization in ("NFC", "NFD", "NFKC", "NFKD"):
-            normalized = [unicodedata.normalize(normalization, word) for word in words]
+        if normalization in ("none", "NFC", "NFD", "NFKC", "NFKD"):
+            normalized = words if normalization == "none" else [unicodedata.normalize(normalization, word) for word in words]
             unique_count = len(set(normalized))
             if unique_count != len(normalized):
                 add("normalization-collision", record, "word list has normalization collisions")

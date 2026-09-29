@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-monero",
+  "display_name": {
+    "en": "Cake Wallet Monero — Polyseed creation",
+    "ru": "Cake Wallet Monero — Polyseed creation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-cake-wallet-monero-wallet",
+    "monero-cake-ui",
+    "monero-cake-export",
+    "monero-cake-seed",
+    "monero-cake-version"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet Monero",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "polyseed-16-generated",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": "polyseed-16",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Android source snapshot only; default seedType=polyseed, Polyseed.create and separate legacy/bip39 branches. Generated pubspec version is 0.0.0 placeholder: exact commit is the version bound, not an invented release.",
+    "Documented, not selectable: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately."
+  ],
+  "guidance": "Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website."
+}

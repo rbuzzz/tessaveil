@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "monero-cake-seed",
+  "source_type": "official-source",
+  "claim": "seed getter delegates getSeed; separate seedLegacy helper exists. Runtime artifact not executed. Reviewed 2026-09-29; response byte SHA-256 a5b4e7ef6cfa274eec62670850358f433c26c0f19cdea5cf1f081592e3712e68. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_monero/lib/monero_wallet.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-monero",
+    "cake-wallet-monero-legacy"
+  ]
+}

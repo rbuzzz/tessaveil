@@ -1,0 +1,416 @@
+{
+  "classification": "Public upstream test projections only; synthetic, non-funded research material. Never use for assets.",
+  "wordlists": {
+    "monero-en": {
+      "sha256": "eaa6bce7dd92f4d6dd74f224264e0ef4ad21095d68ec77616b26ceb599baf4f7",
+      "bytes": 11467,
+      "source_sha256": "9bd756d29e689aae0e6e7f8b1196c4f35df350225c4668d4f6f41842f05fc2ca",
+      "source_bytes": 33172,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/english.h",
+      "prefix": 3
+    },
+    "monero-de": {
+      "sha256": "e1e6653cf418e0a392a5cd34160a8cdacb5dfce8edbac0e124fba8d7daff1f69",
+      "bytes": 12349,
+      "source_sha256": "7b910a96bc94d19eb3e4edd8179db383a68b03a7608396bbee0fdc46a7d4e88e",
+      "source_bytes": 34100,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/german.h",
+      "prefix": 4
+    },
+    "monero-es": {
+      "sha256": "05da8a20ae4a5af8fc1bd02d20d1282cf72ce1a6c98b9be60b1eff4c79d424fb",
+      "bytes": 10898,
+      "source_sha256": "994a941260f53e066753204f4b92c20bb1d830b58e76ff89c2caa71c34d546ef",
+      "source_bytes": 33863,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/spanish.h",
+      "prefix": 4
+    },
+    "monero-fr": {
+      "sha256": "b17376bb1341cc32b8a7088d23c0dba3b25743c167f4e4f3d8062946ffd93e87",
+      "bytes": 10898,
+      "source_sha256": "f4e42ab4eb9824a2cd829f132e33dfc46ae31c5788a37c9726d393e7cc809a82",
+      "source_bytes": 30898,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/french.h",
+      "prefix": 4
+    },
+    "monero-it": {
+      "sha256": "aea041cbb43e8e3b817b48b64001df3e28949002d99c920a8a46231319bcc121",
+      "bytes": 12774,
+      "source_sha256": "d02956b528db827646a1f6f78c1a19716b9334985cb893eb09409834a04045db",
+      "source_bytes": 34533,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/italian.h",
+      "prefix": 4
+    },
+    "monero-nl": {
+      "sha256": "9b2005b2c4d95360361949c7f5b43ef6a021d3ce31f01f6101a24d93540e790a",
+      "bytes": 12720,
+      "source_sha256": "775d05f737f453d6798876d99961bb3bcfc49d47cb57860d3c0b2a03b9a64822",
+      "source_bytes": 34414,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/dutch.h",
+      "prefix": 4
+    },
+    "monero-pt": {
+      "sha256": "9099aaa5470c568ca91f0040222760af55720ddc3f3a6f9e1736d4c2dd9247da",
+      "bytes": 13139,
+      "source_sha256": "0a6b191930a29f1ae827c1f5f8905548035bac5e5b41386f0978cf39e4adcfa1",
+      "source_bytes": 36110,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/portuguese.h",
+      "prefix": 4
+    },
+    "monero-ru": {
+      "sha256": "fd225689dda9d342acae6bd58ecbdba3274ded07d89936ce979a95f6d60c64ea",
+      "bytes": 20750,
+      "source_sha256": "2d3f282d11e917fcdd6248b87002f5b982b6abaa773e9676d21886b6a50a4762",
+      "source_bytes": 42516,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/russian.h",
+      "prefix": 4
+    },
+    "monero-ja": {
+      "sha256": "0e879f11f3806e6b25738598cfec6f372364af7fb8c59b4874d7a406f6b0fee7",
+      "bytes": 19428,
+      "source_sha256": "3701f067006b60e95e266e7a385b472c5bddeb6f476e737eed6d3b7febefe6d5",
+      "source_bytes": 42380,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/japanese.h",
+      "prefix": 3
+    },
+    "monero-zh-hans": {
+      "sha256": "d0b846b2036f55182892d98c2410996c399ed3aee5be2d6cbfaf594e599dd522",
+      "bytes": 6504,
+      "source_sha256": "4a38fbe7279616aa78aa11dbcf425d0ba5305fd2089cb4421d544f2c540d50fd",
+      "source_bytes": 26291,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/chinese_simplified.h",
+      "prefix": 1
+    },
+    "monero-eo": {
+      "sha256": "aa53b9b2af6586e8df69bcf04b17af4f06cac9e7ad20420d45b265f9aa18b32d",
+      "bytes": 12086,
+      "source_sha256": "382d9f9bfcf293e4dc9f156042fe5a3f2a151191bae368a494eaf53c77e16043",
+      "source_bytes": 30916,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/esperanto.h",
+      "prefix": 4
+    },
+    "monero-jbo": {
+      "sha256": "19c3f71b26c808bbe9ed7ab944ac1c8b1f11307f96d27d01874c093520c972f9",
+      "bytes": 9934,
+      "source_sha256": "6c84dedd2609060f30368b92b5e377207e28afcda5401b5060d57c633e623a04",
+      "source_bytes": 28601,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/lojban.h",
+      "prefix": 4
+    },
+    "monero-en-old": {
+      "sha256": "c8da327d316f8ee758b790068e618077ac271a89fd77ec1250c59ae40e7b599e",
+      "bytes": 10494,
+      "source_sha256": "20c9090994c5b441f2e550cddbf266d604b64e495d9b172e45a8031e1aa5d578",
+      "source_bytes": 32389,
+      "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+      "source_path": "src/mnemonics/english_old.h",
+      "prefix": 4
+    },
+    "polyseed-en": {
+      "sha256": "2f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda",
+      "bytes": 13116,
+      "source_sha256": "6e32fb9d56d5c8a304d173937deec9dc9d64e52d15a9104f1c63dc45b7911f47",
+      "source_bytes": 36852,
+      "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+      "source_path": "src/lang_en.c",
+      "prefix": 4
+    },
+    "polyseed-ja": {
+      "sha256": "438b4d19c4af485650822ae0d08855090a6812e2a2ed6fb793583ae90f3e6248",
+      "bytes": 26423,
+      "source_sha256": "c309fd0d6c435de214262dd5c96331b8a48bd9a9a3b3b6659d2817056ecc1887",
+      "source_bytes": 54279,
+      "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+      "source_path": "src/lang_jp.c",
+      "prefix": 4
+    },
+    "polyseed-ko": {
+      "sha256": "9e95f86c167de88f450f0aaf89e87f6624a57f973c67b516e338e8e8b8897f60",
+      "bytes": 37832,
+      "source_sha256": "0b56d27f7c1d3c6d13af9248d981d90a7d515222e3858fe6eca2f1aae7ea6ac9",
+      "source_bytes": 65670,
+      "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+      "source_path": "src/lang_ko.c",
+      "prefix": 4
+    },
+    "polyseed-es": {
+      "sha256": "31e589970a7490b1d62534c57b97b65b7d8ec7e7fcdad4830af1e324ed387c52",
+      "bytes": 13996,
+      "source_sha256": "90405262a658434062b1d26cc7799c1d7fbeb11486c93a01153c733315c0cc0d",
+      "source_bytes": 41858,
+      "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+      "source_path": "src/lang_es.c",
+      "prefix": 4
+    },
+    "polyseed-fr": {
+      "sha256": "ebc3959ab7801a1df6bac4fa7d970652f1df76b683cd2f4003c941c63d517e59",
+      "bytes": 16777,
+      "source_sha256": "0cb937a44ac79218a35e4d10f757d85dcd482cb4ed1482928644d0292ab8f0e2",
+      "source_bytes": 44613,
+      "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+      "source_path": "src/lang_fr.c",
+      "prefix": 4
+    },
+    "polyseed-it": {
+      "sha256": "d392c49fdb700a24cd1fceb237c1f65dcc128f6b34a8aacb58b59384b5c648c2",
+      "bytes": 16033,
+      "source_sha256": "211787e3a762b7b55e7f2f422dc16e843399697ef078b10b2773ba62972a312a",
+      "source_bytes": 39770,
+      "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+      "source_path": "src/lang_it.c",
+      "prefix": 4
+    },
+    "polyseed-cs": {
+      "sha256": "195136b3ba0f3099a9df625e0963f4efb56625b91c3a76bc5b4a9466a26880f7",
+      "bytes": 14945,
+      "source_sha256": "395c70fb0de3e4c9034da698c679269227c1783d0ae56617bb8bcfd950eb9cd3",
+      "source_bytes": 38772,
+      "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+      "source_path": "src/lang_cs.c",
+      "prefix": 4
+    },
+    "polyseed-pt": {
+      "sha256": "2685e9c194c82ae67e10ba59d9ea5345a23dc093e92276fc5361f6667d79cd3f",
+      "bytes": 15671,
+      "source_sha256": "40e9919edf8b768a12cdfc3c3cd2343fa16a628ad0e8d2749b4c026af7c9bf70",
+      "source_bytes": 39418,
+      "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+      "source_path": "src/lang_pt.c",
+      "prefix": 4
+    },
+    "polyseed-zh-hans": {
+      "sha256": "5c5942792bd8340cb8b27cd592f1015edf56a8c5b26276ee18a482428e7c5726",
+      "bytes": 8192,
+      "source_sha256": "cabe21517dcde33e517926ab29d7b58bb5e5f97b7b5a6a631e9137f256a5165b",
+      "source_bytes": 36053,
+      "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+      "source_path": "src/lang_zh_s.c",
+      "prefix": 4
+    },
+    "polyseed-zh-hant": {
+      "sha256": "417b26b3d8500a4ae3d59717d7011952db6fc2fb84b807f3f94ac734e89c1b5f",
+      "bytes": 8192,
+      "source_sha256": "7ddbd0546736c7e53077b97bef5f6697f752f6a78ea7e4429987b66f14a118ba",
+      "source_bytes": 36054,
+      "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+      "source_path": "src/lang_zh_t.c",
+      "prefix": 4
+    }
+  },
+  "legacy_vectors": [
+    {
+      "dictionary": "monero-pt",
+      "indices": [
+        270,
+        911,
+        864,
+        634,
+        355,
+        314,
+        550,
+        219,
+        756,
+        900,
+        1130,
+        378,
+        725,
+        175,
+        333,
+        1298,
+        1404,
+        862,
+        1507,
+        1145,
+        1025,
+        402,
+        930,
+        185,
+        634
+      ],
+      "sentence_sha256": "cd39934edb74e05c5835eed36ff014e5fe47381ea80ed8aa82abf286e64c789d"
+    },
+    {
+      "dictionary": "monero-de",
+      "indices": [
+        1185,
+        1516,
+        1,
+        1516,
+        1511,
+        596,
+        300,
+        184,
+        494,
+        1125,
+        1450,
+        898,
+        138,
+        1090,
+        1460,
+        780,
+        1454,
+        537,
+        592,
+        1062,
+        1477,
+        1049,
+        353,
+        399,
+        1477
+      ],
+      "sentence_sha256": "5c7184ec76f7428813f633077a3e198f615747a9c1abc90455f72de8237a87b5"
+    },
+    {
+      "dictionary": "monero-en",
+      "indices": [
+        500,
+        1238,
+        641,
+        928,
+        743,
+        332,
+        1055,
+        402,
+        181,
+        393,
+        711,
+        1521,
+        181
+      ],
+      "sentence_sha256": "596b9be15871b5d1ab87e337e5a875b602a573265f1182b1669ed5373ece66ea",
+      "entropy": "9c973aa296b79bbf452781dd3d32ad7f"
+    }
+  ],
+  "polyseed_vectors": [
+    {
+      "dictionary": "polyseed-en",
+      "indices": [
+        1427,
+        1770,
+        1756,
+        922,
+        820,
+        110,
+        1446,
+        998,
+        542,
+        1926,
+        1656,
+        1044,
+        842,
+        1392,
+        44,
+        999
+      ],
+      "sentence_sha256": "915f0d6b69458d2ab31fda97b70c8769aa82f6e52326880a0fcd791c0caf784a",
+      "secret": "dd76e7359a0ded37cd0ff0f3c829a5ae016733",
+      "birthday": 1,
+      "features": 0
+    },
+    {
+      "dictionary": "polyseed-es",
+      "indices": [
+        591,
+        720,
+        1376,
+        366,
+        1786,
+        1424,
+        1017,
+        1522,
+        1496,
+        878,
+        1575,
+        1003,
+        664,
+        984,
+        1055,
+        1751
+      ],
+      "sentence_sha256": "d2d748eaadb24ef6b25183129d654be93679ead6d390c967881656bc049e91ab",
+      "secret": "5a2b02df7db21fcbe6ec6df137d54c7b20fd2b",
+      "birthday": 563,
+      "features": 0
+    }
+  ],
+  "wallets": {
+    "monero-gui-cli": {
+      "scheme": "monero-legacy",
+      "status": "documented",
+      "import_only": false,
+      "generates": true
+    },
+    "monero-cli-polyseed": {
+      "scheme": "polyseed-16",
+      "status": "documented",
+      "import_only": false,
+      "generates": true
+    },
+    "monero-gui": {
+      "scheme": null,
+      "status": "documented",
+      "import_only": false,
+      "generates": true
+    },
+    "mymonero": {
+      "scheme": "mymonero-13",
+      "status": "documented",
+      "import_only": true,
+      "generates": false
+    },
+    "mymonero-generated": {
+      "scheme": null,
+      "status": "documented",
+      "import_only": false,
+      "generates": true
+    },
+    "feather": {
+      "scheme": "polyseed-16",
+      "status": "documented",
+      "import_only": false,
+      "generates": true
+    },
+    "feather-legacy-import": {
+      "scheme": "monero-legacy",
+      "status": "documented",
+      "import_only": true,
+      "generates": false
+    },
+    "cake-wallet-monero": {
+      "scheme": "polyseed-16",
+      "status": "documented",
+      "import_only": false,
+      "generates": true
+    },
+    "cake-wallet-monero-legacy": {
+      "scheme": "monero-legacy",
+      "status": "documented",
+      "import_only": false,
+      "generates": true
+    },
+    "cake-wallet-monero-bip39": {
+      "scheme": null,
+      "status": "documented",
+      "import_only": false,
+      "generates": true
+    },
+    "exodus-monero-export": {
+      "scheme": "monero-legacy",
+      "status": "documented",
+      "import_only": false,
+      "generates": false
+    }
+  }
+}

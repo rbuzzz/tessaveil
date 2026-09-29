@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "monero-de",
+  "display_name": {
+    "en": "monero-de",
+    "ru": "monero-de"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "monero-de-source",
+    "monero-monero-rules",
+    "monero-signpath",
+    "monero-osi-bsd",
+    "monero-monero-license",
+    "monero-legacy-vectors"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+    "max": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa"
+  },
+  "language": "de",
+  "script": "Latn",
+  "source": {
+    "url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/mnemonics/german.h",
+    "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa"
+  },
+  "license": {
+    "spdx_or_name": "BSD-3-Clause",
+    "source_url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/LICENSE",
+    "attribution": "Exact source file notices and upstream license retained in THIRD_PARTY_NOTICES; dabura667 / The Monero Project and original dictionary contributors.",
+    "repository_redistribution": "allowed",
+    "signpath_compatible": "compatible",
+    "decision_evidence": [
+      "monero-signpath",
+      "monero-osi-bsd",
+      "monero-monero-license",
+      "monero-de-source"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "none",
+  "word_count": 1626,
+  "sha256": "e1e6653cf418e0a392a5cd34160a8cdacb5dfce8edbac0e124fba8d7daff1f69",
+  "order_rule": "Exact upstream array order; zero-based indices. Extract literal UTF-8 tokens unchanged; remove C/C++ wrapper and indentation, append LF after every token. No sorting, lowercasing or Unicode rewriting. Source file and extracted byte hashes in batch note.",
+  "position_rules": [
+    "Same vocabulary at every eligible position; upstream prefix length 4. Never evaluate a user phrase checksum.",
+    "Source-native lookup: Unicode codepoint lowercase and language-specific prefix, with no NFC/NFKD transform; normalization=none preserves source characters.",
+    "Language coverage is not a wallet generation claim."
+  ],
+  "duplicate_analysis": {
+    "normalized_unique_count": 1626,
+    "collisions": []
+  },
+  "test_vector_ids": [
+    "monero-legacy-vectors"
+  ],
+  "wordlist_path": "wordlists/monero-de/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa.txt"
+}

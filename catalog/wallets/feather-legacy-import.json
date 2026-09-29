@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "feather-legacy-import",
+  "display_name": {
+    "en": "Feather — legacy import",
+    "ru": "Feather — legacy import"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-feather-legacy-import-wallet",
+    "monero-feather-version"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "2.9.1-source-948773cf13c7486ee230eb67b6bac06b2f94c874",
+    "max": "2.9.1-source-948773cf13c7486ee230eb67b6bac06b2f94c874"
+  },
+  "product_id": "feather",
+  "product_name": "Feather",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "legacy-25-import",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": "monero-legacy",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Legacy 25-word (also checksumless 24-word) restore is separate from generation. 14-word Tevador restore is another format and is not mapped to Polyseed/MyMonero.",
+    "Documented, not selectable: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately."
+  ],
+  "guidance": "Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website."
+}

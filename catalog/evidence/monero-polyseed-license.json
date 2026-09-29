@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "monero-polyseed-license",
+  "source_type": "official-source",
+  "claim": "Apache-2.0 permits this modified source-data projection subject to license, notices and modification marking; root project LICENSE contains identical Apache text. No commercial dual-license requirement. Reviewed 2026-09-29; response byte SHA-256 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/tevador/polyseed/56f634647d4f75596de20a6259b0cf1933949fdc/LICENSE",
+  "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "polyseed-cs",
+    "polyseed-en",
+    "polyseed-es",
+    "polyseed-fr",
+    "polyseed-it",
+    "polyseed-ja",
+    "polyseed-ko",
+    "polyseed-pt",
+    "polyseed-zh-hans",
+    "polyseed-zh-hant"
+  ]
+}

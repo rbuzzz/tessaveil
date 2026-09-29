@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-monero-bip39",
+  "display_name": {
+    "en": "Cake Wallet Monero — BIP39-derived mode",
+    "ru": "Cake Wallet Monero — BIP39-derived mode"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-cake-wallet-monero-bip39-wallet",
+    "monero-cake-ui",
+    "monero-cake-version"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet Monero",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "bip39-monero-generated-unresolved",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Distinct 12-word BIP39-derived mode exists in source; Monero derivation path/transform is not generic BIP39 wallet compatibility. Full mode research outside this three-scheme batch; leave unmapped and non-selectable, never substitute for Polyseed/legacy.",
+    "Documented, not selectable: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately."
+  ],
+  "guidance": "Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website."
+}

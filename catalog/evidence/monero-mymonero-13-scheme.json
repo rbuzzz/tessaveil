@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-mymonero-13-scheme",
+  "source_type": "official-source",
+  "claim": "Legacy MyMonero: four 32-bit chunks encode a 16-byte seed as 12 words plus prefix CRC32 checksum. Keccak expansion before scalar reduction differs from 32-byte Monero legacy. Current core new_wallet creates a 32-byte/25-word seed; 13 words are retained for legacy decoding. English vector only; other language/product mappings are not verified. Reviewed 2026-09-29; response byte SHA-256 ea6d34729151cffd2b7cdd1a16c31507ff3122242540646ac9797cc0797bb7b4. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/mymonero/mymonero-core-cpp/9637c91cbe5f46e67156c66c739932294808109d/src/monero_wallet_utils.cpp",
+  "revision": "9637c91cbe5f46e67156c66c739932294808109d",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "mymonero-13"
+  ]
+}

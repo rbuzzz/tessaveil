@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "polyseed-cs-source",
+  "source_type": "official-source",
+  "claim": "Exact ordered dictionary array and applicable file-level license header reviewed. Source-token extraction and byte hashes are independently checked against the public fixture; no complete phrase is stored here. Reviewed 2026-09-29; response byte SHA-256 395c70fb0de3e4c9034da698c679269227c1783d0ae56617bb8bcfd950eb9cd3. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/tevador/polyseed/56f634647d4f75596de20a6259b0cf1933949fdc/src/lang_cs.c",
+  "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "polyseed-cs"
+  ]
+}

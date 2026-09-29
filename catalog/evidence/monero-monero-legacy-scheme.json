@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-monero-legacy-scheme",
+  "source_type": "official-source",
+  "claim": "Eight little-endian 32-bit chunks map to 24 base-1626 words; CRC32 of language-specific prefixes selects repeated 25th checksum word. Not BIP39. EnglishOld has a separate historical dictionary and is excluded from current-generation language list; no selectable historical 25-word mode is inferred. Source supports additional checksumless restore lengths; this profile covers standard 25 only. Reviewed 2026-09-29; response byte SHA-256 f92675503096425c92f6cc8b38946a707db6999cfcd95657f87a58d364051e4f. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/mnemonics/electrum-words.cpp",
+  "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "monero-legacy"
+  ]
+}

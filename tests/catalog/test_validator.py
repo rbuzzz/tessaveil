@@ -67,6 +67,24 @@ class ValidatorTests(unittest.TestCase):
                         self.root, dirs_exist_ok=True)
         self.assertIn("normalization-collision", self.codes())
 
+    def test_source_native_normalization_preserves_composed_distinctions(self):
+        (self.root / 'wordlists/synthetic-en/v1.txt').write_bytes('é\ne\u0301\n'.encode())
+        self.edit("catalog/dictionaries/synthetic-en.json", lambda p: p.update(
+            normalization="none", duplicate_analysis={"normalized_unique_count": 2, "collisions": []}))
+        self.assertNotIn("schema", self.codes())
+        self.assertNotIn("normalization-collision", self.codes())
+
+    def test_source_native_normalization_rejects_exact_duplicates(self):
+        shutil.copytree(Path(__file__).parent / "fixtures/normalization-collision",
+                        self.root, dirs_exist_ok=True)
+        self.edit("catalog/dictionaries/synthetic-en.json", lambda p: p.update(normalization="none"))
+        self.assertIn("normalization-collision", self.codes())
+
+    def test_source_native_normalization_still_checks_duplicate_analysis(self):
+        self.edit("catalog/dictionaries/synthetic-en.json", lambda p: p.update(
+            normalization="none", duplicate_analysis={"normalized_unique_count": 99, "collisions": []}))
+        self.assertIn("duplicate-analysis", self.codes())
+
     def test_rejects_unsupported_phrase_length(self):
         self.edit("catalog/schemes/synthetic-scheme.json", lambda p: p.update(supported_lengths=[11]))
         self.assertIn("unsupported-length", self.codes())

@@ -138,9 +138,11 @@
         "en": "MONERO en",
         "ru": "MONERO — Английский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-en"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -149,9 +151,11 @@
         "en": "MONERO de",
         "ru": "MONERO — Немецкий"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-de"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -160,9 +164,11 @@
         "en": "MONERO es",
         "ru": "MONERO — Испанский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-es"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -171,9 +177,11 @@
         "en": "MONERO fr",
         "ru": "MONERO — Французский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-fr"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -182,9 +190,11 @@
         "en": "MONERO it",
         "ru": "MONERO — Итальянский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-it"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -193,9 +203,11 @@
         "en": "MONERO nl",
         "ru": "MONERO — Нидерландский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-nl"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -204,9 +216,11 @@
         "en": "MONERO pt",
         "ru": "MONERO — Португальский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-pt"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -215,9 +229,11 @@
         "en": "MONERO ru",
         "ru": "MONERO — Русский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-ru"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -226,9 +242,11 @@
         "en": "MONERO ja",
         "ru": "MONERO — Японский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-ja"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -237,9 +255,11 @@
         "en": "MONERO zh-hans",
         "ru": "MONERO — Китайский упрощённый"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-zh-hans"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -248,9 +268,11 @@
         "en": "MONERO eo",
         "ru": "MONERO — Эсперанто"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-eo"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -259,9 +281,11 @@
         "en": "MONERO jbo",
         "ru": "MONERO — Ложбан"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-jbo"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -270,9 +294,11 @@
         "en": "MONERO en-old",
         "ru": "MONERO — Старый английский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-en-old"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": true
     },
     {
@@ -281,9 +307,11 @@
         "en": "POLYSEED en",
         "ru": "POLYSEED — Английский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-en"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -292,9 +320,11 @@
         "en": "POLYSEED ja",
         "ru": "POLYSEED — Японский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-ja"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -303,9 +333,11 @@
         "en": "POLYSEED ko",
         "ru": "POLYSEED — Корейский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-ko"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -314,9 +346,11 @@
         "en": "POLYSEED es",
         "ru": "POLYSEED — Испанский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-es"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
       "historical": false
     },
     {
@@ -325,9 +359,11 @@
         "en": "POLYSEED fr",
         "ru": "POLYSEED — Французский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-fr"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -336,9 +372,11 @@
         "en": "POLYSEED it",
         "ru": "POLYSEED — Итальянский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-it"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -347,9 +385,11 @@
         "en": "POLYSEED cs",
         "ru": "POLYSEED — Чешский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-cs"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -358,9 +398,11 @@
         "en": "POLYSEED pt",
         "ru": "POLYSEED — Португальский"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-pt"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -369,9 +411,11 @@
         "en": "POLYSEED zh-hans",
         "ru": "POLYSEED — Китайский упрощённый"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-zh-hans"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -380,9 +424,11 @@
         "en": "POLYSEED zh-hant",
         "ru": "POLYSEED — Китайский традиционный"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-zh-hant"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -496,9 +542,11 @@
         "en": "monero legacy",
         "ru": "monero legacy"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-legacy"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -507,9 +555,11 @@
         "en": "mymonero",
         "ru": "mymonero"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "mymonero-13"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -518,9 +568,11 @@
         "en": "polyseed",
         "ru": "polyseed"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "polyseed-16"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -895,9 +947,11 @@
         "en": "cake wallet",
         "ru": "cake wallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "cake-wallet-monero"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1368,9 +1422,11 @@
         "en": "monero gui cli",
         "ru": "monero gui cli"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "monero-gui-cli"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1379,9 +1435,11 @@
         "en": "mymonero",
         "ru": "mymonero"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "mymonero"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1390,9 +1448,11 @@
         "en": "feather",
         "ru": "feather"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "feather"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1401,9 +1461,11 @@
         "en": "exodus monero",
         "ru": "exodus monero"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "exodus-monero-export"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {

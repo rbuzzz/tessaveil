@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "monero-cli-polyseed",
+  "display_name": {
+    "en": "Monero CLI — Polyseed creation",
+    "ru": "Monero CLI — Polyseed creation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-monero-cli-polyseed-wallet",
+    "monero-cli-version"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+    "max": "source-2f9d1bbb2c553dc75f3335bd1452117dfddd86fa"
+  },
+  "product_id": "monero-cli",
+  "product_name": "Monero CLI",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "polyseed-16-generated",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": "polyseed-16",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Default deterministic new-wallet source mode is Polyseed; --use-legacy-seed is a distinct simultaneous choice. Non-deterministic, multisig, hardware and view-only modes excluded.",
+    "Documented, not selectable: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately."
+  ],
+  "guidance": "Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website."
+}

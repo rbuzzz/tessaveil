@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "monero-monero-rules",
+  "source_type": "official-source",
+  "claim": "1626 entries; codepoint prefixes and case-insensitive lookup. utf8canonical re-encodes codepoints with towlower, not NFC/NFKD. EnglishOld tolerates duplicate prefixes and short words. Reviewed 2026-09-29; response byte SHA-256 2bc256f01c6904af914cb7c6526254267ed463882e216fd0eb1d9bbdf4bf5bb4. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/mnemonics/language_base.h",
+  "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "monero-de",
+    "monero-en",
+    "monero-en-old",
+    "monero-eo",
+    "monero-es",
+    "monero-fr",
+    "monero-it",
+    "monero-ja",
+    "monero-jbo",
+    "monero-nl",
+    "monero-pt",
+    "monero-ru",
+    "monero-zh-hans"
+  ]
+}

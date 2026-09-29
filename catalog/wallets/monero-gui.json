@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "monero-gui",
+  "display_name": {
+    "en": "Monero GUI — generated seed",
+    "ru": "Monero GUI — generated seed"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-monero-gui-wallet"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-01d6640aff7fd1c1a87932e14e8439383e1229c5",
+    "max": "source-01d6640aff7fd1c1a87932e14e8439383e1229c5"
+  },
+  "product_id": "monero-gui",
+  "product_name": "Monero GUI",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "generated-seed-unresolved",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Wizard creates an in-memory wallet then displays wallet.seed. Exact pinned backend dependency and scheme are unresolved in this GUI snapshot; do not substitute current CLI behavior.",
+    "Documented, not selectable: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately."
+  ],
+  "guidance": "Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website."
+}

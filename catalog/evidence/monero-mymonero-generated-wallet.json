@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-mymonero-generated-wallet",
+  "source_type": "official-source",
+  "claim": "App shows backup mnemonic. Reviewed core new_wallet generates 32-byte/25-word format, but dependency artifact binding to this app revision remains unproven. No new 13-word creation claim. Reviewed 2026-09-29; response byte SHA-256 1772443b59b4c4286aa30054f41d7f6110c35e2d471344b00346ca7774c9c674. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/mymonero/mymonero-app-js/5c7455d30e4e20150962f5f74efd83477962a05e/local_modules/WalletWizard/Views/CreateWallet_InformOfMnemonic_View.web.js",
+  "revision": "5c7455d30e4e20150962f5f74efd83477962a05e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "mymonero-generated"
+  ]
+}

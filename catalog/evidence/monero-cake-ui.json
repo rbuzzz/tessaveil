@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "monero-cake-ui",
+  "source_type": "official-source",
+  "claim": "Explicit legacy 25, Polyseed 16 (default), BIP39 12 mode labels. Reviewed 2026-09-29; response byte SHA-256 04848d36e285949e61e16b53c9cd9589d0896eaf3921575ea86fba983ad6d5fe. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/lib/entities/seed_type.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-monero",
+    "cake-wallet-monero-bip39",
+    "cake-wallet-monero-legacy"
+  ]
+}

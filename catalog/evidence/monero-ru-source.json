@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-ru-source",
+  "source_type": "official-source",
+  "claim": "Exact ordered dictionary array and applicable file-level license header reviewed. Source-token extraction and byte hashes are independently checked against the public fixture; no complete phrase is stored here. Reviewed 2026-09-29; response byte SHA-256 2d3f282d11e917fcdd6248b87002f5b982b6abaa773e9676d21886b6a50a4762. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/mnemonics/russian.h",
+  "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "monero-ru"
+  ]
+}

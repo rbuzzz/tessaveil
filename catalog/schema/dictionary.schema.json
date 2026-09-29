@@ -176,6 +176,7 @@
     },
     "normalization": {
       "enum": [
+        "none",
         "NFC",
         "NFD",
         "NFKC",

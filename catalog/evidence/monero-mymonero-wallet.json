@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-mymonero-wallet",
+  "source_type": "official-source",
+  "claim": "App 1.3.2 source and core decoder source reviewed separately; exact app-to-core artifact binding is not established. Historical 13-word restore capability is documented in core, not a claim that current app creates 13 words. Reviewed 2026-09-29; response byte SHA-256 c00f3699d4f244e57dba1522665910687c0fdf2228edfc576f83a717dfc75457. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/mymonero/mymonero-app-js/5c7455d30e4e20150962f5f74efd83477962a05e/package.json",
+  "revision": "5c7455d30e4e20150962f5f74efd83477962a05e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "mymonero"
+  ]
+}

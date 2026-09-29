@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "feather",
+  "display_name": {
+    "en": "Feather — Polyseed creation",
+    "ru": "Feather — Polyseed creation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-feather-wallet",
+    "monero-feather-version",
+    "monero-feather-create"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "2.9.1-source-948773cf13c7486ee230eb67b6bac06b2f94c874",
+    "max": "2.9.1-source-948773cf13c7486ee230eb67b6bac06b2f94c874"
+  },
+  "product_id": "feather",
+  "product_name": "Feather",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "polyseed-16-generated",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": "polyseed-16",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Feather 2.9.1 source: new seeds are English Polyseed only. Source creation and display examined; no released-binary recovery/vector claim.",
+    "Documented, not selectable: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately."
+  ],
+  "guidance": "Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website."
+}

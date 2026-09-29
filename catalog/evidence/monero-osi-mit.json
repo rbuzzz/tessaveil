@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "monero-osi-mit",
+  "source_type": "official-documentation",
+  "claim": "OSI identifies MIT as an approved open-source license; this corroborates the local component assessment, while the pinned reference repository license supplies the actual permission. Reviewed 2026-09-29; byte SHA-256 004c79db0a335488afc87600d89f447dce7fb4d24d510af15ed4381a24be848c. See docs/research/batches/bip39-ton.md. Same-day review reused from Task 10; corroborates MIT file-level scope for these lists only.",
+  "url": "https://opensource.org/license/mit",
+  "revision": "sha256:004c79db0a335488afc87600d89f447dce7fb4d24d510af15ed4381a24be848c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "monero-es",
+    "monero-pt",
+    "monero-ja",
+    "monero-zh-hans"
+  ]
+}

@@ -253,7 +253,7 @@ def render_catalog(catalog: Catalog, locale: Literal["en", "ru"]) -> str:
     for record in sorted(catalog.wallets, key=lambda r: r.id):
         d = record.data
         common(record, "wallet")
-        field("Aliases", "Другие названия", _text(", ".join(sorted(d["aliases"]))))
+        field("Aliases", "Другие названия", _text(", ".join(sorted(d["aliases"])) or None))
         field("Scheme", "Схема", ref("scheme", d["scheme_id"]))
         field("Generates mnemonic / import only", "Создаёт мнемонику / только импорт",
               f"{_text(d['generates_mnemonic'])} / {_text(d['import_only'])}")
