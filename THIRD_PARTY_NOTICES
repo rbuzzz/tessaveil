@@ -1,0 +1,11 @@
+Tessaveil third-party notices
+============================
+
+No third-party code or word lists are bundled at this foundation stage.
+
+Development-only tools are not distributed as application components. Before
+any third-party code, dictionary, or other asset is bundled, this file must
+record its identity, source revision, license, copyright and attribution
+obligations, redistribution decision, and any SignPath Foundation compatibility
+decision. An Apache-2.0 license on original project code does not override
+those terms.
