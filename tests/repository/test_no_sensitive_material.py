@@ -218,7 +218,7 @@ class SensitiveMaterialTests(unittest.TestCase):
             self.assertIn(original, reachable)
             self.assertIn("github-token", {kind for _, kind in history.scan_history(root)})
 
-    def test_history_does_not_audit_replacement_only_blob(self):
+    def test_history_audits_replacement_target_reachable_from_replace_ref(self):
         from tools import history_sensitive_material as history
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -235,7 +235,9 @@ class SensitiveMaterialTests(unittest.TestCase):
             replacement = git("hash-object", "-w", "--stdin",
                               input=("figd" + "_" + "x" * 40).encode("ascii"))
             git("replace", original, replacement)
-            self.assertEqual(history.scan_history(root), ())
+            reachable = git("--no-replace-objects", "rev-list", "--objects", "--all")
+            self.assertIn(replacement, reachable)
+            self.assertIn("figma-token", {kind for _, kind in history.scan_history(root)})
 
 
 if __name__ == "__main__":

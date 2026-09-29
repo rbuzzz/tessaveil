@@ -2,8 +2,8 @@
 
 Findings contain object IDs and classes only; blob contents and paths are never
 printed. A full checkout is required so CI cannot silently scan a shallow slice.
-Replacement refs are excluded as roots, and original objects are read even when
-local replacement mappings exist.
+Replacement mappings are disabled for Git reads; both original objects and
+replacement targets reachable through refs/replace are audited.
 """
 
 import argparse
@@ -60,10 +60,9 @@ def scan_history(root, *, max_blob_bytes=MAX_BLOB_BYTES, words=None):
         words = frozenset()
     if _git(root, "rev-parse", "--is-shallow-repository").strip() != b"false":
         return (("history", "shallow-checkout"),)
-    # Replacement refs are local object substitutions, not audited history roots.
-    # Resolve original objects for both enumeration and reads, and exclude the
-    # replacements' target blobs from the refs being enumerated.
-    listed = _git(root, "rev-list", "--objects", "--exclude=refs/replace/*", "--all").splitlines()
+    # Disable replacement mappings while retaining replacement refs as roots:
+    # both original blobs and ref-reachable replacement targets must be scanned.
+    listed = _git(root, "rev-list", "--objects", "--all").splitlines()
     oids = sorted({line.split(b" ", 1)[0] for line in listed})
     if not oids or any(not OID.fullmatch(oid) for oid in oids):
         return (("history", "invalid-object-list"),)
