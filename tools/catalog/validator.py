@@ -16,7 +16,53 @@ SCHEMA_DIR = Path(__file__).resolve().parents[2] / "catalog" / "schema"
 KINDS = (("dictionaries", "dictionary"), ("schemes", "scheme"),
          ("wallets", "wallet"), ("evidence", "evidence"), ("required_sets", "required-set"))
 TERMINAL = {"verified", "documented", "blocked", "no-mnemonic-confirmed"}
-SUPPORTED_LENGTHS = {12, 13, 15, 18, 20, 21, 24, 25, 33}
+SUPPORTED_LENGTHS = {12, 13, 15, 16, 18, 20, 21, 24, 25, 26, 27, 28, 29, 33}
+SUPPORTED_SCHEMA_KEYS = frozenset({
+    "$schema", "$id", "title", "type", "required", "properties", "additionalProperties",
+    "const", "enum", "minLength", "pattern", "uniqueItems", "minItems", "maxItems",
+    "items", "minimum", "anyOf", "allOf", "if", "then", "format",
+})
+SUPPORTED_TYPES = frozenset({"object", "array", "string", "integer", "number", "boolean", "null"})
+
+
+def _schema_supported(schema: Any) -> bool:
+    if not isinstance(schema, Mapping) or any(key not in SUPPORTED_SCHEMA_KEYS for key in schema):
+        return False
+    if "type" in schema:
+        types = schema["type"] if isinstance(schema["type"], list) else [schema["type"]]
+        if not types or any(name not in SUPPORTED_TYPES for name in types):
+            return False
+    if "format" in schema and schema["format"] not in ("date", "uri"):
+        return False
+    if "additionalProperties" in schema and type(schema["additionalProperties"]) is not bool:
+        return False
+    children = []
+    for key in ("properties",):
+        if key in schema:
+            if not isinstance(schema[key], Mapping):
+                return False
+            children.extend(schema[key].values())
+    for key in ("items", "if", "then"):
+        if key in schema:
+            children.append(schema[key])
+    for key in ("anyOf", "allOf"):
+        if key in schema:
+            if not isinstance(schema[key], list):
+                return False
+            children.extend(schema[key])
+    return all(_schema_supported(child) for child in children)
+
+
+def _json_equal(left: Any, right: Any) -> bool:
+    if type(left) is bool or type(right) is bool:
+        return type(left) is type(right) and left == right
+    if type(left) in (int, float) and type(right) in (int, float):
+        return left == right
+    if isinstance(left, Mapping) and isinstance(right, Mapping):
+        return left.keys() == right.keys() and all(_json_equal(left[key], right[key]) for key in left)
+    if isinstance(left, (list, tuple)) and isinstance(right, (list, tuple)):
+        return len(left) == len(right) and all(_json_equal(a, b) for a, b in zip(left, right))
+    return type(left) is type(right) and left == right
 
 
 def _type_matches(value: Any, expected: str) -> bool:
@@ -37,9 +83,9 @@ def _schema_valid(value: Any, schema: Mapping[str, Any]) -> bool:
     if expected is not None and not any(_type_matches(value, t) for t in
                                     (expected if isinstance(expected, list) else [expected])):
         return False
-    if "const" in schema and value != schema["const"]:
+    if "const" in schema and not _json_equal(value, schema["const"]):
         return False
-    if "enum" in schema and value not in schema["enum"]:
+    if "enum" in schema and not any(_json_equal(value, item) for item in schema["enum"]):
         return False
     if isinstance(value, Mapping):
         if any(key not in value for key in schema.get("required", ())):
@@ -52,7 +98,7 @@ def _schema_valid(value: Any, schema: Mapping[str, Any]) -> bool:
     if isinstance(value, (list, tuple)):
         if len(value) < schema.get("minItems", 0) or len(value) > schema.get("maxItems", float("inf")):
             return False
-        if schema.get("uniqueItems") and any(value[i] == value[j] for i in range(len(value)) for j in range(i + 1, len(value))):
+        if schema.get("uniqueItems") and any(_json_equal(value[i], value[j]) for i in range(len(value)) for j in range(i + 1, len(value))):
             return False
         if "items" in schema and any(not _schema_valid(item, schema["items"]) for item in value):
             return False
@@ -97,9 +143,12 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
     all_records: list[Record] = []
     for attr, kind in KINDS:
         schema = json.loads((SCHEMA_DIR / f"{kind}.schema.json").read_text(encoding="utf-8"))
+        supported = _schema_supported(schema)
+        if not supported:
+            add("unsupported-schema", kind, "schema contains an unsupported keyword or value")
         for record in getattr(catalog, attr):
             all_records.append(record)
-            if not _schema_valid(record.data, schema):
+            if not supported or not _schema_valid(record.data, schema):
                 add("schema", record, f"{kind} record violates schema")
     invalid = {finding.location for finding in findings if finding.code == "schema"}
     known: dict[str, Record] = {}
@@ -125,7 +174,8 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
             return
         for identifier in ids:
             target = evidence.get(identifier)
-            if target and record.id not in target.data.get("record_ids", ()):
+            backlinks = target.data.get("record_ids") if target else None
+            if target and isinstance(backlinks, (list, tuple)) and record.id not in backlinks:
                 add("evidence-backlink", record, "evidence does not name referencing record")
 
     for record in catalog.evidence:

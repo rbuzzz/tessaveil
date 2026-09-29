@@ -40,6 +40,8 @@ class SchemaParityTests(unittest.TestCase):
                         python_ok = not any(f.severity == "error" for f in findings)
                     except ValueError:
                         python_ok = False
+                    self.assertEqual(schema_ok, overlay is None,
+                                     "shared invalid overlay was unexpectedly accepted by the schema engine")
                     self.assertEqual(python_ok, schema_ok)
 
 

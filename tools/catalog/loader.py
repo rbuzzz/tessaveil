@@ -14,8 +14,9 @@ from .model import (Catalog, DictionaryRecord, EvidenceRecord, LicenseDecision,
 class LoadLimits:
     max_record_bytes: int = 1024 * 1024
     max_records: int = 10_000
-    max_string_chars: int = 16 * 1024
+    max_string_bytes: int = 16 * 1024
     max_wordlist_bytes: int = 16 * 1024 * 1024
+    max_nesting: int = 128
 
 
 DEFAULT_LIMITS = LoadLimits()
@@ -35,17 +36,21 @@ def _reject_constant(value: str) -> None:
     raise ValueError("non-finite JSON number")
 
 
-def _bounded_strings(value: Any, limit: int) -> None:
-    if isinstance(value, str):
-        if len(value) > limit:
-            raise ValueError("string length exceeds limit")
-    elif isinstance(value, dict):
-        for key, item in value.items():
-            _bounded_strings(key, limit)
-            _bounded_strings(item, limit)
-    elif isinstance(value, list):
-        for item in value:
-            _bounded_strings(item, limit)
+def _bounded_strings(value: Any, limits: LoadLimits) -> None:
+    pending = [(value, 0)]
+    while pending:
+        current, depth = pending.pop()
+        if depth > limits.max_nesting:
+            raise ValueError("JSON nesting exceeds limit")
+        if isinstance(current, str):
+            if len(current.encode("utf-8")) > limits.max_string_bytes:
+                raise ValueError("string length exceeds limit")
+        elif isinstance(current, dict):
+            for key, item in current.items():
+                pending.append((key, depth + 1))
+                pending.append((item, depth + 1))
+        elif isinstance(current, list):
+            pending.extend((item, depth + 1) for item in current)
 
 
 def _freeze(value: Any) -> Any:
@@ -66,9 +71,11 @@ def _read_json(path: Path, limits: LoadLimits) -> dict[str, Any]:
         raise ValueError("invalid UTF-8 in record") from exc
     except json.JSONDecodeError as exc:
         raise ValueError("invalid JSON record") from exc
+    except RecursionError as exc:
+        raise ValueError("JSON nesting exceeds limit") from exc
     if not isinstance(document, dict):
         raise ValueError("JSON record must be an object")
-    _bounded_strings(document, limits.max_string_chars)
+    _bounded_strings(document, limits)
     if type(document.get("schema_version")) is not int or document["schema_version"] != 1:
         raise ValueError("unsupported schema version")
     return document
@@ -110,9 +117,11 @@ def load_catalog(root: Path, limits: LoadLimits = DEFAULT_LIMITS) -> Catalog:
         if directory.is_symlink():
             raise ValueError("catalogue path rejected")
         if directory.is_dir():
-            files.extend((folder, path) for path in sorted(directory.glob("*.json")))
-    if len(files) > limits.max_records:
-        raise ValueError("record count exceeds limit")
+            for path in directory.glob("*.json"):
+                files.append((folder, path))
+                if len(files) > limits.max_records:
+                    raise ValueError("record count exceeds limit")
+    files.sort(key=lambda item: (FOLDERS.index(item[0]), str(item[1])))
     groups: dict[str, list[Any]] = {folder: [] for folder in FOLDERS}
     for folder, path in files:
         data = _read_json(path, limits)

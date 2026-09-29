@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import json
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -37,6 +38,24 @@ class CliTests(unittest.TestCase):
             result = self.run_cli(root, "--allow-incomplete-required")
             self.assertNotEqual(result.returncode, 0)
             self.assertNotIn("\xff", result.stdout + result.stderr)
+
+    def test_malformed_evidence_and_deep_json_never_traceback(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            shutil.copytree(FIXTURE, root, dirs_exist_ok=True)
+            evidence = root / "catalog/evidence/synthetic-evidence.json"
+            payload = json.loads(evidence.read_text(encoding="utf-8"))
+            payload["record_ids"] = None
+            evidence.write_text(json.dumps(payload), encoding="utf-8")
+            result = self.run_cli(root)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertNotIn("Traceback", result.stdout + result.stderr)
+            wallet = root / "catalog/wallets/synthetic-wallet.json"
+            wallet.write_bytes(b'{"schema_version":1,"x":' + b"[" * 1100 + b"0" + b"]" * 1100 + b"}")
+            result = self.run_cli(root)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("nesting", result.stdout)
+            self.assertNotIn("Traceback", result.stdout + result.stderr)
 
 
 if __name__ == "__main__":

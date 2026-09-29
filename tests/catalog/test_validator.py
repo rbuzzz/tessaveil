@@ -5,6 +5,9 @@ from pathlib import Path
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
+
+from tools.catalog import validator as validator_module
 
 from tools.catalog.loader import load_catalog
 from tools.catalog.validator import validate_catalog
@@ -67,6 +70,26 @@ class ValidatorTests(unittest.TestCase):
     def test_rejects_unsupported_phrase_length(self):
         self.edit("catalog/schemes/synthetic-scheme.json", lambda p: p.update(supported_lengths=[11]))
         self.assertIn("unsupported-length", self.codes())
+
+    def test_accepts_every_parent_spec_phrase_length(self):
+        self.edit("catalog/schemes/synthetic-scheme.json", lambda p: p.update(
+            supported_lengths=[12, 13, 15, 16, 18, 20, 21, 24, 25, 26, 27, 28, 29, 33]))
+        self.assertNotIn("unsupported-length", self.codes())
+
+    def test_malformed_evidence_backlink_yields_schema_finding(self):
+        self.edit("catalog/evidence/synthetic-evidence.json", lambda p: p.update(record_ids=None))
+        self.assertIn("schema", self.codes())
+
+    def test_unknown_schema_keyword_fails_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            schema_dir = Path(directory)
+            shutil.copytree(validator_module.SCHEMA_DIR, schema_dir, dirs_exist_ok=True)
+            path = schema_dir / "wallet.schema.json"
+            schema = json.loads(path.read_text(encoding="utf-8"))
+            schema["properties"]["guidance"]["minProperties"] = 1
+            path.write_text(json.dumps(schema), encoding="utf-8")
+            with patch.object(validator_module, "SCHEMA_DIR", schema_dir):
+                self.assertIn("unsupported-schema", self.codes())
 
     def test_verified_license_must_allow_redistribution_and_signpath(self):
         self.edit("catalog/dictionaries/synthetic-en.json", lambda p: p["license"].update(

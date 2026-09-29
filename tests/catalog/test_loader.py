@@ -5,6 +5,7 @@ from pathlib import Path
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from tools.catalog.loader import load_catalog, LoadLimits
 
@@ -46,11 +47,44 @@ class LoaderTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "record count"):
             load_catalog(self.root, LoadLimits(max_records=1))
 
+    def test_record_limit_stops_enumeration_without_consuming_more_paths(self):
+        original_glob = Path.glob
+
+        def paths(directory, pattern):
+            if directory.name == "dictionaries":
+                yield directory / "first.json"
+                yield directory / "second.json"
+                raise AssertionError("enumerated beyond the record limit")
+            yield from original_glob(directory, pattern)
+
+        with patch.object(Path, "glob", paths):
+            with self.assertRaisesRegex(ValueError, "record count"):
+                load_catalog(self.root, LoadLimits(max_records=1))
+
     def test_rejects_long_nested_string(self):
         payload = json.loads(self.wallet.read_text(encoding="utf-8"))
         payload["guidance"] = "x" * (16 * 1024 + 1)
         self.wallet.write_text(json.dumps(payload), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "string length"):
+            load_catalog(self.root)
+
+    def test_string_limit_counts_utf8_bytes_at_boundary(self):
+        payload = json.loads(self.wallet.read_text(encoding="utf-8"))
+        payload["guidance"] = "я" * 8192  # exactly 16,384 UTF-8 bytes
+        self.wallet.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+        self.assertEqual(load_catalog(self.root).wallets[0].id, "synthetic-wallet")
+        payload["guidance"] += "я"
+        self.wallet.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "string length"):
+            load_catalog(self.root)
+        payload["guidance"] = "я" * 16_384  # 32 KiB in UTF-8
+        self.wallet.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "string length"):
+            load_catalog(self.root)
+
+    def test_deep_json_is_bounded_loader_error(self):
+        self.wallet.write_bytes(b'{"schema_version":1,"x":' + b"[" * 1100 + b"0" + b"]" * 1100 + b"}")
+        with self.assertRaisesRegex(ValueError, "nesting"):
             load_catalog(self.root)
 
     def test_rejects_oversized_wordlist(self):
