@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "wallet-bitget-wallet",
+  "source_type": "official-documentation",
+  "claim": "The product tutorial separately offers 12- and 24-word creation. It does not pin mnemonic codec or current Android binary. Keyless MPC uses email verification and a transaction password; no mnemonic phrase is presented for this flow. The MPC backup step uses Google Drive or iCloud. Android Google Drive scope only; backup shares are not mnemonic words.",
+  "url": "https://web3.bitget.com/en/academy/how-to-use-an-mpc-wallet-or-a-mnemonic-wallet",
+  "revision": "body-sha256:bc5c1394731b946ba18b4feb4ea6f94ac5910a848f5b8ca28ed64430294552bb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "bitget-wallet",
+    "bitget-wallet-cloud-backup",
+    "bitget-wallet-mpc"
+  ]
+}

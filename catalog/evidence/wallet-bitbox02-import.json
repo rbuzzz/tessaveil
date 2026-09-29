@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-bitbox02-import",
+  "source_type": "official-documentation",
+  "claim": "Advanced setup documents default 24 words and optional 12 words; recovery documentation identifies the English BIP39 list. Model/firmware and exact released artifact are not pinned. Restore accepts 12 or 24 words and optional separate passphrase; address types and accounts can differ even after successful seed import.",
+  "url": "https://support.bitbox.swiss/en_US/how-to-restore-from-recovery-words",
+  "revision": "body-sha256:a54492f733f61b85ee7a3367a3f390e3c2ee99b90f92358ac0dcf8e5566a57e7",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "bitbox02",
+    "bitbox02-mnemonic-import"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-coldcard",
+  "source_type": "official-documentation",
+  "claim": "Current quickstart requires a firmware security check before seed creation and distinguishes new seed words from import. Do not assume historical firmware entropy safety.",
+  "url": "https://coldcard.com/docs/quick/",
+  "revision": "body-sha256:0a7991f6d468e694098fc762346edf13f35fd10799674c2f8031790a7a86d861",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "coldcard"
+  ]
+}

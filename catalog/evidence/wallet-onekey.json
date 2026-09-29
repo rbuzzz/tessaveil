@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-onekey",
+  "source_type": "official-documentation",
+  "claim": "Pro device setup offers recovery-word count selection, with a 12-word worked example. Do not extrapolate the example to every length or to OneKey App software accounts.",
+  "url": "https://help.onekey.so/en/articles/11461081-get-started-with-onekey-pro",
+  "revision": "body-sha256:6bf15e920abf565452cba9b9a43b083f81a84a3bc1775b2d828133d7e5fac563",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "onekey"
+  ]
+}

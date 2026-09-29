@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-rainbow",
+  "source_type": "official-documentation",
+  "claim": "Extension onboarding creates an Ethereum wallet and requires secret-phrase backup. Exact length, codec and released extension remain unresolved.",
+  "url": "https://rainbow.me/support/extension/get-started-with-the-rainbow-extension",
+  "revision": "body-sha256:be686dc3c5b3c26e4ff1fb8b9ae1e81404cbc89c918ebba9329170374ce741d4",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "rainbow"
+  ]
+}

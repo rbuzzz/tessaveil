@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "zerion",
+  "display_name": {
+    "en": "Zerion — mnemonic-generated",
+    "ru": "Zerion — mnemonic-generated"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-zerion"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-c37b8caa2a8e",
+    "max": "version-unresolved-doc-2026-09-29-c37b8caa2a8e"
+  },
+  "product_id": "zerion",
+  "product_name": "Zerion",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "mnemonic-generated",
+  "network_ids": [
+    "ethereum",
+    "solana"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Extension setup generates a 12-word recovery phrase and lets users choose Ethereum or Solana ecosystems. Dictionary/derivation and exact binary remain unverified.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-kukai",
+  "source_type": "official-documentation",
+  "claim": "New-wallet guide generates seed words, verifies selected positions and creates an encrypted wallet file. This is separate from DirectAuth; codec is not inferred. Encrypted wallet-file backup requires its encryption password; plaintext seed words are an alternative backup, not a replacement for file metadata in all modes.",
+  "url": "https://docs.kukai.app/learn-kukai/new-wallet",
+  "revision": "body-sha256:88483abb01630e7421a7d0fb0a67a2cb94f3d6e5a0e4431291a40ace1f674afa",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "kukai",
+    "kukai-keystore"
+  ]
+}

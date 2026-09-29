@@ -957,9 +957,12 @@
         "en": "phantom",
         "ru": "phantom"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "phantom",
+        "phantom-social-login"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -968,9 +971,12 @@
         "en": "solflare",
         "ru": "solflare"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "solflare",
+        "solflare-social-login"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -979,9 +985,13 @@
         "en": "backpack",
         "ru": "backpack"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "backpack",
+        "backpack-import",
+        "backpack-private-key"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -990,9 +1000,11 @@
         "en": "glow",
         "ru": "glow"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "glow"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1014,9 +1026,12 @@
         "en": "trust wallet",
         "ru": "trust wallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "trust-wallet",
+        "trust-wallet-swift"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1025,9 +1040,14 @@
         "en": "metamask",
         "ru": "metamask"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "metamask",
+        "metamask-passkey-unlock",
+        "metamask-private-key",
+        "metamask-social-login"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1036,9 +1056,15 @@
         "en": "coinbase wallet",
         "ru": "coinbase wallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "coinbase-wallet",
+        "coinbase-wallet-cloud-backup",
+        "coinbase-wallet-passkey",
+        "coinbase-wallet-smart-recovery",
+        "coinbase-wallet-social-login"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1047,9 +1073,12 @@
         "en": "exodus",
         "ru": "exodus"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "exodus",
+        "exodus-passkey"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1058,9 +1087,11 @@
         "en": "atomic wallet",
         "ru": "atomic wallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "atomic-wallet"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1069,9 +1100,11 @@
         "en": "onekey",
         "ru": "onekey"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "onekey"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1080,9 +1113,11 @@
         "en": "ledger",
         "ru": "ledger"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "ledger"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1091,9 +1126,18 @@
         "en": "trezor",
         "ru": "trezor"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "trezor-model-t",
+        "trezor-model-t-multi-share",
+        "trezor-safe-3",
+        "trezor-safe-3-multi-share",
+        "trezor-safe-5",
+        "trezor-safe-5-multi-share",
+        "trezor-safe-7",
+        "trezor-safe-7-multi-share"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1154,9 +1198,15 @@
         "en": "okx wallet",
         "ru": "okx wallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "okx-wallet",
+        "okx-wallet-cloud-backup",
+        "okx-wallet-mnemonic-import",
+        "okx-wallet-mpc",
+        "okx-wallet-private-key"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1165,9 +1215,13 @@
         "en": "bitget wallet",
         "ru": "bitget wallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bitget-wallet",
+        "bitget-wallet-cloud-backup",
+        "bitget-wallet-mpc"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1176,9 +1230,11 @@
         "en": "safepal",
         "ru": "safepal"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "safepal"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1187,9 +1243,13 @@
         "en": "tangem seed",
         "ru": "tangem seed"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "tangem-seed",
+        "tangem-seed-import",
+        "tangem-seedless"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1198,9 +1258,14 @@
         "en": "keystone",
         "ru": "keystone"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "keystone",
+        "keystone-mnemonic-import",
+        "keystone-shamir",
+        "keystone-shamir-import"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1209,9 +1274,13 @@
         "en": "bitbox02",
         "ru": "bitbox02"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bitbox02",
+        "bitbox02-microsd",
+        "bitbox02-mnemonic-import"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1220,9 +1289,12 @@
         "en": "ellipal",
         "ru": "ellipal"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "ellipal",
+        "ellipal-import"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1231,9 +1303,11 @@
         "en": "coinomi",
         "ru": "coinomi"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "coinomi"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1242,9 +1316,12 @@
         "en": "guarda",
         "ru": "guarda"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "guarda",
+        "guarda-mnemonic-import"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1253,9 +1330,13 @@
         "en": "tokenpocket",
         "ru": "tokenpocket"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "tokenpocket",
+        "tokenpocket-import",
+        "tokenpocket-private-key"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1264,9 +1345,11 @@
         "en": "imtoken",
         "ru": "imtoken"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "imtoken"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1275,9 +1358,12 @@
         "en": "rabby",
         "ru": "rabby"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "rabby",
+        "rabby-import"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1286,9 +1372,12 @@
         "en": "rainbow",
         "ru": "rainbow"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "rainbow",
+        "rainbow-cloud-backup"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1297,9 +1386,12 @@
         "en": "zerion",
         "ru": "zerion"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "zerion",
+        "zerion-cloud-backup"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1321,9 +1413,12 @@
         "en": "sparrow",
         "ru": "sparrow"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "sparrow",
+        "sparrow-electrum-import"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1332,9 +1427,13 @@
         "en": "bluewallet",
         "ru": "bluewallet"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "bluewallet",
+        "bluewallet-import",
+        "bluewallet-private-key"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1343,9 +1442,11 @@
         "en": "coldcard",
         "ru": "coldcard"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "coldcard"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1354,9 +1455,11 @@
         "en": "blockstream jade",
         "ru": "blockstream jade"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "blockstream-jade"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1365,9 +1468,12 @@
         "en": "passport",
         "ru": "passport"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "passport",
+        "passport-microsd"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1376,9 +1482,14 @@
         "en": "seedsigner",
         "ru": "seedsigner"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "seedsigner",
+        "seedsigner-bip85",
+        "seedsigner-photo",
+        "seedsigner-seedqr"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1387,9 +1498,12 @@
         "en": "keplr",
         "ru": "keplr"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "keplr",
+        "keplr-social-login"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1398,10 +1512,12 @@
         "en": "leap",
         "ru": "leap"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
-      "historical": false
+      "record_ids": [
+        "leap"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": true
     },
     {
       "id": "wallet-cosmostation",
@@ -1409,9 +1525,11 @@
         "en": "cosmostation",
         "ru": "cosmostation"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "cosmostation"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1745,9 +1863,13 @@
         "en": "temple",
         "ru": "temple"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "temple",
+        "temple-cloud-backup",
+        "temple-import"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1756,9 +1878,13 @@
         "en": "kukai",
         "ru": "kukai"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "kukai",
+        "kukai-keystore",
+        "kukai-social-login"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1767,9 +1893,11 @@
         "en": "bitcoin",
         "ru": "bitcoin"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-bitcoin"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1778,9 +1906,11 @@
         "en": "ethereum",
         "ru": "ethereum"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-ethereum"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1789,9 +1919,11 @@
         "en": "base",
         "ru": "base"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-base"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1800,9 +1932,11 @@
         "en": "bnb chain",
         "ru": "bnb chain"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-bnb-chain"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1811,9 +1945,11 @@
         "en": "polygon",
         "ru": "polygon"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-polygon"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1822,9 +1958,11 @@
         "en": "avalanche",
         "ru": "avalanche"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-avalanche"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1833,9 +1971,11 @@
         "en": "arbitrum",
         "ru": "arbitrum"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-arbitrum"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1844,9 +1984,11 @@
         "en": "solana",
         "ru": "solana"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-solana"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1855,9 +1997,11 @@
         "en": "tron",
         "ru": "tron"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-tron"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1866,9 +2010,11 @@
         "en": "cosmos",
         "ru": "cosmos"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-cosmos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1877,9 +2023,11 @@
         "en": "tezos",
         "ru": "tezos"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-tezos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1889,6 +2037,7 @@
         "ru": "polkadot"
       },
       "record_ids": [
+        "network-guide-polkadot",
         "polkadot-js",
         "subwallet",
         "talisman"
@@ -1904,6 +2053,7 @@
         "ru": "kusama"
       },
       "record_ids": [
+        "network-guide-kusama",
         "polkadot-js",
         "subwallet",
         "talisman"
@@ -1918,9 +2068,11 @@
         "en": "cardano",
         "ru": "cardano"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-cardano"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1929,9 +2081,11 @@
         "en": "algorand",
         "ru": "algorand"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-algorand"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1940,9 +2094,11 @@
         "en": "monero",
         "ru": "monero"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-monero"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     },
     {
@@ -1952,6 +2108,7 @@
         "ru": "zcash"
       },
       "record_ids": [
+        "network-guide-zcash",
         "zallet"
       ],
       "research_state": "terminal",
@@ -1965,7 +2122,8 @@
         "ru": "chia"
       },
       "record_ids": [
-        "chia-wallet"
+        "chia-wallet",
+        "network-guide-chia"
       ],
       "research_state": "terminal",
       "status": "documented",
@@ -1978,7 +2136,8 @@
         "ru": "decred"
       },
       "record_ids": [
-        "decrediton"
+        "decrediton",
+        "network-guide-decred"
       ],
       "research_state": "terminal",
       "status": "documented",
@@ -1991,6 +2150,7 @@
         "ru": "zano"
       },
       "record_ids": [
+        "network-guide-zano",
         "zano-wallet"
       ],
       "research_state": "terminal",
@@ -2004,6 +2164,7 @@
         "ru": "sia"
       },
       "record_ids": [
+        "network-guide-sia",
         "sia-walletd"
       ],
       "research_state": "terminal",
@@ -2016,9 +2177,11 @@
         "en": "ton",
         "ru": "ton"
       },
-      "record_ids": [],
-      "research_state": "pending",
-      "status": null,
+      "record_ids": [
+        "network-guide-ton"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
       "historical": false
     }
   ]

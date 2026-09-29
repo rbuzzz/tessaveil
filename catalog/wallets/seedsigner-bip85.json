@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "seedsigner-bip85",
+  "display_name": {
+    "en": "SeedSigner — bip85-child-generated",
+    "ru": "SeedSigner — bip85-child-generated"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-seedsigner"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-106362fa6af2",
+    "max": "version-unresolved-doc-2026-09-29-106362fa6af2"
+  },
+  "product_id": "seedsigner",
+  "product_name": "SeedSigner",
+  "aliases": [],
+  "platform": "hardware",
+  "mode_id": "bip85-child-generated",
+  "network_ids": [
+    "bitcoin"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Feature list includes indexed BIP85 child phrases. Parent seed, index and parameters matter; it is not interchangeable with direct entropy generation.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

@@ -27,12 +27,21 @@ class CliTests(unittest.TestCase):
         self.assertIn("required-blocked", result.stdout)
 
     def test_incremental_flag_relaxes_pending_only(self):
-        result = self.run_cli(ROOT, "--allow-incomplete-required")
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn("required-pending", result.stdout)
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             shutil.copytree(FIXTURE, root, dirs_exist_ok=True)
+            manifest = root / "catalog/required/windows-v1.json"
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            payload["requirements"].append({
+                "id": "wallet-pending", "display_name": {"en": "Pending", "ru": "Pending"},
+                "record_ids": [], "research_state": "pending", "status": None, "historical": False,
+            })
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            result = self.run_cli(root, "--require-terminal")
+            self.assertNotEqual(result.returncode, 0)
+            result = self.run_cli(root, "--allow-incomplete-required")
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertIn("required-pending", result.stdout)
             wallet = root / "catalog/wallets/synthetic-wallet.json"
             wallet.write_bytes(b"\xff")
             result = self.run_cli(root, "--allow-incomplete-required")

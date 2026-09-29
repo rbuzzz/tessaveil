@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-imtoken",
+  "source_type": "official-documentation",
+  "claim": "Official create-wallet article updated 2026-09-20 documents mnemonic backup and explicit Ethereum, Tron and Arbitrum account choices. Direct fetch was challenged; reviewed web extraction only.",
+  "url": "https://support.token.im/hc/en-us/articles/28921881978265-How-to-create-a-wallet",
+  "revision": "web-extract-sha256:6b49c3bf1b6646a71684093a4bbbc122e987b4bb27a1ffd6a4be4f86a1890e9f",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "imtoken"
+  ]
+}

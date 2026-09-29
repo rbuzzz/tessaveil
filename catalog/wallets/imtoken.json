@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "imtoken",
+  "display_name": {
+    "en": "imToken — mnemonic-generated",
+    "ru": "imToken — mnemonic-generated"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-imtoken"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-6b49c3bf1b66",
+    "max": "version-unresolved-doc-2026-09-29-6b49c3bf1b66"
+  },
+  "product_id": "imtoken",
+  "product_name": "imToken",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "mnemonic-generated",
+  "network_ids": [
+    "ethereum",
+    "tron",
+    "arbitrum"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Official create-wallet article updated 2026-09-20 documents mnemonic backup and explicit Ethereum, Tron and Arbitrum account choices. Direct fetch was challenged; reviewed web extraction only.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

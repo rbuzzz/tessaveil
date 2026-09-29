@@ -26,6 +26,28 @@ SUPPORTED_SCHEMA_KEYS = frozenset({
 SUPPORTED_TYPES = frozenset({"object", "array", "string", "integer", "number", "boolean", "null"})
 
 
+def _identity_text(value: str) -> str:
+    return " ".join(unicodedata.normalize("NFKC", value).casefold().replace("-", " ").split())
+
+
+def _numeric_version(value: str | None) -> tuple[int, ...] | None:
+    if value is None or len(value) > 128 or re.fullmatch(r"[0-9]+(?:\.[0-9]+)*", value) is None:
+        return None
+    parts = [int(part) for part in value.split(".")]
+    while parts and parts[-1] == 0:
+        parts.pop()
+    return tuple(parts)
+
+
+def _versions_overlap(left: Mapping, right: Mapping) -> bool:
+    # Different source/document pins cannot prove disjoint application releases.
+    for earlier, later in ((left, right), (right, left)):
+        end, start = _numeric_version(earlier["max"]), _numeric_version(later["min"])
+        if end is not None and start is not None and end < start:
+            return False
+    return True  # Incomparable or open bounds cannot establish disjointness.
+
+
 def _schema_supported(schema: Any) -> bool:
     if not isinstance(schema, Mapping) or any(key not in SUPPORTED_SCHEMA_KEYS for key in schema):
         return False
@@ -250,6 +272,35 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
         scheme_id = record.data.get("scheme_id")
         if scheme_id is not None and scheme_id not in schemes:
             add("missing-reference", record, "scheme reference is missing")
+        data = record.data
+        if data["generates_mnemonic"] and data["import_only"]:
+            add("wallet-import-generation", record, "import-only mode cannot claim mnemonic generation")
+        interval = data["version_interval"]
+        start, end = _numeric_version(interval["min"]), _numeric_version(interval["max"])
+        if start is not None and end is not None and start > end:
+            add("wallet-version-interval", record, "version interval is reversed")
+        aliases = [_identity_text(alias) for alias in data["aliases"]]
+        if len(aliases) != len(set(aliases)) or "" in aliases:
+            add("wallet-alias-ambiguity", record, "aliases duplicate after identity normalization")
+
+    valid_wallets = [r for r in catalog.wallets if r.id not in invalid]
+    for index, left in enumerate(valid_wallets):
+        a = left.data
+        for right in valid_wallets[index + 1:]:
+            b = right.data
+            if a["mode_id"] != b["mode_id"]:
+                continue
+            if a["platform"] != b["platform"] and "cross-platform" not in (a["platform"], b["platform"]):
+                continue
+            if not _versions_overlap(a["version_interval"], b["version_interval"]):
+                continue
+            if _identity_text(a["product_id"]) == _identity_text(b["product_id"]):
+                add("wallet-identity-overlap", right, "product, platform, version interval and mode overlap")
+            else:
+                a_names = {_identity_text(v) for v in (a["product_id"], a["product_name"], *a["aliases"])}
+                b_names = {_identity_text(v) for v in (b["product_id"], b["product_name"], *b["aliases"])}
+                if a_names & b_names:
+                    add("wallet-alias-ambiguity", right, "same-mode overlapping product aliases are ambiguous")
 
     for required_set in catalog.required_sets:
         if required_set.id in invalid:

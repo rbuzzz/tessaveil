@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "wallet-backpack",
+  "source_type": "official-documentation",
+  "claim": "Wallet get-started flow creates a new account with secret recovery phrase backup; it explicitly applies to mobile and extension, with no release interval specified. Existing-wallet import has a secret-recovery-phrase route; network selection and derivation remain unresolved. Existing-wallet import separately offers a private key, hardware wallet and view-only public key; no phrase mapping for key-only mode.",
+  "url": "https://support.backpack.exchange/wallet/get-started",
+  "revision": "body-sha256:d48b55cce4a72115acfc9c559eebbffe84fef627c888c6acb079e93728f9a081",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "backpack",
+    "backpack-import",
+    "backpack-private-key"
+  ]
+}

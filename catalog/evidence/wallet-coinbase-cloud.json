@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-coinbase-cloud",
+  "source_type": "official-documentation",
+  "claim": "Legacy recovery instructions include Google Drive or iCloud backup as well as a 12-word phrase. Encryption and version/platform compatibility are unresolved; iCloud is the iOS scope only.",
+  "url": "https://help.coinbase.com/en/contact-us/support-faq/coinbase-wallet/how-to-recover-access-to-coinbase-wallet",
+  "revision": "body-sha256:4255ad095c105d1b6bb79d9e14f7e7bcb33c676367ee2b5527efe2d9fc1a849b",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "coinbase-wallet-cloud-backup"
+  ]
+}

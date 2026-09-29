@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-zano-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official zano documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.zano.org/",
+  "revision": "body-sha256:2a6b8410f6012d262dd287649401b8db94e6f045a23d60f10e4d1fbc6435fe90",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-zano"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-trust-classic",
+  "source_type": "official-documentation",
+  "claim": "Mobile setup creates a 12-word phrase; page explicitly identifies BIP39. General compatibility prose is not independent recovery evidence.",
+  "url": "https://trustwallet.com/blog/academy/what-is-a-seed-phrase-and-why-is-it-important",
+  "revision": "body-sha256:0d11be8c0fba06e7a47c991079f933782d80c6ee9a70bbb7898284a3bcd7ff06",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "trust-wallet"
+  ]
+}

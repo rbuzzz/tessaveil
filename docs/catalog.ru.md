@@ -10,6 +10,20 @@
 
 | Продукт / профиль | Платформа / режим | Сети | Схема | Статус |
 | --- | --- | --- | --- | --- |
+| Atomic Wallet / [atomic-wallet](#wallet-atomic-wallet) | windows / mnemonic-generated | multi-chain | — | documented |
+| Backpack / [backpack](#wallet-backpack) | web / mnemonic-generated | multi-chain | — | documented |
+| Backpack / [backpack-import](#wallet-backpack-import) | web / mnemonic-imported | multi-chain | — | documented |
+| Backpack / [backpack-private-key](#wallet-backpack-private-key) | web / private-key-imported | multi-chain | — | documented |
+| BitBox02 / [bitbox02](#wallet-bitbox02) | hardware / mnemonic-generated | bitcoin | [bip39](#scheme-bip39) | documented |
+| BitBox02 / [bitbox02-microsd](#wallet-bitbox02-microsd) | hardware / microsd-backup | bitcoin | — | documented |
+| BitBox02 / [bitbox02-mnemonic-import](#wallet-bitbox02-mnemonic-import) | hardware / mnemonic-imported | bitcoin | [bip39](#scheme-bip39) | documented |
+| Bitget Wallet / [bitget-wallet](#wallet-bitget-wallet) | android / mnemonic-generated | multi-chain | — | documented |
+| Bitget Wallet / [bitget-wallet-cloud-backup](#wallet-bitget-wallet-cloud-backup) | android / mpc-cloud-backup | multi-chain | — | documented |
+| Bitget Wallet / [bitget-wallet-mpc](#wallet-bitget-wallet-mpc) | android / mpc-keyless | multi-chain | — | documented |
+| Blockstream Jade / [blockstream-jade](#wallet-blockstream-jade) | hardware / mnemonic-generated | bitcoin, liquid | — | documented |
+| BlueWallet / [bluewallet](#wallet-bluewallet) | ios / bitcoin-mnemonic-generated | bitcoin | — | documented |
+| BlueWallet / [bluewallet-import](#wallet-bluewallet-import) | ios / mnemonic-imported | bitcoin | — | documented |
+| BlueWallet / [bluewallet-private-key](#wallet-bluewallet-private-key) | ios / private-key-imported | bitcoin | — | documented |
 | Cake Wallet / [cake-wallet-decred](#wallet-cake-wallet-decred) | android / native-15-import | decred | [cake-decred-15](#scheme-cake-decred-15) | documented |
 | Cake Wallet / [cake-wallet-decred-bip39](#wallet-cake-wallet-decred-bip39) | android / bip39-shaped-12-24 | decred | [cake-decred-bip39-12-24](#scheme-cake-decred-bip39-12-24) | blocked |
 | Cake Wallet Monero / [cake-wallet-monero](#wallet-cake-wallet-monero) | android / polyseed-16-generated | monero | [polyseed-16](#scheme-polyseed-16) | documented |
@@ -18,6 +32,14 @@
 | Cake Wallet Zano — native seed import / [cake-wallet-zano](#wallet-cake-wallet-zano) | android / native26-import | zano | [zano-modern](#scheme-zano-modern) | documented |
 | Cake Wallet Zano — BIP39 creation / [cake-wallet-zano-bip39](#wallet-cake-wallet-zano-bip39) | android / bip39-derived-create | zano | [cake-zano-bip39](#scheme-cake-zano-bip39) | blocked |
 | Chia reference wallet — default English24 / [chia-wallet](#wallet-chia-wallet) | windows / english24-generate | chia | [chia-bip39](#scheme-chia-bip39) | documented |
+| Coinbase Wallet / [coinbase-wallet](#wallet-coinbase-wallet) | web / mnemonic-imported | bitcoin, ethereum, solana | — | documented |
+| Coinbase Wallet / [coinbase-wallet-cloud-backup](#wallet-coinbase-wallet-cloud-backup) | ios / legacy-cloud-backup | multi-chain | — | documented |
+| Coinbase Wallet / [coinbase-wallet-passkey](#wallet-coinbase-wallet-passkey) | web / smart-wallet-passkey | base, ethereum | — | documented |
+| Coinbase Wallet / [coinbase-wallet-smart-recovery](#wallet-coinbase-wallet-smart-recovery) | web / smart-recovery-signer | base, ethereum | — | documented |
+| Coinbase Wallet / [coinbase-wallet-social-login](#wallet-coinbase-wallet-social-login) | web / cdp-social-login | bitcoin, ethereum, solana | — | documented |
+| Coinomi / [coinomi](#wallet-coinomi) | android / mnemonic-imported | multi-chain | [bip39](#scheme-bip39) | documented |
+| COLDCARD / [coldcard](#wallet-coldcard) | hardware / mnemonic-generated | bitcoin | [bip39](#scheme-bip39) | documented |
+| Cosmostation / [cosmostation](#wallet-cosmostation) | web / mnemonic-generated | cosmos | [bip39](#scheme-bip39) | documented |
 | Daedalus / [daedalus](#wallet-daedalus) | windows / icarus-24-created | cardano | [cardano-icarus-24](#scheme-cardano-icarus-24) | documented |
 | Daedalus / [daedalus-byron](#wallet-daedalus-byron) | windows / byron-12-import | cardano | [cardano-byron](#scheme-cardano-byron) | documented |
 | Daedalus / [daedalus-paper-27](#wallet-daedalus-paper-27) | windows / byron-paper-27-import | cardano | [cardano-daedalus-27](#scheme-cardano-daedalus-27) | documented |
@@ -27,12 +49,35 @@
 | Electrum / [electrum](#wallet-electrum) | windows / native-english-segwit | bitcoin | [electrum-v2](#scheme-electrum-v2) | documented |
 | Electrum / [electrum-bip39-import](#wallet-electrum-bip39-import) | windows / bip39-import | bitcoin | [bip39](#scheme-bip39) | documented |
 | Electrum / [electrum-v1-import](#wallet-electrum-v1-import) | windows / legacy-v1-import | bitcoin | [electrum-v1](#scheme-electrum-v1) | blocked |
+| ELLIPAL X Card / [ellipal](#wallet-ellipal) | hardware / x-card-mnemonic-generated | multi-chain | — | documented |
+| ELLIPAL X Card / [ellipal-import](#wallet-ellipal-import) | hardware / x-card-mnemonic-imported | multi-chain | — | documented |
 | Eternl / [eternl](#wallet-eternl) | web / software-recovery-24-unresolved | cardano | — | blocked |
+| Exodus / [exodus](#wallet-exodus) | windows / global-mnemonic-generated | multi-chain | [bip39](#scheme-bip39) | documented |
 | Exodus / [exodus-monero-export](#wallet-exodus-monero-export) | windows / monero-25-export | monero | [monero-legacy](#scheme-monero-legacy) | documented |
+| Exodus / [exodus-passkey](#wallet-exodus-passkey) | ios / passkey-backup | multi-chain | — | documented |
 | Feather / [feather](#wallet-feather) | windows / polyseed-16-generated | monero | [polyseed-16](#scheme-polyseed-16) | documented |
 | Feather / [feather-legacy-import](#wallet-feather-legacy-import) | windows / legacy-25-import | monero | [monero-legacy](#scheme-monero-legacy) | documented |
+| Glow / [glow](#wallet-glow) | web / mnemonic-backup-unresolved | solana | — | documented |
 | Gram Wallet / [gram-wallet](#wallet-gram-wallet) | android / mnemonic-backup-unresolved | ton | — | documented |
+| Guarda / [guarda](#wallet-guarda) | web / encrypted-backup-file | multi-chain | — | documented |
+| Guarda / [guarda-mnemonic-import](#wallet-guarda-mnemonic-import) | web / mnemonic-imported | multi-chain | — | documented |
+| imToken / [imtoken](#wallet-imtoken) | android / mnemonic-generated | arbitrum, ethereum, tron | — | documented |
+| Keplr / [keplr](#wallet-keplr) | android / mnemonic-generated | cosmos | — | documented |
+| Keplr / [keplr-social-login](#wallet-keplr-social-login) | android / google-web3auth-private-key | cosmos | — | documented |
+| Keystone Essential/Pro / [keystone](#wallet-keystone) | hardware / single-backup-generated | multi-chain | — | documented |
+| Keystone Essential/Pro / [keystone-mnemonic-import](#wallet-keystone-mnemonic-import) | hardware / single-backup-imported | multi-chain | — | documented |
+| Keystone Essential/Pro / [keystone-shamir](#wallet-keystone-shamir) | hardware / slip39-generated | multi-chain | [slip39-share](#scheme-slip39-share) | documented |
+| Keystone Essential/Pro / [keystone-shamir-import](#wallet-keystone-shamir-import) | hardware / slip39-imported | multi-chain | [slip39-share](#scheme-slip39-share) | documented |
+| Kukai / [kukai](#wallet-kukai) | web / mnemonic-generated | tezos | — | documented |
+| Kukai / [kukai-keystore](#wallet-kukai-keystore) | web / encrypted-keystore | tezos | — | documented |
+| Kukai / [kukai-social-login](#wallet-kukai-social-login) | web / directauth-oauth | tezos | — | documented |
 | Lace / [lace](#wallet-lace) | web / software-24-created-unresolved | cardano | — | documented |
+| Leap / [leap](#wallet-leap) | web / mnemonic-imported | cosmos | — | documented |
+| Ledger / [ledger](#wallet-ledger) | hardware / device-bip39-generated | multi-chain | [bip39](#scheme-bip39) | documented |
+| MetaMask / [metamask](#wallet-metamask) | web / mnemonic-generated | ethereum | — | documented |
+| MetaMask / [metamask-passkey-unlock](#wallet-metamask-passkey-unlock) | web / passkey-local-unlock | ethereum | — | documented |
+| MetaMask / [metamask-private-key](#wallet-metamask-private-key) | web / private-key-imported | ethereum | — | documented |
+| MetaMask / [metamask-social-login](#wallet-metamask-social-login) | web / social-login-srp | ethereum | — | documented |
 | Monero CLI / [monero-cli-polyseed](#wallet-monero-cli-polyseed) | windows / polyseed-16-generated | monero | [polyseed-16](#scheme-polyseed-16) | documented |
 | Monero CLI / [monero-gui-cli](#wallet-monero-gui-cli) | windows / legacy-25-generated | monero | [monero-legacy](#scheme-monero-legacy) | documented |
 | Monero GUI / [monero-gui](#wallet-monero-gui) | windows / generated-seed-unresolved | monero | — | documented |
@@ -41,17 +86,71 @@
 | My Wallet / MyTonWallet / [mytonwallet](#wallet-mytonwallet) | web / bip39-multichain-generated | ton | [ton-multichain-bip39](#scheme-ton-multichain-bip39) | documented |
 | My Wallet / MyTonWallet — TON only / [mytonwallet-native](#wallet-mytonwallet-native) | web / ton-native-generated | ton | [ton-native](#scheme-ton-native) | verified |
 | Nami / [nami](#wallet-nami) | web / icarus-24-created | cardano | [cardano-icarus-24](#scheme-cardano-icarus-24) | documented |
+| algorand — network search guidance / [network-guide-algorand](#wallet-network-guide-algorand) | cross-platform / network-search-guidance | algorand | [algorand-25](#scheme-algorand-25) | documented |
+| arbitrum — network search guidance / [network-guide-arbitrum](#wallet-network-guide-arbitrum) | cross-platform / network-search-guidance | arbitrum | [bip39](#scheme-bip39) | documented |
+| avalanche — network search guidance / [network-guide-avalanche](#wallet-network-guide-avalanche) | cross-platform / network-search-guidance | avalanche | [bip39](#scheme-bip39) | documented |
+| base — network search guidance / [network-guide-base](#wallet-network-guide-base) | cross-platform / network-search-guidance | base | [bip39](#scheme-bip39) | documented |
+| bitcoin — network search guidance / [network-guide-bitcoin](#wallet-network-guide-bitcoin) | cross-platform / network-search-guidance | bitcoin | — | documented |
+| bnb-chain — network search guidance / [network-guide-bnb-chain](#wallet-network-guide-bnb-chain) | cross-platform / network-search-guidance | bnb-chain | [bip39](#scheme-bip39) | documented |
+| cardano — network search guidance / [network-guide-cardano](#wallet-network-guide-cardano) | cross-platform / network-search-guidance | cardano | — | documented |
+| chia — network search guidance / [network-guide-chia](#wallet-network-guide-chia) | cross-platform / network-search-guidance | chia | [chia-bip39](#scheme-chia-bip39) | documented |
+| cosmos — network search guidance / [network-guide-cosmos](#wallet-network-guide-cosmos) | cross-platform / network-search-guidance | cosmos | [bip39](#scheme-bip39) | documented |
+| decred — network search guidance / [network-guide-decred](#wallet-network-guide-decred) | cross-platform / network-search-guidance | decred | — | documented |
+| ethereum — network search guidance / [network-guide-ethereum](#wallet-network-guide-ethereum) | cross-platform / network-search-guidance | ethereum | [bip39](#scheme-bip39) | documented |
+| kusama — network search guidance / [network-guide-kusama](#wallet-network-guide-kusama) | cross-platform / network-search-guidance | kusama | [substrate-bip39](#scheme-substrate-bip39) | documented |
+| monero — network search guidance / [network-guide-monero](#wallet-network-guide-monero) | cross-platform / network-search-guidance | monero | — | documented |
+| polkadot — network search guidance / [network-guide-polkadot](#wallet-network-guide-polkadot) | cross-platform / network-search-guidance | polkadot | [substrate-bip39](#scheme-substrate-bip39) | documented |
+| polygon — network search guidance / [network-guide-polygon](#wallet-network-guide-polygon) | cross-platform / network-search-guidance | polygon | [bip39](#scheme-bip39) | documented |
+| sia — network search guidance / [network-guide-sia](#wallet-network-guide-sia) | cross-platform / network-search-guidance | sia | — | documented |
+| solana — network search guidance / [network-guide-solana](#wallet-network-guide-solana) | cross-platform / network-search-guidance | solana | [bip39](#scheme-bip39) | documented |
+| tezos — network search guidance / [network-guide-tezos](#wallet-network-guide-tezos) | cross-platform / network-search-guidance | tezos | [bip39](#scheme-bip39) | documented |
+| ton — network search guidance / [network-guide-ton](#wallet-network-guide-ton) | cross-platform / network-search-guidance | ton | — | documented |
+| tron — network search guidance / [network-guide-tron](#wallet-network-guide-tron) | cross-platform / network-search-guidance | tron | [bip39](#scheme-bip39) | documented |
+| zano — network search guidance / [network-guide-zano](#wallet-network-guide-zano) | cross-platform / network-search-guidance | zano | — | documented |
+| zcash — network search guidance / [network-guide-zcash](#wallet-network-guide-zcash) | cross-platform / network-search-guidance | zcash | — | documented |
+| OKX Wallet / [okx-wallet](#wallet-okx-wallet) | android / mnemonic-generated | multi-chain | — | documented |
+| OKX Wallet / [okx-wallet-cloud-backup](#wallet-okx-wallet-cloud-backup) | android / mnemonic-cloud-backup | multi-chain | — | documented |
+| OKX Wallet / [okx-wallet-mnemonic-import](#wallet-okx-wallet-mnemonic-import) | android / mnemonic-imported | multi-chain | — | documented |
+| OKX Wallet / [okx-wallet-mpc](#wallet-okx-wallet-mpc) | android / mpc-existing-wallet | multi-chain | — | documented |
+| OKX Wallet / [okx-wallet-private-key](#wallet-okx-wallet-private-key) | android / private-key-imported | multi-chain | — | documented |
+| OneKey Pro / [onekey](#wallet-onekey) | hardware / pro-mnemonic-generated | multi-chain | — | documented |
 | OpenMask / [openmask](#wallet-openmask) | web / ton-native-generated | ton | [ton-native](#scheme-ton-native) | documented |
+| Passport / [passport](#wallet-passport) | hardware / mnemonic-generated | bitcoin | — | documented |
+| Passport / [passport-microsd](#wallet-passport-microsd) | hardware / encrypted-microsd-backup | bitcoin | — | documented |
 | Pera Wallet / [pera-wallet](#wallet-pera-wallet) | ios / legacy-algo25-existing-backup-export | algorand | [algorand-25](#scheme-algorand-25) | documented |
 | Pera Wallet / [pera-wallet-universal](#wallet-pera-wallet-universal) | ios / universal-hd24-created | algorand | — | documented |
+| Phantom / [phantom](#wallet-phantom) | web / mnemonic-generated | solana | — | documented |
+| Phantom / [phantom-social-login](#wallet-phantom-social-login) | web / social-login | solana | — | documented |
 | Polkadot.js extension / [polkadot-js](#wallet-polkadot-js) | web / sr25519-default-12 | kusama, polkadot | [substrate-bip39](#scheme-substrate-bip39) | documented |
+| Rabby / [rabby](#wallet-rabby) | web / mnemonic-generated | ethereum | — | documented |
+| Rabby / [rabby-import](#wallet-rabby-import) | web / mnemonic-imported | ethereum | — | documented |
+| Rainbow / [rainbow](#wallet-rainbow) | web / mnemonic-generated | ethereum | — | documented |
+| Rainbow / [rainbow-cloud-backup](#wallet-rainbow-cloud-backup) | ios / icloud-backup | ethereum | — | documented |
+| SafePal / [safepal](#wallet-safepal) | android / software-mnemonic-generated | ethereum | — | documented |
+| SeedSigner / [seedsigner](#wallet-seedsigner) | hardware / dice-mnemonic-generated | bitcoin | [bip39](#scheme-bip39) | documented |
+| SeedSigner / [seedsigner-bip85](#wallet-seedsigner-bip85) | hardware / bip85-child-generated | bitcoin | [bip39](#scheme-bip39) | documented |
+| SeedSigner / [seedsigner-photo](#wallet-seedsigner-photo) | hardware / photo-mnemonic-generated | bitcoin | [bip39](#scheme-bip39) | documented |
+| SeedSigner / [seedsigner-seedqr](#wallet-seedsigner-seedqr) | hardware / seedqr-imported | bitcoin | [bip39](#scheme-bip39) | documented |
 | Sia-UI v1.3.3 — legacy import / [sia-ui](#wallet-sia-ui) | windows / legacy28-import | sia | [sia-legacy-28](#scheme-sia-legacy-28) | documented |
 | Sia-UI v1.3.3 — legacy29 import / [sia-ui-29](#wallet-sia-ui-29) | windows / legacy29-import | sia | [sia-legacy-29](#scheme-sia-legacy-29) | documented |
 | Sia walletd UI0.36.2 — seed mode / [sia-walletd](#wallet-sia-walletd) | web / english12-create | sia | [sia-bip39](#scheme-sia-bip39) | documented |
 | siad — legacy28 seed export / [siad](#wallet-siad) | linux / legacy28-export | sia | [sia-legacy-28](#scheme-sia-legacy-28) | documented |
 | siad — legacy29 seed export / [siad-29](#wallet-siad-29) | linux / legacy29-export | sia | [sia-legacy-29](#scheme-sia-legacy-29) | documented |
+| Solflare / [solflare](#wallet-solflare) | web / mnemonic-generated | solana | — | documented |
+| Solflare / [solflare-social-login](#wallet-solflare-social-login) | ios / quick-login-cloud-backup | solana | — | documented |
+| Sparrow / [sparrow](#wallet-sparrow) | windows / bip39-generated | bitcoin | [bip39](#scheme-bip39) | documented |
+| Sparrow / [sparrow-electrum-import](#wallet-sparrow-electrum-import) | windows / electrum-imported | bitcoin | — | documented |
 | SubWallet / [subwallet](#wallet-subwallet) | web / general-sr25519 | kusama, polkadot | [substrate-bip39](#scheme-substrate-bip39) | documented |
 | Talisman / [talisman](#wallet-talisman) | web / substrate-sr25519-12-24 | kusama, polkadot | [substrate-bip39](#scheme-substrate-bip39) | documented |
+| Tangem / [tangem-seed](#wallet-tangem-seed) | hardware / app-generated-seed | multi-chain | [bip39](#scheme-bip39) | documented |
+| Tangem / [tangem-seed-import](#wallet-tangem-seed-import) | hardware / mnemonic-imported | multi-chain | [bip39](#scheme-bip39) | documented |
+| Tangem / [tangem-seedless](#wallet-tangem-seedless) | hardware / seedless-card-backup | multi-chain | — | documented |
+| Temple / [temple](#wallet-temple) | web / mnemonic-generated | ethereum, tezos | [bip39](#scheme-bip39) | documented |
+| Temple / [temple-cloud-backup](#wallet-temple-cloud-backup) | web / google-drive-backup | ethereum, tezos | — | documented |
+| Temple / [temple-import](#wallet-temple-import) | web / mnemonic-imported | ethereum, tezos | — | documented |
+| TokenPocket / [tokenpocket](#wallet-tokenpocket) | web / mnemonic-generated | multi-chain | — | documented |
+| TokenPocket / [tokenpocket-import](#wallet-tokenpocket-import) | web / mnemonic-imported | multi-chain | — | documented |
+| TokenPocket / [tokenpocket-private-key](#wallet-tokenpocket-private-key) | web / private-key-imported | multi-chain | — | documented |
 | Tonhub / [tonhub](#wallet-tonhub) | android / ton-native-generated | ton | [ton-native](#scheme-ton-native) | verified |
 | Tonkeeper Classic / [tonkeeper-classic](#wallet-tonkeeper-classic) | web / ton-native-generated | ton | [ton-native](#scheme-ton-native) | verified |
 | Keeper / Tonkeeper Multichain / [tonkeeper-multichain](#wallet-tonkeeper-multichain) | cross-platform / bip39-multichain-generated | ton | [ton-multichain-bip39](#scheme-ton-multichain-bip39) | documented |
@@ -63,6 +162,8 @@
 | Trezor Safe5 / [trezor-safe-5-multi-share](#wallet-trezor-safe-5-multi-share) | hardware / suite-multi-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
 | Trezor Safe7 / [trezor-safe-7](#wallet-trezor-safe-7) | hardware / suite-single-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
 | Trezor Safe7 / [trezor-safe-7-multi-share](#wallet-trezor-safe-7-multi-share) | hardware / suite-multi-share-20-created | multi-chain | [slip39-share-20](#scheme-slip39-share-20) | documented |
+| Trust Wallet / [trust-wallet](#wallet-trust-wallet) | android / classic-mnemonic-generated | multi-chain | [bip39](#scheme-bip39) | documented |
+| Trust Wallet / [trust-wallet-swift](#wallet-trust-wallet-swift) | android / swift-passkey | arbitrum, avalanche, base, bnb-chain | — | documented |
 | Typhon / [typhon](#wallet-typhon) | web / web-mnemonic-created-unresolved | cardano | — | blocked |
 | TON Space / DeFi Account / [ton-space](#wallet-ton-space) | web / manual-mnemonic-backup | ton | — | documented |
 | Yoroi / [yoroi](#wallet-yoroi) | web / icarus-15-created | cardano | [cardano-icarus-15](#scheme-cardano-icarus-15) | documented |
@@ -71,24 +172,304 @@
 | Zano CLI — legacy25 import / [zano-wallet-legacy25](#wallet-zano-wallet-legacy25) | linux / legacy25-import | zano | [zano-legacy-25](#scheme-zano-legacy-25) | documented |
 | zcashd — English mnemonic mode / [zcash-official](#wallet-zcash-official) | linux / zip339-english24 | zcash | [zcash-bip39](#scheme-zcash-bip39) | documented |
 | zcashd — standalone key export / [zcash-official-standalone](#wallet-zcash-official-standalone) | linux / standalone-key-export | zcash | — | no-mnemonic-confirmed |
+| Zerion / [zerion](#wallet-zerion) | web / mnemonic-generated | ethereum, solana | — | documented |
+| Zerion / [zerion-cloud-backup](#wallet-zerion-cloud-backup) | ios / icloud-backup | ethereum, solana | — | documented |
 
 ## Индекс сетей
 
-- algorand: [defly](#wallet-defly), [pera-wallet](#wallet-pera-wallet), [pera-wallet-universal](#wallet-pera-wallet-universal)
-- bitcoin: [electrum](#wallet-electrum), [electrum-bip39-import](#wallet-electrum-bip39-import), [electrum-v1-import](#wallet-electrum-v1-import)
-- cardano: [daedalus](#wallet-daedalus), [daedalus-byron](#wallet-daedalus-byron), [daedalus-paper-27](#wallet-daedalus-paper-27), [daedalus-yoroi-15](#wallet-daedalus-yoroi-15), [eternl](#wallet-eternl), [lace](#wallet-lace), [nami](#wallet-nami), [typhon](#wallet-typhon), [yoroi](#wallet-yoroi)
-- chia: [chia-wallet](#wallet-chia-wallet)
-- decred: [cake-wallet-decred](#wallet-cake-wallet-decred), [cake-wallet-decred-bip39](#wallet-cake-wallet-decred-bip39), [decrediton](#wallet-decrediton)
-- kusama: [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
-- monero: [cake-wallet-monero](#wallet-cake-wallet-monero), [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39), [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy), [exodus-monero-export](#wallet-exodus-monero-export), [feather](#wallet-feather), [feather-legacy-import](#wallet-feather-legacy-import), [monero-cli-polyseed](#wallet-monero-cli-polyseed), [monero-gui](#wallet-monero-gui), [monero-gui-cli](#wallet-monero-gui-cli), [mymonero](#wallet-mymonero), [mymonero-generated](#wallet-mymonero-generated)
-- multi-chain: [trezor-model-t](#wallet-trezor-model-t), [trezor-model-t-multi-share](#wallet-trezor-model-t-multi-share), [trezor-safe-3](#wallet-trezor-safe-3), [trezor-safe-3-multi-share](#wallet-trezor-safe-3-multi-share), [trezor-safe-5](#wallet-trezor-safe-5), [trezor-safe-5-multi-share](#wallet-trezor-safe-5-multi-share), [trezor-safe-7](#wallet-trezor-safe-7), [trezor-safe-7-multi-share](#wallet-trezor-safe-7-multi-share)
-- polkadot: [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
-- sia: [sia-ui](#wallet-sia-ui), [sia-ui-29](#wallet-sia-ui-29), [sia-walletd](#wallet-sia-walletd), [siad](#wallet-siad), [siad-29](#wallet-siad-29)
-- ton: [gram-wallet](#wallet-gram-wallet), [mytonwallet](#wallet-mytonwallet), [mytonwallet-native](#wallet-mytonwallet-native), [openmask](#wallet-openmask), [ton-space](#wallet-ton-space), [tonhub](#wallet-tonhub), [tonkeeper-classic](#wallet-tonkeeper-classic), [tonkeeper-multichain](#wallet-tonkeeper-multichain)
-- zano: [cake-wallet-zano](#wallet-cake-wallet-zano), [cake-wallet-zano-bip39](#wallet-cake-wallet-zano-bip39), [zano-wallet](#wallet-zano-wallet), [zano-wallet-legacy25](#wallet-zano-wallet-legacy25)
-- zcash: [zallet](#wallet-zallet), [zcash-official](#wallet-zcash-official), [zcash-official-standalone](#wallet-zcash-official-standalone)
+- algorand: [defly](#wallet-defly), [network-guide-algorand](#wallet-network-guide-algorand), [pera-wallet](#wallet-pera-wallet), [pera-wallet-universal](#wallet-pera-wallet-universal)
+- arbitrum: [imtoken](#wallet-imtoken), [network-guide-arbitrum](#wallet-network-guide-arbitrum), [trust-wallet-swift](#wallet-trust-wallet-swift)
+- avalanche: [network-guide-avalanche](#wallet-network-guide-avalanche), [trust-wallet-swift](#wallet-trust-wallet-swift)
+- base: [coinbase-wallet-passkey](#wallet-coinbase-wallet-passkey), [coinbase-wallet-smart-recovery](#wallet-coinbase-wallet-smart-recovery), [network-guide-base](#wallet-network-guide-base), [trust-wallet-swift](#wallet-trust-wallet-swift)
+- bitcoin: [bitbox02](#wallet-bitbox02), [bitbox02-microsd](#wallet-bitbox02-microsd), [bitbox02-mnemonic-import](#wallet-bitbox02-mnemonic-import), [blockstream-jade](#wallet-blockstream-jade), [bluewallet](#wallet-bluewallet), [bluewallet-import](#wallet-bluewallet-import), [bluewallet-private-key](#wallet-bluewallet-private-key), [coinbase-wallet](#wallet-coinbase-wallet), [coinbase-wallet-social-login](#wallet-coinbase-wallet-social-login), [coldcard](#wallet-coldcard), [electrum](#wallet-electrum), [electrum-bip39-import](#wallet-electrum-bip39-import), [electrum-v1-import](#wallet-electrum-v1-import), [network-guide-bitcoin](#wallet-network-guide-bitcoin), [passport](#wallet-passport), [passport-microsd](#wallet-passport-microsd), [seedsigner](#wallet-seedsigner), [seedsigner-bip85](#wallet-seedsigner-bip85), [seedsigner-photo](#wallet-seedsigner-photo), [seedsigner-seedqr](#wallet-seedsigner-seedqr), [sparrow](#wallet-sparrow), [sparrow-electrum-import](#wallet-sparrow-electrum-import)
+- bnb-chain: [network-guide-bnb-chain](#wallet-network-guide-bnb-chain), [trust-wallet-swift](#wallet-trust-wallet-swift)
+- cardano: [daedalus](#wallet-daedalus), [daedalus-byron](#wallet-daedalus-byron), [daedalus-paper-27](#wallet-daedalus-paper-27), [daedalus-yoroi-15](#wallet-daedalus-yoroi-15), [eternl](#wallet-eternl), [lace](#wallet-lace), [nami](#wallet-nami), [network-guide-cardano](#wallet-network-guide-cardano), [typhon](#wallet-typhon), [yoroi](#wallet-yoroi)
+- chia: [chia-wallet](#wallet-chia-wallet), [network-guide-chia](#wallet-network-guide-chia)
+- cosmos: [cosmostation](#wallet-cosmostation), [keplr](#wallet-keplr), [keplr-social-login](#wallet-keplr-social-login), [leap](#wallet-leap), [network-guide-cosmos](#wallet-network-guide-cosmos)
+- decred: [cake-wallet-decred](#wallet-cake-wallet-decred), [cake-wallet-decred-bip39](#wallet-cake-wallet-decred-bip39), [decrediton](#wallet-decrediton), [network-guide-decred](#wallet-network-guide-decred)
+- ethereum: [coinbase-wallet](#wallet-coinbase-wallet), [coinbase-wallet-passkey](#wallet-coinbase-wallet-passkey), [coinbase-wallet-smart-recovery](#wallet-coinbase-wallet-smart-recovery), [coinbase-wallet-social-login](#wallet-coinbase-wallet-social-login), [imtoken](#wallet-imtoken), [metamask](#wallet-metamask), [metamask-passkey-unlock](#wallet-metamask-passkey-unlock), [metamask-private-key](#wallet-metamask-private-key), [metamask-social-login](#wallet-metamask-social-login), [network-guide-ethereum](#wallet-network-guide-ethereum), [rabby](#wallet-rabby), [rabby-import](#wallet-rabby-import), [rainbow](#wallet-rainbow), [rainbow-cloud-backup](#wallet-rainbow-cloud-backup), [safepal](#wallet-safepal), [temple](#wallet-temple), [temple-cloud-backup](#wallet-temple-cloud-backup), [temple-import](#wallet-temple-import), [zerion](#wallet-zerion), [zerion-cloud-backup](#wallet-zerion-cloud-backup)
+- kusama: [network-guide-kusama](#wallet-network-guide-kusama), [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
+- liquid: [blockstream-jade](#wallet-blockstream-jade)
+- monero: [cake-wallet-monero](#wallet-cake-wallet-monero), [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39), [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy), [exodus-monero-export](#wallet-exodus-monero-export), [feather](#wallet-feather), [feather-legacy-import](#wallet-feather-legacy-import), [monero-cli-polyseed](#wallet-monero-cli-polyseed), [monero-gui](#wallet-monero-gui), [monero-gui-cli](#wallet-monero-gui-cli), [mymonero](#wallet-mymonero), [mymonero-generated](#wallet-mymonero-generated), [network-guide-monero](#wallet-network-guide-monero)
+- multi-chain: [atomic-wallet](#wallet-atomic-wallet), [backpack](#wallet-backpack), [backpack-import](#wallet-backpack-import), [backpack-private-key](#wallet-backpack-private-key), [bitget-wallet](#wallet-bitget-wallet), [bitget-wallet-cloud-backup](#wallet-bitget-wallet-cloud-backup), [bitget-wallet-mpc](#wallet-bitget-wallet-mpc), [coinbase-wallet-cloud-backup](#wallet-coinbase-wallet-cloud-backup), [coinomi](#wallet-coinomi), [ellipal](#wallet-ellipal), [ellipal-import](#wallet-ellipal-import), [exodus](#wallet-exodus), [exodus-passkey](#wallet-exodus-passkey), [guarda](#wallet-guarda), [guarda-mnemonic-import](#wallet-guarda-mnemonic-import), [keystone](#wallet-keystone), [keystone-mnemonic-import](#wallet-keystone-mnemonic-import), [keystone-shamir](#wallet-keystone-shamir), [keystone-shamir-import](#wallet-keystone-shamir-import), [ledger](#wallet-ledger), [okx-wallet](#wallet-okx-wallet), [okx-wallet-cloud-backup](#wallet-okx-wallet-cloud-backup), [okx-wallet-mnemonic-import](#wallet-okx-wallet-mnemonic-import), [okx-wallet-mpc](#wallet-okx-wallet-mpc), [okx-wallet-private-key](#wallet-okx-wallet-private-key), [onekey](#wallet-onekey), [tangem-seed](#wallet-tangem-seed), [tangem-seed-import](#wallet-tangem-seed-import), [tangem-seedless](#wallet-tangem-seedless), [tokenpocket](#wallet-tokenpocket), [tokenpocket-import](#wallet-tokenpocket-import), [tokenpocket-private-key](#wallet-tokenpocket-private-key), [trezor-model-t](#wallet-trezor-model-t), [trezor-model-t-multi-share](#wallet-trezor-model-t-multi-share), [trezor-safe-3](#wallet-trezor-safe-3), [trezor-safe-3-multi-share](#wallet-trezor-safe-3-multi-share), [trezor-safe-5](#wallet-trezor-safe-5), [trezor-safe-5-multi-share](#wallet-trezor-safe-5-multi-share), [trezor-safe-7](#wallet-trezor-safe-7), [trezor-safe-7-multi-share](#wallet-trezor-safe-7-multi-share), [trust-wallet](#wallet-trust-wallet)
+- polkadot: [network-guide-polkadot](#wallet-network-guide-polkadot), [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
+- polygon: [network-guide-polygon](#wallet-network-guide-polygon)
+- sia: [network-guide-sia](#wallet-network-guide-sia), [sia-ui](#wallet-sia-ui), [sia-ui-29](#wallet-sia-ui-29), [sia-walletd](#wallet-sia-walletd), [siad](#wallet-siad), [siad-29](#wallet-siad-29)
+- solana: [coinbase-wallet](#wallet-coinbase-wallet), [coinbase-wallet-social-login](#wallet-coinbase-wallet-social-login), [glow](#wallet-glow), [network-guide-solana](#wallet-network-guide-solana), [phantom](#wallet-phantom), [phantom-social-login](#wallet-phantom-social-login), [solflare](#wallet-solflare), [solflare-social-login](#wallet-solflare-social-login), [zerion](#wallet-zerion), [zerion-cloud-backup](#wallet-zerion-cloud-backup)
+- tezos: [kukai](#wallet-kukai), [kukai-keystore](#wallet-kukai-keystore), [kukai-social-login](#wallet-kukai-social-login), [network-guide-tezos](#wallet-network-guide-tezos), [temple](#wallet-temple), [temple-cloud-backup](#wallet-temple-cloud-backup), [temple-import](#wallet-temple-import)
+- ton: [gram-wallet](#wallet-gram-wallet), [mytonwallet](#wallet-mytonwallet), [mytonwallet-native](#wallet-mytonwallet-native), [network-guide-ton](#wallet-network-guide-ton), [openmask](#wallet-openmask), [ton-space](#wallet-ton-space), [tonhub](#wallet-tonhub), [tonkeeper-classic](#wallet-tonkeeper-classic), [tonkeeper-multichain](#wallet-tonkeeper-multichain)
+- tron: [imtoken](#wallet-imtoken), [network-guide-tron](#wallet-network-guide-tron)
+- zano: [cake-wallet-zano](#wallet-cake-wallet-zano), [cake-wallet-zano-bip39](#wallet-cake-wallet-zano-bip39), [network-guide-zano](#wallet-network-guide-zano), [zano-wallet](#wallet-zano-wallet), [zano-wallet-legacy25](#wallet-zano-wallet-legacy25)
+- zcash: [network-guide-zcash](#wallet-network-guide-zcash), [zallet](#wallet-zallet), [zcash-official](#wallet-zcash-official), [zcash-official-standalone](#wallet-zcash-official-standalone)
 
 ## Профили кошельков
+
+<a id="wallet-atomic-wallet"></a>
+
+### Atomic Wallet — mnemonic-generated — atomic-wallet
+
+- Исходная запись: [atomic-wallet](../catalog/wallets/atomic-wallet.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-cd66b03392fb / version-unresolved-doc-2026-09-29-cd66b03392fb
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-atomic-wallet](../catalog/evidence/wallet-atomic-wallet.json)
+- Подтверждаемое утверждение: Atomic documents randomly generated 12-word setup and individual coin private keys. The page does not bind an exact Windows build, dictionary or recovery vector.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Atomic documents randomly generated 12-word setup and individual coin private keys. The page does not bind an exact Windows build, dictionary or recovery vector.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-backpack"></a>
+
+### Backpack — mnemonic-generated — backpack
+
+- Исходная запись: [backpack](../catalog/wallets/backpack.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-d48b55cce4a7 / version-unresolved-doc-2026-09-29-d48b55cce4a7
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-backpack](../catalog/evidence/wallet-backpack.json)
+- Подтверждаемое утверждение: Wallet get-started flow creates a new account with secret recovery phrase backup; it explicitly applies to mobile and extension, with no release interval specified. Existing-wallet import has a secret-recovery-phrase route; network selection and derivation remain unresolved. Existing-wallet import separately offers a private key, hardware wallet and view-only public key; no phrase mapping for key-only mode.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Wallet get-started flow creates a new account with secret recovery phrase backup; it explicitly applies to mobile and extension, with no release interval specified.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-backpack-import"></a>
+
+### Backpack — mnemonic-imported — backpack-import
+
+- Исходная запись: [backpack-import](../catalog/wallets/backpack-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-d48b55cce4a7 / version-unresolved-doc-2026-09-29-d48b55cce4a7
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-backpack](../catalog/evidence/wallet-backpack.json)
+- Подтверждаемое утверждение: Wallet get-started flow creates a new account with secret recovery phrase backup; it explicitly applies to mobile and extension, with no release interval specified. Existing-wallet import has a secret-recovery-phrase route; network selection and derivation remain unresolved. Existing-wallet import separately offers a private key, hardware wallet and view-only public key; no phrase mapping for key-only mode.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Existing-wallet import has a secret-recovery-phrase route; network selection and derivation remain unresolved.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-backpack-private-key"></a>
+
+### Backpack — private-key-imported — backpack-private-key
+
+- Исходная запись: [backpack-private-key](../catalog/wallets/backpack-private-key.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-d48b55cce4a7 / version-unresolved-doc-2026-09-29-d48b55cce4a7
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-backpack](../catalog/evidence/wallet-backpack.json)
+- Подтверждаемое утверждение: Wallet get-started flow creates a new account with secret recovery phrase backup; it explicitly applies to mobile and extension, with no release interval specified. Existing-wallet import has a secret-recovery-phrase route; network selection and derivation remain unresolved. Existing-wallet import separately offers a private key, hardware wallet and view-only public key; no phrase mapping for key-only mode.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Existing-wallet import separately offers a private key, hardware wallet and view-only public key; no phrase mapping for key-only mode.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-bitbox02"></a>
+
+### BitBox02 — mnemonic-generated — bitbox02
+
+- Исходная запись: [bitbox02](../catalog/wallets/bitbox02.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-41e32d676620 / version-unresolved-doc-2026-09-29-41e32d676620
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-bitbox02](../catalog/evidence/wallet-bitbox02.json), [wallet-bitbox02-import](../catalog/evidence/wallet-bitbox02-import.json)
+- Подтверждаемое утверждение: Advanced setup documents default 24 words and optional 12 words; recovery documentation identifies the English BIP39 list. Model/firmware and exact released artifact are not pinned. Setup may create a microSD backup instead of displaying words. Binary backup files are not word tables and are not touched by this research.
+- Подтверждаемое утверждение: Advanced setup documents default 24 words and optional 12 words; recovery documentation identifies the English BIP39 list. Model/firmware and exact released artifact are not pinned. Restore accepts 12 or 24 words and optional separate passphrase; address types and accounts can differ even after successful seed import.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Advanced setup documents default 24 words and optional 12 words; recovery documentation identifies the English BIP39 list. Model/firmware and exact released artifact are not pinned.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-bitbox02-microsd"></a>
+
+### BitBox02 — microsd-backup — bitbox02-microsd
+
+- Исходная запись: [bitbox02-microsd](../catalog/wallets/bitbox02-microsd.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-41e32d676620 / version-unresolved-doc-2026-09-29-41e32d676620
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-bitbox02](../catalog/evidence/wallet-bitbox02.json)
+- Подтверждаемое утверждение: Advanced setup documents default 24 words and optional 12 words; recovery documentation identifies the English BIP39 list. Model/firmware and exact released artifact are not pinned. Setup may create a microSD backup instead of displaying words. Binary backup files are not word tables and are not touched by this research.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Setup may create a microSD backup instead of displaying words. Binary backup files are not word tables and are not touched by this research.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-bitbox02-mnemonic-import"></a>
+
+### BitBox02 — mnemonic-imported — bitbox02-mnemonic-import
+
+- Исходная запись: [bitbox02-mnemonic-import](../catalog/wallets/bitbox02-mnemonic-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-a54492f733f6 / version-unresolved-doc-2026-09-29-a54492f733f6
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-bitbox02-import](../catalog/evidence/wallet-bitbox02-import.json)
+- Подтверждаемое утверждение: Advanced setup documents default 24 words and optional 12 words; recovery documentation identifies the English BIP39 list. Model/firmware and exact released artifact are not pinned. Restore accepts 12 or 24 words and optional separate passphrase; address types and accounts can differ even after successful seed import.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Restore accepts 12 or 24 words and optional separate passphrase; address types and accounts can differ even after successful seed import.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-bitget-wallet"></a>
+
+### Bitget Wallet — mnemonic-generated — bitget-wallet
+
+- Исходная запись: [bitget-wallet](../catalog/wallets/bitget-wallet.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-bc5c1394731b / version-unresolved-doc-2026-09-29-bc5c1394731b
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-bitget-wallet](../catalog/evidence/wallet-bitget-wallet.json)
+- Подтверждаемое утверждение: The product tutorial separately offers 12- and 24-word creation. It does not pin mnemonic codec or current Android binary. Keyless MPC uses email verification and a transaction password; no mnemonic phrase is presented for this flow. The MPC backup step uses Google Drive or iCloud. Android Google Drive scope only; backup shares are not mnemonic words.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: The product tutorial separately offers 12- and 24-word creation. It does not pin mnemonic codec or current Android binary.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-bitget-wallet-cloud-backup"></a>
+
+### Bitget Wallet — mpc-cloud-backup — bitget-wallet-cloud-backup
+
+- Исходная запись: [bitget-wallet-cloud-backup](../catalog/wallets/bitget-wallet-cloud-backup.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-bc5c1394731b / version-unresolved-doc-2026-09-29-bc5c1394731b
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-bitget-wallet](../catalog/evidence/wallet-bitget-wallet.json)
+- Подтверждаемое утверждение: The product tutorial separately offers 12- and 24-word creation. It does not pin mnemonic codec or current Android binary. Keyless MPC uses email verification and a transaction password; no mnemonic phrase is presented for this flow. The MPC backup step uses Google Drive or iCloud. Android Google Drive scope only; backup shares are not mnemonic words.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: The MPC backup step uses Google Drive or iCloud. Android Google Drive scope only; backup shares are not mnemonic words.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-bitget-wallet-mpc"></a>
+
+### Bitget Wallet — mpc-keyless — bitget-wallet-mpc
+
+- Исходная запись: [bitget-wallet-mpc](../catalog/wallets/bitget-wallet-mpc.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-bc5c1394731b / version-unresolved-doc-2026-09-29-bc5c1394731b
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-bitget-wallet](../catalog/evidence/wallet-bitget-wallet.json)
+- Подтверждаемое утверждение: The product tutorial separately offers 12- and 24-word creation. It does not pin mnemonic codec or current Android binary. Keyless MPC uses email verification and a transaction password; no mnemonic phrase is presented for this flow. The MPC backup step uses Google Drive or iCloud. Android Google Drive scope only; backup shares are not mnemonic words.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Keyless MPC uses email verification and a transaction password; no mnemonic phrase is presented for this flow.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-blockstream-jade"></a>
+
+### Blockstream Jade — mnemonic-generated — blockstream-jade
+
+- Исходная запись: [blockstream-jade](../catalog/wallets/blockstream-jade.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-ecc74e713f7e / version-unresolved-doc-2026-09-29-ecc74e713f7e
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-blockstream-jade](../catalog/evidence/wallet-blockstream-jade.json)
+- Подтверждаемое утверждение: Desktop quickstart creates a new 12-word phrase on Jade and refers separately to restoration. Bitcoin and Liquid modes still require their original wallet configuration.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Desktop quickstart creates a new 12-word phrase on Jade and refers separately to restoration. Bitcoin and Liquid modes still require their original wallet configuration.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-bluewallet"></a>
+
+### BlueWallet — bitcoin-mnemonic-generated — bluewallet
+
+- Исходная запись: [bluewallet](../catalog/wallets/bluewallet.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-47a847355b7d / version-unresolved-doc-2026-09-29-47a847355b7d
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-bluewallet](../catalog/evidence/wallet-bluewallet.json)
+- Подтверждаемое утверждение: Official FAQ creates Bitcoin wallets with phrase backup. It separately lists Lightning/LNDhub; no mnemonic recovery promise is made for Lightning. Import detects recovery phrases and may require original passphrase, accounts and derivation path. Detection is not guaranteed recovery compatibility. FAQ supports private-key import separately from phrase backups.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Official FAQ creates Bitcoin wallets with phrase backup. It separately lists Lightning/LNDhub; no mnemonic recovery promise is made for Lightning.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-bluewallet-import"></a>
+
+### BlueWallet — mnemonic-imported — bluewallet-import
+
+- Исходная запись: [bluewallet-import](../catalog/wallets/bluewallet-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-47a847355b7d / version-unresolved-doc-2026-09-29-47a847355b7d
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-bluewallet](../catalog/evidence/wallet-bluewallet.json)
+- Подтверждаемое утверждение: Official FAQ creates Bitcoin wallets with phrase backup. It separately lists Lightning/LNDhub; no mnemonic recovery promise is made for Lightning. Import detects recovery phrases and may require original passphrase, accounts and derivation path. Detection is not guaranteed recovery compatibility. FAQ supports private-key import separately from phrase backups.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Import detects recovery phrases and may require original passphrase, accounts and derivation path. Detection is not guaranteed recovery compatibility.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-bluewallet-private-key"></a>
+
+### BlueWallet — private-key-imported — bluewallet-private-key
+
+- Исходная запись: [bluewallet-private-key](../catalog/wallets/bluewallet-private-key.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-47a847355b7d / version-unresolved-doc-2026-09-29-47a847355b7d
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-bluewallet](../catalog/evidence/wallet-bluewallet.json)
+- Подтверждаемое утверждение: Official FAQ creates Bitcoin wallets with phrase backup. It separately lists Lightning/LNDhub; no mnemonic recovery promise is made for Lightning. Import detects recovery phrases and may require original passphrase, accounts and derivation path. Detection is not guaranteed recovery compatibility. FAQ supports private-key import separately from phrase backups.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: FAQ supports private-key import separately from phrase backups.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-cake-wallet-decred"></a>
 
@@ -262,6 +643,158 @@
 - Создаёт мнемонику / только импорт: true / false
 - Ограничения: Keyring master password does not extend mnemonic. Import primitive lengths/prefixes do not prove GUI generation choices.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
 - Рекомендация профиля: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-coinbase-wallet"></a>
+
+### Coinbase Wallet — mnemonic-imported — coinbase-wallet
+
+- Исходная запись: [coinbase-wallet](../catalog/wallets/coinbase-wallet.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-1d65b63ed007 / version-unresolved-doc-2026-09-29-1d65b63ed007
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-coinbase-wallet](../catalog/evidence/wallet-coinbase-wallet.json)
+- Подтверждаемое утверждение: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed. The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets. The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-coinbase-wallet-cloud-backup"></a>
+
+### Coinbase Wallet — legacy-cloud-backup — coinbase-wallet-cloud-backup
+
+- Исходная запись: [coinbase-wallet-cloud-backup](../catalog/wallets/coinbase-wallet-cloud-backup.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-4255ad095c10 / version-unresolved-doc-2026-09-29-4255ad095c10
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-coinbase-cloud](../catalog/evidence/wallet-coinbase-cloud.json)
+- Подтверждаемое утверждение: Legacy recovery instructions include Google Drive or iCloud backup as well as a 12-word phrase. Encryption and version/platform compatibility are unresolved; iCloud is the iOS scope only.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Legacy recovery instructions include Google Drive or iCloud backup as well as a 12-word phrase. Encryption and version/platform compatibility are unresolved; iCloud is the iOS scope only.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-coinbase-wallet-passkey"></a>
+
+### Coinbase Wallet — smart-wallet-passkey — coinbase-wallet-passkey
+
+- Исходная запись: [coinbase-wallet-passkey](../catalog/wallets/coinbase-wallet-passkey.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-1d65b63ed007 / version-unresolved-doc-2026-09-29-1d65b63ed007
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-coinbase-wallet](../catalog/evidence/wallet-coinbase-wallet.json)
+- Подтверждаемое утверждение: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed. The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets. The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-coinbase-wallet-smart-recovery"></a>
+
+### Coinbase Wallet — smart-recovery-signer — coinbase-wallet-smart-recovery
+
+- Исходная запись: [coinbase-wallet-smart-recovery](../catalog/wallets/coinbase-wallet-smart-recovery.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-12e56c471b07 / version-unresolved-doc-2026-09-29-12e56c471b07
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-coinbase-recovery](../catalog/evidence/wallet-coinbase-recovery.json)
+- Подтверждаемое утверждение: An optional recovery phrase creates a new on-chain signer which can add a replacement passkey. Setup requires existing access and a per-chain fee; it is not evidence for ordinary EOA derivation.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: An optional recovery phrase creates a new on-chain signer which can add a replacement passkey. Setup requires existing access and a per-chain fee; it is not evidence for ordinary EOA derivation.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-coinbase-wallet-social-login"></a>
+
+### Coinbase Wallet — cdp-social-login — coinbase-wallet-social-login
+
+- Исходная запись: [coinbase-wallet-social-login](../catalog/wallets/coinbase-wallet-social-login.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-1d65b63ed007 / version-unresolved-doc-2026-09-29-1d65b63ed007
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-coinbase-wallet](../catalog/evidence/wallet-coinbase-wallet.json)
+- Подтверждаемое утверждение: The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed. The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets. The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-coinomi"></a>
+
+### Coinomi — mnemonic-imported — coinomi
+
+- Исходная запись: [coinomi](../catalog/wallets/coinomi.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-6242fd9e4de5 / version-unresolved-doc-2026-09-29-6242fd9e4de5
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-coinomi](../catalog/evidence/wallet-coinomi.json)
+- Подтверждаемое утверждение: Mobile recovery uses a phrase and any original BIP39 passphrase; the transaction password is separate. This recovery page is not fresh-generation evidence.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Mobile recovery uses a phrase and any original BIP39 passphrase; the transaction password is separate. This recovery page is not fresh-generation evidence.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-coldcard"></a>
+
+### COLDCARD — mnemonic-generated — coldcard
+
+- Исходная запись: [coldcard](../catalog/wallets/coldcard.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-0a7991f6d468 / version-unresolved-doc-2026-09-29-0a7991f6d468
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-coldcard](../catalog/evidence/wallet-coldcard.json)
+- Подтверждаемое утверждение: Current quickstart requires a firmware security check before seed creation and distinguishes new seed words from import. Do not assume historical firmware entropy safety.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Current quickstart requires a firmware security check before seed creation and distinguishes new seed words from import. Do not assume historical firmware entropy safety.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-cosmostation"></a>
+
+### Cosmostation — mnemonic-generated — cosmostation
+
+- Исходная запись: [cosmostation](../catalog/wallets/cosmostation.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): 278e29ab131cff4dda2ac2700863108d3b25e36a / 278e29ab131cff4dda2ac2700863108d3b25e36a
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-cosmostation-source](../catalog/evidence/wallet-cosmostation-source.json)
+- Подтверждаемое утверждение: Pinned extension UI calls bip39.generateMnemonic with 128/192/256-bit choices for 12/18/24 words; password encrypts stored mnemonic. Package/binary recovery binding remains unverified.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Pinned extension UI calls bip39.generateMnemonic with 128/192/256-bit choices for 12/18/24 words; password encrypts stored mnemonic. Package/binary recovery binding remains unverified.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-daedalus"></a>
 
@@ -450,6 +983,44 @@
 - Ограничения: Legacy12/24 recognition only. No legacy dictionary bundled pending provenance/license review. No native v1 creation claimed.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
 - Рекомендация профиля: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
 
+<a id="wallet-ellipal"></a>
+
+### ELLIPAL X Card — x-card-mnemonic-generated — ellipal
+
+- Исходная запись: [ellipal](../catalog/wallets/ellipal.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-829823612506 / version-unresolved-doc-2026-09-29-829823612506
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-ellipal](../catalog/evidence/wallet-ellipal.json)
+- Подтверждаемое утверждение: X Card Starter setup offers 12/18/24-word creation and a separate existing-wallet restore route. Does not establish Titan or Joy generation behavior. X Card setup distinguishes restoring an existing phrase from generating a new one. No unsupported phrase-length or network recovery promise.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: X Card Starter setup offers 12/18/24-word creation and a separate existing-wallet restore route. Does not establish Titan or Joy generation behavior.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-ellipal-import"></a>
+
+### ELLIPAL X Card — x-card-mnemonic-imported — ellipal-import
+
+- Исходная запись: [ellipal-import](../catalog/wallets/ellipal-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-829823612506 / version-unresolved-doc-2026-09-29-829823612506
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-ellipal](../catalog/evidence/wallet-ellipal.json)
+- Подтверждаемое утверждение: X Card Starter setup offers 12/18/24-word creation and a separate existing-wallet restore route. Does not establish Titan or Joy generation behavior. X Card setup distinguishes restoring an existing phrase from generating a new one. No unsupported phrase-length or network recovery promise.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: X Card setup distinguishes restoring an existing phrase from generating a new one. No unsupported phrase-length or network recovery promise.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
 <a id="wallet-eternl"></a>
 
 ### Eternl — recovery24 unresolved — eternl
@@ -469,6 +1040,25 @@
 - Ограничения: 24-word recovery described, but generation versus later export, exact web version and derivation remain unproven. false generation is no evidence-backed claim, not a claim that Eternl cannot create wallets.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
 - Рекомендация профиля: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
 
+<a id="wallet-exodus"></a>
+
+### Exodus — global-mnemonic-generated — exodus
+
+- Исходная запись: [exodus](../catalog/wallets/exodus.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-069661f51ab1 / version-unresolved-doc-2026-09-29-069661f51ab1
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-exodus](../catalog/evidence/wallet-exodus.json)
+- Подтверждаемое утверждение: Exodus documents 12-word generation using the BIP39 list and separate Desktop backup steps; the global phrase is distinct from its Monero export. The secret-key guide documents passkey backup and says Web3 Wallet lacks that feature. This backup mode is distinct from phrase generation; exact mobile version and recovery dependencies remain unverified.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Exodus documents 12-word generation using the BIP39 list and separate Desktop backup steps; the global phrase is distinct from its Monero export.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
 <a id="wallet-exodus-monero-export"></a>
 
 ### Exodus Desktop — Monero 25-word export — exodus-monero-export
@@ -487,6 +1077,25 @@
 - Создаёт мнемонику / только импорт: false / false
 - Ограничения: Export of an existing Monero wallet only; generates\_mnemonic=false does not deny export. App versions and full export derivation vector are unresolved, so documented/non-selectable.; Windows Desktop path documented \(Mac also mentioned but not generalized here\); Mobile must sync to Desktop. No 25-word import-into-Exodus or fresh XMR creation claim. The global Exodus 12-word backup is distinct.
 - Рекомендация профиля: Use the vendor migration instructions and a trusted compatible wallet; do not enter the full phrase in Tessaveil. XMR support cessation does not mean seed export is absent.
+
+<a id="wallet-exodus-passkey"></a>
+
+### Exodus — passkey-backup — exodus-passkey
+
+- Исходная запись: [exodus-passkey](../catalog/wallets/exodus-passkey.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-069661f51ab1 / version-unresolved-doc-2026-09-29-069661f51ab1
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-exodus](../catalog/evidence/wallet-exodus.json)
+- Подтверждаемое утверждение: Exodus documents 12-word generation using the BIP39 list and separate Desktop backup steps; the global phrase is distinct from its Monero export. The secret-key guide documents passkey backup and says Web3 Wallet lacks that feature. This backup mode is distinct from phrase generation; exact mobile version and recovery dependencies remain unverified.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: The secret-key guide documents passkey backup and says Web3 Wallet lacks that feature. This backup mode is distinct from phrase generation; exact mobile version and recovery dependencies remain unverified.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-feather"></a>
 
@@ -529,6 +1138,26 @@
 - Ограничения: Legacy 25-word \(also checksumless 24-word\) restore is separate from generation. 14-word Tevador restore is another format and is not mapped to Polyseed/MyMonero.; Documented, not selectable\: no exact released artifact and independent wallet-level recovery vector verified. Import, generation and export claims must be assessed separately.
 - Рекомендация профиля: Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website.
 
+<a id="wallet-glow"></a>
+
+### Glow — mnemonic-backup-unresolved — glow
+
+- Исходная запись: [glow](../catalog/wallets/glow.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-77d6d9331b55 / version-unresolved-doc-2026-09-29-77d6d9331b55
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-glow](../catalog/evidence/wallet-glow.json), [wallet-glow-support](../catalog/evidence/wallet-glow-support.json)
+- Подтверждаемое утверждение: Official site establishes a Solana browser wallet; support says users hold their recovery phrase. These pages do not prove generation lengths, import methods or cloud backup.
+- Подтверждаемое утверждение: Official site establishes a Solana browser wallet; support says users hold their recovery phrase. These pages do not prove generation lengths, import methods or cloud backup.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Official site establishes a Solana browser wallet; support says users hold their recovery phrase. These pages do not prove generation lengths, import methods or cloud backup.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
 <a id="wallet-gram-wallet"></a>
 
 ### Gram Wallet — gram-wallet
@@ -549,6 +1178,234 @@
 - Ограничения: Identity fixed to My Wallet Apps Ltd., Android package io.gramwallet.app linked by gramwallet.io. Publisher says it uses My Wallet's engine; this does not prove a shared mnemonic algorithm or backup flow.; No exact app version, exportable phrase length, generation method or source-to-package binding established. generates\_mnemonic=false means generation is not confirmed, not that the product has no mnemonic.; Do not inherit the behavior of Telegram's historical Gram test wallet or other similarly named products.
 - Рекомендация профиля: Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website.
 
+<a id="wallet-guarda"></a>
+
+### Guarda — encrypted-backup-file — guarda
+
+- Исходная запись: [guarda](../catalog/wallets/guarda.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-174800cedf36 / version-unresolved-doc-2026-09-29-174800cedf36
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-guarda](../catalog/evidence/wallet-guarda.json)
+- Подтверждаемое утверждение: Guarda describes a TXT file containing encrypted private keys; both file and password are needed, and backups change when wallets or passwords change.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Guarda describes a TXT file containing encrypted private keys; both file and password are needed, and backups change when wallets or passwords change.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-guarda-mnemonic-import"></a>
+
+### Guarda — mnemonic-imported — guarda-mnemonic-import
+
+- Исходная запись: [guarda-mnemonic-import](../catalog/wallets/guarda-mnemonic-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-c6f3e00c7303 / version-unresolved-doc-2026-09-29-c6f3e00c7303
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-guarda-import](../catalog/evidence/wallet-guarda-import.json)
+- Подтверждаемое утверждение: Browser import accepts an existing mnemonic, then encrypts a backup with a new password. This does not establish newly generated BIP39 wallets.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Browser import accepts an existing mnemonic, then encrypts a backup with a new password. This does not establish newly generated BIP39 wallets.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-imtoken"></a>
+
+### imToken — mnemonic-generated — imtoken
+
+- Исходная запись: [imtoken](../catalog/wallets/imtoken.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-6b49c3bf1b66 / version-unresolved-doc-2026-09-29-6b49c3bf1b66
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-imtoken](../catalog/evidence/wallet-imtoken.json)
+- Подтверждаемое утверждение: Official create-wallet article updated 2026-09-20 documents mnemonic backup and explicit Ethereum, Tron and Arbitrum account choices. Direct fetch was challenged; reviewed web extraction only.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Official create-wallet article updated 2026-09-20 documents mnemonic backup and explicit Ethereum, Tron and Arbitrum account choices. Direct fetch was challenged; reviewed web extraction only.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-keplr"></a>
+
+### Keplr — mnemonic-generated — keplr
+
+- Исходная запись: [keplr](../catalog/wallets/keplr.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-52e4154a5567 / version-unresolved-doc-2026-09-29-52e4154a5567
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-keplr](../catalog/evidence/wallet-keplr.json)
+- Подтверждаемое утверждение: Mobile guide separately offers Create new recovery phrase and Google onboarding. It does not bind the exact phrase scheme or Android release. For Google Login via Web3Auth the guide explicitly provides only a private key, not a recovery phrase. Google access and independent private-key backup are distinct dependencies.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Mobile guide separately offers Create new recovery phrase and Google onboarding. It does not bind the exact phrase scheme or Android release.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-keplr-social-login"></a>
+
+### Keplr — google-web3auth-private-key — keplr-social-login
+
+- Исходная запись: [keplr-social-login](../catalog/wallets/keplr-social-login.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-52e4154a5567 / version-unresolved-doc-2026-09-29-52e4154a5567
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-keplr](../catalog/evidence/wallet-keplr.json)
+- Подтверждаемое утверждение: Mobile guide separately offers Create new recovery phrase and Google onboarding. It does not bind the exact phrase scheme or Android release. For Google Login via Web3Auth the guide explicitly provides only a private key, not a recovery phrase. Google access and independent private-key backup are distinct dependencies.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: For Google Login via Web3Auth the guide explicitly provides only a private key, not a recovery phrase. Google access and independent private-key backup are distinct dependencies.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-keystone"></a>
+
+### Keystone Essential/Pro — single-backup-generated — keystone
+
+- Исходная запись: [keystone](../catalog/wallets/keystone.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-13706e85e7f0 / version-unresolved-doc-2026-09-29-13706e85e7f0
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-keystone](../catalog/evidence/wallet-keystone.json)
+- Подтверждаемое утверждение: The guide covers M-4.5 Multi-Coin or newer and states default 24-word generation versus 12/18/24 import. This is not Keystone 3 or all historical firmware. The guide lists 12/18/24-word imports separately from default 24-word creation; exact codec/binary binding remains unresolved.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: The guide covers M-4.5 Multi-Coin or newer and states default 24-word generation versus 12/18/24 import. This is not Keystone 3 or all historical firmware.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-keystone-mnemonic-import"></a>
+
+### Keystone Essential/Pro — single-backup-imported — keystone-mnemonic-import
+
+- Исходная запись: [keystone-mnemonic-import](../catalog/wallets/keystone-mnemonic-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-13706e85e7f0 / version-unresolved-doc-2026-09-29-13706e85e7f0
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-keystone](../catalog/evidence/wallet-keystone.json)
+- Подтверждаемое утверждение: The guide covers M-4.5 Multi-Coin or newer and states default 24-word generation versus 12/18/24 import. This is not Keystone 3 or all historical firmware. The guide lists 12/18/24-word imports separately from default 24-word creation; exact codec/binary binding remains unresolved.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: The guide lists 12/18/24-word imports separately from default 24-word creation; exact codec/binary binding remains unresolved.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-keystone-shamir"></a>
+
+### Keystone Essential/Pro — slip39-generated — keystone-shamir
+
+- Исходная запись: [keystone-shamir](../catalog/wallets/keystone-shamir.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-c9e4fc678240 / version-unresolved-doc-2026-09-29-c9e4fc678240
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-keystone-shamir](../catalog/evidence/wallet-keystone-shamir.json)
+- Подтверждаемое утверждение: Official Essential/Pro procedure explicitly creates SLIP39 Shamir shares. Threshold/share metadata and extension secret remain necessary; no share-length inference. SLIP39 share import has a separate procedure. Compatible revision, thresholds and exact firmware are unresolved.
+- Другие названия: —
+- Схема: [slip39-share](#scheme-slip39-share)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Official Essential/Pro procedure explicitly creates SLIP39 Shamir shares. Threshold/share metadata and extension secret remain necessary; no share-length inference.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-keystone-shamir-import"></a>
+
+### Keystone Essential/Pro — slip39-imported — keystone-shamir-import
+
+- Исходная запись: [keystone-shamir-import](../catalog/wallets/keystone-shamir-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-c9e4fc678240 / version-unresolved-doc-2026-09-29-c9e4fc678240
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-keystone-shamir](../catalog/evidence/wallet-keystone-shamir.json)
+- Подтверждаемое утверждение: Official Essential/Pro procedure explicitly creates SLIP39 Shamir shares. Threshold/share metadata and extension secret remain necessary; no share-length inference. SLIP39 share import has a separate procedure. Compatible revision, thresholds and exact firmware are unresolved.
+- Другие названия: —
+- Схема: [slip39-share](#scheme-slip39-share)
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: SLIP39 share import has a separate procedure. Compatible revision, thresholds and exact firmware are unresolved.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-kukai"></a>
+
+### Kukai — mnemonic-generated — kukai
+
+- Исходная запись: [kukai](../catalog/wallets/kukai.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-88483abb0163 / version-unresolved-doc-2026-09-29-88483abb0163
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-kukai](../catalog/evidence/wallet-kukai.json)
+- Подтверждаемое утверждение: New-wallet guide generates seed words, verifies selected positions and creates an encrypted wallet file. This is separate from DirectAuth; codec is not inferred. Encrypted wallet-file backup requires its encryption password; plaintext seed words are an alternative backup, not a replacement for file metadata in all modes.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: New-wallet guide generates seed words, verifies selected positions and creates an encrypted wallet file. This is separate from DirectAuth; codec is not inferred.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-kukai-keystore"></a>
+
+### Kukai — encrypted-keystore — kukai-keystore
+
+- Исходная запись: [kukai-keystore](../catalog/wallets/kukai-keystore.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-88483abb0163 / version-unresolved-doc-2026-09-29-88483abb0163
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-kukai](../catalog/evidence/wallet-kukai.json)
+- Подтверждаемое утверждение: New-wallet guide generates seed words, verifies selected positions and creates an encrypted wallet file. This is separate from DirectAuth; codec is not inferred. Encrypted wallet-file backup requires its encryption password; plaintext seed words are an alternative backup, not a replacement for file metadata in all modes.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Encrypted wallet-file backup requires its encryption password; plaintext seed words are an alternative backup, not a replacement for file metadata in all modes.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-kukai-social-login"></a>
+
+### Kukai — directauth-oauth — kukai-social-login
+
+- Исходная запись: [kukai-social-login](../catalog/wallets/kukai-social-login.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-341aa123a53c / version-unresolved-doc-2026-09-29-341aa123a53c
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-kukai-social](../catalog/evidence/wallet-kukai-social.json)
+- Подтверждаемое утверждение: DirectAuth ties distributed key generation to an OAuth account and reconstructs a private key from Torus shares. Those shares are not SLIP39 mnemonic shares.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: DirectAuth ties distributed key generation to an OAuth account and reconstructs a private key from Torus shares. Those shares are not SLIP39 mnemonic shares.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
 <a id="wallet-lace"></a>
 
 ### Lace — extension24 creation — lace
@@ -567,6 +1424,120 @@
 - Создаёт мнемонику / только импорт: true / false
 - Ограничения: 24-word generation/display confirmed. No exact version or algorithm/library binding to Icarus established; leave unmapped. Modern PGP paper backup is not Daedalus27. Hardware pairing, import and mobile are distinct.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
 - Рекомендация профиля: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-leap"></a>
+
+### Leap — mnemonic-imported — leap
+
+- Исходная запись: [leap](../catalog/wallets/leap.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-e16436522b5c / version-unresolved-doc-2026-09-29-e16436522b5c
+- Дата проверки: 2026-09-29
+- Историческая запись: true
+- Доказательства: [wallet-leap](../catalog/evidence/wallet-leap.json)
+- Подтверждаемое утверждение: Official indexed guide describes Keplr/Cosmostation phrase import. Direct URL currently returns 404; indexed content is evidence of a documented procedure, not current service availability.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Official indexed guide describes Keplr/Cosmostation phrase import. Direct URL currently returns 404; indexed content is evidence of a documented procedure, not current service availability.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-ledger"></a>
+
+### Ledger — device-bip39-generated — ledger
+
+- Исходная запись: [ledger](../catalog/wallets/ledger.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-48ed5a86fa4a / version-unresolved-doc-2026-09-29-48ed5a86fa4a
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-ledger](../catalog/evidence/wallet-ledger.json)
+- Подтверждаемое утверждение: Ledger documents random entropy and 24-word BIP39 setup. Model, firmware, optional passphrase and coin application must still be bound before recovery support.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Ledger documents random entropy and 24-word BIP39 setup. Model, firmware, optional passphrase and coin application must still be bound before recovery support.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-metamask"></a>
+
+### MetaMask — mnemonic-generated — metamask
+
+- Исходная запись: [metamask](../catalog/wallets/metamask.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-c245a4907a21 / version-unresolved-doc-2026-09-29-c245a4907a21
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-metamask](../catalog/evidence/wallet-metamask.json)
+- Подтверждаемое утверждение: New MetaMask setup generates a 12-word SRP. The reviewed page does not bind the exact dictionary, dependency or shipped extension version. Google, Apple or Telegram onboarding still generates an SRP, split into encrypted online pieces. Login credentials and MetaMask password are separate recovery dependencies. Private keys control individual accounts and have an import/export route; they are not an SRP or an additional mnemonic row. Extension SRP users can configure biometric unlock through passkeys. Local unlock must not be confused with mnemonic replacement or smart-account recovery.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: New MetaMask setup generates a 12-word SRP. The reviewed page does not bind the exact dictionary, dependency or shipped extension version.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-metamask-passkey-unlock"></a>
+
+### MetaMask — passkey-local-unlock — metamask-passkey-unlock
+
+- Исходная запись: [metamask-passkey-unlock](../catalog/wallets/metamask-passkey-unlock.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-c245a4907a21 / version-unresolved-doc-2026-09-29-c245a4907a21
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-metamask](../catalog/evidence/wallet-metamask.json)
+- Подтверждаемое утверждение: New MetaMask setup generates a 12-word SRP. The reviewed page does not bind the exact dictionary, dependency or shipped extension version. Google, Apple or Telegram onboarding still generates an SRP, split into encrypted online pieces. Login credentials and MetaMask password are separate recovery dependencies. Private keys control individual accounts and have an import/export route; they are not an SRP or an additional mnemonic row. Extension SRP users can configure biometric unlock through passkeys. Local unlock must not be confused with mnemonic replacement or smart-account recovery.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Extension SRP users can configure biometric unlock through passkeys. Local unlock must not be confused with mnemonic replacement or smart-account recovery.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-metamask-private-key"></a>
+
+### MetaMask — private-key-imported — metamask-private-key
+
+- Исходная запись: [metamask-private-key](../catalog/wallets/metamask-private-key.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-c245a4907a21 / version-unresolved-doc-2026-09-29-c245a4907a21
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-metamask](../catalog/evidence/wallet-metamask.json)
+- Подтверждаемое утверждение: New MetaMask setup generates a 12-word SRP. The reviewed page does not bind the exact dictionary, dependency or shipped extension version. Google, Apple or Telegram onboarding still generates an SRP, split into encrypted online pieces. Login credentials and MetaMask password are separate recovery dependencies. Private keys control individual accounts and have an import/export route; they are not an SRP or an additional mnemonic row. Extension SRP users can configure biometric unlock through passkeys. Local unlock must not be confused with mnemonic replacement or smart-account recovery.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Private keys control individual accounts and have an import/export route; they are not an SRP or an additional mnemonic row.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-metamask-social-login"></a>
+
+### MetaMask — social-login-srp — metamask-social-login
+
+- Исходная запись: [metamask-social-login](../catalog/wallets/metamask-social-login.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-c245a4907a21 / version-unresolved-doc-2026-09-29-c245a4907a21
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-metamask](../catalog/evidence/wallet-metamask.json)
+- Подтверждаемое утверждение: New MetaMask setup generates a 12-word SRP. The reviewed page does not bind the exact dictionary, dependency or shipped extension version. Google, Apple or Telegram onboarding still generates an SRP, split into encrypted online pieces. Login credentials and MetaMask password are separate recovery dependencies. Private keys control individual accounts and have an import/export route; they are not an SRP or an additional mnemonic row. Extension SRP users can configure biometric unlock through passkeys. Local unlock must not be confused with mnemonic replacement or smart-account recovery.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Google, Apple or Telegram onboarding still generates an SRP, split into encrypted online pieces. Login credentials and MetaMask password are separate recovery dependencies.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-monero-cli-polyseed"></a>
 
@@ -738,6 +1709,538 @@
 - Ограничения: Source-only Chrome extension; Icarus-like from\_bip39\_entropy with empty password. Library lock/artifact binding and wallet-level recovery not reproduced; no claim of current maintenance.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
 - Рекомендация профиля: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
 
+<a id="wallet-network-guide-algorand"></a>
+
+### algorand — network search guidance — network-search-guidance — network-guide-algorand
+
+- Исходная запись: [network-guide-algorand](../catalog/wallets/network-guide-algorand.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-58d26cf32c71 / version-unresolved-doc-2026-09-29-58d26cf32c71
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-algorand-guidance](../catalog/evidence/network-algorand-guidance.json)
+- Подтверждаемое утверждение: Official algorand documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: ALGO
+- Схема: [algorand-25](#scheme-algorand-25)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Official current overview distinguishes Algo25 from newer xHD 24-word accounts and smart accounts. Existing Algo25 profile is not xHD support; xHD remains unmapped.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: algorand-25. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: algorand-25. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-arbitrum"></a>
+
+### arbitrum — network search guidance — network-search-guidance — network-guide-arbitrum
+
+- Исходная запись: [network-guide-arbitrum](../catalog/wallets/network-guide-arbitrum.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-ceda32c7434b / version-unresolved-doc-2026-09-29-ceda32c7434b
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-arbitrum-guidance](../catalog/evidence/network-arbitrum-guidance.json)
+- Подтверждаемое утверждение: Official arbitrum documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: ARB, Arbitrum One
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Arbitrum One network guidance; Nova and testnets are separate chain identities. Network configuration is not mnemonic evidence.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-avalanche"></a>
+
+### avalanche — network search guidance — network-search-guidance — network-guide-avalanche
+
+- Исходная запись: [network-guide-avalanche](../catalog/wallets/network-guide-avalanche.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-07aa1c4f21f5 / version-unresolved-doc-2026-09-29-07aa1c4f21f5
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-avalanche-guidance](../catalog/evidence/network-avalanche-guidance.json)
+- Подтверждаемое утверждение: Official avalanche documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: AVAX, Avalanche C-Chain
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. C-Chain EVM, X-Chain and P-Chain are separate chains with different address and account context; no universal recovery mapping.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-base"></a>
+
+### base — network search guidance — network-search-guidance — network-guide-base
+
+- Исходная запись: [network-guide-base](../catalog/wallets/network-guide-base.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-337f996551fb / version-unresolved-doc-2026-09-29-337f996551fb
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-base-guidance](../catalog/evidence/network-base-guidance.json)
+- Подтверждаемое утверждение: Official base documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: Base Mainnet, Base chain
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Base is an EVM chain; Coinbase Wallet is a product and Base Account is a smart-account mode, not a Base dictionary.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-bitcoin"></a>
+
+### bitcoin — network search guidance — network-search-guidance — network-guide-bitcoin
+
+- Исходная запись: [network-guide-bitcoin](../catalog/wallets/network-guide-bitcoin.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-ecf8cd25398e / version-unresolved-doc-2026-09-29-ecf8cd25398e
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-bitcoin-guidance](../catalog/evidence/network-bitcoin-guidance.json)
+- Подтверждаемое утверждение: Official bitcoin documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: BTC
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Bitcoin wallets have distinct backup families; multisig also needs policy, cosigner and descriptor metadata.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39, electrum-v1, electrum-v2, slip39-share. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39, electrum-v1, electrum-v2, slip39-share. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-bnb-chain"></a>
+
+### bnb-chain — network search guidance — network-search-guidance — network-guide-bnb-chain
+
+- Исходная запись: [network-guide-bnb-chain](../catalog/wallets/network-guide-bnb-chain.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-68b333d42320 / version-unresolved-doc-2026-09-29-68b333d42320
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-bnb-chain-guidance](../catalog/evidence/network-bnb-chain-guidance.json)
+- Подтверждаемое утверждение: Official bnb-chain documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: BNB, BNB Smart Chain, BSC
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. BNB Smart Chain is the EVM search scope. BNB Beacon Chain and opBNB are not interchangeable network or recovery promises.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-cardano"></a>
+
+### cardano — network search guidance — network-search-guidance — network-guide-cardano
+
+- Исходная запись: [network-guide-cardano](../catalog/wallets/network-guide-cardano.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-4bb87b35c444 / version-unresolved-doc-2026-09-29-4bb87b35c444
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-cardano-guidance](../catalog/evidence/network-cardano-guidance.json)
+- Подтверждаемое утверждение: Official cardano documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: ADA
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Byron, Icarus, hardware and paper-certificate modes require distinct derivation and external-secret handling.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: cardano-byron, cardano-icarus, cardano-hardware, cardano-daedalus-27. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: cardano-byron, cardano-icarus, cardano-hardware, cardano-daedalus-27. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-chia"></a>
+
+### chia — network search guidance — network-search-guidance — network-guide-chia
+
+- Исходная запись: [network-guide-chia](../catalog/wallets/network-guide-chia.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-5d633c523485 / version-unresolved-doc-2026-09-29-5d633c523485
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-chia-guidance](../catalog/evidence/network-chia-guidance.json)
+- Подтверждаемое утверждение: Official chia documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: XCH
+- Схема: [chia-bip39](#scheme-chia-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Chia derives BLS keys, not Bitcoin BIP32. BIP39 words alone do not prove another wallet's recovery compatibility.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: chia-bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: chia-bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-cosmos"></a>
+
+### cosmos — network search guidance — network-search-guidance — network-guide-cosmos
+
+- Исходная запись: [network-guide-cosmos](../catalog/wallets/network-guide-cosmos.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-eb58d7c87a4b / version-unresolved-doc-2026-09-29-eb58d7c87a4b
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-cosmos-guidance](../catalog/evidence/network-cosmos-guidance.json)
+- Подтверждаемое утверждение: Official cosmos documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: ATOM, Cosmos Hub, Interchain
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Cosmos names an ecosystem, not a universal coin type, curve, prefix or HD path. Cosmos EVM and chain-specific accounts require separate mapping.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-decred"></a>
+
+### decred — network search guidance — network-search-guidance — network-guide-decred
+
+- Исходная запись: [network-guide-decred](../catalog/wallets/network-guide-decred.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-68a647b0a9ff / version-unresolved-doc-2026-09-29-68a647b0a9ff
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-decred-guidance](../catalog/evidence/network-decred-guidance.json)
+- Подтверждаемое утверждение: Official decred documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: DCR
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. PGP33, current BIP39 and Cake modes are separate profiles; project home establishes network identity only, not codec equivalence.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: decred-pgp33, decred-bip39, cake-decred-15. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: decred-pgp33, decred-bip39, cake-decred-15. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-ethereum"></a>
+
+### ethereum — network search guidance — network-search-guidance — network-guide-ethereum
+
+- Исходная запись: [network-guide-ethereum](../catalog/wallets/network-guide-ethereum.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-0218e8b8204d / version-unresolved-doc-2026-09-29-0218e8b8204d
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-ethereum-guidance](../catalog/evidence/network-ethereum-guidance.json)
+- Подтверждаемое утверждение: Official ethereum documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: ETH, EVM
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. EOA keys, mnemonic HD wallets and smart-account signers are different recovery modes; EVM address support alone proves no mnemonic scheme.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-kusama"></a>
+
+### kusama — network search guidance — network-search-guidance — network-guide-kusama
+
+- Исходная запись: [network-guide-kusama](../catalog/wallets/network-guide-kusama.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-25eb213fda83 / version-unresolved-doc-2026-09-29-25eb213fda83
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-kusama-guidance](../catalog/evidence/network-kusama-guidance.json)
+- Подтверждаемое утверждение: Official kusama documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: KSM
+- Схема: [substrate-bip39](#scheme-substrate-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Kusama is a separate network from Polkadot; related code and shared dictionary do not prove cross-network wallet recovery.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: substrate-bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: substrate-bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-monero"></a>
+
+### monero — network search guidance — network-search-guidance — network-guide-monero
+
+- Исходная запись: [network-guide-monero](../catalog/wallets/network-guide-monero.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-7b12e0abdde1 / version-unresolved-doc-2026-09-29-7b12e0abdde1
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-monero-guidance](../catalog/evidence/network-monero-guidance.json)
+- Подтверждаемое утверждение: Official monero documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: XMR
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Legacy25, MyMonero13 and Polyseed16 have different codecs and dependencies despite sharing a network.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: monero-legacy, mymonero-13, polyseed-16. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: monero-legacy, mymonero-13, polyseed-16. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-polkadot"></a>
+
+### polkadot — network search guidance — network-search-guidance — network-guide-polkadot
+
+- Исходная запись: [network-guide-polkadot](../catalog/wallets/network-guide-polkadot.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-2c97d5dfd5b7 / version-unresolved-doc-2026-09-29-2c97d5dfd5b7
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-polkadot-guidance](../catalog/evidence/network-polkadot-guidance.json)
+- Подтверждаемое утверждение: Official polkadot documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: DOT
+- Схема: [substrate-bip39](#scheme-substrate-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Substrate key derivation is not ordinary BIP39 sentence-to-seed derivation. Curve, junctions and network address encoding must match.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: substrate-bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: substrate-bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-polygon"></a>
+
+### polygon — network search guidance — network-search-guidance — network-guide-polygon
+
+- Исходная запись: [network-guide-polygon](../catalog/wallets/network-guide-polygon.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-a733bb44ab6e / version-unresolved-doc-2026-09-29-a733bb44ab6e
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-polygon-guidance](../catalog/evidence/network-polygon-guidance.json)
+- Подтверждаемое утверждение: Official polygon documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: MATIC, POL, Polygon PoS
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Polygon PoS search guidance; zkEVM and other Polygon products require their own chain/account identity.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-sia"></a>
+
+### sia — network search guidance — network-search-guidance — network-guide-sia
+
+- Исходная запись: [network-guide-sia](../catalog/wallets/network-guide-sia.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-8b0763a91182 / version-unresolved-doc-2026-09-29-8b0763a91182
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-sia-guidance](../catalog/evidence/network-sia-guidance.json)
+- Подтверждаемое утверждение: Official sia documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: SC, Siacoin
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Current walletd English12 and legacy28/29 are different codecs; current UI and legacy backend compatibility are not interchangeable.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: sia-bip39, sia-legacy-28, sia-legacy-29. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: sia-bip39, sia-legacy-28, sia-legacy-29. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-solana"></a>
+
+### solana — network search guidance — network-search-guidance — network-guide-solana
+
+- Исходная запись: [network-guide-solana](../catalog/wallets/network-guide-solana.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-8ae6154eb164 / version-unresolved-doc-2026-09-29-8ae6154eb164
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-solana-guidance](../catalog/evidence/network-solana-guidance.json)
+- Подтверждаемое утверждение: Official solana documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: SOL
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Solana accounts and program-derived addresses do not establish a wallet mnemonic scheme. Original wallet derivation and account selection remain necessary.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-tezos"></a>
+
+### tezos — network search guidance — network-search-guidance — network-guide-tezos
+
+- Исходная запись: [network-guide-tezos](../catalog/wallets/network-guide-tezos.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-f4f01c4b9c99 / version-unresolved-doc-2026-09-29-f4f01c4b9c99
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-tezos-guidance](../catalog/evidence/network-tezos-guidance.json)
+- Подтверждаемое утверждение: Official tezos documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: XTZ
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Phrase wallets, legacy fundraiser credentials, keystores and Kukai DirectAuth are distinct. Curve, derivation and external credentials remain required.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-ton"></a>
+
+### ton — network search guidance — network-search-guidance — network-guide-ton
+
+- Исходная запись: [network-guide-ton](../catalog/wallets/network-guide-ton.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-8a394dc065db / version-unresolved-doc-2026-09-29-8a394dc065db
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-ton-guidance](../catalog/evidence/network-ton-guidance.json)
+- Подтверждаемое утверждение: Official ton documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: TON, The Open Network
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Native TON and multichain BIP39 are separate profiles. Shared English2048 words do not establish equivalent seeds.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: ton-native, ton-multichain-bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: ton-native, ton-multichain-bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-tron"></a>
+
+### tron — network search guidance — network-search-guidance — network-guide-tron
+
+- Исходная запись: [network-guide-tron](../catalog/wallets/network-guide-tron.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-3d7368ebff0b / version-unresolved-doc-2026-09-29-3d7368ebff0b
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-tron-guidance](../catalog/evidence/network-tron-guidance.json)
+- Подтверждаемое утверждение: Official tron documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: TRON, TRX
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Official accounts documentation separates private-key EOAs and contract accounts; neither creates a dedicated word list.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-zano"></a>
+
+### zano — network search guidance — network-search-guidance — network-guide-zano
+
+- Исходная запись: [network-guide-zano](../catalog/wallets/network-guide-zano.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-2a6b8410f601 / version-unresolved-doc-2026-09-29-2a6b8410f601
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-zano-guidance](../catalog/evidence/network-zano-guidance.json)
+- Подтверждаемое утверждение: Official zano documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: ZANO
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. Native timestamp/password modes and Cake BIP39-derived mode differ; dictionary license and historical-version blockers remain.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: zano-modern, zano-legacy-24, zano-legacy-25, cake-zano-bip39. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: zano-modern, zano-legacy-24, zano-legacy-25, cake-zano-bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-network-guide-zcash"></a>
+
+### zcash — network search guidance — network-search-guidance — network-guide-zcash
+
+- Исходная запись: [network-guide-zcash](../catalog/wallets/network-guide-zcash.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-73c5b4702f53 / version-unresolved-doc-2026-09-29-73c5b4702f53
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [network-zcash-guidance](../catalog/evidence/network-zcash-guidance.json)
+- Подтверждаемое утверждение: Official zcash documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.
+- Другие названия: ZEC
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Network identity/search guidance only. The current ZIP339 landing page is Reserved; it does not establish implementation semantics. Use pinned Task14 source profiles for Zallet/zcashd; imported standalone keys remain distinct.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.; Search candidates only\: zcash-bip39, zcash-non-mnemonic. Scheme links are navigation, not recovery compatibility.
+- Рекомендация профиля: Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs\: zcash-bip39, zcash-non-mnemonic. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil.
+
+<a id="wallet-okx-wallet"></a>
+
+### OKX Wallet — mnemonic-generated — okx-wallet
+
+- Исходная запись: [okx-wallet](../catalog/wallets/okx-wallet.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-b06df9a2d93a / version-unresolved-doc-2026-09-29-b06df9a2d93a
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-okx-wallet](../catalog/evidence/wallet-okx-wallet.json)
+- Подтверждаемое утверждение: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-okx-wallet-cloud-backup"></a>
+
+### OKX Wallet — mnemonic-cloud-backup — okx-wallet-cloud-backup
+
+- Исходная запись: [okx-wallet-cloud-backup](../catalog/wallets/okx-wallet-cloud-backup.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-b06df9a2d93a / version-unresolved-doc-2026-09-29-b06df9a2d93a
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-okx-wallet](../catalog/evidence/wallet-okx-wallet.json)
+- Подтверждаемое утверждение: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-okx-wallet-mnemonic-import"></a>
+
+### OKX Wallet — mnemonic-imported — okx-wallet-mnemonic-import
+
+- Исходная запись: [okx-wallet-mnemonic-import](../catalog/wallets/okx-wallet-mnemonic-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-b06df9a2d93a / version-unresolved-doc-2026-09-29-b06df9a2d93a
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-okx-wallet](../catalog/evidence/wallet-okx-wallet.json)
+- Подтверждаемое утверждение: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: App import accepts seed phrases as a separate route; accepted input is not generation evidence.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-okx-wallet-mpc"></a>
+
+### OKX Wallet — mpc-existing-wallet — okx-wallet-mpc
+
+- Исходная запись: [okx-wallet-mpc](../catalog/wallets/okx-wallet-mpc.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-a31421d257c5 / version-unresolved-doc-2026-09-29-a31421d257c5
+- Дата проверки: 2026-09-29
+- Историческая запись: true
+- Доказательства: [wallet-okx-mpc](../catalog/evidence/wallet-okx-mpc.json)
+- Подтверждаемое утверждение: Keyless MPC uses distributed shares and cloud restoration. Creation entry was removed on 2025-05-23; extension service suspended 2025-04-07. Existing app wallets are a distinct limited mode.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Keyless MPC uses distributed shares and cloud restoration. Creation entry was removed on 2025-05-23; extension service suspended 2025-04-07. Existing app wallets are a distinct limited mode.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-okx-wallet-private-key"></a>
+
+### OKX Wallet — private-key-imported — okx-wallet-private-key
+
+- Исходная запись: [okx-wallet-private-key](../catalog/wallets/okx-wallet-private-key.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-b06df9a2d93a / version-unresolved-doc-2026-09-29-b06df9a2d93a
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-okx-wallet](../catalog/evidence/wallet-okx-wallet.json)
+- Подтверждаемое утверждение: App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: App import includes private keys, separate from phrase wallets. A private-key backup is not a word table.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-onekey"></a>
+
+### OneKey Pro — pro-mnemonic-generated — onekey
+
+- Исходная запись: [onekey](../catalog/wallets/onekey.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-6bf15e920abf / version-unresolved-doc-2026-09-29-6bf15e920abf
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-onekey](../catalog/evidence/wallet-onekey.json)
+- Подтверждаемое утверждение: Pro device setup offers recovery-word count selection, with a 12-word worked example. Do not extrapolate the example to every length or to OneKey App software accounts.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Pro device setup offers recovery-word count selection, with a 12-word worked example. Do not extrapolate the example to every length or to OneKey App software accounts.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
 <a id="wallet-openmask"></a>
 
 ### OpenMask — openmask
@@ -762,6 +2265,45 @@
 - Создаёт мнемонику / только импорт: true / false
 - Ограничения: OpenProduct's Chrome extension source creates and displays a tonweb-mnemonic phrase. Package declares tonweb-mnemonic ^1.0.1; reviewed library 1.0.1 defaults to native 24.; Exact deployed extension/dependency artifact binding and a wallet-level reproducible recovery vector remain unproven; this source-backed mapping is documented, not selectable. Ledger and imported modes excluded.
 - Рекомендация профиля: Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website.
+
+<a id="wallet-passport"></a>
+
+### Passport — mnemonic-generated — passport
+
+- Исходная запись: [passport](../catalog/wallets/passport.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): 670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0 / 670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-passport-flow](../catalog/evidence/wallet-passport-flow.json), [wallet-passport-source](../catalog/evidence/wallet-passport-source.json)
+- Подтверждаемое утверждение: Pinned NewSeedFlow chooses a seed length, creates seed entropy and displays words. Source-only behavior; no hardware recovery or exact release claim.
+- Подтверждаемое утверждение: Pinned NewSeedFlow chooses a seed length, creates seed entropy and displays words. Source-only behavior; no hardware recovery or exact release claim.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Pinned NewSeedFlow chooses a seed length, creates seed entropy and displays words. Source-only behavior; no hardware recovery or exact release claim.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-passport-microsd"></a>
+
+### Passport — encrypted-microsd-backup — passport-microsd
+
+- Исходная запись: [passport-microsd](../catalog/wallets/passport-microsd.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): 670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0 / 670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-passport-backup](../catalog/evidence/wallet-passport-backup.json)
+- Подтверждаемое утверждение: Pinned backup flow requires its Backup Code to decrypt the microSD file and explicitly excludes the active passphrase from backup.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Pinned backup flow requires its Backup Code to decrypt the microSD file and explicitly excludes the active passphrase from backup.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-pera-wallet"></a>
 
@@ -803,6 +2345,44 @@
 - Ограничения: Official FAQ is dated 2025-06-04;24-word HD phrase is not Algorand25. Full Algorand HD derivation research and exact app version absent; leave scheme unmapped.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
 - Рекомендация профиля: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
 
+<a id="wallet-phantom"></a>
+
+### Phantom — mnemonic-generated — phantom
+
+- Исходная запись: [phantom](../catalog/wallets/phantom.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-14c729c88449 / version-unresolved-doc-2026-09-29-14c729c88449
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-phantom](../catalog/evidence/wallet-phantom.json)
+- Подтверждаемое утверждение: Current creation page explicitly offers a 12-word SRP route distinct from Google/Apple onboarding. Exact chain derivation and extension build are not established. Current creation page documents Google/Apple login. This record does not assert absence of an underlying phrase; export and recovery dependencies require mode-specific verification.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Current creation page explicitly offers a 12-word SRP route distinct from Google/Apple onboarding. Exact chain derivation and extension build are not established.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-phantom-social-login"></a>
+
+### Phantom — social-login — phantom-social-login
+
+- Исходная запись: [phantom-social-login](../catalog/wallets/phantom-social-login.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-14c729c88449 / version-unresolved-doc-2026-09-29-14c729c88449
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-phantom](../catalog/evidence/wallet-phantom.json)
+- Подтверждаемое утверждение: Current creation page explicitly offers a 12-word SRP route distinct from Google/Apple onboarding. Exact chain derivation and extension build are not established. Current creation page documents Google/Apple login. This record does not assert absence of an underlying phrase; export and recovery dependencies require mode-specific verification.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Current creation page documents Google/Apple login. This record does not assert absence of an underlying phrase; export and recovery dependencies require mode-specific verification.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
 <a id="wallet-polkadot-js"></a>
 
 ### Polkadot.js — extension sr25519 creation — polkadot-js
@@ -823,6 +2403,177 @@
 - Создаёт мнемонику / только импорт: true / false
 - Ограничения: Default UI12 only; scheme lists primitive input lengths, not UI generation choices. Dependency/backend and released extension binding unverified; exclude Ethereum/JSON/hardware.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
 - Рекомендация профиля: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
+
+<a id="wallet-rabby"></a>
+
+### Rabby — mnemonic-generated — rabby
+
+- Исходная запись: [rabby](../catalog/wallets/rabby.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): e2b98a27e9ef979ab121e81e591fcf5ad79d6e19 / e2b98a27e9ef979ab121e81e591fcf5ad79d6e19
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-rabby-mnemonic](../catalog/evidence/wallet-rabby-mnemonic.json)
+- Подтверждаемое утверждение: Pinned extension state prepares new mnemonic via wallet.generatePreMnemonic; the UI source alone does not prove dictionary, length or shipped package.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Pinned extension state prepares new mnemonic via wallet.generatePreMnemonic; the UI source alone does not prove dictionary, length or shipped package.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-rabby-import"></a>
+
+### Rabby — mnemonic-imported — rabby-import
+
+- Исходная запись: [rabby-import](../catalog/wallets/rabby-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): e2b98a27e9ef979ab121e81e591fcf5ad79d6e19 / e2b98a27e9ef979ab121e81e591fcf5ad79d6e19
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-rabby-import](../catalog/evidence/wallet-rabby-import.json)
+- Подтверждаемое утверждение: Pinned import state handles existing mnemonic accounts. It is separate from generation and remains non-selectable.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Pinned import state handles existing mnemonic accounts. It is separate from generation and remains non-selectable.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-rainbow"></a>
+
+### Rainbow — mnemonic-generated — rainbow
+
+- Исходная запись: [rainbow](../catalog/wallets/rainbow.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-be686dc3c5b3 / version-unresolved-doc-2026-09-29-be686dc3c5b3
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-rainbow](../catalog/evidence/wallet-rainbow.json)
+- Подтверждаемое утверждение: Extension onboarding creates an Ethereum wallet and requires secret-phrase backup. Exact length, codec and released extension remain unresolved.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Extension onboarding creates an Ethereum wallet and requires secret-phrase backup. Exact length, codec and released extension remain unresolved.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-rainbow-cloud-backup"></a>
+
+### Rainbow — icloud-backup — rainbow-cloud-backup
+
+- Исходная запись: [rainbow-cloud-backup](../catalog/wallets/rainbow-cloud-backup.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-f24b74d203c7 / version-unresolved-doc-2026-09-29-f24b74d203c7
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-rainbow-cloud](../catalog/evidence/wallet-rainbow-cloud.json)
+- Подтверждаемое утверждение: Rainbow backup restoration explicitly distinguishes iCloud on iOS from Google Drive on Android. This record covers iOS only and not mnemonic generation.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Rainbow backup restoration explicitly distinguishes iCloud on iOS from Google Drive on Android. This record covers iOS only and not mnemonic generation.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-safepal"></a>
+
+### SafePal — software-mnemonic-generated — safepal
+
+- Исходная запись: [safepal](../catalog/wallets/safepal.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-8233d300de67 / version-unresolved-doc-2026-09-29-8233d300de67
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-safepal](../catalog/evidence/wallet-safepal.json)
+- Подтверждаемое утверждение: The software-wallet tutorial explicitly creates a 24-word example and describes Ethereum use. This dated software procedure does not prove hardware S1 or every phrase length.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: The software-wallet tutorial explicitly creates a 24-word example and describes Ethereum use. This dated software procedure does not prove hardware S1 or every phrase length.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-seedsigner"></a>
+
+### SeedSigner — dice-mnemonic-generated — seedsigner
+
+- Исходная запись: [seedsigner](../catalog/wallets/seedsigner.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-106362fa6af2 / version-unresolved-doc-2026-09-29-106362fa6af2
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-seedsigner](../catalog/evidence/wallet-seedsigner.json)
+- Подтверждаемое утверждение: Official feature list creates a BIP39 phrase from D6 dice. Stateless signing requires the original seed and any passphrase; no live device tested. Photo-entropy BIP39 generation is a separate listed feature from dice entropy and from existing SeedQR input. SeedQR storage/input is a transport for an existing seed, not evidence of generation. Feature list includes indexed BIP85 child phrases. Parent seed, index and parameters matter; it is not interchangeable with direct entropy generation.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Official feature list creates a BIP39 phrase from D6 dice. Stateless signing requires the original seed and any passphrase; no live device tested.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-seedsigner-bip85"></a>
+
+### SeedSigner — bip85-child-generated — seedsigner-bip85
+
+- Исходная запись: [seedsigner-bip85](../catalog/wallets/seedsigner-bip85.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-106362fa6af2 / version-unresolved-doc-2026-09-29-106362fa6af2
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-seedsigner](../catalog/evidence/wallet-seedsigner.json)
+- Подтверждаемое утверждение: Official feature list creates a BIP39 phrase from D6 dice. Stateless signing requires the original seed and any passphrase; no live device tested. Photo-entropy BIP39 generation is a separate listed feature from dice entropy and from existing SeedQR input. SeedQR storage/input is a transport for an existing seed, not evidence of generation. Feature list includes indexed BIP85 child phrases. Parent seed, index and parameters matter; it is not interchangeable with direct entropy generation.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Feature list includes indexed BIP85 child phrases. Parent seed, index and parameters matter; it is not interchangeable with direct entropy generation.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-seedsigner-photo"></a>
+
+### SeedSigner — photo-mnemonic-generated — seedsigner-photo
+
+- Исходная запись: [seedsigner-photo](../catalog/wallets/seedsigner-photo.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-106362fa6af2 / version-unresolved-doc-2026-09-29-106362fa6af2
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-seedsigner](../catalog/evidence/wallet-seedsigner.json)
+- Подтверждаемое утверждение: Official feature list creates a BIP39 phrase from D6 dice. Stateless signing requires the original seed and any passphrase; no live device tested. Photo-entropy BIP39 generation is a separate listed feature from dice entropy and from existing SeedQR input. SeedQR storage/input is a transport for an existing seed, not evidence of generation. Feature list includes indexed BIP85 child phrases. Parent seed, index and parameters matter; it is not interchangeable with direct entropy generation.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Photo-entropy BIP39 generation is a separate listed feature from dice entropy and from existing SeedQR input.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-seedsigner-seedqr"></a>
+
+### SeedSigner — seedqr-imported — seedsigner-seedqr
+
+- Исходная запись: [seedsigner-seedqr](../catalog/wallets/seedsigner-seedqr.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-106362fa6af2 / version-unresolved-doc-2026-09-29-106362fa6af2
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-seedsigner](../catalog/evidence/wallet-seedsigner.json)
+- Подтверждаемое утверждение: Official feature list creates a BIP39 phrase from D6 dice. Stateless signing requires the original seed and any passphrase; no live device tested. Photo-entropy BIP39 generation is a separate listed feature from dice entropy and from existing SeedQR input. SeedQR storage/input is a transport for an existing seed, not evidence of generation. Feature list includes indexed BIP85 child phrases. Parent seed, index and parameters matter; it is not interchangeable with direct entropy generation.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: SeedQR storage/input is a transport for an existing seed, not evidence of generation.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-sia-ui"></a>
 
@@ -926,6 +2677,82 @@
 - Ограничения: Same32-byte seed\+6-byte checksum codec as28; do not interpret length as release version.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
 - Рекомендация профиля: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
 
+<a id="wallet-solflare"></a>
+
+### Solflare — mnemonic-generated — solflare
+
+- Исходная запись: [solflare](../catalog/wallets/solflare.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-a4468500040d / version-unresolved-doc-2026-09-29-a4468500040d
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-solflare](../catalog/evidence/wallet-solflare.json)
+- Подтверждаемое утверждение: Desktop web flow creates a recovery phrase, confirms it and optionally sets a local passcode. Phrase length/codec are not inferred from screenshots.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Desktop web flow creates a recovery phrase, confirms it and optionally sets a local passcode. Phrase length/codec are not inferred from screenshots.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-solflare-social-login"></a>
+
+### Solflare — quick-login-cloud-backup — solflare-social-login
+
+- Исходная запись: [solflare-social-login](../catalog/wallets/solflare-social-login.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-d55bd3950a0f / version-unresolved-doc-2026-09-29-d55bd3950a0f
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-solflare-social](../catalog/evidence/wallet-solflare-social.json)
+- Подтверждаемое утверждение: Quick Login with Apple or Google creates a wallet, sets a six-digit passcode and automatically backs up the recovery phrase. Login is not proof of seedless recovery.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Quick Login with Apple or Google creates a wallet, sets a six-digit passcode and automatically backs up the recovery phrase. Login is not proof of seedless recovery.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-sparrow"></a>
+
+### Sparrow — bip39-generated — sparrow
+
+- Исходная запись: [sparrow](../catalog/wallets/sparrow.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-853a96de90ae / version-unresolved-doc-2026-09-29-853a96de90ae
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-sparrow](../catalog/evidence/wallet-sparrow.json)
+- Подтверждаемое утверждение: Quick Start explicitly generates 12 BIP39 words with Generate New; import software wallets and watch-only xpubs are distinct choices. Quick Start lists Electrum import separately from BIP39 generation. Exact Electrum seed subtype/version is unresolved; scheme link is a research candidate only.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Quick Start explicitly generates 12 BIP39 words with Generate New; import software wallets and watch-only xpubs are distinct choices.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-sparrow-electrum-import"></a>
+
+### Sparrow — electrum-imported — sparrow-electrum-import
+
+- Исходная запись: [sparrow-electrum-import](../catalog/wallets/sparrow-electrum-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-853a96de90ae / version-unresolved-doc-2026-09-29-853a96de90ae
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-sparrow](../catalog/evidence/wallet-sparrow.json)
+- Подтверждаемое утверждение: Quick Start explicitly generates 12 BIP39 words with Generate New; import software wallets and watch-only xpubs are distinct choices. Quick Start lists Electrum import separately from BIP39 generation. Exact Electrum seed subtype/version is unresolved; scheme link is a research candidate only.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Quick Start lists Electrum import separately from BIP39 generation. Exact Electrum seed subtype/version is unresolved; scheme link is a research candidate only.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
 <a id="wallet-subwallet"></a>
 
 ### SubWallet — extension general sr25519 creation — subwallet
@@ -964,6 +2791,177 @@
 - Создаёт мнемонику / только импорт: true / false
 - Ограничения: UI generates12/24; NFKD password normalization in this consumer differs from raw primitive behavior. Hardware, Ethereum, Solana and derived paths not equated.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
 - Рекомендация профиля: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
+
+<a id="wallet-tangem-seed"></a>
+
+### Tangem — app-generated-seed — tangem-seed
+
+- Исходная запись: [tangem-seed](../catalog/wallets/tangem-seed.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-39be36bfad5a / version-unresolved-doc-2026-09-29-39be36bfad5a
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-tangem-seed](../catalog/evidence/wallet-tangem-seed.json)
+- Подтверждаемое утверждение: The new-card FAQ documents app-generated BIP39 phrases and import. It contradicts itself about 12-word creation; exact supported lengths and model/version are unresolved. FAQ lists 12/15/18/21/24-word import; it warns that supported networks and derivation paths constrain recovery. Imported lengths do not establish generation.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: The new-card FAQ documents app-generated BIP39 phrases and import. It contradicts itself about 12-word creation; exact supported lengths and model/version are unresolved.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-tangem-seed-import"></a>
+
+### Tangem — mnemonic-imported — tangem-seed-import
+
+- Исходная запись: [tangem-seed-import](../catalog/wallets/tangem-seed-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-39be36bfad5a / version-unresolved-doc-2026-09-29-39be36bfad5a
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-tangem-seed](../catalog/evidence/wallet-tangem-seed.json)
+- Подтверждаемое утверждение: The new-card FAQ documents app-generated BIP39 phrases and import. It contradicts itself about 12-word creation; exact supported lengths and model/version are unresolved. FAQ lists 12/15/18/21/24-word import; it warns that supported networks and derivation paths constrain recovery. Imported lengths do not establish generation.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: FAQ lists 12/15/18/21/24-word import; it warns that supported networks and derivation paths constrain recovery. Imported lengths do not establish generation.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-tangem-seedless"></a>
+
+### Tangem — seedless-card-backup — tangem-seedless
+
+- Исходная запись: [tangem-seedless](../catalog/wallets/tangem-seedless.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-0e224d2d4923 / version-unresolved-doc-2026-09-29-0e224d2d4923
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-tangem-seedless](../catalog/evidence/wallet-tangem-seedless.json)
+- Подтверждаемое утверждение: Tangem distinguishes a seedless card-backup setup from generated/imported seed setup. No phrase table applies to card-only recovery.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Tangem distinguishes a seedless card-backup setup from generated/imported seed setup. No phrase table applies to card-only recovery.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-temple"></a>
+
+### Temple — mnemonic-generated — temple
+
+- Исходная запись: [temple](../catalog/wallets/temple.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): 7770f23fffd85a96c2148335bca7c946c84d9337 / 7770f23fffd85a96c2148335bca7c946c84d9337
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-temple-source](../catalog/evidence/wallet-temple-source.json)
+- Подтверждаемое утверждение: Pinned vault spawn generates Bip39.generateMnemonic\(128\) when no mnemonic is supplied, then creates separate Tezos and EVM account credentials.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Pinned vault spawn generates Bip39.generateMnemonic\(128\) when no mnemonic is supplied, then creates separate Tezos and EVM account credentials.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-temple-cloud-backup"></a>
+
+### Temple — google-drive-backup — temple-cloud-backup
+
+- Исходная запись: [temple-cloud-backup](../catalog/wallets/temple-cloud-backup.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): 7770f23fffd85a96c2148335bca7c946c84d9337 / 7770f23fffd85a96c2148335bca7c946c84d9337
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-temple-cloud](../catalog/evidence/wallet-temple-cloud.json)
+- Подтверждаемое утверждение: Pinned overlay implements Google Drive backup of encrypted mnemonic data. Cloud authentication, encryption and version-specific restore are separate dependencies.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Pinned overlay implements Google Drive backup of encrypted mnemonic data. Cloud authentication, encryption and version-specific restore are separate dependencies.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-temple-import"></a>
+
+### Temple — mnemonic-imported — temple-import
+
+- Исходная запись: [temple-import](../catalog/wallets/temple-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): 7770f23fffd85a96c2148335bca7c946c84d9337 / 7770f23fffd85a96c2148335bca7c946c84d9337
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-temple-import](../catalog/evidence/wallet-temple-import.json)
+- Подтверждаемое утверждение: Pinned import form distinguishes legacy Tezos and HD derivation as well as EVM paths. Word equality does not prove equivalent accounts.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Pinned import form distinguishes legacy Tezos and HD derivation as well as EVM paths. Word equality does not prove equivalent accounts.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-tokenpocket"></a>
+
+### TokenPocket — mnemonic-generated — tokenpocket
+
+- Исходная запись: [tokenpocket](../catalog/wallets/tokenpocket.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-1a19c549dc63 / version-unresolved-doc-2026-09-29-1a19c549dc63
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-tokenpocket](../catalog/evidence/wallet-tokenpocket.json)
+- Подтверждаемое утверждение: Extension basic introduction distinguishes new secret-recovery-phrase wallet creation, import and watch-only addresses. Exact generation length/codec is unbound. Extension supports secret-recovery-phrase import; independent recovery compatibility remains unproved. Extension lists private-key import separately from recovery phrase and watch-only address import.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Extension basic introduction distinguishes new secret-recovery-phrase wallet creation, import and watch-only addresses. Exact generation length/codec is unbound.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-tokenpocket-import"></a>
+
+### TokenPocket — mnemonic-imported — tokenpocket-import
+
+- Исходная запись: [tokenpocket-import](../catalog/wallets/tokenpocket-import.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-1a19c549dc63 / version-unresolved-doc-2026-09-29-1a19c549dc63
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-tokenpocket](../catalog/evidence/wallet-tokenpocket.json)
+- Подтверждаемое утверждение: Extension basic introduction distinguishes new secret-recovery-phrase wallet creation, import and watch-only addresses. Exact generation length/codec is unbound. Extension supports secret-recovery-phrase import; independent recovery compatibility remains unproved. Extension lists private-key import separately from recovery phrase and watch-only address import.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Extension supports secret-recovery-phrase import; independent recovery compatibility remains unproved.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-tokenpocket-private-key"></a>
+
+### TokenPocket — private-key-imported — tokenpocket-private-key
+
+- Исходная запись: [tokenpocket-private-key](../catalog/wallets/tokenpocket-private-key.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-1a19c549dc63 / version-unresolved-doc-2026-09-29-1a19c549dc63
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-tokenpocket](../catalog/evidence/wallet-tokenpocket.json)
+- Подтверждаемое утверждение: Extension basic introduction distinguishes new secret-recovery-phrase wallet creation, import and watch-only addresses. Exact generation length/codec is unbound. Extension supports secret-recovery-phrase import; independent recovery compatibility remains unproved. Extension lists private-key import separately from recovery phrase and watch-only address import.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / true
+- Ограничения: Extension lists private-key import separately from recovery phrase and watch-only address import.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 <a id="wallet-ton-space"></a>
 
@@ -1203,6 +3201,45 @@
 - Ограничения: 20-word single-share is documented default. Hardware platform only; Suite host OS/version and firmware bounds unresolved. No promise for all firmware, Model One, 33-word Suite creation or CLI advanced groups. See exact device row.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
 - Рекомендация профиля: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
 
+<a id="wallet-trust-wallet"></a>
+
+### Trust Wallet — classic-mnemonic-generated — trust-wallet
+
+- Исходная запись: [trust-wallet](../catalog/wallets/trust-wallet.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-0d11be8c0fba / version-unresolved-doc-2026-09-29-0d11be8c0fba
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-trust-classic](../catalog/evidence/wallet-trust-classic.json)
+- Подтверждаемое утверждение: Mobile setup creates a 12-word phrase; page explicitly identifies BIP39. General compatibility prose is not independent recovery evidence.
+- Другие названия: —
+- Схема: [bip39](#scheme-bip39)
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Mobile setup creates a 12-word phrase; page explicitly identifies BIP39. General compatibility prose is not independent recovery evidence.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-trust-wallet-swift"></a>
+
+### Trust Wallet — swift-passkey — trust-wallet-swift
+
+- Исходная запись: [trust-wallet-swift](../catalog/wallets/trust-wallet-swift.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-9a714d9eac17 / version-unresolved-doc-2026-09-29-9a714d9eac17
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-trust-wallet](../catalog/evidence/wallet-trust-wallet.json), [wallet-trust-wallet-swift](../catalog/evidence/wallet-trust-wallet-swift.json)
+- Подтверждаемое утверждение: SWIFT is an account-abstraction wallet with passkey recovery tied to a Google account on Android; it is separate from the traditional phrase wallet. This is not a BIP39 profile.
+- Подтверждаемое утверждение: SWIFT is an account-abstraction wallet with passkey recovery tied to a Google account on Android; it is separate from the traditional phrase wallet. This is not a BIP39 profile.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: SWIFT is an account-abstraction wallet with passkey recovery tied to a Google account on Android; it is separate from the traditional phrase wallet. This is not a BIP39 profile.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
 <a id="wallet-typhon"></a>
 
 ### Typhon — web mnemonic creation unresolved — typhon
@@ -1341,6 +3378,44 @@
 - Создаёт мнемонику / только импорт: false / false
 - Ограничения: No mnemonic word table. Native dumpprivkey/z\_exportkey formats and full wallet backups retain necessary material.; Non-selectable\: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim.
 - Рекомендация профиля: Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil.
+
+<a id="wallet-zerion"></a>
+
+### Zerion — mnemonic-generated — zerion
+
+- Исходная запись: [zerion](../catalog/wallets/zerion.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-c37b8caa2a8e / version-unresolved-doc-2026-09-29-c37b8caa2a8e
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-zerion](../catalog/evidence/wallet-zerion.json)
+- Подтверждаемое утверждение: Extension setup generates a 12-word recovery phrase and lets users choose Ethereum or Solana ecosystems. Dictionary/derivation and exact binary remain unverified. Mobile backup encrypts the phrase with a separate password in iCloud on iOS; losing that password is not remedied by the provider. Android Google backup is not this platform.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: true / false
+- Ограничения: Extension setup generates a 12-word recovery phrase and lets users choose Ethereum or Solana ecosystems. Dictionary/derivation and exact binary remain unverified.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
+
+<a id="wallet-zerion-cloud-backup"></a>
+
+### Zerion — icloud-backup — zerion-cloud-backup
+
+- Исходная запись: [zerion-cloud-backup](../catalog/wallets/zerion-cloud-backup.json)
+- Статус: documented
+- Причина: Доказательств недостаточно для доступной поддержки.
+- Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
+- Диапазон версий (min / max): version-unresolved-doc-2026-09-29-c37b8caa2a8e / version-unresolved-doc-2026-09-29-c37b8caa2a8e
+- Дата проверки: 2026-09-29
+- Историческая запись: false
+- Доказательства: [wallet-zerion](../catalog/evidence/wallet-zerion.json)
+- Подтверждаемое утверждение: Extension setup generates a 12-word recovery phrase and lets users choose Ethereum or Solana ecosystems. Dictionary/derivation and exact binary remain unverified. Mobile backup encrypts the phrase with a separate password in iCloud on iOS; losing that password is not remedied by the provider. Android Google backup is not this platform.
+- Другие названия: —
+- Схема: —
+- Создаёт мнемонику / только импорт: false / false
+- Ограничения: Mobile backup encrypts the phrase with a separate password in iCloud on iOS; losing that password is not remedied by the provider. Android Google backup is not this platform.; Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.
+- Рекомендация профиля: Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil.
 
 ## Схемы
 
@@ -3507,6 +5582,28 @@
 - [monero-ru-source](../catalog/evidence/monero-ru-source.json): official-source; 2f9d1bbb2c553dc75f3335bd1452117dfddd86fa; 2026-09-29
 - [monero-signpath](../catalog/evidence/monero-signpath.json): official-documentation; snapshot-2026-09-29-sha256-6610cf889bbe0dc7533abaa310bc7a5cc9a61ae6c2ce0798a08109c925b46c51; 2026-09-29
 - [monero-zh-hans-source](../catalog/evidence/monero-zh-hans-source.json): official-source; 2f9d1bbb2c553dc75f3335bd1452117dfddd86fa; 2026-09-29
+- [network-algorand-guidance](../catalog/evidence/network-algorand-guidance.json): official-documentation; body-sha256\:58d26cf32c712dbb67764cead8a191620f632e640e80154728d97dc6517af206; 2026-09-29
+- [network-arbitrum-guidance](../catalog/evidence/network-arbitrum-guidance.json): official-documentation; body-sha256\:ceda32c7434bafd551b361441e520df6902cdf1983fa877e3f9f8c2d256aefbb; 2026-09-29
+- [network-avalanche-guidance](../catalog/evidence/network-avalanche-guidance.json): official-documentation; body-sha256\:07aa1c4f21f565cbc50139515e7fa4e4485d0b33c021b54999530e608594c69f; 2026-09-29
+- [network-base-guidance](../catalog/evidence/network-base-guidance.json): official-documentation; body-sha256\:337f996551fbf9a7cd197210a9140e9ac46b3644ee64e76f22f49cae607f64c3; 2026-09-29
+- [network-bitcoin-guidance](../catalog/evidence/network-bitcoin-guidance.json): official-documentation; body-sha256\:ecf8cd25398eb5590b5ba770420402a928058503b0aa2e13ada734a554ceb70a; 2026-09-29
+- [network-bnb-chain-guidance](../catalog/evidence/network-bnb-chain-guidance.json): official-documentation; body-sha256\:68b333d42320adfeeba0a2ab1ca9a4a46b84d6ddce4deee64ca43c633bd92996; 2026-09-29
+- [network-cardano-guidance](../catalog/evidence/network-cardano-guidance.json): official-documentation; body-sha256\:4bb87b35c4445fa71e19df942f7c2e99fe7704971bcca634d0b8a519e1393575; 2026-09-29
+- [network-chia-guidance](../catalog/evidence/network-chia-guidance.json): official-documentation; body-sha256\:5d633c523485ed1c47186f4ea42257e705ae42e489aca65cbd5fcd34b32ca2c4; 2026-09-29
+- [network-cosmos-guidance](../catalog/evidence/network-cosmos-guidance.json): official-documentation; body-sha256\:eb58d7c87a4b3ef9ac07188e2f8fc51bf8a6cfb7f3896c2ed45ea6958fa6b490; 2026-09-29
+- [network-decred-guidance](../catalog/evidence/network-decred-guidance.json): official-documentation; body-sha256\:68a647b0a9ffb13345c551c09e54dc8c25197042958ea1d93ac17bdcfc95c9cb; 2026-09-29
+- [network-ethereum-guidance](../catalog/evidence/network-ethereum-guidance.json): official-documentation; body-sha256\:0218e8b8204d59a5abc3c5235e8c6ad35d7781ef294b740ba9683f27f63638a9; 2026-09-29
+- [network-kusama-guidance](../catalog/evidence/network-kusama-guidance.json): official-documentation; body-sha256\:25eb213fda835aaa94077ef7115329fc61e68ae60fec7b03dc0e112ca500e2dc; 2026-09-29
+- [network-monero-guidance](../catalog/evidence/network-monero-guidance.json): official-documentation; body-sha256\:7b12e0abdde1eb836bcab38f1cf8528db3d642272dafe8e29f78a57fbc7c237e; 2026-09-29
+- [network-polkadot-guidance](../catalog/evidence/network-polkadot-guidance.json): official-documentation; body-sha256\:2c97d5dfd5b7adcdc3ce53197fd24edc560a142662589a776dbace7a0d4f133b; 2026-09-29
+- [network-polygon-guidance](../catalog/evidence/network-polygon-guidance.json): official-documentation; body-sha256\:a733bb44ab6e7489a468b12dae9972b972039641b2ece7e7c68d66965b15cdf0; 2026-09-29
+- [network-sia-guidance](../catalog/evidence/network-sia-guidance.json): official-documentation; body-sha256\:8b0763a91182eabce60b2b60c0e319a4fb91a1af7ea8d05c40bab96431b15e18; 2026-09-29
+- [network-solana-guidance](../catalog/evidence/network-solana-guidance.json): official-documentation; body-sha256\:8ae6154eb16497da8876c4be9b2ccb91392a3e805b2b57cb8c190ca619815461; 2026-09-29
+- [network-tezos-guidance](../catalog/evidence/network-tezos-guidance.json): official-documentation; body-sha256\:f4f01c4b9c99246bfc27f8f4d9cca8fec85f591fa3a3e2763bbff11bf6f3a6a4; 2026-09-29
+- [network-ton-guidance](../catalog/evidence/network-ton-guidance.json): official-documentation; body-sha256\:8a394dc065dbc8c2e82aefc5b74ee16770d4b8800e2d0af3a77a39f4c1df9fe3; 2026-09-29
+- [network-tron-guidance](../catalog/evidence/network-tron-guidance.json): official-documentation; body-sha256\:3d7368ebff0bd3cec14c74ecb5197c8f47030a8d0b1741e6810fc5d2bbf71b51; 2026-09-29
+- [network-zano-guidance](../catalog/evidence/network-zano-guidance.json): official-documentation; body-sha256\:2a6b8410f6012d262dd287649401b8db94e6f045a23d60f10e4d1fbc6435fe90; 2026-09-29
+- [network-zcash-guidance](../catalog/evidence/network-zcash-guidance.json): official-documentation; body-sha256\:73c5b4702f535e2c087f4b5c833d8c5a6a4a34394b728c377e8fb1e1d621f0fa; 2026-09-29
 - [polyseed-cs-source](../catalog/evidence/polyseed-cs-source.json): official-source; 56f634647d4f75596de20a6259b0cf1933949fdc; 2026-09-29
 - [polyseed-en-source](../catalog/evidence/polyseed-en-source.json): official-source; 56f634647d4f75596de20a6259b0cf1933949fdc; 2026-09-29
 - [polyseed-es-source](../catalog/evidence/polyseed-es-source.json): official-source; 56f634647d4f75596de20a6259b0cf1933949fdc; 2026-09-29
@@ -3578,6 +5675,60 @@
 - [tonkeeper-create](../catalog/evidence/tonkeeper-create.json): official-source; 4942adcdcddf55d57e3d3fc3676f019caf87357e; 2026-09-29
 - [tonkeeper-derive](../catalog/evidence/tonkeeper-derive.json): official-source; 4942adcdcddf55d57e3d3fc3676f019caf87357e; 2026-09-29
 - [tonkeeper-version](../catalog/evidence/tonkeeper-version.json): official-source; 4942adcdcddf55d57e3d3fc3676f019caf87357e; 2026-09-29
+- [wallet-atomic-wallet](../catalog/evidence/wallet-atomic-wallet.json): official-documentation; body-sha256\:cd66b03392fb8c0584673194407955126af7977bfd6b81c0fe022ce568fb2290; 2026-09-29
+- [wallet-backpack](../catalog/evidence/wallet-backpack.json): official-documentation; body-sha256\:d48b55cce4a72115acfc9c559eebbffe84fef627c888c6acb079e93728f9a081; 2026-09-29
+- [wallet-bitbox02](../catalog/evidence/wallet-bitbox02.json): official-documentation; body-sha256\:41e32d676620a8f0b35f8479c573910ac15deab61733f3d7d7c75527e3f0694b; 2026-09-29
+- [wallet-bitbox02-import](../catalog/evidence/wallet-bitbox02-import.json): official-documentation; body-sha256\:a54492f733f61b85ee7a3367a3f390e3c2ee99b90f92358ac0dcf8e5566a57e7; 2026-09-29
+- [wallet-bitget-wallet](../catalog/evidence/wallet-bitget-wallet.json): official-documentation; body-sha256\:bc5c1394731b946ba18b4feb4ea6f94ac5910a848f5b8ca28ed64430294552bb; 2026-09-29
+- [wallet-blockstream-jade](../catalog/evidence/wallet-blockstream-jade.json): official-documentation; body-sha256\:ecc74e713f7e865062baec4783363a1d87ede53c37aa31d88e4ca6b8652daca3; 2026-09-29
+- [wallet-bluewallet](../catalog/evidence/wallet-bluewallet.json): official-documentation; body-sha256\:47a847355b7d79459cbb21207184a4ca4aff561e3144b8a18df7fdc8d3d85eba; 2026-09-29
+- [wallet-coinbase-cloud](../catalog/evidence/wallet-coinbase-cloud.json): official-documentation; body-sha256\:4255ad095c105d1b6bb79d9e14f7e7bcb33c676367ee2b5527efe2d9fc1a849b; 2026-09-29
+- [wallet-coinbase-recovery](../catalog/evidence/wallet-coinbase-recovery.json): official-documentation; body-sha256\:12e56c471b07282398e28380ee5128f9ff2e6be7066e2cafed57c3d65d6552c5; 2026-09-29
+- [wallet-coinbase-wallet](../catalog/evidence/wallet-coinbase-wallet.json): official-documentation; body-sha256\:1d65b63ed007b5b405e1aca52d0f939a483144ecd9db2bd37941344aa31148b2; 2026-09-29
+- [wallet-coinomi](../catalog/evidence/wallet-coinomi.json): official-documentation; body-sha256\:6242fd9e4de599577e70d398a4c3cfb4537d84de409a0b72a2b392c1759546aa; 2026-09-29
+- [wallet-coldcard](../catalog/evidence/wallet-coldcard.json): official-documentation; body-sha256\:0a7991f6d468e694098fc762346edf13f35fd10799674c2f8031790a7a86d861; 2026-09-29
+- [wallet-cosmostation-source](../catalog/evidence/wallet-cosmostation-source.json): official-source; 278e29ab131cff4dda2ac2700863108d3b25e36a; 2026-09-29
+- [wallet-ellipal](../catalog/evidence/wallet-ellipal.json): official-documentation; body-sha256\:8298236125062cd1212c5afb275ee508857ba1845a50e22c8a8b16ccf6340abb; 2026-09-29
+- [wallet-exodus](../catalog/evidence/wallet-exodus.json): official-documentation; body-sha256\:069661f51ab1b253d632fdcc820738b240ff478290963826f90bd1157da207f5; 2026-09-29
+- [wallet-glow](../catalog/evidence/wallet-glow.json): official-documentation; body-sha256\:77d6d9331b55f325d74c2194560fdd4fff81437e229773be671f98349c195e20; 2026-09-29
+- [wallet-glow-support](../catalog/evidence/wallet-glow-support.json): official-documentation; body-sha256\:98e9c925bdfb2a4bb1f83c55182127261e04f507d6d3ca66c3cc9b2f08e86bc1; 2026-09-29
+- [wallet-guarda](../catalog/evidence/wallet-guarda.json): official-documentation; body-sha256\:174800cedf36b5ec2379deed5ad9f3e57f21bfd3c404c00ebfeb1d2f813ac91c; 2026-09-29
+- [wallet-guarda-import](../catalog/evidence/wallet-guarda-import.json): official-documentation; body-sha256\:c6f3e00c73031b9a0822c03c8ca5afebec1dd2c40d501c63b5fe480e08032c3c; 2026-09-29
+- [wallet-imtoken](../catalog/evidence/wallet-imtoken.json): official-documentation; web-extract-sha256\:6b49c3bf1b6646a71684093a4bbbc122e987b4bb27a1ffd6a4be4f86a1890e9f; 2026-09-29
+- [wallet-keplr](../catalog/evidence/wallet-keplr.json): official-documentation; body-sha256\:52e4154a556731e3e193d7f08852f497b33389801b66abbc70b3eb6cd3a7dcf4; 2026-09-29
+- [wallet-keystone](../catalog/evidence/wallet-keystone.json): official-documentation; body-sha256\:13706e85e7f067e4f719a2e1c931bda3e6fd736996087b3e4ef93c06615ee56d; 2026-09-29
+- [wallet-keystone-shamir](../catalog/evidence/wallet-keystone-shamir.json): official-documentation; body-sha256\:c9e4fc678240b68de31a9a25a7ed12e2d5e5e88860ba9349f556cec8d673be35; 2026-09-29
+- [wallet-kukai](../catalog/evidence/wallet-kukai.json): official-documentation; body-sha256\:88483abb01630e7421a7d0fb0a67a2cb94f3d6e5a0e4431291a40ace1f674afa; 2026-09-29
+- [wallet-kukai-social](../catalog/evidence/wallet-kukai-social.json): official-documentation; body-sha256\:341aa123a53c94f13ae3035847f2409ef9cfd81e87bca3ea3f9b1abbb8718cbc; 2026-09-29
+- [wallet-leap](../catalog/evidence/wallet-leap.json): official-documentation; web-extract-sha256\:e16436522b5c4a6bce9948720a8b5ea87347d27d8eaf6889fc080bf5445e9828; 2026-09-29
+- [wallet-ledger](../catalog/evidence/wallet-ledger.json): official-documentation; body-sha256\:48ed5a86fa4a503232460e9e6cdd693e20536c159aefa61b9dff1679120d8b27; 2026-09-29
+- [wallet-metamask](../catalog/evidence/wallet-metamask.json): official-documentation; body-sha256\:c245a4907a21d310270069c3488f20961f8cbebd12ed288bf54225bc8b903189; 2026-09-29
+- [wallet-okx-mpc](../catalog/evidence/wallet-okx-mpc.json): official-documentation; body-sha256\:a31421d257c5bc95c13672d58b41464c9eff0677a784d30e72aebbde9a7e89e3; 2026-09-29
+- [wallet-okx-wallet](../catalog/evidence/wallet-okx-wallet.json): official-documentation; body-sha256\:b06df9a2d93a88de2735af96ba233d05687108047c781042d09140d5bc357083; 2026-09-29
+- [wallet-onekey](../catalog/evidence/wallet-onekey.json): official-documentation; body-sha256\:6bf15e920abf565452cba9b9a43b083f81a84a3bc1775b2d828133d7e5fac563; 2026-09-29
+- [wallet-passport-backup](../catalog/evidence/wallet-passport-backup.json): official-source; 670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0; 2026-09-29
+- [wallet-passport-flow](../catalog/evidence/wallet-passport-flow.json): official-source; 670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0; 2026-09-29
+- [wallet-passport-source](../catalog/evidence/wallet-passport-source.json): official-source; 670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0; 2026-09-29
+- [wallet-phantom](../catalog/evidence/wallet-phantom.json): official-documentation; body-sha256\:14c729c88449e342d194a63d059a89a9f3c50a0bb2699e27caf44972d1495ee2; 2026-09-29
+- [wallet-rabby-import](../catalog/evidence/wallet-rabby-import.json): official-source; e2b98a27e9ef979ab121e81e591fcf5ad79d6e19; 2026-09-29
+- [wallet-rabby-mnemonic](../catalog/evidence/wallet-rabby-mnemonic.json): official-source; e2b98a27e9ef979ab121e81e591fcf5ad79d6e19; 2026-09-29
+- [wallet-rainbow](../catalog/evidence/wallet-rainbow.json): official-documentation; body-sha256\:be686dc3c5b3c26e4ff1fb8b9ae1e81404cbc89c918ebba9329170374ce741d4; 2026-09-29
+- [wallet-rainbow-cloud](../catalog/evidence/wallet-rainbow-cloud.json): official-documentation; body-sha256\:f24b74d203c7b974b47d873775b5a0c04a21d8fde3e7873f3eb651a81a6a9e9d; 2026-09-29
+- [wallet-safepal](../catalog/evidence/wallet-safepal.json): official-documentation; body-sha256\:8233d300de67d2fb7aac9031d76d6c1868de1d40c354cbfdbb7e84e9de7bcbcd; 2026-09-29
+- [wallet-seedsigner](../catalog/evidence/wallet-seedsigner.json): official-documentation; body-sha256\:106362fa6af27750e9bf76ea1d09dee0f066cf8005253d5c94d16e0c95a1ab82; 2026-09-29
+- [wallet-solflare](../catalog/evidence/wallet-solflare.json): official-documentation; body-sha256\:a4468500040d56fa04d5729504527f337d64590578fdf90e99ecf00f25811317; 2026-09-29
+- [wallet-solflare-social](../catalog/evidence/wallet-solflare-social.json): official-documentation; body-sha256\:d55bd3950a0f2a9ef83498ab1bb71ba5a4b016e6fe0bd04a479532a34db1fd9d; 2026-09-29
+- [wallet-sparrow](../catalog/evidence/wallet-sparrow.json): official-documentation; body-sha256\:853a96de90aedc07ed80fbd2d003765db03bb568ffd7b1517e6c1adcac7e6f25; 2026-09-29
+- [wallet-tangem-seed](../catalog/evidence/wallet-tangem-seed.json): official-documentation; body-sha256\:39be36bfad5ad935f17768dba15a1b81035df02c685890ef4be42b577ba601a8; 2026-09-29
+- [wallet-tangem-seedless](../catalog/evidence/wallet-tangem-seedless.json): official-documentation; body-sha256\:0e224d2d4923fe8d107b64f68ef3c2d81ec5ac2d7133f5afca2b91481380692a; 2026-09-29
+- [wallet-temple-cloud](../catalog/evidence/wallet-temple-cloud.json): official-source; 7770f23fffd85a96c2148335bca7c946c84d9337; 2026-09-29
+- [wallet-temple-import](../catalog/evidence/wallet-temple-import.json): official-source; 7770f23fffd85a96c2148335bca7c946c84d9337; 2026-09-29
+- [wallet-temple-source](../catalog/evidence/wallet-temple-source.json): official-source; 7770f23fffd85a96c2148335bca7c946c84d9337; 2026-09-29
+- [wallet-tokenpocket](../catalog/evidence/wallet-tokenpocket.json): official-documentation; body-sha256\:1a19c549dc63e25b929aab162aa2061067cb3aa40f482f2425ddda847d5ee502; 2026-09-29
+- [wallet-trust-classic](../catalog/evidence/wallet-trust-classic.json): official-documentation; body-sha256\:0d11be8c0fba06e7a47c991079f933782d80c6ee9a70bbb7898284a3bcd7ff06; 2026-09-29
+- [wallet-trust-wallet](../catalog/evidence/wallet-trust-wallet.json): official-documentation; body-sha256\:9a714d9eac177eb8b7861d211cdc11eda9c38d3346d63fe437fb790340596314; 2026-09-29
+- [wallet-trust-wallet-swift](../catalog/evidence/wallet-trust-wallet-swift.json): official-documentation; body-sha256\:47428b82d857cc5335fe1558bf0913ea34ce937de521f3d8dfaa078c1b2b40f3; 2026-09-29
+- [wallet-zerion](../catalog/evidence/wallet-zerion.json): official-documentation; body-sha256\:c37b8caa2a8e75cec5b2a0f38f429c093eb2b629d495934afa01edfe0478487f; 2026-09-29
 - [zano-cake-bip39](../catalog/evidence/zano-cake-bip39.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [zano-cake-modes](../catalog/evidence/zano-cake-modes.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [zano-codec](../catalog/evidence/zano-codec.json): official-source; e55c8ec47b76ed809162a958cf4600e03256a96a; 2026-09-29
@@ -3642,28 +5793,28 @@ Pending означает незавершённое исследование, а
 | dictionary-sia-legacy — sia legacy | terminal | verified | [sia-legacy](../catalog/dictionaries/sia-legacy.json) |
 | dictionary-slip39-en — slip39 en | terminal | verified | [slip39-en](../catalog/dictionaries/slip39-en.json) |
 | dictionary-zano-en — zano en | terminal | blocked | [zano-en](../catalog/dictionaries/zano-en.json) |
-| network-algorand — algorand | pending | — | — |
-| network-arbitrum — arbitrum | pending | — | — |
-| network-avalanche — avalanche | pending | — | — |
-| network-base — base | pending | — | — |
-| network-bitcoin — bitcoin | pending | — | — |
-| network-bnb-chain — bnb chain | pending | — | — |
-| network-cardano — cardano | pending | — | — |
-| network-chia — chia | terminal | documented | [chia-wallet](../catalog/wallets/chia-wallet.json) |
-| network-cosmos — cosmos | pending | — | — |
-| network-decred — decred | terminal | documented | [decrediton](../catalog/wallets/decrediton.json) |
-| network-ethereum — ethereum | pending | — | — |
-| network-kusama — kusama | terminal | documented | [polkadot-js](../catalog/wallets/polkadot-js.json), [subwallet](../catalog/wallets/subwallet.json), [talisman](../catalog/wallets/talisman.json) |
-| network-monero — monero | pending | — | — |
-| network-polkadot — polkadot | terminal | documented | [polkadot-js](../catalog/wallets/polkadot-js.json), [subwallet](../catalog/wallets/subwallet.json), [talisman](../catalog/wallets/talisman.json) |
-| network-polygon — polygon | pending | — | — |
-| network-sia — sia | terminal | documented | [sia-walletd](../catalog/wallets/sia-walletd.json) |
-| network-solana — solana | pending | — | — |
-| network-tezos — tezos | pending | — | — |
-| network-ton — ton | pending | — | — |
-| network-tron — tron | pending | — | — |
-| network-zano — zano | terminal | documented | [zano-wallet](../catalog/wallets/zano-wallet.json) |
-| network-zcash — zcash | terminal | documented | [zallet](../catalog/wallets/zallet.json) |
+| network-algorand — algorand | terminal | documented | [network-guide-algorand](../catalog/wallets/network-guide-algorand.json) |
+| network-arbitrum — arbitrum | terminal | documented | [network-guide-arbitrum](../catalog/wallets/network-guide-arbitrum.json) |
+| network-avalanche — avalanche | terminal | documented | [network-guide-avalanche](../catalog/wallets/network-guide-avalanche.json) |
+| network-base — base | terminal | documented | [network-guide-base](../catalog/wallets/network-guide-base.json) |
+| network-bitcoin — bitcoin | terminal | documented | [network-guide-bitcoin](../catalog/wallets/network-guide-bitcoin.json) |
+| network-bnb-chain — bnb chain | terminal | documented | [network-guide-bnb-chain](../catalog/wallets/network-guide-bnb-chain.json) |
+| network-cardano — cardano | terminal | documented | [network-guide-cardano](../catalog/wallets/network-guide-cardano.json) |
+| network-chia — chia | terminal | documented | [chia-wallet](../catalog/wallets/chia-wallet.json), [network-guide-chia](../catalog/wallets/network-guide-chia.json) |
+| network-cosmos — cosmos | terminal | documented | [network-guide-cosmos](../catalog/wallets/network-guide-cosmos.json) |
+| network-decred — decred | terminal | documented | [decrediton](../catalog/wallets/decrediton.json), [network-guide-decred](../catalog/wallets/network-guide-decred.json) |
+| network-ethereum — ethereum | terminal | documented | [network-guide-ethereum](../catalog/wallets/network-guide-ethereum.json) |
+| network-kusama — kusama | terminal | documented | [network-guide-kusama](../catalog/wallets/network-guide-kusama.json), [polkadot-js](../catalog/wallets/polkadot-js.json), [subwallet](../catalog/wallets/subwallet.json), [talisman](../catalog/wallets/talisman.json) |
+| network-monero — monero | terminal | documented | [network-guide-monero](../catalog/wallets/network-guide-monero.json) |
+| network-polkadot — polkadot | terminal | documented | [network-guide-polkadot](../catalog/wallets/network-guide-polkadot.json), [polkadot-js](../catalog/wallets/polkadot-js.json), [subwallet](../catalog/wallets/subwallet.json), [talisman](../catalog/wallets/talisman.json) |
+| network-polygon — polygon | terminal | documented | [network-guide-polygon](../catalog/wallets/network-guide-polygon.json) |
+| network-sia — sia | terminal | documented | [network-guide-sia](../catalog/wallets/network-guide-sia.json), [sia-walletd](../catalog/wallets/sia-walletd.json) |
+| network-solana — solana | terminal | documented | [network-guide-solana](../catalog/wallets/network-guide-solana.json) |
+| network-tezos — tezos | terminal | documented | [network-guide-tezos](../catalog/wallets/network-guide-tezos.json) |
+| network-ton — ton | terminal | documented | [network-guide-ton](../catalog/wallets/network-guide-ton.json) |
+| network-tron — tron | terminal | documented | [network-guide-tron](../catalog/wallets/network-guide-tron.json) |
+| network-zano — zano | terminal | documented | [network-guide-zano](../catalog/wallets/network-guide-zano.json), [zano-wallet](../catalog/wallets/zano-wallet.json) |
+| network-zcash — zcash | terminal | documented | [network-guide-zcash](../catalog/wallets/network-guide-zcash.json), [zallet](../catalog/wallets/zallet.json) |
 | scheme-algorand-25 — algorand 25 | terminal | documented | [algorand-25](../catalog/schemes/algorand-25.json) |
 | scheme-bip39 — bip39 | terminal | verified | [bip39](../catalog/schemes/bip39.json) |
 | scheme-cake-decred-15 — cake decred 15 | terminal | documented | [cake-decred-15](../catalog/schemes/cake-decred-15.json) |
@@ -3691,78 +5842,78 @@ Pending означает незавершённое исследование, а
 | scheme-zano-modern — zano modern | terminal | blocked | [zano-modern](../catalog/schemes/zano-modern.json) |
 | scheme-zcash-bip39 — zcash bip39 | terminal | documented | [zcash-bip39](../catalog/schemes/zcash-bip39.json) |
 | scheme-zcash-non-mnemonic — zcash non mnemonic | terminal | no-mnemonic-confirmed | [zcash-non-mnemonic](../catalog/schemes/zcash-non-mnemonic.json) |
-| wallet-atomic-wallet — atomic wallet | pending | — | — |
-| wallet-backpack — backpack | pending | — | — |
-| wallet-bitbox02 — bitbox02 | pending | — | — |
-| wallet-bitget-wallet — bitget wallet | pending | — | — |
-| wallet-blockstream-jade — blockstream jade | pending | — | — |
-| wallet-bluewallet — bluewallet | pending | — | — |
+| wallet-atomic-wallet — atomic wallet | terminal | documented | [atomic-wallet](../catalog/wallets/atomic-wallet.json) |
+| wallet-backpack — backpack | terminal | documented | [backpack](../catalog/wallets/backpack.json), [backpack-import](../catalog/wallets/backpack-import.json), [backpack-private-key](../catalog/wallets/backpack-private-key.json) |
+| wallet-bitbox02 — bitbox02 | terminal | documented | [bitbox02](../catalog/wallets/bitbox02.json), [bitbox02-microsd](../catalog/wallets/bitbox02-microsd.json), [bitbox02-mnemonic-import](../catalog/wallets/bitbox02-mnemonic-import.json) |
+| wallet-bitget-wallet — bitget wallet | terminal | documented | [bitget-wallet](../catalog/wallets/bitget-wallet.json), [bitget-wallet-cloud-backup](../catalog/wallets/bitget-wallet-cloud-backup.json), [bitget-wallet-mpc](../catalog/wallets/bitget-wallet-mpc.json) |
+| wallet-blockstream-jade — blockstream jade | terminal | documented | [blockstream-jade](../catalog/wallets/blockstream-jade.json) |
+| wallet-bluewallet — bluewallet | terminal | documented | [bluewallet](../catalog/wallets/bluewallet.json), [bluewallet-import](../catalog/wallets/bluewallet-import.json), [bluewallet-private-key](../catalog/wallets/bluewallet-private-key.json) |
 | wallet-cake-wallet — cake wallet | terminal | documented | [cake-wallet-monero](../catalog/wallets/cake-wallet-monero.json) |
 | wallet-cake-wallet-decred — cake wallet decred | terminal | documented | [cake-wallet-decred](../catalog/wallets/cake-wallet-decred.json) |
 | wallet-cake-wallet-zano — cake wallet zano | terminal | documented | [cake-wallet-zano](../catalog/wallets/cake-wallet-zano.json) |
 | wallet-chia-wallet — chia wallet | terminal | documented | [chia-wallet](../catalog/wallets/chia-wallet.json) |
-| wallet-coinbase-wallet — coinbase wallet | pending | — | — |
-| wallet-coinomi — coinomi | pending | — | — |
-| wallet-coldcard — coldcard | pending | — | — |
-| wallet-cosmostation — cosmostation | pending | — | — |
+| wallet-coinbase-wallet — coinbase wallet | terminal | documented | [coinbase-wallet](../catalog/wallets/coinbase-wallet.json), [coinbase-wallet-cloud-backup](../catalog/wallets/coinbase-wallet-cloud-backup.json), [coinbase-wallet-passkey](../catalog/wallets/coinbase-wallet-passkey.json), [coinbase-wallet-smart-recovery](../catalog/wallets/coinbase-wallet-smart-recovery.json), [coinbase-wallet-social-login](../catalog/wallets/coinbase-wallet-social-login.json) |
+| wallet-coinomi — coinomi | terminal | documented | [coinomi](../catalog/wallets/coinomi.json) |
+| wallet-coldcard — coldcard | terminal | documented | [coldcard](../catalog/wallets/coldcard.json) |
+| wallet-cosmostation — cosmostation | terminal | documented | [cosmostation](../catalog/wallets/cosmostation.json) |
 | wallet-daedalus — daedalus | terminal | documented | [daedalus](../catalog/wallets/daedalus.json) |
 | wallet-decrediton — decrediton | terminal | documented | [decrediton](../catalog/wallets/decrediton.json) |
 | wallet-defly — defly | terminal | blocked | [defly](../catalog/wallets/defly.json) |
 | wallet-electrum — electrum | terminal | documented | [electrum](../catalog/wallets/electrum.json) |
-| wallet-ellipal — ellipal | pending | — | — |
+| wallet-ellipal — ellipal | terminal | documented | [ellipal](../catalog/wallets/ellipal.json), [ellipal-import](../catalog/wallets/ellipal-import.json) |
 | wallet-eternl — eternl | terminal | blocked | [eternl](../catalog/wallets/eternl.json) |
-| wallet-exodus — exodus | pending | — | — |
+| wallet-exodus — exodus | terminal | documented | [exodus](../catalog/wallets/exodus.json), [exodus-passkey](../catalog/wallets/exodus-passkey.json) |
 | wallet-exodus-monero — exodus monero | terminal | documented | [exodus-monero-export](../catalog/wallets/exodus-monero-export.json) |
 | wallet-feather — feather | terminal | documented | [feather](../catalog/wallets/feather.json) |
-| wallet-glow — glow | pending | — | — |
+| wallet-glow — glow | terminal | documented | [glow](../catalog/wallets/glow.json) |
 | wallet-gram-wallet — gram wallet | terminal | documented | [gram-wallet](../catalog/wallets/gram-wallet.json) |
-| wallet-guarda — guarda | pending | — | — |
-| wallet-imtoken — imtoken | pending | — | — |
-| wallet-keplr — keplr | pending | — | — |
-| wallet-keystone — keystone | pending | — | — |
-| wallet-kukai — kukai | pending | — | — |
+| wallet-guarda — guarda | terminal | documented | [guarda](../catalog/wallets/guarda.json), [guarda-mnemonic-import](../catalog/wallets/guarda-mnemonic-import.json) |
+| wallet-imtoken — imtoken | terminal | documented | [imtoken](../catalog/wallets/imtoken.json) |
+| wallet-keplr — keplr | terminal | documented | [keplr](../catalog/wallets/keplr.json), [keplr-social-login](../catalog/wallets/keplr-social-login.json) |
+| wallet-keystone — keystone | terminal | documented | [keystone](../catalog/wallets/keystone.json), [keystone-mnemonic-import](../catalog/wallets/keystone-mnemonic-import.json), [keystone-shamir](../catalog/wallets/keystone-shamir.json), [keystone-shamir-import](../catalog/wallets/keystone-shamir-import.json) |
+| wallet-kukai — kukai | terminal | documented | [kukai](../catalog/wallets/kukai.json), [kukai-keystore](../catalog/wallets/kukai-keystore.json), [kukai-social-login](../catalog/wallets/kukai-social-login.json) |
 | wallet-lace — lace | terminal | documented | [lace](../catalog/wallets/lace.json) |
-| wallet-leap — leap | pending | — | — |
-| wallet-ledger — ledger | pending | — | — |
-| wallet-metamask — metamask | pending | — | — |
+| wallet-leap — leap | terminal | documented | [leap](../catalog/wallets/leap.json) |
+| wallet-ledger — ledger | terminal | documented | [ledger](../catalog/wallets/ledger.json) |
+| wallet-metamask — metamask | terminal | documented | [metamask](../catalog/wallets/metamask.json), [metamask-passkey-unlock](../catalog/wallets/metamask-passkey-unlock.json), [metamask-private-key](../catalog/wallets/metamask-private-key.json), [metamask-social-login](../catalog/wallets/metamask-social-login.json) |
 | wallet-monero-gui-cli — monero gui cli | terminal | documented | [monero-gui-cli](../catalog/wallets/monero-gui-cli.json) |
 | wallet-mymonero — mymonero | terminal | documented | [mymonero](../catalog/wallets/mymonero.json) |
 | wallet-mytonwallet — mytonwallet | terminal | documented | [mytonwallet](../catalog/wallets/mytonwallet.json) |
 | wallet-nami — nami | terminal | documented | [nami](../catalog/wallets/nami.json) |
-| wallet-okx-wallet — okx wallet | pending | — | — |
-| wallet-onekey — onekey | pending | — | — |
+| wallet-okx-wallet — okx wallet | terminal | documented | [okx-wallet](../catalog/wallets/okx-wallet.json), [okx-wallet-cloud-backup](../catalog/wallets/okx-wallet-cloud-backup.json), [okx-wallet-mnemonic-import](../catalog/wallets/okx-wallet-mnemonic-import.json), [okx-wallet-mpc](../catalog/wallets/okx-wallet-mpc.json), [okx-wallet-private-key](../catalog/wallets/okx-wallet-private-key.json) |
+| wallet-onekey — onekey | terminal | documented | [onekey](../catalog/wallets/onekey.json) |
 | wallet-openmask — openmask | terminal | documented | [openmask](../catalog/wallets/openmask.json) |
-| wallet-passport — passport | pending | — | — |
+| wallet-passport — passport | terminal | documented | [passport](../catalog/wallets/passport.json), [passport-microsd](../catalog/wallets/passport-microsd.json) |
 | wallet-pera-wallet — pera wallet | terminal | documented | [pera-wallet](../catalog/wallets/pera-wallet.json) |
-| wallet-phantom — phantom | pending | — | — |
+| wallet-phantom — phantom | terminal | documented | [phantom](../catalog/wallets/phantom.json), [phantom-social-login](../catalog/wallets/phantom-social-login.json) |
 | wallet-polkadot-js — polkadot js | terminal | documented | [polkadot-js](../catalog/wallets/polkadot-js.json) |
-| wallet-rabby — rabby | pending | — | — |
-| wallet-rainbow — rainbow | pending | — | — |
-| wallet-safepal — safepal | pending | — | — |
-| wallet-seedsigner — seedsigner | pending | — | — |
+| wallet-rabby — rabby | terminal | documented | [rabby](../catalog/wallets/rabby.json), [rabby-import](../catalog/wallets/rabby-import.json) |
+| wallet-rainbow — rainbow | terminal | documented | [rainbow](../catalog/wallets/rainbow.json), [rainbow-cloud-backup](../catalog/wallets/rainbow-cloud-backup.json) |
+| wallet-safepal — safepal | terminal | documented | [safepal](../catalog/wallets/safepal.json) |
+| wallet-seedsigner — seedsigner | terminal | documented | [seedsigner](../catalog/wallets/seedsigner.json), [seedsigner-bip85](../catalog/wallets/seedsigner-bip85.json), [seedsigner-photo](../catalog/wallets/seedsigner-photo.json), [seedsigner-seedqr](../catalog/wallets/seedsigner-seedqr.json) |
 | wallet-sia-ui — sia ui | terminal | documented | [sia-ui](../catalog/wallets/sia-ui.json) |
 | wallet-siad — siad | terminal | documented | [siad](../catalog/wallets/siad.json) |
-| wallet-solflare — solflare | pending | — | — |
-| wallet-sparrow — sparrow | pending | — | — |
+| wallet-solflare — solflare | terminal | documented | [solflare](../catalog/wallets/solflare.json), [solflare-social-login](../catalog/wallets/solflare-social-login.json) |
+| wallet-sparrow — sparrow | terminal | documented | [sparrow](../catalog/wallets/sparrow.json), [sparrow-electrum-import](../catalog/wallets/sparrow-electrum-import.json) |
 | wallet-subwallet — subwallet | terminal | documented | [subwallet](../catalog/wallets/subwallet.json) |
 | wallet-talisman — talisman | terminal | documented | [talisman](../catalog/wallets/talisman.json) |
-| wallet-tangem-seed — tangem seed | pending | — | — |
-| wallet-temple — temple | pending | — | — |
-| wallet-tokenpocket — tokenpocket | pending | — | — |
+| wallet-tangem-seed — tangem seed | terminal | documented | [tangem-seed](../catalog/wallets/tangem-seed.json), [tangem-seed-import](../catalog/wallets/tangem-seed-import.json), [tangem-seedless](../catalog/wallets/tangem-seedless.json) |
+| wallet-temple — temple | terminal | documented | [temple](../catalog/wallets/temple.json), [temple-cloud-backup](../catalog/wallets/temple-cloud-backup.json), [temple-import](../catalog/wallets/temple-import.json) |
+| wallet-tokenpocket — tokenpocket | terminal | documented | [tokenpocket](../catalog/wallets/tokenpocket.json), [tokenpocket-import](../catalog/wallets/tokenpocket-import.json), [tokenpocket-private-key](../catalog/wallets/tokenpocket-private-key.json) |
 | wallet-ton-space — ton space | terminal | documented | [ton-space](../catalog/wallets/ton-space.json) |
 | wallet-tonhub — tonhub | terminal | verified | [tonhub](../catalog/wallets/tonhub.json) |
 | wallet-tonkeeper-classic — tonkeeper classic | terminal | verified | [tonkeeper-classic](../catalog/wallets/tonkeeper-classic.json) |
 | wallet-tonkeeper-multichain — tonkeeper multichain | terminal | documented | [tonkeeper-multichain](../catalog/wallets/tonkeeper-multichain.json) |
-| wallet-trezor — trezor | pending | — | — |
+| wallet-trezor — trezor | terminal | documented | [trezor-model-t](../catalog/wallets/trezor-model-t.json), [trezor-model-t-multi-share](../catalog/wallets/trezor-model-t-multi-share.json), [trezor-safe-3](../catalog/wallets/trezor-safe-3.json), [trezor-safe-3-multi-share](../catalog/wallets/trezor-safe-3-multi-share.json), [trezor-safe-5](../catalog/wallets/trezor-safe-5.json), [trezor-safe-5-multi-share](../catalog/wallets/trezor-safe-5-multi-share.json), [trezor-safe-7](../catalog/wallets/trezor-safe-7.json), [trezor-safe-7-multi-share](../catalog/wallets/trezor-safe-7-multi-share.json) |
 | wallet-trezor-model-t — trezor model t | terminal | documented | [trezor-model-t](../catalog/wallets/trezor-model-t.json) |
 | wallet-trezor-safe-3 — trezor safe 3 | terminal | documented | [trezor-safe-3](../catalog/wallets/trezor-safe-3.json) |
 | wallet-trezor-safe-5 — trezor safe 5 | terminal | documented | [trezor-safe-5](../catalog/wallets/trezor-safe-5.json) |
 | wallet-trezor-safe-7 — trezor safe 7 | terminal | documented | [trezor-safe-7](../catalog/wallets/trezor-safe-7.json) |
-| wallet-trust-wallet — trust wallet | pending | — | — |
+| wallet-trust-wallet — trust wallet | terminal | documented | [trust-wallet](../catalog/wallets/trust-wallet.json), [trust-wallet-swift](../catalog/wallets/trust-wallet-swift.json) |
 | wallet-typhon — typhon | terminal | blocked | [typhon](../catalog/wallets/typhon.json) |
 | wallet-walletd — walletd | terminal | documented | [sia-walletd](../catalog/wallets/sia-walletd.json) |
 | wallet-yoroi — yoroi | terminal | documented | [yoroi](../catalog/wallets/yoroi.json) |
 | wallet-zallet — zallet | terminal | documented | [zallet](../catalog/wallets/zallet.json) |
 | wallet-zano-wallet — zano wallet | terminal | documented | [zano-wallet](../catalog/wallets/zano-wallet.json) |
 | wallet-zcash-official — zcash official | terminal | documented | [zcash-official](../catalog/wallets/zcash-official.json) |
-| wallet-zerion — zerion | pending | — | — |
+| wallet-zerion — zerion | terminal | documented | [zerion](../catalog/wallets/zerion.json), [zerion-cloud-backup](../catalog/wallets/zerion-cloud-backup.json) |

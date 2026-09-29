@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-zcash-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official zcash documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://zips.z.cash/zip-0339",
+  "revision": "body-sha256:73c5b4702f535e2c087f4b5c833d8c5a6a4a34394b728c377e8fb1e1d621f0fa",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-zcash"
+  ]
+}

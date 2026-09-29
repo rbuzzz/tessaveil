@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-ledger",
+  "source_type": "official-documentation",
+  "claim": "Ledger documents random entropy and 24-word BIP39 setup. Model, firmware, optional passphrase and coin application must still be bound before recovery support.",
+  "url": "https://www.ledger.com/academy/basic-basics/2-how-to-own-crypto/whats-a-secret-recovery-phrase",
+  "revision": "body-sha256:48ed5a86fa4a503232460e9e6cdd693e20536c159aefa61b9dff1679120d8b27",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "ledger"
+  ]
+}

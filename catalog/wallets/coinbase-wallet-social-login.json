@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "coinbase-wallet-social-login",
+  "display_name": {
+    "en": "Coinbase Wallet — cdp-social-login",
+    "ru": "Coinbase Wallet — cdp-social-login"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-coinbase-wallet"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-1d65b63ed007",
+    "max": "version-unresolved-doc-2026-09-29-1d65b63ed007"
+  },
+  "product_id": "coinbase-wallet",
+  "product_name": "Coinbase Wallet",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "cdp-social-login",
+  "network_ids": [
+    "ethereum",
+    "solana",
+    "bitcoin"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

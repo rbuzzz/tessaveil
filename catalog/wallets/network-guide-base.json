@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "network-guide-base",
+  "display_name": {
+    "en": "base — network search guidance — network-search-guidance",
+    "ru": "base — network search guidance — network-search-guidance"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "network-base-guidance"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-337f996551fb",
+    "max": "version-unresolved-doc-2026-09-29-337f996551fb"
+  },
+  "product_id": "network-guide-base",
+  "product_name": "base — network search guidance",
+  "aliases": [
+    "Base Mainnet",
+    "Base chain"
+  ],
+  "platform": "cross-platform",
+  "mode_id": "network-search-guidance",
+  "network_ids": [
+    "base"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Network identity/search guidance only. Base is an EVM chain; Coinbase Wallet is a product and Base Account is a smart-account mode, not a Base dictionary.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.",
+    "Search candidates only: bip39. Scheme links are navigation, not recovery compatibility."
+  ],
+  "guidance": "Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil."
+}

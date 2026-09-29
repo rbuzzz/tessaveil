@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-guarda-import",
+  "source_type": "official-documentation",
+  "claim": "Browser import accepts an existing mnemonic, then encrypts a backup with a new password. This does not establish newly generated BIP39 wallets.",
+  "url": "https://guarda.com/academy/tutorials/how-to-restore-your-crypto-wallet-using-a-mnemonic-phrase/",
+  "revision": "body-sha256:c6f3e00c73031b9a0822c03c8ca5afebec1dd2c40d501c63b5fe480e08032c3c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "guarda-mnemonic-import"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-safepal",
+  "source_type": "official-documentation",
+  "claim": "The software-wallet tutorial explicitly creates a 24-word example and describes Ethereum use. This dated software procedure does not prove hardware S1 or every phrase length.",
+  "url": "https://www.safepal.com/en/blog/tutorial-software-wallet",
+  "revision": "body-sha256:8233d300de67d2fb7aac9031d76d6c1868de1d40c354cbfdbb7e84e9de7bcbcd",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "safepal"
+  ]
+}

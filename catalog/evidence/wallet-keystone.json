@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-keystone",
+  "source_type": "official-documentation",
+  "claim": "The guide covers M-4.5 Multi-Coin or newer and states default 24-word generation versus 12/18/24 import. This is not Keystone 3 or all historical firmware. The guide lists 12/18/24-word imports separately from default 24-word creation; exact codec/binary binding remains unresolved.",
+  "url": "https://support.keyst.one/getting-started/setting-up-keystone-new",
+  "revision": "body-sha256:13706e85e7f067e4f719a2e1c931bda3e6fd736996087b3e4ef93c06615ee56d",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "keystone",
+    "keystone-mnemonic-import"
+  ]
+}

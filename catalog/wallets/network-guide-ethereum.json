@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "network-guide-ethereum",
+  "display_name": {
+    "en": "ethereum — network search guidance — network-search-guidance",
+    "ru": "ethereum — network search guidance — network-search-guidance"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "network-ethereum-guidance"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-0218e8b8204d",
+    "max": "version-unresolved-doc-2026-09-29-0218e8b8204d"
+  },
+  "product_id": "network-guide-ethereum",
+  "product_name": "ethereum — network search guidance",
+  "aliases": [
+    "ETH",
+    "EVM"
+  ],
+  "platform": "cross-platform",
+  "mode_id": "network-search-guidance",
+  "network_ids": [
+    "ethereum"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Network identity/search guidance only. EOA keys, mnemonic HD wallets and smart-account signers are different recovery modes; EVM address support alone proves no mnemonic scheme.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.",
+    "Search candidates only: bip39. Scheme links are navigation, not recovery compatibility."
+  ],
+  "guidance": "Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil."
+}

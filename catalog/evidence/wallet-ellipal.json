@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-ellipal",
+  "source_type": "official-documentation",
+  "claim": "X Card Starter setup offers 12/18/24-word creation and a separate existing-wallet restore route. Does not establish Titan or Joy generation behavior. X Card setup distinguishes restoring an existing phrase from generating a new one. No unsupported phrase-length or network recovery promise.",
+  "url": "https://www.ellipal.com/en-br/pages/x-card-setup-guide",
+  "revision": "body-sha256:8298236125062cd1212c5afb275ee508857ba1845a50e22c8a8b16ccf6340abb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "ellipal",
+    "ellipal-import"
+  ]
+}

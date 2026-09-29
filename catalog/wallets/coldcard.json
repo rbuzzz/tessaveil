@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "coldcard",
+  "display_name": {
+    "en": "COLDCARD — mnemonic-generated",
+    "ru": "COLDCARD — mnemonic-generated"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-coldcard"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-0a7991f6d468",
+    "max": "version-unresolved-doc-2026-09-29-0a7991f6d468"
+  },
+  "product_id": "coldcard",
+  "product_name": "COLDCARD",
+  "aliases": [],
+  "platform": "hardware",
+  "mode_id": "mnemonic-generated",
+  "network_ids": [
+    "bitcoin"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Current quickstart requires a firmware security check before seed creation and distinguishes new seed words from import. Do not assume historical firmware entropy safety.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

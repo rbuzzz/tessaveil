@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-solana-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official solana documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://solana.com/docs/core/accounts",
+  "revision": "body-sha256:8ae6154eb16497da8876c4be9b2ccb91392a3e805b2b57cb8c190ca619815461",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-solana"
+  ]
+}

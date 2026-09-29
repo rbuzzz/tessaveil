@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "wallet-tokenpocket",
+  "source_type": "official-documentation",
+  "claim": "Extension basic introduction distinguishes new secret-recovery-phrase wallet creation, import and watch-only addresses. Exact generation length/codec is unbound. Extension supports secret-recovery-phrase import; independent recovery compatibility remains unproved. Extension lists private-key import separately from recovery phrase and watch-only address import.",
+  "url": "https://help.tokenpocket.pro/en/extension-wallet/faq/basic-intro",
+  "revision": "body-sha256:1a19c549dc63e25b929aab162aa2061067cb3aa40f482f2425ddda847d5ee502",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tokenpocket",
+    "tokenpocket-import",
+    "tokenpocket-private-key"
+  ]
+}

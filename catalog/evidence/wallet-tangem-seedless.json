@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-tangem-seedless",
+  "source_type": "official-documentation",
+  "claim": "Tangem distinguishes a seedless card-backup setup from generated/imported seed setup. No phrase table applies to card-only recovery.",
+  "url": "https://tangem.com/en/blog/post/onboarding-tangem-ama/",
+  "revision": "body-sha256:0e224d2d4923fe8d107b64f68ef3c2d81ec5ac2d7133f5afca2b91481380692a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tangem-seedless"
+  ]
+}

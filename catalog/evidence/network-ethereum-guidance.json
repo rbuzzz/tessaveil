@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-ethereum-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official ethereum documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://ethereum.org/en/wallets/",
+  "revision": "body-sha256:0218e8b8204d59a5abc3c5235e8c6ad35d7781ef294b740ba9683f27f63638a9",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-ethereum"
+  ]
+}

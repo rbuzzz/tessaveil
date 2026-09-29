@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-bitbox02",
+  "source_type": "official-documentation",
+  "claim": "Advanced setup documents default 24 words and optional 12 words; recovery documentation identifies the English BIP39 list. Model/firmware and exact released artifact are not pinned. Setup may create a microSD backup instead of displaying words. Binary backup files are not word tables and are not touched by this research.",
+  "url": "https://support.bitbox.swiss/en_US/erweiterte-backup-optionen-bitbox02",
+  "revision": "body-sha256:41e32d676620a8f0b35f8479c573910ac15deab61733f3d7d7c75527e3f0694b",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "bitbox02",
+    "bitbox02-microsd"
+  ]
+}

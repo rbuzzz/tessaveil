@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-blockstream-jade",
+  "source_type": "official-documentation",
+  "claim": "Desktop quickstart creates a new 12-word phrase on Jade and refers separately to restoration. Bitcoin and Liquid modes still require their original wallet configuration.",
+  "url": "https://help.blockstream.com/blockstream-jade/faqs/blockstream-jade-quickstart-guide-for-desktop.md",
+  "revision": "body-sha256:ecc74e713f7e865062baec4783363a1d87ede53c37aa31d88e4ca6b8652daca3",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "blockstream-jade"
+  ]
+}

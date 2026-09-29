@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-guarda",
+  "source_type": "official-documentation",
+  "claim": "Guarda describes a TXT file containing encrypted private keys; both file and password are needed, and backups change when wallets or passwords change.",
+  "url": "https://guarda.com/support/security/what-is-a-backup-file/",
+  "revision": "body-sha256:174800cedf36b5ec2379deed5ad9f3e57f21bfd3c404c00ebfeb1d2f813ac91c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "guarda"
+  ]
+}

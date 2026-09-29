@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-cardano-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official cardano documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.cardano.org/",
+  "revision": "body-sha256:4bb87b35c4445fa71e19df942f7c2e99fe7704971bcca634d0b8a519e1393575",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-cardano"
+  ]
+}

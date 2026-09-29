@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "zerion-cloud-backup",
+  "display_name": {
+    "en": "Zerion — icloud-backup",
+    "ru": "Zerion — icloud-backup"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-zerion"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-c37b8caa2a8e",
+    "max": "version-unresolved-doc-2026-09-29-c37b8caa2a8e"
+  },
+  "product_id": "zerion",
+  "product_name": "Zerion",
+  "aliases": [],
+  "platform": "ios",
+  "mode_id": "icloud-backup",
+  "network_ids": [
+    "ethereum",
+    "solana"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Mobile backup encrypts the phrase with a separate password in iCloud on iOS; losing that password is not remedied by the provider. Android Google backup is not this platform.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

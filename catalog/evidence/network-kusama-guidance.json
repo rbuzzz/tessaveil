@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-kusama-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official kusama documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://guide.kusama.network/docs/kusama-accounts/",
+  "revision": "body-sha256:25eb213fda835aaa94077ef7115329fc61e68ae60fec7b03dc0e112ca500e2dc",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-kusama"
+  ]
+}

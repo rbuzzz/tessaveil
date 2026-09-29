@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "network-guide-algorand",
+  "display_name": {
+    "en": "algorand — network search guidance — network-search-guidance",
+    "ru": "algorand — network search guidance — network-search-guidance"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "network-algorand-guidance"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-58d26cf32c71",
+    "max": "version-unresolved-doc-2026-09-29-58d26cf32c71"
+  },
+  "product_id": "network-guide-algorand",
+  "product_name": "algorand — network search guidance",
+  "aliases": [
+    "ALGO"
+  ],
+  "platform": "cross-platform",
+  "mode_id": "network-search-guidance",
+  "network_ids": [
+    "algorand"
+  ],
+  "scheme_id": "algorand-25",
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Network identity/search guidance only. Official current overview distinguishes Algo25 from newer xHD 24-word accounts and smart accounts. Existing Algo25 profile is not xHD support; xHD remains unmapped.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.",
+    "Search candidates only: algorand-25. Scheme links are navigation, not recovery compatibility."
+  ],
+  "guidance": "Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs: algorand-25. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil."
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "network-guide-arbitrum",
+  "display_name": {
+    "en": "arbitrum — network search guidance — network-search-guidance",
+    "ru": "arbitrum — network search guidance — network-search-guidance"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "network-arbitrum-guidance"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-ceda32c7434b",
+    "max": "version-unresolved-doc-2026-09-29-ceda32c7434b"
+  },
+  "product_id": "network-guide-arbitrum",
+  "product_name": "arbitrum — network search guidance",
+  "aliases": [
+    "ARB",
+    "Arbitrum One"
+  ],
+  "platform": "cross-platform",
+  "mode_id": "network-search-guidance",
+  "network_ids": [
+    "arbitrum"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Network identity/search guidance only. Arbitrum One network guidance; Nova and testnets are separate chain identities. Network configuration is not mnemonic evidence.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.",
+    "Search candidates only: bip39. Scheme links are navigation, not recovery compatibility."
+  ],
+  "guidance": "Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil."
+}

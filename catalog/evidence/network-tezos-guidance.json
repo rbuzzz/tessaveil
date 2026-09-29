@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-tezos-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official tezos documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.tezos.com/",
+  "revision": "body-sha256:f4f01c4b9c99246bfc27f8f4d9cca8fec85f591fa3a3e2763bbff11bf6f3a6a4",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-tezos"
+  ]
+}

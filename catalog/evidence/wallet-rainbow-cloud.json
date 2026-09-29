@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-rainbow-cloud",
+  "source_type": "official-documentation",
+  "claim": "Rainbow backup restoration explicitly distinguishes iCloud on iOS from Google Drive on Android. This record covers iOS only and not mnemonic generation.",
+  "url": "https://rainbow.me/support/app/restore-from-a-backup",
+  "revision": "body-sha256:f24b74d203c7b974b47d873775b5a0c04a21d8fde3e7873f3eb651a81a6a9e9d",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "rainbow-cloud-backup"
+  ]
+}

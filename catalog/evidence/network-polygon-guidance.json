@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-polygon-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official polygon documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.polygon.technology/",
+  "revision": "body-sha256:a733bb44ab6e7489a468b12dae9972b972039641b2ece7e7c68d66965b15cdf0",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-polygon"
+  ]
+}

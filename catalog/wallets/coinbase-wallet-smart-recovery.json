@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "coinbase-wallet-smart-recovery",
+  "display_name": {
+    "en": "Coinbase Wallet — smart-recovery-signer",
+    "ru": "Coinbase Wallet — smart-recovery-signer"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-coinbase-recovery"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-12e56c471b07",
+    "max": "version-unresolved-doc-2026-09-29-12e56c471b07"
+  },
+  "product_id": "coinbase-wallet",
+  "product_name": "Coinbase Wallet",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "smart-recovery-signer",
+  "network_ids": [
+    "ethereum",
+    "base"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "An optional recovery phrase creates a new on-chain signer which can add a replacement passkey. Setup requires existing access and a per-chain fee; it is not evidence for ordinary EOA derivation.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

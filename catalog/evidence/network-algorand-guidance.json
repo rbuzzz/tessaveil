@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-algorand-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official algorand documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://dev.algorand.co/concepts/accounts/overview/",
+  "revision": "body-sha256:58d26cf32c712dbb67764cead8a191620f632e640e80154728d97dc6517af206",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-algorand"
+  ]
+}

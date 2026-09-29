@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-tron-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official tron documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://developers.tron.network/docs/account",
+  "revision": "body-sha256:3d7368ebff0bd3cec14c74ecb5197c8f47030a8d0b1741e6810fc5d2bbf71b51",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-tron"
+  ]
+}

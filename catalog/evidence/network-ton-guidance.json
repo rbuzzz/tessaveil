@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-ton-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official ton documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.ton.org/",
+  "revision": "body-sha256:8a394dc065dbc8c2e82aefc5b74ee16770d4b8800e2d0af3a77a39f4c1df9fe3",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-ton"
+  ]
+}

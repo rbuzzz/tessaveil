@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "bitget-wallet-mpc",
+  "display_name": {
+    "en": "Bitget Wallet — mpc-keyless",
+    "ru": "Bitget Wallet — mpc-keyless"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-bitget-wallet"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-bc5c1394731b",
+    "max": "version-unresolved-doc-2026-09-29-bc5c1394731b"
+  },
+  "product_id": "bitget-wallet",
+  "product_name": "Bitget Wallet",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "mpc-keyless",
+  "network_ids": [
+    "multi-chain"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Keyless MPC uses email verification and a transaction password; no mnemonic phrase is presented for this flow.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

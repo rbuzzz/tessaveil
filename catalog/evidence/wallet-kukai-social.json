@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-kukai-social",
+  "source_type": "official-documentation",
+  "claim": "DirectAuth ties distributed key generation to an OAuth account and reconstructs a private key from Torus shares. Those shares are not SLIP39 mnemonic shares.",
+  "url": "https://docs.kukai.app/learn-kukai/direct-auth",
+  "revision": "body-sha256:341aa123a53c94f13ae3035847f2409ef9cfd81e87bca3ea3f9b1abbb8718cbc",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "kukai-social-login"
+  ]
+}

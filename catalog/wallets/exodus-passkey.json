@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "exodus-passkey",
+  "display_name": {
+    "en": "Exodus — passkey-backup",
+    "ru": "Exodus — passkey-backup"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-exodus"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-069661f51ab1",
+    "max": "version-unresolved-doc-2026-09-29-069661f51ab1"
+  },
+  "product_id": "exodus",
+  "product_name": "Exodus",
+  "aliases": [],
+  "platform": "ios",
+  "mode_id": "passkey-backup",
+  "network_ids": [
+    "multi-chain"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "The secret-key guide documents passkey backup and says Web3 Wallet lacks that feature. This backup mode is distinct from phrase generation; exact mobile version and recovery dependencies remain unverified.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}
