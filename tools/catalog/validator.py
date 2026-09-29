@@ -16,6 +16,7 @@ SCHEMA_DIR = Path(__file__).resolve().parents[2] / "catalog" / "schema"
 KINDS = (("dictionaries", "dictionary"), ("schemes", "scheme"),
          ("wallets", "wallet"), ("evidence", "evidence"), ("required_sets", "required-set"))
 TERMINAL = {"verified", "documented", "blocked", "no-mnemonic-confirmed"}
+PRIMARY_EVIDENCE = {"official-specification", "official-documentation", "official-source"}
 SUPPORTED_LENGTHS = {12, 13, 15, 16, 18, 20, 21, 24, 25, 26, 27, 28, 29, 33}
 SUPPORTED_SCHEMA_KEYS = frozenset({
     "$schema", "$id", "title", "type", "required", "properties", "additionalProperties",
@@ -194,15 +195,23 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
             add("unsupported-status", record, "unsupported status")
         if record.data.get("status") == "blocked" and not record.data.get("evidence_ids"):
             add("unevidenced-blocker", record, "blocker requires evidence")
+        if record.data.get("status") == "verified" and not any(
+            identifier in evidence and identifier not in invalid and
+            evidence[identifier].data.get("source_type") in PRIMARY_EVIDENCE and
+            record.id in evidence[identifier].data.get("record_ids", ())
+            for identifier in record.data.get("evidence_ids", ())
+        ):
+            add("primary-evidence", record, "verified record requires valid primary evidence with backlink")
 
     for record in catalog.dictionaries:
         data = record.data
         license_data = data.get("license", {})
-        if isinstance(license_data, Mapping) and data.get("status") == "verified" and (
+        if (data.get("status") == "verified" or record.wordlist_bytes is not None) and (
+            not isinstance(license_data, Mapping) or
             license_data.get("repository_redistribution") != "allowed" or
             license_data.get("signpath_compatible") != "compatible"
         ):
-            add("license-decision", record, "verified dictionary requires allowed and compatible license decisions")
+            add("license-decision", record, "verified or bundled dictionary requires allowed and compatible license decisions")
         if record.id in invalid:
             continue
         evidence_refs(record, license_data.get("decision_evidence"))

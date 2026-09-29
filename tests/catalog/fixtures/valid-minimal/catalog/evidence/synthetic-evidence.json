@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "id": "synthetic-evidence",
-  "source_type": "public-test-vector",
-  "claim": "Synthetic records and word list are test fixtures only.",
+  "source_type": "official-specification",
+  "claim": "Synthetic specification, licensing and vector evidence for validator fixtures only; not real upstream evidence or license approval.",
   "url": "https://example.invalid/synthetic-vector",
   "revision": "fixture-v1",
   "verified_on": "2026-09-29",

@@ -56,5 +56,9 @@
       "minItems": 1
     }
   },
+  "allOf": [{
+    "if": {"properties": {"source_type": {"const": "official-source"}}, "required": ["source_type"]},
+    "then": {"properties": {"revision": {"pattern": "^[a-f0-9]{40}(?:[a-f0-9]{24})?(?![\\s\\S])"}}}
+  }],
   "additionalProperties": false
 }

@@ -148,8 +148,8 @@
         "repository_redistribution": {
           "enum": [
             "allowed",
-            "denied",
-            "pending"
+            "forbidden",
+            "unclear"
           ]
         },
         "signpath_compatible": {

@@ -9,3 +9,16 @@ record its identity, source revision, license, copyright and attribution
 obligations, redistribution decision, and any SignPath Foundation compatibility
 decision. An Apache-2.0 license on original project code does not override
 those terms.
+
+Distribution gate: repository_redistribution=allowed AND
+signpath_compatible=compatible. A forbidden/unclear redistribution result or an
+incompatible/pending signing result blocks verified status and bundling.
+Compatibility is a local assessment, not acceptance by SignPath Foundation.
+See docs/research/licensing.md and docs/research/source-policy.md for evidence,
+revision, SHA-256, verification-date and license-review requirements.
+
+The Task 6 locked dependency review in spikes/mobile/dependency-review.md is
+research-only and leaves distribution review pending. References, lockfile
+entries and test dependencies are not declarations that those components are
+shipped. Add actual upstream notices and license copies when an approved payload
+is selected; this policy text supplies no third-party clearance or attribution.
