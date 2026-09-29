@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "decred-cake-native",
+  "source_type": "official-source",
+  "claim": "Native15 encodes18 entropy bytes (144 bits),2 big-endian Unix-day birthday bytes (16 bits),5 high SHA256 checksum bits as15 big-endian11-bit indices. Not BIP39 entropy semantics.",
+  "url": "https://raw.githubusercontent.com/decred/dcrdex/37585833528544f80dddd92dcdff10a78ad01e1f/client/mnemonic/seed.go",
+  "revision": "37585833528544f80dddd92dcdff10a78ad01e1f",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-decred-15",
+    "cake-wallet-decred"
+  ]
+}

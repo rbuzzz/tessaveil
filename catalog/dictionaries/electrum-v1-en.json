@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "electrum-v1-en",
+  "display_name": {
+    "en": "Electrum v1 — English (rights unresolved)",
+    "ru": "Electrum v1 — English (rights unresolved)"
+  },
+  "status": "blocked",
+  "historical": true,
+  "evidence_ids": [
+    "electrum-legacy-list",
+    "electrum-legacy-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "ede66c89887234c83b0def133b3100fe92a160eb",
+    "max": "ede66c89887234c83b0def133b3100fe92a160eb"
+  },
+  "language": "en",
+  "script": "Latn",
+  "source": {
+    "url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/electrum/old_mnemonic.py",
+    "revision": "ede66c89887234c83b0def133b3100fe92a160eb"
+  },
+  "license": {
+    "spdx_or_name": "MIT file header; upstream frequency-list terms unresolved",
+    "source_url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/LICENCE",
+    "attribution": "Copyright (C) 2011 thomasv@gitorious; Wiktionary Contemporary poetry frequency-list provenance unresolved.",
+    "repository_redistribution": "unclear",
+    "signpath_compatible": "pending",
+    "decision_evidence": [
+      "electrum-legacy-license",
+      "electrum-legacy-list"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "none",
+  "word_count": 1626,
+  "sha256": null,
+  "order_rule": "Source tuple order; do not sort. No approved committed byte artifact.",
+  "position_rules": [
+    "Each three-word group encodes 32 bits with modulo-1626 dependent indices; no BIP39 checksum."
+  ],
+  "duplicate_analysis": {
+    "normalized_unique_count": 1626,
+    "collisions": []
+  },
+  "test_vector_ids": [],
+  "wordlist_path": null
+}

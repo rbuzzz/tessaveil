@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "electrum-v2-source",
+  "source_type": "official-source",
+  "claim": "Electrum 4.8.2-source: default English 132-bit make_seed uses HMAC-SHA512 Seed version prefixes, normalized sentence and electrum-prefixed PBKDF2 salt, not BIP39 entropy/checksum semantics. Old recognition accepts 12/24 words; native generation normally 12 with possible nonce overflow to 13. No wallet artifact tested.",
+  "url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/electrum/mnemonic.py",
+  "revision": "ede66c89887234c83b0def133b3100fe92a160eb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "electrum-v1",
+    "electrum-v2",
+    "electrum",
+    "electrum-v1-import"
+  ]
+}

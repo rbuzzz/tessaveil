@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "electrum-legacy-list",
+  "source_type": "official-source",
+  "claim": "Pinned legacy encoder has 1626 English words in fixed order and encodes each 32-bit chunk as three dependent indices. File MIT header also cites a Wiktionary contemporary-poetry list; cumulative upstream data rights are not resolved. No legacy list bytes bundled.",
+  "url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/electrum/old_mnemonic.py",
+  "revision": "ede66c89887234c83b0def133b3100fe92a160eb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "electrum-v1-en",
+    "electrum-v1"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "decred-cake-seed",
+  "source_type": "official-source",
+  "claim": "Native15 rejects nonempty seedpass and transforms18-byte entropy by BLAKE256(entropy || big-endian uint32(42)); BIP39-shaped12/24 applies passphrase even empty. Local wallet encryption password is separate.",
+  "url": "https://raw.githubusercontent.com/decred/libwallet/ecc4a5fb9594368777848de42d7e072d62406507/dcr/loader.go",
+  "revision": "ecc4a5fb9594368777848de42d7e072d62406507",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-decred-15",
+    "cake-wallet-decred",
+    "cake-decred-bip39-12-24"
+  ]
+}

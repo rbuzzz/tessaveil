@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "decred-cake-words",
+  "source_type": "official-source",
+  "claim": "All2048 native15 words match existing bip39-en entry-for-entry in order. Only shared vocabulary is asserted; no duplicate list or Blue Oak implementation bytes bundled.",
+  "url": "https://raw.githubusercontent.com/decred/dcrdex/37585833528544f80dddd92dcdff10a78ad01e1f/client/mnemonic/words.go",
+  "revision": "37585833528544f80dddd92dcdff10a78ad01e1f",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-decred-15"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "substrate-bip39",
+  "display_name": {
+    "en": "Substrate — English BIP39 entropy semantics",
+    "ru": "Substrate — English BIP39 entropy semantics"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "substrate-entropy",
+    "substrate-vectors",
+    "substrate-vector-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "ceb4fe5a3c7ac91da2e272037797ebecb56aa177",
+    "max": "ceb4fe5a3c7ac91da2e272037797ebecb56aa177"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    15,
+    18,
+    21,
+    24
+  ],
+  "position_rules": [
+    "BIP39 word encoding/checksum recovers16/20/24/28/32 entropy bytes. PBKDF2 uses those bytes, not the mnemonic sentence."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Any supported recovery passphrase and derivation path stay outside Tessaveil. Local encryption/unlock passwords are distinct."
+  },
+  "semantic_distinction": "Polkadot/Kusama source family; primitive evidence is not wallet/path/address compatibility. sr25519, ed25519, ecdsa, Ethereum and hardware modes must not be conflated. Raw primitive does not normalize password; consumer behavior varies.",
+  "test_vector_ids": [
+    "substrate-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

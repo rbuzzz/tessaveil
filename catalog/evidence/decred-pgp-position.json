@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "decred-pgp-position",
+  "source_type": "official-source",
+  "claim": "ByteToMnemonic selects half by zero-based position, not byte parity. DecodeMnemonics rejects wrong-position half and compares words case-insensitively.",
+  "url": "https://raw.githubusercontent.com/decred/dcrwallet/c0fee6b52ad30961cfc3e06017d5e7516952615e/pgpwordlist/pgpwordlist.go",
+  "revision": "c0fee6b52ad30961cfc3e06017d5e7516952615e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pgp-even",
+    "pgp-odd",
+    "decred-pgp33"
+  ]
+}

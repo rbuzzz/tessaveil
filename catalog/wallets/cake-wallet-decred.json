@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-decred",
+  "display_name": {
+    "en": "Cake Wallet Decred — Android native15 import",
+    "ru": "Cake Wallet Decred — Android native15 import"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "decred-cake-create",
+    "decred-cake-build",
+    "decred-cake-dispatch",
+    "decred-cake-dependency",
+    "decred-cake-native",
+    "decred-cake-seed",
+    "decred-cake-doc"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "native-15-import",
+  "network_ids": [
+    "decred"
+  ],
+  "scheme_id": "cake-decred-15",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Source-bound native15 restore. Documentation15 creation is unversioned and conflicts with current12/24 creation; exact historical creation interval unresolved. No iOS/macOS parity or BIP39-15 compatibility.",
+    "Non-selectable: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise."
+  ],
+  "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
+}

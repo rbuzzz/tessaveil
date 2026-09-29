@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "decred-pgp-list",
+  "source_type": "official-source",
+  "claim": "ISC-licensed alternatingWords literal contains 512 words: index 2*b even half, 2*b+1 odd half; exact source case retained. UTF-8 LF projection with final LF, no sorting.",
+  "url": "https://raw.githubusercontent.com/decred/dcrwallet/c0fee6b52ad30961cfc3e06017d5e7516952615e/pgpwordlist/wordlist.go",
+  "revision": "c0fee6b52ad30961cfc3e06017d5e7516952615e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pgp-even",
+    "pgp-odd"
+  ]
+}

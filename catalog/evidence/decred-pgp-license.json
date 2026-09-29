@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "decred-pgp-license",
+  "source_type": "official-source",
+  "claim": "Reviewed 2026-09-29: root ISC and explicit ISC wordlist header permit these two modified list projections with complete original notices retained. Redistribution allowed. Local component signing compatibility assessed separately; no project acceptance.",
+  "url": "https://raw.githubusercontent.com/decred/dcrwallet/c0fee6b52ad30961cfc3e06017d5e7516952615e/LICENSE",
+  "revision": "c0fee6b52ad30961cfc3e06017d5e7516952615e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pgp-even",
+    "pgp-odd"
+  ]
+}

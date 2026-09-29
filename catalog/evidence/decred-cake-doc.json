@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "decred-cake-doc",
+  "source_type": "official-documentation",
+  "claim": "Retrieved2026-09-29 Seed Format text states15-word creation/restoration without exact app version. It conflicts with pinned current12/24 creation source; retain as dated unversioned documentation, not a current universal claim.",
+  "url": "https://docs.cakewallet.com/cryptos/decred/",
+  "revision": "retrieved-2026-09-29",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-decred",
+    "cake-wallet-decred-bip39",
+    "cake-decred-15"
+  ]
+}

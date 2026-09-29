@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "decred-pgp-checksum",
+  "source_type": "official-source",
+  "claim": "EncodeMnemonic appends first byte of double SHA256(seed), selecting the half at index len(seed). For 32 bytes, word33 uses the even half. Other accepted seed lengths are not mapped to the PGP33 profile.",
+  "url": "https://raw.githubusercontent.com/decred/dcrwallet/c0fee6b52ad30961cfc3e06017d5e7516952615e/walletseed/seed.go",
+  "revision": "c0fee6b52ad30961cfc3e06017d5e7516952615e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "decred-pgp33"
+  ]
+}

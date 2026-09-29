@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "electrum-vector-license",
+  "source_type": "official-source",
+  "claim": "MIT applies to modified public test projections; complete notice retained in THIRD_PARTY_NOTICES. No legacy dictionary permission is inferred.",
+  "url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/LICENCE",
+  "revision": "ede66c89887234c83b0def133b3100fe92a160eb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "electrum-v2"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "cake-decred-15",
+  "display_name": {
+    "en": "Cake Decred — native15 birthday format",
+    "ru": "Cake Decred — native15 birthday format"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "decred-cake-build",
+    "decred-cake-dispatch",
+    "decred-cake-dependency",
+    "decred-cake-native",
+    "decred-cake-words",
+    "decred-cake-seed",
+    "decred-cake-doc"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "37585833528544f80dddd92dcdff10a78ad01e1f",
+    "max": "37585833528544f80dddd92dcdff10a78ad01e1f"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    15
+  ],
+  "position_rules": [
+    "Words encode144-bit entropy,16-bit big-endian Unix days, then5 high SHA256 checksum bits over those20 bytes. All15 use BIP39 English vocabulary.",
+    "Words1-13 contain143 entropy bits; word14 contains last entropy bit plus first10 date bits; word15 contains last6 date bits plus5 checksum bits. No checksum-only word."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "No derivation passphrase in this profile. Local wallet encryption password is distinct and is never stored."
+  },
+  "semantic_distinction": "Native dcrdex15 semantics, with libwallet BLAKE256(entropy || uint32be(42)) Decred transformation. Current pinned Cake restores this format but creates BIP39-shaped12/24. Nonempty recovery passphrase rejected. No native15 independent fixed vector/wallet recovery yet.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

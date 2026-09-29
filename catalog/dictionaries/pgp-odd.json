@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "pgp-odd",
+  "display_name": {
+    "en": "Decred PGP — odd positions (zero-based)",
+    "ru": "Decred PGP — odd positions (zero-based)"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "decred-pgp-list",
+    "decred-pgp-position",
+    "decred-pgp-license",
+    "decred-pgp-signpath",
+    "decred-pgp-osi",
+    "decred-pgp-vectors",
+    "decred-pgp33-reference",
+    "decred-decrediton-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "c0fee6b52ad30961cfc3e06017d5e7516952615e",
+    "max": "c0fee6b52ad30961cfc3e06017d5e7516952615e"
+  },
+  "language": "en",
+  "script": "Latn",
+  "source": {
+    "url": "https://raw.githubusercontent.com/decred/dcrwallet/c0fee6b52ad30961cfc3e06017d5e7516952615e/pgpwordlist/wordlist.go",
+    "revision": "c0fee6b52ad30961cfc3e06017d5e7516952615e"
+  },
+  "license": {
+    "spdx_or_name": "ISC",
+    "source_url": "https://raw.githubusercontent.com/decred/dcrwallet/c0fee6b52ad30961cfc3e06017d5e7516952615e/LICENSE",
+    "attribution": "Copyright (c) 2015 The Decred developers (wordlist); 2013-2016 The btcsuite developers and 2015-2020 The Decred developers (root). Complete ISC notices in THIRD_PARTY_NOTICES.",
+    "repository_redistribution": "allowed",
+    "signpath_compatible": "compatible",
+    "decision_evidence": [
+      "decred-pgp-license",
+      "decred-pgp-signpath",
+      "decred-pgp-osi"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "none",
+  "word_count": 256,
+  "sha256": "c2f23c2233d4d7291107e8f796c374d0cb1fb30c1391bcb4f6480243de8ebf5a",
+  "order_rule": "Extract alternatingWords at source indices 1::2; preserve source spelling/case; UTF-8 LF and one final LF. Index is byte value 0..255.",
+  "position_rules": [
+    "Only even one-based rows through 32 in Decred PGP33; never use union of both halves."
+  ],
+  "duplicate_analysis": {
+    "normalized_unique_count": 256,
+    "collisions": []
+  },
+  "test_vector_ids": [
+    "decred-pgp-vectors",
+    "decred-pgp33-reference"
+  ],
+  "wordlist_path": "wordlists/pgp-odd/c0fee6b52ad30961cfc3e06017d5e7516952615e.txt"
+}

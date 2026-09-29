@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "electrum-version",
+  "source_type": "official-source",
+  "claim": "Source package labels itself 4.8.2, with prefixes 01 standard, 100 segwit, 101 2FA, 102 2FA segwit; no release binary binding inferred.",
+  "url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/electrum/version.py",
+  "revision": "ede66c89887234c83b0def133b3100fe92a160eb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "electrum",
+    "electrum-v1-import",
+    "electrum-bip39-import",
+    "electrum-v2"
+  ]
+}

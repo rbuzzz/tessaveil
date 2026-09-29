@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "cake-decred-bip39-12-24",
+  "display_name": {
+    "en": "Cake Decred — source-specific12/24 (NFC deviation)",
+    "ru": "Cake Decred — source-specific12/24 (NFC deviation)"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "decred-cake-create",
+    "decred-cake-build",
+    "decred-cake-dispatch",
+    "decred-cake-seed",
+    "decred-cake-nfc"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "ecc4a5fb9594368777848de42d7e072d62406507",
+    "max": "ecc4a5fb9594368777848de42d7e072d62406507"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    24
+  ],
+  "position_rules": [
+    "Current Cake creates128/256-bit BIP39-shaped12/24. Libwallet uses NFC passphrase normalization rather than normative NFKD."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Any supported recovery passphrase and derivation path stay outside Tessaveil. Local encryption/unlock passwords are distinct."
+  },
+  "semantic_distinction": "Blocked: general BIP39 compatibility is not established for Unicode passphrases; keep separate from both native15 and normative Decred BIP39.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

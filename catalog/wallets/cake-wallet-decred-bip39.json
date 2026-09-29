@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-decred-bip39",
+  "display_name": {
+    "en": "Cake Wallet Decred — Android current12/24 creation",
+    "ru": "Cake Wallet Decred — Android current12/24 creation"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "decred-cake-create",
+    "decred-cake-build",
+    "decred-cake-nfc",
+    "decred-cake-doc"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "bip39-shaped-12-24",
+  "network_ids": [
+    "decred"
+  ],
+  "scheme_id": "cake-decred-bip39-12-24",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Blocked NFC versus normative BIP39 NFKD passphrase behavior; Dart prevalidation is not native format proof. No released-binary/Unicode recovery verified.",
+    "Non-selectable: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise."
+  ],
+  "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
+}

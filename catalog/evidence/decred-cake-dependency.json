@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "decred-cake-dependency",
+  "source_type": "official-source",
+  "claim": "Pinned libwallet requires dcrdex v1.0.5 resolved for review to full commit37585833528544f80dddd92dcdff10a78ad01e1f.",
+  "url": "https://raw.githubusercontent.com/decred/libwallet/ecc4a5fb9594368777848de42d7e072d62406507/go.mod",
+  "revision": "ecc4a5fb9594368777848de42d7e072d62406507",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-decred-15",
+    "cake-wallet-decred"
+  ]
+}

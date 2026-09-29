@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "electrum-wizard-modes",
+  "source_type": "official-source",
+  "claim": "Pinned wizard distinguishes old, standard, segwit and BIP39 restoration. BIP39 import is not native seed generation; two-factor/multisig are outside these Windows software profiles.",
+  "url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/electrum/wizard.py",
+  "revision": "ede66c89887234c83b0def133b3100fe92a160eb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "electrum",
+    "electrum-v1-import",
+    "electrum-bip39-import"
+  ]
+}

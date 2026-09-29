@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "decred-pgp-vectors",
+  "source_type": "public-test-vector",
+  "claim": "Public known-answer mnemonicTests cover 20- and 31-byte seeds; fixed expected words project to indices/fingerprints and corroborate ordering/checksum. They are not mislabeled 33-word examples.",
+  "url": "https://raw.githubusercontent.com/decred/dcrwallet/c0fee6b52ad30961cfc3e06017d5e7516952615e/walletseed/seed_test.go",
+  "revision": "c0fee6b52ad30961cfc3e06017d5e7516952615e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pgp-even",
+    "pgp-odd",
+    "decred-pgp33"
+  ]
+}

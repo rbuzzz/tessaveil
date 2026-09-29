@@ -10,6 +10,8 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 
 | Product / profile | Platform / mode | Networks | Scheme | Status |
 | --- | --- | --- | --- | --- |
+| Cake Wallet / [cake-wallet-decred](#wallet-cake-wallet-decred) | android / native-15-import | decred | [cake-decred-15](#scheme-cake-decred-15) | documented |
+| Cake Wallet / [cake-wallet-decred-bip39](#wallet-cake-wallet-decred-bip39) | android / bip39-shaped-12-24 | decred | [cake-decred-bip39-12-24](#scheme-cake-decred-bip39-12-24) | blocked |
 | Cake Wallet Monero / [cake-wallet-monero](#wallet-cake-wallet-monero) | android / polyseed-16-generated | monero | [polyseed-16](#scheme-polyseed-16) | documented |
 | Cake Wallet Monero / [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39) | android / bip39-monero-generated-unresolved | monero | — | documented |
 | Cake Wallet Monero / [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy) | android / legacy-25-generated | monero | [monero-legacy](#scheme-monero-legacy) | documented |
@@ -17,7 +19,11 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | Daedalus / [daedalus-byron](#wallet-daedalus-byron) | windows / byron-12-import | cardano | [cardano-byron](#scheme-cardano-byron) | documented |
 | Daedalus / [daedalus-paper-27](#wallet-daedalus-paper-27) | windows / byron-paper-27-import | cardano | [cardano-daedalus-27](#scheme-cardano-daedalus-27) | documented |
 | Daedalus / [daedalus-yoroi-15](#wallet-daedalus-yoroi-15) | windows / icarus-15-import | cardano | [cardano-icarus-15](#scheme-cardano-icarus-15) | documented |
+| Decrediton / [decrediton](#wallet-decrediton) | windows / native-pgp33 | decred | [decred-pgp33](#scheme-decred-pgp33) | documented |
 | Defly / [defly](#wallet-defly) | android / native-account-created-backup-unresolved | algorand | — | blocked |
+| Electrum / [electrum](#wallet-electrum) | windows / native-english-segwit | bitcoin | [electrum-v2](#scheme-electrum-v2) | documented |
+| Electrum / [electrum-bip39-import](#wallet-electrum-bip39-import) | windows / bip39-import | bitcoin | [bip39](#scheme-bip39) | documented |
+| Electrum / [electrum-v1-import](#wallet-electrum-v1-import) | windows / legacy-v1-import | bitcoin | [electrum-v1](#scheme-electrum-v1) | blocked |
 | Eternl / [eternl](#wallet-eternl) | web / software-recovery-24-unresolved | cardano | — | blocked |
 | Exodus / [exodus-monero-export](#wallet-exodus-monero-export) | windows / monero-25-export | monero | [monero-legacy](#scheme-monero-legacy) | documented |
 | Feather / [feather](#wallet-feather) | windows / polyseed-16-generated | monero | [polyseed-16](#scheme-polyseed-16) | documented |
@@ -35,6 +41,9 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | OpenMask / [openmask](#wallet-openmask) | web / ton-native-generated | ton | [ton-native](#scheme-ton-native) | documented |
 | Pera Wallet / [pera-wallet](#wallet-pera-wallet) | ios / legacy-algo25-existing-backup-export | algorand | [algorand-25](#scheme-algorand-25) | documented |
 | Pera Wallet / [pera-wallet-universal](#wallet-pera-wallet-universal) | ios / universal-hd24-created | algorand | — | documented |
+| Polkadot.js extension / [polkadot-js](#wallet-polkadot-js) | web / sr25519-default-12 | kusama, polkadot | [substrate-bip39](#scheme-substrate-bip39) | documented |
+| SubWallet / [subwallet](#wallet-subwallet) | web / general-sr25519 | kusama, polkadot | [substrate-bip39](#scheme-substrate-bip39) | documented |
+| Talisman / [talisman](#wallet-talisman) | web / substrate-sr25519-12-24 | kusama, polkadot | [substrate-bip39](#scheme-substrate-bip39) | documented |
 | Tonhub / [tonhub](#wallet-tonhub) | android / ton-native-generated | ton | [ton-native](#scheme-ton-native) | verified |
 | Tonkeeper Classic / [tonkeeper-classic](#wallet-tonkeeper-classic) | web / ton-native-generated | ton | [ton-native](#scheme-ton-native) | verified |
 | Keeper / Tonkeeper Multichain / [tonkeeper-multichain](#wallet-tonkeeper-multichain) | cross-platform / bip39-multichain-generated | ton | [ton-multichain-bip39](#scheme-ton-multichain-bip39) | documented |
@@ -53,12 +62,63 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 ## Network index
 
 - algorand: [defly](#wallet-defly), [pera-wallet](#wallet-pera-wallet), [pera-wallet-universal](#wallet-pera-wallet-universal)
+- bitcoin: [electrum](#wallet-electrum), [electrum-bip39-import](#wallet-electrum-bip39-import), [electrum-v1-import](#wallet-electrum-v1-import)
 - cardano: [daedalus](#wallet-daedalus), [daedalus-byron](#wallet-daedalus-byron), [daedalus-paper-27](#wallet-daedalus-paper-27), [daedalus-yoroi-15](#wallet-daedalus-yoroi-15), [eternl](#wallet-eternl), [lace](#wallet-lace), [nami](#wallet-nami), [typhon](#wallet-typhon), [yoroi](#wallet-yoroi)
+- decred: [cake-wallet-decred](#wallet-cake-wallet-decred), [cake-wallet-decred-bip39](#wallet-cake-wallet-decred-bip39), [decrediton](#wallet-decrediton)
+- kusama: [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
 - monero: [cake-wallet-monero](#wallet-cake-wallet-monero), [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39), [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy), [exodus-monero-export](#wallet-exodus-monero-export), [feather](#wallet-feather), [feather-legacy-import](#wallet-feather-legacy-import), [monero-cli-polyseed](#wallet-monero-cli-polyseed), [monero-gui](#wallet-monero-gui), [monero-gui-cli](#wallet-monero-gui-cli), [mymonero](#wallet-mymonero), [mymonero-generated](#wallet-mymonero-generated)
 - multi-chain: [trezor-model-t](#wallet-trezor-model-t), [trezor-model-t-multi-share](#wallet-trezor-model-t-multi-share), [trezor-safe-3](#wallet-trezor-safe-3), [trezor-safe-3-multi-share](#wallet-trezor-safe-3-multi-share), [trezor-safe-5](#wallet-trezor-safe-5), [trezor-safe-5-multi-share](#wallet-trezor-safe-5-multi-share), [trezor-safe-7](#wallet-trezor-safe-7), [trezor-safe-7-multi-share](#wallet-trezor-safe-7-multi-share)
+- polkadot: [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
 - ton: [gram-wallet](#wallet-gram-wallet), [mytonwallet](#wallet-mytonwallet), [mytonwallet-native](#wallet-mytonwallet-native), [openmask](#wallet-openmask), [ton-space](#wallet-ton-space), [tonhub](#wallet-tonhub), [tonkeeper-classic](#wallet-tonkeeper-classic), [tonkeeper-multichain](#wallet-tonkeeper-multichain)
 
 ## Wallet profiles
+
+<a id="wallet-cake-wallet-decred"></a>
+
+### Cake Wallet Decred — Android native15 import — cake-wallet-decred
+
+- Source record: [cake-wallet-decred](../catalog/wallets/cake-wallet-decred.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [decred-cake-build](../catalog/evidence/decred-cake-build.json), [decred-cake-create](../catalog/evidence/decred-cake-create.json), [decred-cake-dependency](../catalog/evidence/decred-cake-dependency.json), [decred-cake-dispatch](../catalog/evidence/decred-cake-dispatch.json), [decred-cake-doc](../catalog/evidence/decred-cake-doc.json), [decred-cake-native](../catalog/evidence/decred-cake-native.json), [decred-cake-seed](../catalog/evidence/decred-cake-seed.json)
+- Evidence claim: Android build source pins decred/libwallet ecc4a5fb9594368777848de42d7e072d62406507. This proves declared source binding, not executed release-binary contents. No iOS/macOS/Windows parity inferred.
+- Evidence claim: Pinned current Cake service creates BIP39 using strength256 only for requested24, otherwise128; it passes mnemonic and seedpass to native libwallet. restoreFromSeed forwards native15. No current15 generation claim and no Android binary tested.
+- Evidence claim: Pinned libwallet requires dcrdex v1.0.5 resolved for review to full commit37585833528544f80dddd92dcdff10a78ad01e1f.
+- Evidence claim: createWallet dispatches every15-word mnemonic to dcrdex native decoder,12/24 to libwallet BIP39-shaped decoder, otherwise errors. Thus ordinary15-word BIP39 input is not general BIP39 import here.
+- Evidence claim: Retrieved2026-09-29 Seed Format text states15-word creation/restoration without exact app version. It conflicts with pinned current12/24 creation source; retain as dated unversioned documentation, not a current universal claim.
+- Evidence claim: Native15 encodes18 entropy bytes \(144 bits\),2 big-endian Unix-day birthday bytes \(16 bits\),5 high SHA256 checksum bits as15 big-endian11-bit indices. Not BIP39 entropy semantics.
+- Evidence claim: Native15 rejects nonempty seedpass and transforms18-byte entropy by BLAKE256\(entropy \|\| big-endian uint32\(42\)\); BIP39-shaped12/24 applies passphrase even empty. Local wallet encryption password is separate.
+- Aliases: —
+- Scheme: [cake-decred-15](#scheme-cake-decred-15)
+- Generates mnemonic / import only: false / true
+- Limitations: Source-bound native15 restore. Documentation15 creation is unversioned and conflicts with current12/24 creation; exact historical creation interval unresolved. No iOS/macOS parity or BIP39-15 compatibility.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
+- Profile guidance: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
+
+<a id="wallet-cake-wallet-decred-bip39"></a>
+
+### Cake Wallet Decred — Android current12/24 creation — cake-wallet-decred-bip39
+
+- Source record: [cake-wallet-decred-bip39](../catalog/wallets/cake-wallet-decred-bip39.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [decred-cake-build](../catalog/evidence/decred-cake-build.json), [decred-cake-create](../catalog/evidence/decred-cake-create.json), [decred-cake-doc](../catalog/evidence/decred-cake-doc.json), [decred-cake-nfc](../catalog/evidence/decred-cake-nfc.json)
+- Evidence claim: Android build source pins decred/libwallet ecc4a5fb9594368777848de42d7e072d62406507. This proves declared source binding, not executed release-binary contents. No iOS/macOS/Windows parity inferred.
+- Evidence claim: Pinned current Cake service creates BIP39 using strength256 only for requested24, otherwise128; it passes mnemonic and seedpass to native libwallet. restoreFromSeed forwards native15. No current15 generation claim and no Android binary tested.
+- Evidence claim: Retrieved2026-09-29 Seed Format text states15-word creation/restoration without exact app version. It conflicts with pinned current12/24 creation source; retain as dated unversioned documentation, not a current universal claim.
+- Evidence claim: ApplyPassphrase normalizes words/pass to NFC, while BIP39 requires NFKD. ASCII examples do not establish general compatibility. Keep source-specific12/24 profile blocked pending Unicode behavior and released-artifact recovery review.
+- Aliases: —
+- Scheme: [cake-decred-bip39-12-24](#scheme-cake-decred-bip39-12-24)
+- Generates mnemonic / import only: true / false
+- Limitations: Blocked NFC versus normative BIP39 NFKD passphrase behavior; Dart prevalidation is not native format proof. No released-binary/Unicode recovery verified.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
+- Profile guidance: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
 
 <a id="wallet-cake-wallet-monero"></a>
 
@@ -212,6 +272,26 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Yoroi15 import is separate from Daedalus24 creation.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
 - Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
 
+<a id="wallet-decrediton"></a>
+
+### Decrediton — Windows native PGP33 creation — decrediton
+
+- Source record: [decrediton](../catalog/wallets/decrediton.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 2.1.6-source-942eed0b34d09316d753942abdbec8dc5320cbed / 2.1.6-source-942eed0b34d09316d753942abdbec8dc5320cbed
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [decred-bip39-doc](../catalog/evidence/decred-bip39-doc.json), [decred-decrediton-create](../catalog/evidence/decred-decrediton-create.json)
+- Evidence claim: Official source documentation distinguishes PGP33 direct wallet seed from BIP39 sentence\+passphrase seed; describes external conversion to hex for Decrediton/dcrwallet. This does not prove native BIP39 phrase generation or direct phrase import in Decrediton.
+- Evidence claim: Decrediton2.1.6-source generateSeed obtains a seed service response; createWallet accepts seed separately. Combined with official PGP33 docs this establishes software seed creation, not BIP39 creation. Exact backend binary binding remains unresolved.
+- Aliases: —
+- Scheme: [decred-pgp33](#scheme-decred-pgp33)
+- Generates mnemonic / import only: true / false
+- Limitations: Source2.1.6 and docs prove native seed creation; backend release binding and recovery not tested. BIP39 conversion to hex is external, not native phrase generation.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
+- Profile guidance: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
+
 <a id="wallet-defly"></a>
 
 ### Defly — native account backup unresolved — defly
@@ -230,6 +310,69 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Generates mnemonic / import only: true / false
 - Limitations: Manual proves account creation and mnemonic display; exact Android artifact, word count and semantics not proven.25-word mapping remains blocked. Android is the scoped research target, not proof of parity with iOS.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
 - Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
+
+<a id="wallet-electrum"></a>
+
+### Electrum — Windows native English segwit — electrum
+
+- Source record: [electrum](../catalog/wallets/electrum.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb / 4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [electrum-qt-create](../catalog/evidence/electrum-qt-create.json), [electrum-v2-source](../catalog/evidence/electrum-v2-source.json), [electrum-version](../catalog/evidence/electrum-version.json), [electrum-wizard-modes](../catalog/evidence/electrum-wizard-modes.json)
+- Evidence claim: Qt WCCreateSeed selects default segwit \(standard only with WIZARD\_DONT\_CREATE\_SEGWIT\); creates English mnemonic and displays SeedWidget. This pins a native desktop creation flow, not just an import API.
+- Evidence claim: Electrum 4.8.2-source\: default English 132-bit make\_seed uses HMAC-SHA512 Seed version prefixes, normalized sentence and electrum-prefixed PBKDF2 salt, not BIP39 entropy/checksum semantics. Old recognition accepts 12/24 words; native generation normally 12 with possible nonce overflow to 13. No wallet artifact tested.
+- Evidence claim: Source package labels itself 4.8.2, with prefixes 01 standard, 100 segwit, 101 2FA, 102 2FA segwit; no release binary binding inferred.
+- Evidence claim: Pinned wizard distinguishes old, standard, segwit and BIP39 restoration. BIP39 import is not native seed generation; two-factor/multisig are outside these Windows software profiles.
+- Aliases: —
+- Scheme: [electrum-v2](#scheme-electrum-v2)
+- Generates mnemonic / import only: true / false
+- Limitations: Scoped to native segwit source generation. Standard,2FA, multisig, Android, BIP39 import and legacy restore are different modes.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
+- Profile guidance: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
+
+<a id="wallet-electrum-bip39-import"></a>
+
+### Electrum — Windows BIP39 import — electrum-bip39-import
+
+- Source record: [electrum-bip39-import](../catalog/wallets/electrum-bip39-import.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb / 4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [electrum-version](../catalog/evidence/electrum-version.json), [electrum-wizard-modes](../catalog/evidence/electrum-wizard-modes.json)
+- Evidence claim: Source package labels itself 4.8.2, with prefixes 01 standard, 100 segwit, 101 2FA, 102 2FA segwit; no release binary binding inferred.
+- Evidence claim: Pinned wizard distinguishes old, standard, segwit and BIP39 restoration. BIP39 import is not native seed generation; two-factor/multisig are outside these Windows software profiles.
+- Aliases: —
+- Scheme: [bip39](#scheme-bip39)
+- Generates mnemonic / import only: false / true
+- Limitations: Native Electrum generation is not BIP39. Exact imported path and script selection require original backup metadata.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
+- Profile guidance: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
+
+<a id="wallet-electrum-v1-import"></a>
+
+### Electrum — Windows legacy v1 restore — electrum-v1-import
+
+- Source record: [electrum-v1-import](../catalog/wallets/electrum-v1-import.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb / 4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [electrum-v2-source](../catalog/evidence/electrum-v2-source.json), [electrum-version](../catalog/evidence/electrum-version.json), [electrum-wizard-modes](../catalog/evidence/electrum-wizard-modes.json)
+- Evidence claim: Electrum 4.8.2-source\: default English 132-bit make\_seed uses HMAC-SHA512 Seed version prefixes, normalized sentence and electrum-prefixed PBKDF2 salt, not BIP39 entropy/checksum semantics. Old recognition accepts 12/24 words; native generation normally 12 with possible nonce overflow to 13. No wallet artifact tested.
+- Evidence claim: Source package labels itself 4.8.2, with prefixes 01 standard, 100 segwit, 101 2FA, 102 2FA segwit; no release binary binding inferred.
+- Evidence claim: Pinned wizard distinguishes old, standard, segwit and BIP39 restoration. BIP39 import is not native seed generation; two-factor/multisig are outside these Windows software profiles.
+- Aliases: —
+- Scheme: [electrum-v1](#scheme-electrum-v1)
+- Generates mnemonic / import only: false / true
+- Limitations: Legacy12/24 recognition only. No legacy dictionary bundled pending provenance/license review. No native v1 creation claimed.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
+- Profile guidance: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
 
 <a id="wallet-eternl"></a>
 
@@ -584,6 +727,66 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Official FAQ is dated 2025-06-04;24-word HD phrase is not Algorand25. Full Algorand HD derivation research and exact app version absent; leave scheme unmapped.; Non-selectable\: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence.
 - Profile guidance: Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil.
 
+<a id="wallet-polkadot-js"></a>
+
+### Polkadot.js — extension sr25519 creation — polkadot-js
+
+- Source record: [polkadot-js](../catalog/wallets/polkadot-js.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-54f44022004f4cefb4a2b929f3a397715a134d6f / source-54f44022004f4cefb4a2b929f3a397715a134d6f
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [substrate-polkadot-create](../catalog/evidence/substrate-polkadot-create.json), [substrate-polkadot-type](../catalog/evidence/substrate-polkadot-type.json), [substrate-polkadot-ui](../catalog/evidence/substrate-polkadot-ui.json)
+- Evidence claim: Extension handler seedCreate calls mnemonicGenerate with default12; accepts12/15/18/21/24 on validation, which is not proof UI creates all. createFromUri receives explicit type; Ethereum branch distinct.
+- Evidence claim: DEFAULT\_TYPE is sr25519. Dependency implementation/released extension recovery not pinned end-to-end here; mapped primitive stays documented.
+- Evidence claim: CreateAccount generates fresh seed, displays it and creates selected network account; this profile is browser extension default sr25519 for Polkadot/Kusama, excluding Ethereum.
+- Aliases: —
+- Scheme: [substrate-bip39](#scheme-substrate-bip39)
+- Generates mnemonic / import only: true / false
+- Limitations: Default UI12 only; scheme lists primitive input lengths, not UI generation choices. Dependency/backend and released extension binding unverified; exclude Ethereum/JSON/hardware.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
+- Profile guidance: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
+
+<a id="wallet-subwallet"></a>
+
+### SubWallet — extension general sr25519 creation — subwallet
+
+- Source record: [subwallet](../catalog/wallets/subwallet.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-1f9b2a4cb6fea68193e5e012dcca7284a1dd0d80 / source-1f9b2a4cb6fea68193e5e012dcca7284a1dd0d80
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [substrate-subwallet](../catalog/evidence/substrate-subwallet.json)
+- Evidence claim: General mnemonic creation handler defaults12 and has12/15/18/21/24 validation lengths. It constructs sr25519 plus other coin types; this record is only general sr25519 Polkadot/Kusama. TON-native and Ethereum not equated. Dependency/UI/artifact binding unresolved.
+- Aliases: —
+- Scheme: [substrate-bip39](#scheme-substrate-bip39)
+- Generates mnemonic / import only: true / false
+- Limitations: Source handler defaults12; validation lengths do not prove every UI creation option. Forked keyring and frontend dependency binding unresolved; no TON-native/Ethereum/mobile mapping.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
+- Profile guidance: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
+
+<a id="wallet-talisman"></a>
+
+### Talisman — extension Substrate mnemonic creation — talisman
+
+- Source record: [talisman](../catalog/wallets/talisman.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 3.10.0-source-2cee3ef46633cdc3e90bb0fed6855fa25fc87692 / 3.10.0-source-2cee3ef46633cdc3e90bb0fed6855fa25fc87692
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [substrate-talisman](../catalog/evidence/substrate-talisman.json), [substrate-talisman-ui](../catalog/evidence/substrate-talisman-ui.json)
+- Evidence claim: Talisman uses scure BIP39 English generation12/24; sr25519/ed25519/ecdsa use entropy-based32-byte PBKDF2 result, Ethereum/Solana sentence-based64-byte classic result. Its NFKD password normalization is a consumer behavior, absent from raw substrate-bip39 function.
+- Evidence claim: Mnemonic creation UI explicitly generates12 and24 independently, default12. Source version3.10.0; no binary recovery asserted.
+- Aliases: —
+- Scheme: [substrate-bip39](#scheme-substrate-bip39)
+- Generates mnemonic / import only: true / false
+- Limitations: UI generates12/24; NFKD password normalization in this consumer differs from raw primitive behavior. Hardware, Ethereum, Solana and derived paths not equated.; Non-selectable\: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise.
+- Profile guidance: Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil.
+
 <a id="wallet-ton-space"></a>
 
 ### TON Space / DeFi Account — ton-space
@@ -908,6 +1111,58 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - External-secret guidance: A scheme passphrase is external and never stored by Tessaveil. A wallet PIN or application password is not proof of a mnemonic passphrase; verify support in the exact source wallet.
 - Test vectors: [bip39-vectors](../catalog/evidence/bip39-vectors.json)
 
+<a id="scheme-cake-decred-15"></a>
+
+### Cake Decred — native15 birthday format — cake-decred-15
+
+- Source record: [cake-decred-15](../catalog/schemes/cake-decred-15.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 37585833528544f80dddd92dcdff10a78ad01e1f / 37585833528544f80dddd92dcdff10a78ad01e1f
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [decred-cake-build](../catalog/evidence/decred-cake-build.json), [decred-cake-dependency](../catalog/evidence/decred-cake-dependency.json), [decred-cake-dispatch](../catalog/evidence/decred-cake-dispatch.json), [decred-cake-doc](../catalog/evidence/decred-cake-doc.json), [decred-cake-native](../catalog/evidence/decred-cake-native.json), [decred-cake-seed](../catalog/evidence/decred-cake-seed.json), [decred-cake-words](../catalog/evidence/decred-cake-words.json)
+- Evidence claim: Android build source pins decred/libwallet ecc4a5fb9594368777848de42d7e072d62406507. This proves declared source binding, not executed release-binary contents. No iOS/macOS/Windows parity inferred.
+- Evidence claim: Pinned libwallet requires dcrdex v1.0.5 resolved for review to full commit37585833528544f80dddd92dcdff10a78ad01e1f.
+- Evidence claim: createWallet dispatches every15-word mnemonic to dcrdex native decoder,12/24 to libwallet BIP39-shaped decoder, otherwise errors. Thus ordinary15-word BIP39 input is not general BIP39 import here.
+- Evidence claim: Retrieved2026-09-29 Seed Format text states15-word creation/restoration without exact app version. It conflicts with pinned current12/24 creation source; retain as dated unversioned documentation, not a current universal claim.
+- Evidence claim: Native15 encodes18 entropy bytes \(144 bits\),2 big-endian Unix-day birthday bytes \(16 bits\),5 high SHA256 checksum bits as15 big-endian11-bit indices. Not BIP39 entropy semantics.
+- Evidence claim: Native15 rejects nonempty seedpass and transforms18-byte entropy by BLAKE256\(entropy \|\| big-endian uint32\(42\)\); BIP39-shaped12/24 applies passphrase even empty. Local wallet encryption password is separate.
+- Evidence claim: All2048 native15 words match existing bip39-en entry-for-entry in order. Only shared vocabulary is asserted; no duplicate list or Blue Oak implementation bytes bundled.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 15
+- Position rules: Words encode144-bit entropy,16-bit big-endian Unix days, then5 high SHA256 checksum bits over those20 bytes. All15 use BIP39 English vocabulary.; Words1-13 contain143 entropy bits; word14 contains last entropy bit plus first10 date bits; word15 contains last6 date bits plus5 checksum bits. No checksum-only word.
+- Semantics: Native dcrdex15 semantics, with libwallet BLAKE256\(entropy \|\| uint32be\(42\)\) Decred transformation. Current pinned Cake restores this format but creates BIP39-shaped12/24. Nonempty recovery passphrase rejected. No native15 independent fixed vector/wallet recovery yet.
+- External secret / stored: none / false
+- External-secret guidance: No derivation passphrase in this profile. Local wallet encryption password is distinct and is never stored.
+- Test vectors: —
+
+<a id="scheme-cake-decred-bip39-12-24"></a>
+
+### Cake Decred — source-specific12/24 \(NFC deviation\) — cake-decred-bip39-12-24
+
+- Source record: [cake-decred-bip39-12-24](../catalog/schemes/cake-decred-bip39-12-24.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): ecc4a5fb9594368777848de42d7e072d62406507 / ecc4a5fb9594368777848de42d7e072d62406507
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [decred-cake-build](../catalog/evidence/decred-cake-build.json), [decred-cake-create](../catalog/evidence/decred-cake-create.json), [decred-cake-dispatch](../catalog/evidence/decred-cake-dispatch.json), [decred-cake-nfc](../catalog/evidence/decred-cake-nfc.json), [decred-cake-seed](../catalog/evidence/decred-cake-seed.json)
+- Evidence claim: Android build source pins decred/libwallet ecc4a5fb9594368777848de42d7e072d62406507. This proves declared source binding, not executed release-binary contents. No iOS/macOS/Windows parity inferred.
+- Evidence claim: Pinned current Cake service creates BIP39 using strength256 only for requested24, otherwise128; it passes mnemonic and seedpass to native libwallet. restoreFromSeed forwards native15. No current15 generation claim and no Android binary tested.
+- Evidence claim: createWallet dispatches every15-word mnemonic to dcrdex native decoder,12/24 to libwallet BIP39-shaped decoder, otherwise errors. Thus ordinary15-word BIP39 input is not general BIP39 import here.
+- Evidence claim: ApplyPassphrase normalizes words/pass to NFC, while BIP39 requires NFKD. ASCII examples do not establish general compatibility. Keep source-specific12/24 profile blocked pending Unicode behavior and released-artifact recovery review.
+- Evidence claim: Native15 rejects nonempty seedpass and transforms18-byte entropy by BLAKE256\(entropy \|\| big-endian uint32\(42\)\); BIP39-shaped12/24 applies passphrase even empty. Local wallet encryption password is separate.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 12, 24
+- Position rules: Current Cake creates128/256-bit BIP39-shaped12/24. Libwallet uses NFC passphrase normalization rather than normative NFKD.
+- Semantics: Blocked\: general BIP39 compatibility is not established for Unicode passphrases; keep separate from both native15 and normative Decred BIP39.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Any supported recovery passphrase and derivation path stay outside Tessaveil. Local encryption/unlock passwords are distinct.
+- Test vectors: —
+
 <a id="scheme-cardano-byron"></a>
 
 ### Cardano — historical Daedalus Byron 12 — cardano-byron
@@ -1049,6 +1304,99 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
 - Test vectors: —
 
+<a id="scheme-decred-bip39"></a>
+
+### Decred — BIP39 compatibility family — decred-bip39
+
+- Source record: [decred-bip39](../catalog/schemes/decred-bip39.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): 30e042a46a97cf78f9766904d3ca4e5ed253266d / 30e042a46a97cf78f9766904d3ca4e5ed253266d
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [decred-bip39-doc](../catalog/evidence/decred-bip39-doc.json)
+- Evidence claim: Official source documentation distinguishes PGP33 direct wallet seed from BIP39 sentence\+passphrase seed; describes external conversion to hex for Decrediton/dcrwallet. This does not prove native BIP39 phrase generation or direct phrase import in Decrediton.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 12, 15, 18, 21, 24
+- Position rules: BIP39 entropy and checksum lengths; mnemonic\+optional NFKD passphrase derive a seed. Only vocabulary/general family is mapped, no wallet-specific path.
+- Semantics: Official docs describe external BIP39-to-hex conversion for native wallet restoration. This is not direct Decrediton BIP39 generation/import and not Cake15. Exact hardware/product recovery remains unverified.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Any supported recovery passphrase and derivation path stay outside Tessaveil. Local encryption/unlock passwords are distinct.
+- Test vectors: —
+
+<a id="scheme-decred-pgp33"></a>
+
+### Decred — native PGP33 — decred-pgp33
+
+- Source record: [decred-pgp33](../catalog/schemes/decred-pgp33.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): c0fee6b52ad30961cfc3e06017d5e7516952615e / c0fee6b52ad30961cfc3e06017d5e7516952615e
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [decred-decrediton-license](../catalog/evidence/decred-decrediton-license.json), [decred-pgp-checksum](../catalog/evidence/decred-pgp-checksum.json), [decred-pgp-position](../catalog/evidence/decred-pgp-position.json), [decred-pgp-vectors](../catalog/evidence/decred-pgp-vectors.json), [decred-pgp33-reference](../catalog/evidence/decred-pgp33-reference.json)
+- Evidence claim: ISC notice retained for modified synthetic output projections from the official Decrediton encoder. No implementation/library or wallet binary bundled.
+- Evidence claim: EncodeMnemonic appends first byte of double SHA256\(seed\), selecting the half at index len\(seed\). For 32 bytes, word33 uses the even half. Other accepted seed lengths are not mapped to the PGP33 profile.
+- Evidence claim: ByteToMnemonic selects half by zero-based position, not byte parity. DecodeMnemonics rejects wrong-position half and compares words case-insensitively.
+- Evidence claim: Public known-answer mnemonicTests cover 20- and 31-byte seeds; fixed expected words project to indices/fingerprints and corroborate ordering/checksum. They are not mislabeled 33-word examples.
+- Evidence claim: Reviewed pinned independent official JavaScript encodeMnemonic produces expected 33-word outputs for synthetic zero and ascending 32-byte seeds using Node24.13 WebCrypto; no wallet process or network execution. Used as reference, not implementation under test.
+- Dictionaries: [pgp-even](#dictionary-pgp-even), [pgp-odd](#dictionary-pgp-odd)
+- Supported lengths: 33
+- Position rules: positions 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33\: pgp-even; positions 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32\: pgp-odd; Position numbers above are one-based. Bytes determine index within a half; positions determine half. Word33 encodes first byte SHA256\(SHA256\(seed\)\) and is even-half, not a passphrase.
+- Semantics: 32-byte raw wallet seed plus one checksum byte. Never substitute BIP39 or Cake native15 even though all target Decred.
+- External secret / stored: none / false
+- External-secret guidance: No derivation passphrase in this profile. Local wallet encryption password is distinct and is never stored.
+- Test vectors: [decred-pgp-vectors](../catalog/evidence/decred-pgp-vectors.json), [decred-pgp33-reference](../catalog/evidence/decred-pgp33-reference.json)
+
+<a id="scheme-electrum-v1"></a>
+
+### Electrum v1 — legacy import12/24 — electrum-v1
+
+- Source record: [electrum-v1](../catalog/schemes/electrum-v1.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): ede66c89887234c83b0def133b3100fe92a160eb / ede66c89887234c83b0def133b3100fe92a160eb
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [electrum-legacy-list](../catalog/evidence/electrum-legacy-list.json), [electrum-v2-source](../catalog/evidence/electrum-v2-source.json)
+- Evidence claim: Pinned legacy encoder has 1626 English words in fixed order and encodes each 32-bit chunk as three dependent indices. File MIT header also cites a Wiktionary contemporary-poetry list; cumulative upstream data rights are not resolved. No legacy list bytes bundled.
+- Evidence claim: Electrum 4.8.2-source\: default English 132-bit make\_seed uses HMAC-SHA512 Seed version prefixes, normalized sentence and electrum-prefixed PBKDF2 salt, not BIP39 entropy/checksum semantics. Old recognition accepts 12/24 words; native generation normally 12 with possible nonce overflow to 13. No wallet artifact tested.
+- Dictionaries: [electrum-v1-en](#dictionary-electrum-v1-en)
+- Supported lengths: 12, 24
+- Position rules: Three-word groups encode32-bit chunks using modulo1626 relative indices; no BIP39 checksum. Current old recognition accepts12/24, not all historical variants.
+- Semantics: Legacy pre2.0 encoding as recognized by pinned4.8.2 source; no current generation claim. Dictionary licensing blocks selection.
+- External secret / stored: none / false
+- External-secret guidance: No derivation passphrase in this profile. Local wallet encryption password is distinct and is never stored.
+- Test vectors: —
+
+<a id="scheme-electrum-v2"></a>
+
+### Electrum v2 — English native seed — electrum-v2
+
+- Source record: [electrum-v2](../catalog/schemes/electrum-v2.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): ede66c89887234c83b0def133b3100fe92a160eb / ede66c89887234c83b0def133b3100fe92a160eb
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [electrum-public-vectors](../catalog/evidence/electrum-public-vectors.json), [electrum-v2-dictionary](../catalog/evidence/electrum-v2-dictionary.json), [electrum-v2-source](../catalog/evidence/electrum-v2-source.json), [electrum-vector-license](../catalog/evidence/electrum-vector-license.json), [electrum-version](../catalog/evidence/electrum-version.json)
+- Evidence claim: Public English segwit vectors with empty and explicit passphrase; projections preserve indices and expected seed fingerprints, tested offline. Tests also show old12/24 and 13-word native seed recognition. No user phrases or recovery.
+- Evidence claim: Exact upstream English bytes equal existing bip39-en SHA-256; equality proves vocabulary only.
+- Evidence claim: Electrum 4.8.2-source\: default English 132-bit make\_seed uses HMAC-SHA512 Seed version prefixes, normalized sentence and electrum-prefixed PBKDF2 salt, not BIP39 entropy/checksum semantics. Old recognition accepts 12/24 words; native generation normally 12 with possible nonce overflow to 13. No wallet artifact tested.
+- Evidence claim: MIT applies to modified public test projections; complete notice retained in THIRD\_PARTY\_NOTICES. No legacy dictionary permission is inferred.
+- Evidence claim: Source package labels itself 4.8.2, with prefixes 01 standard, 100 segwit, 101 2FA, 102 2FA segwit; no release binary binding inferred.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 12, 13
+- Position rules: English132-bit default generation normally12 words; nonce overflow may yield13. This is a scoped generation profile, not every accepted Electrum length.; HMAC-SHA512 Seed version prefix determines type; normalized sentence uses electrum salt for PBKDF2. Standard01 and segwit100 remain different wallet modes.
+- Semantics: Same dictionary as BIP39, different integrity and derivation. Only English default standard/segwit generation lengths researched; no2FA, multisig or arbitrary-bit CLI support inferred.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Any supported recovery passphrase and derivation path stay outside Tessaveil. Local encryption/unlock passwords are distinct.
+- Test vectors: [electrum-public-vectors](../catalog/evidence/electrum-public-vectors.json)
+
 <a id="scheme-monero-legacy"></a>
 
 ### monero-legacy — monero-legacy
@@ -1160,6 +1508,29 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - External secret / stored: optional-passphrase / false
 - External-secret guidance: Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred.
 - Test vectors: [slip39-vectors](../catalog/evidence/slip39-vectors.json)
+
+<a id="scheme-substrate-bip39"></a>
+
+### Substrate — English BIP39 entropy semantics — substrate-bip39
+
+- Source record: [substrate-bip39](../catalog/schemes/substrate-bip39.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): ceb4fe5a3c7ac91da2e272037797ebecb56aa177 / ceb4fe5a3c7ac91da2e272037797ebecb56aa177
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [substrate-entropy](../catalog/evidence/substrate-entropy.json), [substrate-vector-license](../catalog/evidence/substrate-vector-license.json), [substrate-vectors](../catalog/evidence/substrate-vectors.json)
+- Evidence claim: substrate-bip39 0.4.6 uses recovered BIP39 entropy bytes as PBKDF2-HMAC-SHA512 password, mnemonic\+password salt, 2048 rounds, 64-byte result; mini-secret first32. Not standard sentence-based BIP39 seed derivation. Function itself does not normalize passwords; consumers must be distinguished.
+- Evidence claim: Apache-2.0 public test projections modified and attributed to Copyright2019-2020 Parity Technologies \(UK\) Ltd. Complete Apache license already retained; no library bundled.
+- Evidence claim: Published VECTORS with Substrate password projected to entropy, BIP39-English indices and expected seed SHA256. Offline reproduction proves only this primitive, not a wallet/network/derivation path.
+- Dictionaries: [bip39-en](#dictionary-bip39-en)
+- Supported lengths: 12, 15, 18, 21, 24
+- Position rules: BIP39 word encoding/checksum recovers16/20/24/28/32 entropy bytes. PBKDF2 uses those bytes, not the mnemonic sentence.
+- Semantics: Polkadot/Kusama source family; primitive evidence is not wallet/path/address compatibility. sr25519, ed25519, ecdsa, Ethereum and hardware modes must not be conflated. Raw primitive does not normalize password; consumer behavior varies.
+- External secret / stored: optional-passphrase / false
+- External-secret guidance: Any supported recovery passphrase and derivation path stay outside Tessaveil. Local encryption/unlock passwords are distinct.
+- Test vectors: [substrate-vectors](../catalog/evidence/substrate-vectors.json)
 
 <a id="scheme-ton-multichain-bip39"></a>
 
@@ -1541,6 +1912,36 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - SignPath compatibility: compatible
 - License evidence: [bip39-license](../catalog/evidence/bip39-license.json), [bip39-osi-mit](../catalog/evidence/bip39-osi-mit.json), [bip39-signpath](../catalog/evidence/bip39-signpath.json)
 - Test vectors: [bip39-vectors](../catalog/evidence/bip39-vectors.json)
+
+<a id="dictionary-electrum-v1-en"></a>
+
+### Electrum v1 — English \(rights unresolved\) — electrum-v1-en
+
+- Source record: [electrum-v1-en](../catalog/dictionaries/electrum-v1-en.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): ede66c89887234c83b0def133b3100fe92a160eb / ede66c89887234c83b0def133b3100fe92a160eb
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [electrum-legacy-license](../catalog/evidence/electrum-legacy-license.json), [electrum-legacy-list](../catalog/evidence/electrum-legacy-list.json)
+- Evidence claim: MIT grant covers Electrum software; old\_mnemonic.py separately credits a Wiktionary frequency list. Codex review 2026-09-29 cannot establish original list revision, attribution chain or cumulative terms\: redistribution unclear and SignPath pending for that list. This is uncertainty, not a finding of infringement.
+- Evidence claim: Pinned legacy encoder has 1626 English words in fixed order and encodes each 32-bit chunk as three dependent indices. File MIT header also cites a Wiktionary contemporary-poetry list; cumulative upstream data rights are not resolved. No legacy list bytes bundled.
+- Language: en
+- Script: Latn
+- Encoding: UTF-8
+- Normalization: none
+- Word count: 1626
+- SHA-256: —
+- Order rule: Source tuple order; do not sort. No approved committed byte artifact.
+- Position rules: Each three-word group encodes 32 bits with modulo-1626 dependent indices; no BIP39 checksum.
+- Source revision: ede66c89887234c83b0def133b3100fe92a160eb
+- License: MIT file header; upstream frequency-list terms unresolved
+- Attribution: Copyright \(C\) 2011 thomasv@gitorious; Wiktionary Contemporary poetry frequency-list provenance unresolved.
+- Repository redistribution: unclear
+- SignPath compatibility: pending
+- License evidence: [electrum-legacy-license](../catalog/evidence/electrum-legacy-license.json), [electrum-legacy-list](../catalog/evidence/electrum-legacy-list.json)
+- Test vectors: —
 
 <a id="dictionary-monero-de"></a>
 
@@ -1975,6 +2376,76 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - License evidence: [monero-monero-license](../catalog/evidence/monero-monero-license.json), [monero-osi-bsd](../catalog/evidence/monero-osi-bsd.json), [monero-osi-mit](../catalog/evidence/monero-osi-mit.json), [monero-signpath](../catalog/evidence/monero-signpath.json), [monero-zh-hans-source](../catalog/evidence/monero-zh-hans-source.json)
 - Test vectors: —
 
+<a id="dictionary-pgp-even"></a>
+
+### Decred PGP — even positions \(zero-based\) — pgp-even
+
+- Source record: [pgp-even](../catalog/dictionaries/pgp-even.json)
+- Status: verified
+- Reason: Verified research record; not a release or security guarantee.
+- Version interval (min / max): c0fee6b52ad30961cfc3e06017d5e7516952615e / c0fee6b52ad30961cfc3e06017d5e7516952615e
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [decred-decrediton-license](../catalog/evidence/decred-decrediton-license.json), [decred-pgp-license](../catalog/evidence/decred-pgp-license.json), [decred-pgp-list](../catalog/evidence/decred-pgp-list.json), [decred-pgp-osi](../catalog/evidence/decred-pgp-osi.json), [decred-pgp-position](../catalog/evidence/decred-pgp-position.json), [decred-pgp-signpath](../catalog/evidence/decred-pgp-signpath.json), [decred-pgp-vectors](../catalog/evidence/decred-pgp-vectors.json), [decred-pgp33-reference](../catalog/evidence/decred-pgp33-reference.json)
+- Evidence claim: ISC notice retained for modified synthetic output projections from the official Decrediton encoder. No implementation/library or wallet binary bundled.
+- Evidence claim: Reviewed 2026-09-29\: root ISC and explicit ISC wordlist header permit these two modified list projections with complete original notices retained. Redistribution allowed. Local component signing compatibility assessed separately; no project acceptance.
+- Evidence claim: ISC-licensed alternatingWords literal contains 512 words\: index 2\*b even half, 2\*b\+1 odd half; exact source case retained. UTF-8 LF projection with final LF, no sorting.
+- Evidence claim: OSI identifies ISC as an approved license; actual grant and scope are supplied by pinned Decred source/header. Component compatibility only.
+- Evidence claim: ByteToMnemonic selects half by zero-based position, not byte parity. DecodeMnemonics rejects wrong-position half and compares words case-insensitively.
+- Evidence claim: Reviewed 2026-09-29\: OSS terms require OSI-approved licensing across components. Exact ISC list projections with notices satisfy local component licensing assessment; this is not Foundation acceptance or signing/release approval.
+- Evidence claim: Public known-answer mnemonicTests cover 20- and 31-byte seeds; fixed expected words project to indices/fingerprints and corroborate ordering/checksum. They are not mislabeled 33-word examples.
+- Evidence claim: Reviewed pinned independent official JavaScript encodeMnemonic produces expected 33-word outputs for synthetic zero and ascending 32-byte seeds using Node24.13 WebCrypto; no wallet process or network execution. Used as reference, not implementation under test.
+- Language: en
+- Script: Latn
+- Encoding: UTF-8
+- Normalization: none
+- Word count: 256
+- SHA-256: 37a65f88512467edd12a1ab3eeb5f4328230e86711a8efde6333361ce10f4fcf
+- Order rule: Extract alternatingWords at source indices 0\:\:2; preserve source spelling/case; UTF-8 LF and one final LF. Index is byte value 0..255.
+- Position rules: Only odd one-based rows including 33 in Decred PGP33; never use union of both halves.
+- Source revision: c0fee6b52ad30961cfc3e06017d5e7516952615e
+- License: ISC
+- Attribution: Copyright \(c\) 2015 The Decred developers \(wordlist\); 2013-2016 The btcsuite developers and 2015-2020 The Decred developers \(root\). Complete ISC notices in THIRD\_PARTY\_NOTICES.
+- Repository redistribution: allowed
+- SignPath compatibility: compatible
+- License evidence: [decred-pgp-license](../catalog/evidence/decred-pgp-license.json), [decred-pgp-osi](../catalog/evidence/decred-pgp-osi.json), [decred-pgp-signpath](../catalog/evidence/decred-pgp-signpath.json)
+- Test vectors: [decred-pgp-vectors](../catalog/evidence/decred-pgp-vectors.json), [decred-pgp33-reference](../catalog/evidence/decred-pgp33-reference.json)
+
+<a id="dictionary-pgp-odd"></a>
+
+### Decred PGP — odd positions \(zero-based\) — pgp-odd
+
+- Source record: [pgp-odd](../catalog/dictionaries/pgp-odd.json)
+- Status: verified
+- Reason: Verified research record; not a release or security guarantee.
+- Version interval (min / max): c0fee6b52ad30961cfc3e06017d5e7516952615e / c0fee6b52ad30961cfc3e06017d5e7516952615e
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [decred-decrediton-license](../catalog/evidence/decred-decrediton-license.json), [decred-pgp-license](../catalog/evidence/decred-pgp-license.json), [decred-pgp-list](../catalog/evidence/decred-pgp-list.json), [decred-pgp-osi](../catalog/evidence/decred-pgp-osi.json), [decred-pgp-position](../catalog/evidence/decred-pgp-position.json), [decred-pgp-signpath](../catalog/evidence/decred-pgp-signpath.json), [decred-pgp-vectors](../catalog/evidence/decred-pgp-vectors.json), [decred-pgp33-reference](../catalog/evidence/decred-pgp33-reference.json)
+- Evidence claim: ISC notice retained for modified synthetic output projections from the official Decrediton encoder. No implementation/library or wallet binary bundled.
+- Evidence claim: Reviewed 2026-09-29\: root ISC and explicit ISC wordlist header permit these two modified list projections with complete original notices retained. Redistribution allowed. Local component signing compatibility assessed separately; no project acceptance.
+- Evidence claim: ISC-licensed alternatingWords literal contains 512 words\: index 2\*b even half, 2\*b\+1 odd half; exact source case retained. UTF-8 LF projection with final LF, no sorting.
+- Evidence claim: OSI identifies ISC as an approved license; actual grant and scope are supplied by pinned Decred source/header. Component compatibility only.
+- Evidence claim: ByteToMnemonic selects half by zero-based position, not byte parity. DecodeMnemonics rejects wrong-position half and compares words case-insensitively.
+- Evidence claim: Reviewed 2026-09-29\: OSS terms require OSI-approved licensing across components. Exact ISC list projections with notices satisfy local component licensing assessment; this is not Foundation acceptance or signing/release approval.
+- Evidence claim: Public known-answer mnemonicTests cover 20- and 31-byte seeds; fixed expected words project to indices/fingerprints and corroborate ordering/checksum. They are not mislabeled 33-word examples.
+- Evidence claim: Reviewed pinned independent official JavaScript encodeMnemonic produces expected 33-word outputs for synthetic zero and ascending 32-byte seeds using Node24.13 WebCrypto; no wallet process or network execution. Used as reference, not implementation under test.
+- Language: en
+- Script: Latn
+- Encoding: UTF-8
+- Normalization: none
+- Word count: 256
+- SHA-256: c2f23c2233d4d7291107e8f796c374d0cb1fb30c1391bcb4f6480243de8ebf5a
+- Order rule: Extract alternatingWords at source indices 1\:\:2; preserve source spelling/case; UTF-8 LF and one final LF. Index is byte value 0..255.
+- Position rules: Only even one-based rows through 32 in Decred PGP33; never use union of both halves.
+- Source revision: c0fee6b52ad30961cfc3e06017d5e7516952615e
+- License: ISC
+- Attribution: Copyright \(c\) 2015 The Decred developers \(wordlist\); 2013-2016 The btcsuite developers and 2015-2020 The Decred developers \(root\). Complete ISC notices in THIRD\_PARTY\_NOTICES.
+- Repository redistribution: allowed
+- SignPath compatibility: compatible
+- License evidence: [decred-pgp-license](../catalog/evidence/decred-pgp-license.json), [decred-pgp-osi](../catalog/evidence/decred-pgp-osi.json), [decred-pgp-signpath](../catalog/evidence/decred-pgp-signpath.json)
+- Test vectors: [decred-pgp-vectors](../catalog/evidence/decred-pgp-vectors.json), [decred-pgp33-reference](../catalog/evidence/decred-pgp33-reference.json)
+
 <a id="dictionary-polyseed-cs"></a>
 
 ### polyseed-cs — polyseed-cs
@@ -2385,6 +2856,35 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - [cardano-typhon-create](../catalog/evidence/cardano-typhon-create.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
 - [cardano-yoroi-backup](../catalog/evidence/cardano-yoroi-backup.json): official-source; 91febfc95a288d3436b891356c87645611ea603a; 2026-09-29
 - [cardano-yoroi-create](../catalog/evidence/cardano-yoroi-create.json): official-source; 91febfc95a288d3436b891356c87645611ea603a; 2026-09-29
+- [decred-bip39-doc](../catalog/evidence/decred-bip39-doc.json): official-source; 30e042a46a97cf78f9766904d3ca4e5ed253266d; 2026-09-29
+- [decred-cake-build](../catalog/evidence/decred-cake-build.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
+- [decred-cake-create](../catalog/evidence/decred-cake-create.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
+- [decred-cake-dependency](../catalog/evidence/decred-cake-dependency.json): official-source; ecc4a5fb9594368777848de42d7e072d62406507; 2026-09-29
+- [decred-cake-dispatch](../catalog/evidence/decred-cake-dispatch.json): official-source; ecc4a5fb9594368777848de42d7e072d62406507; 2026-09-29
+- [decred-cake-doc](../catalog/evidence/decred-cake-doc.json): official-documentation; retrieved-2026-09-29; 2026-09-29
+- [decred-cake-native](../catalog/evidence/decred-cake-native.json): official-source; 37585833528544f80dddd92dcdff10a78ad01e1f; 2026-09-29
+- [decred-cake-nfc](../catalog/evidence/decred-cake-nfc.json): official-source; ecc4a5fb9594368777848de42d7e072d62406507; 2026-09-29
+- [decred-cake-seed](../catalog/evidence/decred-cake-seed.json): official-source; ecc4a5fb9594368777848de42d7e072d62406507; 2026-09-29
+- [decred-cake-words](../catalog/evidence/decred-cake-words.json): official-source; 37585833528544f80dddd92dcdff10a78ad01e1f; 2026-09-29
+- [decred-decrediton-create](../catalog/evidence/decred-decrediton-create.json): official-source; 942eed0b34d09316d753942abdbec8dc5320cbed; 2026-09-29
+- [decred-decrediton-license](../catalog/evidence/decred-decrediton-license.json): official-source; 942eed0b34d09316d753942abdbec8dc5320cbed; 2026-09-29
+- [decred-pgp-checksum](../catalog/evidence/decred-pgp-checksum.json): official-source; c0fee6b52ad30961cfc3e06017d5e7516952615e; 2026-09-29
+- [decred-pgp-license](../catalog/evidence/decred-pgp-license.json): official-source; c0fee6b52ad30961cfc3e06017d5e7516952615e; 2026-09-29
+- [decred-pgp-list](../catalog/evidence/decred-pgp-list.json): official-source; c0fee6b52ad30961cfc3e06017d5e7516952615e; 2026-09-29
+- [decred-pgp-osi](../catalog/evidence/decred-pgp-osi.json): official-documentation; retrieved-2026-09-29; 2026-09-29
+- [decred-pgp-position](../catalog/evidence/decred-pgp-position.json): official-source; c0fee6b52ad30961cfc3e06017d5e7516952615e; 2026-09-29
+- [decred-pgp-signpath](../catalog/evidence/decred-pgp-signpath.json): official-documentation; retrieved-2026-09-29; 2026-09-29
+- [decred-pgp-vectors](../catalog/evidence/decred-pgp-vectors.json): public-test-vector; c0fee6b52ad30961cfc3e06017d5e7516952615e; 2026-09-29
+- [decred-pgp33-reference](../catalog/evidence/decred-pgp33-reference.json): public-test-vector; 942eed0b34d09316d753942abdbec8dc5320cbed; 2026-09-29
+- [electrum-legacy-license](../catalog/evidence/electrum-legacy-license.json): official-source; ede66c89887234c83b0def133b3100fe92a160eb; 2026-09-29
+- [electrum-legacy-list](../catalog/evidence/electrum-legacy-list.json): official-source; ede66c89887234c83b0def133b3100fe92a160eb; 2026-09-29
+- [electrum-public-vectors](../catalog/evidence/electrum-public-vectors.json): public-test-vector; ede66c89887234c83b0def133b3100fe92a160eb; 2026-09-29
+- [electrum-qt-create](../catalog/evidence/electrum-qt-create.json): official-source; ede66c89887234c83b0def133b3100fe92a160eb; 2026-09-29
+- [electrum-v2-dictionary](../catalog/evidence/electrum-v2-dictionary.json): official-source; ede66c89887234c83b0def133b3100fe92a160eb; 2026-09-29
+- [electrum-v2-source](../catalog/evidence/electrum-v2-source.json): official-source; ede66c89887234c83b0def133b3100fe92a160eb; 2026-09-29
+- [electrum-vector-license](../catalog/evidence/electrum-vector-license.json): official-source; ede66c89887234c83b0def133b3100fe92a160eb; 2026-09-29
+- [electrum-version](../catalog/evidence/electrum-version.json): official-source; ede66c89887234c83b0def133b3100fe92a160eb; 2026-09-29
+- [electrum-wizard-modes](../catalog/evidence/electrum-wizard-modes.json): official-source; ede66c89887234c83b0def133b3100fe92a160eb; 2026-09-29
 - [monero-cake-export](../catalog/evidence/monero-cake-export.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [monero-cake-seed](../catalog/evidence/monero-cake-seed.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [monero-cake-ui](../catalog/evidence/monero-cake-ui.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
@@ -2453,6 +2953,15 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - [slip39-trezor-safe-5](../catalog/evidence/slip39-trezor-safe-5.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
 - [slip39-trezor-safe-7](../catalog/evidence/slip39-trezor-safe-7.json): official-documentation; reviewed-2026-09-29-version-unpublished; 2026-09-29
 - [slip39-vectors](../catalog/evidence/slip39-vectors.json): public-test-vector; 17fcce14736afe498871d3018e4fa9330443471a; 2026-09-29
+- [substrate-entropy](../catalog/evidence/substrate-entropy.json): official-source; ceb4fe5a3c7ac91da2e272037797ebecb56aa177; 2026-09-29
+- [substrate-polkadot-create](../catalog/evidence/substrate-polkadot-create.json): official-source; 54f44022004f4cefb4a2b929f3a397715a134d6f; 2026-09-29
+- [substrate-polkadot-type](../catalog/evidence/substrate-polkadot-type.json): official-source; 54f44022004f4cefb4a2b929f3a397715a134d6f; 2026-09-29
+- [substrate-polkadot-ui](../catalog/evidence/substrate-polkadot-ui.json): official-source; 54f44022004f4cefb4a2b929f3a397715a134d6f; 2026-09-29
+- [substrate-subwallet](../catalog/evidence/substrate-subwallet.json): official-source; 1f9b2a4cb6fea68193e5e012dcca7284a1dd0d80; 2026-09-29
+- [substrate-talisman](../catalog/evidence/substrate-talisman.json): official-source; 2cee3ef46633cdc3e90bb0fed6855fa25fc87692; 2026-09-29
+- [substrate-talisman-ui](../catalog/evidence/substrate-talisman-ui.json): official-source; 2cee3ef46633cdc3e90bb0fed6855fa25fc87692; 2026-09-29
+- [substrate-vector-license](../catalog/evidence/substrate-vector-license.json): official-source; ceb4fe5a3c7ac91da2e272037797ebecb56aa177; 2026-09-29
+- [substrate-vectors](../catalog/evidence/substrate-vectors.json): public-test-vector; ceb4fe5a3c7ac91da2e272037797ebecb56aa177; 2026-09-29
 - [ton-gram-identity](../catalog/evidence/ton-gram-identity.json): official-documentation; sha256\:c498efe1d81425f59fb294f1184c5a64ddd913c5cc22784759d2bd58691e7da2; 2026-09-29
 - [ton-gram-store](../catalog/evidence/ton-gram-store.json): official-documentation; sha256\:3f2c0e813940801893d846b36313173f6e7a2865b1bc41d80cc74fd1c90a2518; 2026-09-29
 - [ton-keeper-doc](../catalog/evidence/ton-keeper-doc.json): official-documentation; sha256\:d7091696af9e14b254c181906e1a8e8b48a339835ae65ac753593cabcbcb768a; 2026-09-29
@@ -2502,7 +3011,7 @@ Pending is an unfinished research state, not a support status. Missing records r
 | dictionary-bip39-pt — BIP39 pt | terminal | verified | [bip39-pt](../catalog/dictionaries/bip39-pt.json) |
 | dictionary-bip39-zh-hans — BIP39 zh-hans | terminal | verified | [bip39-zh-hans](../catalog/dictionaries/bip39-zh-hans.json) |
 | dictionary-bip39-zh-hant — BIP39 zh-hant | terminal | verified | [bip39-zh-hant](../catalog/dictionaries/bip39-zh-hant.json) |
-| dictionary-electrum-v1-en — electrum v1 en | pending | — | — |
+| dictionary-electrum-v1-en — electrum v1 en | terminal | blocked | [electrum-v1-en](../catalog/dictionaries/electrum-v1-en.json) |
 | dictionary-monero-de — MONERO de | terminal | verified | [monero-de](../catalog/dictionaries/monero-de.json) |
 | dictionary-monero-en — MONERO en | terminal | verified | [monero-en](../catalog/dictionaries/monero-en.json) |
 | dictionary-monero-en-old — MONERO en-old | terminal | documented | [monero-en-old](../catalog/dictionaries/monero-en-old.json) |
@@ -2516,8 +3025,8 @@ Pending is an unfinished research state, not a support status. Missing records r
 | dictionary-monero-pt — MONERO pt | terminal | verified | [monero-pt](../catalog/dictionaries/monero-pt.json) |
 | dictionary-monero-ru — MONERO ru | terminal | documented | [monero-ru](../catalog/dictionaries/monero-ru.json) |
 | dictionary-monero-zh-hans — MONERO zh-hans | terminal | documented | [monero-zh-hans](../catalog/dictionaries/monero-zh-hans.json) |
-| dictionary-pgp-even — pgp even | pending | — | — |
-| dictionary-pgp-odd — pgp odd | pending | — | — |
+| dictionary-pgp-even — pgp even | terminal | verified | [pgp-even](../catalog/dictionaries/pgp-even.json) |
+| dictionary-pgp-odd — pgp odd | terminal | verified | [pgp-odd](../catalog/dictionaries/pgp-odd.json) |
 | dictionary-polyseed-cs — POLYSEED cs | terminal | documented | [polyseed-cs](../catalog/dictionaries/polyseed-cs.json) |
 | dictionary-polyseed-en — POLYSEED en | terminal | verified | [polyseed-en](../catalog/dictionaries/polyseed-en.json) |
 | dictionary-polyseed-es — POLYSEED es | terminal | verified | [polyseed-es](../catalog/dictionaries/polyseed-es.json) |
@@ -2540,11 +3049,11 @@ Pending is an unfinished research state, not a support status. Missing records r
 | network-cardano — cardano | pending | — | — |
 | network-chia — chia | pending | — | — |
 | network-cosmos — cosmos | pending | — | — |
-| network-decred — decred | pending | — | — |
+| network-decred — decred | terminal | documented | [decrediton](../catalog/wallets/decrediton.json) |
 | network-ethereum — ethereum | pending | — | — |
-| network-kusama — kusama | pending | — | — |
+| network-kusama — kusama | terminal | documented | [polkadot-js](../catalog/wallets/polkadot-js.json), [subwallet](../catalog/wallets/subwallet.json), [talisman](../catalog/wallets/talisman.json) |
 | network-monero — monero | pending | — | — |
-| network-polkadot — polkadot | pending | — | — |
+| network-polkadot — polkadot | terminal | documented | [polkadot-js](../catalog/wallets/polkadot-js.json), [subwallet](../catalog/wallets/subwallet.json), [talisman](../catalog/wallets/talisman.json) |
 | network-polygon — polygon | pending | — | — |
 | network-sia — sia | pending | — | — |
 | network-solana — solana | pending | — | — |
@@ -2555,16 +3064,16 @@ Pending is an unfinished research state, not a support status. Missing records r
 | network-zcash — zcash | pending | — | — |
 | scheme-algorand-25 — algorand 25 | terminal | documented | [algorand-25](../catalog/schemes/algorand-25.json) |
 | scheme-bip39 — bip39 | terminal | verified | [bip39](../catalog/schemes/bip39.json) |
-| scheme-cake-decred-15 — cake decred 15 | pending | — | — |
+| scheme-cake-decred-15 — cake decred 15 | terminal | documented | [cake-decred-15](../catalog/schemes/cake-decred-15.json) |
 | scheme-cardano-byron — cardano byron | terminal | documented | [cardano-byron](../catalog/schemes/cardano-byron.json) |
 | scheme-cardano-daedalus-27 — cardano daedalus 27 | terminal | documented | [cardano-daedalus-27](../catalog/schemes/cardano-daedalus-27.json) |
 | scheme-cardano-hardware — cardano hardware | terminal | blocked | [cardano-hardware](../catalog/schemes/cardano-hardware.json) |
 | scheme-cardano-icarus — cardano icarus | terminal | documented | [cardano-icarus](../catalog/schemes/cardano-icarus.json) |
 | scheme-chia-bip39 — chia bip39 | pending | — | — |
-| scheme-decred-bip39 — decred bip39 | pending | — | — |
-| scheme-decred-pgp33 — decred pgp33 | pending | — | — |
-| scheme-electrum-v1 — electrum v1 | pending | — | — |
-| scheme-electrum-v2 — electrum v2 | pending | — | — |
+| scheme-decred-bip39 — decred bip39 | terminal | documented | [decred-bip39](../catalog/schemes/decred-bip39.json) |
+| scheme-decred-pgp33 — decred pgp33 | terminal | documented | [decred-pgp33](../catalog/schemes/decred-pgp33.json) |
+| scheme-electrum-v1 — electrum v1 | terminal | blocked | [electrum-v1](../catalog/schemes/electrum-v1.json) |
+| scheme-electrum-v2 — electrum v2 | terminal | documented | [electrum-v2](../catalog/schemes/electrum-v2.json) |
 | scheme-monero-legacy — monero legacy | terminal | documented | [monero-legacy](../catalog/schemes/monero-legacy.json) |
 | scheme-mymonero — mymonero | terminal | documented | [mymonero-13](../catalog/schemes/mymonero-13.json) |
 | scheme-polyseed — polyseed | terminal | documented | [polyseed-16](../catalog/schemes/polyseed-16.json) |
@@ -2572,7 +3081,7 @@ Pending is an unfinished research state, not a support status. Missing records r
 | scheme-sia-legacy-28 — sia legacy 28 | pending | — | — |
 | scheme-sia-legacy-29 — sia legacy 29 | pending | — | — |
 | scheme-slip39-share — slip39 share | terminal | documented | [slip39-share](../catalog/schemes/slip39-share.json) |
-| scheme-substrate-bip39 — substrate bip39 | pending | — | — |
+| scheme-substrate-bip39 — substrate bip39 | terminal | documented | [substrate-bip39](../catalog/schemes/substrate-bip39.json) |
 | scheme-ton-multichain-bip39 — ton multichain bip39 | terminal | documented | [ton-multichain-bip39](../catalog/schemes/ton-multichain-bip39.json) |
 | scheme-ton-native — ton native | terminal | verified | [ton-native](../catalog/schemes/ton-native.json) |
 | scheme-zano-legacy-24 — zano legacy 24 | pending | — | — |
@@ -2587,7 +3096,7 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-blockstream-jade — blockstream jade | pending | — | — |
 | wallet-bluewallet — bluewallet | pending | — | — |
 | wallet-cake-wallet — cake wallet | terminal | documented | [cake-wallet-monero](../catalog/wallets/cake-wallet-monero.json) |
-| wallet-cake-wallet-decred — cake wallet decred | pending | — | — |
+| wallet-cake-wallet-decred — cake wallet decred | terminal | documented | [cake-wallet-decred](../catalog/wallets/cake-wallet-decred.json) |
 | wallet-cake-wallet-zano — cake wallet zano | pending | — | — |
 | wallet-chia-wallet — chia wallet | pending | — | — |
 | wallet-coinbase-wallet — coinbase wallet | pending | — | — |
@@ -2595,9 +3104,9 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-coldcard — coldcard | pending | — | — |
 | wallet-cosmostation — cosmostation | pending | — | — |
 | wallet-daedalus — daedalus | terminal | documented | [daedalus](../catalog/wallets/daedalus.json) |
-| wallet-decrediton — decrediton | pending | — | — |
+| wallet-decrediton — decrediton | terminal | documented | [decrediton](../catalog/wallets/decrediton.json) |
 | wallet-defly — defly | terminal | blocked | [defly](../catalog/wallets/defly.json) |
-| wallet-electrum — electrum | pending | — | — |
+| wallet-electrum — electrum | terminal | documented | [electrum](../catalog/wallets/electrum.json) |
 | wallet-ellipal — ellipal | pending | — | — |
 | wallet-eternl — eternl | terminal | blocked | [eternl](../catalog/wallets/eternl.json) |
 | wallet-exodus — exodus | pending | — | — |
@@ -2624,7 +3133,7 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-passport — passport | pending | — | — |
 | wallet-pera-wallet — pera wallet | terminal | documented | [pera-wallet](../catalog/wallets/pera-wallet.json) |
 | wallet-phantom — phantom | pending | — | — |
-| wallet-polkadot-js — polkadot js | pending | — | — |
+| wallet-polkadot-js — polkadot js | terminal | documented | [polkadot-js](../catalog/wallets/polkadot-js.json) |
 | wallet-rabby — rabby | pending | — | — |
 | wallet-rainbow — rainbow | pending | — | — |
 | wallet-safepal — safepal | pending | — | — |
@@ -2633,8 +3142,8 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-siad — siad | pending | — | — |
 | wallet-solflare — solflare | pending | — | — |
 | wallet-sparrow — sparrow | pending | — | — |
-| wallet-subwallet — subwallet | pending | — | — |
-| wallet-talisman — talisman | pending | — | — |
+| wallet-subwallet — subwallet | terminal | documented | [subwallet](../catalog/wallets/subwallet.json) |
+| wallet-talisman — talisman | terminal | documented | [talisman](../catalog/wallets/talisman.json) |
 | wallet-tangem-seed — tangem seed | pending | — | — |
 | wallet-temple — temple | pending | — | — |
 | wallet-tokenpocket — tokenpocket | pending | — | — |
