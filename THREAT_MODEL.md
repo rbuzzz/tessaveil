@@ -17,6 +17,8 @@ The intended encrypted payload holds decoy tables, names, profile/dictionary sna
 
 A sheet password prevents accidental UI edits after unlock. It is not a second cryptographic boundary once the master password or decrypted payload is compromised. Auto-lock, masked input, immediate clearing and screen covering reduce incidental exposure only. Clearing is best effort: immutable UI strings, malicious IME buffers, process memory, swap and crash dumps may retain input. A hostile OS, keylogger or screen recorder can capture words and columns as they are entered or read.
 
+Encrypting or obfuscating a backup does not remove a future quantum vulnerability in a specific blockchain's signature scheme. Once key material is restored, that network's signature risk is separate from backup secrecy. Follow the official network or wallet migration guidance if that risk becomes actionable; Tessaveil promises no quantum resistance or universal deadline.
+
 <!-- en:matrix -->
 ### Scenario matrix
 
@@ -93,6 +95,8 @@ Tessaveil кратковременно видит текущее слово и �
 В зашифрованной полезной нагрузке предполагается хранить таблицы с ложными словами, названия, снимки профилей/словарей, настройки и пользовательские отметки проверки. Нельзя сохранять ключ порядка, его проверочный признак/шаблон/подсказку, целевые ячейки, временный ввод Spin отдельными полями, целую восстановленную фразу, отметки успешных строк, историю ввода и предыдущие версии. Размещённое слово остаётся среди слов таблицы; отсутствие метаданных цели не исключает слово из таблицы. Дополнительные парольные фразы кошельков остаются внешними секретами и не входят в метаданные таблицы.
 
 Пароль листа препятствует случайным правкам в UI после разблокировки. Он не является вторым криптографическим барьером при раскрытии мастер-пароля или расшифрованной полезной нагрузки. Автоблокировка, маскировка ввода, немедленная очистка и закрытие экрана лишь уменьшают случайное раскрытие. Очистка выполняется по мере возможности: неизменяемые строки UI, буферы вредоносного IME, память процесса, подкачка и аварийные дампы могут сохранять ввод. Враждебная ОС, кейлоггер или запись экрана способны захватить слова и столбцы при вводе и чтении.
+
+Шифрование или обфускация резервной копии не устраняет будущую квантовую уязвимость схемы подписи конкретного блокчейна. После восстановления ключевого материала риск подписи сети существует отдельно от секретности копии. Если он станет актуальным, следуйте официальным инструкциям по миграции сети или кошелька; Tessaveil не обещает квантовую стойкость или универсальный срок.
 
 <!-- ru:matrix -->
 ### Матрица сценариев

@@ -8,9 +8,10 @@
 
 ## Обязательные блокеры релиза
 
-Заблокировано обязательных пунктов: 51. Завершённое исследование не разрешает релиз.
+Заблокировано обязательных пунктов: 52. Завершённое исследование не разрешает релиз.
 
 - dictionary-electrum-v1-en: [electrum-v1-en](../catalog/dictionaries/electrum-v1-en.json)
+- dictionary-monero-en-old: [monero-en-old](../catalog/dictionaries/monero-en-old.json)
 - dictionary-zano-en: [zano-en](../catalog/dictionaries/zano-en.json)
 - scheme-cake-bip39-create: [cake-bip39-create](../catalog/schemes/cake-bip39-create.json)
 - scheme-cake-bip39-import: [cake-bip39-import](../catalog/schemes/cake-bip39-import.json)
@@ -20104,14 +20105,16 @@
 ### monero-en-old — monero-en-old
 
 - Исходная запись: [monero-en-old](../catalog/dictionaries/monero-en-old.json)
-- Статус: documented
-- Причина: Доказательств недостаточно для доступной поддержки.
+- Статус: blocked
+- Причина: Поддержка заблокирована; см. доказательства и решения о лицензии ниже.
 - Рекомендация: Недоступно для выбора; используйте процедуру резервного копирования самого кошелька.
 - Диапазон версий (min / max): 2f9d1bbb2c553dc75f3335bd1452117dfddd86fa / 2f9d1bbb2c553dc75f3335bd1452117dfddd86fa
 - Дата проверки: 2026-09-29
 - Историческая запись: true
-- Доказательства: [monero-en-old-source](../catalog/evidence/monero-en-old-source.json), [monero-monero-license](../catalog/evidence/monero-monero-license.json), [monero-monero-rules](../catalog/evidence/monero-monero-rules.json), [monero-osi-bsd](../catalog/evidence/monero-osi-bsd.json), [monero-signpath](../catalog/evidence/monero-signpath.json)
-- Подтверждаемое утверждение: Exact ordered dictionary array and applicable file-level license header reviewed. Source-token extraction and byte hashes are independently checked against the public fixture; no complete phrase is stored here. Reviewed 2026-09-29; response byte SHA-256 20c9090994c5b441f2e550cddbf266d604b64e495d9b172e45a8031e1aa5d578. See docs/research/batches/monero-polyseed.md.
+- Доказательства: [electrum-legacy-license](../catalog/evidence/electrum-legacy-license.json), [electrum-legacy-list](../catalog/evidence/electrum-legacy-list.json), [monero-en-old-source](../catalog/evidence/monero-en-old-source.json), [monero-monero-license](../catalog/evidence/monero-monero-license.json), [monero-monero-rules](../catalog/evidence/monero-monero-rules.json), [monero-osi-bsd](../catalog/evidence/monero-osi-bsd.json), [monero-signpath](../catalog/evidence/monero-signpath.json)
+- Подтверждаемое утверждение: MIT grant covers Electrum software; old\_mnemonic.py separately credits a Wiktionary frequency list. Codex review 2026-09-29 cannot establish original list revision, attribution chain or cumulative terms\: redistribution unclear and SignPath pending for that list. This is uncertainty, not a finding of infringement.
+- Подтверждаемое утверждение: Pinned legacy encoder has 1626 English words in fixed order and encodes each 32-bit chunk as three dependent indices. File MIT header also cites a Wiktionary contemporary-poetry list; cumulative upstream data rights are not resolved. No legacy list bytes bundled.
+- Подтверждаемое утверждение: Pinned Monero EnglishOld has 1626 words in the same order as Electrum old\_mnemonic.py. Its file header credits Electrum and Thomas Voegtlin; the Electrum source cites a Wiktionary frequency list. The Monero file-level BSD notice alone does not resolve cumulative upstream data rights. No list bytes are bundled while repository redistribution and signing decisions remain unclear/pending. Reviewed 2026-09-29; response byte SHA-256 20c9090994c5b441f2e550cddbf266d604b64e495d9b172e45a8031e1aa5d578. See docs/research/batches/monero-polyseed.md.
 - Подтверждаемое утверждение: BSD-3-Clause source-data redistribution allowed with exact copyright/license/disclaimer retention and no endorsement. File-level MIT overrides for dabura667 lists retained. Reviewed by Codex for this source-data payload only. Reviewed 2026-09-29; response byte SHA-256 1f99d6b6e1ae17de27147ff2e1e0238fa8c7d5a8accd0f1ac062c89365516abd. See docs/research/batches/monero-polyseed.md.
 - Подтверждаемое утверждение: 1626 entries; codepoint prefixes and case-insensitive lookup. utf8canonical re-encodes codepoints with towlower, not NFC/NFKD. EnglishOld tolerates duplicate prefixes and short words. Reviewed 2026-09-29; response byte SHA-256 2bc256f01c6904af914cb7c6526254267ed463882e216fd0eb1d9bbdf4bf5bb4. See docs/research/batches/monero-polyseed.md.
 - Подтверждаемое утверждение: OSI lists BSD-3-Clause as approved. This corroborates only the component-license decision, not project acceptance. Response-body SHA-256 0dfece33194f06d15b862c323f7ed32ba6ab7f512a7fda11880bb2e1401518f8.
@@ -20125,11 +20128,11 @@
 - Порядок слов: Exact upstream array order; zero-based indices. Extract literal UTF-8 tokens unchanged; remove C/C\+\+ wrapper and indentation, append LF after every token. No sorting, lowercasing or Unicode rewriting. Source file and extracted byte hashes in batch note.
 - Позиционные правила: Same vocabulary at every eligible position; upstream prefix length 4. Never evaluate a user phrase checksum.; Source-native lookup\: Unicode codepoint lowercase and language-specific prefix, with no NFC/NFKD transform; normalization=none preserves source characters.; Historical restore-only EnglishOld\: excluded from generation language list; duplicate prefixes and short words explicitly allowed by upstream.
 - Ревизия источника: 2f9d1bbb2c553dc75f3335bd1452117dfddd86fa
-- Лицензия: BSD-3-Clause
-- Атрибуция: Exact source file notices and upstream license retained in THIRD\_PARTY\_NOTICES; dabura667 / The Monero Project and original dictionary contributors.
-- Распространение в репозитории: allowed
-- Совместимость с SignPath: compatible
-- Доказательства лицензии: [monero-en-old-source](../catalog/evidence/monero-en-old-source.json), [monero-monero-license](../catalog/evidence/monero-monero-license.json), [monero-osi-bsd](../catalog/evidence/monero-osi-bsd.json), [monero-signpath](../catalog/evidence/monero-signpath.json)
+- Лицензия: BSD-3-Clause file header; Electrum/Wiktionary cumulative rights unresolved
+- Атрибуция: Monero EnglishOld file credits the Electrum project and Thomas Voegtlin; Electrum's pinned source cites a Wiktionary frequency list. Cumulative data rights require review.
+- Распространение в репозитории: unclear
+- Совместимость с SignPath: pending
+- Доказательства лицензии: [electrum-legacy-license](../catalog/evidence/electrum-legacy-license.json), [electrum-legacy-list](../catalog/evidence/electrum-legacy-list.json), [monero-en-old-source](../catalog/evidence/monero-en-old-source.json), [monero-monero-license](../catalog/evidence/monero-monero-license.json), [monero-osi-bsd](../catalog/evidence/monero-osi-bsd.json), [monero-signpath](../catalog/evidence/monero-signpath.json)
 - Тестовые векторы: —
 
 <a id="dictionary-monero-eo"></a>
@@ -21338,7 +21341,7 @@ Pending означает незавершённое исследование, а
 | dictionary-electrum-v1-en — electrum v1 en | terminal | blocked | [electrum-v1-en](../catalog/dictionaries/electrum-v1-en.json) |
 | dictionary-monero-de — MONERO — Немецкий | terminal | verified | [monero-de](../catalog/dictionaries/monero-de.json) |
 | dictionary-monero-en — MONERO — Английский | terminal | verified | [monero-en](../catalog/dictionaries/monero-en.json) |
-| dictionary-monero-en-old — MONERO — Старый английский | terminal | documented | [monero-en-old](../catalog/dictionaries/monero-en-old.json) |
+| dictionary-monero-en-old — MONERO — Старый английский | terminal | blocked | [monero-en-old](../catalog/dictionaries/monero-en-old.json) |
 | dictionary-monero-eo — MONERO — Эсперанто | terminal | documented | [monero-eo](../catalog/dictionaries/monero-eo.json) |
 | dictionary-monero-es — MONERO — Испанский | terminal | documented | [monero-es](../catalog/dictionaries/monero-es.json) |
 | dictionary-monero-fr — MONERO — Французский | terminal | documented | [monero-fr](../catalog/dictionaries/monero-fr.json) |

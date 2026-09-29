@@ -16,6 +16,12 @@ SCHEMA_DIR = Path(__file__).resolve().parents[2] / "catalog" / "schema"
 KINDS = (("dictionaries", "dictionary"), ("schemes", "scheme"),
          ("wallets", "wallet"), ("evidence", "evidence"), ("required_sets", "required-set"))
 TERMINAL = {"verified", "documented", "blocked", "no-mnemonic-confirmed"}
+UNRESOLVED_VOCABULARY_SHA256 = {
+    # Monero EnglishOld, Electrum v1 and Zano share this exact ordered 1626-word
+    # vocabulary. The Electrum/Wiktionary cumulative rights chain is unresolved.
+    "c8da327d316f8ee758b790068e618077ac271a89fd77ec1250c59ae40e7b599e":
+        "Electrum-old/Wiktionary cumulative rights unresolved",
+}
 PRIMARY_EVIDENCE = {"official-specification", "official-documentation", "official-source"}
 SUPPORTED_LENGTHS = {12, 13, 14, 15, 16, 18, 20, 21, 24, 25, 26, 27, 28, 29, 33}
 SUPPORTED_SCHEMA_KEYS = frozenset({
@@ -289,6 +295,10 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
         if hashlib.sha256(record.wordlist_bytes).hexdigest() != data.get("sha256"):
             add("word-sha256", record, "word-list SHA-256 mismatch")
         words = record.wordlist_bytes.decode("utf-8").splitlines()
+        vocabulary_digest = hashlib.sha256(("\n".join(words) + "\n").encode("utf-8")).hexdigest()
+        if vocabulary_digest in UNRESOLVED_VOCABULARY_SHA256:
+            add("unresolved-vocabulary", record,
+                "ordered vocabulary has unresolved upstream rights; do not bundle under an alias")
         if len(words) != data.get("word_count"):
             add("word-count", record, "word-list count mismatch")
         normalization = data.get("normalization")

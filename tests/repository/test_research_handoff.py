@@ -63,6 +63,14 @@ class ResearchHandoffTests(unittest.TestCase):
         bad["evidence_sha256"] = {}
         self.assertTrue(research_gate.verify_inputs(ROOT, bad))
 
+    def test_quantum_signing_boundary_is_stated_in_both_languages(self):
+        text = (ROOT / "THREAT_MODEL.md").read_text(encoding="utf-8")
+        english, russian = text.split("## Русский", 1)
+        for section, terms in ((english, ("quantum", "signature", "migration")),
+                               (russian, ("квант", "подпис", "миграц"))):
+            with self.subTest(language=terms[0]):
+                self.assertTrue(all(term in section.lower() for term in terms))
+
 
 if __name__ == "__main__":
     unittest.main()

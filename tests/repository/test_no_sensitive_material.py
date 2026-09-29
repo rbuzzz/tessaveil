@@ -2,6 +2,8 @@
 
 import hashlib
 from pathlib import Path
+import subprocess
+import tempfile
 import unittest
 
 from tools import sensitive_material as scan
@@ -120,6 +122,81 @@ class SensitiveMaterialTests(unittest.TestCase):
 
     def test_repository_contains_no_sensitive_material(self):
         self.assertEqual(scan.scan_repository(ROOT), ())
+
+    def test_history_finds_removed_credential_and_personal_path_without_echo(self):
+        from tools import history_sensitive_material as history
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            def git(*args):
+                return subprocess.run(["git", *args], cwd=root, check=True,
+                                      capture_output=True, text=True).stdout
+            git("init", "-q")
+            git("config", "user.name", "Synthetic Test")
+            git("config", "user.email", "synthetic@example.invalid")
+            secret = "ghp" + "_" + "x" * 36
+            path = "C:" + "/Us" + "ers/Alice/private.txt"
+            (root / "example.txt").write_text(secret + "\n" + path, encoding="utf-8")
+            git("add", "example.txt")
+            git("commit", "-qm", "synthetic earlier data")
+            (root / "example.txt").write_text("safe current text", encoding="utf-8")
+            git("commit", "-qam", "remove synthetic earlier data")
+            self.assertEqual(scan.inspect_text("example.txt", (root / "example.txt").read_text(),
+                                               frozenset()), ())
+            findings = history.scan_history(root)
+            self.assertEqual({kind for _, kind in findings}, {"github-token", "personal-path"})
+            self.assertNotIn(secret, str(findings))
+            self.assertNotIn(path, str(findings))
+
+    def test_history_rejects_oversized_or_binary_blob_safely(self):
+        from tools import history_sensitive_material as history
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            def git(*args):
+                subprocess.run(["git", *args], cwd=root, check=True, capture_output=True)
+            git("init", "-q")
+            git("config", "user.name", "Synthetic Test")
+            git("config", "user.email", "synthetic@example.invalid")
+            (root / "opaque.bin").write_bytes(b"\x00\xff")
+            git("add", "opaque.bin")
+            git("commit", "-qm", "synthetic binary")
+            self.assertIn("unreviewed-binary", {kind for _, kind in history.scan_history(root)})
+            self.assertIn("oversized-blob", {kind for _, kind in history.scan_history(root, max_blob_bytes=1)})
+
+    def test_history_finds_removed_synthetic_mnemonic_and_vector(self):
+        from tools import history_sensitive_material as history
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            def git(*args):
+                subprocess.run(["git", *args], cwd=root, check=True, capture_output=True)
+            git("init", "-q")
+            git("config", "user.name", "Synthetic Test")
+            git("config", "user.email", "synthetic@example.invalid")
+            (root / "fixture.json").write_text(
+                '{"mnemo' + 'nic": "' + " ".join(["abandon"] * 12) + '"}',
+                encoding="utf-8")
+            git("add", "fixture.json")
+            git("commit", "-qm", "synthetic fixture")
+            (root / "fixture.json").write_text("{}", encoding="utf-8")
+            git("commit", "-qam", "remove fixture")
+            findings = history.scan_history(root, words=frozenset({"abandon"}))
+            self.assertEqual({kind for _, kind in findings}, {"mnemonic-like", "unreviewed-vector"})
+
+    def test_history_includes_detached_candidate_head(self):
+        from tools import history_sensitive_material as history
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            def git(*args):
+                subprocess.run(["git", *args], cwd=root, check=True, capture_output=True)
+            git("init", "-q")
+            git("config", "user.name", "Synthetic Test")
+            git("config", "user.email", "synthetic@example.invalid")
+            (root / "fixture.txt").write_text("safe", encoding="utf-8")
+            git("add", "fixture.txt")
+            git("commit", "-qm", "safe base")
+            git("checkout", "--detach", "-q")
+            (root / "fixture.txt").write_text("figd" + "_" + "x" * 40, encoding="utf-8")
+            git("commit", "-qam", "detached candidate")
+            self.assertIn("figma-token", {kind for _, kind in history.scan_history(root)})
 
 
 if __name__ == "__main__":

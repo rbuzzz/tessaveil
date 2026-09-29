@@ -5,10 +5,12 @@
     "en": "monero-en-old",
     "ru": "monero-en-old"
   },
-  "status": "documented",
+  "status": "blocked",
   "historical": true,
   "evidence_ids": [
     "monero-en-old-source",
+    "electrum-legacy-list",
+    "electrum-legacy-license",
     "monero-monero-rules",
     "monero-signpath",
     "monero-osi-bsd",
@@ -26,16 +28,18 @@
     "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa"
   },
   "license": {
-    "spdx_or_name": "BSD-3-Clause",
+    "spdx_or_name": "BSD-3-Clause file header; Electrum/Wiktionary cumulative rights unresolved",
     "source_url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/LICENSE",
-    "attribution": "Exact source file notices and upstream license retained in THIRD_PARTY_NOTICES; dabura667 / The Monero Project and original dictionary contributors.",
-    "repository_redistribution": "allowed",
-    "signpath_compatible": "compatible",
+    "attribution": "Monero EnglishOld file credits the Electrum project and Thomas Voegtlin; Electrum's pinned source cites a Wiktionary frequency list. Cumulative data rights require review.",
+    "repository_redistribution": "unclear",
+    "signpath_compatible": "pending",
     "decision_evidence": [
       "monero-signpath",
       "monero-osi-bsd",
       "monero-monero-license",
-      "monero-en-old-source"
+      "monero-en-old-source",
+      "electrum-legacy-list",
+      "electrum-legacy-license"
     ]
   },
   "encoding": "UTF-8",
@@ -53,5 +57,5 @@
     "collisions": []
   },
   "test_vector_ids": [],
-  "wordlist_path": "wordlists/monero-en-old/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa.txt"
+  "wordlist_path": null
 }

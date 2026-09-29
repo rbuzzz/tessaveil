@@ -676,7 +676,7 @@ monero-jbo original notice and attribution
  */
 
 
-monero-en-old original notice and attribution
+monero-en-old source provenance notice (dictionary bytes excluded while cumulative rights are unresolved)
 // Word list originally created as part of the Electrum project, Copyright (C) 2014 Thomas Voegtlin
 //
 // Copyright (c) 2014-2024, The Monero Project
@@ -1415,18 +1415,6 @@ Attribution: Exact source file notices and upstream license retained in THIRD_PA
 Repository redistribution: allowed; SignPath compatibility: compatible (local assessment only)
 Decision evidence: monero-en-source, monero-monero-license, monero-osi-bsd, monero-signpath
 
-Dictionary: monero-en-old
-File: wordlists/monero-en-old/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa.txt
-Source: https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/mnemonics/english_old.h
-Revision: 2f9d1bbb2c553dc75f3335bd1452117dfddd86fa
-SHA-256: c8da327d316f8ee758b790068e618077ac271a89fd77ec1250c59ae40e7b599e
-Count: 1626
-License: BSD-3-Clause
-License source: https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/LICENSE
-Attribution: Exact source file notices and upstream license retained in THIRD_PARTY_NOTICES; dabura667 / The Monero Project and original dictionary contributors.
-Repository redistribution: allowed; SignPath compatibility: compatible (local assessment only)
-Decision evidence: monero-en-old-source, monero-monero-license, monero-osi-bsd, monero-signpath
-
 Dictionary: monero-eo
 File: wordlists/monero-eo/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa.txt
 Source: https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/mnemonics/esperanto.h
@@ -1718,4 +1706,5 @@ Decision evidence: slip39-license, slip39-osi-mit, slip39-signpath
 Excluded dictionaries (no distributed word-list bytes)
 -----------------------------------------------------
 electrum-v1-en: blocked; redistribution=unclear; SignPath=pending; NOT BUNDLED
+monero-en-old: blocked; redistribution=unclear; SignPath=pending; NOT BUNDLED
 zano-en: blocked; redistribution=unclear; SignPath=pending; NOT BUNDLED

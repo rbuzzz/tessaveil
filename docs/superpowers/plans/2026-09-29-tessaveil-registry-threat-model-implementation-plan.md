@@ -860,4 +860,4 @@ Do not push from the task agent. The controller pushes `feature/tessaveil-resear
 - [ ] **Step 7: Wait for exact-SHA GitHub CI and stop**
 
 Run: `gh run list --commit "$(git rev-parse HEAD)" --limit 5` and watch the mandatory run to completion.
-Expected: mandatory research CI is green for the exact SHA and the report records the independent release-readiness result. Report blockers honestly and do not merge, release, or start production implementation while a required release blocker remains unresolved.
+Expected: mandatory research CI is green for the exact SHA and the report records the independent release-readiness result. After final review, history audit and exact-SHA green CI, the research PR may merge with an evidence-backed release NO-GO. This does not authorize RC/stable release, promote documented/blocked records, freeze the vault/KDF format, or clear hardware, audit and signing blockers. Report those blockers honestly and do not start production implementation under this research handoff.

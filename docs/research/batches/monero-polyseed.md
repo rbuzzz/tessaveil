@@ -8,14 +8,15 @@ NO-GO. Dictionary verification does not make a wallet profile selectable.
 
 ## Results and honest limits
 
-All 23 requested dictionaries are present: 13 Monero lists of 1626 words and 10
-Polyseed lists of 2048 words. Five dictionary records are verified by a fixed
-public-vector projection: monero-en/de/pt and polyseed-en/es. The other 18 are
-documented: exact source order, hashes, counts, normalization and licenses pass,
-but an independent deterministic language-specific mnemonic example was not
-reproduced. Upstream random all-language roundtrips are not presented as fixed
-known-answer evidence. These 18 lists are licensed research payload, not selectable
-support. EnglishOld has `historical=true`, independently of its documented status.
+All 23 requested dictionary records are present: 13 Monero vocabularies of 1626
+words and 10 Polyseed vocabularies of 2048 words. Five records are verified by a
+fixed public-vector projection: monero-en/de/pt and polyseed-en/es. Seventeen are
+documented because independent deterministic language-specific mnemonic examples
+were not reproduced. EnglishOld is terminal `blocked`: its 1626 ordered words match
+the pinned Electrum old_mnemonic.py list, whose Wiktionary cumulative-rights chain
+remains unresolved. Its `historical=true` flag does not grant distribution rights.
+The blocked EnglishOld bytes are excluded from the current tree and notices index;
+its source fingerprint is retained as research evidence only. No status is promoted.
 
 The three schemes and eleven concrete wallet modes are documented. Their precise
 source-backed rules are retained, but full independent key/address derivation and
@@ -53,7 +54,8 @@ recognized by the restore language search but excluded from generation; its four
 character prefixes deliberately permit duplicates and short words. Keep its
 1626-entry order distinct from current English and do not infer a selectable
 historical 25-word generator from its presence. The scheme references only the
-twelve current generation dictionaries; EnglishOld remains independently visible.
+twelve current generation dictionaries; EnglishOld remains independently visible
+as a blocked record with no distributed word-list bytes.
 
 ## Source bytes, order and normalization
 
@@ -138,6 +140,14 @@ origin. Full per-file leading notices, relevant root LICENSE and disclaimer text
 are retained in [THIRD_PARTY_NOTICES](../../../THIRD_PARTY_NOTICES), with only
 trailing whitespace removed from displayed comment lines.
 
+The EnglishOld header explicitly credits Electrum. An exact ordered-word comparison
+with pinned Electrum old_mnemonic.py finds the same 1626 words. That Electrum source
+cites Wiktionary; its upstream frequency-list rights remain unresolved for Electrum
+v1 and Zano. Monero's file header does not by itself settle cumulative data rights.
+For EnglishOld, `repository_redistribution=unclear` and
+`signpath_compatible=pending`; the mandatory record is `blocked` and no list bytes
+are distributed. This records uncertainty, not a legal finding of infringement.
+
 Polyseed arrays and test projections use Apache-2.0, with cumulative MIT obligations
 for BIP39-derived words. The entire upstream NOTICE and Apache license are retained;
 the transformation is prominently described in the dictionary metadata, this note
@@ -149,7 +159,7 @@ Its [exact LICENSE.txt](https://raw.githubusercontent.com/mymonero/mymonero-core
 is 1585 bytes, SHA-256
 `c7c911457cac352c3d79c43cde1dc26a2c0355234e737060cac7a786647ac87f`.
 
-For these exact research-data projections: repository_redistribution=allowed and
+For the remaining distributed research-data projections: repository_redistribution=allowed and
 signpath_compatible=compatible. The separate component assessment rests on actual
 source terms, OSI BSD/MIT/Apache approval and the reviewed SignPath OSS conditions;
 no commercial dual-license requirement was identified for this payload. It does
@@ -206,7 +216,7 @@ byte lengths are also recorded in the fixture.
 | --- | ---: | ---: | --- | --- |
 | monero-de | 1626 | 12349 | `e1e6653cf418e0a392a5cd34160a8cdacb5dfce8edbac0e124fba8d7daff1f69` | `7b910a96bc94d19eb3e4edd8179db383a68b03a7608396bbee0fdc46a7d4e88e` |
 | monero-en | 1626 | 11467 | `eaa6bce7dd92f4d6dd74f224264e0ef4ad21095d68ec77616b26ceb599baf4f7` | `9bd756d29e689aae0e6e7f8b1196c4f35df350225c4668d4f6f41842f05fc2ca` |
-| monero-en-old | 1626 | 10494 | `c8da327d316f8ee758b790068e618077ac271a89fd77ec1250c59ae40e7b599e` | `20c9090994c5b441f2e550cddbf266d604b64e495d9b172e45a8031e1aa5d578` |
+| monero-en-old (source only; excluded) | 1626 | 10494 source projection, not distributed | `c8da327d316f8ee758b790068e618077ac271a89fd77ec1250c59ae40e7b599e` | `20c9090994c5b441f2e550cddbf266d604b64e495d9b172e45a8031e1aa5d578` |
 | monero-eo | 1626 | 12086 | `aa53b9b2af6586e8df69bcf04b17af4f06cac9e7ad20420d45b265f9aa18b32d` | `382d9f9bfcf293e4dc9f156042fe5a3f2a151191bae368a494eaf53c77e16043` |
 | monero-es | 1626 | 10898 | `05da8a20ae4a5af8fc1bd02d20d1282cf72ce1a6c98b9be60b1eff4c79d424fb` | `994a941260f53e066753204f4b92c20bb1d830b58e76ff89c2caa71c34d546ef` |
 | monero-fr | 1626 | 10898 | `b17376bb1341cc32b8a7088d23c0dba3b25743c167f4e4f3d8062946ffd93e87` | `f4e42ab4eb9824a2cd829f132e33dfc46ae31c5788a37c9726d393e7cc809a82` |

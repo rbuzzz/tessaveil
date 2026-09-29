@@ -1,10 +1,12 @@
 """Fail-closed licensing gates and executable policy decision tables."""
 
+import hashlib
 import json
 from pathlib import Path
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from tools.catalog.loader import load_catalog
 from tools.catalog.validator import validate_catalog
@@ -100,6 +102,24 @@ class LicensingTests(unittest.TestCase):
         for legacy in ("denied", "pending"):
             self.license(legacy, "compatible", status="documented", wordlist_path=None)
             self.assertIn("schema", self.codes())
+
+    def test_unresolved_vocabulary_cannot_be_relicensed_under_another_name(self):
+        from tools.catalog import validator
+        old = next(r for r in load_catalog(ROOT).dictionaries if r.id == "monero-en-old")
+        self.assertIn(old.data["sha256"], validator.UNRESOLVED_VOCABULARY_SHA256)
+        dictionary = self.root / DICTIONARY
+        data = json.loads(dictionary.read_text(encoding="utf-8"))
+        data["id"] = "different-product-en"
+        data["display_name"] = {"en": "Different product", "ru": "Другой продукт"}
+        data["wordlist_path"] = "wordlists/synthetic-en/v1.txt"
+        dictionary.write_text(json.dumps(data), encoding="utf-8")
+        words = (self.root / data["wordlist_path"]).read_text(encoding="utf-8").splitlines()
+        fingerprint = hashlib.sha256(("\n".join(words) + "\n").encode()).hexdigest()
+        with patch.dict(validator.UNRESOLVED_VOCABULARY_SHA256,
+                        {fingerprint: "synthetic unresolved lineage"}):
+            findings = validate_catalog(load_catalog(self.root))
+        self.assertIn("unresolved-vocabulary", {f.code for f in findings
+                                                 if f.location == "different-product-en"})
 
     def policy_rows(self, name, heading):
         path = ROOT / "docs/research" / name

@@ -673,7 +673,7 @@ monero-jbo original notice and attribution
  */
 
 
-monero-en-old original notice and attribution
+monero-en-old source provenance notice (dictionary bytes excluded while cumulative rights are unresolved)
 // Word list originally created as part of the Electrum project, Copyright (C) 2014 Thomas Voegtlin
 //
 // Copyright (c) 2014-2024, The Monero Project

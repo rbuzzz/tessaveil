@@ -49,6 +49,14 @@ class MoneroPolyseedTests(unittest.TestCase):
                 record = records[identifier]
                 expected = fixture['wordlists'][identifier]
                 blob = record.wordlist_bytes
+                if identifier == 'monero-en-old':
+                    self.assertTrue(blob is None)
+                    self.assertIsNone(record.data['wordlist_path'])
+                    self.assertEqual(record.data['status'], 'blocked')
+                    self.assertEqual(record.data['license']['repository_redistribution'], 'unclear')
+                    self.assertEqual(record.data['license']['signpath_compatible'], 'pending')
+                    self.assertEqual(record.data['sha256'], expected['sha256'])
+                    continue
                 self.assertIsNotNone(blob)
                 self.assertTrue(hashlib.sha256(blob).hexdigest() == expected['sha256'], 'Source word-list fingerprint mismatch')
                 self.assertEqual(len(blob), expected['bytes'])
@@ -68,11 +76,11 @@ class MoneroPolyseedTests(unittest.TestCase):
                     self.assertEqual(record.data['normalization'], 'none')
                 self.assertEqual(record.data['license']['repository_redistribution'], 'allowed')
                 self.assertEqual(record.data['license']['signpath_compatible'], 'compatible')
-                self.assertEqual(record.data['historical'], identifier == 'monero-en-old')
+                self.assertFalse(record.data['historical'])
                 verified = {'monero-en', 'monero-de', 'monero-pt', 'polyseed-en', 'polyseed-es'}
                 self.assertEqual(record.data['status'], 'verified' if identifier in verified else 'documented')
                 self.assertEqual(bool(record.data['test_vector_ids']), identifier in verified)
-        self.assertNotEqual(records['monero-en-old'].wordlist_bytes, records['monero-en'].wordlist_bytes)
+        self.assertIsNone(records['monero-en-old'].wordlist_bytes)
         # The upstream modified lists must never be silently replaced by BIP39.
         for lang in ('es', 'ja', 'cs'):
             self.assertNotEqual(records['polyseed-' + lang].wordlist_bytes, records['bip39-' + lang].wordlist_bytes)

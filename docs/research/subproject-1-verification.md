@@ -29,20 +29,26 @@ the report check, even if another failure also returns exit code 1.
 The final task log records commands and counts. The complete Python run includes
 schema/Python parity, positive discovery, threat claims, spike-report contracts,
 sensitive-material scanning and the new report/notices regression cases.
+The 192-case result below was an earlier local run with the opt-in filesystem probe.
+Subsequent Task 18 scanner-review tests and whole-branch validator hardening brought
+the then-current exact-branch suite to 210 cases. Neither earlier count is a test
+of this later HEAD. The final local suite for these changes is recorded separately
+below; its filesystem probe is not enabled.
 Development host: Windows 11 Pro x64 build 26200, PowerShell 7.6.5, Python 3.14.2.
 GitHub independently executes Python 3.12; the development host is not clean Windows.
 
 | Command / gate | Observed result and limitation |
 | --- | --- |
-| `python -m py_compile tools/sensitive_material.py tools/notices.py tools/research_gate.py` | PASS; syntax only |
-| `python -m unittest discover -s tests -p "test_*.py" -v` | Initial run exposed the old generator test's link allowlist; extended only for the two new handoff paths and verified both target files exist |
-| `TESSAVEIL_RUN_FILESYSTEM_PROBE=1 python tools/run_tests.py` | PASS, 192 cases in 361.728s, one unavailable Windows directory-symlink case; native filesystem cases enabled |
+| `python -B -m py_compile tools/sensitive_material.py tools/history_sensitive_material.py tools/notices.py tools/research_gate.py` | PASS; syntax only |
+| `python -B -m unittest discover -s tests -p "test_*.py" -v` | Final local exact-branch run: 216 cases, 4 expected skips, 0 failures/errors; includes history and licence regressions |
+| `TESSAVEIL_RUN_FILESYSTEM_PROBE=1 python tools/run_tests.py` | Earlier local run only: PASS, 192 cases in 361.728s, one unavailable Windows directory-symlink case; native filesystem cases enabled |
 | `python -m tools.catalog.cli validate --root . --require-terminal` | PASS, 0 errors / 0 warnings; terminal blocked accepted as research |
 | `python -m tools.catalog.cli generate --root . --check` | PASS; generated EN/RU docs exactly match |
 | `python -m tools.notices --check` | PASS; exact generated notices and closed decisions for every bundled dictionary |
-| `python -m tools.sensitive_material` | PASS; tracked text plus non-ignored new files; exact reviewed public vector hashes; fresh 5-case scanner rerun also covers the final OpenPGP header extension |
-| `python -m tools.research_gate` | PASS as report consistency only; independent Windows release remains NO-GO |
-| `python -m tools.catalog.cli validate --root . --require-release-ready` | Expected exit 1; 51 required catalogue blockers, complete findings below |
+| `python -B -m tools.sensitive_material` | PASS; current tracked text plus non-ignored new files; exact reviewed public vector hashes |
+| `python -B -m tools.history_sensitive_material` | PASS; full local checkout refs; six earlier synthetic path-test blobs and two earlier public-vector blobs have scoped exact-ID exemptions; credential/private-key checks remain active |
+| `python -B -m tools.research_gate --candidate-sha <exact HEAD>` | PASS as exact candidate report consistency after commit; independent Windows release remains NO-GO |
+| `python -B -m tools.catalog.cli validate --root . --require-release-ready` | Expected exit 1; 52 required catalogue blockers, complete findings below |
 | `cargo fmt --manifest-path spikes/mobile/core/Cargo.toml --check` | PASS; isolated pinned Rust 1.90.0 |
 | `cargo check --manifest-path spikes/mobile/core/Cargo.toml --locked --offline --all-targets` | PASS; Windows GNU host only |
 | `cargo test --manifest-path spikes/mobile/core/Cargo.toml --locked --offline` | PASS, 2 unit + 2 independent crypto + 5 vector tests; 0 ignored |
@@ -56,8 +62,9 @@ paid generation, remote machine, formatted medium or production payload was used
 
 ## Separate decisions and remaining blockers
 
-All 819 required catalogue items have terminal evidence. The exact 51 blocked
-requirements are below; documented profiles remain nonselectable, and only verified
+All 819 required catalogue items have terminal evidence: 24 verified, 741 documented,
+52 blocked and 2 no-mnemonic-confirmed. The exact 52 blocked requirements are below;
+36 dictionaries are bundled. Documented profiles remain nonselectable, and only verified
 profiles are future candidates. Research completion never upgrades a profile.
 
 The [equipment inventory](../../reports/spikes/equipment-availability.md) still
@@ -92,13 +99,17 @@ license source, decision evidence and allowed/compatible decisions in that index
 Any pending/nonpositive bundled decision or catalogue error fails generation.
 The original license text block is retained, not replaced by SPDX labels.
 
-Electrum v1 and Zano rights remain unclear/pending and are NOT BUNDLED. This is
+Electrum v1, Monero EnglishOld and Zano rights remain unclear/pending and are NOT BUNDLED. This is
 a terminal exclusion decision, not clearance. Development-only Cargo dependencies
 are not vendored or shipped; their future binary distribution review remains
 pending exactly as the Task 6 dependency inventory says. No legal or Foundation
 acceptance is inferred from local component compatibility.
+The EnglishOld list was tracked in earlier commits and remains retrievable from
+Git history. This change removes it from the current tree, generated notices index
+and future payload; it does not rewrite already published history. No destructive
+history operation was authorized or performed.
 
-The scanner always checks private-key headers, GitHub/Figma token forms and
+The current-tree scanner always checks private-key headers, GitHub/Figma token forms and
 personal absolute paths, without printing matched values. Mnemonic runs (including
 Unicode decomposition and JSON arrays) and seed/index JSON fixtures need review.
 Only the five existing public projection files at exact reviewed SHA-256 values
@@ -108,6 +119,22 @@ The two binary exceptions are exact-hash synthetic authenticated probes, not wal
 Arbitrary binary files or changed exceptions fail. This bounded heuristic does not
 detect every encoding, encrypted credential or arbitrary secret; human review remains
 required. Tests construct fake patterns in memory rather than commit fake tokens.
+
+The separate read-only local Git-object audit before this candidate commit examined
+46 commits and 1669 blobs;
+49 blobs are outside refs/reflog. Published refs passed the secret/path
+gate; no real secrets, credentials or private mnemonic were found. Two reflog-only
+commits, `0fdd8f32b187fb19a0063bf0e3cf3fbd66903c88` and
+`dd0762a60c4031db5ae3538b8b11f599237d07c3`, retain an old absolute
+workspace path and former project name, redacted here as `D:\…\Apps\Seed-Keeper`.
+They are unreachable from advertised remote refs. Earlier nonpublication of
+unreachable objects cannot be proved. No reflog/object deletion or GC was done.
+The CI history gate scans all blobs reachable from available refs in a full
+checkout for the current scanner's secret/path classes; it does not claim to scan
+unavailable, unreachable objects. Six exact Git blob IDs are earlier synthetic
+path-test revisions with path-class-only exceptions. Two exact Git blob IDs are
+earlier reviewed public vector projections with mnemonic/vector-only exceptions.
+Credential, private-key and personal-path checks remain active for those vectors.
 
 ## CI actions and promotion boundary
 
@@ -128,6 +155,11 @@ directly and require exit 0, plus independently satisfy physical/clean-machine,
 format, filesystem, audit and signing gates. Changing acceptance criteria requires
 an explicit owner decision; this task changes none.
 
+The research PR may merge after final review, the history audit and exact-SHA green
+CI, even while this evidence-backed Windows release result is NO-GO. That merge
+does not authorize RC/stable release, promote documented/blocked records, freeze
+the vault/KDF format or clear hardware, independent audit and signing blockers.
+
 ## Machine-readable evidence contract
 
 This is the sole JSON block consumed by the report verifier. Catalogue stdout
@@ -140,7 +172,7 @@ retains its bounded CLI presentation; `release_findings` contains all findings.
   "windows_release": "NO-GO",
   "catalogue_release": {
     "exit_code": 1,
-    "output": "error required-blocked dictionary-electrum-v1-en: required item remains blocked\nerror required-blocked dictionary-zano-en: required item remains blocked\nerror required-blocked scheme-cake-bip39-create: required item remains blocked\nerror required-blocked scheme-cake-bip39-import: required item remains blocked\nerror required-blocked scheme-cake-decred-bip39-12-24: required item remains blocked\nerror required-blocked scheme-cake-electrum-24: required item remains blocked\nerror required-blocked scheme-cake-electrum-import: required item remains blocked\nerror required-blocked scheme-cake-electrum-mweb-import: required item remains blocked\nerror required-blocked scheme-cake-monero-bip39-create: required item remains blocked\nerror required-blocked scheme-cake-monero-bip39-import: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-cs: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-en: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-es: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-fr: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-it: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-ja: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-ko: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-pt: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-zh-hans: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-zh-hant: required item remains blocked\nerror required-blocked scheme-cake-wownero-14-unresolved: required item remains blocked\nerror required-blocked scheme-cake-zano-bip39: required item remains blocked\nerror required-blocked scheme-cake-zcash-create: required item remains blocked\nerror required-blocked scheme-cake-zcash-import: required item remains blocked\nerror required-blocked scheme-cardano-hardware: required item remains blocked\n... 26 further findings omitted\nvalidation: 51 errors, 0 warnings\n",
+    "output": "error required-blocked dictionary-electrum-v1-en: required item remains blocked\nerror required-blocked dictionary-monero-en-old: required item remains blocked\nerror required-blocked dictionary-zano-en: required item remains blocked\nerror required-blocked scheme-cake-bip39-create: required item remains blocked\nerror required-blocked scheme-cake-bip39-import: required item remains blocked\nerror required-blocked scheme-cake-decred-bip39-12-24: required item remains blocked\nerror required-blocked scheme-cake-electrum-24: required item remains blocked\nerror required-blocked scheme-cake-electrum-import: required item remains blocked\nerror required-blocked scheme-cake-electrum-mweb-import: required item remains blocked\nerror required-blocked scheme-cake-monero-bip39-create: required item remains blocked\nerror required-blocked scheme-cake-monero-bip39-import: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-cs: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-en: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-es: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-fr: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-it: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-ja: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-ko: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-pt: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-zh-hans: required item remains blocked\nerror required-blocked scheme-cake-monero-polyseed-offset-zh-hant: required item remains blocked\nerror required-blocked scheme-cake-wownero-14-unresolved: required item remains blocked\nerror required-blocked scheme-cake-zano-bip39: required item remains blocked\nerror required-blocked scheme-cake-zcash-create: required item remains blocked\nerror required-blocked scheme-cake-zcash-import: required item remains blocked\n... 27 further findings omitted\nvalidation: 52 errors, 0 warnings\n",
     "status": "NO-GO"
   },
   "release_findings": [
@@ -148,6 +180,12 @@ retains its bounded CLI presentation; `release_findings` contains all findings.
       "severity": "error",
       "code": "required-blocked",
       "location": "dictionary-electrum-v1-en",
+      "message": "required item remains blocked"
+    },
+    {
+      "severity": "error",
+      "code": "required-blocked",
+      "location": "dictionary-monero-en-old",
       "message": "required item remains blocked"
     },
     {
@@ -489,7 +527,7 @@ retains its bounded CLI presentation; `release_findings` contains all findings.
     "docs/adr/0001-desktop-stack.md": "665407350b5d0898b4ef1f1c1393b4c1da2931b37d48131cea191cdddd54aed8",
     "docs/adr/0002-kdf-envelope-bounds.md": "57ead16d3d99229c4755e23b13bf2577ce4fdde32eea2ad6c1ee606856fadfd1",
     "docs/adr/0003-filesystem-replace.md": "5c488514db4fd63690b03dff5c80d9aa3cc8a1871097d5957f0b3402af734d09",
-    "docs/research/third-party-notices-source.txt": "5751042ae297b653754b2621fd1bbf941cc7e3af75152ea15bfc9d372aa95045",
+    "docs/research/third-party-notices-source.txt": "794df9aa484477325339568a1e7b539ea5ef90e54e5cf89ddd157b1cc6a2112a",
     "reports/spikes/equipment-availability.md": "9b7c1f4298ad347a282428cbf625d98a5c1da50e44fe022274c83839d97dc8e4",
     "reports/spikes/filesystem-matrix.md": "357659eed9466b34153874a069440d287a74e23d34fb64b4c60cf1727400e661",
     "reports/spikes/mobile-kdf.md": "23c3aabc2231a887419713b7fdac384a2e965444e8254ea81a3af21bd3460a1a",
