@@ -40,7 +40,7 @@ GitHub independently executes Python 3.12; the development host is not clean Win
 | Command / gate | Observed result and limitation |
 | --- | --- |
 | `python -B -m py_compile tools/sensitive_material.py tools/history_sensitive_material.py tools/notices.py tools/research_gate.py` | PASS; syntax only |
-| `python -B -m unittest discover -s tests -p "test_*.py" -v` | Final local exact-branch run: 216 cases, 4 expected skips, 0 failures/errors; includes history and licence regressions |
+| `python -B -m unittest discover -s tests -p "test_*.py" -v` | Latest completed local branch run (code subsequently committed as `ca928fd9868dc1e15bf0163bb27dca0a5495dc6e`): 218 cases in 204.506s, 4 expected skips, 0 failures/errors; includes history and licence regressions |
 | `TESSAVEIL_RUN_FILESYSTEM_PROBE=1 python tools/run_tests.py` | Earlier local run only: PASS, 192 cases in 361.728s, one unavailable Windows directory-symlink case; native filesystem cases enabled |
 | `python -m tools.catalog.cli validate --root . --require-terminal` | PASS, 0 errors / 0 warnings; terminal blocked accepted as research |
 | `python -m tools.catalog.cli generate --root . --check` | PASS; generated EN/RU docs exactly match |
