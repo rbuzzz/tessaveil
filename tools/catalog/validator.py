@@ -94,6 +94,38 @@ def _json_equal(left: Any, right: Any) -> bool:
     return type(left) is type(right) and left == right
 
 
+def _json_key(value: Any) -> Any:
+    """Hashable JSON equality key, with order-independent object properties.
+
+    Numeric ratios preserve exact int/float equality; strings give numbers
+    salted hashes instead of attacker-controlled integer hash collisions.
+    Input size and nesting are already bounded by the catalogue loader.
+    """
+    if type(value) is bool:
+        return ("boolean", value)
+    if type(value) in (int, float):
+        numerator, denominator = value.as_integer_ratio()
+        return ("number", str(numerator), str(denominator))
+    if isinstance(value, Mapping):
+        return ("object", frozenset((key, _json_key(item)) for key, item in value.items()))
+    if isinstance(value, (list, tuple)):
+        return ("array", tuple(_json_key(item) for item in value))
+    return (type(value).__name__, value)
+
+
+def _unique_items(values: Any) -> bool:
+    seen = set()
+    for value in values:
+        try:
+            key = _json_key(value)
+        except (OverflowError, ValueError):
+            return False  # Non-finite numbers are not JSON equality keys.
+        if key in seen:
+            return False
+        seen.add(key)
+    return True
+
+
 def _type_matches(value: Any, expected: str) -> bool:
     return {
         "object": lambda: isinstance(value, Mapping),
@@ -127,7 +159,7 @@ def _schema_valid(value: Any, schema: Mapping[str, Any]) -> bool:
     if isinstance(value, (list, tuple)):
         if len(value) < schema.get("minItems", 0) or len(value) > schema.get("maxItems", float("inf")):
             return False
-        if schema.get("uniqueItems") and any(_json_equal(value[i], value[j]) for i in range(len(value)) for j in range(i + 1, len(value))):
+        if schema.get("uniqueItems") and not _unique_items(value):
             return False
         if "items" in schema and any(not _schema_valid(item, schema["items"]) for item in value):
             return False
@@ -142,8 +174,13 @@ def _schema_valid(value: Any, schema: Mapping[str, Any]) -> bool:
                     return False
             except ValueError:
                 return False
-        if schema.get("format") == "uri" and not (urlsplit(value).scheme and urlsplit(value).netloc):
-            return False
+        if schema.get("format") == "uri":
+            try:
+                url = urlsplit(value)
+                if not (url.scheme and url.netloc):
+                    return False
+            except ValueError:
+                return False
     if type(value) in (int, float) and value < schema.get("minimum", float("-inf")):
         return False
     if "anyOf" in schema and not any(_schema_valid(value, part) for part in schema["anyOf"]):
@@ -170,6 +207,7 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
         add("required-set-missing", "windows-v1", "mandatory required set is missing")
 
     all_records: list[Record] = []
+    invalid: set[str] = set()  # Full identities; diagnostic locations are truncated.
     for attr, kind in KINDS:
         schema = json.loads((SCHEMA_DIR / f"{kind}.schema.json").read_text(encoding="utf-8"))
         supported = _schema_supported(schema)
@@ -178,8 +216,8 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
         for record in getattr(catalog, attr):
             all_records.append(record)
             if not supported or not _schema_valid(record.data, schema):
+                invalid.add(record.id)
                 add("schema", record, f"{kind} record violates schema")
-    invalid = {finding.location for finding in findings if finding.code == "schema"}
     known: dict[str, Record] = {}
     for record in all_records:
         if record.id in known:
@@ -267,6 +305,16 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
         if record.id in invalid:
             continue
         refs(record, record.data.get("dictionary_ids"), dictionaries, "missing-reference")
+        if record.data["status"] == "verified":
+            for identifier in record.data["dictionary_ids"]:
+                target = dictionaries.get(identifier)
+                if (not target or target.id in invalid or target.data["status"] != "verified" or
+                        target.wordlist_bytes is None or
+                        target.data["license"]["repository_redistribution"] != "allowed" or
+                        target.data["license"]["signpath_compatible"] != "compatible"):
+                    add("verified-dependency", record,
+                        "verified scheme requires verified, loaded and licensed dictionaries")
+                    break
         evidence_refs(record, record.data.get("test_vector_ids"))
         lengths = record.data.get("supported_lengths", ())
         if any(type(length) is not int or length not in SUPPORTED_LENGTHS for length in lengths):
@@ -278,6 +326,10 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
         scheme_id = record.data.get("scheme_id")
         if scheme_id is not None and scheme_id not in schemes:
             add("missing-reference", record, "scheme reference is missing")
+        if record.data["status"] == "verified":
+            target = schemes.get(scheme_id)
+            if not target or target.id in invalid or target.data["status"] != "verified":
+                add("verified-dependency", record, "verified wallet requires a verified scheme")
         data = record.data
         if data["generates_mnemonic"] and data["import_only"]:
             add("wallet-import-generation", record, "import-only mode cannot claim mnemonic generation")
@@ -328,7 +380,7 @@ def validate_catalog(catalog: Catalog, require_terminal: bool = True,
                 matched = ((prefix == "dictionary" and identifier in dictionaries) or
                            (prefix == "scheme" and identifier in schemes) or
                            (prefix == "wallet" and identifier in wallets) or
-                           (prefix == "network" and identifier in wallets and
+                           (prefix == "network" and identifier in wallets and identifier not in invalid and
                             item.id.removeprefix("network-") in wallets[identifier].data.get("network_ids", ())))
                 if not target or not matched:
                     add("required-record-missing", item.id, "required record reference is missing",

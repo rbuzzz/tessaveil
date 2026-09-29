@@ -47,6 +47,7 @@ class SchemaCliTests(unittest.TestCase):
         for kind, relative in (
             ("wallet", "historical-status/catalog/wallets/synthetic-wallet.json"),
             ("wallet", "unknown-field/catalog/wallets/synthetic-wallet.json"),
+            ("wallet", "verified-wallet-without-scheme/catalog/wallets/synthetic-wallet.json"),
             ("dictionary", "missing-license-decision/catalog/dictionaries/synthetic-en.json"),
             ("required-set", "duplicate-required-ids/catalog/required/windows-v1.json"),
             ("scheme", "verified-scheme-incomplete/catalog/schemes/synthetic-scheme.json"),

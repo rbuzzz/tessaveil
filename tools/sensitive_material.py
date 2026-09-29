@@ -91,7 +91,10 @@ def inspect_text(path, text, words, *, reviewed=False):
 
 
 def scan_repository(root):
-    catalog = load_catalog(root)
+    try:
+        catalog = load_catalog(root)
+    except (OSError, ValueError):
+        return (("catalog", "invalid-scan-input"),)
     if any(f.severity == "error" for f in validate_catalog(catalog, require_terminal=True)):
         return (("catalog", "invalid-scan-input"),)
     lists = {r.data["wordlist_path"]: r.data["sha256"] for r in catalog.dictionaries if r.wordlist_bytes is not None}
