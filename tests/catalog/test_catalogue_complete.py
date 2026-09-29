@@ -6,6 +6,8 @@ Updating this inventory requires reviewing those authorities, not regenerating
 expectations from catalog/*. See docs/research/batches/cake-wallet.md.
 """
 from pathlib import Path
+from collections import Counter
+from dataclasses import replace
 import unittest
 
 from tools.catalog.generator import render_catalog
@@ -14,9 +16,13 @@ from tools.catalog.validator import validate_catalog
 
 ROOT = Path(__file__).resolve().parents[2]
 PIN = '9679f91a8c9f63d00500c2b7cc18daf00949bdef'
+FEATHER_PIN = '948773cf13c7486ee230eb67b6bac06b2f94c874'
+POLYSEED_LANGUAGES = ('en', 'ja', 'ko', 'es', 'fr', 'it', 'cs', 'pt', 'zh-hans', 'zh-hant')
 # Literal, independently reviewed mode inventory. Import is not generation.
 CAKE_MODES = {
-    'monero': 'polyseed-create legacy-create bip39-create polyseed-import legacy-import bip39-import bip39-group keys-import view-only hardware',
+    # Polyseed restoration is covered separately by its three conditional paths
+    # for every language/platform, never an optional-passphrase umbrella.
+    'monero': 'polyseed-create legacy-create bip39-create legacy-import bip39-import bip39-group keys-import view-only hardware',
     'bitcoin': 'bip39-create bip39-import bip39-group electrum-create electrum-import mweb-import view-only hardware',
     'litecoin': 'bip39-create bip39-import bip39-group electrum-create electrum-import mweb-import view-only hardware',
     'bitcoin-cash': 'bip39-create bip39-import bip39-group',
@@ -141,10 +147,112 @@ class CatalogueCompleteTests(unittest.TestCase):
                 prefix = 'polyseed' if family == 'polyseed' else 'monero'
                 self.assertEqual(tuple(self.records[scheme_id].data['dictionary_ids']), (f'{prefix}-{code}',))
                 for platform in ('android', 'ios', 'macos', 'linux'):
-                    for direction in ('create', 'import'):
+                    for direction in (('create',) if family == 'polyseed' else ('create', 'import')):
                         identifier = f'cake-wallet-monero-{family}-{code}-{direction}-{platform}'
                         self.assertTrue(identifier in self.records, identifier)
                         self.assertEqual(self.records[identifier].data['scheme_id'], scheme_id)
+
+    def test_polyseed_restore_conditions_cannot_conflate_offset_and_encryption(self):
+        self.assert_polyseed_restore_contract(self.records)
+
+    def assert_polyseed_restore_contract(self, records):
+        expected = {
+            'plain': ('isEncrypted=false; passphrase empty', 'none', 'generateKey'),
+            'encrypted': ('isEncrypted=true', 'required-passphrase', 'polyseed.crypt'),
+            'offset': ('isEncrypted=false; passphrase nonempty', 'required-passphrase',
+                       'restoreWalletFromPolyseedWithOffset'),
+        }
+        evidence = {row.id: row.data for row in self.catalog.evidence}
+        for language in POLYSEED_LANGUAGES:
+            schemes = []
+            for mode, (condition, secret, operation) in expected.items():
+                sid = f'cake-monero-polyseed-{mode}-{language}'
+                self.assertTrue(sid in records, sid)
+                schemes.append(sid)
+                scheme = records[sid].data
+                self.assertEqual(tuple(scheme['dictionary_ids']), (f'polyseed-{language}',))
+                self.assertEqual(tuple(scheme['supported_lengths']), (16,))
+                self.assertEqual(scheme['external_secret']['kind'], secret)
+                self.assertIn(condition, scheme['semantic_distinction'])
+                self.assertIn(operation, scheme['semantic_distinction'])
+                self.assertIn('cake-wallet-polyseed-dispatch', scheme['evidence_ids'])
+                self.assertEqual(evidence['cake-wallet-polyseed-dispatch']['revision'], PIN)
+                if mode == 'offset':
+                    self.assertEqual(scheme['status'], 'blocked')
+                    self.assertIn('English-only', scheme['semantic_distinction'])
+                    self.assertIn('cake-wallet-polyseed-offset-native', scheme['evidence_ids'])
+                for platform in ('android', 'ios', 'macos', 'linux'):
+                    identifier = f'cake-wallet-monero-polyseed-{mode}-{language}-import-{platform}'
+                    self.assertTrue(identifier in records, identifier)
+                    row = records[identifier].data
+                    self.assertEqual(row['scheme_id'], sid)
+                    self.assertIn(condition, ' '.join(row['limitations']))
+                    self.assertTrue(row['import_only'])
+                    self.assertFalse(row['generates_mnemonic'])
+            self.assertEqual(len(set(schemes)), 3)
+            for platform in ('android', 'ios', 'macos', 'linux'):
+                self.assertFalse(f'cake-wallet-monero-polyseed-{language}-import-{platform}' in records)
+        for platform in ('android', 'ios', 'macos', 'linux'):
+            self.assertFalse(f'cake-wallet-monero-polyseed-import-{platform}' in records)
+
+    def test_polyseed_contract_rejects_missing_and_conflated_paths(self):
+        identifier = 'cake-wallet-monero-polyseed-offset-en-import-android'
+        missing = dict(self.records)
+        del missing[identifier]
+        with self.assertRaises(AssertionError):
+            self.assert_polyseed_restore_contract(missing)
+        conflated = dict(self.records)
+        row = self.records[identifier]
+        payload = dict(row.data)
+        payload['scheme_id'] = 'cake-monero-polyseed-encrypted-en'
+        conflated[identifier] = replace(row, data=payload)
+        with self.assertRaises(AssertionError):
+            self.assert_polyseed_restore_contract(conflated)
+
+    def test_tevador_provenance_is_not_a_cake_source_alias(self):
+        scheme = self.records['tevador-14-unresolved'].data
+        self.assertEqual(scheme['version_interval']['min'], 'source-' + FEATHER_PIN)
+        self.assertEqual(scheme['version_interval']['max'], 'source-' + FEATHER_PIN)
+        evidence = {row.id: row.data for row in self.catalog.evidence}
+        self.assertTrue(all(evidence[e]['revision'] == FEATHER_PIN for e in scheme['evidence_ids']))
+        self.assertTrue('cake-wownero-14-unresolved' in self.records)
+        cake_scheme = self.records['cake-wownero-14-unresolved'].data
+        self.assertEqual(cake_scheme['version_interval']['min'], 'source-' + PIN)
+        self.assertEqual(cake_scheme['status'], 'blocked')
+        for platform in ('android', 'ios', 'macos', 'linux'):
+            identifier = f'cake-wallet-wownero-legacy14-export-{platform}'
+            self.assertTrue(identifier in self.records, identifier)
+            row = self.records[identifier].data
+            self.assertEqual(row['scheme_id'], 'cake-wownero-14-unresolved')
+            for eid in ('cake-wallet-wownero-deprecation', 'cake-wallet-wownero-seed-export'):
+                self.assertIn(eid, row['evidence_ids'])
+                self.assertEqual(evidence[eid]['revision'], PIN)
+                self.assertIn(identifier, evidence[eid]['record_ids'])
+            self.assertFalse(f'cake-wallet-wownero-tevador14-export-{platform}' in self.records)
+
+    @staticmethod
+    def fresh_bip39_semantic_keys(wallets):
+        # Identify the actual source path, not an arbitrary mode_id spelling.
+        return [(r['product_id'], r['platform'], tuple(r['network_ids']),
+                 r['version_interval']['min'], 'getBip39Seed', 'en', 12)
+                for r in wallets if r['product_id'] == 'cake-wallet'
+                and tuple(r['network_ids']) == ('monero',) and r['generates_mnemonic']
+                and ('cake-wallet-monero-bip39-derive' in r['evidence_ids']
+                     or r['scheme_id'] == 'cake-monero-bip39-create')]
+
+    def test_fresh_bip39_has_one_semantic_identity_per_platform(self):
+        wallets = [row.data for row in self.catalog.wallets]
+        keys = self.fresh_bip39_semantic_keys(wallets)
+        self.assertEqual(len(keys), 4, 'Same fresh English12 source path must not be duplicated')
+        self.assertTrue(all(count == 1 for count in Counter(keys).values()))
+        for platform in ('android', 'ios', 'macos', 'linux'):
+            identifier = 'cake-wallet-monero-bip39' if platform == 'android' else f'cake-wallet-monero-bip39-create-{platform}'
+            self.assertEqual(self.records[identifier].data['scheme_id'], 'cake-monero-bip39-create')
+        clone = dict(self.records['cake-wallet-monero-bip39'].data)
+        clone['id'], clone['mode_id'] = 'adversarial-new-id', 'unrelated-spelling'
+        mutated = self.fresh_bip39_semantic_keys(wallets + [clone])
+        self.assertTrue(any(count > 1 for count in Counter(mutated).values()),
+                        'Renaming a mode cannot conceal semantic duplication')
 
     def test_generated_blocker_summary_contains_records_and_no_selectable_claim(self):
         for locale, heading in (('en', '## Required release blockers'), ('ru', '## Обязательные блокеры релиза')):

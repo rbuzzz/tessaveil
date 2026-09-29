@@ -401,7 +401,7 @@
       "generates": true
     },
     "cake-wallet-monero-bip39": {
-      "scheme": null,
+      "scheme": "cake-monero-bip39-create",
       "status": "documented",
       "import_only": false,
       "generates": true

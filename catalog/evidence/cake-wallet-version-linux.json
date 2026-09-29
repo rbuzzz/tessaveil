@@ -57,7 +57,6 @@
     "cake-wallet-monero-legacy-create-linux",
     "cake-wallet-monero-legacy-import-linux",
     "cake-wallet-monero-polyseed-create-linux",
-    "cake-wallet-monero-polyseed-import-linux",
     "cake-wallet-monero-view-only-linux",
     "cake-wallet-nano-bip39-create-linux",
     "cake-wallet-nano-bip39-group-linux",

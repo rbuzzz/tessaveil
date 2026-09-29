@@ -109,7 +109,11 @@ restoration format is not Polyseed or MyMonero and is not silently catalogued as
 Cake's Android source exposes legacy 25, Polyseed 16 default and BIP39-derived 12
 choices; all three branches coexist. The generated version template says 0.0.0,
 so only the source commit is used as its version bound. The BIP39-derived Monero
-mode is deliberately unmapped pending separate derivation research. The seed
+mode was deliberately unmapped at the Task11 boundary. Task16 subsequently
+bound the exact English12 creation scheme at the same source revision, keeping
+one creation identity per platform and no selectable/recovery claim; see
+[the Cake matrix](cake-wallet.md), including its distinct Polyseed encrypted
+and native-offset restore paths. The seed
 backup view and seed getter were inspected separately from restore/create branches;
 no iOS/desktop executable equivalence or full FFI recovery was executed.
 

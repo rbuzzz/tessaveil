@@ -221,10 +221,6 @@
     "cake-wallet-monero-polyseed-create-ios",
     "cake-wallet-monero-polyseed-create-linux",
     "cake-wallet-monero-polyseed-create-macos",
-    "cake-wallet-monero-polyseed-import-android",
-    "cake-wallet-monero-polyseed-import-ios",
-    "cake-wallet-monero-polyseed-import-linux",
-    "cake-wallet-monero-polyseed-import-macos",
     "cake-wallet-monero-view-only-android",
     "cake-wallet-monero-view-only-ios",
     "cake-wallet-monero-view-only-linux",
@@ -317,10 +313,6 @@
     "cake-wallet-wownero-polyseed16-export-ios",
     "cake-wallet-wownero-polyseed16-export-linux",
     "cake-wallet-wownero-polyseed16-export-macos",
-    "cake-wallet-wownero-tevador14-export-android",
-    "cake-wallet-wownero-tevador14-export-ios",
-    "cake-wallet-wownero-tevador14-export-linux",
-    "cake-wallet-wownero-tevador14-export-macos",
     "cake-wallet-zano",
     "cake-wallet-zano-bip39",
     "cake-wallet-zano-bip39-create-ios",
@@ -340,6 +332,10 @@
     "cake-wallet-zcash-private-key-android",
     "cake-wallet-zcash-private-key-ios",
     "cake-wallet-zcash-unavailable-linux",
-    "cake-wallet-zcash-unavailable-macos"
+    "cake-wallet-zcash-unavailable-macos",
+    "cake-wallet-wownero-legacy14-export-android",
+    "cake-wallet-wownero-legacy14-export-ios",
+    "cake-wallet-wownero-legacy14-export-linux",
+    "cake-wallet-wownero-legacy14-export-macos"
   ]
 }

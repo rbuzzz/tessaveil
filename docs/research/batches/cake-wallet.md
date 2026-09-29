@@ -49,7 +49,7 @@ Additional language identities split the actual Monero dictionaries.
 
 | Current network | Mnemonic creation | Mnemonic import / reuse | Non-mnemonic or external recovery |
 | --- | --- | --- | --- |
-| Monero | Polyseed16, legacy25, BIP39-derived12 |16,25, BIP39 parser12/15/18/21/24; G | spend/view keys and address, view-only, external hardware |
+| Monero | Polyseed16, legacy25, BIP39-derived12 |16: separate plain/encrypted/native-offset conditions;25; BIP39 parser12/15/18/21/24; G | spend/view keys and address, view-only, external hardware |
 | Bitcoin | BIP39-shaped12/24; Cake Electrum24 prefix100 | BIP39 parser five lengths; G; Electrum100 and eb predicate branches | xpub/view-only; hardware |
 | Litecoin | BIP39-shaped12/24; Cake Electrum24 prefix100 | BIP39 parser five lengths; G; Electrum100/eb branches | xpub or MWEB scan/public material; hardware |
 | Bitcoin Cash | BIP39-shaped12/24 | BIP39 parser five lengths; G | no additional current credential branch asserted |
@@ -101,16 +101,37 @@ recovery, creation or cross-platform MWEB parity.
  128-hex-character material remains non-mnemonic with null seed getter.
 - Monero:10 Polyseed languages (en,ja,ko,es,fr,it,cs,pt,zh-hans,zh-hant) and
  10 legacy languages (en,de,es,fr,it,nl,pt,ru,ja,zh-hans) are individually
-  represented in20 schemes and160 creation/import/platform records. Selector
+  represented in20 creation/language schemes plus30 conditional Polyseed restore
+  schemes and240 language/direction/platform records. Selector
   mapping justifies dictionary identity at a documented boundary, **not**
   exact FFI dictionary byte parity, prefix/checksumless recognition, Unicode
   passphrase compatibility or independent recovery. Esperanto, Lojban and
   EnglishOld are not silently claimed current Cake creation options.
-  Fresh BIP39 is12 only: an additional exact12 scheme/profile sits beside the
-  retained earlier generic research anchor. Imports/groups can pass all five
+  Fresh BIP39 is12 only: one exact scheme-bound source identity per platform.
+  The original Android record is retained and now mapped; the three other
+  platform records use that same exact12 scheme. Four newly added semantic
+  duplicates were removed, including their required identities. Mode-ID spelling
+  alone is not an identity distinction. Imports/groups can pass all five
   BIP39 lengths. Derivation uses hardened44,128,account then0,0 and little-endian
   scalar reduction before English legacy encoding. This is not generic BIP39
   or a native legacy phrase. Optional extension remains blocked by normalization.
+  Polyseed restoration is not one optional-passphrase mode: the pinned service
+  branches on the decoded encryption flag and supplied passphrase. The three
+  rows below apply separately to every reviewed input language and platform.
+
+| Polyseed input condition | Exact source operation | External dependency / status |
+| --- | --- | --- |
+| Unencrypted, empty passphrase | direct generateKey then restoreWalletFromSpendKeySync | none; documented source path |
+| Encrypted flag set | polyseed.crypt(passphrase or empty), then generateKey and spend-key restore | encryption secret, possibly empty at this API boundary; documented, exact dependency recovery unverified |
+| Unencrypted, nonempty passphrase | early return through restoreWalletFromPolyseedWithOffset into native createWalletFromPolyseed | nonempty seedOffset; all10 language schemes blocked pending native normalization/recovery proof |
+
+The native wrapper explicitly comments English-only because normalization,
+does not forward its language argument, and passes the encoded input directly.
+Non-English records document an unresolved dispatch boundary, **not** proven
+native language support. The offset is not Polyseed encryption. No automatic
+conversion, generic optional extension or interchangeability is asserted.
+Tests reject disappearance of any conditional cell and substitution of the
+encrypted scheme into an offset profile; all these records remain nonselectable.
 - Decred: official docs identify native15 before6.4.2, with continued import.
   Task13's claim of conflicting/unversioned documentation was a reading error;
   the same body hash supports the explicit transition. Android libwallet pin
@@ -154,9 +175,17 @@ storage of a container is not evidence of a seedless-login wallet.
 
 Wownero's three former16/25/14 formats remain separate export-only historical
 profiles on all four configurations. No active sync/create/restore is claimed.
-The14-word branch is blocked. Research also found Task11's omitted Feather
+The14-word branch uses its own blocked `cake-wownero-14-unresolved` scheme.
+Cake's pinned openWallet throws WalletDeprecationException carrying wallet.seed;
+the wallet property delegates to getSeed, whose fallback calls native Wallet_seed.
+That source chain plus official Cake14-word-history documentation grounds the
+export identity, not its opaque native codec. No current14-word creation/import
+or equivalence to Feather Tevador is inferred. The profiles are named legacy14,
+not Tevador14. Research also found Task11's omitted Feather
 Tevador14 import at `948773cf13c7486ee230eb67b6bac06b2f94c874`.
-Its UI calls monero_seed wordlist::english and restore invokes coin name,
+The Feather-only `tevador-14-unresolved` scheme has that Feather revision as
+both version bounds, never the Cake revision. Its UI calls monero_seed
+wordlist::english and restore invokes coin name,
 birthday and correction handling. Exact dependency/list/license and independent
 recovery were not established. A blocked14-word scheme and Feather profile
 make the gap explicit, without guessing an alternate wordlist or reusing
@@ -218,6 +247,16 @@ no installation or device run is required. Exact observations belong in the
 ignored task report, not fabricated future success statements.
 
 ## Retrieval ledger
+
+Additional pinned source-chain review for the Polyseed/Tevador/identity fix:
+
+| Evidence | Representation | Bytes | SHA256 |
+| --- | --- | ---: | --- |
+| [cake-wallet-polyseed-dispatch](https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_monero/lib/monero_wallet_service.dart) | decoded HTTP body | 19686 | `9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727` |
+| [cake-wallet-polyseed-offset-native](https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_monero/lib/api/wallet_manager.dart) | decoded HTTP body | 12892 | `ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7` |
+| [cake-wallet-wownero-deprecation](https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_wownero/lib/wownero_wallet_service.dart) | decoded HTTP body | 14837 | `aad1a0bb05afcc3d6354308c63227e076ac975bece550c7f6380049d10d47735` |
+| [cake-wallet-wownero-wallet-seed](https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_wownero/lib/wownero_wallet.dart) | decoded HTTP body | 27667 | `49d06c940a563616cc364bc0ee715247d0d6da9d5bc7a314dc5d0132a216aa77` |
+| [cake-wallet-wownero-seed-export](https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_wownero/lib/api/wallet.dart) | decoded HTTP body | 11403 | `5ded0e4514b4988b482628be9461e0034eafc2ab758832195c81b2618d9c836f` |
 
 All entries below are exact response-body bytes after HTTP decoding, before
 any token extraction. Source URLs pin full commits. Mutable official pages

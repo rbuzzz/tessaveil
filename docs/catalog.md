@@ -8,7 +8,7 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 
 ## Required release blockers
 
-40 required items remain blocked. Terminal research is not release approval.
+51 required items remain blocked. Terminal research is not release approval.
 
 - dictionary-electrum-v1-en: [electrum-v1-en](../catalog/dictionaries/electrum-v1-en.json)
 - dictionary-zano-en: [zano-en](../catalog/dictionaries/zano-en.json)
@@ -20,6 +20,17 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - scheme-cake-electrum-mweb-import: [cake-electrum-mweb-import](../catalog/schemes/cake-electrum-mweb-import.json)
 - scheme-cake-monero-bip39-create: [cake-monero-bip39-create](../catalog/schemes/cake-monero-bip39-create.json)
 - scheme-cake-monero-bip39-import: [cake-monero-bip39-import](../catalog/schemes/cake-monero-bip39-import.json)
+- scheme-cake-monero-polyseed-offset-cs: [cake-monero-polyseed-offset-cs](../catalog/schemes/cake-monero-polyseed-offset-cs.json)
+- scheme-cake-monero-polyseed-offset-en: [cake-monero-polyseed-offset-en](../catalog/schemes/cake-monero-polyseed-offset-en.json)
+- scheme-cake-monero-polyseed-offset-es: [cake-monero-polyseed-offset-es](../catalog/schemes/cake-monero-polyseed-offset-es.json)
+- scheme-cake-monero-polyseed-offset-fr: [cake-monero-polyseed-offset-fr](../catalog/schemes/cake-monero-polyseed-offset-fr.json)
+- scheme-cake-monero-polyseed-offset-it: [cake-monero-polyseed-offset-it](../catalog/schemes/cake-monero-polyseed-offset-it.json)
+- scheme-cake-monero-polyseed-offset-ja: [cake-monero-polyseed-offset-ja](../catalog/schemes/cake-monero-polyseed-offset-ja.json)
+- scheme-cake-monero-polyseed-offset-ko: [cake-monero-polyseed-offset-ko](../catalog/schemes/cake-monero-polyseed-offset-ko.json)
+- scheme-cake-monero-polyseed-offset-pt: [cake-monero-polyseed-offset-pt](../catalog/schemes/cake-monero-polyseed-offset-pt.json)
+- scheme-cake-monero-polyseed-offset-zh-hans: [cake-monero-polyseed-offset-zh-hans](../catalog/schemes/cake-monero-polyseed-offset-zh-hans.json)
+- scheme-cake-monero-polyseed-offset-zh-hant: [cake-monero-polyseed-offset-zh-hant](../catalog/schemes/cake-monero-polyseed-offset-zh-hant.json)
+- scheme-cake-wownero-14-unresolved: [cake-wownero-14-unresolved](../catalog/schemes/cake-wownero-14-unresolved.json)
 - scheme-cake-zano-bip39: [cake-zano-bip39](../catalog/schemes/cake-zano-bip39.json)
 - scheme-cake-zcash-create: [cake-zcash-create](../catalog/schemes/cake-zcash-create.json)
 - scheme-cake-zcash-import: [cake-zcash-import](../catalog/schemes/cake-zcash-import.json)
@@ -35,10 +46,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - wallet-cake-wallet-decred-bip39-group-ios: [cake-wallet-decred-bip39-group-ios](../catalog/wallets/cake-wallet-decred-bip39-group-ios.json)
 - wallet-cake-wallet-decred-bip39-import-android: [cake-wallet-decred-bip39-import-android](../catalog/wallets/cake-wallet-decred-bip39-import-android.json)
 - wallet-cake-wallet-decred-bip39-import-ios: [cake-wallet-decred-bip39-import-ios](../catalog/wallets/cake-wallet-decred-bip39-import-ios.json)
-- wallet-cake-wallet-wownero-tevador14-export-android: [cake-wallet-wownero-tevador14-export-android](../catalog/wallets/cake-wallet-wownero-tevador14-export-android.json)
-- wallet-cake-wallet-wownero-tevador14-export-ios: [cake-wallet-wownero-tevador14-export-ios](../catalog/wallets/cake-wallet-wownero-tevador14-export-ios.json)
-- wallet-cake-wallet-wownero-tevador14-export-linux: [cake-wallet-wownero-tevador14-export-linux](../catalog/wallets/cake-wallet-wownero-tevador14-export-linux.json)
-- wallet-cake-wallet-wownero-tevador14-export-macos: [cake-wallet-wownero-tevador14-export-macos](../catalog/wallets/cake-wallet-wownero-tevador14-export-macos.json)
+- wallet-cake-wallet-wownero-legacy14-export-android: [cake-wallet-wownero-legacy14-export-android](../catalog/wallets/cake-wallet-wownero-legacy14-export-android.json)
+- wallet-cake-wallet-wownero-legacy14-export-ios: [cake-wallet-wownero-legacy14-export-ios](../catalog/wallets/cake-wallet-wownero-legacy14-export-ios.json)
+- wallet-cake-wallet-wownero-legacy14-export-linux: [cake-wallet-wownero-legacy14-export-linux](../catalog/wallets/cake-wallet-wownero-legacy14-export-linux.json)
+- wallet-cake-wallet-wownero-legacy14-export-macos: [cake-wallet-wownero-legacy14-export-macos](../catalog/wallets/cake-wallet-wownero-legacy14-export-macos.json)
 - wallet-cake-wallet-zano-bip39: [cake-wallet-zano-bip39](../catalog/wallets/cake-wallet-zano-bip39.json)
 - wallet-cake-wallet-zano-bip39-create-ios: [cake-wallet-zano-bip39-create-ios](../catalog/wallets/cake-wallet-zano-bip39-create-ios.json)
 - wallet-cake-wallet-zano-bip39-group-android: [cake-wallet-zano-bip39-group-android](../catalog/wallets/cake-wallet-zano-bip39-group-android.json)
@@ -256,14 +267,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | Cake Wallet / [cake-wallet-litecoin-view-only-linux](#wallet-cake-wallet-litecoin-view-only-linux) | linux / litecoin-view-only | litecoin | — | documented |
 | Cake Wallet / [cake-wallet-litecoin-view-only-macos](#wallet-cake-wallet-litecoin-view-only-macos) | macos / litecoin-view-only | litecoin | — | documented |
 | Cake Wallet Monero / [cake-wallet-monero](#wallet-cake-wallet-monero) | android / polyseed-16-generated | monero | [polyseed-16](#scheme-polyseed-16) | documented |
-| Cake Wallet Monero / [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39) | android / bip39-monero-generated-unresolved | monero | — | documented |
-| Cake Wallet / [cake-wallet-monero-bip39-12-create-android](#wallet-cake-wallet-monero-bip39-12-create-android) | android / monero-bip39-12-create | monero | [cake-monero-bip39-create](#scheme-cake-monero-bip39-create) | documented |
-| Cake Wallet / [cake-wallet-monero-bip39-12-create-ios](#wallet-cake-wallet-monero-bip39-12-create-ios) | ios / monero-bip39-12-create | monero | [cake-monero-bip39-create](#scheme-cake-monero-bip39-create) | documented |
-| Cake Wallet / [cake-wallet-monero-bip39-12-create-linux](#wallet-cake-wallet-monero-bip39-12-create-linux) | linux / monero-bip39-12-create | monero | [cake-monero-bip39-create](#scheme-cake-monero-bip39-create) | documented |
-| Cake Wallet / [cake-wallet-monero-bip39-12-create-macos](#wallet-cake-wallet-monero-bip39-12-create-macos) | macos / monero-bip39-12-create | monero | [cake-monero-bip39-create](#scheme-cake-monero-bip39-create) | documented |
-| Cake Wallet / [cake-wallet-monero-bip39-create-ios](#wallet-cake-wallet-monero-bip39-create-ios) | ios / monero-bip39-create | monero | — | documented |
-| Cake Wallet / [cake-wallet-monero-bip39-create-linux](#wallet-cake-wallet-monero-bip39-create-linux) | linux / monero-bip39-create | monero | — | documented |
-| Cake Wallet / [cake-wallet-monero-bip39-create-macos](#wallet-cake-wallet-monero-bip39-create-macos) | macos / monero-bip39-create | monero | — | documented |
+| Cake Wallet Monero / [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39) | android / monero-bip39-create | monero | [cake-monero-bip39-create](#scheme-cake-monero-bip39-create) | documented |
+| Cake Wallet / [cake-wallet-monero-bip39-create-ios](#wallet-cake-wallet-monero-bip39-create-ios) | ios / monero-bip39-create | monero | [cake-monero-bip39-create](#scheme-cake-monero-bip39-create) | documented |
+| Cake Wallet / [cake-wallet-monero-bip39-create-linux](#wallet-cake-wallet-monero-bip39-create-linux) | linux / monero-bip39-create | monero | [cake-monero-bip39-create](#scheme-cake-monero-bip39-create) | documented |
+| Cake Wallet / [cake-wallet-monero-bip39-create-macos](#wallet-cake-wallet-monero-bip39-create-macos) | macos / monero-bip39-create | monero | [cake-monero-bip39-create](#scheme-cake-monero-bip39-create) | documented |
 | Cake Wallet / [cake-wallet-monero-bip39-group-android](#wallet-cake-wallet-monero-bip39-group-android) | android / monero-bip39-group | monero | [cake-monero-bip39-import](#scheme-cake-monero-bip39-import) | documented |
 | Cake Wallet / [cake-wallet-monero-bip39-group-ios](#wallet-cake-wallet-monero-bip39-group-ios) | ios / monero-bip39-group | monero | [cake-monero-bip39-import](#scheme-cake-monero-bip39-import) | documented |
 | Cake Wallet / [cake-wallet-monero-bip39-group-linux](#wallet-cake-wallet-monero-bip39-group-linux) | linux / monero-bip39-group | monero | [cake-monero-bip39-import](#scheme-cake-monero-bip39-import) | documented |
@@ -375,86 +382,162 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | Cake Wallet / [cake-wallet-monero-polyseed-cs-create-ios](#wallet-cake-wallet-monero-polyseed-cs-create-ios) | ios / monero-polyseed-cs-create | monero | [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-cs-create-linux](#wallet-cake-wallet-monero-polyseed-cs-create-linux) | linux / monero-polyseed-cs-create | monero | [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-cs-create-macos](#wallet-cake-wallet-monero-polyseed-cs-create-macos) | macos / monero-polyseed-cs-create | monero | [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-cs-import-android](#wallet-cake-wallet-monero-polyseed-cs-import-android) | android / monero-polyseed-cs-import | monero | [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-cs-import-ios](#wallet-cake-wallet-monero-polyseed-cs-import-ios) | ios / monero-polyseed-cs-import | monero | [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-cs-import-linux](#wallet-cake-wallet-monero-polyseed-cs-import-linux) | linux / monero-polyseed-cs-import | monero | [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-cs-import-macos](#wallet-cake-wallet-monero-polyseed-cs-import-macos) | macos / monero-polyseed-cs-import | monero | [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-en-create-android](#wallet-cake-wallet-monero-polyseed-en-create-android) | android / monero-polyseed-en-create | monero | [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-en-create-ios](#wallet-cake-wallet-monero-polyseed-en-create-ios) | ios / monero-polyseed-en-create | monero | [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-en-create-linux](#wallet-cake-wallet-monero-polyseed-en-create-linux) | linux / monero-polyseed-en-create | monero | [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-en-create-macos](#wallet-cake-wallet-monero-polyseed-en-create-macos) | macos / monero-polyseed-en-create | monero | [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-en-import-android](#wallet-cake-wallet-monero-polyseed-en-import-android) | android / monero-polyseed-en-import | monero | [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-en-import-ios](#wallet-cake-wallet-monero-polyseed-en-import-ios) | ios / monero-polyseed-en-import | monero | [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-en-import-linux](#wallet-cake-wallet-monero-polyseed-en-import-linux) | linux / monero-polyseed-en-import | monero | [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-en-import-macos](#wallet-cake-wallet-monero-polyseed-en-import-macos) | macos / monero-polyseed-en-import | monero | [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-cs-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-cs-import-android) | android / monero-polyseed-encrypted-cs-import | monero | [cake-monero-polyseed-encrypted-cs](#scheme-cake-monero-polyseed-encrypted-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-cs-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-cs-import-ios) | ios / monero-polyseed-encrypted-cs-import | monero | [cake-monero-polyseed-encrypted-cs](#scheme-cake-monero-polyseed-encrypted-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-cs-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-cs-import-linux) | linux / monero-polyseed-encrypted-cs-import | monero | [cake-monero-polyseed-encrypted-cs](#scheme-cake-monero-polyseed-encrypted-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-cs-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-cs-import-macos) | macos / monero-polyseed-encrypted-cs-import | monero | [cake-monero-polyseed-encrypted-cs](#scheme-cake-monero-polyseed-encrypted-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-en-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-en-import-android) | android / monero-polyseed-encrypted-en-import | monero | [cake-monero-polyseed-encrypted-en](#scheme-cake-monero-polyseed-encrypted-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-en-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-en-import-ios) | ios / monero-polyseed-encrypted-en-import | monero | [cake-monero-polyseed-encrypted-en](#scheme-cake-monero-polyseed-encrypted-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-en-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-en-import-linux) | linux / monero-polyseed-encrypted-en-import | monero | [cake-monero-polyseed-encrypted-en](#scheme-cake-monero-polyseed-encrypted-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-en-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-en-import-macos) | macos / monero-polyseed-encrypted-en-import | monero | [cake-monero-polyseed-encrypted-en](#scheme-cake-monero-polyseed-encrypted-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-es-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-es-import-android) | android / monero-polyseed-encrypted-es-import | monero | [cake-monero-polyseed-encrypted-es](#scheme-cake-monero-polyseed-encrypted-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-es-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-es-import-ios) | ios / monero-polyseed-encrypted-es-import | monero | [cake-monero-polyseed-encrypted-es](#scheme-cake-monero-polyseed-encrypted-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-es-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-es-import-linux) | linux / monero-polyseed-encrypted-es-import | monero | [cake-monero-polyseed-encrypted-es](#scheme-cake-monero-polyseed-encrypted-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-es-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-es-import-macos) | macos / monero-polyseed-encrypted-es-import | monero | [cake-monero-polyseed-encrypted-es](#scheme-cake-monero-polyseed-encrypted-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-fr-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-fr-import-android) | android / monero-polyseed-encrypted-fr-import | monero | [cake-monero-polyseed-encrypted-fr](#scheme-cake-monero-polyseed-encrypted-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-fr-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-fr-import-ios) | ios / monero-polyseed-encrypted-fr-import | monero | [cake-monero-polyseed-encrypted-fr](#scheme-cake-monero-polyseed-encrypted-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-fr-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-fr-import-linux) | linux / monero-polyseed-encrypted-fr-import | monero | [cake-monero-polyseed-encrypted-fr](#scheme-cake-monero-polyseed-encrypted-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-fr-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-fr-import-macos) | macos / monero-polyseed-encrypted-fr-import | monero | [cake-monero-polyseed-encrypted-fr](#scheme-cake-monero-polyseed-encrypted-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-it-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-it-import-android) | android / monero-polyseed-encrypted-it-import | monero | [cake-monero-polyseed-encrypted-it](#scheme-cake-monero-polyseed-encrypted-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-it-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-it-import-ios) | ios / monero-polyseed-encrypted-it-import | monero | [cake-monero-polyseed-encrypted-it](#scheme-cake-monero-polyseed-encrypted-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-it-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-it-import-linux) | linux / monero-polyseed-encrypted-it-import | monero | [cake-monero-polyseed-encrypted-it](#scheme-cake-monero-polyseed-encrypted-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-it-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-it-import-macos) | macos / monero-polyseed-encrypted-it-import | monero | [cake-monero-polyseed-encrypted-it](#scheme-cake-monero-polyseed-encrypted-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-ja-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-ja-import-android) | android / monero-polyseed-encrypted-ja-import | monero | [cake-monero-polyseed-encrypted-ja](#scheme-cake-monero-polyseed-encrypted-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-ja-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-ja-import-ios) | ios / monero-polyseed-encrypted-ja-import | monero | [cake-monero-polyseed-encrypted-ja](#scheme-cake-monero-polyseed-encrypted-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-ja-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-ja-import-linux) | linux / monero-polyseed-encrypted-ja-import | monero | [cake-monero-polyseed-encrypted-ja](#scheme-cake-monero-polyseed-encrypted-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-ja-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-ja-import-macos) | macos / monero-polyseed-encrypted-ja-import | monero | [cake-monero-polyseed-encrypted-ja](#scheme-cake-monero-polyseed-encrypted-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-ko-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-ko-import-android) | android / monero-polyseed-encrypted-ko-import | monero | [cake-monero-polyseed-encrypted-ko](#scheme-cake-monero-polyseed-encrypted-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-ko-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-ko-import-ios) | ios / monero-polyseed-encrypted-ko-import | monero | [cake-monero-polyseed-encrypted-ko](#scheme-cake-monero-polyseed-encrypted-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-ko-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-ko-import-linux) | linux / monero-polyseed-encrypted-ko-import | monero | [cake-monero-polyseed-encrypted-ko](#scheme-cake-monero-polyseed-encrypted-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-ko-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-ko-import-macos) | macos / monero-polyseed-encrypted-ko-import | monero | [cake-monero-polyseed-encrypted-ko](#scheme-cake-monero-polyseed-encrypted-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-pt-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-pt-import-android) | android / monero-polyseed-encrypted-pt-import | monero | [cake-monero-polyseed-encrypted-pt](#scheme-cake-monero-polyseed-encrypted-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-pt-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-pt-import-ios) | ios / monero-polyseed-encrypted-pt-import | monero | [cake-monero-polyseed-encrypted-pt](#scheme-cake-monero-polyseed-encrypted-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-pt-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-pt-import-linux) | linux / monero-polyseed-encrypted-pt-import | monero | [cake-monero-polyseed-encrypted-pt](#scheme-cake-monero-polyseed-encrypted-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-pt-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-pt-import-macos) | macos / monero-polyseed-encrypted-pt-import | monero | [cake-monero-polyseed-encrypted-pt](#scheme-cake-monero-polyseed-encrypted-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-zh-hans-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-android) | android / monero-polyseed-encrypted-zh-hans-import | monero | [cake-monero-polyseed-encrypted-zh-hans](#scheme-cake-monero-polyseed-encrypted-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios) | ios / monero-polyseed-encrypted-zh-hans-import | monero | [cake-monero-polyseed-encrypted-zh-hans](#scheme-cake-monero-polyseed-encrypted-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux) | linux / monero-polyseed-encrypted-zh-hans-import | monero | [cake-monero-polyseed-encrypted-zh-hans](#scheme-cake-monero-polyseed-encrypted-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos) | macos / monero-polyseed-encrypted-zh-hans-import | monero | [cake-monero-polyseed-encrypted-zh-hans](#scheme-cake-monero-polyseed-encrypted-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-zh-hant-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-android) | android / monero-polyseed-encrypted-zh-hant-import | monero | [cake-monero-polyseed-encrypted-zh-hant](#scheme-cake-monero-polyseed-encrypted-zh-hant) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios) | ios / monero-polyseed-encrypted-zh-hant-import | monero | [cake-monero-polyseed-encrypted-zh-hant](#scheme-cake-monero-polyseed-encrypted-zh-hant) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux) | linux / monero-polyseed-encrypted-zh-hant-import | monero | [cake-monero-polyseed-encrypted-zh-hant](#scheme-cake-monero-polyseed-encrypted-zh-hant) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos) | macos / monero-polyseed-encrypted-zh-hant-import | monero | [cake-monero-polyseed-encrypted-zh-hant](#scheme-cake-monero-polyseed-encrypted-zh-hant) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-es-create-android](#wallet-cake-wallet-monero-polyseed-es-create-android) | android / monero-polyseed-es-create | monero | [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-es-create-ios](#wallet-cake-wallet-monero-polyseed-es-create-ios) | ios / monero-polyseed-es-create | monero | [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-es-create-linux](#wallet-cake-wallet-monero-polyseed-es-create-linux) | linux / monero-polyseed-es-create | monero | [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-es-create-macos](#wallet-cake-wallet-monero-polyseed-es-create-macos) | macos / monero-polyseed-es-create | monero | [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-es-import-android](#wallet-cake-wallet-monero-polyseed-es-import-android) | android / monero-polyseed-es-import | monero | [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-es-import-ios](#wallet-cake-wallet-monero-polyseed-es-import-ios) | ios / monero-polyseed-es-import | monero | [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-es-import-linux](#wallet-cake-wallet-monero-polyseed-es-import-linux) | linux / monero-polyseed-es-import | monero | [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-es-import-macos](#wallet-cake-wallet-monero-polyseed-es-import-macos) | macos / monero-polyseed-es-import | monero | [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-fr-create-android](#wallet-cake-wallet-monero-polyseed-fr-create-android) | android / monero-polyseed-fr-create | monero | [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-fr-create-ios](#wallet-cake-wallet-monero-polyseed-fr-create-ios) | ios / monero-polyseed-fr-create | monero | [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-fr-create-linux](#wallet-cake-wallet-monero-polyseed-fr-create-linux) | linux / monero-polyseed-fr-create | monero | [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-fr-create-macos](#wallet-cake-wallet-monero-polyseed-fr-create-macos) | macos / monero-polyseed-fr-create | monero | [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-fr-import-android](#wallet-cake-wallet-monero-polyseed-fr-import-android) | android / monero-polyseed-fr-import | monero | [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-fr-import-ios](#wallet-cake-wallet-monero-polyseed-fr-import-ios) | ios / monero-polyseed-fr-import | monero | [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-fr-import-linux](#wallet-cake-wallet-monero-polyseed-fr-import-linux) | linux / monero-polyseed-fr-import | monero | [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-fr-import-macos](#wallet-cake-wallet-monero-polyseed-fr-import-macos) | macos / monero-polyseed-fr-import | monero | [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-import-android](#wallet-cake-wallet-monero-polyseed-import-android) | android / monero-polyseed-import | monero | [polyseed-16](#scheme-polyseed-16) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-import-ios](#wallet-cake-wallet-monero-polyseed-import-ios) | ios / monero-polyseed-import | monero | [polyseed-16](#scheme-polyseed-16) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-import-linux](#wallet-cake-wallet-monero-polyseed-import-linux) | linux / monero-polyseed-import | monero | [polyseed-16](#scheme-polyseed-16) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-import-macos](#wallet-cake-wallet-monero-polyseed-import-macos) | macos / monero-polyseed-import | monero | [polyseed-16](#scheme-polyseed-16) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-it-create-android](#wallet-cake-wallet-monero-polyseed-it-create-android) | android / monero-polyseed-it-create | monero | [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-it-create-ios](#wallet-cake-wallet-monero-polyseed-it-create-ios) | ios / monero-polyseed-it-create | monero | [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-it-create-linux](#wallet-cake-wallet-monero-polyseed-it-create-linux) | linux / monero-polyseed-it-create | monero | [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-it-create-macos](#wallet-cake-wallet-monero-polyseed-it-create-macos) | macos / monero-polyseed-it-create | monero | [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-it-import-android](#wallet-cake-wallet-monero-polyseed-it-import-android) | android / monero-polyseed-it-import | monero | [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-it-import-ios](#wallet-cake-wallet-monero-polyseed-it-import-ios) | ios / monero-polyseed-it-import | monero | [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-it-import-linux](#wallet-cake-wallet-monero-polyseed-it-import-linux) | linux / monero-polyseed-it-import | monero | [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-it-import-macos](#wallet-cake-wallet-monero-polyseed-it-import-macos) | macos / monero-polyseed-it-import | monero | [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-ja-create-android](#wallet-cake-wallet-monero-polyseed-ja-create-android) | android / monero-polyseed-ja-create | monero | [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-ja-create-ios](#wallet-cake-wallet-monero-polyseed-ja-create-ios) | ios / monero-polyseed-ja-create | monero | [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-ja-create-linux](#wallet-cake-wallet-monero-polyseed-ja-create-linux) | linux / monero-polyseed-ja-create | monero | [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-ja-create-macos](#wallet-cake-wallet-monero-polyseed-ja-create-macos) | macos / monero-polyseed-ja-create | monero | [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-ja-import-android](#wallet-cake-wallet-monero-polyseed-ja-import-android) | android / monero-polyseed-ja-import | monero | [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-ja-import-ios](#wallet-cake-wallet-monero-polyseed-ja-import-ios) | ios / monero-polyseed-ja-import | monero | [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-ja-import-linux](#wallet-cake-wallet-monero-polyseed-ja-import-linux) | linux / monero-polyseed-ja-import | monero | [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-ja-import-macos](#wallet-cake-wallet-monero-polyseed-ja-import-macos) | macos / monero-polyseed-ja-import | monero | [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-ko-create-android](#wallet-cake-wallet-monero-polyseed-ko-create-android) | android / monero-polyseed-ko-create | monero | [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-ko-create-ios](#wallet-cake-wallet-monero-polyseed-ko-create-ios) | ios / monero-polyseed-ko-create | monero | [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-ko-create-linux](#wallet-cake-wallet-monero-polyseed-ko-create-linux) | linux / monero-polyseed-ko-create | monero | [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-ko-create-macos](#wallet-cake-wallet-monero-polyseed-ko-create-macos) | macos / monero-polyseed-ko-create | monero | [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-ko-import-android](#wallet-cake-wallet-monero-polyseed-ko-import-android) | android / monero-polyseed-ko-import | monero | [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-ko-import-ios](#wallet-cake-wallet-monero-polyseed-ko-import-ios) | ios / monero-polyseed-ko-import | monero | [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-ko-import-linux](#wallet-cake-wallet-monero-polyseed-ko-import-linux) | linux / monero-polyseed-ko-import | monero | [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-ko-import-macos](#wallet-cake-wallet-monero-polyseed-ko-import-macos) | macos / monero-polyseed-ko-import | monero | [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-cs-import-android](#wallet-cake-wallet-monero-polyseed-offset-cs-import-android) | android / monero-polyseed-offset-cs-import | monero | [cake-monero-polyseed-offset-cs](#scheme-cake-monero-polyseed-offset-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-cs-import-ios](#wallet-cake-wallet-monero-polyseed-offset-cs-import-ios) | ios / monero-polyseed-offset-cs-import | monero | [cake-monero-polyseed-offset-cs](#scheme-cake-monero-polyseed-offset-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-cs-import-linux](#wallet-cake-wallet-monero-polyseed-offset-cs-import-linux) | linux / monero-polyseed-offset-cs-import | monero | [cake-monero-polyseed-offset-cs](#scheme-cake-monero-polyseed-offset-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-cs-import-macos](#wallet-cake-wallet-monero-polyseed-offset-cs-import-macos) | macos / monero-polyseed-offset-cs-import | monero | [cake-monero-polyseed-offset-cs](#scheme-cake-monero-polyseed-offset-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-en-import-android](#wallet-cake-wallet-monero-polyseed-offset-en-import-android) | android / monero-polyseed-offset-en-import | monero | [cake-monero-polyseed-offset-en](#scheme-cake-monero-polyseed-offset-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-en-import-ios](#wallet-cake-wallet-monero-polyseed-offset-en-import-ios) | ios / monero-polyseed-offset-en-import | monero | [cake-monero-polyseed-offset-en](#scheme-cake-monero-polyseed-offset-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-en-import-linux](#wallet-cake-wallet-monero-polyseed-offset-en-import-linux) | linux / monero-polyseed-offset-en-import | monero | [cake-monero-polyseed-offset-en](#scheme-cake-monero-polyseed-offset-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-en-import-macos](#wallet-cake-wallet-monero-polyseed-offset-en-import-macos) | macos / monero-polyseed-offset-en-import | monero | [cake-monero-polyseed-offset-en](#scheme-cake-monero-polyseed-offset-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-es-import-android](#wallet-cake-wallet-monero-polyseed-offset-es-import-android) | android / monero-polyseed-offset-es-import | monero | [cake-monero-polyseed-offset-es](#scheme-cake-monero-polyseed-offset-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-es-import-ios](#wallet-cake-wallet-monero-polyseed-offset-es-import-ios) | ios / monero-polyseed-offset-es-import | monero | [cake-monero-polyseed-offset-es](#scheme-cake-monero-polyseed-offset-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-es-import-linux](#wallet-cake-wallet-monero-polyseed-offset-es-import-linux) | linux / monero-polyseed-offset-es-import | monero | [cake-monero-polyseed-offset-es](#scheme-cake-monero-polyseed-offset-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-es-import-macos](#wallet-cake-wallet-monero-polyseed-offset-es-import-macos) | macos / monero-polyseed-offset-es-import | monero | [cake-monero-polyseed-offset-es](#scheme-cake-monero-polyseed-offset-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-fr-import-android](#wallet-cake-wallet-monero-polyseed-offset-fr-import-android) | android / monero-polyseed-offset-fr-import | monero | [cake-monero-polyseed-offset-fr](#scheme-cake-monero-polyseed-offset-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-fr-import-ios](#wallet-cake-wallet-monero-polyseed-offset-fr-import-ios) | ios / monero-polyseed-offset-fr-import | monero | [cake-monero-polyseed-offset-fr](#scheme-cake-monero-polyseed-offset-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-fr-import-linux](#wallet-cake-wallet-monero-polyseed-offset-fr-import-linux) | linux / monero-polyseed-offset-fr-import | monero | [cake-monero-polyseed-offset-fr](#scheme-cake-monero-polyseed-offset-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-fr-import-macos](#wallet-cake-wallet-monero-polyseed-offset-fr-import-macos) | macos / monero-polyseed-offset-fr-import | monero | [cake-monero-polyseed-offset-fr](#scheme-cake-monero-polyseed-offset-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-it-import-android](#wallet-cake-wallet-monero-polyseed-offset-it-import-android) | android / monero-polyseed-offset-it-import | monero | [cake-monero-polyseed-offset-it](#scheme-cake-monero-polyseed-offset-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-it-import-ios](#wallet-cake-wallet-monero-polyseed-offset-it-import-ios) | ios / monero-polyseed-offset-it-import | monero | [cake-monero-polyseed-offset-it](#scheme-cake-monero-polyseed-offset-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-it-import-linux](#wallet-cake-wallet-monero-polyseed-offset-it-import-linux) | linux / monero-polyseed-offset-it-import | monero | [cake-monero-polyseed-offset-it](#scheme-cake-monero-polyseed-offset-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-it-import-macos](#wallet-cake-wallet-monero-polyseed-offset-it-import-macos) | macos / monero-polyseed-offset-it-import | monero | [cake-monero-polyseed-offset-it](#scheme-cake-monero-polyseed-offset-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-ja-import-android](#wallet-cake-wallet-monero-polyseed-offset-ja-import-android) | android / monero-polyseed-offset-ja-import | monero | [cake-monero-polyseed-offset-ja](#scheme-cake-monero-polyseed-offset-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-ja-import-ios](#wallet-cake-wallet-monero-polyseed-offset-ja-import-ios) | ios / monero-polyseed-offset-ja-import | monero | [cake-monero-polyseed-offset-ja](#scheme-cake-monero-polyseed-offset-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-ja-import-linux](#wallet-cake-wallet-monero-polyseed-offset-ja-import-linux) | linux / monero-polyseed-offset-ja-import | monero | [cake-monero-polyseed-offset-ja](#scheme-cake-monero-polyseed-offset-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-ja-import-macos](#wallet-cake-wallet-monero-polyseed-offset-ja-import-macos) | macos / monero-polyseed-offset-ja-import | monero | [cake-monero-polyseed-offset-ja](#scheme-cake-monero-polyseed-offset-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-ko-import-android](#wallet-cake-wallet-monero-polyseed-offset-ko-import-android) | android / monero-polyseed-offset-ko-import | monero | [cake-monero-polyseed-offset-ko](#scheme-cake-monero-polyseed-offset-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-ko-import-ios](#wallet-cake-wallet-monero-polyseed-offset-ko-import-ios) | ios / monero-polyseed-offset-ko-import | monero | [cake-monero-polyseed-offset-ko](#scheme-cake-monero-polyseed-offset-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-ko-import-linux](#wallet-cake-wallet-monero-polyseed-offset-ko-import-linux) | linux / monero-polyseed-offset-ko-import | monero | [cake-monero-polyseed-offset-ko](#scheme-cake-monero-polyseed-offset-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-ko-import-macos](#wallet-cake-wallet-monero-polyseed-offset-ko-import-macos) | macos / monero-polyseed-offset-ko-import | monero | [cake-monero-polyseed-offset-ko](#scheme-cake-monero-polyseed-offset-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-pt-import-android](#wallet-cake-wallet-monero-polyseed-offset-pt-import-android) | android / monero-polyseed-offset-pt-import | monero | [cake-monero-polyseed-offset-pt](#scheme-cake-monero-polyseed-offset-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-pt-import-ios](#wallet-cake-wallet-monero-polyseed-offset-pt-import-ios) | ios / monero-polyseed-offset-pt-import | monero | [cake-monero-polyseed-offset-pt](#scheme-cake-monero-polyseed-offset-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-pt-import-linux](#wallet-cake-wallet-monero-polyseed-offset-pt-import-linux) | linux / monero-polyseed-offset-pt-import | monero | [cake-monero-polyseed-offset-pt](#scheme-cake-monero-polyseed-offset-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-pt-import-macos](#wallet-cake-wallet-monero-polyseed-offset-pt-import-macos) | macos / monero-polyseed-offset-pt-import | monero | [cake-monero-polyseed-offset-pt](#scheme-cake-monero-polyseed-offset-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-zh-hans-import-android](#wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-android) | android / monero-polyseed-offset-zh-hans-import | monero | [cake-monero-polyseed-offset-zh-hans](#scheme-cake-monero-polyseed-offset-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-zh-hans-import-ios](#wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-ios) | ios / monero-polyseed-offset-zh-hans-import | monero | [cake-monero-polyseed-offset-zh-hans](#scheme-cake-monero-polyseed-offset-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-zh-hans-import-linux](#wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-linux) | linux / monero-polyseed-offset-zh-hans-import | monero | [cake-monero-polyseed-offset-zh-hans](#scheme-cake-monero-polyseed-offset-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-zh-hans-import-macos](#wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-macos) | macos / monero-polyseed-offset-zh-hans-import | monero | [cake-monero-polyseed-offset-zh-hans](#scheme-cake-monero-polyseed-offset-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-zh-hant-import-android](#wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-android) | android / monero-polyseed-offset-zh-hant-import | monero | [cake-monero-polyseed-offset-zh-hant](#scheme-cake-monero-polyseed-offset-zh-hant) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-zh-hant-import-ios](#wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-ios) | ios / monero-polyseed-offset-zh-hant-import | monero | [cake-monero-polyseed-offset-zh-hant](#scheme-cake-monero-polyseed-offset-zh-hant) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-zh-hant-import-linux](#wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-linux) | linux / monero-polyseed-offset-zh-hant-import | monero | [cake-monero-polyseed-offset-zh-hant](#scheme-cake-monero-polyseed-offset-zh-hant) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-offset-zh-hant-import-macos](#wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-macos) | macos / monero-polyseed-offset-zh-hant-import | monero | [cake-monero-polyseed-offset-zh-hant](#scheme-cake-monero-polyseed-offset-zh-hant) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-cs-import-android](#wallet-cake-wallet-monero-polyseed-plain-cs-import-android) | android / monero-polyseed-plain-cs-import | monero | [cake-monero-polyseed-plain-cs](#scheme-cake-monero-polyseed-plain-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-cs-import-ios](#wallet-cake-wallet-monero-polyseed-plain-cs-import-ios) | ios / monero-polyseed-plain-cs-import | monero | [cake-monero-polyseed-plain-cs](#scheme-cake-monero-polyseed-plain-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-cs-import-linux](#wallet-cake-wallet-monero-polyseed-plain-cs-import-linux) | linux / monero-polyseed-plain-cs-import | monero | [cake-monero-polyseed-plain-cs](#scheme-cake-monero-polyseed-plain-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-cs-import-macos](#wallet-cake-wallet-monero-polyseed-plain-cs-import-macos) | macos / monero-polyseed-plain-cs-import | monero | [cake-monero-polyseed-plain-cs](#scheme-cake-monero-polyseed-plain-cs) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-en-import-android](#wallet-cake-wallet-monero-polyseed-plain-en-import-android) | android / monero-polyseed-plain-en-import | monero | [cake-monero-polyseed-plain-en](#scheme-cake-monero-polyseed-plain-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-en-import-ios](#wallet-cake-wallet-monero-polyseed-plain-en-import-ios) | ios / monero-polyseed-plain-en-import | monero | [cake-monero-polyseed-plain-en](#scheme-cake-monero-polyseed-plain-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-en-import-linux](#wallet-cake-wallet-monero-polyseed-plain-en-import-linux) | linux / monero-polyseed-plain-en-import | monero | [cake-monero-polyseed-plain-en](#scheme-cake-monero-polyseed-plain-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-en-import-macos](#wallet-cake-wallet-monero-polyseed-plain-en-import-macos) | macos / monero-polyseed-plain-en-import | monero | [cake-monero-polyseed-plain-en](#scheme-cake-monero-polyseed-plain-en) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-es-import-android](#wallet-cake-wallet-monero-polyseed-plain-es-import-android) | android / monero-polyseed-plain-es-import | monero | [cake-monero-polyseed-plain-es](#scheme-cake-monero-polyseed-plain-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-es-import-ios](#wallet-cake-wallet-monero-polyseed-plain-es-import-ios) | ios / monero-polyseed-plain-es-import | monero | [cake-monero-polyseed-plain-es](#scheme-cake-monero-polyseed-plain-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-es-import-linux](#wallet-cake-wallet-monero-polyseed-plain-es-import-linux) | linux / monero-polyseed-plain-es-import | monero | [cake-monero-polyseed-plain-es](#scheme-cake-monero-polyseed-plain-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-es-import-macos](#wallet-cake-wallet-monero-polyseed-plain-es-import-macos) | macos / monero-polyseed-plain-es-import | monero | [cake-monero-polyseed-plain-es](#scheme-cake-monero-polyseed-plain-es) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-fr-import-android](#wallet-cake-wallet-monero-polyseed-plain-fr-import-android) | android / monero-polyseed-plain-fr-import | monero | [cake-monero-polyseed-plain-fr](#scheme-cake-monero-polyseed-plain-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-fr-import-ios](#wallet-cake-wallet-monero-polyseed-plain-fr-import-ios) | ios / monero-polyseed-plain-fr-import | monero | [cake-monero-polyseed-plain-fr](#scheme-cake-monero-polyseed-plain-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-fr-import-linux](#wallet-cake-wallet-monero-polyseed-plain-fr-import-linux) | linux / monero-polyseed-plain-fr-import | monero | [cake-monero-polyseed-plain-fr](#scheme-cake-monero-polyseed-plain-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-fr-import-macos](#wallet-cake-wallet-monero-polyseed-plain-fr-import-macos) | macos / monero-polyseed-plain-fr-import | monero | [cake-monero-polyseed-plain-fr](#scheme-cake-monero-polyseed-plain-fr) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-it-import-android](#wallet-cake-wallet-monero-polyseed-plain-it-import-android) | android / monero-polyseed-plain-it-import | monero | [cake-monero-polyseed-plain-it](#scheme-cake-monero-polyseed-plain-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-it-import-ios](#wallet-cake-wallet-monero-polyseed-plain-it-import-ios) | ios / monero-polyseed-plain-it-import | monero | [cake-monero-polyseed-plain-it](#scheme-cake-monero-polyseed-plain-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-it-import-linux](#wallet-cake-wallet-monero-polyseed-plain-it-import-linux) | linux / monero-polyseed-plain-it-import | monero | [cake-monero-polyseed-plain-it](#scheme-cake-monero-polyseed-plain-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-it-import-macos](#wallet-cake-wallet-monero-polyseed-plain-it-import-macos) | macos / monero-polyseed-plain-it-import | monero | [cake-monero-polyseed-plain-it](#scheme-cake-monero-polyseed-plain-it) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-ja-import-android](#wallet-cake-wallet-monero-polyseed-plain-ja-import-android) | android / monero-polyseed-plain-ja-import | monero | [cake-monero-polyseed-plain-ja](#scheme-cake-monero-polyseed-plain-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-ja-import-ios](#wallet-cake-wallet-monero-polyseed-plain-ja-import-ios) | ios / monero-polyseed-plain-ja-import | monero | [cake-monero-polyseed-plain-ja](#scheme-cake-monero-polyseed-plain-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-ja-import-linux](#wallet-cake-wallet-monero-polyseed-plain-ja-import-linux) | linux / monero-polyseed-plain-ja-import | monero | [cake-monero-polyseed-plain-ja](#scheme-cake-monero-polyseed-plain-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-ja-import-macos](#wallet-cake-wallet-monero-polyseed-plain-ja-import-macos) | macos / monero-polyseed-plain-ja-import | monero | [cake-monero-polyseed-plain-ja](#scheme-cake-monero-polyseed-plain-ja) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-ko-import-android](#wallet-cake-wallet-monero-polyseed-plain-ko-import-android) | android / monero-polyseed-plain-ko-import | monero | [cake-monero-polyseed-plain-ko](#scheme-cake-monero-polyseed-plain-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-ko-import-ios](#wallet-cake-wallet-monero-polyseed-plain-ko-import-ios) | ios / monero-polyseed-plain-ko-import | monero | [cake-monero-polyseed-plain-ko](#scheme-cake-monero-polyseed-plain-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-ko-import-linux](#wallet-cake-wallet-monero-polyseed-plain-ko-import-linux) | linux / monero-polyseed-plain-ko-import | monero | [cake-monero-polyseed-plain-ko](#scheme-cake-monero-polyseed-plain-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-ko-import-macos](#wallet-cake-wallet-monero-polyseed-plain-ko-import-macos) | macos / monero-polyseed-plain-ko-import | monero | [cake-monero-polyseed-plain-ko](#scheme-cake-monero-polyseed-plain-ko) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-pt-import-android](#wallet-cake-wallet-monero-polyseed-plain-pt-import-android) | android / monero-polyseed-plain-pt-import | monero | [cake-monero-polyseed-plain-pt](#scheme-cake-monero-polyseed-plain-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-pt-import-ios](#wallet-cake-wallet-monero-polyseed-plain-pt-import-ios) | ios / monero-polyseed-plain-pt-import | monero | [cake-monero-polyseed-plain-pt](#scheme-cake-monero-polyseed-plain-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-pt-import-linux](#wallet-cake-wallet-monero-polyseed-plain-pt-import-linux) | linux / monero-polyseed-plain-pt-import | monero | [cake-monero-polyseed-plain-pt](#scheme-cake-monero-polyseed-plain-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-pt-import-macos](#wallet-cake-wallet-monero-polyseed-plain-pt-import-macos) | macos / monero-polyseed-plain-pt-import | monero | [cake-monero-polyseed-plain-pt](#scheme-cake-monero-polyseed-plain-pt) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-zh-hans-import-android](#wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-android) | android / monero-polyseed-plain-zh-hans-import | monero | [cake-monero-polyseed-plain-zh-hans](#scheme-cake-monero-polyseed-plain-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-zh-hans-import-ios](#wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-ios) | ios / monero-polyseed-plain-zh-hans-import | monero | [cake-monero-polyseed-plain-zh-hans](#scheme-cake-monero-polyseed-plain-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-zh-hans-import-linux](#wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-linux) | linux / monero-polyseed-plain-zh-hans-import | monero | [cake-monero-polyseed-plain-zh-hans](#scheme-cake-monero-polyseed-plain-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-zh-hans-import-macos](#wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-macos) | macos / monero-polyseed-plain-zh-hans-import | monero | [cake-monero-polyseed-plain-zh-hans](#scheme-cake-monero-polyseed-plain-zh-hans) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-zh-hant-import-android](#wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-android) | android / monero-polyseed-plain-zh-hant-import | monero | [cake-monero-polyseed-plain-zh-hant](#scheme-cake-monero-polyseed-plain-zh-hant) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-zh-hant-import-ios](#wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-ios) | ios / monero-polyseed-plain-zh-hant-import | monero | [cake-monero-polyseed-plain-zh-hant](#scheme-cake-monero-polyseed-plain-zh-hant) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-zh-hant-import-linux](#wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-linux) | linux / monero-polyseed-plain-zh-hant-import | monero | [cake-monero-polyseed-plain-zh-hant](#scheme-cake-monero-polyseed-plain-zh-hant) | documented |
+| Cake Wallet / [cake-wallet-monero-polyseed-plain-zh-hant-import-macos](#wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-macos) | macos / monero-polyseed-plain-zh-hant-import | monero | [cake-monero-polyseed-plain-zh-hant](#scheme-cake-monero-polyseed-plain-zh-hant) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-pt-create-android](#wallet-cake-wallet-monero-polyseed-pt-create-android) | android / monero-polyseed-pt-create | monero | [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-pt-create-ios](#wallet-cake-wallet-monero-polyseed-pt-create-ios) | ios / monero-polyseed-pt-create | monero | [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-pt-create-linux](#wallet-cake-wallet-monero-polyseed-pt-create-linux) | linux / monero-polyseed-pt-create | monero | [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-pt-create-macos](#wallet-cake-wallet-monero-polyseed-pt-create-macos) | macos / monero-polyseed-pt-create | monero | [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-pt-import-android](#wallet-cake-wallet-monero-polyseed-pt-import-android) | android / monero-polyseed-pt-import | monero | [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-pt-import-ios](#wallet-cake-wallet-monero-polyseed-pt-import-ios) | ios / monero-polyseed-pt-import | monero | [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-pt-import-linux](#wallet-cake-wallet-monero-polyseed-pt-import-linux) | linux / monero-polyseed-pt-import | monero | [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-pt-import-macos](#wallet-cake-wallet-monero-polyseed-pt-import-macos) | macos / monero-polyseed-pt-import | monero | [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-zh-hans-create-android](#wallet-cake-wallet-monero-polyseed-zh-hans-create-android) | android / monero-polyseed-zh-hans-create | monero | [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-zh-hans-create-ios](#wallet-cake-wallet-monero-polyseed-zh-hans-create-ios) | ios / monero-polyseed-zh-hans-create | monero | [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-zh-hans-create-linux](#wallet-cake-wallet-monero-polyseed-zh-hans-create-linux) | linux / monero-polyseed-zh-hans-create | monero | [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-zh-hans-create-macos](#wallet-cake-wallet-monero-polyseed-zh-hans-create-macos) | macos / monero-polyseed-zh-hans-create | monero | [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-zh-hans-import-android](#wallet-cake-wallet-monero-polyseed-zh-hans-import-android) | android / monero-polyseed-zh-hans-import | monero | [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-zh-hans-import-ios](#wallet-cake-wallet-monero-polyseed-zh-hans-import-ios) | ios / monero-polyseed-zh-hans-import | monero | [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-zh-hans-import-linux](#wallet-cake-wallet-monero-polyseed-zh-hans-import-linux) | linux / monero-polyseed-zh-hans-import | monero | [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-zh-hans-import-macos](#wallet-cake-wallet-monero-polyseed-zh-hans-import-macos) | macos / monero-polyseed-zh-hans-import | monero | [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-zh-hant-create-android](#wallet-cake-wallet-monero-polyseed-zh-hant-create-android) | android / monero-polyseed-zh-hant-create | monero | [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-zh-hant-create-ios](#wallet-cake-wallet-monero-polyseed-zh-hant-create-ios) | ios / monero-polyseed-zh-hant-create | monero | [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-zh-hant-create-linux](#wallet-cake-wallet-monero-polyseed-zh-hant-create-linux) | linux / monero-polyseed-zh-hant-create | monero | [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant) | documented |
 | Cake Wallet / [cake-wallet-monero-polyseed-zh-hant-create-macos](#wallet-cake-wallet-monero-polyseed-zh-hant-create-macos) | macos / monero-polyseed-zh-hant-create | monero | [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-zh-hant-import-android](#wallet-cake-wallet-monero-polyseed-zh-hant-import-android) | android / monero-polyseed-zh-hant-import | monero | [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-zh-hant-import-ios](#wallet-cake-wallet-monero-polyseed-zh-hant-import-ios) | ios / monero-polyseed-zh-hant-import | monero | [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-zh-hant-import-linux](#wallet-cake-wallet-monero-polyseed-zh-hant-import-linux) | linux / monero-polyseed-zh-hant-import | monero | [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant) | documented |
-| Cake Wallet / [cake-wallet-monero-polyseed-zh-hant-import-macos](#wallet-cake-wallet-monero-polyseed-zh-hant-import-macos) | macos / monero-polyseed-zh-hant-import | monero | [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant) | documented |
 | Cake Wallet / [cake-wallet-monero-view-only-android](#wallet-cake-wallet-monero-view-only-android) | android / monero-view-only | monero | — | documented |
 | Cake Wallet / [cake-wallet-monero-view-only-ios](#wallet-cake-wallet-monero-view-only-ios) | ios / monero-view-only | monero | — | documented |
 | Cake Wallet / [cake-wallet-monero-view-only-linux](#wallet-cake-wallet-monero-view-only-linux) | linux / monero-view-only | monero | — | documented |
@@ -539,6 +622,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | Cake Wallet / [cake-wallet-tron-private-key-ios](#wallet-cake-wallet-tron-private-key-ios) | ios / tron-private-key | tron | — | documented |
 | Cake Wallet / [cake-wallet-tron-private-key-linux](#wallet-cake-wallet-tron-private-key-linux) | linux / tron-private-key | tron | — | documented |
 | Cake Wallet / [cake-wallet-tron-private-key-macos](#wallet-cake-wallet-tron-private-key-macos) | macos / tron-private-key | tron | — | documented |
+| Cake Wallet / [cake-wallet-wownero-legacy14-export-android](#wallet-cake-wallet-wownero-legacy14-export-android) | android / wownero-legacy14-export | wownero | [cake-wownero-14-unresolved](#scheme-cake-wownero-14-unresolved) | blocked |
+| Cake Wallet / [cake-wallet-wownero-legacy14-export-ios](#wallet-cake-wallet-wownero-legacy14-export-ios) | ios / wownero-legacy14-export | wownero | [cake-wownero-14-unresolved](#scheme-cake-wownero-14-unresolved) | blocked |
+| Cake Wallet / [cake-wallet-wownero-legacy14-export-linux](#wallet-cake-wallet-wownero-legacy14-export-linux) | linux / wownero-legacy14-export | wownero | [cake-wownero-14-unresolved](#scheme-cake-wownero-14-unresolved) | blocked |
+| Cake Wallet / [cake-wallet-wownero-legacy14-export-macos](#wallet-cake-wallet-wownero-legacy14-export-macos) | macos / wownero-legacy14-export | wownero | [cake-wownero-14-unresolved](#scheme-cake-wownero-14-unresolved) | blocked |
 | Cake Wallet / [cake-wallet-wownero-legacy25-export-android](#wallet-cake-wallet-wownero-legacy25-export-android) | android / wownero-legacy25-export | wownero | — | documented |
 | Cake Wallet / [cake-wallet-wownero-legacy25-export-ios](#wallet-cake-wallet-wownero-legacy25-export-ios) | ios / wownero-legacy25-export | wownero | — | documented |
 | Cake Wallet / [cake-wallet-wownero-legacy25-export-linux](#wallet-cake-wallet-wownero-legacy25-export-linux) | linux / wownero-legacy25-export | wownero | — | documented |
@@ -547,10 +634,6 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 | Cake Wallet / [cake-wallet-wownero-polyseed16-export-ios](#wallet-cake-wallet-wownero-polyseed16-export-ios) | ios / wownero-polyseed16-export | wownero | — | documented |
 | Cake Wallet / [cake-wallet-wownero-polyseed16-export-linux](#wallet-cake-wallet-wownero-polyseed16-export-linux) | linux / wownero-polyseed16-export | wownero | — | documented |
 | Cake Wallet / [cake-wallet-wownero-polyseed16-export-macos](#wallet-cake-wallet-wownero-polyseed16-export-macos) | macos / wownero-polyseed16-export | wownero | — | documented |
-| Cake Wallet / [cake-wallet-wownero-tevador14-export-android](#wallet-cake-wallet-wownero-tevador14-export-android) | android / wownero-tevador14-export | wownero | [tevador-14-unresolved](#scheme-tevador-14-unresolved) | blocked |
-| Cake Wallet / [cake-wallet-wownero-tevador14-export-ios](#wallet-cake-wallet-wownero-tevador14-export-ios) | ios / wownero-tevador14-export | wownero | [tevador-14-unresolved](#scheme-tevador-14-unresolved) | blocked |
-| Cake Wallet / [cake-wallet-wownero-tevador14-export-linux](#wallet-cake-wallet-wownero-tevador14-export-linux) | linux / wownero-tevador14-export | wownero | [tevador-14-unresolved](#scheme-tevador-14-unresolved) | blocked |
-| Cake Wallet / [cake-wallet-wownero-tevador14-export-macos](#wallet-cake-wallet-wownero-tevador14-export-macos) | macos / wownero-tevador14-export | wownero | [tevador-14-unresolved](#scheme-tevador-14-unresolved) | blocked |
 | Cake Wallet Zano — native seed import / [cake-wallet-zano](#wallet-cake-wallet-zano) | android / native26-import | zano | [zano-modern](#scheme-zano-modern) | documented |
 | Cake Wallet Zano — BIP39 creation / [cake-wallet-zano-bip39](#wallet-cake-wallet-zano-bip39) | android / bip39-derived-create | zano | [cake-zano-bip39](#scheme-cake-zano-bip39) | blocked |
 | Cake Wallet / [cake-wallet-zano-bip39-create-ios](#wallet-cake-wallet-zano-bip39-create-ios) | ios / zano-bip39-create | zano | [cake-zano-bip39](#scheme-cake-zano-bip39) | blocked |
@@ -737,7 +820,7 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - kusama: [network-guide-kusama](#wallet-network-guide-kusama), [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
 - liquid: [blockstream-jade](#wallet-blockstream-jade)
 - litecoin: [cake-wallet-litecoin-bip39-create-android](#wallet-cake-wallet-litecoin-bip39-create-android), [cake-wallet-litecoin-bip39-create-ios](#wallet-cake-wallet-litecoin-bip39-create-ios), [cake-wallet-litecoin-bip39-create-linux](#wallet-cake-wallet-litecoin-bip39-create-linux), [cake-wallet-litecoin-bip39-create-macos](#wallet-cake-wallet-litecoin-bip39-create-macos), [cake-wallet-litecoin-bip39-group-android](#wallet-cake-wallet-litecoin-bip39-group-android), [cake-wallet-litecoin-bip39-group-ios](#wallet-cake-wallet-litecoin-bip39-group-ios), [cake-wallet-litecoin-bip39-group-linux](#wallet-cake-wallet-litecoin-bip39-group-linux), [cake-wallet-litecoin-bip39-group-macos](#wallet-cake-wallet-litecoin-bip39-group-macos), [cake-wallet-litecoin-bip39-import-android](#wallet-cake-wallet-litecoin-bip39-import-android), [cake-wallet-litecoin-bip39-import-ios](#wallet-cake-wallet-litecoin-bip39-import-ios), [cake-wallet-litecoin-bip39-import-linux](#wallet-cake-wallet-litecoin-bip39-import-linux), [cake-wallet-litecoin-bip39-import-macos](#wallet-cake-wallet-litecoin-bip39-import-macos), [cake-wallet-litecoin-electrum-create-android](#wallet-cake-wallet-litecoin-electrum-create-android), [cake-wallet-litecoin-electrum-create-ios](#wallet-cake-wallet-litecoin-electrum-create-ios), [cake-wallet-litecoin-electrum-create-linux](#wallet-cake-wallet-litecoin-electrum-create-linux), [cake-wallet-litecoin-electrum-create-macos](#wallet-cake-wallet-litecoin-electrum-create-macos), [cake-wallet-litecoin-electrum-import-android](#wallet-cake-wallet-litecoin-electrum-import-android), [cake-wallet-litecoin-electrum-import-ios](#wallet-cake-wallet-litecoin-electrum-import-ios), [cake-wallet-litecoin-electrum-import-linux](#wallet-cake-wallet-litecoin-electrum-import-linux), [cake-wallet-litecoin-electrum-import-macos](#wallet-cake-wallet-litecoin-electrum-import-macos), [cake-wallet-litecoin-hardware-android](#wallet-cake-wallet-litecoin-hardware-android), [cake-wallet-litecoin-hardware-ios](#wallet-cake-wallet-litecoin-hardware-ios), [cake-wallet-litecoin-hardware-linux](#wallet-cake-wallet-litecoin-hardware-linux), [cake-wallet-litecoin-hardware-macos](#wallet-cake-wallet-litecoin-hardware-macos), [cake-wallet-litecoin-mweb-import-android](#wallet-cake-wallet-litecoin-mweb-import-android), [cake-wallet-litecoin-mweb-import-ios](#wallet-cake-wallet-litecoin-mweb-import-ios), [cake-wallet-litecoin-mweb-import-linux](#wallet-cake-wallet-litecoin-mweb-import-linux), [cake-wallet-litecoin-mweb-import-macos](#wallet-cake-wallet-litecoin-mweb-import-macos), [cake-wallet-litecoin-view-only-android](#wallet-cake-wallet-litecoin-view-only-android), [cake-wallet-litecoin-view-only-ios](#wallet-cake-wallet-litecoin-view-only-ios), [cake-wallet-litecoin-view-only-linux](#wallet-cake-wallet-litecoin-view-only-linux), [cake-wallet-litecoin-view-only-macos](#wallet-cake-wallet-litecoin-view-only-macos)
-- monero: [cake-wallet-monero](#wallet-cake-wallet-monero), [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39), [cake-wallet-monero-bip39-12-create-android](#wallet-cake-wallet-monero-bip39-12-create-android), [cake-wallet-monero-bip39-12-create-ios](#wallet-cake-wallet-monero-bip39-12-create-ios), [cake-wallet-monero-bip39-12-create-linux](#wallet-cake-wallet-monero-bip39-12-create-linux), [cake-wallet-monero-bip39-12-create-macos](#wallet-cake-wallet-monero-bip39-12-create-macos), [cake-wallet-monero-bip39-create-ios](#wallet-cake-wallet-monero-bip39-create-ios), [cake-wallet-monero-bip39-create-linux](#wallet-cake-wallet-monero-bip39-create-linux), [cake-wallet-monero-bip39-create-macos](#wallet-cake-wallet-monero-bip39-create-macos), [cake-wallet-monero-bip39-group-android](#wallet-cake-wallet-monero-bip39-group-android), [cake-wallet-monero-bip39-group-ios](#wallet-cake-wallet-monero-bip39-group-ios), [cake-wallet-monero-bip39-group-linux](#wallet-cake-wallet-monero-bip39-group-linux), [cake-wallet-monero-bip39-group-macos](#wallet-cake-wallet-monero-bip39-group-macos), [cake-wallet-monero-bip39-import-android](#wallet-cake-wallet-monero-bip39-import-android), [cake-wallet-monero-bip39-import-ios](#wallet-cake-wallet-monero-bip39-import-ios), [cake-wallet-monero-bip39-import-linux](#wallet-cake-wallet-monero-bip39-import-linux), [cake-wallet-monero-bip39-import-macos](#wallet-cake-wallet-monero-bip39-import-macos), [cake-wallet-monero-hardware-android](#wallet-cake-wallet-monero-hardware-android), [cake-wallet-monero-hardware-ios](#wallet-cake-wallet-monero-hardware-ios), [cake-wallet-monero-hardware-linux](#wallet-cake-wallet-monero-hardware-linux), [cake-wallet-monero-hardware-macos](#wallet-cake-wallet-monero-hardware-macos), [cake-wallet-monero-keys-import-android](#wallet-cake-wallet-monero-keys-import-android), [cake-wallet-monero-keys-import-ios](#wallet-cake-wallet-monero-keys-import-ios), [cake-wallet-monero-keys-import-linux](#wallet-cake-wallet-monero-keys-import-linux), [cake-wallet-monero-keys-import-macos](#wallet-cake-wallet-monero-keys-import-macos), [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy), [cake-wallet-monero-legacy-create-ios](#wallet-cake-wallet-monero-legacy-create-ios), [cake-wallet-monero-legacy-create-linux](#wallet-cake-wallet-monero-legacy-create-linux), [cake-wallet-monero-legacy-create-macos](#wallet-cake-wallet-monero-legacy-create-macos), [cake-wallet-monero-legacy-de-create-android](#wallet-cake-wallet-monero-legacy-de-create-android), [cake-wallet-monero-legacy-de-create-ios](#wallet-cake-wallet-monero-legacy-de-create-ios), [cake-wallet-monero-legacy-de-create-linux](#wallet-cake-wallet-monero-legacy-de-create-linux), [cake-wallet-monero-legacy-de-create-macos](#wallet-cake-wallet-monero-legacy-de-create-macos), [cake-wallet-monero-legacy-de-import-android](#wallet-cake-wallet-monero-legacy-de-import-android), [cake-wallet-monero-legacy-de-import-ios](#wallet-cake-wallet-monero-legacy-de-import-ios), [cake-wallet-monero-legacy-de-import-linux](#wallet-cake-wallet-monero-legacy-de-import-linux), [cake-wallet-monero-legacy-de-import-macos](#wallet-cake-wallet-monero-legacy-de-import-macos), [cake-wallet-monero-legacy-en-create-android](#wallet-cake-wallet-monero-legacy-en-create-android), [cake-wallet-monero-legacy-en-create-ios](#wallet-cake-wallet-monero-legacy-en-create-ios), [cake-wallet-monero-legacy-en-create-linux](#wallet-cake-wallet-monero-legacy-en-create-linux), [cake-wallet-monero-legacy-en-create-macos](#wallet-cake-wallet-monero-legacy-en-create-macos), [cake-wallet-monero-legacy-en-import-android](#wallet-cake-wallet-monero-legacy-en-import-android), [cake-wallet-monero-legacy-en-import-ios](#wallet-cake-wallet-monero-legacy-en-import-ios), [cake-wallet-monero-legacy-en-import-linux](#wallet-cake-wallet-monero-legacy-en-import-linux), [cake-wallet-monero-legacy-en-import-macos](#wallet-cake-wallet-monero-legacy-en-import-macos), [cake-wallet-monero-legacy-es-create-android](#wallet-cake-wallet-monero-legacy-es-create-android), [cake-wallet-monero-legacy-es-create-ios](#wallet-cake-wallet-monero-legacy-es-create-ios), [cake-wallet-monero-legacy-es-create-linux](#wallet-cake-wallet-monero-legacy-es-create-linux), [cake-wallet-monero-legacy-es-create-macos](#wallet-cake-wallet-monero-legacy-es-create-macos), [cake-wallet-monero-legacy-es-import-android](#wallet-cake-wallet-monero-legacy-es-import-android), [cake-wallet-monero-legacy-es-import-ios](#wallet-cake-wallet-monero-legacy-es-import-ios), [cake-wallet-monero-legacy-es-import-linux](#wallet-cake-wallet-monero-legacy-es-import-linux), [cake-wallet-monero-legacy-es-import-macos](#wallet-cake-wallet-monero-legacy-es-import-macos), [cake-wallet-monero-legacy-fr-create-android](#wallet-cake-wallet-monero-legacy-fr-create-android), [cake-wallet-monero-legacy-fr-create-ios](#wallet-cake-wallet-monero-legacy-fr-create-ios), [cake-wallet-monero-legacy-fr-create-linux](#wallet-cake-wallet-monero-legacy-fr-create-linux), [cake-wallet-monero-legacy-fr-create-macos](#wallet-cake-wallet-monero-legacy-fr-create-macos), [cake-wallet-monero-legacy-fr-import-android](#wallet-cake-wallet-monero-legacy-fr-import-android), [cake-wallet-monero-legacy-fr-import-ios](#wallet-cake-wallet-monero-legacy-fr-import-ios), [cake-wallet-monero-legacy-fr-import-linux](#wallet-cake-wallet-monero-legacy-fr-import-linux), [cake-wallet-monero-legacy-fr-import-macos](#wallet-cake-wallet-monero-legacy-fr-import-macos), [cake-wallet-monero-legacy-import-android](#wallet-cake-wallet-monero-legacy-import-android), [cake-wallet-monero-legacy-import-ios](#wallet-cake-wallet-monero-legacy-import-ios), [cake-wallet-monero-legacy-import-linux](#wallet-cake-wallet-monero-legacy-import-linux), [cake-wallet-monero-legacy-import-macos](#wallet-cake-wallet-monero-legacy-import-macos), [cake-wallet-monero-legacy-it-create-android](#wallet-cake-wallet-monero-legacy-it-create-android), [cake-wallet-monero-legacy-it-create-ios](#wallet-cake-wallet-monero-legacy-it-create-ios), [cake-wallet-monero-legacy-it-create-linux](#wallet-cake-wallet-monero-legacy-it-create-linux), [cake-wallet-monero-legacy-it-create-macos](#wallet-cake-wallet-monero-legacy-it-create-macos), [cake-wallet-monero-legacy-it-import-android](#wallet-cake-wallet-monero-legacy-it-import-android), [cake-wallet-monero-legacy-it-import-ios](#wallet-cake-wallet-monero-legacy-it-import-ios), [cake-wallet-monero-legacy-it-import-linux](#wallet-cake-wallet-monero-legacy-it-import-linux), [cake-wallet-monero-legacy-it-import-macos](#wallet-cake-wallet-monero-legacy-it-import-macos), [cake-wallet-monero-legacy-ja-create-android](#wallet-cake-wallet-monero-legacy-ja-create-android), [cake-wallet-monero-legacy-ja-create-ios](#wallet-cake-wallet-monero-legacy-ja-create-ios), [cake-wallet-monero-legacy-ja-create-linux](#wallet-cake-wallet-monero-legacy-ja-create-linux), [cake-wallet-monero-legacy-ja-create-macos](#wallet-cake-wallet-monero-legacy-ja-create-macos), [cake-wallet-monero-legacy-ja-import-android](#wallet-cake-wallet-monero-legacy-ja-import-android), [cake-wallet-monero-legacy-ja-import-ios](#wallet-cake-wallet-monero-legacy-ja-import-ios), [cake-wallet-monero-legacy-ja-import-linux](#wallet-cake-wallet-monero-legacy-ja-import-linux), [cake-wallet-monero-legacy-ja-import-macos](#wallet-cake-wallet-monero-legacy-ja-import-macos), [cake-wallet-monero-legacy-nl-create-android](#wallet-cake-wallet-monero-legacy-nl-create-android), [cake-wallet-monero-legacy-nl-create-ios](#wallet-cake-wallet-monero-legacy-nl-create-ios), [cake-wallet-monero-legacy-nl-create-linux](#wallet-cake-wallet-monero-legacy-nl-create-linux), [cake-wallet-monero-legacy-nl-create-macos](#wallet-cake-wallet-monero-legacy-nl-create-macos), [cake-wallet-monero-legacy-nl-import-android](#wallet-cake-wallet-monero-legacy-nl-import-android), [cake-wallet-monero-legacy-nl-import-ios](#wallet-cake-wallet-monero-legacy-nl-import-ios), [cake-wallet-monero-legacy-nl-import-linux](#wallet-cake-wallet-monero-legacy-nl-import-linux), [cake-wallet-monero-legacy-nl-import-macos](#wallet-cake-wallet-monero-legacy-nl-import-macos), [cake-wallet-monero-legacy-pt-create-android](#wallet-cake-wallet-monero-legacy-pt-create-android), [cake-wallet-monero-legacy-pt-create-ios](#wallet-cake-wallet-monero-legacy-pt-create-ios), [cake-wallet-monero-legacy-pt-create-linux](#wallet-cake-wallet-monero-legacy-pt-create-linux), [cake-wallet-monero-legacy-pt-create-macos](#wallet-cake-wallet-monero-legacy-pt-create-macos), [cake-wallet-monero-legacy-pt-import-android](#wallet-cake-wallet-monero-legacy-pt-import-android), [cake-wallet-monero-legacy-pt-import-ios](#wallet-cake-wallet-monero-legacy-pt-import-ios), [cake-wallet-monero-legacy-pt-import-linux](#wallet-cake-wallet-monero-legacy-pt-import-linux), [cake-wallet-monero-legacy-pt-import-macos](#wallet-cake-wallet-monero-legacy-pt-import-macos), [cake-wallet-monero-legacy-ru-create-android](#wallet-cake-wallet-monero-legacy-ru-create-android), [cake-wallet-monero-legacy-ru-create-ios](#wallet-cake-wallet-monero-legacy-ru-create-ios), [cake-wallet-monero-legacy-ru-create-linux](#wallet-cake-wallet-monero-legacy-ru-create-linux), [cake-wallet-monero-legacy-ru-create-macos](#wallet-cake-wallet-monero-legacy-ru-create-macos), [cake-wallet-monero-legacy-ru-import-android](#wallet-cake-wallet-monero-legacy-ru-import-android), [cake-wallet-monero-legacy-ru-import-ios](#wallet-cake-wallet-monero-legacy-ru-import-ios), [cake-wallet-monero-legacy-ru-import-linux](#wallet-cake-wallet-monero-legacy-ru-import-linux), [cake-wallet-monero-legacy-ru-import-macos](#wallet-cake-wallet-monero-legacy-ru-import-macos), [cake-wallet-monero-legacy-zh-hans-create-android](#wallet-cake-wallet-monero-legacy-zh-hans-create-android), [cake-wallet-monero-legacy-zh-hans-create-ios](#wallet-cake-wallet-monero-legacy-zh-hans-create-ios), [cake-wallet-monero-legacy-zh-hans-create-linux](#wallet-cake-wallet-monero-legacy-zh-hans-create-linux), [cake-wallet-monero-legacy-zh-hans-create-macos](#wallet-cake-wallet-monero-legacy-zh-hans-create-macos), [cake-wallet-monero-legacy-zh-hans-import-android](#wallet-cake-wallet-monero-legacy-zh-hans-import-android), [cake-wallet-monero-legacy-zh-hans-import-ios](#wallet-cake-wallet-monero-legacy-zh-hans-import-ios), [cake-wallet-monero-legacy-zh-hans-import-linux](#wallet-cake-wallet-monero-legacy-zh-hans-import-linux), [cake-wallet-monero-legacy-zh-hans-import-macos](#wallet-cake-wallet-monero-legacy-zh-hans-import-macos), [cake-wallet-monero-polyseed-create-ios](#wallet-cake-wallet-monero-polyseed-create-ios), [cake-wallet-monero-polyseed-create-linux](#wallet-cake-wallet-monero-polyseed-create-linux), [cake-wallet-monero-polyseed-create-macos](#wallet-cake-wallet-monero-polyseed-create-macos), [cake-wallet-monero-polyseed-cs-create-android](#wallet-cake-wallet-monero-polyseed-cs-create-android), [cake-wallet-monero-polyseed-cs-create-ios](#wallet-cake-wallet-monero-polyseed-cs-create-ios), [cake-wallet-monero-polyseed-cs-create-linux](#wallet-cake-wallet-monero-polyseed-cs-create-linux), [cake-wallet-monero-polyseed-cs-create-macos](#wallet-cake-wallet-monero-polyseed-cs-create-macos), [cake-wallet-monero-polyseed-cs-import-android](#wallet-cake-wallet-monero-polyseed-cs-import-android), [cake-wallet-monero-polyseed-cs-import-ios](#wallet-cake-wallet-monero-polyseed-cs-import-ios), [cake-wallet-monero-polyseed-cs-import-linux](#wallet-cake-wallet-monero-polyseed-cs-import-linux), [cake-wallet-monero-polyseed-cs-import-macos](#wallet-cake-wallet-monero-polyseed-cs-import-macos), [cake-wallet-monero-polyseed-en-create-android](#wallet-cake-wallet-monero-polyseed-en-create-android), [cake-wallet-monero-polyseed-en-create-ios](#wallet-cake-wallet-monero-polyseed-en-create-ios), [cake-wallet-monero-polyseed-en-create-linux](#wallet-cake-wallet-monero-polyseed-en-create-linux), [cake-wallet-monero-polyseed-en-create-macos](#wallet-cake-wallet-monero-polyseed-en-create-macos), [cake-wallet-monero-polyseed-en-import-android](#wallet-cake-wallet-monero-polyseed-en-import-android), [cake-wallet-monero-polyseed-en-import-ios](#wallet-cake-wallet-monero-polyseed-en-import-ios), [cake-wallet-monero-polyseed-en-import-linux](#wallet-cake-wallet-monero-polyseed-en-import-linux), [cake-wallet-monero-polyseed-en-import-macos](#wallet-cake-wallet-monero-polyseed-en-import-macos), [cake-wallet-monero-polyseed-es-create-android](#wallet-cake-wallet-monero-polyseed-es-create-android), [cake-wallet-monero-polyseed-es-create-ios](#wallet-cake-wallet-monero-polyseed-es-create-ios), [cake-wallet-monero-polyseed-es-create-linux](#wallet-cake-wallet-monero-polyseed-es-create-linux), [cake-wallet-monero-polyseed-es-create-macos](#wallet-cake-wallet-monero-polyseed-es-create-macos), [cake-wallet-monero-polyseed-es-import-android](#wallet-cake-wallet-monero-polyseed-es-import-android), [cake-wallet-monero-polyseed-es-import-ios](#wallet-cake-wallet-monero-polyseed-es-import-ios), [cake-wallet-monero-polyseed-es-import-linux](#wallet-cake-wallet-monero-polyseed-es-import-linux), [cake-wallet-monero-polyseed-es-import-macos](#wallet-cake-wallet-monero-polyseed-es-import-macos), [cake-wallet-monero-polyseed-fr-create-android](#wallet-cake-wallet-monero-polyseed-fr-create-android), [cake-wallet-monero-polyseed-fr-create-ios](#wallet-cake-wallet-monero-polyseed-fr-create-ios), [cake-wallet-monero-polyseed-fr-create-linux](#wallet-cake-wallet-monero-polyseed-fr-create-linux), [cake-wallet-monero-polyseed-fr-create-macos](#wallet-cake-wallet-monero-polyseed-fr-create-macos), [cake-wallet-monero-polyseed-fr-import-android](#wallet-cake-wallet-monero-polyseed-fr-import-android), [cake-wallet-monero-polyseed-fr-import-ios](#wallet-cake-wallet-monero-polyseed-fr-import-ios), [cake-wallet-monero-polyseed-fr-import-linux](#wallet-cake-wallet-monero-polyseed-fr-import-linux), [cake-wallet-monero-polyseed-fr-import-macos](#wallet-cake-wallet-monero-polyseed-fr-import-macos), [cake-wallet-monero-polyseed-import-android](#wallet-cake-wallet-monero-polyseed-import-android), [cake-wallet-monero-polyseed-import-ios](#wallet-cake-wallet-monero-polyseed-import-ios), [cake-wallet-monero-polyseed-import-linux](#wallet-cake-wallet-monero-polyseed-import-linux), [cake-wallet-monero-polyseed-import-macos](#wallet-cake-wallet-monero-polyseed-import-macos), [cake-wallet-monero-polyseed-it-create-android](#wallet-cake-wallet-monero-polyseed-it-create-android), [cake-wallet-monero-polyseed-it-create-ios](#wallet-cake-wallet-monero-polyseed-it-create-ios), [cake-wallet-monero-polyseed-it-create-linux](#wallet-cake-wallet-monero-polyseed-it-create-linux), [cake-wallet-monero-polyseed-it-create-macos](#wallet-cake-wallet-monero-polyseed-it-create-macos), [cake-wallet-monero-polyseed-it-import-android](#wallet-cake-wallet-monero-polyseed-it-import-android), [cake-wallet-monero-polyseed-it-import-ios](#wallet-cake-wallet-monero-polyseed-it-import-ios), [cake-wallet-monero-polyseed-it-import-linux](#wallet-cake-wallet-monero-polyseed-it-import-linux), [cake-wallet-monero-polyseed-it-import-macos](#wallet-cake-wallet-monero-polyseed-it-import-macos), [cake-wallet-monero-polyseed-ja-create-android](#wallet-cake-wallet-monero-polyseed-ja-create-android), [cake-wallet-monero-polyseed-ja-create-ios](#wallet-cake-wallet-monero-polyseed-ja-create-ios), [cake-wallet-monero-polyseed-ja-create-linux](#wallet-cake-wallet-monero-polyseed-ja-create-linux), [cake-wallet-monero-polyseed-ja-create-macos](#wallet-cake-wallet-monero-polyseed-ja-create-macos), [cake-wallet-monero-polyseed-ja-import-android](#wallet-cake-wallet-monero-polyseed-ja-import-android), [cake-wallet-monero-polyseed-ja-import-ios](#wallet-cake-wallet-monero-polyseed-ja-import-ios), [cake-wallet-monero-polyseed-ja-import-linux](#wallet-cake-wallet-monero-polyseed-ja-import-linux), [cake-wallet-monero-polyseed-ja-import-macos](#wallet-cake-wallet-monero-polyseed-ja-import-macos), [cake-wallet-monero-polyseed-ko-create-android](#wallet-cake-wallet-monero-polyseed-ko-create-android), [cake-wallet-monero-polyseed-ko-create-ios](#wallet-cake-wallet-monero-polyseed-ko-create-ios), [cake-wallet-monero-polyseed-ko-create-linux](#wallet-cake-wallet-monero-polyseed-ko-create-linux), [cake-wallet-monero-polyseed-ko-create-macos](#wallet-cake-wallet-monero-polyseed-ko-create-macos), [cake-wallet-monero-polyseed-ko-import-android](#wallet-cake-wallet-monero-polyseed-ko-import-android), [cake-wallet-monero-polyseed-ko-import-ios](#wallet-cake-wallet-monero-polyseed-ko-import-ios), [cake-wallet-monero-polyseed-ko-import-linux](#wallet-cake-wallet-monero-polyseed-ko-import-linux), [cake-wallet-monero-polyseed-ko-import-macos](#wallet-cake-wallet-monero-polyseed-ko-import-macos), [cake-wallet-monero-polyseed-pt-create-android](#wallet-cake-wallet-monero-polyseed-pt-create-android), [cake-wallet-monero-polyseed-pt-create-ios](#wallet-cake-wallet-monero-polyseed-pt-create-ios), [cake-wallet-monero-polyseed-pt-create-linux](#wallet-cake-wallet-monero-polyseed-pt-create-linux), [cake-wallet-monero-polyseed-pt-create-macos](#wallet-cake-wallet-monero-polyseed-pt-create-macos), [cake-wallet-monero-polyseed-pt-import-android](#wallet-cake-wallet-monero-polyseed-pt-import-android), [cake-wallet-monero-polyseed-pt-import-ios](#wallet-cake-wallet-monero-polyseed-pt-import-ios), [cake-wallet-monero-polyseed-pt-import-linux](#wallet-cake-wallet-monero-polyseed-pt-import-linux), [cake-wallet-monero-polyseed-pt-import-macos](#wallet-cake-wallet-monero-polyseed-pt-import-macos), [cake-wallet-monero-polyseed-zh-hans-create-android](#wallet-cake-wallet-monero-polyseed-zh-hans-create-android), [cake-wallet-monero-polyseed-zh-hans-create-ios](#wallet-cake-wallet-monero-polyseed-zh-hans-create-ios), [cake-wallet-monero-polyseed-zh-hans-create-linux](#wallet-cake-wallet-monero-polyseed-zh-hans-create-linux), [cake-wallet-monero-polyseed-zh-hans-create-macos](#wallet-cake-wallet-monero-polyseed-zh-hans-create-macos), [cake-wallet-monero-polyseed-zh-hans-import-android](#wallet-cake-wallet-monero-polyseed-zh-hans-import-android), [cake-wallet-monero-polyseed-zh-hans-import-ios](#wallet-cake-wallet-monero-polyseed-zh-hans-import-ios), [cake-wallet-monero-polyseed-zh-hans-import-linux](#wallet-cake-wallet-monero-polyseed-zh-hans-import-linux), [cake-wallet-monero-polyseed-zh-hans-import-macos](#wallet-cake-wallet-monero-polyseed-zh-hans-import-macos), [cake-wallet-monero-polyseed-zh-hant-create-android](#wallet-cake-wallet-monero-polyseed-zh-hant-create-android), [cake-wallet-monero-polyseed-zh-hant-create-ios](#wallet-cake-wallet-monero-polyseed-zh-hant-create-ios), [cake-wallet-monero-polyseed-zh-hant-create-linux](#wallet-cake-wallet-monero-polyseed-zh-hant-create-linux), [cake-wallet-monero-polyseed-zh-hant-create-macos](#wallet-cake-wallet-monero-polyseed-zh-hant-create-macos), [cake-wallet-monero-polyseed-zh-hant-import-android](#wallet-cake-wallet-monero-polyseed-zh-hant-import-android), [cake-wallet-monero-polyseed-zh-hant-import-ios](#wallet-cake-wallet-monero-polyseed-zh-hant-import-ios), [cake-wallet-monero-polyseed-zh-hant-import-linux](#wallet-cake-wallet-monero-polyseed-zh-hant-import-linux), [cake-wallet-monero-polyseed-zh-hant-import-macos](#wallet-cake-wallet-monero-polyseed-zh-hant-import-macos), [cake-wallet-monero-view-only-android](#wallet-cake-wallet-monero-view-only-android), [cake-wallet-monero-view-only-ios](#wallet-cake-wallet-monero-view-only-ios), [cake-wallet-monero-view-only-linux](#wallet-cake-wallet-monero-view-only-linux), [cake-wallet-monero-view-only-macos](#wallet-cake-wallet-monero-view-only-macos), [exodus-monero-export](#wallet-exodus-monero-export), [feather](#wallet-feather), [feather-legacy-import](#wallet-feather-legacy-import), [feather-tevador-import](#wallet-feather-tevador-import), [monero-cli-polyseed](#wallet-monero-cli-polyseed), [monero-gui](#wallet-monero-gui), [monero-gui-cli](#wallet-monero-gui-cli), [mymonero](#wallet-mymonero), [mymonero-generated](#wallet-mymonero-generated), [network-guide-monero](#wallet-network-guide-monero)
+- monero: [cake-wallet-monero](#wallet-cake-wallet-monero), [cake-wallet-monero-bip39](#wallet-cake-wallet-monero-bip39), [cake-wallet-monero-bip39-create-ios](#wallet-cake-wallet-monero-bip39-create-ios), [cake-wallet-monero-bip39-create-linux](#wallet-cake-wallet-monero-bip39-create-linux), [cake-wallet-monero-bip39-create-macos](#wallet-cake-wallet-monero-bip39-create-macos), [cake-wallet-monero-bip39-group-android](#wallet-cake-wallet-monero-bip39-group-android), [cake-wallet-monero-bip39-group-ios](#wallet-cake-wallet-monero-bip39-group-ios), [cake-wallet-monero-bip39-group-linux](#wallet-cake-wallet-monero-bip39-group-linux), [cake-wallet-monero-bip39-group-macos](#wallet-cake-wallet-monero-bip39-group-macos), [cake-wallet-monero-bip39-import-android](#wallet-cake-wallet-monero-bip39-import-android), [cake-wallet-monero-bip39-import-ios](#wallet-cake-wallet-monero-bip39-import-ios), [cake-wallet-monero-bip39-import-linux](#wallet-cake-wallet-monero-bip39-import-linux), [cake-wallet-monero-bip39-import-macos](#wallet-cake-wallet-monero-bip39-import-macos), [cake-wallet-monero-hardware-android](#wallet-cake-wallet-monero-hardware-android), [cake-wallet-monero-hardware-ios](#wallet-cake-wallet-monero-hardware-ios), [cake-wallet-monero-hardware-linux](#wallet-cake-wallet-monero-hardware-linux), [cake-wallet-monero-hardware-macos](#wallet-cake-wallet-monero-hardware-macos), [cake-wallet-monero-keys-import-android](#wallet-cake-wallet-monero-keys-import-android), [cake-wallet-monero-keys-import-ios](#wallet-cake-wallet-monero-keys-import-ios), [cake-wallet-monero-keys-import-linux](#wallet-cake-wallet-monero-keys-import-linux), [cake-wallet-monero-keys-import-macos](#wallet-cake-wallet-monero-keys-import-macos), [cake-wallet-monero-legacy](#wallet-cake-wallet-monero-legacy), [cake-wallet-monero-legacy-create-ios](#wallet-cake-wallet-monero-legacy-create-ios), [cake-wallet-monero-legacy-create-linux](#wallet-cake-wallet-monero-legacy-create-linux), [cake-wallet-monero-legacy-create-macos](#wallet-cake-wallet-monero-legacy-create-macos), [cake-wallet-monero-legacy-de-create-android](#wallet-cake-wallet-monero-legacy-de-create-android), [cake-wallet-monero-legacy-de-create-ios](#wallet-cake-wallet-monero-legacy-de-create-ios), [cake-wallet-monero-legacy-de-create-linux](#wallet-cake-wallet-monero-legacy-de-create-linux), [cake-wallet-monero-legacy-de-create-macos](#wallet-cake-wallet-monero-legacy-de-create-macos), [cake-wallet-monero-legacy-de-import-android](#wallet-cake-wallet-monero-legacy-de-import-android), [cake-wallet-monero-legacy-de-import-ios](#wallet-cake-wallet-monero-legacy-de-import-ios), [cake-wallet-monero-legacy-de-import-linux](#wallet-cake-wallet-monero-legacy-de-import-linux), [cake-wallet-monero-legacy-de-import-macos](#wallet-cake-wallet-monero-legacy-de-import-macos), [cake-wallet-monero-legacy-en-create-android](#wallet-cake-wallet-monero-legacy-en-create-android), [cake-wallet-monero-legacy-en-create-ios](#wallet-cake-wallet-monero-legacy-en-create-ios), [cake-wallet-monero-legacy-en-create-linux](#wallet-cake-wallet-monero-legacy-en-create-linux), [cake-wallet-monero-legacy-en-create-macos](#wallet-cake-wallet-monero-legacy-en-create-macos), [cake-wallet-monero-legacy-en-import-android](#wallet-cake-wallet-monero-legacy-en-import-android), [cake-wallet-monero-legacy-en-import-ios](#wallet-cake-wallet-monero-legacy-en-import-ios), [cake-wallet-monero-legacy-en-import-linux](#wallet-cake-wallet-monero-legacy-en-import-linux), [cake-wallet-monero-legacy-en-import-macos](#wallet-cake-wallet-monero-legacy-en-import-macos), [cake-wallet-monero-legacy-es-create-android](#wallet-cake-wallet-monero-legacy-es-create-android), [cake-wallet-monero-legacy-es-create-ios](#wallet-cake-wallet-monero-legacy-es-create-ios), [cake-wallet-monero-legacy-es-create-linux](#wallet-cake-wallet-monero-legacy-es-create-linux), [cake-wallet-monero-legacy-es-create-macos](#wallet-cake-wallet-monero-legacy-es-create-macos), [cake-wallet-monero-legacy-es-import-android](#wallet-cake-wallet-monero-legacy-es-import-android), [cake-wallet-monero-legacy-es-import-ios](#wallet-cake-wallet-monero-legacy-es-import-ios), [cake-wallet-monero-legacy-es-import-linux](#wallet-cake-wallet-monero-legacy-es-import-linux), [cake-wallet-monero-legacy-es-import-macos](#wallet-cake-wallet-monero-legacy-es-import-macos), [cake-wallet-monero-legacy-fr-create-android](#wallet-cake-wallet-monero-legacy-fr-create-android), [cake-wallet-monero-legacy-fr-create-ios](#wallet-cake-wallet-monero-legacy-fr-create-ios), [cake-wallet-monero-legacy-fr-create-linux](#wallet-cake-wallet-monero-legacy-fr-create-linux), [cake-wallet-monero-legacy-fr-create-macos](#wallet-cake-wallet-monero-legacy-fr-create-macos), [cake-wallet-monero-legacy-fr-import-android](#wallet-cake-wallet-monero-legacy-fr-import-android), [cake-wallet-monero-legacy-fr-import-ios](#wallet-cake-wallet-monero-legacy-fr-import-ios), [cake-wallet-monero-legacy-fr-import-linux](#wallet-cake-wallet-monero-legacy-fr-import-linux), [cake-wallet-monero-legacy-fr-import-macos](#wallet-cake-wallet-monero-legacy-fr-import-macos), [cake-wallet-monero-legacy-import-android](#wallet-cake-wallet-monero-legacy-import-android), [cake-wallet-monero-legacy-import-ios](#wallet-cake-wallet-monero-legacy-import-ios), [cake-wallet-monero-legacy-import-linux](#wallet-cake-wallet-monero-legacy-import-linux), [cake-wallet-monero-legacy-import-macos](#wallet-cake-wallet-monero-legacy-import-macos), [cake-wallet-monero-legacy-it-create-android](#wallet-cake-wallet-monero-legacy-it-create-android), [cake-wallet-monero-legacy-it-create-ios](#wallet-cake-wallet-monero-legacy-it-create-ios), [cake-wallet-monero-legacy-it-create-linux](#wallet-cake-wallet-monero-legacy-it-create-linux), [cake-wallet-monero-legacy-it-create-macos](#wallet-cake-wallet-monero-legacy-it-create-macos), [cake-wallet-monero-legacy-it-import-android](#wallet-cake-wallet-monero-legacy-it-import-android), [cake-wallet-monero-legacy-it-import-ios](#wallet-cake-wallet-monero-legacy-it-import-ios), [cake-wallet-monero-legacy-it-import-linux](#wallet-cake-wallet-monero-legacy-it-import-linux), [cake-wallet-monero-legacy-it-import-macos](#wallet-cake-wallet-monero-legacy-it-import-macos), [cake-wallet-monero-legacy-ja-create-android](#wallet-cake-wallet-monero-legacy-ja-create-android), [cake-wallet-monero-legacy-ja-create-ios](#wallet-cake-wallet-monero-legacy-ja-create-ios), [cake-wallet-monero-legacy-ja-create-linux](#wallet-cake-wallet-monero-legacy-ja-create-linux), [cake-wallet-monero-legacy-ja-create-macos](#wallet-cake-wallet-monero-legacy-ja-create-macos), [cake-wallet-monero-legacy-ja-import-android](#wallet-cake-wallet-monero-legacy-ja-import-android), [cake-wallet-monero-legacy-ja-import-ios](#wallet-cake-wallet-monero-legacy-ja-import-ios), [cake-wallet-monero-legacy-ja-import-linux](#wallet-cake-wallet-monero-legacy-ja-import-linux), [cake-wallet-monero-legacy-ja-import-macos](#wallet-cake-wallet-monero-legacy-ja-import-macos), [cake-wallet-monero-legacy-nl-create-android](#wallet-cake-wallet-monero-legacy-nl-create-android), [cake-wallet-monero-legacy-nl-create-ios](#wallet-cake-wallet-monero-legacy-nl-create-ios), [cake-wallet-monero-legacy-nl-create-linux](#wallet-cake-wallet-monero-legacy-nl-create-linux), [cake-wallet-monero-legacy-nl-create-macos](#wallet-cake-wallet-monero-legacy-nl-create-macos), [cake-wallet-monero-legacy-nl-import-android](#wallet-cake-wallet-monero-legacy-nl-import-android), [cake-wallet-monero-legacy-nl-import-ios](#wallet-cake-wallet-monero-legacy-nl-import-ios), [cake-wallet-monero-legacy-nl-import-linux](#wallet-cake-wallet-monero-legacy-nl-import-linux), [cake-wallet-monero-legacy-nl-import-macos](#wallet-cake-wallet-monero-legacy-nl-import-macos), [cake-wallet-monero-legacy-pt-create-android](#wallet-cake-wallet-monero-legacy-pt-create-android), [cake-wallet-monero-legacy-pt-create-ios](#wallet-cake-wallet-monero-legacy-pt-create-ios), [cake-wallet-monero-legacy-pt-create-linux](#wallet-cake-wallet-monero-legacy-pt-create-linux), [cake-wallet-monero-legacy-pt-create-macos](#wallet-cake-wallet-monero-legacy-pt-create-macos), [cake-wallet-monero-legacy-pt-import-android](#wallet-cake-wallet-monero-legacy-pt-import-android), [cake-wallet-monero-legacy-pt-import-ios](#wallet-cake-wallet-monero-legacy-pt-import-ios), [cake-wallet-monero-legacy-pt-import-linux](#wallet-cake-wallet-monero-legacy-pt-import-linux), [cake-wallet-monero-legacy-pt-import-macos](#wallet-cake-wallet-monero-legacy-pt-import-macos), [cake-wallet-monero-legacy-ru-create-android](#wallet-cake-wallet-monero-legacy-ru-create-android), [cake-wallet-monero-legacy-ru-create-ios](#wallet-cake-wallet-monero-legacy-ru-create-ios), [cake-wallet-monero-legacy-ru-create-linux](#wallet-cake-wallet-monero-legacy-ru-create-linux), [cake-wallet-monero-legacy-ru-create-macos](#wallet-cake-wallet-monero-legacy-ru-create-macos), [cake-wallet-monero-legacy-ru-import-android](#wallet-cake-wallet-monero-legacy-ru-import-android), [cake-wallet-monero-legacy-ru-import-ios](#wallet-cake-wallet-monero-legacy-ru-import-ios), [cake-wallet-monero-legacy-ru-import-linux](#wallet-cake-wallet-monero-legacy-ru-import-linux), [cake-wallet-monero-legacy-ru-import-macos](#wallet-cake-wallet-monero-legacy-ru-import-macos), [cake-wallet-monero-legacy-zh-hans-create-android](#wallet-cake-wallet-monero-legacy-zh-hans-create-android), [cake-wallet-monero-legacy-zh-hans-create-ios](#wallet-cake-wallet-monero-legacy-zh-hans-create-ios), [cake-wallet-monero-legacy-zh-hans-create-linux](#wallet-cake-wallet-monero-legacy-zh-hans-create-linux), [cake-wallet-monero-legacy-zh-hans-create-macos](#wallet-cake-wallet-monero-legacy-zh-hans-create-macos), [cake-wallet-monero-legacy-zh-hans-import-android](#wallet-cake-wallet-monero-legacy-zh-hans-import-android), [cake-wallet-monero-legacy-zh-hans-import-ios](#wallet-cake-wallet-monero-legacy-zh-hans-import-ios), [cake-wallet-monero-legacy-zh-hans-import-linux](#wallet-cake-wallet-monero-legacy-zh-hans-import-linux), [cake-wallet-monero-legacy-zh-hans-import-macos](#wallet-cake-wallet-monero-legacy-zh-hans-import-macos), [cake-wallet-monero-polyseed-create-ios](#wallet-cake-wallet-monero-polyseed-create-ios), [cake-wallet-monero-polyseed-create-linux](#wallet-cake-wallet-monero-polyseed-create-linux), [cake-wallet-monero-polyseed-create-macos](#wallet-cake-wallet-monero-polyseed-create-macos), [cake-wallet-monero-polyseed-cs-create-android](#wallet-cake-wallet-monero-polyseed-cs-create-android), [cake-wallet-monero-polyseed-cs-create-ios](#wallet-cake-wallet-monero-polyseed-cs-create-ios), [cake-wallet-monero-polyseed-cs-create-linux](#wallet-cake-wallet-monero-polyseed-cs-create-linux), [cake-wallet-monero-polyseed-cs-create-macos](#wallet-cake-wallet-monero-polyseed-cs-create-macos), [cake-wallet-monero-polyseed-en-create-android](#wallet-cake-wallet-monero-polyseed-en-create-android), [cake-wallet-monero-polyseed-en-create-ios](#wallet-cake-wallet-monero-polyseed-en-create-ios), [cake-wallet-monero-polyseed-en-create-linux](#wallet-cake-wallet-monero-polyseed-en-create-linux), [cake-wallet-monero-polyseed-en-create-macos](#wallet-cake-wallet-monero-polyseed-en-create-macos), [cake-wallet-monero-polyseed-encrypted-cs-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-cs-import-android), [cake-wallet-monero-polyseed-encrypted-cs-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-cs-import-ios), [cake-wallet-monero-polyseed-encrypted-cs-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-cs-import-linux), [cake-wallet-monero-polyseed-encrypted-cs-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-cs-import-macos), [cake-wallet-monero-polyseed-encrypted-en-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-en-import-android), [cake-wallet-monero-polyseed-encrypted-en-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-en-import-ios), [cake-wallet-monero-polyseed-encrypted-en-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-en-import-linux), [cake-wallet-monero-polyseed-encrypted-en-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-en-import-macos), [cake-wallet-monero-polyseed-encrypted-es-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-es-import-android), [cake-wallet-monero-polyseed-encrypted-es-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-es-import-ios), [cake-wallet-monero-polyseed-encrypted-es-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-es-import-linux), [cake-wallet-monero-polyseed-encrypted-es-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-es-import-macos), [cake-wallet-monero-polyseed-encrypted-fr-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-fr-import-android), [cake-wallet-monero-polyseed-encrypted-fr-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-fr-import-ios), [cake-wallet-monero-polyseed-encrypted-fr-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-fr-import-linux), [cake-wallet-monero-polyseed-encrypted-fr-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-fr-import-macos), [cake-wallet-monero-polyseed-encrypted-it-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-it-import-android), [cake-wallet-monero-polyseed-encrypted-it-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-it-import-ios), [cake-wallet-monero-polyseed-encrypted-it-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-it-import-linux), [cake-wallet-monero-polyseed-encrypted-it-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-it-import-macos), [cake-wallet-monero-polyseed-encrypted-ja-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-ja-import-android), [cake-wallet-monero-polyseed-encrypted-ja-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-ja-import-ios), [cake-wallet-monero-polyseed-encrypted-ja-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-ja-import-linux), [cake-wallet-monero-polyseed-encrypted-ja-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-ja-import-macos), [cake-wallet-monero-polyseed-encrypted-ko-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-ko-import-android), [cake-wallet-monero-polyseed-encrypted-ko-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-ko-import-ios), [cake-wallet-monero-polyseed-encrypted-ko-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-ko-import-linux), [cake-wallet-monero-polyseed-encrypted-ko-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-ko-import-macos), [cake-wallet-monero-polyseed-encrypted-pt-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-pt-import-android), [cake-wallet-monero-polyseed-encrypted-pt-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-pt-import-ios), [cake-wallet-monero-polyseed-encrypted-pt-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-pt-import-linux), [cake-wallet-monero-polyseed-encrypted-pt-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-pt-import-macos), [cake-wallet-monero-polyseed-encrypted-zh-hans-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-android), [cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios), [cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux), [cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos), [cake-wallet-monero-polyseed-encrypted-zh-hant-import-android](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-android), [cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios), [cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux), [cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos](#wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos), [cake-wallet-monero-polyseed-es-create-android](#wallet-cake-wallet-monero-polyseed-es-create-android), [cake-wallet-monero-polyseed-es-create-ios](#wallet-cake-wallet-monero-polyseed-es-create-ios), [cake-wallet-monero-polyseed-es-create-linux](#wallet-cake-wallet-monero-polyseed-es-create-linux), [cake-wallet-monero-polyseed-es-create-macos](#wallet-cake-wallet-monero-polyseed-es-create-macos), [cake-wallet-monero-polyseed-fr-create-android](#wallet-cake-wallet-monero-polyseed-fr-create-android), [cake-wallet-monero-polyseed-fr-create-ios](#wallet-cake-wallet-monero-polyseed-fr-create-ios), [cake-wallet-monero-polyseed-fr-create-linux](#wallet-cake-wallet-monero-polyseed-fr-create-linux), [cake-wallet-monero-polyseed-fr-create-macos](#wallet-cake-wallet-monero-polyseed-fr-create-macos), [cake-wallet-monero-polyseed-it-create-android](#wallet-cake-wallet-monero-polyseed-it-create-android), [cake-wallet-monero-polyseed-it-create-ios](#wallet-cake-wallet-monero-polyseed-it-create-ios), [cake-wallet-monero-polyseed-it-create-linux](#wallet-cake-wallet-monero-polyseed-it-create-linux), [cake-wallet-monero-polyseed-it-create-macos](#wallet-cake-wallet-monero-polyseed-it-create-macos), [cake-wallet-monero-polyseed-ja-create-android](#wallet-cake-wallet-monero-polyseed-ja-create-android), [cake-wallet-monero-polyseed-ja-create-ios](#wallet-cake-wallet-monero-polyseed-ja-create-ios), [cake-wallet-monero-polyseed-ja-create-linux](#wallet-cake-wallet-monero-polyseed-ja-create-linux), [cake-wallet-monero-polyseed-ja-create-macos](#wallet-cake-wallet-monero-polyseed-ja-create-macos), [cake-wallet-monero-polyseed-ko-create-android](#wallet-cake-wallet-monero-polyseed-ko-create-android), [cake-wallet-monero-polyseed-ko-create-ios](#wallet-cake-wallet-monero-polyseed-ko-create-ios), [cake-wallet-monero-polyseed-ko-create-linux](#wallet-cake-wallet-monero-polyseed-ko-create-linux), [cake-wallet-monero-polyseed-ko-create-macos](#wallet-cake-wallet-monero-polyseed-ko-create-macos), [cake-wallet-monero-polyseed-offset-cs-import-android](#wallet-cake-wallet-monero-polyseed-offset-cs-import-android), [cake-wallet-monero-polyseed-offset-cs-import-ios](#wallet-cake-wallet-monero-polyseed-offset-cs-import-ios), [cake-wallet-monero-polyseed-offset-cs-import-linux](#wallet-cake-wallet-monero-polyseed-offset-cs-import-linux), [cake-wallet-monero-polyseed-offset-cs-import-macos](#wallet-cake-wallet-monero-polyseed-offset-cs-import-macos), [cake-wallet-monero-polyseed-offset-en-import-android](#wallet-cake-wallet-monero-polyseed-offset-en-import-android), [cake-wallet-monero-polyseed-offset-en-import-ios](#wallet-cake-wallet-monero-polyseed-offset-en-import-ios), [cake-wallet-monero-polyseed-offset-en-import-linux](#wallet-cake-wallet-monero-polyseed-offset-en-import-linux), [cake-wallet-monero-polyseed-offset-en-import-macos](#wallet-cake-wallet-monero-polyseed-offset-en-import-macos), [cake-wallet-monero-polyseed-offset-es-import-android](#wallet-cake-wallet-monero-polyseed-offset-es-import-android), [cake-wallet-monero-polyseed-offset-es-import-ios](#wallet-cake-wallet-monero-polyseed-offset-es-import-ios), [cake-wallet-monero-polyseed-offset-es-import-linux](#wallet-cake-wallet-monero-polyseed-offset-es-import-linux), [cake-wallet-monero-polyseed-offset-es-import-macos](#wallet-cake-wallet-monero-polyseed-offset-es-import-macos), [cake-wallet-monero-polyseed-offset-fr-import-android](#wallet-cake-wallet-monero-polyseed-offset-fr-import-android), [cake-wallet-monero-polyseed-offset-fr-import-ios](#wallet-cake-wallet-monero-polyseed-offset-fr-import-ios), [cake-wallet-monero-polyseed-offset-fr-import-linux](#wallet-cake-wallet-monero-polyseed-offset-fr-import-linux), [cake-wallet-monero-polyseed-offset-fr-import-macos](#wallet-cake-wallet-monero-polyseed-offset-fr-import-macos), [cake-wallet-monero-polyseed-offset-it-import-android](#wallet-cake-wallet-monero-polyseed-offset-it-import-android), [cake-wallet-monero-polyseed-offset-it-import-ios](#wallet-cake-wallet-monero-polyseed-offset-it-import-ios), [cake-wallet-monero-polyseed-offset-it-import-linux](#wallet-cake-wallet-monero-polyseed-offset-it-import-linux), [cake-wallet-monero-polyseed-offset-it-import-macos](#wallet-cake-wallet-monero-polyseed-offset-it-import-macos), [cake-wallet-monero-polyseed-offset-ja-import-android](#wallet-cake-wallet-monero-polyseed-offset-ja-import-android), [cake-wallet-monero-polyseed-offset-ja-import-ios](#wallet-cake-wallet-monero-polyseed-offset-ja-import-ios), [cake-wallet-monero-polyseed-offset-ja-import-linux](#wallet-cake-wallet-monero-polyseed-offset-ja-import-linux), [cake-wallet-monero-polyseed-offset-ja-import-macos](#wallet-cake-wallet-monero-polyseed-offset-ja-import-macos), [cake-wallet-monero-polyseed-offset-ko-import-android](#wallet-cake-wallet-monero-polyseed-offset-ko-import-android), [cake-wallet-monero-polyseed-offset-ko-import-ios](#wallet-cake-wallet-monero-polyseed-offset-ko-import-ios), [cake-wallet-monero-polyseed-offset-ko-import-linux](#wallet-cake-wallet-monero-polyseed-offset-ko-import-linux), [cake-wallet-monero-polyseed-offset-ko-import-macos](#wallet-cake-wallet-monero-polyseed-offset-ko-import-macos), [cake-wallet-monero-polyseed-offset-pt-import-android](#wallet-cake-wallet-monero-polyseed-offset-pt-import-android), [cake-wallet-monero-polyseed-offset-pt-import-ios](#wallet-cake-wallet-monero-polyseed-offset-pt-import-ios), [cake-wallet-monero-polyseed-offset-pt-import-linux](#wallet-cake-wallet-monero-polyseed-offset-pt-import-linux), [cake-wallet-monero-polyseed-offset-pt-import-macos](#wallet-cake-wallet-monero-polyseed-offset-pt-import-macos), [cake-wallet-monero-polyseed-offset-zh-hans-import-android](#wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-android), [cake-wallet-monero-polyseed-offset-zh-hans-import-ios](#wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-ios), [cake-wallet-monero-polyseed-offset-zh-hans-import-linux](#wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-linux), [cake-wallet-monero-polyseed-offset-zh-hans-import-macos](#wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-macos), [cake-wallet-monero-polyseed-offset-zh-hant-import-android](#wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-android), [cake-wallet-monero-polyseed-offset-zh-hant-import-ios](#wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-ios), [cake-wallet-monero-polyseed-offset-zh-hant-import-linux](#wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-linux), [cake-wallet-monero-polyseed-offset-zh-hant-import-macos](#wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-macos), [cake-wallet-monero-polyseed-plain-cs-import-android](#wallet-cake-wallet-monero-polyseed-plain-cs-import-android), [cake-wallet-monero-polyseed-plain-cs-import-ios](#wallet-cake-wallet-monero-polyseed-plain-cs-import-ios), [cake-wallet-monero-polyseed-plain-cs-import-linux](#wallet-cake-wallet-monero-polyseed-plain-cs-import-linux), [cake-wallet-monero-polyseed-plain-cs-import-macos](#wallet-cake-wallet-monero-polyseed-plain-cs-import-macos), [cake-wallet-monero-polyseed-plain-en-import-android](#wallet-cake-wallet-monero-polyseed-plain-en-import-android), [cake-wallet-monero-polyseed-plain-en-import-ios](#wallet-cake-wallet-monero-polyseed-plain-en-import-ios), [cake-wallet-monero-polyseed-plain-en-import-linux](#wallet-cake-wallet-monero-polyseed-plain-en-import-linux), [cake-wallet-monero-polyseed-plain-en-import-macos](#wallet-cake-wallet-monero-polyseed-plain-en-import-macos), [cake-wallet-monero-polyseed-plain-es-import-android](#wallet-cake-wallet-monero-polyseed-plain-es-import-android), [cake-wallet-monero-polyseed-plain-es-import-ios](#wallet-cake-wallet-monero-polyseed-plain-es-import-ios), [cake-wallet-monero-polyseed-plain-es-import-linux](#wallet-cake-wallet-monero-polyseed-plain-es-import-linux), [cake-wallet-monero-polyseed-plain-es-import-macos](#wallet-cake-wallet-monero-polyseed-plain-es-import-macos), [cake-wallet-monero-polyseed-plain-fr-import-android](#wallet-cake-wallet-monero-polyseed-plain-fr-import-android), [cake-wallet-monero-polyseed-plain-fr-import-ios](#wallet-cake-wallet-monero-polyseed-plain-fr-import-ios), [cake-wallet-monero-polyseed-plain-fr-import-linux](#wallet-cake-wallet-monero-polyseed-plain-fr-import-linux), [cake-wallet-monero-polyseed-plain-fr-import-macos](#wallet-cake-wallet-monero-polyseed-plain-fr-import-macos), [cake-wallet-monero-polyseed-plain-it-import-android](#wallet-cake-wallet-monero-polyseed-plain-it-import-android), [cake-wallet-monero-polyseed-plain-it-import-ios](#wallet-cake-wallet-monero-polyseed-plain-it-import-ios), [cake-wallet-monero-polyseed-plain-it-import-linux](#wallet-cake-wallet-monero-polyseed-plain-it-import-linux), [cake-wallet-monero-polyseed-plain-it-import-macos](#wallet-cake-wallet-monero-polyseed-plain-it-import-macos), [cake-wallet-monero-polyseed-plain-ja-import-android](#wallet-cake-wallet-monero-polyseed-plain-ja-import-android), [cake-wallet-monero-polyseed-plain-ja-import-ios](#wallet-cake-wallet-monero-polyseed-plain-ja-import-ios), [cake-wallet-monero-polyseed-plain-ja-import-linux](#wallet-cake-wallet-monero-polyseed-plain-ja-import-linux), [cake-wallet-monero-polyseed-plain-ja-import-macos](#wallet-cake-wallet-monero-polyseed-plain-ja-import-macos), [cake-wallet-monero-polyseed-plain-ko-import-android](#wallet-cake-wallet-monero-polyseed-plain-ko-import-android), [cake-wallet-monero-polyseed-plain-ko-import-ios](#wallet-cake-wallet-monero-polyseed-plain-ko-import-ios), [cake-wallet-monero-polyseed-plain-ko-import-linux](#wallet-cake-wallet-monero-polyseed-plain-ko-import-linux), [cake-wallet-monero-polyseed-plain-ko-import-macos](#wallet-cake-wallet-monero-polyseed-plain-ko-import-macos), [cake-wallet-monero-polyseed-plain-pt-import-android](#wallet-cake-wallet-monero-polyseed-plain-pt-import-android), [cake-wallet-monero-polyseed-plain-pt-import-ios](#wallet-cake-wallet-monero-polyseed-plain-pt-import-ios), [cake-wallet-monero-polyseed-plain-pt-import-linux](#wallet-cake-wallet-monero-polyseed-plain-pt-import-linux), [cake-wallet-monero-polyseed-plain-pt-import-macos](#wallet-cake-wallet-monero-polyseed-plain-pt-import-macos), [cake-wallet-monero-polyseed-plain-zh-hans-import-android](#wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-android), [cake-wallet-monero-polyseed-plain-zh-hans-import-ios](#wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-ios), [cake-wallet-monero-polyseed-plain-zh-hans-import-linux](#wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-linux), [cake-wallet-monero-polyseed-plain-zh-hans-import-macos](#wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-macos), [cake-wallet-monero-polyseed-plain-zh-hant-import-android](#wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-android), [cake-wallet-monero-polyseed-plain-zh-hant-import-ios](#wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-ios), [cake-wallet-monero-polyseed-plain-zh-hant-import-linux](#wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-linux), [cake-wallet-monero-polyseed-plain-zh-hant-import-macos](#wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-macos), [cake-wallet-monero-polyseed-pt-create-android](#wallet-cake-wallet-monero-polyseed-pt-create-android), [cake-wallet-monero-polyseed-pt-create-ios](#wallet-cake-wallet-monero-polyseed-pt-create-ios), [cake-wallet-monero-polyseed-pt-create-linux](#wallet-cake-wallet-monero-polyseed-pt-create-linux), [cake-wallet-monero-polyseed-pt-create-macos](#wallet-cake-wallet-monero-polyseed-pt-create-macos), [cake-wallet-monero-polyseed-zh-hans-create-android](#wallet-cake-wallet-monero-polyseed-zh-hans-create-android), [cake-wallet-monero-polyseed-zh-hans-create-ios](#wallet-cake-wallet-monero-polyseed-zh-hans-create-ios), [cake-wallet-monero-polyseed-zh-hans-create-linux](#wallet-cake-wallet-monero-polyseed-zh-hans-create-linux), [cake-wallet-monero-polyseed-zh-hans-create-macos](#wallet-cake-wallet-monero-polyseed-zh-hans-create-macos), [cake-wallet-monero-polyseed-zh-hant-create-android](#wallet-cake-wallet-monero-polyseed-zh-hant-create-android), [cake-wallet-monero-polyseed-zh-hant-create-ios](#wallet-cake-wallet-monero-polyseed-zh-hant-create-ios), [cake-wallet-monero-polyseed-zh-hant-create-linux](#wallet-cake-wallet-monero-polyseed-zh-hant-create-linux), [cake-wallet-monero-polyseed-zh-hant-create-macos](#wallet-cake-wallet-monero-polyseed-zh-hant-create-macos), [cake-wallet-monero-view-only-android](#wallet-cake-wallet-monero-view-only-android), [cake-wallet-monero-view-only-ios](#wallet-cake-wallet-monero-view-only-ios), [cake-wallet-monero-view-only-linux](#wallet-cake-wallet-monero-view-only-linux), [cake-wallet-monero-view-only-macos](#wallet-cake-wallet-monero-view-only-macos), [exodus-monero-export](#wallet-exodus-monero-export), [feather](#wallet-feather), [feather-legacy-import](#wallet-feather-legacy-import), [feather-tevador-import](#wallet-feather-tevador-import), [monero-cli-polyseed](#wallet-monero-cli-polyseed), [monero-gui](#wallet-monero-gui), [monero-gui-cli](#wallet-monero-gui-cli), [mymonero](#wallet-mymonero), [mymonero-generated](#wallet-mymonero-generated), [network-guide-monero](#wallet-network-guide-monero)
 - multi-chain: [atomic-wallet](#wallet-atomic-wallet), [backpack](#wallet-backpack), [backpack-import](#wallet-backpack-import), [backpack-private-key](#wallet-backpack-private-key), [bitget-wallet](#wallet-bitget-wallet), [bitget-wallet-cloud-backup](#wallet-bitget-wallet-cloud-backup), [bitget-wallet-mpc](#wallet-bitget-wallet-mpc), [cake-wallet-app-backup-android](#wallet-cake-wallet-app-backup-android), [cake-wallet-app-backup-ios](#wallet-cake-wallet-app-backup-ios), [cake-wallet-app-backup-linux](#wallet-cake-wallet-app-backup-linux), [cake-wallet-app-backup-macos](#wallet-cake-wallet-app-backup-macos), [coinbase-wallet-cloud-backup](#wallet-coinbase-wallet-cloud-backup), [coinomi](#wallet-coinomi), [ellipal](#wallet-ellipal), [ellipal-import](#wallet-ellipal-import), [exodus](#wallet-exodus), [exodus-passkey](#wallet-exodus-passkey), [guarda](#wallet-guarda), [guarda-mnemonic-import](#wallet-guarda-mnemonic-import), [keystone](#wallet-keystone), [keystone-mnemonic-import](#wallet-keystone-mnemonic-import), [keystone-shamir](#wallet-keystone-shamir), [keystone-shamir-import](#wallet-keystone-shamir-import), [ledger](#wallet-ledger), [okx-wallet](#wallet-okx-wallet), [okx-wallet-cloud-backup](#wallet-okx-wallet-cloud-backup), [okx-wallet-mnemonic-import](#wallet-okx-wallet-mnemonic-import), [okx-wallet-mpc](#wallet-okx-wallet-mpc), [okx-wallet-private-key](#wallet-okx-wallet-private-key), [okx-wallet-social-login](#wallet-okx-wallet-social-login), [onekey](#wallet-onekey), [tangem-seed](#wallet-tangem-seed), [tangem-seed-import](#wallet-tangem-seed-import), [tangem-seedless](#wallet-tangem-seedless), [tokenpocket](#wallet-tokenpocket), [tokenpocket-import](#wallet-tokenpocket-import), [tokenpocket-private-key](#wallet-tokenpocket-private-key), [trezor-model-t](#wallet-trezor-model-t), [trezor-model-t-multi-share](#wallet-trezor-model-t-multi-share), [trezor-safe-3](#wallet-trezor-safe-3), [trezor-safe-3-multi-share](#wallet-trezor-safe-3-multi-share), [trezor-safe-5](#wallet-trezor-safe-5), [trezor-safe-5-multi-share](#wallet-trezor-safe-5-multi-share), [trezor-safe-7](#wallet-trezor-safe-7), [trezor-safe-7-multi-share](#wallet-trezor-safe-7-multi-share), [trust-wallet](#wallet-trust-wallet)
 - nano: [cake-wallet-nano-bip39-create-android](#wallet-cake-wallet-nano-bip39-create-android), [cake-wallet-nano-bip39-create-ios](#wallet-cake-wallet-nano-bip39-create-ios), [cake-wallet-nano-bip39-create-linux](#wallet-cake-wallet-nano-bip39-create-linux), [cake-wallet-nano-bip39-create-macos](#wallet-cake-wallet-nano-bip39-create-macos), [cake-wallet-nano-bip39-group-android](#wallet-cake-wallet-nano-bip39-group-android), [cake-wallet-nano-bip39-group-ios](#wallet-cake-wallet-nano-bip39-group-ios), [cake-wallet-nano-bip39-group-linux](#wallet-cake-wallet-nano-bip39-group-linux), [cake-wallet-nano-bip39-group-macos](#wallet-cake-wallet-nano-bip39-group-macos), [cake-wallet-nano-bip39-import-android](#wallet-cake-wallet-nano-bip39-import-android), [cake-wallet-nano-bip39-import-ios](#wallet-cake-wallet-nano-bip39-import-ios), [cake-wallet-nano-bip39-import-linux](#wallet-cake-wallet-nano-bip39-import-linux), [cake-wallet-nano-bip39-import-macos](#wallet-cake-wallet-nano-bip39-import-macos), [cake-wallet-nano-hex32-import-android](#wallet-cake-wallet-nano-hex32-import-android), [cake-wallet-nano-hex32-import-ios](#wallet-cake-wallet-nano-hex32-import-ios), [cake-wallet-nano-hex32-import-linux](#wallet-cake-wallet-nano-hex32-import-linux), [cake-wallet-nano-hex32-import-macos](#wallet-cake-wallet-nano-hex32-import-macos), [cake-wallet-nano-hex64-import-android](#wallet-cake-wallet-nano-hex64-import-android), [cake-wallet-nano-hex64-import-ios](#wallet-cake-wallet-nano-hex64-import-ios), [cake-wallet-nano-hex64-import-linux](#wallet-cake-wallet-nano-hex64-import-linux), [cake-wallet-nano-hex64-import-macos](#wallet-cake-wallet-nano-hex64-import-macos), [cake-wallet-nano-native-create-android](#wallet-cake-wallet-nano-native-create-android), [cake-wallet-nano-native-create-ios](#wallet-cake-wallet-nano-native-create-ios), [cake-wallet-nano-native-create-linux](#wallet-cake-wallet-nano-native-create-linux), [cake-wallet-nano-native-create-macos](#wallet-cake-wallet-nano-native-create-macos), [cake-wallet-nano-native-import-android](#wallet-cake-wallet-nano-native-import-android), [cake-wallet-nano-native-import-ios](#wallet-cake-wallet-nano-native-import-ios), [cake-wallet-nano-native-import-linux](#wallet-cake-wallet-nano-native-import-linux), [cake-wallet-nano-native-import-macos](#wallet-cake-wallet-nano-native-import-macos)
 - polkadot: [network-guide-polkadot](#wallet-network-guide-polkadot), [polkadot-js](#wallet-polkadot-js), [subwallet](#wallet-subwallet), [talisman](#wallet-talisman)
@@ -747,7 +830,7 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - tezos: [kukai](#wallet-kukai), [kukai-keystore](#wallet-kukai-keystore), [kukai-social-login](#wallet-kukai-social-login), [network-guide-tezos](#wallet-network-guide-tezos), [temple](#wallet-temple), [temple-cloud-backup](#wallet-temple-cloud-backup), [temple-import](#wallet-temple-import)
 - ton: [gram-wallet](#wallet-gram-wallet), [mytonwallet](#wallet-mytonwallet), [mytonwallet-native](#wallet-mytonwallet-native), [network-guide-ton](#wallet-network-guide-ton), [openmask](#wallet-openmask), [ton-space](#wallet-ton-space), [tonhub](#wallet-tonhub), [tonkeeper-classic](#wallet-tonkeeper-classic), [tonkeeper-multichain](#wallet-tonkeeper-multichain)
 - tron: [cake-wallet-tron-bip39-create-android](#wallet-cake-wallet-tron-bip39-create-android), [cake-wallet-tron-bip39-create-ios](#wallet-cake-wallet-tron-bip39-create-ios), [cake-wallet-tron-bip39-create-linux](#wallet-cake-wallet-tron-bip39-create-linux), [cake-wallet-tron-bip39-create-macos](#wallet-cake-wallet-tron-bip39-create-macos), [cake-wallet-tron-bip39-group-android](#wallet-cake-wallet-tron-bip39-group-android), [cake-wallet-tron-bip39-group-ios](#wallet-cake-wallet-tron-bip39-group-ios), [cake-wallet-tron-bip39-group-linux](#wallet-cake-wallet-tron-bip39-group-linux), [cake-wallet-tron-bip39-group-macos](#wallet-cake-wallet-tron-bip39-group-macos), [cake-wallet-tron-bip39-import-android](#wallet-cake-wallet-tron-bip39-import-android), [cake-wallet-tron-bip39-import-ios](#wallet-cake-wallet-tron-bip39-import-ios), [cake-wallet-tron-bip39-import-linux](#wallet-cake-wallet-tron-bip39-import-linux), [cake-wallet-tron-bip39-import-macos](#wallet-cake-wallet-tron-bip39-import-macos), [cake-wallet-tron-private-key-android](#wallet-cake-wallet-tron-private-key-android), [cake-wallet-tron-private-key-ios](#wallet-cake-wallet-tron-private-key-ios), [cake-wallet-tron-private-key-linux](#wallet-cake-wallet-tron-private-key-linux), [cake-wallet-tron-private-key-macos](#wallet-cake-wallet-tron-private-key-macos), [imtoken](#wallet-imtoken), [network-guide-tron](#wallet-network-guide-tron)
-- wownero: [cake-wallet-wownero-legacy25-export-android](#wallet-cake-wallet-wownero-legacy25-export-android), [cake-wallet-wownero-legacy25-export-ios](#wallet-cake-wallet-wownero-legacy25-export-ios), [cake-wallet-wownero-legacy25-export-linux](#wallet-cake-wallet-wownero-legacy25-export-linux), [cake-wallet-wownero-legacy25-export-macos](#wallet-cake-wallet-wownero-legacy25-export-macos), [cake-wallet-wownero-polyseed16-export-android](#wallet-cake-wallet-wownero-polyseed16-export-android), [cake-wallet-wownero-polyseed16-export-ios](#wallet-cake-wallet-wownero-polyseed16-export-ios), [cake-wallet-wownero-polyseed16-export-linux](#wallet-cake-wallet-wownero-polyseed16-export-linux), [cake-wallet-wownero-polyseed16-export-macos](#wallet-cake-wallet-wownero-polyseed16-export-macos), [cake-wallet-wownero-tevador14-export-android](#wallet-cake-wallet-wownero-tevador14-export-android), [cake-wallet-wownero-tevador14-export-ios](#wallet-cake-wallet-wownero-tevador14-export-ios), [cake-wallet-wownero-tevador14-export-linux](#wallet-cake-wallet-wownero-tevador14-export-linux), [cake-wallet-wownero-tevador14-export-macos](#wallet-cake-wallet-wownero-tevador14-export-macos)
+- wownero: [cake-wallet-wownero-legacy14-export-android](#wallet-cake-wallet-wownero-legacy14-export-android), [cake-wallet-wownero-legacy14-export-ios](#wallet-cake-wallet-wownero-legacy14-export-ios), [cake-wallet-wownero-legacy14-export-linux](#wallet-cake-wallet-wownero-legacy14-export-linux), [cake-wallet-wownero-legacy14-export-macos](#wallet-cake-wallet-wownero-legacy14-export-macos), [cake-wallet-wownero-legacy25-export-android](#wallet-cake-wallet-wownero-legacy25-export-android), [cake-wallet-wownero-legacy25-export-ios](#wallet-cake-wallet-wownero-legacy25-export-ios), [cake-wallet-wownero-legacy25-export-linux](#wallet-cake-wallet-wownero-legacy25-export-linux), [cake-wallet-wownero-legacy25-export-macos](#wallet-cake-wallet-wownero-legacy25-export-macos), [cake-wallet-wownero-polyseed16-export-android](#wallet-cake-wallet-wownero-polyseed16-export-android), [cake-wallet-wownero-polyseed16-export-ios](#wallet-cake-wallet-wownero-polyseed16-export-ios), [cake-wallet-wownero-polyseed16-export-linux](#wallet-cake-wallet-wownero-polyseed16-export-linux), [cake-wallet-wownero-polyseed16-export-macos](#wallet-cake-wallet-wownero-polyseed16-export-macos)
 - zano: [cake-wallet-zano](#wallet-cake-wallet-zano), [cake-wallet-zano-bip39](#wallet-cake-wallet-zano-bip39), [cake-wallet-zano-bip39-create-ios](#wallet-cake-wallet-zano-bip39-create-ios), [cake-wallet-zano-bip39-group-android](#wallet-cake-wallet-zano-bip39-group-android), [cake-wallet-zano-bip39-group-ios](#wallet-cake-wallet-zano-bip39-group-ios), [cake-wallet-zano-bip39-import-android](#wallet-cake-wallet-zano-bip39-import-android), [cake-wallet-zano-bip39-import-ios](#wallet-cake-wallet-zano-bip39-import-ios), [cake-wallet-zano-native-import-ios](#wallet-cake-wallet-zano-native-import-ios), [cake-wallet-zano-unavailable-linux](#wallet-cake-wallet-zano-unavailable-linux), [cake-wallet-zano-unavailable-macos](#wallet-cake-wallet-zano-unavailable-macos), [network-guide-zano](#wallet-network-guide-zano), [zano-wallet](#wallet-zano-wallet), [zano-wallet-legacy25](#wallet-zano-wallet-legacy25)
 - zcash: [cake-wallet-zcash-bip39-create-android](#wallet-cake-wallet-zcash-bip39-create-android), [cake-wallet-zcash-bip39-create-ios](#wallet-cake-wallet-zcash-bip39-create-ios), [cake-wallet-zcash-bip39-group-android](#wallet-cake-wallet-zcash-bip39-group-android), [cake-wallet-zcash-bip39-group-ios](#wallet-cake-wallet-zcash-bip39-group-ios), [cake-wallet-zcash-bip39-import-android](#wallet-cake-wallet-zcash-bip39-import-android), [cake-wallet-zcash-bip39-import-ios](#wallet-cake-wallet-zcash-bip39-import-ios), [cake-wallet-zcash-private-key-android](#wallet-cake-wallet-zcash-private-key-android), [cake-wallet-zcash-private-key-ios](#wallet-cake-wallet-zcash-private-key-ios), [cake-wallet-zcash-unavailable-linux](#wallet-cake-wallet-zcash-unavailable-linux), [cake-wallet-zcash-unavailable-macos](#wallet-cake-wallet-zcash-unavailable-macos), [network-guide-zcash](#wallet-network-guide-zcash), [zallet](#wallet-zallet), [zcash-official](#wallet-zcash-official), [zcash-official-standalone](#wallet-zcash-official-standalone)
 
@@ -5768,7 +5851,9 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-create-ui](../catalog/evidence/cake-wallet-create-ui.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-android](../catalog/evidence/cake-wallet-version-android.json), [monero-cake-ui](../catalog/evidence/monero-cake-ui.json), [monero-cake-version](../catalog/evidence/monero-cake-version.json), [monero-cake-wallet-monero-bip39-wallet](../catalog/evidence/monero-cake-wallet-monero-bip39-wallet.json)
+- Evidence: [cake-wallet-bip39-code](../catalog/evidence/cake-wallet-bip39-code.json), [cake-wallet-bip39-list](../catalog/evidence/cake-wallet-bip39-list.json), [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-create-ui](../catalog/evidence/cake-wallet-create-ui.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-android](../catalog/evidence/cake-wallet-version-android.json), [monero-cake-ui](../catalog/evidence/monero-cake-ui.json), [monero-cake-version](../catalog/evidence/monero-cake-version.json), [monero-cake-wallet-monero-bip39-wallet](../catalog/evidence/monero-cake-wallet-monero-bip39-wallet.json)
+- Evidence claim: Locked dependency encodes English BIP39 entropy/checksum and accepts12/15/18/21/24 in its parser. Raw split ASCII space, case-sensitive lookup; no normalization here. Default RNG nextInt\(255\) excludes255; entropy security is not certified by format research.
+- Evidence claim: Literal English2048 order independently compared to existing bip39-en bytes; unchanged token projection SHA2562f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse vocabulary only, not Unicode/derivation semantics.
 - Evidence claim: Locked PBKDF2 source uses mnemonic.codeUnits, UTF8 mnemonic\+passphrase salt,2048 HMAC-SHA512 rounds without NFKD. English/ASCII agreement cannot establish arbitrary Unicode BIP39 compatibility. Nonselectable separate Cake scheme.
 - Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Creation passes stored12/24 setting for all current chains except Monero. Monero BIP39 fresh generation stays12; wallet-group input may reuse a longer phrase.
@@ -5780,112 +5865,12 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: Pinned android build version metadata. Android/iOS6.4.5, macOS6.4.4; Linux version recorded in batch note. Source identity remains the full commit, not all binaries of that version.
 - Evidence claim: Explicit legacy 25, Polyseed 16 \(default\), BIP39 12 mode labels. Reviewed 2026-09-29; response byte SHA-256 04848d36e285949e61e16b53c9cd9589d0896eaf3921575ea86fba983ad6d5fe. See docs/research/batches/monero-polyseed.md.
 - Evidence claim: Root version template 0.0.0 is not a released version; source SHA singleton only. Reviewed 2026-09-29; response byte SHA-256 bc50a0936bf299070e19fcd721af9d5c76f374da719d720cea8ff029f289a21b. See docs/research/batches/monero-polyseed.md.
-- Evidence claim: Distinct 12-word BIP39-derived mode exists in source; Monero derivation path/transform is not generic BIP39 wallet compatibility. Full mode research outside this three-scheme batch; leave unmapped and non-selectable, never substitute for Polyseed/legacy. Reviewed 2026-09-29; response byte SHA-256 18d553ebf4da1994bd39be740c417a8c708c5d54aff82d8c364fa4927cb8fd77. See docs/research/batches/monero-polyseed.md.
+- Evidence claim: Distinct 12-word BIP39-derived mode exists in source; Monero derivation path/transform is not generic BIP39 wallet compatibility. Task16 now binds the exact English12 source path to cake-monero-bip39-create; the older unmapped boundary is superseded, but support remains non-selectable and is never substituted for Polyseed/legacy. Reviewed 2026-09-29; response byte SHA-256 18d553ebf4da1994bd39be740c417a8c708c5d54aff82d8c364fa4927cb8fd77. See docs/research/batches/monero-polyseed.md.
 - Aliases: —
-- Scheme: —
+- Scheme: [cake-monero-bip39-create](#scheme-cake-monero-bip39-create)
 - Generates mnemonic / import only: true / false
-- Limitations: English fresh12; group/import accepts locked BIP39 lengths12/15/18/21/24. Path hardened 44, hardened 128, hardened account, then 0 and 0 then little-endian scalar reduction; missing NFKD means Unicode extension compatibility blocked. ; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: English12 fresh creation through getBip39Seed only. Imported/group phrases may have other lengths, but they use distinct non-generation profiles. Optional passphrase and Monero path/scalar conversion are bound to the exact blocked scheme; Unicode/native recovery remains unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website.
-
-<a id="wallet-cake-wallet-monero-bip39-12-create-android"></a>
-
-### Cake Wallet monero — bip39-12-create \(android\) — cake-wallet-monero-bip39-12-create-android
-
-- Source record: [cake-wallet-monero-bip39-12-create-android](../catalog/wallets/cake-wallet-monero-bip39-12-create-android.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-bip39-code](../catalog/evidence/cake-wallet-bip39-code.json), [cake-wallet-bip39-list](../catalog/evidence/cake-wallet-bip39-list.json), [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: Locked dependency encodes English BIP39 entropy/checksum and accepts12/15/18/21/24 in its parser. Raw split ASCII space, case-sensitive lookup; no normalization here. Default RNG nextInt\(255\) excludes255; entropy security is not certified by format research.
-- Evidence claim: Literal English2048 order independently compared to existing bip39-en bytes; unchanged token projection SHA2562f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse vocabulary only, not Unicode/derivation semantics.
-- Evidence claim: Locked PBKDF2 source uses mnemonic.codeUnits, UTF8 mnemonic\+passphrase salt,2048 HMAC-SHA512 rounds without NFKD. English/ASCII agreement cannot establish arbitrary Unicode BIP39 compatibility. Nonselectable separate Cake scheme.
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact locked source dependencies\: anicdh/bip39 3633daa2026b98c523ae9a091322be2903f7a8ab, nanoutil c01a9c552917008d8fbc6b540db657031625b04f, polyseed\_dart 1a8280ac2b6f01d202d8bff71527fe1ce498c4ed. A lock is not shipped-binary verification.
-- Evidence claim: Monero BIP39 generation defaults128bits/12 words; import accepts locked BIP39 validation lengths. Derives hardened 44, hardened 128, hardened account, then 0 and 0 then little-endian scalar reduction and English legacy conversion. Not an ordinary Monero legacy phrase or generic BIP39 wallet.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-bip39-create](#scheme-cake-monero-bip39-create)
-- Generates mnemonic / import only: true / false
-- Limitations: English12 fresh generation only. Existing generic BIP39 profile is retained as earlier research anchor, not an interchangeable scheme. Optional passphrase has unresolved Unicode compatibility.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-bip39-12-create-ios"></a>
-
-### Cake Wallet monero — bip39-12-create \(ios\) — cake-wallet-monero-bip39-12-create-ios
-
-- Source record: [cake-wallet-monero-bip39-12-create-ios](../catalog/wallets/cake-wallet-monero-bip39-12-create-ios.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-bip39-code](../catalog/evidence/cake-wallet-bip39-code.json), [cake-wallet-bip39-list](../catalog/evidence/cake-wallet-bip39-list.json), [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: Locked dependency encodes English BIP39 entropy/checksum and accepts12/15/18/21/24 in its parser. Raw split ASCII space, case-sensitive lookup; no normalization here. Default RNG nextInt\(255\) excludes255; entropy security is not certified by format research.
-- Evidence claim: Literal English2048 order independently compared to existing bip39-en bytes; unchanged token projection SHA2562f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse vocabulary only, not Unicode/derivation semantics.
-- Evidence claim: Locked PBKDF2 source uses mnemonic.codeUnits, UTF8 mnemonic\+passphrase salt,2048 HMAC-SHA512 rounds without NFKD. English/ASCII agreement cannot establish arbitrary Unicode BIP39 compatibility. Nonselectable separate Cake scheme.
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact locked source dependencies\: anicdh/bip39 3633daa2026b98c523ae9a091322be2903f7a8ab, nanoutil c01a9c552917008d8fbc6b540db657031625b04f, polyseed\_dart 1a8280ac2b6f01d202d8bff71527fe1ce498c4ed. A lock is not shipped-binary verification.
-- Evidence claim: Monero BIP39 generation defaults128bits/12 words; import accepts locked BIP39 validation lengths. Derives hardened 44, hardened 128, hardened account, then 0 and 0 then little-endian scalar reduction and English legacy conversion. Not an ordinary Monero legacy phrase or generic BIP39 wallet.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-bip39-create](#scheme-cake-monero-bip39-create)
-- Generates mnemonic / import only: true / false
-- Limitations: English12 fresh generation only. Existing generic BIP39 profile is retained as earlier research anchor, not an interchangeable scheme. Optional passphrase has unresolved Unicode compatibility.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-bip39-12-create-linux"></a>
-
-### Cake Wallet monero — bip39-12-create \(linux\) — cake-wallet-monero-bip39-12-create-linux
-
-- Source record: [cake-wallet-monero-bip39-12-create-linux](../catalog/wallets/cake-wallet-monero-bip39-12-create-linux.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-bip39-code](../catalog/evidence/cake-wallet-bip39-code.json), [cake-wallet-bip39-list](../catalog/evidence/cake-wallet-bip39-list.json), [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: Locked dependency encodes English BIP39 entropy/checksum and accepts12/15/18/21/24 in its parser. Raw split ASCII space, case-sensitive lookup; no normalization here. Default RNG nextInt\(255\) excludes255; entropy security is not certified by format research.
-- Evidence claim: Literal English2048 order independently compared to existing bip39-en bytes; unchanged token projection SHA2562f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse vocabulary only, not Unicode/derivation semantics.
-- Evidence claim: Locked PBKDF2 source uses mnemonic.codeUnits, UTF8 mnemonic\+passphrase salt,2048 HMAC-SHA512 rounds without NFKD. English/ASCII agreement cannot establish arbitrary Unicode BIP39 compatibility. Nonselectable separate Cake scheme.
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact locked source dependencies\: anicdh/bip39 3633daa2026b98c523ae9a091322be2903f7a8ab, nanoutil c01a9c552917008d8fbc6b540db657031625b04f, polyseed\_dart 1a8280ac2b6f01d202d8bff71527fe1ce498c4ed. A lock is not shipped-binary verification.
-- Evidence claim: Monero BIP39 generation defaults128bits/12 words; import accepts locked BIP39 validation lengths. Derives hardened 44, hardened 128, hardened account, then 0 and 0 then little-endian scalar reduction and English legacy conversion. Not an ordinary Monero legacy phrase or generic BIP39 wallet.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-bip39-create](#scheme-cake-monero-bip39-create)
-- Generates mnemonic / import only: true / false
-- Limitations: English12 fresh generation only. Existing generic BIP39 profile is retained as earlier research anchor, not an interchangeable scheme. Optional passphrase has unresolved Unicode compatibility.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-bip39-12-create-macos"></a>
-
-### Cake Wallet monero — bip39-12-create \(macos\) — cake-wallet-monero-bip39-12-create-macos
-
-- Source record: [cake-wallet-monero-bip39-12-create-macos](../catalog/wallets/cake-wallet-monero-bip39-12-create-macos.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-bip39-code](../catalog/evidence/cake-wallet-bip39-code.json), [cake-wallet-bip39-list](../catalog/evidence/cake-wallet-bip39-list.json), [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: Locked dependency encodes English BIP39 entropy/checksum and accepts12/15/18/21/24 in its parser. Raw split ASCII space, case-sensitive lookup; no normalization here. Default RNG nextInt\(255\) excludes255; entropy security is not certified by format research.
-- Evidence claim: Literal English2048 order independently compared to existing bip39-en bytes; unchanged token projection SHA2562f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse vocabulary only, not Unicode/derivation semantics.
-- Evidence claim: Locked PBKDF2 source uses mnemonic.codeUnits, UTF8 mnemonic\+passphrase salt,2048 HMAC-SHA512 rounds without NFKD. English/ASCII agreement cannot establish arbitrary Unicode BIP39 compatibility. Nonselectable separate Cake scheme.
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact locked source dependencies\: anicdh/bip39 3633daa2026b98c523ae9a091322be2903f7a8ab, nanoutil c01a9c552917008d8fbc6b540db657031625b04f, polyseed\_dart 1a8280ac2b6f01d202d8bff71527fe1ce498c4ed. A lock is not shipped-binary verification.
-- Evidence claim: Monero BIP39 generation defaults128bits/12 words; import accepts locked BIP39 validation lengths. Derives hardened 44, hardened 128, hardened account, then 0 and 0 then little-endian scalar reduction and English legacy conversion. Not an ordinary Monero legacy phrase or generic BIP39 wallet.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-bip39-create](#scheme-cake-monero-bip39-create)
-- Generates mnemonic / import only: true / false
-- Limitations: English12 fresh generation only. Existing generic BIP39 profile is retained as earlier research anchor, not an interchangeable scheme. Optional passphrase has unresolved Unicode compatibility.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
 <a id="wallet-cake-wallet-monero-bip39-create-ios"></a>
 
@@ -5898,7 +5883,9 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-create-ui](../catalog/evidence/cake-wallet-create-ui.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-ios](../catalog/evidence/cake-wallet-version-ios.json)
+- Evidence: [cake-wallet-bip39-code](../catalog/evidence/cake-wallet-bip39-code.json), [cake-wallet-bip39-list](../catalog/evidence/cake-wallet-bip39-list.json), [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-create-ui](../catalog/evidence/cake-wallet-create-ui.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-ios](../catalog/evidence/cake-wallet-version-ios.json)
+- Evidence claim: Locked dependency encodes English BIP39 entropy/checksum and accepts12/15/18/21/24 in its parser. Raw split ASCII space, case-sensitive lookup; no normalization here. Default RNG nextInt\(255\) excludes255; entropy security is not certified by format research.
+- Evidence claim: Literal English2048 order independently compared to existing bip39-en bytes; unchanged token projection SHA2562f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse vocabulary only, not Unicode/derivation semantics.
 - Evidence claim: Locked PBKDF2 source uses mnemonic.codeUnits, UTF8 mnemonic\+passphrase salt,2048 HMAC-SHA512 rounds without NFKD. English/ASCII agreement cannot establish arbitrary Unicode BIP39 compatibility. Nonselectable separate Cake scheme.
 - Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Creation passes stored12/24 setting for all current chains except Monero. Monero BIP39 fresh generation stays12; wallet-group input may reuse a longer phrase.
@@ -5909,9 +5896,9 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Evidence claim: Pinned ios build version metadata. Android/iOS6.4.5, macOS6.4.4; Linux version recorded in batch note. Source identity remains the full commit, not all binaries of that version.
 - Aliases: —
-- Scheme: —
+- Scheme: [cake-monero-bip39-create](#scheme-cake-monero-bip39-create)
 - Generates mnemonic / import only: true / false
-- Limitations: English fresh12; group/import accepts locked BIP39 lengths12/15/18/21/24. Path hardened 44, hardened 128, hardened account, then 0 and 0 then little-endian scalar reduction; missing NFKD means Unicode extension compatibility blocked. ; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: English12 fresh creation through getBip39Seed only. Imported/group phrases may have other lengths, but they use distinct non-generation profiles. Optional passphrase and Monero path/scalar conversion are bound to the exact blocked scheme; Unicode/native recovery remains unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
 <a id="wallet-cake-wallet-monero-bip39-create-linux"></a>
@@ -5925,7 +5912,9 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-create-ui](../catalog/evidence/cake-wallet-create-ui.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-linux](../catalog/evidence/cake-wallet-version-linux.json)
+- Evidence: [cake-wallet-bip39-code](../catalog/evidence/cake-wallet-bip39-code.json), [cake-wallet-bip39-list](../catalog/evidence/cake-wallet-bip39-list.json), [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-create-ui](../catalog/evidence/cake-wallet-create-ui.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-linux](../catalog/evidence/cake-wallet-version-linux.json)
+- Evidence claim: Locked dependency encodes English BIP39 entropy/checksum and accepts12/15/18/21/24 in its parser. Raw split ASCII space, case-sensitive lookup; no normalization here. Default RNG nextInt\(255\) excludes255; entropy security is not certified by format research.
+- Evidence claim: Literal English2048 order independently compared to existing bip39-en bytes; unchanged token projection SHA2562f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse vocabulary only, not Unicode/derivation semantics.
 - Evidence claim: Locked PBKDF2 source uses mnemonic.codeUnits, UTF8 mnemonic\+passphrase salt,2048 HMAC-SHA512 rounds without NFKD. English/ASCII agreement cannot establish arbitrary Unicode BIP39 compatibility. Nonselectable separate Cake scheme.
 - Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Creation passes stored12/24 setting for all current chains except Monero. Monero BIP39 fresh generation stays12; wallet-group input may reuse a longer phrase.
@@ -5936,9 +5925,9 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Evidence claim: Pinned linux build version metadata. Android/iOS6.4.5, macOS6.4.4; Linux version recorded in batch note. Source identity remains the full commit, not all binaries of that version.
 - Aliases: —
-- Scheme: —
+- Scheme: [cake-monero-bip39-create](#scheme-cake-monero-bip39-create)
 - Generates mnemonic / import only: true / false
-- Limitations: English fresh12; group/import accepts locked BIP39 lengths12/15/18/21/24. Path hardened 44, hardened 128, hardened account, then 0 and 0 then little-endian scalar reduction; missing NFKD means Unicode extension compatibility blocked. ; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: English12 fresh creation through getBip39Seed only. Imported/group phrases may have other lengths, but they use distinct non-generation profiles. Optional passphrase and Monero path/scalar conversion are bound to the exact blocked scheme; Unicode/native recovery remains unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
 <a id="wallet-cake-wallet-monero-bip39-create-macos"></a>
@@ -5952,7 +5941,9 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-create-ui](../catalog/evidence/cake-wallet-create-ui.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-macos](../catalog/evidence/cake-wallet-version-macos.json)
+- Evidence: [cake-wallet-bip39-code](../catalog/evidence/cake-wallet-bip39-code.json), [cake-wallet-bip39-list](../catalog/evidence/cake-wallet-bip39-list.json), [cake-wallet-bip39-pbkdf](../catalog/evidence/cake-wallet-bip39-pbkdf.json), [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-create-ui](../catalog/evidence/cake-wallet-create-ui.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-lock](../catalog/evidence/cake-wallet-lock.json), [cake-wallet-monero-bip39-derive](../catalog/evidence/cake-wallet-monero-bip39-derive.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-macos](../catalog/evidence/cake-wallet-version-macos.json)
+- Evidence claim: Locked dependency encodes English BIP39 entropy/checksum and accepts12/15/18/21/24 in its parser. Raw split ASCII space, case-sensitive lookup; no normalization here. Default RNG nextInt\(255\) excludes255; entropy security is not certified by format research.
+- Evidence claim: Literal English2048 order independently compared to existing bip39-en bytes; unchanged token projection SHA2562f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse vocabulary only, not Unicode/derivation semantics.
 - Evidence claim: Locked PBKDF2 source uses mnemonic.codeUnits, UTF8 mnemonic\+passphrase salt,2048 HMAC-SHA512 rounds without NFKD. English/ASCII agreement cannot establish arbitrary Unicode BIP39 compatibility. Nonselectable separate Cake scheme.
 - Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Creation passes stored12/24 setting for all current chains except Monero. Monero BIP39 fresh generation stays12; wallet-group input may reuse a longer phrase.
@@ -5963,9 +5954,9 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Evidence claim: Pinned macos build version metadata. Android/iOS6.4.5, macOS6.4.4; Linux version recorded in batch note. Source identity remains the full commit, not all binaries of that version.
 - Aliases: —
-- Scheme: —
+- Scheme: [cake-monero-bip39-create](#scheme-cake-monero-bip39-create)
 - Generates mnemonic / import only: true / false
-- Limitations: English fresh12; group/import accepts locked BIP39 lengths12/15/18/21/24. Path hardened 44, hardened 128, hardened account, then 0 and 0 then little-endian scalar reduction; missing NFKD means Unicode extension compatibility blocked. ; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: English12 fresh creation through getBip39Seed only. Imported/group phrases may have other lengths, but they use distinct non-generation profiles. Optional passphrase and Monero path/scalar conversion are bound to the exact blocked scheme; Unicode/native recovery remains unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
 <a id="wallet-cake-wallet-monero-bip39-group-android"></a>
@@ -8413,90 +8404,6 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Explicit cs list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-cs-import-android"></a>
-
-### Cake Wallet monero — polyseed-cs-import \(android\) — cake-wallet-monero-polyseed-cs-import-android
-
-- Source record: [cake-wallet-monero-polyseed-cs-import-android](../catalog/wallets/cake-wallet-monero-polyseed-cs-import-android.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit cs list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-cs-import-ios"></a>
-
-### Cake Wallet monero — polyseed-cs-import \(ios\) — cake-wallet-monero-polyseed-cs-import-ios
-
-- Source record: [cake-wallet-monero-polyseed-cs-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-cs-import-ios.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit cs list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-cs-import-linux"></a>
-
-### Cake Wallet monero — polyseed-cs-import \(linux\) — cake-wallet-monero-polyseed-cs-import-linux
-
-- Source record: [cake-wallet-monero-polyseed-cs-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-cs-import-linux.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit cs list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-cs-import-macos"></a>
-
-### Cake Wallet monero — polyseed-cs-import \(macos\) — cake-wallet-monero-polyseed-cs-import-macos
-
-- Source record: [cake-wallet-monero-polyseed-cs-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-cs-import-macos.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-cs](#scheme-cake-monero-polyseed-cs)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit cs list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
 <a id="wallet-cake-wallet-monero-polyseed-en-create-android"></a>
 
 ### Cake Wallet monero — polyseed-en-create \(android\) — cake-wallet-monero-polyseed-en-create-android
@@ -8581,88 +8488,844 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Explicit en list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-en-import-android"></a>
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-cs-import-android"></a>
 
-### Cake Wallet monero — polyseed-en-import \(android\) — cake-wallet-monero-polyseed-en-import-android
+### Cake Monero Polyseed cs — encrypted restore \(android\) — cake-wallet-monero-polyseed-encrypted-cs-import-android
 
-- Source record: [cake-wallet-monero-polyseed-en-import-android](../catalog/wallets/cake-wallet-monero-polyseed-en-import-android.json)
+- Source record: [cake-wallet-monero-polyseed-encrypted-cs-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-cs-import-android.json)
 - Status: documented
 - Reason: Evidence is insufficient for selectable support.
 - Guidance: Not selectable; use the wallet's own backup procedure.
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
 - Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
 - Aliases: —
-- Scheme: [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en)
+- Scheme: [cake-monero-polyseed-encrypted-cs](#scheme-cake-monero-polyseed-encrypted-cs)
 - Generates mnemonic / import only: false / true
-- Limitations: Explicit en list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-cs,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-en-import-ios"></a>
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-cs-import-ios"></a>
 
-### Cake Wallet monero — polyseed-en-import \(ios\) — cake-wallet-monero-polyseed-en-import-ios
+### Cake Monero Polyseed cs — encrypted restore \(ios\) — cake-wallet-monero-polyseed-encrypted-cs-import-ios
 
-- Source record: [cake-wallet-monero-polyseed-en-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-en-import-ios.json)
+- Source record: [cake-wallet-monero-polyseed-encrypted-cs-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-cs-import-ios.json)
 - Status: documented
 - Reason: Evidence is insufficient for selectable support.
 - Guidance: Not selectable; use the wallet's own backup procedure.
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
 - Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
 - Aliases: —
-- Scheme: [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en)
+- Scheme: [cake-monero-polyseed-encrypted-cs](#scheme-cake-monero-polyseed-encrypted-cs)
 - Generates mnemonic / import only: false / true
-- Limitations: Explicit en list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-cs,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-en-import-linux"></a>
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-cs-import-linux"></a>
 
-### Cake Wallet monero — polyseed-en-import \(linux\) — cake-wallet-monero-polyseed-en-import-linux
+### Cake Monero Polyseed cs — encrypted restore \(linux\) — cake-wallet-monero-polyseed-encrypted-cs-import-linux
 
-- Source record: [cake-wallet-monero-polyseed-en-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-en-import-linux.json)
+- Source record: [cake-wallet-monero-polyseed-encrypted-cs-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-cs-import-linux.json)
 - Status: documented
 - Reason: Evidence is insufficient for selectable support.
 - Guidance: Not selectable; use the wallet's own backup procedure.
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
 - Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
 - Aliases: —
-- Scheme: [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en)
+- Scheme: [cake-monero-polyseed-encrypted-cs](#scheme-cake-monero-polyseed-encrypted-cs)
 - Generates mnemonic / import only: false / true
-- Limitations: Explicit en list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-cs,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-en-import-macos"></a>
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-cs-import-macos"></a>
 
-### Cake Wallet monero — polyseed-en-import \(macos\) — cake-wallet-monero-polyseed-en-import-macos
+### Cake Monero Polyseed cs — encrypted restore \(macos\) — cake-wallet-monero-polyseed-encrypted-cs-import-macos
 
-- Source record: [cake-wallet-monero-polyseed-en-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-en-import-macos.json)
+- Source record: [cake-wallet-monero-polyseed-encrypted-cs-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-cs-import-macos.json)
 - Status: documented
 - Reason: Evidence is insufficient for selectable support.
 - Guidance: Not selectable; use the wallet's own backup procedure.
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
 - Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
 - Aliases: —
-- Scheme: [cake-monero-polyseed-en](#scheme-cake-monero-polyseed-en)
+- Scheme: [cake-monero-polyseed-encrypted-cs](#scheme-cake-monero-polyseed-encrypted-cs)
 - Generates mnemonic / import only: false / true
-- Limitations: Explicit en list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-cs,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-en-import-android"></a>
+
+### Cake Monero Polyseed en — encrypted restore \(android\) — cake-wallet-monero-polyseed-encrypted-en-import-android
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-en-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-en-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-en](#scheme-cake-monero-polyseed-encrypted-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-en,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-en-import-ios"></a>
+
+### Cake Monero Polyseed en — encrypted restore \(ios\) — cake-wallet-monero-polyseed-encrypted-en-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-en-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-en-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-en](#scheme-cake-monero-polyseed-encrypted-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-en,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-en-import-linux"></a>
+
+### Cake Monero Polyseed en — encrypted restore \(linux\) — cake-wallet-monero-polyseed-encrypted-en-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-en-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-en-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-en](#scheme-cake-monero-polyseed-encrypted-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-en,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-en-import-macos"></a>
+
+### Cake Monero Polyseed en — encrypted restore \(macos\) — cake-wallet-monero-polyseed-encrypted-en-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-en-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-en-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-en](#scheme-cake-monero-polyseed-encrypted-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-en,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-es-import-android"></a>
+
+### Cake Monero Polyseed es — encrypted restore \(android\) — cake-wallet-monero-polyseed-encrypted-es-import-android
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-es-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-es-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-es](#scheme-cake-monero-polyseed-encrypted-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-es,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-es-import-ios"></a>
+
+### Cake Monero Polyseed es — encrypted restore \(ios\) — cake-wallet-monero-polyseed-encrypted-es-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-es-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-es-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-es](#scheme-cake-monero-polyseed-encrypted-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-es,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-es-import-linux"></a>
+
+### Cake Monero Polyseed es — encrypted restore \(linux\) — cake-wallet-monero-polyseed-encrypted-es-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-es-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-es-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-es](#scheme-cake-monero-polyseed-encrypted-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-es,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-es-import-macos"></a>
+
+### Cake Monero Polyseed es — encrypted restore \(macos\) — cake-wallet-monero-polyseed-encrypted-es-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-es-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-es-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-es](#scheme-cake-monero-polyseed-encrypted-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-es,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-fr-import-android"></a>
+
+### Cake Monero Polyseed fr — encrypted restore \(android\) — cake-wallet-monero-polyseed-encrypted-fr-import-android
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-fr-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-fr-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-fr](#scheme-cake-monero-polyseed-encrypted-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-fr,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-fr-import-ios"></a>
+
+### Cake Monero Polyseed fr — encrypted restore \(ios\) — cake-wallet-monero-polyseed-encrypted-fr-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-fr-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-fr-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-fr](#scheme-cake-monero-polyseed-encrypted-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-fr,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-fr-import-linux"></a>
+
+### Cake Monero Polyseed fr — encrypted restore \(linux\) — cake-wallet-monero-polyseed-encrypted-fr-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-fr-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-fr-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-fr](#scheme-cake-monero-polyseed-encrypted-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-fr,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-fr-import-macos"></a>
+
+### Cake Monero Polyseed fr — encrypted restore \(macos\) — cake-wallet-monero-polyseed-encrypted-fr-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-fr-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-fr-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-fr](#scheme-cake-monero-polyseed-encrypted-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-fr,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-it-import-android"></a>
+
+### Cake Monero Polyseed it — encrypted restore \(android\) — cake-wallet-monero-polyseed-encrypted-it-import-android
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-it-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-it-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-it](#scheme-cake-monero-polyseed-encrypted-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-it,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-it-import-ios"></a>
+
+### Cake Monero Polyseed it — encrypted restore \(ios\) — cake-wallet-monero-polyseed-encrypted-it-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-it-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-it-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-it](#scheme-cake-monero-polyseed-encrypted-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-it,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-it-import-linux"></a>
+
+### Cake Monero Polyseed it — encrypted restore \(linux\) — cake-wallet-monero-polyseed-encrypted-it-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-it-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-it-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-it](#scheme-cake-monero-polyseed-encrypted-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-it,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-it-import-macos"></a>
+
+### Cake Monero Polyseed it — encrypted restore \(macos\) — cake-wallet-monero-polyseed-encrypted-it-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-it-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-it-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-it](#scheme-cake-monero-polyseed-encrypted-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-it,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-ja-import-android"></a>
+
+### Cake Monero Polyseed ja — encrypted restore \(android\) — cake-wallet-monero-polyseed-encrypted-ja-import-android
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-ja-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ja-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-ja](#scheme-cake-monero-polyseed-encrypted-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-ja,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-ja-import-ios"></a>
+
+### Cake Monero Polyseed ja — encrypted restore \(ios\) — cake-wallet-monero-polyseed-encrypted-ja-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-ja-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ja-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-ja](#scheme-cake-monero-polyseed-encrypted-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-ja,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-ja-import-linux"></a>
+
+### Cake Monero Polyseed ja — encrypted restore \(linux\) — cake-wallet-monero-polyseed-encrypted-ja-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-ja-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ja-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-ja](#scheme-cake-monero-polyseed-encrypted-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-ja,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-ja-import-macos"></a>
+
+### Cake Monero Polyseed ja — encrypted restore \(macos\) — cake-wallet-monero-polyseed-encrypted-ja-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-ja-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ja-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-ja](#scheme-cake-monero-polyseed-encrypted-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-ja,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-ko-import-android"></a>
+
+### Cake Monero Polyseed ko — encrypted restore \(android\) — cake-wallet-monero-polyseed-encrypted-ko-import-android
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-ko-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ko-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-ko](#scheme-cake-monero-polyseed-encrypted-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-ko,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-ko-import-ios"></a>
+
+### Cake Monero Polyseed ko — encrypted restore \(ios\) — cake-wallet-monero-polyseed-encrypted-ko-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-ko-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ko-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-ko](#scheme-cake-monero-polyseed-encrypted-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-ko,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-ko-import-linux"></a>
+
+### Cake Monero Polyseed ko — encrypted restore \(linux\) — cake-wallet-monero-polyseed-encrypted-ko-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-ko-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ko-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-ko](#scheme-cake-monero-polyseed-encrypted-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-ko,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-ko-import-macos"></a>
+
+### Cake Monero Polyseed ko — encrypted restore \(macos\) — cake-wallet-monero-polyseed-encrypted-ko-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-ko-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ko-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-ko](#scheme-cake-monero-polyseed-encrypted-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-ko,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-pt-import-android"></a>
+
+### Cake Monero Polyseed pt — encrypted restore \(android\) — cake-wallet-monero-polyseed-encrypted-pt-import-android
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-pt-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-pt-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-pt](#scheme-cake-monero-polyseed-encrypted-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-pt,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-pt-import-ios"></a>
+
+### Cake Monero Polyseed pt — encrypted restore \(ios\) — cake-wallet-monero-polyseed-encrypted-pt-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-pt-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-pt-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-pt](#scheme-cake-monero-polyseed-encrypted-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-pt,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-pt-import-linux"></a>
+
+### Cake Monero Polyseed pt — encrypted restore \(linux\) — cake-wallet-monero-polyseed-encrypted-pt-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-pt-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-pt-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-pt](#scheme-cake-monero-polyseed-encrypted-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-pt,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-pt-import-macos"></a>
+
+### Cake Monero Polyseed pt — encrypted restore \(macos\) — cake-wallet-monero-polyseed-encrypted-pt-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-pt-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-pt-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-pt](#scheme-cake-monero-polyseed-encrypted-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-pt,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-android"></a>
+
+### Cake Monero Polyseed zh-hans — encrypted restore \(android\) — cake-wallet-monero-polyseed-encrypted-zh-hans-import-android
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-zh-hans-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hans-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-zh-hans](#scheme-cake-monero-polyseed-encrypted-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hans,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios"></a>
+
+### Cake Monero Polyseed zh-hans — encrypted restore \(ios\) — cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-zh-hans](#scheme-cake-monero-polyseed-encrypted-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hans,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux"></a>
+
+### Cake Monero Polyseed zh-hans — encrypted restore \(linux\) — cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-zh-hans](#scheme-cake-monero-polyseed-encrypted-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hans,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos"></a>
+
+### Cake Monero Polyseed zh-hans — encrypted restore \(macos\) — cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-zh-hans](#scheme-cake-monero-polyseed-encrypted-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hans,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-android"></a>
+
+### Cake Monero Polyseed zh-hant — encrypted restore \(android\) — cake-wallet-monero-polyseed-encrypted-zh-hant-import-android
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-zh-hant-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hant-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-zh-hant](#scheme-cake-monero-polyseed-encrypted-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hant,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios"></a>
+
+### Cake Monero Polyseed zh-hant — encrypted restore \(ios\) — cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-zh-hant](#scheme-cake-monero-polyseed-encrypted-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hant,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux"></a>
+
+### Cake Monero Polyseed zh-hant — encrypted restore \(linux\) — cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-zh-hant](#scheme-cake-monero-polyseed-encrypted-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hant,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos"></a>
+
+### Cake Monero Polyseed zh-hant — encrypted restore \(macos\) — cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-encrypted-zh-hant](#scheme-cake-monero-polyseed-encrypted-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hant,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
 <a id="wallet-cake-wallet-monero-polyseed-es-create-android"></a>
@@ -8746,90 +9409,6 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Aliases: —
 - Scheme: [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es)
 - Generates mnemonic / import only: true / false
-- Limitations: Explicit es list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-es-import-android"></a>
-
-### Cake Wallet monero — polyseed-es-import \(android\) — cake-wallet-monero-polyseed-es-import-android
-
-- Source record: [cake-wallet-monero-polyseed-es-import-android](../catalog/wallets/cake-wallet-monero-polyseed-es-import-android.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit es list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-es-import-ios"></a>
-
-### Cake Wallet monero — polyseed-es-import \(ios\) — cake-wallet-monero-polyseed-es-import-ios
-
-- Source record: [cake-wallet-monero-polyseed-es-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-es-import-ios.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit es list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-es-import-linux"></a>
-
-### Cake Wallet monero — polyseed-es-import \(linux\) — cake-wallet-monero-polyseed-es-import-linux
-
-- Source record: [cake-wallet-monero-polyseed-es-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-es-import-linux.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit es list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-es-import-macos"></a>
-
-### Cake Wallet monero — polyseed-es-import \(macos\) — cake-wallet-monero-polyseed-es-import-macos
-
-- Source record: [cake-wallet-monero-polyseed-es-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-es-import-macos.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-es](#scheme-cake-monero-polyseed-es)
-- Generates mnemonic / import only: false / true
 - Limitations: Explicit es list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
@@ -8917,186 +9496,6 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Explicit fr list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-fr-import-android"></a>
-
-### Cake Wallet monero — polyseed-fr-import \(android\) — cake-wallet-monero-polyseed-fr-import-android
-
-- Source record: [cake-wallet-monero-polyseed-fr-import-android](../catalog/wallets/cake-wallet-monero-polyseed-fr-import-android.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit fr list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-fr-import-ios"></a>
-
-### Cake Wallet monero — polyseed-fr-import \(ios\) — cake-wallet-monero-polyseed-fr-import-ios
-
-- Source record: [cake-wallet-monero-polyseed-fr-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-fr-import-ios.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit fr list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-fr-import-linux"></a>
-
-### Cake Wallet monero — polyseed-fr-import \(linux\) — cake-wallet-monero-polyseed-fr-import-linux
-
-- Source record: [cake-wallet-monero-polyseed-fr-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-fr-import-linux.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit fr list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-fr-import-macos"></a>
-
-### Cake Wallet monero — polyseed-fr-import \(macos\) — cake-wallet-monero-polyseed-fr-import-macos
-
-- Source record: [cake-wallet-monero-polyseed-fr-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-fr-import-macos.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-fr](#scheme-cake-monero-polyseed-fr)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit fr list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-import-android"></a>
-
-### Cake Wallet monero — polyseed-import \(android\) — cake-wallet-monero-polyseed-import-android
-
-- Source record: [cake-wallet-monero-polyseed-import-android](../catalog/wallets/cake-wallet-monero-polyseed-import-android.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-android](../catalog/evidence/cake-wallet-version-android.json)
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: Official monero per-cryptocurrency Seed Format/Seed Types and recovery guidance, retrieved2026-09-29. Source snapshot controls exact implementation; mutable documentation is not a binary attestation. Decred native15 predates6.4.2; Zano native26 predates6.4.3 where applicable.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Evidence claim: Pinned android build version metadata. Android/iOS6.4.5, macOS6.4.4; Linux version recorded in batch note. Source identity remains the full commit, not all binaries of that version.
-- Aliases: —
-- Scheme: [polyseed-16](#scheme-polyseed-16)
-- Generates mnemonic / import only: false / true
-- Limitations: Monero selector scope only\: Polyseed16 en/ja/ko/es/fr/it/cs/pt/zh-hans/zh-hant; legacy25 en/de/es/fr/it/nl/pt/ru/ja/zh-hans. Separate language records carry precise dictionary. FFI prefix/checksumless import and passphrase normalization not independently recovered. ; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-import-ios"></a>
-
-### Cake Wallet monero — polyseed-import \(ios\) — cake-wallet-monero-polyseed-import-ios
-
-- Source record: [cake-wallet-monero-polyseed-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-import-ios.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-ios](../catalog/evidence/cake-wallet-version-ios.json)
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: Official monero per-cryptocurrency Seed Format/Seed Types and recovery guidance, retrieved2026-09-29. Source snapshot controls exact implementation; mutable documentation is not a binary attestation. Decred native15 predates6.4.2; Zano native26 predates6.4.3 where applicable.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Evidence claim: Pinned ios build version metadata. Android/iOS6.4.5, macOS6.4.4; Linux version recorded in batch note. Source identity remains the full commit, not all binaries of that version.
-- Aliases: —
-- Scheme: [polyseed-16](#scheme-polyseed-16)
-- Generates mnemonic / import only: false / true
-- Limitations: Monero selector scope only\: Polyseed16 en/ja/ko/es/fr/it/cs/pt/zh-hans/zh-hant; legacy25 en/de/es/fr/it/nl/pt/ru/ja/zh-hans. Separate language records carry precise dictionary. FFI prefix/checksumless import and passphrase normalization not independently recovered. ; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-import-linux"></a>
-
-### Cake Wallet monero — polyseed-import \(linux\) — cake-wallet-monero-polyseed-import-linux
-
-- Source record: [cake-wallet-monero-polyseed-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-import-linux.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-linux](../catalog/evidence/cake-wallet-version-linux.json)
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: Official monero per-cryptocurrency Seed Format/Seed Types and recovery guidance, retrieved2026-09-29. Source snapshot controls exact implementation; mutable documentation is not a binary attestation. Decred native15 predates6.4.2; Zano native26 predates6.4.3 where applicable.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Evidence claim: Pinned linux build version metadata. Android/iOS6.4.5, macOS6.4.4; Linux version recorded in batch note. Source identity remains the full commit, not all binaries of that version.
-- Aliases: —
-- Scheme: [polyseed-16](#scheme-polyseed-16)
-- Generates mnemonic / import only: false / true
-- Limitations: Monero selector scope only\: Polyseed16 en/ja/ko/es/fr/it/cs/pt/zh-hans/zh-hant; legacy25 en/de/es/fr/it/nl/pt/ru/ja/zh-hans. Separate language records carry precise dictionary. FFI prefix/checksumless import and passphrase normalization not independently recovered. ; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-import-macos"></a>
-
-### Cake Wallet monero — polyseed-import \(macos\) — cake-wallet-monero-polyseed-import-macos
-
-- Source record: [cake-wallet-monero-polyseed-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-import-macos.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-doc](../catalog/evidence/cake-wallet-monero-doc.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json), [cake-wallet-version-macos](../catalog/evidence/cake-wallet-version-macos.json)
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: Official monero per-cryptocurrency Seed Format/Seed Types and recovery guidance, retrieved2026-09-29. Source snapshot controls exact implementation; mutable documentation is not a binary attestation. Decred native15 predates6.4.2; Zano native26 predates6.4.3 where applicable.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Evidence claim: Pinned macos build version metadata. Android/iOS6.4.5, macOS6.4.4; Linux version recorded in batch note. Source identity remains the full commit, not all binaries of that version.
-- Aliases: —
-- Scheme: [polyseed-16](#scheme-polyseed-16)
-- Generates mnemonic / import only: false / true
-- Limitations: Monero selector scope only\: Polyseed16 en/ja/ko/es/fr/it/cs/pt/zh-hans/zh-hant; legacy25 en/de/es/fr/it/nl/pt/ru/ja/zh-hans. Separate language records carry precise dictionary. FFI prefix/checksumless import and passphrase normalization not independently recovered. ; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
 <a id="wallet-cake-wallet-monero-polyseed-it-create-android"></a>
 
 ### Cake Wallet monero — polyseed-it-create \(android\) — cake-wallet-monero-polyseed-it-create-android
@@ -9178,90 +9577,6 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Aliases: —
 - Scheme: [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it)
 - Generates mnemonic / import only: true / false
-- Limitations: Explicit it list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-it-import-android"></a>
-
-### Cake Wallet monero — polyseed-it-import \(android\) — cake-wallet-monero-polyseed-it-import-android
-
-- Source record: [cake-wallet-monero-polyseed-it-import-android](../catalog/wallets/cake-wallet-monero-polyseed-it-import-android.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit it list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-it-import-ios"></a>
-
-### Cake Wallet monero — polyseed-it-import \(ios\) — cake-wallet-monero-polyseed-it-import-ios
-
-- Source record: [cake-wallet-monero-polyseed-it-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-it-import-ios.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit it list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-it-import-linux"></a>
-
-### Cake Wallet monero — polyseed-it-import \(linux\) — cake-wallet-monero-polyseed-it-import-linux
-
-- Source record: [cake-wallet-monero-polyseed-it-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-it-import-linux.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit it list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-it-import-macos"></a>
-
-### Cake Wallet monero — polyseed-it-import \(macos\) — cake-wallet-monero-polyseed-it-import-macos
-
-- Source record: [cake-wallet-monero-polyseed-it-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-it-import-macos.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-it](#scheme-cake-monero-polyseed-it)
-- Generates mnemonic / import only: false / true
 - Limitations: Explicit it list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
@@ -9349,90 +9664,6 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Explicit ja list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-ja-import-android"></a>
-
-### Cake Wallet monero — polyseed-ja-import \(android\) — cake-wallet-monero-polyseed-ja-import-android
-
-- Source record: [cake-wallet-monero-polyseed-ja-import-android](../catalog/wallets/cake-wallet-monero-polyseed-ja-import-android.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit ja list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-ja-import-ios"></a>
-
-### Cake Wallet monero — polyseed-ja-import \(ios\) — cake-wallet-monero-polyseed-ja-import-ios
-
-- Source record: [cake-wallet-monero-polyseed-ja-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-ja-import-ios.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit ja list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-ja-import-linux"></a>
-
-### Cake Wallet monero — polyseed-ja-import \(linux\) — cake-wallet-monero-polyseed-ja-import-linux
-
-- Source record: [cake-wallet-monero-polyseed-ja-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-ja-import-linux.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit ja list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-ja-import-macos"></a>
-
-### Cake Wallet monero — polyseed-ja-import \(macos\) — cake-wallet-monero-polyseed-ja-import-macos
-
-- Source record: [cake-wallet-monero-polyseed-ja-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-ja-import-macos.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-ja](#scheme-cake-monero-polyseed-ja)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit ja list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
 <a id="wallet-cake-wallet-monero-polyseed-ko-create-android"></a>
 
 ### Cake Wallet monero — polyseed-ko-create \(android\) — cake-wallet-monero-polyseed-ko-create-android
@@ -9517,88 +9748,1724 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Explicit ko list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-ko-import-android"></a>
+<a id="wallet-cake-wallet-monero-polyseed-offset-cs-import-android"></a>
 
-### Cake Wallet monero — polyseed-ko-import \(android\) — cake-wallet-monero-polyseed-ko-import-android
+### Cake Monero Polyseed cs — offset restore \(android\) — cake-wallet-monero-polyseed-offset-cs-import-android
 
-- Source record: [cake-wallet-monero-polyseed-ko-import-android](../catalog/wallets/cake-wallet-monero-polyseed-ko-import-android.json)
+- Source record: [cake-wallet-monero-polyseed-offset-cs-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-cs-import-android.json)
 - Status: documented
 - Reason: Evidence is insufficient for selectable support.
 - Guidance: Not selectable; use the wallet's own backup procedure.
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
 - Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
 - Aliases: —
-- Scheme: [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko)
+- Scheme: [cake-monero-polyseed-offset-cs](#scheme-cake-monero-polyseed-offset-cs)
 - Generates mnemonic / import only: false / true
-- Limitations: Explicit ko list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-cs,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-ko-import-ios"></a>
+<a id="wallet-cake-wallet-monero-polyseed-offset-cs-import-ios"></a>
 
-### Cake Wallet monero — polyseed-ko-import \(ios\) — cake-wallet-monero-polyseed-ko-import-ios
+### Cake Monero Polyseed cs — offset restore \(ios\) — cake-wallet-monero-polyseed-offset-cs-import-ios
 
-- Source record: [cake-wallet-monero-polyseed-ko-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-ko-import-ios.json)
+- Source record: [cake-wallet-monero-polyseed-offset-cs-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-cs-import-ios.json)
 - Status: documented
 - Reason: Evidence is insufficient for selectable support.
 - Guidance: Not selectable; use the wallet's own backup procedure.
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
 - Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
 - Aliases: —
-- Scheme: [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko)
+- Scheme: [cake-monero-polyseed-offset-cs](#scheme-cake-monero-polyseed-offset-cs)
 - Generates mnemonic / import only: false / true
-- Limitations: Explicit ko list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-cs,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-ko-import-linux"></a>
+<a id="wallet-cake-wallet-monero-polyseed-offset-cs-import-linux"></a>
 
-### Cake Wallet monero — polyseed-ko-import \(linux\) — cake-wallet-monero-polyseed-ko-import-linux
+### Cake Monero Polyseed cs — offset restore \(linux\) — cake-wallet-monero-polyseed-offset-cs-import-linux
 
-- Source record: [cake-wallet-monero-polyseed-ko-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-ko-import-linux.json)
+- Source record: [cake-wallet-monero-polyseed-offset-cs-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-cs-import-linux.json)
 - Status: documented
 - Reason: Evidence is insufficient for selectable support.
 - Guidance: Not selectable; use the wallet's own backup procedure.
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
 - Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
 - Aliases: —
-- Scheme: [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko)
+- Scheme: [cake-monero-polyseed-offset-cs](#scheme-cake-monero-polyseed-offset-cs)
 - Generates mnemonic / import only: false / true
-- Limitations: Explicit ko list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-cs,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-ko-import-macos"></a>
+<a id="wallet-cake-wallet-monero-polyseed-offset-cs-import-macos"></a>
 
-### Cake Wallet monero — polyseed-ko-import \(macos\) — cake-wallet-monero-polyseed-ko-import-macos
+### Cake Monero Polyseed cs — offset restore \(macos\) — cake-wallet-monero-polyseed-offset-cs-import-macos
 
-- Source record: [cake-wallet-monero-polyseed-ko-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-ko-import-macos.json)
+- Source record: [cake-wallet-monero-polyseed-offset-cs-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-cs-import-macos.json)
 - Status: documented
 - Reason: Evidence is insufficient for selectable support.
 - Guidance: Not selectable; use the wallet's own backup procedure.
 - Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
 - Verified on: 2026-09-29
 - Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
 - Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
 - Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
 - Aliases: —
-- Scheme: [cake-monero-polyseed-ko](#scheme-cake-monero-polyseed-ko)
+- Scheme: [cake-monero-polyseed-offset-cs](#scheme-cake-monero-polyseed-offset-cs)
 - Generates mnemonic / import only: false / true
-- Limitations: Explicit ko list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-cs,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-en-import-android"></a>
+
+### Cake Monero Polyseed en — offset restore \(android\) — cake-wallet-monero-polyseed-offset-en-import-android
+
+- Source record: [cake-wallet-monero-polyseed-offset-en-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-en-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-en](#scheme-cake-monero-polyseed-offset-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-en,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-en-import-ios"></a>
+
+### Cake Monero Polyseed en — offset restore \(ios\) — cake-wallet-monero-polyseed-offset-en-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-offset-en-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-en-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-en](#scheme-cake-monero-polyseed-offset-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-en,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-en-import-linux"></a>
+
+### Cake Monero Polyseed en — offset restore \(linux\) — cake-wallet-monero-polyseed-offset-en-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-offset-en-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-en-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-en](#scheme-cake-monero-polyseed-offset-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-en,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-en-import-macos"></a>
+
+### Cake Monero Polyseed en — offset restore \(macos\) — cake-wallet-monero-polyseed-offset-en-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-offset-en-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-en-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-en](#scheme-cake-monero-polyseed-offset-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-en,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-es-import-android"></a>
+
+### Cake Monero Polyseed es — offset restore \(android\) — cake-wallet-monero-polyseed-offset-es-import-android
+
+- Source record: [cake-wallet-monero-polyseed-offset-es-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-es-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-es](#scheme-cake-monero-polyseed-offset-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-es,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-es-import-ios"></a>
+
+### Cake Monero Polyseed es — offset restore \(ios\) — cake-wallet-monero-polyseed-offset-es-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-offset-es-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-es-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-es](#scheme-cake-monero-polyseed-offset-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-es,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-es-import-linux"></a>
+
+### Cake Monero Polyseed es — offset restore \(linux\) — cake-wallet-monero-polyseed-offset-es-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-offset-es-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-es-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-es](#scheme-cake-monero-polyseed-offset-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-es,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-es-import-macos"></a>
+
+### Cake Monero Polyseed es — offset restore \(macos\) — cake-wallet-monero-polyseed-offset-es-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-offset-es-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-es-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-es](#scheme-cake-monero-polyseed-offset-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-es,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-fr-import-android"></a>
+
+### Cake Monero Polyseed fr — offset restore \(android\) — cake-wallet-monero-polyseed-offset-fr-import-android
+
+- Source record: [cake-wallet-monero-polyseed-offset-fr-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-fr-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-fr](#scheme-cake-monero-polyseed-offset-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-fr,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-fr-import-ios"></a>
+
+### Cake Monero Polyseed fr — offset restore \(ios\) — cake-wallet-monero-polyseed-offset-fr-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-offset-fr-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-fr-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-fr](#scheme-cake-monero-polyseed-offset-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-fr,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-fr-import-linux"></a>
+
+### Cake Monero Polyseed fr — offset restore \(linux\) — cake-wallet-monero-polyseed-offset-fr-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-offset-fr-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-fr-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-fr](#scheme-cake-monero-polyseed-offset-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-fr,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-fr-import-macos"></a>
+
+### Cake Monero Polyseed fr — offset restore \(macos\) — cake-wallet-monero-polyseed-offset-fr-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-offset-fr-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-fr-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-fr](#scheme-cake-monero-polyseed-offset-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-fr,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-it-import-android"></a>
+
+### Cake Monero Polyseed it — offset restore \(android\) — cake-wallet-monero-polyseed-offset-it-import-android
+
+- Source record: [cake-wallet-monero-polyseed-offset-it-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-it-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-it](#scheme-cake-monero-polyseed-offset-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-it,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-it-import-ios"></a>
+
+### Cake Monero Polyseed it — offset restore \(ios\) — cake-wallet-monero-polyseed-offset-it-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-offset-it-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-it-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-it](#scheme-cake-monero-polyseed-offset-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-it,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-it-import-linux"></a>
+
+### Cake Monero Polyseed it — offset restore \(linux\) — cake-wallet-monero-polyseed-offset-it-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-offset-it-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-it-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-it](#scheme-cake-monero-polyseed-offset-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-it,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-it-import-macos"></a>
+
+### Cake Monero Polyseed it — offset restore \(macos\) — cake-wallet-monero-polyseed-offset-it-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-offset-it-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-it-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-it](#scheme-cake-monero-polyseed-offset-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-it,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-ja-import-android"></a>
+
+### Cake Monero Polyseed ja — offset restore \(android\) — cake-wallet-monero-polyseed-offset-ja-import-android
+
+- Source record: [cake-wallet-monero-polyseed-offset-ja-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-ja-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-ja](#scheme-cake-monero-polyseed-offset-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ja,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-ja-import-ios"></a>
+
+### Cake Monero Polyseed ja — offset restore \(ios\) — cake-wallet-monero-polyseed-offset-ja-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-offset-ja-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-ja-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-ja](#scheme-cake-monero-polyseed-offset-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ja,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-ja-import-linux"></a>
+
+### Cake Monero Polyseed ja — offset restore \(linux\) — cake-wallet-monero-polyseed-offset-ja-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-offset-ja-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-ja-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-ja](#scheme-cake-monero-polyseed-offset-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ja,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-ja-import-macos"></a>
+
+### Cake Monero Polyseed ja — offset restore \(macos\) — cake-wallet-monero-polyseed-offset-ja-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-offset-ja-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-ja-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-ja](#scheme-cake-monero-polyseed-offset-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ja,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-ko-import-android"></a>
+
+### Cake Monero Polyseed ko — offset restore \(android\) — cake-wallet-monero-polyseed-offset-ko-import-android
+
+- Source record: [cake-wallet-monero-polyseed-offset-ko-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-ko-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-ko](#scheme-cake-monero-polyseed-offset-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ko,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-ko-import-ios"></a>
+
+### Cake Monero Polyseed ko — offset restore \(ios\) — cake-wallet-monero-polyseed-offset-ko-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-offset-ko-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-ko-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-ko](#scheme-cake-monero-polyseed-offset-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ko,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-ko-import-linux"></a>
+
+### Cake Monero Polyseed ko — offset restore \(linux\) — cake-wallet-monero-polyseed-offset-ko-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-offset-ko-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-ko-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-ko](#scheme-cake-monero-polyseed-offset-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ko,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-ko-import-macos"></a>
+
+### Cake Monero Polyseed ko — offset restore \(macos\) — cake-wallet-monero-polyseed-offset-ko-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-offset-ko-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-ko-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-ko](#scheme-cake-monero-polyseed-offset-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ko,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-pt-import-android"></a>
+
+### Cake Monero Polyseed pt — offset restore \(android\) — cake-wallet-monero-polyseed-offset-pt-import-android
+
+- Source record: [cake-wallet-monero-polyseed-offset-pt-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-pt-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-pt](#scheme-cake-monero-polyseed-offset-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-pt,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-pt-import-ios"></a>
+
+### Cake Monero Polyseed pt — offset restore \(ios\) — cake-wallet-monero-polyseed-offset-pt-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-offset-pt-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-pt-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-pt](#scheme-cake-monero-polyseed-offset-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-pt,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-pt-import-linux"></a>
+
+### Cake Monero Polyseed pt — offset restore \(linux\) — cake-wallet-monero-polyseed-offset-pt-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-offset-pt-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-pt-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-pt](#scheme-cake-monero-polyseed-offset-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-pt,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-pt-import-macos"></a>
+
+### Cake Monero Polyseed pt — offset restore \(macos\) — cake-wallet-monero-polyseed-offset-pt-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-offset-pt-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-pt-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-pt](#scheme-cake-monero-polyseed-offset-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-pt,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-android"></a>
+
+### Cake Monero Polyseed zh-hans — offset restore \(android\) — cake-wallet-monero-polyseed-offset-zh-hans-import-android
+
+- Source record: [cake-wallet-monero-polyseed-offset-zh-hans-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hans-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-zh-hans](#scheme-cake-monero-polyseed-offset-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hans,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-ios"></a>
+
+### Cake Monero Polyseed zh-hans — offset restore \(ios\) — cake-wallet-monero-polyseed-offset-zh-hans-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-offset-zh-hans-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hans-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-zh-hans](#scheme-cake-monero-polyseed-offset-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hans,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-linux"></a>
+
+### Cake Monero Polyseed zh-hans — offset restore \(linux\) — cake-wallet-monero-polyseed-offset-zh-hans-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-offset-zh-hans-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hans-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-zh-hans](#scheme-cake-monero-polyseed-offset-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hans,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-macos"></a>
+
+### Cake Monero Polyseed zh-hans — offset restore \(macos\) — cake-wallet-monero-polyseed-offset-zh-hans-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-offset-zh-hans-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hans-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-zh-hans](#scheme-cake-monero-polyseed-offset-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hans,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-android"></a>
+
+### Cake Monero Polyseed zh-hant — offset restore \(android\) — cake-wallet-monero-polyseed-offset-zh-hant-import-android
+
+- Source record: [cake-wallet-monero-polyseed-offset-zh-hant-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hant-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-zh-hant](#scheme-cake-monero-polyseed-offset-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hant,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-ios"></a>
+
+### Cake Monero Polyseed zh-hant — offset restore \(ios\) — cake-wallet-monero-polyseed-offset-zh-hant-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-offset-zh-hant-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hant-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-zh-hant](#scheme-cake-monero-polyseed-offset-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hant,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-linux"></a>
+
+### Cake Monero Polyseed zh-hant — offset restore \(linux\) — cake-wallet-monero-polyseed-offset-zh-hant-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-offset-zh-hant-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hant-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-zh-hant](#scheme-cake-monero-polyseed-offset-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hant,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-macos"></a>
+
+### Cake Monero Polyseed zh-hant — offset restore \(macos\) — cake-wallet-monero-polyseed-offset-zh-hant-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-offset-zh-hant-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hant-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-offset-zh-hant](#scheme-cake-monero-polyseed-offset-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hant,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-cs-import-android"></a>
+
+### Cake Monero Polyseed cs — plain restore \(android\) — cake-wallet-monero-polyseed-plain-cs-import-android
+
+- Source record: [cake-wallet-monero-polyseed-plain-cs-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-cs-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-cs](#scheme-cake-monero-polyseed-plain-cs)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-cs,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-cs-import-ios"></a>
+
+### Cake Monero Polyseed cs — plain restore \(ios\) — cake-wallet-monero-polyseed-plain-cs-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-plain-cs-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-cs-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-cs](#scheme-cake-monero-polyseed-plain-cs)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-cs,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-cs-import-linux"></a>
+
+### Cake Monero Polyseed cs — plain restore \(linux\) — cake-wallet-monero-polyseed-plain-cs-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-plain-cs-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-cs-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-cs](#scheme-cake-monero-polyseed-plain-cs)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-cs,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-cs-import-macos"></a>
+
+### Cake Monero Polyseed cs — plain restore \(macos\) — cake-wallet-monero-polyseed-plain-cs-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-plain-cs-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-cs-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-cs](#scheme-cake-monero-polyseed-plain-cs)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-cs,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-en-import-android"></a>
+
+### Cake Monero Polyseed en — plain restore \(android\) — cake-wallet-monero-polyseed-plain-en-import-android
+
+- Source record: [cake-wallet-monero-polyseed-plain-en-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-en-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-en](#scheme-cake-monero-polyseed-plain-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-en,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-en-import-ios"></a>
+
+### Cake Monero Polyseed en — plain restore \(ios\) — cake-wallet-monero-polyseed-plain-en-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-plain-en-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-en-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-en](#scheme-cake-monero-polyseed-plain-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-en,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-en-import-linux"></a>
+
+### Cake Monero Polyseed en — plain restore \(linux\) — cake-wallet-monero-polyseed-plain-en-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-plain-en-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-en-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-en](#scheme-cake-monero-polyseed-plain-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-en,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-en-import-macos"></a>
+
+### Cake Monero Polyseed en — plain restore \(macos\) — cake-wallet-monero-polyseed-plain-en-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-plain-en-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-en-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-en](#scheme-cake-monero-polyseed-plain-en)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-en,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-es-import-android"></a>
+
+### Cake Monero Polyseed es — plain restore \(android\) — cake-wallet-monero-polyseed-plain-es-import-android
+
+- Source record: [cake-wallet-monero-polyseed-plain-es-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-es-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-es](#scheme-cake-monero-polyseed-plain-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-es,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-es-import-ios"></a>
+
+### Cake Monero Polyseed es — plain restore \(ios\) — cake-wallet-monero-polyseed-plain-es-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-plain-es-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-es-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-es](#scheme-cake-monero-polyseed-plain-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-es,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-es-import-linux"></a>
+
+### Cake Monero Polyseed es — plain restore \(linux\) — cake-wallet-monero-polyseed-plain-es-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-plain-es-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-es-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-es](#scheme-cake-monero-polyseed-plain-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-es,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-es-import-macos"></a>
+
+### Cake Monero Polyseed es — plain restore \(macos\) — cake-wallet-monero-polyseed-plain-es-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-plain-es-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-es-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-es](#scheme-cake-monero-polyseed-plain-es)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-es,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-fr-import-android"></a>
+
+### Cake Monero Polyseed fr — plain restore \(android\) — cake-wallet-monero-polyseed-plain-fr-import-android
+
+- Source record: [cake-wallet-monero-polyseed-plain-fr-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-fr-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-fr](#scheme-cake-monero-polyseed-plain-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-fr,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-fr-import-ios"></a>
+
+### Cake Monero Polyseed fr — plain restore \(ios\) — cake-wallet-monero-polyseed-plain-fr-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-plain-fr-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-fr-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-fr](#scheme-cake-monero-polyseed-plain-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-fr,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-fr-import-linux"></a>
+
+### Cake Monero Polyseed fr — plain restore \(linux\) — cake-wallet-monero-polyseed-plain-fr-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-plain-fr-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-fr-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-fr](#scheme-cake-monero-polyseed-plain-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-fr,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-fr-import-macos"></a>
+
+### Cake Monero Polyseed fr — plain restore \(macos\) — cake-wallet-monero-polyseed-plain-fr-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-plain-fr-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-fr-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-fr](#scheme-cake-monero-polyseed-plain-fr)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-fr,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-it-import-android"></a>
+
+### Cake Monero Polyseed it — plain restore \(android\) — cake-wallet-monero-polyseed-plain-it-import-android
+
+- Source record: [cake-wallet-monero-polyseed-plain-it-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-it-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-it](#scheme-cake-monero-polyseed-plain-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-it,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-it-import-ios"></a>
+
+### Cake Monero Polyseed it — plain restore \(ios\) — cake-wallet-monero-polyseed-plain-it-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-plain-it-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-it-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-it](#scheme-cake-monero-polyseed-plain-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-it,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-it-import-linux"></a>
+
+### Cake Monero Polyseed it — plain restore \(linux\) — cake-wallet-monero-polyseed-plain-it-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-plain-it-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-it-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-it](#scheme-cake-monero-polyseed-plain-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-it,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-it-import-macos"></a>
+
+### Cake Monero Polyseed it — plain restore \(macos\) — cake-wallet-monero-polyseed-plain-it-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-plain-it-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-it-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-it](#scheme-cake-monero-polyseed-plain-it)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-it,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-ja-import-android"></a>
+
+### Cake Monero Polyseed ja — plain restore \(android\) — cake-wallet-monero-polyseed-plain-ja-import-android
+
+- Source record: [cake-wallet-monero-polyseed-plain-ja-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-ja-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-ja](#scheme-cake-monero-polyseed-plain-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ja,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-ja-import-ios"></a>
+
+### Cake Monero Polyseed ja — plain restore \(ios\) — cake-wallet-monero-polyseed-plain-ja-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-plain-ja-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-ja-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-ja](#scheme-cake-monero-polyseed-plain-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ja,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-ja-import-linux"></a>
+
+### Cake Monero Polyseed ja — plain restore \(linux\) — cake-wallet-monero-polyseed-plain-ja-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-plain-ja-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-ja-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-ja](#scheme-cake-monero-polyseed-plain-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ja,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-ja-import-macos"></a>
+
+### Cake Monero Polyseed ja — plain restore \(macos\) — cake-wallet-monero-polyseed-plain-ja-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-plain-ja-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-ja-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-ja](#scheme-cake-monero-polyseed-plain-ja)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ja,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-ko-import-android"></a>
+
+### Cake Monero Polyseed ko — plain restore \(android\) — cake-wallet-monero-polyseed-plain-ko-import-android
+
+- Source record: [cake-wallet-monero-polyseed-plain-ko-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-ko-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-ko](#scheme-cake-monero-polyseed-plain-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ko,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-ko-import-ios"></a>
+
+### Cake Monero Polyseed ko — plain restore \(ios\) — cake-wallet-monero-polyseed-plain-ko-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-plain-ko-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-ko-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-ko](#scheme-cake-monero-polyseed-plain-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ko,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-ko-import-linux"></a>
+
+### Cake Monero Polyseed ko — plain restore \(linux\) — cake-wallet-monero-polyseed-plain-ko-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-plain-ko-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-ko-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-ko](#scheme-cake-monero-polyseed-plain-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ko,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-ko-import-macos"></a>
+
+### Cake Monero Polyseed ko — plain restore \(macos\) — cake-wallet-monero-polyseed-plain-ko-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-plain-ko-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-ko-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-ko](#scheme-cake-monero-polyseed-plain-ko)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ko,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-pt-import-android"></a>
+
+### Cake Monero Polyseed pt — plain restore \(android\) — cake-wallet-monero-polyseed-plain-pt-import-android
+
+- Source record: [cake-wallet-monero-polyseed-plain-pt-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-pt-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-pt](#scheme-cake-monero-polyseed-plain-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-pt,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-pt-import-ios"></a>
+
+### Cake Monero Polyseed pt — plain restore \(ios\) — cake-wallet-monero-polyseed-plain-pt-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-plain-pt-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-pt-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-pt](#scheme-cake-monero-polyseed-plain-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-pt,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-pt-import-linux"></a>
+
+### Cake Monero Polyseed pt — plain restore \(linux\) — cake-wallet-monero-polyseed-plain-pt-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-plain-pt-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-pt-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-pt](#scheme-cake-monero-polyseed-plain-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-pt,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-pt-import-macos"></a>
+
+### Cake Monero Polyseed pt — plain restore \(macos\) — cake-wallet-monero-polyseed-plain-pt-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-plain-pt-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-pt-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-pt](#scheme-cake-monero-polyseed-plain-pt)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-pt,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-android"></a>
+
+### Cake Monero Polyseed zh-hans — plain restore \(android\) — cake-wallet-monero-polyseed-plain-zh-hans-import-android
+
+- Source record: [cake-wallet-monero-polyseed-plain-zh-hans-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hans-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-zh-hans](#scheme-cake-monero-polyseed-plain-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hans,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-ios"></a>
+
+### Cake Monero Polyseed zh-hans — plain restore \(ios\) — cake-wallet-monero-polyseed-plain-zh-hans-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-plain-zh-hans-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hans-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-zh-hans](#scheme-cake-monero-polyseed-plain-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hans,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-linux"></a>
+
+### Cake Monero Polyseed zh-hans — plain restore \(linux\) — cake-wallet-monero-polyseed-plain-zh-hans-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-plain-zh-hans-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hans-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-zh-hans](#scheme-cake-monero-polyseed-plain-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hans,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-macos"></a>
+
+### Cake Monero Polyseed zh-hans — plain restore \(macos\) — cake-wallet-monero-polyseed-plain-zh-hans-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-plain-zh-hans-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hans-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-zh-hans](#scheme-cake-monero-polyseed-plain-zh-hans)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hans,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-android"></a>
+
+### Cake Monero Polyseed zh-hant — plain restore \(android\) — cake-wallet-monero-polyseed-plain-zh-hant-import-android
+
+- Source record: [cake-wallet-monero-polyseed-plain-zh-hant-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hant-import-android.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-zh-hant](#scheme-cake-monero-polyseed-plain-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hant,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-ios"></a>
+
+### Cake Monero Polyseed zh-hant — plain restore \(ios\) — cake-wallet-monero-polyseed-plain-zh-hant-import-ios
+
+- Source record: [cake-wallet-monero-polyseed-plain-zh-hant-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hant-import-ios.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-zh-hant](#scheme-cake-monero-polyseed-plain-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hant,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-linux"></a>
+
+### Cake Monero Polyseed zh-hant — plain restore \(linux\) — cake-wallet-monero-polyseed-plain-zh-hant-import-linux
+
+- Source record: [cake-wallet-monero-polyseed-plain-zh-hant-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hant-import-linux.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-zh-hant](#scheme-cake-monero-polyseed-plain-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hant,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-macos"></a>
+
+### Cake Monero Polyseed zh-hant — plain restore \(macos\) — cake-wallet-monero-polyseed-plain-zh-hant-import-macos
+
+- Source record: [cake-wallet-monero-polyseed-plain-zh-hant-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hant-import-macos.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Aliases: —
+- Scheme: [cake-monero-polyseed-plain-zh-hant](#scheme-cake-monero-polyseed-plain-zh-hant)
+- Generates mnemonic / import only: false / true
+- Limitations: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hant,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
 <a id="wallet-cake-wallet-monero-polyseed-pt-create-android"></a>
@@ -9682,90 +11549,6 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Aliases: —
 - Scheme: [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt)
 - Generates mnemonic / import only: true / false
-- Limitations: Explicit pt list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-pt-import-android"></a>
-
-### Cake Wallet monero — polyseed-pt-import \(android\) — cake-wallet-monero-polyseed-pt-import-android
-
-- Source record: [cake-wallet-monero-polyseed-pt-import-android](../catalog/wallets/cake-wallet-monero-polyseed-pt-import-android.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit pt list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-pt-import-ios"></a>
-
-### Cake Wallet monero — polyseed-pt-import \(ios\) — cake-wallet-monero-polyseed-pt-import-ios
-
-- Source record: [cake-wallet-monero-polyseed-pt-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-pt-import-ios.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit pt list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-pt-import-linux"></a>
-
-### Cake Wallet monero — polyseed-pt-import \(linux\) — cake-wallet-monero-polyseed-pt-import-linux
-
-- Source record: [cake-wallet-monero-polyseed-pt-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-pt-import-linux.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit pt list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-pt-import-macos"></a>
-
-### Cake Wallet monero — polyseed-pt-import \(macos\) — cake-wallet-monero-polyseed-pt-import-macos
-
-- Source record: [cake-wallet-monero-polyseed-pt-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-pt-import-macos.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-pt](#scheme-cake-monero-polyseed-pt)
-- Generates mnemonic / import only: false / true
 - Limitations: Explicit pt list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
@@ -9853,90 +11636,6 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Explicit zh-hans list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
-<a id="wallet-cake-wallet-monero-polyseed-zh-hans-import-android"></a>
-
-### Cake Wallet monero — polyseed-zh-hans-import \(android\) — cake-wallet-monero-polyseed-zh-hans-import-android
-
-- Source record: [cake-wallet-monero-polyseed-zh-hans-import-android](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-import-android.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit zh-hans list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-zh-hans-import-ios"></a>
-
-### Cake Wallet monero — polyseed-zh-hans-import \(ios\) — cake-wallet-monero-polyseed-zh-hans-import-ios
-
-- Source record: [cake-wallet-monero-polyseed-zh-hans-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-import-ios.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit zh-hans list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-zh-hans-import-linux"></a>
-
-### Cake Wallet monero — polyseed-zh-hans-import \(linux\) — cake-wallet-monero-polyseed-zh-hans-import-linux
-
-- Source record: [cake-wallet-monero-polyseed-zh-hans-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-import-linux.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit zh-hans list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-zh-hans-import-macos"></a>
-
-### Cake Wallet monero — polyseed-zh-hans-import \(macos\) — cake-wallet-monero-polyseed-zh-hans-import-macos
-
-- Source record: [cake-wallet-monero-polyseed-zh-hans-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-import-macos.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-zh-hans](#scheme-cake-monero-polyseed-zh-hans)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit zh-hans list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
 <a id="wallet-cake-wallet-monero-polyseed-zh-hant-create-android"></a>
 
 ### Cake Wallet monero — polyseed-zh-hant-create \(android\) — cake-wallet-monero-polyseed-zh-hant-create-android
@@ -10018,90 +11717,6 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Aliases: —
 - Scheme: [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant)
 - Generates mnemonic / import only: true / false
-- Limitations: Explicit zh-hant list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-zh-hant-import-android"></a>
-
-### Cake Wallet monero — polyseed-zh-hant-import \(android\) — cake-wallet-monero-polyseed-zh-hant-import-android
-
-- Source record: [cake-wallet-monero-polyseed-zh-hant-import-android](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-import-android.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit zh-hant list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-zh-hant-import-ios"></a>
-
-### Cake Wallet monero — polyseed-zh-hant-import \(ios\) — cake-wallet-monero-polyseed-zh-hant-import-ios
-
-- Source record: [cake-wallet-monero-polyseed-zh-hant-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-import-ios.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit zh-hant list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-zh-hant-import-linux"></a>
-
-### Cake Wallet monero — polyseed-zh-hant-import \(linux\) — cake-wallet-monero-polyseed-zh-hant-import-linux
-
-- Source record: [cake-wallet-monero-polyseed-zh-hant-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-import-linux.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant)
-- Generates mnemonic / import only: false / true
-- Limitations: Explicit zh-hant list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-monero-polyseed-zh-hant-import-macos"></a>
-
-### Cake Wallet monero — polyseed-zh-hant-import \(macos\) — cake-wallet-monero-polyseed-zh-hant-import-macos
-
-- Source record: [cake-wallet-monero-polyseed-zh-hant-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-import-macos.json)
-- Status: documented
-- Reason: Evidence is insufficient for selectable support.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: false
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-monero-service](../catalog/evidence/cake-wallet-monero-service.json)
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
-- Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
-- Aliases: —
-- Scheme: [cake-monero-polyseed-zh-hant](#scheme-cake-monero-polyseed-zh-hant)
-- Generates mnemonic / import only: false / true
 - Limitations: Explicit zh-hant list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
@@ -12273,6 +13888,102 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Limitations: Private-key import, no generated mnemonic. Key encoding and exact chain matter; Zcash requires secret-extended-key-main1. ; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
 
+<a id="wallet-cake-wallet-wownero-legacy14-export-android"></a>
+
+### Cake Wownero historical14 export \(android\) — cake-wallet-wownero-legacy14-export-android
+
+- Source record: [cake-wallet-wownero-legacy14-export-android](../catalog/wallets/cake-wallet-wownero-legacy14-export-android.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-wownero-deprecation](../catalog/evidence/cake-wallet-wownero-deprecation.json), [cake-wallet-wownero-doc](../catalog/evidence/cake-wallet-wownero-doc.json), [cake-wallet-wownero-seed-export](../catalog/evidence/cake-wallet-wownero-seed-export.json), [cake-wallet-wownero-wallet-seed](../catalog/evidence/cake-wallet-wownero-wallet-seed.json)
+- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
+- Evidence claim: openWallet opens existing native wallet then throws WalletDeprecationException\(seed\: wallet.seed, curr\: wallet.currency\). This is exact Cake export/deprecation reachability, not current creation or restore availability. Official Wownero docs separately identify historical14-word imported wallets. Decoded HTTP source body\: 14837 bytes, SHA256 aad1a0bb05afcc3d6354308c63227e076ac975bece550c7f6380049d10d47735.
+- Evidence claim: Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.
+- Evidence claim: getSeed prefers native/cached Polyseed, otherwise getSeedLegacy calls WOWNERO Wallet\_seed with stored seedOffset. It forwards native backup text without a Dart word-count constraint. Official docs provide the historical14-word export statement; exact native14 algorithm/list remains unresolved, not borrowed from Feather. Decoded HTTP source body\: 11403 bytes, SHA256 5ded0e4514b4988b482628be9461e0034eafc2ab758832195c81b2618d9c836f.
+- Evidence claim: WowneroWallet.seed delegates to wownero\_wallet.getSeed; combined with the deprecation exception this connects existing-wallet export to the native seed getter. No14-word codec, dictionary, release binary or Feather equivalence inferred. Decoded HTTP source body\: 27667 bytes, SHA256 49d06c940a563616cc364bc0ee715247d0d6da9d5bc7a314dc5d0132a216aa77.
+- Aliases: —
+- Scheme: [cake-wownero-14-unresolved](#scheme-cake-wownero-14-unresolved)
+- Generates mnemonic / import only: false / false
+- Limitations: Cake documentation identifies existing wallets originally imported from14 words. Pinned deprecation path exposes wallet.seed through the native seed getter. Exact native codec, list, license and secret handling unresolved; no Feather Tevador or Monero coin-domain equivalence inferred. Export only, not current import/generation.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-wownero-legacy14-export-ios"></a>
+
+### Cake Wownero historical14 export \(ios\) — cake-wallet-wownero-legacy14-export-ios
+
+- Source record: [cake-wallet-wownero-legacy14-export-ios](../catalog/wallets/cake-wallet-wownero-legacy14-export-ios.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-wownero-deprecation](../catalog/evidence/cake-wallet-wownero-deprecation.json), [cake-wallet-wownero-doc](../catalog/evidence/cake-wallet-wownero-doc.json), [cake-wallet-wownero-seed-export](../catalog/evidence/cake-wallet-wownero-seed-export.json), [cake-wallet-wownero-wallet-seed](../catalog/evidence/cake-wallet-wownero-wallet-seed.json)
+- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
+- Evidence claim: openWallet opens existing native wallet then throws WalletDeprecationException\(seed\: wallet.seed, curr\: wallet.currency\). This is exact Cake export/deprecation reachability, not current creation or restore availability. Official Wownero docs separately identify historical14-word imported wallets. Decoded HTTP source body\: 14837 bytes, SHA256 aad1a0bb05afcc3d6354308c63227e076ac975bece550c7f6380049d10d47735.
+- Evidence claim: Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.
+- Evidence claim: getSeed prefers native/cached Polyseed, otherwise getSeedLegacy calls WOWNERO Wallet\_seed with stored seedOffset. It forwards native backup text without a Dart word-count constraint. Official docs provide the historical14-word export statement; exact native14 algorithm/list remains unresolved, not borrowed from Feather. Decoded HTTP source body\: 11403 bytes, SHA256 5ded0e4514b4988b482628be9461e0034eafc2ab758832195c81b2618d9c836f.
+- Evidence claim: WowneroWallet.seed delegates to wownero\_wallet.getSeed; combined with the deprecation exception this connects existing-wallet export to the native seed getter. No14-word codec, dictionary, release binary or Feather equivalence inferred. Decoded HTTP source body\: 27667 bytes, SHA256 49d06c940a563616cc364bc0ee715247d0d6da9d5bc7a314dc5d0132a216aa77.
+- Aliases: —
+- Scheme: [cake-wownero-14-unresolved](#scheme-cake-wownero-14-unresolved)
+- Generates mnemonic / import only: false / false
+- Limitations: Cake documentation identifies existing wallets originally imported from14 words. Pinned deprecation path exposes wallet.seed through the native seed getter. Exact native codec, list, license and secret handling unresolved; no Feather Tevador or Monero coin-domain equivalence inferred. Export only, not current import/generation.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-wownero-legacy14-export-linux"></a>
+
+### Cake Wownero historical14 export \(linux\) — cake-wallet-wownero-legacy14-export-linux
+
+- Source record: [cake-wallet-wownero-legacy14-export-linux](../catalog/wallets/cake-wallet-wownero-legacy14-export-linux.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-wownero-deprecation](../catalog/evidence/cake-wallet-wownero-deprecation.json), [cake-wallet-wownero-doc](../catalog/evidence/cake-wallet-wownero-doc.json), [cake-wallet-wownero-seed-export](../catalog/evidence/cake-wallet-wownero-seed-export.json), [cake-wallet-wownero-wallet-seed](../catalog/evidence/cake-wallet-wownero-wallet-seed.json)
+- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
+- Evidence claim: openWallet opens existing native wallet then throws WalletDeprecationException\(seed\: wallet.seed, curr\: wallet.currency\). This is exact Cake export/deprecation reachability, not current creation or restore availability. Official Wownero docs separately identify historical14-word imported wallets. Decoded HTTP source body\: 14837 bytes, SHA256 aad1a0bb05afcc3d6354308c63227e076ac975bece550c7f6380049d10d47735.
+- Evidence claim: Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.
+- Evidence claim: getSeed prefers native/cached Polyseed, otherwise getSeedLegacy calls WOWNERO Wallet\_seed with stored seedOffset. It forwards native backup text without a Dart word-count constraint. Official docs provide the historical14-word export statement; exact native14 algorithm/list remains unresolved, not borrowed from Feather. Decoded HTTP source body\: 11403 bytes, SHA256 5ded0e4514b4988b482628be9461e0034eafc2ab758832195c81b2618d9c836f.
+- Evidence claim: WowneroWallet.seed delegates to wownero\_wallet.getSeed; combined with the deprecation exception this connects existing-wallet export to the native seed getter. No14-word codec, dictionary, release binary or Feather equivalence inferred. Decoded HTTP source body\: 27667 bytes, SHA256 49d06c940a563616cc364bc0ee715247d0d6da9d5bc7a314dc5d0132a216aa77.
+- Aliases: —
+- Scheme: [cake-wownero-14-unresolved](#scheme-cake-wownero-14-unresolved)
+- Generates mnemonic / import only: false / false
+- Limitations: Cake documentation identifies existing wallets originally imported from14 words. Pinned deprecation path exposes wallet.seed through the native seed getter. Exact native codec, list, license and secret handling unresolved; no Feather Tevador or Monero coin-domain equivalence inferred. Export only, not current import/generation.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
+<a id="wallet-cake-wallet-wownero-legacy14-export-macos"></a>
+
+### Cake Wownero historical14 export \(macos\) — cake-wallet-wownero-legacy14-export-macos
+
+- Source record: [cake-wallet-wownero-legacy14-export-macos](../catalog/wallets/cake-wallet-wownero-legacy14-export-macos.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-wownero-deprecation](../catalog/evidence/cake-wallet-wownero-deprecation.json), [cake-wallet-wownero-doc](../catalog/evidence/cake-wallet-wownero-doc.json), [cake-wallet-wownero-seed-export](../catalog/evidence/cake-wallet-wownero-seed-export.json), [cake-wallet-wownero-wallet-seed](../catalog/evidence/cake-wallet-wownero-wallet-seed.json)
+- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
+- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
+- Evidence claim: openWallet opens existing native wallet then throws WalletDeprecationException\(seed\: wallet.seed, curr\: wallet.currency\). This is exact Cake export/deprecation reachability, not current creation or restore availability. Official Wownero docs separately identify historical14-word imported wallets. Decoded HTTP source body\: 14837 bytes, SHA256 aad1a0bb05afcc3d6354308c63227e076ac975bece550c7f6380049d10d47735.
+- Evidence claim: Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.
+- Evidence claim: getSeed prefers native/cached Polyseed, otherwise getSeedLegacy calls WOWNERO Wallet\_seed with stored seedOffset. It forwards native backup text without a Dart word-count constraint. Official docs provide the historical14-word export statement; exact native14 algorithm/list remains unresolved, not borrowed from Feather. Decoded HTTP source body\: 11403 bytes, SHA256 5ded0e4514b4988b482628be9461e0034eafc2ab758832195c81b2618d9c836f.
+- Evidence claim: WowneroWallet.seed delegates to wownero\_wallet.getSeed; combined with the deprecation exception this connects existing-wallet export to the native seed getter. No14-word codec, dictionary, release binary or Feather equivalence inferred. Decoded HTTP source body\: 27667 bytes, SHA256 49d06c940a563616cc364bc0ee715247d0d6da9d5bc7a314dc5d0132a216aa77.
+- Aliases: —
+- Scheme: [cake-wownero-14-unresolved](#scheme-cake-wownero-14-unresolved)
+- Generates mnemonic / import only: false / false
+- Limitations: Cake documentation identifies existing wallets originally imported from14 words. Pinned deprecation path exposes wallet.seed through the native seed getter. Exact native codec, list, license and secret handling unresolved; no Feather Tevador or Monero coin-domain equivalence inferred. Export only, not current import/generation.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
+- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
+
 <a id="wallet-cake-wallet-wownero-legacy25-export-android"></a>
 
 ### Cake Wallet wownero — legacy25-export \(android\) — cake-wallet-wownero-legacy25-export-android
@@ -12437,90 +14148,6 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.
 - Aliases: —
 - Scheme: —
-- Generates mnemonic / import only: false / false
-- Limitations: Historical wallet export only; creation/restore/sync/transact removed. Exact original generation version, language/dependency/normalization remain unresolved; no Monero coin-domain substitution.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-wownero-tevador14-export-android"></a>
-
-### Cake Wallet wownero — tevador14-export \(android\) — cake-wallet-wownero-tevador14-export-android
-
-- Source record: [cake-wallet-wownero-tevador14-export-android](../catalog/wallets/cake-wallet-wownero-tevador14-export-android.json)
-- Status: blocked
-- Reason: Support is blocked; see evidence and license decisions below.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: true
-- Evidence: [cake-wallet-build-android](../catalog/evidence/cake-wallet-build-android.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-wownero-doc](../catalog/evidence/cake-wallet-wownero-doc.json)
-- Evidence claim: android Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
-- Evidence claim: Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.
-- Aliases: —
-- Scheme: [tevador-14-unresolved](#scheme-tevador-14-unresolved)
-- Generates mnemonic / import only: false / false
-- Limitations: Historical wallet export only; creation/restore/sync/transact removed. Exact original generation version, language/dependency/normalization remain unresolved; no Monero coin-domain substitution.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-wownero-tevador14-export-ios"></a>
-
-### Cake Wallet wownero — tevador14-export \(ios\) — cake-wallet-wownero-tevador14-export-ios
-
-- Source record: [cake-wallet-wownero-tevador14-export-ios](../catalog/wallets/cake-wallet-wownero-tevador14-export-ios.json)
-- Status: blocked
-- Reason: Support is blocked; see evidence and license decisions below.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: true
-- Evidence: [cake-wallet-build-ios](../catalog/evidence/cake-wallet-build-ios.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-wownero-doc](../catalog/evidence/cake-wallet-wownero-doc.json)
-- Evidence claim: ios Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
-- Evidence claim: Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.
-- Aliases: —
-- Scheme: [tevador-14-unresolved](#scheme-tevador-14-unresolved)
-- Generates mnemonic / import only: false / false
-- Limitations: Historical wallet export only; creation/restore/sync/transact removed. Exact original generation version, language/dependency/normalization remain unresolved; no Monero coin-domain substitution.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-wownero-tevador14-export-linux"></a>
-
-### Cake Wallet wownero — tevador14-export \(linux\) — cake-wallet-wownero-tevador14-export-linux
-
-- Source record: [cake-wallet-wownero-tevador14-export-linux](../catalog/wallets/cake-wallet-wownero-tevador14-export-linux.json)
-- Status: blocked
-- Reason: Support is blocked; see evidence and license decisions below.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: true
-- Evidence: [cake-wallet-build-linux](../catalog/evidence/cake-wallet-build-linux.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-wownero-doc](../catalog/evidence/cake-wallet-wownero-doc.json)
-- Evidence claim: linux Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
-- Evidence claim: Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.
-- Aliases: —
-- Scheme: [tevador-14-unresolved](#scheme-tevador-14-unresolved)
-- Generates mnemonic / import only: false / false
-- Limitations: Historical wallet export only; creation/restore/sync/transact removed. Exact original generation version, language/dependency/normalization remain unresolved; no Monero coin-domain substitution.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
-- Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
-
-<a id="wallet-cake-wallet-wownero-tevador14-export-macos"></a>
-
-### Cake Wallet wownero — tevador14-export \(macos\) — cake-wallet-wownero-tevador14-export-macos
-
-- Source record: [cake-wallet-wownero-tevador14-export-macos](../catalog/wallets/cake-wallet-wownero-tevador14-export-macos.json)
-- Status: blocked
-- Reason: Support is blocked; see evidence and license decisions below.
-- Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
-- Verified on: 2026-09-29
-- Historical: true
-- Evidence: [cake-wallet-build-macos](../catalog/evidence/cake-wallet-build-macos.json), [cake-wallet-inventory](../catalog/evidence/cake-wallet-inventory.json), [cake-wallet-wownero-doc](../catalog/evidence/cake-wallet-wownero-doc.json)
-- Evidence claim: macos Cake configuration at exact commit; Android/iOS enable16 chains, macOS/Linux omit Decred, Zano and Zcash. Shared Dart handlers do not attest native binaries or hardware transport support.
-- Evidence claim: Pinned generated availableWalletTypes inventory\: 16 current networks; Bitcoin flag also adds Litecoin; Wownero insertion disabled, Banano optional flag not enabled by reviewed Cake builds. Enum membership is not current support.
-- Evidence claim: Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.
-- Aliases: —
-- Scheme: [tevador-14-unresolved](#scheme-tevador-14-unresolved)
 - Generates mnemonic / import only: false / false
 - Limitations: Historical wallet export only; creation/restore/sync/transact removed. Exact original generation version, language/dependency/normalization remain unresolved; no Monero coin-domain substitution.; Source-bound research only\: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure.
 - Profile guidance: Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil.
@@ -16355,10 +17982,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Dictionaries: [polyseed-cs](#dictionary-polyseed-cs)
 - Supported lengths: 16
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed cs selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
-- Semantics: polyseed cs selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- Position rules: Source-order16-word creation vocabulary; no complete phrase validation.
+- Semantics: Creation selector for Polyseed16 cs only; optional creation encryption. Restore conditions have separate plain, encrypted and native-offset schemes. Exact dependency byte parity and independent recovery remain unverified.
 - External secret / stored: optional-passphrase / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. polyseed cs selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- External-secret guidance: Creation encryption only; never interpret this optional setting as a generic restore offset. Tessaveil stores no external secrets.
 - Test vectors: —
 
 <a id="scheme-cake-monero-polyseed-en"></a>
@@ -16377,10 +18004,230 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Dictionaries: [polyseed-en](#dictionary-polyseed-en)
 - Supported lengths: 16
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed en selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
-- Semantics: polyseed en selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- Position rules: Source-order16-word creation vocabulary; no complete phrase validation.
+- Semantics: Creation selector for Polyseed16 en only; optional creation encryption. Restore conditions have separate plain, encrypted and native-offset schemes. Exact dependency byte parity and independent recovery remain unverified.
 - External secret / stored: optional-passphrase / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. polyseed en selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- External-secret guidance: Creation encryption only; never interpret this optional setting as a generic restore offset. Tessaveil stores no external secrets.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-encrypted-cs"></a>
+
+### cake-monero-polyseed-encrypted-cs — cake-monero-polyseed-encrypted-cs
+
+- Source record: [cake-monero-polyseed-encrypted-cs](../catalog/schemes/cake-monero-polyseed-encrypted-cs.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-cs](#dictionary-polyseed-cs)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=true. Input dictionary polyseed-cs,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=true. Input dictionary polyseed-cs,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-encrypted-en"></a>
+
+### cake-monero-polyseed-encrypted-en — cake-monero-polyseed-encrypted-en
+
+- Source record: [cake-monero-polyseed-encrypted-en](../catalog/schemes/cake-monero-polyseed-encrypted-en.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-en](#dictionary-polyseed-en)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=true. Input dictionary polyseed-en,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=true. Input dictionary polyseed-en,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-encrypted-es"></a>
+
+### cake-monero-polyseed-encrypted-es — cake-monero-polyseed-encrypted-es
+
+- Source record: [cake-monero-polyseed-encrypted-es](../catalog/schemes/cake-monero-polyseed-encrypted-es.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-es](#dictionary-polyseed-es)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=true. Input dictionary polyseed-es,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=true. Input dictionary polyseed-es,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-encrypted-fr"></a>
+
+### cake-monero-polyseed-encrypted-fr — cake-monero-polyseed-encrypted-fr
+
+- Source record: [cake-monero-polyseed-encrypted-fr](../catalog/schemes/cake-monero-polyseed-encrypted-fr.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-fr](#dictionary-polyseed-fr)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=true. Input dictionary polyseed-fr,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=true. Input dictionary polyseed-fr,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-encrypted-it"></a>
+
+### cake-monero-polyseed-encrypted-it — cake-monero-polyseed-encrypted-it
+
+- Source record: [cake-monero-polyseed-encrypted-it](../catalog/schemes/cake-monero-polyseed-encrypted-it.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-it](#dictionary-polyseed-it)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=true. Input dictionary polyseed-it,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=true. Input dictionary polyseed-it,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-encrypted-ja"></a>
+
+### cake-monero-polyseed-encrypted-ja — cake-monero-polyseed-encrypted-ja
+
+- Source record: [cake-monero-polyseed-encrypted-ja](../catalog/schemes/cake-monero-polyseed-encrypted-ja.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-ja](#dictionary-polyseed-ja)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=true. Input dictionary polyseed-ja,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=true. Input dictionary polyseed-ja,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-encrypted-ko"></a>
+
+### cake-monero-polyseed-encrypted-ko — cake-monero-polyseed-encrypted-ko
+
+- Source record: [cake-monero-polyseed-encrypted-ko](../catalog/schemes/cake-monero-polyseed-encrypted-ko.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-ko](#dictionary-polyseed-ko)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=true. Input dictionary polyseed-ko,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=true. Input dictionary polyseed-ko,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-encrypted-pt"></a>
+
+### cake-monero-polyseed-encrypted-pt — cake-monero-polyseed-encrypted-pt
+
+- Source record: [cake-monero-polyseed-encrypted-pt](../catalog/schemes/cake-monero-polyseed-encrypted-pt.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-pt](#dictionary-polyseed-pt)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=true. Input dictionary polyseed-pt,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=true. Input dictionary polyseed-pt,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-encrypted-zh-hans"></a>
+
+### cake-monero-polyseed-encrypted-zh-hans — cake-monero-polyseed-encrypted-zh-hans
+
+- Source record: [cake-monero-polyseed-encrypted-zh-hans](../catalog/schemes/cake-monero-polyseed-encrypted-zh-hans.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-zh-hans](#dictionary-polyseed-zh-hans)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hans,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hans,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-encrypted-zh-hant"></a>
+
+### cake-monero-polyseed-encrypted-zh-hant — cake-monero-polyseed-encrypted-zh-hant
+
+- Source record: [cake-monero-polyseed-encrypted-zh-hant](../catalog/schemes/cake-monero-polyseed-encrypted-zh-hant.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-zh-hant](#dictionary-polyseed-zh-hant)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hant,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=true. Input dictionary polyseed-zh-hant,16 words. polyseed.crypt\(passphrase or empty\) first, then polyseed.generateKey\(POLYSEED\_MONERO,32\) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
 - Test vectors: —
 
 <a id="scheme-cake-monero-polyseed-es"></a>
@@ -16399,10 +18246,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Dictionaries: [polyseed-es](#dictionary-polyseed-es)
 - Supported lengths: 16
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed es selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
-- Semantics: polyseed es selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- Position rules: Source-order16-word creation vocabulary; no complete phrase validation.
+- Semantics: Creation selector for Polyseed16 es only; optional creation encryption. Restore conditions have separate plain, encrypted and native-offset schemes. Exact dependency byte parity and independent recovery remain unverified.
 - External secret / stored: optional-passphrase / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. polyseed es selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- External-secret guidance: Creation encryption only; never interpret this optional setting as a generic restore offset. Tessaveil stores no external secrets.
 - Test vectors: —
 
 <a id="scheme-cake-monero-polyseed-fr"></a>
@@ -16421,10 +18268,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Dictionaries: [polyseed-fr](#dictionary-polyseed-fr)
 - Supported lengths: 16
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed fr selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
-- Semantics: polyseed fr selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- Position rules: Source-order16-word creation vocabulary; no complete phrase validation.
+- Semantics: Creation selector for Polyseed16 fr only; optional creation encryption. Restore conditions have separate plain, encrypted and native-offset schemes. Exact dependency byte parity and independent recovery remain unverified.
 - External secret / stored: optional-passphrase / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. polyseed fr selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- External-secret guidance: Creation encryption only; never interpret this optional setting as a generic restore offset. Tessaveil stores no external secrets.
 - Test vectors: —
 
 <a id="scheme-cake-monero-polyseed-it"></a>
@@ -16443,10 +18290,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Dictionaries: [polyseed-it](#dictionary-polyseed-it)
 - Supported lengths: 16
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed it selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
-- Semantics: polyseed it selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- Position rules: Source-order16-word creation vocabulary; no complete phrase validation.
+- Semantics: Creation selector for Polyseed16 it only; optional creation encryption. Restore conditions have separate plain, encrypted and native-offset schemes. Exact dependency byte parity and independent recovery remain unverified.
 - External secret / stored: optional-passphrase / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. polyseed it selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- External-secret guidance: Creation encryption only; never interpret this optional setting as a generic restore offset. Tessaveil stores no external secrets.
 - Test vectors: —
 
 <a id="scheme-cake-monero-polyseed-ja"></a>
@@ -16465,10 +18312,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Dictionaries: [polyseed-ja](#dictionary-polyseed-ja)
 - Supported lengths: 16
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed ja selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
-- Semantics: polyseed ja selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- Position rules: Source-order16-word creation vocabulary; no complete phrase validation.
+- Semantics: Creation selector for Polyseed16 ja only; optional creation encryption. Restore conditions have separate plain, encrypted and native-offset schemes. Exact dependency byte parity and independent recovery remain unverified.
 - External secret / stored: optional-passphrase / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. polyseed ja selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- External-secret guidance: Creation encryption only; never interpret this optional setting as a generic restore offset. Tessaveil stores no external secrets.
 - Test vectors: —
 
 <a id="scheme-cake-monero-polyseed-ko"></a>
@@ -16487,10 +18334,460 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Dictionaries: [polyseed-ko](#dictionary-polyseed-ko)
 - Supported lengths: 16
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed ko selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
-- Semantics: polyseed ko selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- Position rules: Source-order16-word creation vocabulary; no complete phrase validation.
+- Semantics: Creation selector for Polyseed16 ko only; optional creation encryption. Restore conditions have separate plain, encrypted and native-offset schemes. Exact dependency byte parity and independent recovery remain unverified.
 - External secret / stored: optional-passphrase / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. polyseed ko selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- External-secret guidance: Creation encryption only; never interpret this optional setting as a generic restore offset. Tessaveil stores no external secrets.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-offset-cs"></a>
+
+### cake-monero-polyseed-offset-cs — cake-monero-polyseed-offset-cs
+
+- Source record: [cake-monero-polyseed-offset-cs](../catalog/schemes/cake-monero-polyseed-offset-cs.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Dictionaries: [polyseed-cs](#dictionary-polyseed-cs)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-cs,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-cs,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-offset-en"></a>
+
+### cake-monero-polyseed-offset-en — cake-monero-polyseed-offset-en
+
+- Source record: [cake-monero-polyseed-offset-en](../catalog/schemes/cake-monero-polyseed-offset-en.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Dictionaries: [polyseed-en](#dictionary-polyseed-en)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-en,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-en,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-offset-es"></a>
+
+### cake-monero-polyseed-offset-es — cake-monero-polyseed-offset-es
+
+- Source record: [cake-monero-polyseed-offset-es](../catalog/schemes/cake-monero-polyseed-offset-es.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Dictionaries: [polyseed-es](#dictionary-polyseed-es)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-es,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-es,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-offset-fr"></a>
+
+### cake-monero-polyseed-offset-fr — cake-monero-polyseed-offset-fr
+
+- Source record: [cake-monero-polyseed-offset-fr](../catalog/schemes/cake-monero-polyseed-offset-fr.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Dictionaries: [polyseed-fr](#dictionary-polyseed-fr)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-fr,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-fr,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-offset-it"></a>
+
+### cake-monero-polyseed-offset-it — cake-monero-polyseed-offset-it
+
+- Source record: [cake-monero-polyseed-offset-it](../catalog/schemes/cake-monero-polyseed-offset-it.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Dictionaries: [polyseed-it](#dictionary-polyseed-it)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-it,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-it,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-offset-ja"></a>
+
+### cake-monero-polyseed-offset-ja — cake-monero-polyseed-offset-ja
+
+- Source record: [cake-monero-polyseed-offset-ja](../catalog/schemes/cake-monero-polyseed-offset-ja.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Dictionaries: [polyseed-ja](#dictionary-polyseed-ja)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ja,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ja,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-offset-ko"></a>
+
+### cake-monero-polyseed-offset-ko — cake-monero-polyseed-offset-ko
+
+- Source record: [cake-monero-polyseed-offset-ko](../catalog/schemes/cake-monero-polyseed-offset-ko.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Dictionaries: [polyseed-ko](#dictionary-polyseed-ko)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ko,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-ko,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-offset-pt"></a>
+
+### cake-monero-polyseed-offset-pt — cake-monero-polyseed-offset-pt
+
+- Source record: [cake-monero-polyseed-offset-pt](../catalog/schemes/cake-monero-polyseed-offset-pt.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Dictionaries: [polyseed-pt](#dictionary-polyseed-pt)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-pt,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-pt,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-offset-zh-hans"></a>
+
+### cake-monero-polyseed-offset-zh-hans — cake-monero-polyseed-offset-zh-hans
+
+- Source record: [cake-monero-polyseed-offset-zh-hans](../catalog/schemes/cake-monero-polyseed-offset-zh-hans.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Dictionaries: [polyseed-zh-hans](#dictionary-polyseed-zh-hans)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hans,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hans,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-offset-zh-hant"></a>
+
+### cake-monero-polyseed-offset-zh-hant — cake-monero-polyseed-offset-zh-hant
+
+- Source record: [cake-monero-polyseed-offset-zh-hant](../catalog/schemes/cake-monero-polyseed-offset-zh-hant.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json), [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Evidence claim: Lines 228-261 label restoreWalletFromPolyseedWithOffset English-only because normalization; forward the encoded input and seedOffset to native createWalletFromPolyseed with kdfRounds=1. The language argument is not forwarded. No native normalization, multilingual parity or equality to Polyseed encryption is established. Decoded HTTP source body\: 12892 bytes, SHA256 ca72aa4f9591b54628fd581316d1e9e8c800c54d79dd5814291eb5d0ff8af8c7.
+- Dictionaries: [polyseed-zh-hant](#dictionary-polyseed-zh-hant)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hant,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: required-passphrase / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hant,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-plain-cs"></a>
+
+### cake-monero-polyseed-plain-cs — cake-monero-polyseed-plain-cs
+
+- Source record: [cake-monero-polyseed-plain-cs](../catalog/schemes/cake-monero-polyseed-plain-cs.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-cs](#dictionary-polyseed-cs)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-cs,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: none / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-cs,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-plain-en"></a>
+
+### cake-monero-polyseed-plain-en — cake-monero-polyseed-plain-en
+
+- Source record: [cake-monero-polyseed-plain-en](../catalog/schemes/cake-monero-polyseed-plain-en.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-en](#dictionary-polyseed-en)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-en,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: none / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-en,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-plain-es"></a>
+
+### cake-monero-polyseed-plain-es — cake-monero-polyseed-plain-es
+
+- Source record: [cake-monero-polyseed-plain-es](../catalog/schemes/cake-monero-polyseed-plain-es.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-es](#dictionary-polyseed-es)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-es,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: none / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-es,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-plain-fr"></a>
+
+### cake-monero-polyseed-plain-fr — cake-monero-polyseed-plain-fr
+
+- Source record: [cake-monero-polyseed-plain-fr](../catalog/schemes/cake-monero-polyseed-plain-fr.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-fr](#dictionary-polyseed-fr)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-fr,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: none / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-fr,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-plain-it"></a>
+
+### cake-monero-polyseed-plain-it — cake-monero-polyseed-plain-it
+
+- Source record: [cake-monero-polyseed-plain-it](../catalog/schemes/cake-monero-polyseed-plain-it.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-it](#dictionary-polyseed-it)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-it,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: none / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-it,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-plain-ja"></a>
+
+### cake-monero-polyseed-plain-ja — cake-monero-polyseed-plain-ja
+
+- Source record: [cake-monero-polyseed-plain-ja](../catalog/schemes/cake-monero-polyseed-plain-ja.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-ja](#dictionary-polyseed-ja)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ja,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: none / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ja,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-plain-ko"></a>
+
+### cake-monero-polyseed-plain-ko — cake-monero-polyseed-plain-ko
+
+- Source record: [cake-monero-polyseed-plain-ko](../catalog/schemes/cake-monero-polyseed-plain-ko.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-ko](#dictionary-polyseed-ko)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ko,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: none / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-ko,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-plain-pt"></a>
+
+### cake-monero-polyseed-plain-pt — cake-monero-polyseed-plain-pt
+
+- Source record: [cake-monero-polyseed-plain-pt](../catalog/schemes/cake-monero-polyseed-plain-pt.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-pt](#dictionary-polyseed-pt)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-pt,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: none / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-pt,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-plain-zh-hans"></a>
+
+### cake-monero-polyseed-plain-zh-hans — cake-monero-polyseed-plain-zh-hans
+
+- Source record: [cake-monero-polyseed-plain-zh-hans](../catalog/schemes/cake-monero-polyseed-plain-zh-hans.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-zh-hans](#dictionary-polyseed-zh-hans)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hans,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: none / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hans,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
+- Test vectors: —
+
+<a id="scheme-cake-monero-polyseed-plain-zh-hant"></a>
+
+### cake-monero-polyseed-plain-zh-hant — cake-monero-polyseed-plain-zh-hant
+
+- Source record: [cake-monero-polyseed-plain-zh-hant](../catalog/schemes/cake-monero-polyseed-plain-zh-hant.json)
+- Status: documented
+- Reason: Evidence is insufficient for selectable support.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: false
+- Evidence: [cake-wallet-language-ui](../catalog/evidence/cake-wallet-language-ui.json), [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json)
+- Evidence claim: Exact new-wallet selector\: legacy en/zh-hans/nl/de/ja/pt/ru/es/fr/it; Polyseed en/zh-hans/zh-hant/ja/ko/pt/cs/es/fr/it; BIP39 English only. No Esperanto/Lojban/EnglishOld legacy generation claim.
+- Evidence claim: Lines 447-515 detect phrase language and decode Monero Polyseed; isEncrypted=false with nonempty passphrase returns through restoreWalletFromPolyseedWithOffset; encrypted input calls polyseed.crypt\(passphrase or empty\) then generateKey; unencrypted empty input directly generatesKey. These are three distinct conditional restore paths, not a generic optional extension. Decoded HTTP source body\: 19686 bytes, SHA256 9e0591a1fa987aa48ad876fecdb5ad41b77accd8cdd9fc2a382a90563148d727.
+- Dictionaries: [polyseed-zh-hant](#dictionary-polyseed-zh-hant)
+- Supported lengths: 16
+- Position rules: Source-order vocabulary per input language; no complete phrase validation.
+- Semantics: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hant,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.
+- External secret / stored: none / false
+- External-secret guidance: Condition\: isEncrypted=false; passphrase empty. Input dictionary polyseed-zh-hant,16 words. Direct polyseed.generateKey\(POLYSEED\_MONERO,32\), then restoreWalletFromSpendKeySync; no encryption operation and no seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it.
 - Test vectors: —
 
 <a id="scheme-cake-monero-polyseed-pt"></a>
@@ -16509,10 +18806,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Dictionaries: [polyseed-pt](#dictionary-polyseed-pt)
 - Supported lengths: 16
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed pt selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
-- Semantics: polyseed pt selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- Position rules: Source-order16-word creation vocabulary; no complete phrase validation.
+- Semantics: Creation selector for Polyseed16 pt only; optional creation encryption. Restore conditions have separate plain, encrypted and native-offset schemes. Exact dependency byte parity and independent recovery remain unverified.
 - External secret / stored: optional-passphrase / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. polyseed pt selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- External-secret guidance: Creation encryption only; never interpret this optional setting as a generic restore offset. Tessaveil stores no external secrets.
 - Test vectors: —
 
 <a id="scheme-cake-monero-polyseed-zh-hans"></a>
@@ -16531,10 +18828,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Dictionaries: [polyseed-zh-hans](#dictionary-polyseed-zh-hans)
 - Supported lengths: 16
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed zh-hans selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
-- Semantics: polyseed zh-hans selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- Position rules: Source-order16-word creation vocabulary; no complete phrase validation.
+- Semantics: Creation selector for Polyseed16 zh-hans only; optional creation encryption. Restore conditions have separate plain, encrypted and native-offset schemes. Exact dependency byte parity and independent recovery remain unverified.
 - External secret / stored: optional-passphrase / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. polyseed zh-hans selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- External-secret guidance: Creation encryption only; never interpret this optional setting as a generic restore offset. Tessaveil stores no external secrets.
 - Test vectors: —
 
 <a id="scheme-cake-monero-polyseed-zh-hant"></a>
@@ -16553,10 +18850,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Evidence claim: monero source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.
 - Dictionaries: [polyseed-zh-hant](#dictionary-polyseed-zh-hant)
 - Supported lengths: 16
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. polyseed zh-hant selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
-- Semantics: polyseed zh-hant selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- Position rules: Source-order16-word creation vocabulary; no complete phrase validation.
+- Semantics: Creation selector for Polyseed16 zh-hant only; optional creation encryption. Restore conditions have separate plain, encrypted and native-offset schemes. Exact dependency byte parity and independent recovery remain unverified.
 - External secret / stored: optional-passphrase / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. polyseed zh-hant selector mapping only; upstream dictionary identity from Tasks10/11. Exact Dart/FFI file parity, normalization/passphrase and language-specific wallet recovery unverified.
+- External-secret guidance: Creation encryption only; never interpret this optional setting as a generic restore offset. Tessaveil stores no external secrets.
 - Test vectors: —
 
 <a id="scheme-cake-nano-hd-create"></a>
@@ -16629,6 +18926,30 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Semantics: Native Nano32-byte entropy is encoded as24 English words; no BIP39 sentence-to-seed step and no recovery passphrase.
 - External secret / stored: none / false
 - External-secret guidance: External recovery secrets are never stored by Tessaveil. Native Nano32-byte entropy is encoded as24 English words; no BIP39 sentence-to-seed step and no recovery passphrase.
+- Test vectors: —
+
+<a id="scheme-cake-wownero-14-unresolved"></a>
+
+### Cake Wownero — historical14 export, unresolved codec — cake-wownero-14-unresolved
+
+- Source record: [cake-wownero-14-unresolved](../catalog/schemes/cake-wownero-14-unresolved.json)
+- Status: blocked
+- Reason: Support is blocked; see evidence and license decisions below.
+- Guidance: Not selectable; use the wallet's own backup procedure.
+- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Verified on: 2026-09-29
+- Historical: true
+- Evidence: [cake-wallet-wownero-deprecation](../catalog/evidence/cake-wallet-wownero-deprecation.json), [cake-wallet-wownero-doc](../catalog/evidence/cake-wallet-wownero-doc.json), [cake-wallet-wownero-seed-export](../catalog/evidence/cake-wallet-wownero-seed-export.json), [cake-wallet-wownero-wallet-seed](../catalog/evidence/cake-wallet-wownero-wallet-seed.json)
+- Evidence claim: openWallet opens existing native wallet then throws WalletDeprecationException\(seed\: wallet.seed, curr\: wallet.currency\). This is exact Cake export/deprecation reachability, not current creation or restore availability. Official Wownero docs separately identify historical14-word imported wallets. Decoded HTTP source body\: 14837 bytes, SHA256 aad1a0bb05afcc3d6354308c63227e076ac975bece550c7f6380049d10d47735.
+- Evidence claim: Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.
+- Evidence claim: getSeed prefers native/cached Polyseed, otherwise getSeedLegacy calls WOWNERO Wallet\_seed with stored seedOffset. It forwards native backup text without a Dart word-count constraint. Official docs provide the historical14-word export statement; exact native14 algorithm/list remains unresolved, not borrowed from Feather. Decoded HTTP source body\: 11403 bytes, SHA256 5ded0e4514b4988b482628be9461e0034eafc2ab758832195c81b2618d9c836f.
+- Evidence claim: WowneroWallet.seed delegates to wownero\_wallet.getSeed; combined with the deprecation exception this connects existing-wallet export to the native seed getter. No14-word codec, dictionary, release binary or Feather equivalence inferred. Decoded HTTP source body\: 27667 bytes, SHA256 49d06c940a563616cc364bc0ee715247d0d6da9d5bc7a314dc5d0132a216aa77.
+- Dictionaries: —
+- Supported lengths: 14
+- Position rules: Historical14-word export identified by official Cake documentation; no inspected Dart14-word codec or dictionary order.
+- Semantics: Cake documentation identifies existing wallets originally imported from14 words. Pinned deprecation path exposes wallet.seed through the native seed getter. Exact native codec, list, license and secret handling unresolved; no Feather Tevador or Monero coin-domain equivalence inferred. Export only, not current import/generation.
+- External secret / stored: other / false
+- External-secret guidance: Native getter forwards stored seedOffset; exact14-word dependency semantics unresolved. No Feather passphrase behavior inferred. Tessaveil stores no secrets.
 - Test vectors: —
 
 <a id="scheme-cake-zano-bip39"></a>
@@ -17167,18 +19488,18 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - Status: blocked
 - Reason: Support is blocked; see evidence and license decisions below.
 - Guidance: Not selectable; use the wallet's own backup procedure.
-- Version interval (min / max): source-9679f91a8c9f63d00500c2b7cc18daf00949bdef / source-9679f91a8c9f63d00500c2b7cc18daf00949bdef
+- Version interval (min / max): source-948773cf13c7486ee230eb67b6bac06b2f94c874 / source-948773cf13c7486ee230eb67b6bac06b2f94c874
 - Verified on: 2026-09-29
-- Historical: false
+- Historical: true
 - Evidence: [cake-audit-feather14](../catalog/evidence/cake-audit-feather14.json), [cake-audit-feather14-code](../catalog/evidence/cake-audit-feather14-code.json)
 - Evidence claim: Task11 omission\: explicit14-word Tevador restore option, separate from16 Polyseed and25 legacy. Completer uses monero\_seed wordlist\:\:english; exact dependency vocabulary/normalization/license not bound here. Blocked metadata, no copied list.
 - Evidence claim: Tevador restore invokes monero\_seed with coinName, birthday and error correction. Independent recovery and dependency pin absent; not Polyseed or generic BIP39.
 - Dictionaries: —
 - Supported lengths: 14
-- Position rules: Source-order indices; complete phrase checksum/derivation is outside Tessaveil. 14-word Tevador recovery discovered in mandatory Feather and Cake Wownero export. Dependency list, normalization, language, passphrase and license binding unresolved. No bytes bundled.
-- Semantics: 14-word Tevador recovery discovered in mandatory Feather and Cake Wownero export. Dependency list, normalization, language, passphrase and license binding unresolved. No bytes bundled.
+- Position rules: Feather restore UI accepts14 words; exact dependency word order unresolved.
+- Semantics: Feather-only14-word Tevador import at the pinned Feather source. monero\_seed dependency/list/license, normalization, passphrase and recovery remain unresolved. No Cake or Wownero equivalence inferred; no bytes bundled.
 - External secret / stored: other / false
-- External-secret guidance: External recovery secrets are never stored by Tessaveil. 14-word Tevador recovery discovered in mandatory Feather and Cake Wownero export. Dependency list, normalization, language, passphrase and license binding unresolved. No bytes bundled.
+- External-secret guidance: Feather-only external-secret semantics unresolved; never borrow Cake passphrase behavior. Tessaveil stores no secrets.
 - Test vectors: —
 
 <a id="scheme-ton-multichain-bip39"></a>
@@ -18711,6 +21032,8 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - [cake-wallet-nano-service](../catalog/evidence/cake-wallet-nano-service.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [cake-wallet-polygon-doc](../catalog/evidence/cake-wallet-polygon-doc.json): official-documentation; HTTP-body-sha256-5030d73f897420c1b88d3b41f59d71abd025fb358db2cbc96fd5c8dd352b089e; 2026-09-29
 - [cake-wallet-polygon-service](../catalog/evidence/cake-wallet-polygon-service.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
+- [cake-wallet-polyseed-dispatch](../catalog/evidence/cake-wallet-polyseed-dispatch.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
+- [cake-wallet-polyseed-offset-native](../catalog/evidence/cake-wallet-polyseed-offset-native.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [cake-wallet-restore-ui](../catalog/evidence/cake-wallet-restore-ui.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [cake-wallet-solana-doc](../catalog/evidence/cake-wallet-solana-doc.json): official-documentation; HTTP-body-sha256-5722dad56a9db13fb1825b61dfe351e30e0331a4a1467ee3e8950c5366e50849; 2026-09-29
 - [cake-wallet-solana-service](../catalog/evidence/cake-wallet-solana-service.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
@@ -18720,7 +21043,10 @@ Release readiness: NO-GO; catalogue validation does not resolve physical-device,
 - [cake-wallet-version-ios](../catalog/evidence/cake-wallet-version-ios.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [cake-wallet-version-linux](../catalog/evidence/cake-wallet-version-linux.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [cake-wallet-version-macos](../catalog/evidence/cake-wallet-version-macos.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
+- [cake-wallet-wownero-deprecation](../catalog/evidence/cake-wallet-wownero-deprecation.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [cake-wallet-wownero-doc](../catalog/evidence/cake-wallet-wownero-doc.json): official-documentation; HTTP-body-sha256-e8e0871bc282b83696979608b64aa582738d728d131041a57395d8aad9c3ac80; 2026-09-29
+- [cake-wallet-wownero-seed-export](../catalog/evidence/cake-wallet-wownero-seed-export.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
+- [cake-wallet-wownero-wallet-seed](../catalog/evidence/cake-wallet-wownero-wallet-seed.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [cake-wallet-zano-doc](../catalog/evidence/cake-wallet-zano-doc.json): official-documentation; HTTP-body-sha256-de26ec2ffcdee7a8b90d6ae1b216cfef4e6484fe469ff88e44d00838a30289cb; 2026-09-29
 - [cake-wallet-zano-service](../catalog/evidence/cake-wallet-zano-service.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
 - [cake-wallet-zcash-derive](../catalog/evidence/cake-wallet-zcash-derive.json): official-source; 9679f91a8c9f63d00500c2b7cc18daf00949bdef; 2026-09-29
@@ -19081,17 +21407,48 @@ Pending is an unfinished research state, not a support status. Missing records r
 | scheme-cake-monero-legacy-zh-hans — cake-monero-legacy-zh-hans | terminal | documented | [cake-monero-legacy-zh-hans](../catalog/schemes/cake-monero-legacy-zh-hans.json) |
 | scheme-cake-monero-polyseed-cs — cake-monero-polyseed-cs | terminal | documented | [cake-monero-polyseed-cs](../catalog/schemes/cake-monero-polyseed-cs.json) |
 | scheme-cake-monero-polyseed-en — cake-monero-polyseed-en | terminal | documented | [cake-monero-polyseed-en](../catalog/schemes/cake-monero-polyseed-en.json) |
+| scheme-cake-monero-polyseed-encrypted-cs — cake-monero-polyseed-encrypted-cs | terminal | documented | [cake-monero-polyseed-encrypted-cs](../catalog/schemes/cake-monero-polyseed-encrypted-cs.json) |
+| scheme-cake-monero-polyseed-encrypted-en — cake-monero-polyseed-encrypted-en | terminal | documented | [cake-monero-polyseed-encrypted-en](../catalog/schemes/cake-monero-polyseed-encrypted-en.json) |
+| scheme-cake-monero-polyseed-encrypted-es — cake-monero-polyseed-encrypted-es | terminal | documented | [cake-monero-polyseed-encrypted-es](../catalog/schemes/cake-monero-polyseed-encrypted-es.json) |
+| scheme-cake-monero-polyseed-encrypted-fr — cake-monero-polyseed-encrypted-fr | terminal | documented | [cake-monero-polyseed-encrypted-fr](../catalog/schemes/cake-monero-polyseed-encrypted-fr.json) |
+| scheme-cake-monero-polyseed-encrypted-it — cake-monero-polyseed-encrypted-it | terminal | documented | [cake-monero-polyseed-encrypted-it](../catalog/schemes/cake-monero-polyseed-encrypted-it.json) |
+| scheme-cake-monero-polyseed-encrypted-ja — cake-monero-polyseed-encrypted-ja | terminal | documented | [cake-monero-polyseed-encrypted-ja](../catalog/schemes/cake-monero-polyseed-encrypted-ja.json) |
+| scheme-cake-monero-polyseed-encrypted-ko — cake-monero-polyseed-encrypted-ko | terminal | documented | [cake-monero-polyseed-encrypted-ko](../catalog/schemes/cake-monero-polyseed-encrypted-ko.json) |
+| scheme-cake-monero-polyseed-encrypted-pt — cake-monero-polyseed-encrypted-pt | terminal | documented | [cake-monero-polyseed-encrypted-pt](../catalog/schemes/cake-monero-polyseed-encrypted-pt.json) |
+| scheme-cake-monero-polyseed-encrypted-zh-hans — cake-monero-polyseed-encrypted-zh-hans | terminal | documented | [cake-monero-polyseed-encrypted-zh-hans](../catalog/schemes/cake-monero-polyseed-encrypted-zh-hans.json) |
+| scheme-cake-monero-polyseed-encrypted-zh-hant — cake-monero-polyseed-encrypted-zh-hant | terminal | documented | [cake-monero-polyseed-encrypted-zh-hant](../catalog/schemes/cake-monero-polyseed-encrypted-zh-hant.json) |
 | scheme-cake-monero-polyseed-es — cake-monero-polyseed-es | terminal | documented | [cake-monero-polyseed-es](../catalog/schemes/cake-monero-polyseed-es.json) |
 | scheme-cake-monero-polyseed-fr — cake-monero-polyseed-fr | terminal | documented | [cake-monero-polyseed-fr](../catalog/schemes/cake-monero-polyseed-fr.json) |
 | scheme-cake-monero-polyseed-it — cake-monero-polyseed-it | terminal | documented | [cake-monero-polyseed-it](../catalog/schemes/cake-monero-polyseed-it.json) |
 | scheme-cake-monero-polyseed-ja — cake-monero-polyseed-ja | terminal | documented | [cake-monero-polyseed-ja](../catalog/schemes/cake-monero-polyseed-ja.json) |
 | scheme-cake-monero-polyseed-ko — cake-monero-polyseed-ko | terminal | documented | [cake-monero-polyseed-ko](../catalog/schemes/cake-monero-polyseed-ko.json) |
+| scheme-cake-monero-polyseed-offset-cs — cake-monero-polyseed-offset-cs | terminal | blocked | [cake-monero-polyseed-offset-cs](../catalog/schemes/cake-monero-polyseed-offset-cs.json) |
+| scheme-cake-monero-polyseed-offset-en — cake-monero-polyseed-offset-en | terminal | blocked | [cake-monero-polyseed-offset-en](../catalog/schemes/cake-monero-polyseed-offset-en.json) |
+| scheme-cake-monero-polyseed-offset-es — cake-monero-polyseed-offset-es | terminal | blocked | [cake-monero-polyseed-offset-es](../catalog/schemes/cake-monero-polyseed-offset-es.json) |
+| scheme-cake-monero-polyseed-offset-fr — cake-monero-polyseed-offset-fr | terminal | blocked | [cake-monero-polyseed-offset-fr](../catalog/schemes/cake-monero-polyseed-offset-fr.json) |
+| scheme-cake-monero-polyseed-offset-it — cake-monero-polyseed-offset-it | terminal | blocked | [cake-monero-polyseed-offset-it](../catalog/schemes/cake-monero-polyseed-offset-it.json) |
+| scheme-cake-monero-polyseed-offset-ja — cake-monero-polyseed-offset-ja | terminal | blocked | [cake-monero-polyseed-offset-ja](../catalog/schemes/cake-monero-polyseed-offset-ja.json) |
+| scheme-cake-monero-polyseed-offset-ko — cake-monero-polyseed-offset-ko | terminal | blocked | [cake-monero-polyseed-offset-ko](../catalog/schemes/cake-monero-polyseed-offset-ko.json) |
+| scheme-cake-monero-polyseed-offset-pt — cake-monero-polyseed-offset-pt | terminal | blocked | [cake-monero-polyseed-offset-pt](../catalog/schemes/cake-monero-polyseed-offset-pt.json) |
+| scheme-cake-monero-polyseed-offset-zh-hans — cake-monero-polyseed-offset-zh-hans | terminal | blocked | [cake-monero-polyseed-offset-zh-hans](../catalog/schemes/cake-monero-polyseed-offset-zh-hans.json) |
+| scheme-cake-monero-polyseed-offset-zh-hant — cake-monero-polyseed-offset-zh-hant | terminal | blocked | [cake-monero-polyseed-offset-zh-hant](../catalog/schemes/cake-monero-polyseed-offset-zh-hant.json) |
+| scheme-cake-monero-polyseed-plain-cs — cake-monero-polyseed-plain-cs | terminal | documented | [cake-monero-polyseed-plain-cs](../catalog/schemes/cake-monero-polyseed-plain-cs.json) |
+| scheme-cake-monero-polyseed-plain-en — cake-monero-polyseed-plain-en | terminal | documented | [cake-monero-polyseed-plain-en](../catalog/schemes/cake-monero-polyseed-plain-en.json) |
+| scheme-cake-monero-polyseed-plain-es — cake-monero-polyseed-plain-es | terminal | documented | [cake-monero-polyseed-plain-es](../catalog/schemes/cake-monero-polyseed-plain-es.json) |
+| scheme-cake-monero-polyseed-plain-fr — cake-monero-polyseed-plain-fr | terminal | documented | [cake-monero-polyseed-plain-fr](../catalog/schemes/cake-monero-polyseed-plain-fr.json) |
+| scheme-cake-monero-polyseed-plain-it — cake-monero-polyseed-plain-it | terminal | documented | [cake-monero-polyseed-plain-it](../catalog/schemes/cake-monero-polyseed-plain-it.json) |
+| scheme-cake-monero-polyseed-plain-ja — cake-monero-polyseed-plain-ja | terminal | documented | [cake-monero-polyseed-plain-ja](../catalog/schemes/cake-monero-polyseed-plain-ja.json) |
+| scheme-cake-monero-polyseed-plain-ko — cake-monero-polyseed-plain-ko | terminal | documented | [cake-monero-polyseed-plain-ko](../catalog/schemes/cake-monero-polyseed-plain-ko.json) |
+| scheme-cake-monero-polyseed-plain-pt — cake-monero-polyseed-plain-pt | terminal | documented | [cake-monero-polyseed-plain-pt](../catalog/schemes/cake-monero-polyseed-plain-pt.json) |
+| scheme-cake-monero-polyseed-plain-zh-hans — cake-monero-polyseed-plain-zh-hans | terminal | documented | [cake-monero-polyseed-plain-zh-hans](../catalog/schemes/cake-monero-polyseed-plain-zh-hans.json) |
+| scheme-cake-monero-polyseed-plain-zh-hant — cake-monero-polyseed-plain-zh-hant | terminal | documented | [cake-monero-polyseed-plain-zh-hant](../catalog/schemes/cake-monero-polyseed-plain-zh-hant.json) |
 | scheme-cake-monero-polyseed-pt — cake-monero-polyseed-pt | terminal | documented | [cake-monero-polyseed-pt](../catalog/schemes/cake-monero-polyseed-pt.json) |
 | scheme-cake-monero-polyseed-zh-hans — cake-monero-polyseed-zh-hans | terminal | documented | [cake-monero-polyseed-zh-hans](../catalog/schemes/cake-monero-polyseed-zh-hans.json) |
 | scheme-cake-monero-polyseed-zh-hant — cake-monero-polyseed-zh-hant | terminal | documented | [cake-monero-polyseed-zh-hant](../catalog/schemes/cake-monero-polyseed-zh-hant.json) |
 | scheme-cake-nano-hd-create — cake-nano-hd-create | terminal | documented | [cake-nano-hd-create](../catalog/schemes/cake-nano-hd-create.json) |
 | scheme-cake-nano-hd-import — cake-nano-hd-import | terminal | documented | [cake-nano-hd-import](../catalog/schemes/cake-nano-hd-import.json) |
 | scheme-cake-nano-native — cake-nano-native | terminal | documented | [cake-nano-native](../catalog/schemes/cake-nano-native.json) |
+| scheme-cake-wownero-14-unresolved — Cake Wownero — historical14 export, unresolved codec | terminal | blocked | [cake-wownero-14-unresolved](../catalog/schemes/cake-wownero-14-unresolved.json) |
 | scheme-cake-zano-bip39 — Cake Zano BIP39-derived12/24 | terminal | blocked | [cake-zano-bip39](../catalog/schemes/cake-zano-bip39.json) |
 | scheme-cake-zcash-create — cake-zcash-create | terminal | blocked | [cake-zcash-create](../catalog/schemes/cake-zcash-create.json) |
 | scheme-cake-zcash-import — cake-zcash-import | terminal | blocked | [cake-zcash-import](../catalog/schemes/cake-zcash-import.json) |
@@ -19317,10 +21674,6 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-cake-wallet-litecoin-view-only-linux — Cake Wallet litecoin — view-only \(linux\) | terminal | documented | [cake-wallet-litecoin-view-only-linux](../catalog/wallets/cake-wallet-litecoin-view-only-linux.json) |
 | wallet-cake-wallet-litecoin-view-only-macos — Cake Wallet litecoin — view-only \(macos\) | terminal | documented | [cake-wallet-litecoin-view-only-macos](../catalog/wallets/cake-wallet-litecoin-view-only-macos.json) |
 | wallet-cake-wallet-monero-bip39 — Cake Wallet Monero — BIP39-derived mode | terminal | documented | [cake-wallet-monero-bip39](../catalog/wallets/cake-wallet-monero-bip39.json) |
-| wallet-cake-wallet-monero-bip39-12-create-android — Cake Wallet monero — bip39-12-create \(android\) | terminal | documented | [cake-wallet-monero-bip39-12-create-android](../catalog/wallets/cake-wallet-monero-bip39-12-create-android.json) |
-| wallet-cake-wallet-monero-bip39-12-create-ios — Cake Wallet monero — bip39-12-create \(ios\) | terminal | documented | [cake-wallet-monero-bip39-12-create-ios](../catalog/wallets/cake-wallet-monero-bip39-12-create-ios.json) |
-| wallet-cake-wallet-monero-bip39-12-create-linux — Cake Wallet monero — bip39-12-create \(linux\) | terminal | documented | [cake-wallet-monero-bip39-12-create-linux](../catalog/wallets/cake-wallet-monero-bip39-12-create-linux.json) |
-| wallet-cake-wallet-monero-bip39-12-create-macos — Cake Wallet monero — bip39-12-create \(macos\) | terminal | documented | [cake-wallet-monero-bip39-12-create-macos](../catalog/wallets/cake-wallet-monero-bip39-12-create-macos.json) |
 | wallet-cake-wallet-monero-bip39-create-ios — Cake Wallet monero — bip39-create \(ios\) | terminal | documented | [cake-wallet-monero-bip39-create-ios](../catalog/wallets/cake-wallet-monero-bip39-create-ios.json) |
 | wallet-cake-wallet-monero-bip39-create-linux — Cake Wallet monero — bip39-create \(linux\) | terminal | documented | [cake-wallet-monero-bip39-create-linux](../catalog/wallets/cake-wallet-monero-bip39-create-linux.json) |
 | wallet-cake-wallet-monero-bip39-create-macos — Cake Wallet monero — bip39-create \(macos\) | terminal | documented | [cake-wallet-monero-bip39-create-macos](../catalog/wallets/cake-wallet-monero-bip39-create-macos.json) |
@@ -19435,86 +21788,162 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-cake-wallet-monero-polyseed-cs-create-ios — Cake Wallet monero — polyseed-cs-create \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-cs-create-ios](../catalog/wallets/cake-wallet-monero-polyseed-cs-create-ios.json) |
 | wallet-cake-wallet-monero-polyseed-cs-create-linux — Cake Wallet monero — polyseed-cs-create \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-cs-create-linux](../catalog/wallets/cake-wallet-monero-polyseed-cs-create-linux.json) |
 | wallet-cake-wallet-monero-polyseed-cs-create-macos — Cake Wallet monero — polyseed-cs-create \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-cs-create-macos](../catalog/wallets/cake-wallet-monero-polyseed-cs-create-macos.json) |
-| wallet-cake-wallet-monero-polyseed-cs-import-android — Cake Wallet monero — polyseed-cs-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-cs-import-android](../catalog/wallets/cake-wallet-monero-polyseed-cs-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-cs-import-ios — Cake Wallet monero — polyseed-cs-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-cs-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-cs-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-cs-import-linux — Cake Wallet monero — polyseed-cs-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-cs-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-cs-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-cs-import-macos — Cake Wallet monero — polyseed-cs-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-cs-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-cs-import-macos.json) |
 | wallet-cake-wallet-monero-polyseed-en-create-android — Cake Wallet monero — polyseed-en-create \(android\) | terminal | documented | [cake-wallet-monero-polyseed-en-create-android](../catalog/wallets/cake-wallet-monero-polyseed-en-create-android.json) |
 | wallet-cake-wallet-monero-polyseed-en-create-ios — Cake Wallet monero — polyseed-en-create \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-en-create-ios](../catalog/wallets/cake-wallet-monero-polyseed-en-create-ios.json) |
 | wallet-cake-wallet-monero-polyseed-en-create-linux — Cake Wallet monero — polyseed-en-create \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-en-create-linux](../catalog/wallets/cake-wallet-monero-polyseed-en-create-linux.json) |
 | wallet-cake-wallet-monero-polyseed-en-create-macos — Cake Wallet monero — polyseed-en-create \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-en-create-macos](../catalog/wallets/cake-wallet-monero-polyseed-en-create-macos.json) |
-| wallet-cake-wallet-monero-polyseed-en-import-android — Cake Wallet monero — polyseed-en-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-en-import-android](../catalog/wallets/cake-wallet-monero-polyseed-en-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-en-import-ios — Cake Wallet monero — polyseed-en-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-en-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-en-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-en-import-linux — Cake Wallet monero — polyseed-en-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-en-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-en-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-en-import-macos — Cake Wallet monero — polyseed-en-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-en-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-en-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-cs-import-android — Cake Monero Polyseed cs — encrypted restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-cs-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-cs-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-cs-import-ios — Cake Monero Polyseed cs — encrypted restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-cs-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-cs-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-cs-import-linux — Cake Monero Polyseed cs — encrypted restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-cs-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-cs-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-cs-import-macos — Cake Monero Polyseed cs — encrypted restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-cs-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-cs-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-en-import-android — Cake Monero Polyseed en — encrypted restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-en-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-en-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-en-import-ios — Cake Monero Polyseed en — encrypted restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-en-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-en-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-en-import-linux — Cake Monero Polyseed en — encrypted restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-en-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-en-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-en-import-macos — Cake Monero Polyseed en — encrypted restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-en-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-en-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-es-import-android — Cake Monero Polyseed es — encrypted restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-es-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-es-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-es-import-ios — Cake Monero Polyseed es — encrypted restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-es-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-es-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-es-import-linux — Cake Monero Polyseed es — encrypted restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-es-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-es-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-es-import-macos — Cake Monero Polyseed es — encrypted restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-es-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-es-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-fr-import-android — Cake Monero Polyseed fr — encrypted restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-fr-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-fr-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-fr-import-ios — Cake Monero Polyseed fr — encrypted restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-fr-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-fr-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-fr-import-linux — Cake Monero Polyseed fr — encrypted restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-fr-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-fr-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-fr-import-macos — Cake Monero Polyseed fr — encrypted restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-fr-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-fr-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-it-import-android — Cake Monero Polyseed it — encrypted restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-it-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-it-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-it-import-ios — Cake Monero Polyseed it — encrypted restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-it-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-it-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-it-import-linux — Cake Monero Polyseed it — encrypted restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-it-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-it-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-it-import-macos — Cake Monero Polyseed it — encrypted restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-it-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-it-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-ja-import-android — Cake Monero Polyseed ja — encrypted restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-ja-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ja-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-ja-import-ios — Cake Monero Polyseed ja — encrypted restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-ja-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ja-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-ja-import-linux — Cake Monero Polyseed ja — encrypted restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-ja-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ja-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-ja-import-macos — Cake Monero Polyseed ja — encrypted restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-ja-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ja-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-ko-import-android — Cake Monero Polyseed ko — encrypted restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-ko-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ko-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-ko-import-ios — Cake Monero Polyseed ko — encrypted restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-ko-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ko-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-ko-import-linux — Cake Monero Polyseed ko — encrypted restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-ko-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ko-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-ko-import-macos — Cake Monero Polyseed ko — encrypted restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-ko-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-ko-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-pt-import-android — Cake Monero Polyseed pt — encrypted restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-pt-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-pt-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-pt-import-ios — Cake Monero Polyseed pt — encrypted restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-pt-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-pt-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-pt-import-linux — Cake Monero Polyseed pt — encrypted restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-pt-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-pt-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-pt-import-macos — Cake Monero Polyseed pt — encrypted restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-pt-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-pt-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-android — Cake Monero Polyseed zh-hans — encrypted restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-zh-hans-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hans-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios — Cake Monero Polyseed zh-hans — encrypted restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux — Cake Monero Polyseed zh-hans — encrypted restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos — Cake Monero Polyseed zh-hans — encrypted restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-android — Cake Monero Polyseed zh-hant — encrypted restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-zh-hant-import-android](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hant-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios — Cake Monero Polyseed zh-hant — encrypted restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux — Cake Monero Polyseed zh-hant — encrypted restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos — Cake Monero Polyseed zh-hant — encrypted restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos.json) |
 | wallet-cake-wallet-monero-polyseed-es-create-android — Cake Wallet monero — polyseed-es-create \(android\) | terminal | documented | [cake-wallet-monero-polyseed-es-create-android](../catalog/wallets/cake-wallet-monero-polyseed-es-create-android.json) |
 | wallet-cake-wallet-monero-polyseed-es-create-ios — Cake Wallet monero — polyseed-es-create \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-es-create-ios](../catalog/wallets/cake-wallet-monero-polyseed-es-create-ios.json) |
 | wallet-cake-wallet-monero-polyseed-es-create-linux — Cake Wallet monero — polyseed-es-create \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-es-create-linux](../catalog/wallets/cake-wallet-monero-polyseed-es-create-linux.json) |
 | wallet-cake-wallet-monero-polyseed-es-create-macos — Cake Wallet monero — polyseed-es-create \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-es-create-macos](../catalog/wallets/cake-wallet-monero-polyseed-es-create-macos.json) |
-| wallet-cake-wallet-monero-polyseed-es-import-android — Cake Wallet monero — polyseed-es-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-es-import-android](../catalog/wallets/cake-wallet-monero-polyseed-es-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-es-import-ios — Cake Wallet monero — polyseed-es-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-es-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-es-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-es-import-linux — Cake Wallet monero — polyseed-es-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-es-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-es-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-es-import-macos — Cake Wallet monero — polyseed-es-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-es-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-es-import-macos.json) |
 | wallet-cake-wallet-monero-polyseed-fr-create-android — Cake Wallet monero — polyseed-fr-create \(android\) | terminal | documented | [cake-wallet-monero-polyseed-fr-create-android](../catalog/wallets/cake-wallet-monero-polyseed-fr-create-android.json) |
 | wallet-cake-wallet-monero-polyseed-fr-create-ios — Cake Wallet monero — polyseed-fr-create \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-fr-create-ios](../catalog/wallets/cake-wallet-monero-polyseed-fr-create-ios.json) |
 | wallet-cake-wallet-monero-polyseed-fr-create-linux — Cake Wallet monero — polyseed-fr-create \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-fr-create-linux](../catalog/wallets/cake-wallet-monero-polyseed-fr-create-linux.json) |
 | wallet-cake-wallet-monero-polyseed-fr-create-macos — Cake Wallet monero — polyseed-fr-create \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-fr-create-macos](../catalog/wallets/cake-wallet-monero-polyseed-fr-create-macos.json) |
-| wallet-cake-wallet-monero-polyseed-fr-import-android — Cake Wallet monero — polyseed-fr-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-fr-import-android](../catalog/wallets/cake-wallet-monero-polyseed-fr-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-fr-import-ios — Cake Wallet monero — polyseed-fr-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-fr-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-fr-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-fr-import-linux — Cake Wallet monero — polyseed-fr-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-fr-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-fr-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-fr-import-macos — Cake Wallet monero — polyseed-fr-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-fr-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-fr-import-macos.json) |
-| wallet-cake-wallet-monero-polyseed-import-android — Cake Wallet monero — polyseed-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-import-android](../catalog/wallets/cake-wallet-monero-polyseed-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-import-ios — Cake Wallet monero — polyseed-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-import-linux — Cake Wallet monero — polyseed-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-import-macos — Cake Wallet monero — polyseed-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-import-macos.json) |
 | wallet-cake-wallet-monero-polyseed-it-create-android — Cake Wallet monero — polyseed-it-create \(android\) | terminal | documented | [cake-wallet-monero-polyseed-it-create-android](../catalog/wallets/cake-wallet-monero-polyseed-it-create-android.json) |
 | wallet-cake-wallet-monero-polyseed-it-create-ios — Cake Wallet monero — polyseed-it-create \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-it-create-ios](../catalog/wallets/cake-wallet-monero-polyseed-it-create-ios.json) |
 | wallet-cake-wallet-monero-polyseed-it-create-linux — Cake Wallet monero — polyseed-it-create \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-it-create-linux](../catalog/wallets/cake-wallet-monero-polyseed-it-create-linux.json) |
 | wallet-cake-wallet-monero-polyseed-it-create-macos — Cake Wallet monero — polyseed-it-create \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-it-create-macos](../catalog/wallets/cake-wallet-monero-polyseed-it-create-macos.json) |
-| wallet-cake-wallet-monero-polyseed-it-import-android — Cake Wallet monero — polyseed-it-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-it-import-android](../catalog/wallets/cake-wallet-monero-polyseed-it-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-it-import-ios — Cake Wallet monero — polyseed-it-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-it-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-it-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-it-import-linux — Cake Wallet monero — polyseed-it-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-it-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-it-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-it-import-macos — Cake Wallet monero — polyseed-it-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-it-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-it-import-macos.json) |
 | wallet-cake-wallet-monero-polyseed-ja-create-android — Cake Wallet monero — polyseed-ja-create \(android\) | terminal | documented | [cake-wallet-monero-polyseed-ja-create-android](../catalog/wallets/cake-wallet-monero-polyseed-ja-create-android.json) |
 | wallet-cake-wallet-monero-polyseed-ja-create-ios — Cake Wallet monero — polyseed-ja-create \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-ja-create-ios](../catalog/wallets/cake-wallet-monero-polyseed-ja-create-ios.json) |
 | wallet-cake-wallet-monero-polyseed-ja-create-linux — Cake Wallet monero — polyseed-ja-create \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-ja-create-linux](../catalog/wallets/cake-wallet-monero-polyseed-ja-create-linux.json) |
 | wallet-cake-wallet-monero-polyseed-ja-create-macos — Cake Wallet monero — polyseed-ja-create \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-ja-create-macos](../catalog/wallets/cake-wallet-monero-polyseed-ja-create-macos.json) |
-| wallet-cake-wallet-monero-polyseed-ja-import-android — Cake Wallet monero — polyseed-ja-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-ja-import-android](../catalog/wallets/cake-wallet-monero-polyseed-ja-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-ja-import-ios — Cake Wallet monero — polyseed-ja-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-ja-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-ja-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-ja-import-linux — Cake Wallet monero — polyseed-ja-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-ja-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-ja-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-ja-import-macos — Cake Wallet monero — polyseed-ja-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-ja-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-ja-import-macos.json) |
 | wallet-cake-wallet-monero-polyseed-ko-create-android — Cake Wallet monero — polyseed-ko-create \(android\) | terminal | documented | [cake-wallet-monero-polyseed-ko-create-android](../catalog/wallets/cake-wallet-monero-polyseed-ko-create-android.json) |
 | wallet-cake-wallet-monero-polyseed-ko-create-ios — Cake Wallet monero — polyseed-ko-create \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-ko-create-ios](../catalog/wallets/cake-wallet-monero-polyseed-ko-create-ios.json) |
 | wallet-cake-wallet-monero-polyseed-ko-create-linux — Cake Wallet monero — polyseed-ko-create \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-ko-create-linux](../catalog/wallets/cake-wallet-monero-polyseed-ko-create-linux.json) |
 | wallet-cake-wallet-monero-polyseed-ko-create-macos — Cake Wallet monero — polyseed-ko-create \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-ko-create-macos](../catalog/wallets/cake-wallet-monero-polyseed-ko-create-macos.json) |
-| wallet-cake-wallet-monero-polyseed-ko-import-android — Cake Wallet monero — polyseed-ko-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-ko-import-android](../catalog/wallets/cake-wallet-monero-polyseed-ko-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-ko-import-ios — Cake Wallet monero — polyseed-ko-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-ko-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-ko-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-ko-import-linux — Cake Wallet monero — polyseed-ko-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-ko-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-ko-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-ko-import-macos — Cake Wallet monero — polyseed-ko-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-ko-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-ko-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-offset-cs-import-android — Cake Monero Polyseed cs — offset restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-offset-cs-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-cs-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-offset-cs-import-ios — Cake Monero Polyseed cs — offset restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-offset-cs-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-cs-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-offset-cs-import-linux — Cake Monero Polyseed cs — offset restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-offset-cs-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-cs-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-offset-cs-import-macos — Cake Monero Polyseed cs — offset restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-offset-cs-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-cs-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-offset-en-import-android — Cake Monero Polyseed en — offset restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-offset-en-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-en-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-offset-en-import-ios — Cake Monero Polyseed en — offset restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-offset-en-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-en-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-offset-en-import-linux — Cake Monero Polyseed en — offset restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-offset-en-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-en-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-offset-en-import-macos — Cake Monero Polyseed en — offset restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-offset-en-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-en-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-offset-es-import-android — Cake Monero Polyseed es — offset restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-offset-es-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-es-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-offset-es-import-ios — Cake Monero Polyseed es — offset restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-offset-es-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-es-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-offset-es-import-linux — Cake Monero Polyseed es — offset restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-offset-es-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-es-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-offset-es-import-macos — Cake Monero Polyseed es — offset restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-offset-es-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-es-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-offset-fr-import-android — Cake Monero Polyseed fr — offset restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-offset-fr-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-fr-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-offset-fr-import-ios — Cake Monero Polyseed fr — offset restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-offset-fr-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-fr-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-offset-fr-import-linux — Cake Monero Polyseed fr — offset restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-offset-fr-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-fr-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-offset-fr-import-macos — Cake Monero Polyseed fr — offset restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-offset-fr-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-fr-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-offset-it-import-android — Cake Monero Polyseed it — offset restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-offset-it-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-it-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-offset-it-import-ios — Cake Monero Polyseed it — offset restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-offset-it-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-it-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-offset-it-import-linux — Cake Monero Polyseed it — offset restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-offset-it-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-it-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-offset-it-import-macos — Cake Monero Polyseed it — offset restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-offset-it-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-it-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-offset-ja-import-android — Cake Monero Polyseed ja — offset restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-offset-ja-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-ja-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-offset-ja-import-ios — Cake Monero Polyseed ja — offset restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-offset-ja-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-ja-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-offset-ja-import-linux — Cake Monero Polyseed ja — offset restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-offset-ja-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-ja-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-offset-ja-import-macos — Cake Monero Polyseed ja — offset restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-offset-ja-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-ja-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-offset-ko-import-android — Cake Monero Polyseed ko — offset restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-offset-ko-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-ko-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-offset-ko-import-ios — Cake Monero Polyseed ko — offset restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-offset-ko-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-ko-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-offset-ko-import-linux — Cake Monero Polyseed ko — offset restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-offset-ko-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-ko-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-offset-ko-import-macos — Cake Monero Polyseed ko — offset restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-offset-ko-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-ko-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-offset-pt-import-android — Cake Monero Polyseed pt — offset restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-offset-pt-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-pt-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-offset-pt-import-ios — Cake Monero Polyseed pt — offset restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-offset-pt-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-pt-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-offset-pt-import-linux — Cake Monero Polyseed pt — offset restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-offset-pt-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-pt-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-offset-pt-import-macos — Cake Monero Polyseed pt — offset restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-offset-pt-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-pt-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-android — Cake Monero Polyseed zh-hans — offset restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-offset-zh-hans-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hans-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-ios — Cake Monero Polyseed zh-hans — offset restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-offset-zh-hans-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hans-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-linux — Cake Monero Polyseed zh-hans — offset restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-offset-zh-hans-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hans-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-macos — Cake Monero Polyseed zh-hans — offset restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-offset-zh-hans-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hans-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-android — Cake Monero Polyseed zh-hant — offset restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-offset-zh-hant-import-android](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hant-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-ios — Cake Monero Polyseed zh-hant — offset restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-offset-zh-hant-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hant-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-linux — Cake Monero Polyseed zh-hant — offset restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-offset-zh-hant-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hant-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-macos — Cake Monero Polyseed zh-hant — offset restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-offset-zh-hant-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-offset-zh-hant-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-plain-cs-import-android — Cake Monero Polyseed cs — plain restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-plain-cs-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-cs-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-plain-cs-import-ios — Cake Monero Polyseed cs — plain restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-plain-cs-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-cs-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-plain-cs-import-linux — Cake Monero Polyseed cs — plain restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-plain-cs-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-cs-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-plain-cs-import-macos — Cake Monero Polyseed cs — plain restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-plain-cs-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-cs-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-plain-en-import-android — Cake Monero Polyseed en — plain restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-plain-en-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-en-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-plain-en-import-ios — Cake Monero Polyseed en — plain restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-plain-en-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-en-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-plain-en-import-linux — Cake Monero Polyseed en — plain restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-plain-en-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-en-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-plain-en-import-macos — Cake Monero Polyseed en — plain restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-plain-en-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-en-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-plain-es-import-android — Cake Monero Polyseed es — plain restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-plain-es-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-es-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-plain-es-import-ios — Cake Monero Polyseed es — plain restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-plain-es-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-es-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-plain-es-import-linux — Cake Monero Polyseed es — plain restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-plain-es-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-es-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-plain-es-import-macos — Cake Monero Polyseed es — plain restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-plain-es-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-es-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-plain-fr-import-android — Cake Monero Polyseed fr — plain restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-plain-fr-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-fr-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-plain-fr-import-ios — Cake Monero Polyseed fr — plain restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-plain-fr-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-fr-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-plain-fr-import-linux — Cake Monero Polyseed fr — plain restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-plain-fr-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-fr-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-plain-fr-import-macos — Cake Monero Polyseed fr — plain restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-plain-fr-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-fr-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-plain-it-import-android — Cake Monero Polyseed it — plain restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-plain-it-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-it-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-plain-it-import-ios — Cake Monero Polyseed it — plain restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-plain-it-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-it-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-plain-it-import-linux — Cake Monero Polyseed it — plain restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-plain-it-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-it-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-plain-it-import-macos — Cake Monero Polyseed it — plain restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-plain-it-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-it-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-plain-ja-import-android — Cake Monero Polyseed ja — plain restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-plain-ja-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-ja-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-plain-ja-import-ios — Cake Monero Polyseed ja — plain restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-plain-ja-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-ja-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-plain-ja-import-linux — Cake Monero Polyseed ja — plain restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-plain-ja-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-ja-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-plain-ja-import-macos — Cake Monero Polyseed ja — plain restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-plain-ja-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-ja-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-plain-ko-import-android — Cake Monero Polyseed ko — plain restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-plain-ko-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-ko-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-plain-ko-import-ios — Cake Monero Polyseed ko — plain restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-plain-ko-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-ko-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-plain-ko-import-linux — Cake Monero Polyseed ko — plain restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-plain-ko-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-ko-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-plain-ko-import-macos — Cake Monero Polyseed ko — plain restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-plain-ko-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-ko-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-plain-pt-import-android — Cake Monero Polyseed pt — plain restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-plain-pt-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-pt-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-plain-pt-import-ios — Cake Monero Polyseed pt — plain restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-plain-pt-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-pt-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-plain-pt-import-linux — Cake Monero Polyseed pt — plain restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-plain-pt-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-pt-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-plain-pt-import-macos — Cake Monero Polyseed pt — plain restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-plain-pt-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-pt-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-android — Cake Monero Polyseed zh-hans — plain restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-plain-zh-hans-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hans-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-ios — Cake Monero Polyseed zh-hans — plain restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-plain-zh-hans-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hans-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-linux — Cake Monero Polyseed zh-hans — plain restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-plain-zh-hans-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hans-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-macos — Cake Monero Polyseed zh-hans — plain restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-plain-zh-hans-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hans-import-macos.json) |
+| wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-android — Cake Monero Polyseed zh-hant — plain restore \(android\) | terminal | documented | [cake-wallet-monero-polyseed-plain-zh-hant-import-android](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hant-import-android.json) |
+| wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-ios — Cake Monero Polyseed zh-hant — plain restore \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-plain-zh-hant-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hant-import-ios.json) |
+| wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-linux — Cake Monero Polyseed zh-hant — plain restore \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-plain-zh-hant-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hant-import-linux.json) |
+| wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-macos — Cake Monero Polyseed zh-hant — plain restore \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-plain-zh-hant-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-plain-zh-hant-import-macos.json) |
 | wallet-cake-wallet-monero-polyseed-pt-create-android — Cake Wallet monero — polyseed-pt-create \(android\) | terminal | documented | [cake-wallet-monero-polyseed-pt-create-android](../catalog/wallets/cake-wallet-monero-polyseed-pt-create-android.json) |
 | wallet-cake-wallet-monero-polyseed-pt-create-ios — Cake Wallet monero — polyseed-pt-create \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-pt-create-ios](../catalog/wallets/cake-wallet-monero-polyseed-pt-create-ios.json) |
 | wallet-cake-wallet-monero-polyseed-pt-create-linux — Cake Wallet monero — polyseed-pt-create \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-pt-create-linux](../catalog/wallets/cake-wallet-monero-polyseed-pt-create-linux.json) |
 | wallet-cake-wallet-monero-polyseed-pt-create-macos — Cake Wallet monero — polyseed-pt-create \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-pt-create-macos](../catalog/wallets/cake-wallet-monero-polyseed-pt-create-macos.json) |
-| wallet-cake-wallet-monero-polyseed-pt-import-android — Cake Wallet monero — polyseed-pt-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-pt-import-android](../catalog/wallets/cake-wallet-monero-polyseed-pt-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-pt-import-ios — Cake Wallet monero — polyseed-pt-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-pt-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-pt-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-pt-import-linux — Cake Wallet monero — polyseed-pt-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-pt-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-pt-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-pt-import-macos — Cake Wallet monero — polyseed-pt-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-pt-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-pt-import-macos.json) |
 | wallet-cake-wallet-monero-polyseed-zh-hans-create-android — Cake Wallet monero — polyseed-zh-hans-create \(android\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hans-create-android](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-create-android.json) |
 | wallet-cake-wallet-monero-polyseed-zh-hans-create-ios — Cake Wallet monero — polyseed-zh-hans-create \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hans-create-ios](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-create-ios.json) |
 | wallet-cake-wallet-monero-polyseed-zh-hans-create-linux — Cake Wallet monero — polyseed-zh-hans-create \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hans-create-linux](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-create-linux.json) |
 | wallet-cake-wallet-monero-polyseed-zh-hans-create-macos — Cake Wallet monero — polyseed-zh-hans-create \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hans-create-macos](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-create-macos.json) |
-| wallet-cake-wallet-monero-polyseed-zh-hans-import-android — Cake Wallet monero — polyseed-zh-hans-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hans-import-android](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-zh-hans-import-ios — Cake Wallet monero — polyseed-zh-hans-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hans-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-zh-hans-import-linux — Cake Wallet monero — polyseed-zh-hans-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hans-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-zh-hans-import-macos — Cake Wallet monero — polyseed-zh-hans-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hans-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-zh-hans-import-macos.json) |
 | wallet-cake-wallet-monero-polyseed-zh-hant-create-android — Cake Wallet monero — polyseed-zh-hant-create \(android\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hant-create-android](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-create-android.json) |
 | wallet-cake-wallet-monero-polyseed-zh-hant-create-ios — Cake Wallet monero — polyseed-zh-hant-create \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hant-create-ios](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-create-ios.json) |
 | wallet-cake-wallet-monero-polyseed-zh-hant-create-linux — Cake Wallet monero — polyseed-zh-hant-create \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hant-create-linux](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-create-linux.json) |
 | wallet-cake-wallet-monero-polyseed-zh-hant-create-macos — Cake Wallet monero — polyseed-zh-hant-create \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hant-create-macos](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-create-macos.json) |
-| wallet-cake-wallet-monero-polyseed-zh-hant-import-android — Cake Wallet monero — polyseed-zh-hant-import \(android\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hant-import-android](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-import-android.json) |
-| wallet-cake-wallet-monero-polyseed-zh-hant-import-ios — Cake Wallet monero — polyseed-zh-hant-import \(ios\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hant-import-ios](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-import-ios.json) |
-| wallet-cake-wallet-monero-polyseed-zh-hant-import-linux — Cake Wallet monero — polyseed-zh-hant-import \(linux\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hant-import-linux](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-import-linux.json) |
-| wallet-cake-wallet-monero-polyseed-zh-hant-import-macos — Cake Wallet monero — polyseed-zh-hant-import \(macos\) | terminal | documented | [cake-wallet-monero-polyseed-zh-hant-import-macos](../catalog/wallets/cake-wallet-monero-polyseed-zh-hant-import-macos.json) |
 | wallet-cake-wallet-monero-view-only-android — Cake Wallet monero — view-only \(android\) | terminal | documented | [cake-wallet-monero-view-only-android](../catalog/wallets/cake-wallet-monero-view-only-android.json) |
 | wallet-cake-wallet-monero-view-only-ios — Cake Wallet monero — view-only \(ios\) | terminal | documented | [cake-wallet-monero-view-only-ios](../catalog/wallets/cake-wallet-monero-view-only-ios.json) |
 | wallet-cake-wallet-monero-view-only-linux — Cake Wallet monero — view-only \(linux\) | terminal | documented | [cake-wallet-monero-view-only-linux](../catalog/wallets/cake-wallet-monero-view-only-linux.json) |
@@ -19599,6 +22028,10 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-cake-wallet-tron-private-key-ios — Cake Wallet tron — private-key \(ios\) | terminal | documented | [cake-wallet-tron-private-key-ios](../catalog/wallets/cake-wallet-tron-private-key-ios.json) |
 | wallet-cake-wallet-tron-private-key-linux — Cake Wallet tron — private-key \(linux\) | terminal | documented | [cake-wallet-tron-private-key-linux](../catalog/wallets/cake-wallet-tron-private-key-linux.json) |
 | wallet-cake-wallet-tron-private-key-macos — Cake Wallet tron — private-key \(macos\) | terminal | documented | [cake-wallet-tron-private-key-macos](../catalog/wallets/cake-wallet-tron-private-key-macos.json) |
+| wallet-cake-wallet-wownero-legacy14-export-android — Cake Wownero historical14 export \(android\) | terminal | blocked | [cake-wallet-wownero-legacy14-export-android](../catalog/wallets/cake-wallet-wownero-legacy14-export-android.json) |
+| wallet-cake-wallet-wownero-legacy14-export-ios — Cake Wownero historical14 export \(ios\) | terminal | blocked | [cake-wallet-wownero-legacy14-export-ios](../catalog/wallets/cake-wallet-wownero-legacy14-export-ios.json) |
+| wallet-cake-wallet-wownero-legacy14-export-linux — Cake Wownero historical14 export \(linux\) | terminal | blocked | [cake-wallet-wownero-legacy14-export-linux](../catalog/wallets/cake-wallet-wownero-legacy14-export-linux.json) |
+| wallet-cake-wallet-wownero-legacy14-export-macos — Cake Wownero historical14 export \(macos\) | terminal | blocked | [cake-wallet-wownero-legacy14-export-macos](../catalog/wallets/cake-wallet-wownero-legacy14-export-macos.json) |
 | wallet-cake-wallet-wownero-legacy25-export-android — Cake Wallet wownero — legacy25-export \(android\) | terminal | documented | [cake-wallet-wownero-legacy25-export-android](../catalog/wallets/cake-wallet-wownero-legacy25-export-android.json) |
 | wallet-cake-wallet-wownero-legacy25-export-ios — Cake Wallet wownero — legacy25-export \(ios\) | terminal | documented | [cake-wallet-wownero-legacy25-export-ios](../catalog/wallets/cake-wallet-wownero-legacy25-export-ios.json) |
 | wallet-cake-wallet-wownero-legacy25-export-linux — Cake Wallet wownero — legacy25-export \(linux\) | terminal | documented | [cake-wallet-wownero-legacy25-export-linux](../catalog/wallets/cake-wallet-wownero-legacy25-export-linux.json) |
@@ -19607,10 +22040,6 @@ Pending is an unfinished research state, not a support status. Missing records r
 | wallet-cake-wallet-wownero-polyseed16-export-ios — Cake Wallet wownero — polyseed16-export \(ios\) | terminal | documented | [cake-wallet-wownero-polyseed16-export-ios](../catalog/wallets/cake-wallet-wownero-polyseed16-export-ios.json) |
 | wallet-cake-wallet-wownero-polyseed16-export-linux — Cake Wallet wownero — polyseed16-export \(linux\) | terminal | documented | [cake-wallet-wownero-polyseed16-export-linux](../catalog/wallets/cake-wallet-wownero-polyseed16-export-linux.json) |
 | wallet-cake-wallet-wownero-polyseed16-export-macos — Cake Wallet wownero — polyseed16-export \(macos\) | terminal | documented | [cake-wallet-wownero-polyseed16-export-macos](../catalog/wallets/cake-wallet-wownero-polyseed16-export-macos.json) |
-| wallet-cake-wallet-wownero-tevador14-export-android — Cake Wallet wownero — tevador14-export \(android\) | terminal | blocked | [cake-wallet-wownero-tevador14-export-android](../catalog/wallets/cake-wallet-wownero-tevador14-export-android.json) |
-| wallet-cake-wallet-wownero-tevador14-export-ios — Cake Wallet wownero — tevador14-export \(ios\) | terminal | blocked | [cake-wallet-wownero-tevador14-export-ios](../catalog/wallets/cake-wallet-wownero-tevador14-export-ios.json) |
-| wallet-cake-wallet-wownero-tevador14-export-linux — Cake Wallet wownero — tevador14-export \(linux\) | terminal | blocked | [cake-wallet-wownero-tevador14-export-linux](../catalog/wallets/cake-wallet-wownero-tevador14-export-linux.json) |
-| wallet-cake-wallet-wownero-tevador14-export-macos — Cake Wallet wownero — tevador14-export \(macos\) | terminal | blocked | [cake-wallet-wownero-tevador14-export-macos](../catalog/wallets/cake-wallet-wownero-tevador14-export-macos.json) |
 | wallet-cake-wallet-zano — cake wallet zano | terminal | documented | [cake-wallet-zano](../catalog/wallets/cake-wallet-zano.json) |
 | wallet-cake-wallet-zano-bip39 — Cake Wallet Zano — BIP39 creation | terminal | blocked | [cake-wallet-zano-bip39](../catalog/wallets/cake-wallet-zano-bip39.json) |
 | wallet-cake-wallet-zano-bip39-create-ios — Cake Wallet zano — bip39-create \(ios\) | terminal | blocked | [cake-wallet-zano-bip39-create-ios](../catalog/wallets/cake-wallet-zano-bip39-create-ios.json) |

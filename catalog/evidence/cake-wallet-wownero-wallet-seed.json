@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-wownero-wallet-seed",
+  "source_type": "official-source",
+  "claim": "WowneroWallet.seed delegates to wownero_wallet.getSeed; combined with the deprecation exception this connects existing-wallet export to the native seed getter. No14-word codec, dictionary, release binary or Feather equivalence inferred. Decoded HTTP source body: 27667 bytes, SHA256 49d06c940a563616cc364bc0ee715247d0d6da9d5bc7a314dc5d0132a216aa77.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_wownero/lib/wownero_wallet.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-wownero-legacy14-export-android",
+    "cake-wallet-wownero-legacy14-export-ios",
+    "cake-wallet-wownero-legacy14-export-linux",
+    "cake-wallet-wownero-legacy14-export-macos",
+    "cake-wownero-14-unresolved"
+  ]
+}

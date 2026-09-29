@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-monero-polyseed-offset-zh-hant-import-android",
+  "display_name": {
+    "en": "Cake Monero Polyseed zh-hant — offset restore (android)",
+    "ru": "Cake Monero Polyseed zh-hant — offset restore (android)"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-language-ui",
+    "cake-wallet-polyseed-dispatch",
+    "cake-wallet-polyseed-offset-native",
+    "cake-wallet-build-android"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "monero-polyseed-offset-zh-hant-import",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": "cake-monero-polyseed-offset-zh-hant",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Condition: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-zh-hant,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
+  ],
+  "guidance": "Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil."
+}

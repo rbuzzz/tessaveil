@@ -15,9 +15,10 @@
     "cake-wallet-wownero-polyseed16-export-ios",
     "cake-wallet-wownero-polyseed16-export-linux",
     "cake-wallet-wownero-polyseed16-export-macos",
-    "cake-wallet-wownero-tevador14-export-android",
-    "cake-wallet-wownero-tevador14-export-ios",
-    "cake-wallet-wownero-tevador14-export-linux",
-    "cake-wallet-wownero-tevador14-export-macos"
+    "cake-wallet-wownero-legacy14-export-android",
+    "cake-wallet-wownero-legacy14-export-ios",
+    "cake-wallet-wownero-legacy14-export-linux",
+    "cake-wallet-wownero-legacy14-export-macos",
+    "cake-wownero-14-unresolved"
   ]
 }

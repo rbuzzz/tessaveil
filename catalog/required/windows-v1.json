@@ -2638,7 +2638,7 @@
       ],
       "research_state": "terminal",
       "status": "blocked",
-      "historical": false
+      "historical": true
     },
     {
       "id": "scheme-cake-monero-legacy-ja",
@@ -6255,58 +6255,6 @@
       "historical": false
     },
     {
-      "id": "wallet-cake-wallet-monero-polyseed-cs-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-cs-import (android)",
-        "ru": "Cake Wallet monero — polyseed-cs-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-cs-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-cs-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-cs-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-cs-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-cs-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-cs-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-cs-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-cs-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-cs-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-cs-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-cs-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-cs-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-cs-import-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
       "id": "wallet-cake-wallet-monero-polyseed-en-create-android",
       "display_name": {
         "en": "Cake Wallet monero — polyseed-en-create (android)",
@@ -6353,58 +6301,6 @@
       },
       "record_ids": [
         "cake-wallet-monero-polyseed-en-create-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-en-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-en-import (android)",
-        "ru": "Cake Wallet monero — polyseed-en-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-en-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-en-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-en-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-en-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-en-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-en-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-en-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-en-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-en-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-en-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-en-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-en-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-en-import-macos"
       ],
       "research_state": "terminal",
       "status": "documented",
@@ -6463,58 +6359,6 @@
       "historical": false
     },
     {
-      "id": "wallet-cake-wallet-monero-polyseed-es-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-es-import (android)",
-        "ru": "Cake Wallet monero — polyseed-es-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-es-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-es-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-es-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-es-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-es-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-es-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-es-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-es-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-es-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-es-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-es-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-es-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-es-import-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
       "id": "wallet-cake-wallet-monero-polyseed-fr-create-android",
       "display_name": {
         "en": "Cake Wallet monero — polyseed-fr-create (android)",
@@ -6561,110 +6405,6 @@
       },
       "record_ids": [
         "cake-wallet-monero-polyseed-fr-create-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-fr-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-fr-import (android)",
-        "ru": "Cake Wallet monero — polyseed-fr-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-fr-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-fr-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-fr-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-fr-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-fr-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-fr-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-fr-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-fr-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-fr-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-fr-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-fr-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-fr-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-fr-import-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-import (android)",
-        "ru": "Cake Wallet monero — polyseed-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-import-macos"
       ],
       "research_state": "terminal",
       "status": "documented",
@@ -6723,58 +6463,6 @@
       "historical": false
     },
     {
-      "id": "wallet-cake-wallet-monero-polyseed-it-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-it-import (android)",
-        "ru": "Cake Wallet monero — polyseed-it-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-it-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-it-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-it-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-it-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-it-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-it-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-it-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-it-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-it-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-it-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-it-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-it-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-it-import-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
       "id": "wallet-cake-wallet-monero-polyseed-ja-create-android",
       "display_name": {
         "en": "Cake Wallet monero — polyseed-ja-create (android)",
@@ -6821,58 +6509,6 @@
       },
       "record_ids": [
         "cake-wallet-monero-polyseed-ja-create-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-ja-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-ja-import (android)",
-        "ru": "Cake Wallet monero — polyseed-ja-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-ja-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-ja-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-ja-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-ja-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-ja-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-ja-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-ja-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-ja-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-ja-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-ja-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-ja-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-ja-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-ja-import-macos"
       ],
       "research_state": "terminal",
       "status": "documented",
@@ -6931,58 +6567,6 @@
       "historical": false
     },
     {
-      "id": "wallet-cake-wallet-monero-polyseed-ko-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-ko-import (android)",
-        "ru": "Cake Wallet monero — polyseed-ko-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-ko-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-ko-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-ko-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-ko-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-ko-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-ko-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-ko-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-ko-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-ko-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-ko-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-ko-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-ko-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-ko-import-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
       "id": "wallet-cake-wallet-monero-polyseed-pt-create-android",
       "display_name": {
         "en": "Cake Wallet monero — polyseed-pt-create (android)",
@@ -7029,58 +6613,6 @@
       },
       "record_ids": [
         "cake-wallet-monero-polyseed-pt-create-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-pt-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-pt-import (android)",
-        "ru": "Cake Wallet monero — polyseed-pt-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-pt-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-pt-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-pt-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-pt-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-pt-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-pt-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-pt-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-pt-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-pt-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-pt-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-pt-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-pt-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-pt-import-macos"
       ],
       "research_state": "terminal",
       "status": "documented",
@@ -7139,58 +6671,6 @@
       "historical": false
     },
     {
-      "id": "wallet-cake-wallet-monero-polyseed-zh-hans-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-zh-hans-import (android)",
-        "ru": "Cake Wallet monero — polyseed-zh-hans-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-zh-hans-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-zh-hans-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-zh-hans-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-zh-hans-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-zh-hans-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-zh-hans-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-zh-hans-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-zh-hans-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-zh-hans-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-zh-hans-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-zh-hans-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-zh-hans-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-zh-hans-import-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
       "id": "wallet-cake-wallet-monero-polyseed-zh-hant-create-android",
       "display_name": {
         "en": "Cake Wallet monero — polyseed-zh-hant-create (android)",
@@ -7237,58 +6717,6 @@
       },
       "record_ids": [
         "cake-wallet-monero-polyseed-zh-hant-create-macos"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-zh-hant-import-android",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-zh-hant-import (android)",
-        "ru": "Cake Wallet monero — polyseed-zh-hant-import (android)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-zh-hant-import-android"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-zh-hant-import-ios",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-zh-hant-import (ios)",
-        "ru": "Cake Wallet monero — polyseed-zh-hant-import (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-zh-hant-import-ios"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-zh-hant-import-linux",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-zh-hant-import (linux)",
-        "ru": "Cake Wallet monero — polyseed-zh-hant-import (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-zh-hant-import-linux"
-      ],
-      "research_state": "terminal",
-      "status": "documented",
-      "historical": false
-    },
-    {
-      "id": "wallet-cake-wallet-monero-polyseed-zh-hant-import-macos",
-      "display_name": {
-        "en": "Cake Wallet monero — polyseed-zh-hant-import (macos)",
-        "ru": "Cake Wallet monero — polyseed-zh-hant-import (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-monero-polyseed-zh-hant-import-macos"
       ],
       "research_state": "terminal",
       "status": "documented",
@@ -9024,19 +8452,6 @@
       "historical": true
     },
     {
-      "id": "wallet-cake-wallet-wownero-tevador14-export-android",
-      "display_name": {
-        "en": "Cake Wallet wownero — tevador14-export (android)",
-        "ru": "Cake Wallet wownero — tevador14-export (android)"
-      },
-      "record_ids": [
-        "cake-wallet-wownero-tevador14-export-android"
-      ],
-      "research_state": "terminal",
-      "status": "blocked",
-      "historical": true
-    },
-    {
       "id": "wallet-cake-wallet-app-backup-ios",
       "display_name": {
         "en": "Cake Wallet multi-chain — app-backup (ios)",
@@ -9076,19 +8491,6 @@
       "historical": true
     },
     {
-      "id": "wallet-cake-wallet-wownero-tevador14-export-ios",
-      "display_name": {
-        "en": "Cake Wallet wownero — tevador14-export (ios)",
-        "ru": "Cake Wallet wownero — tevador14-export (ios)"
-      },
-      "record_ids": [
-        "cake-wallet-wownero-tevador14-export-ios"
-      ],
-      "research_state": "terminal",
-      "status": "blocked",
-      "historical": true
-    },
-    {
       "id": "wallet-cake-wallet-app-backup-macos",
       "display_name": {
         "en": "Cake Wallet multi-chain — app-backup (macos)",
@@ -9125,19 +8527,6 @@
       ],
       "research_state": "terminal",
       "status": "documented",
-      "historical": true
-    },
-    {
-      "id": "wallet-cake-wallet-wownero-tevador14-export-macos",
-      "display_name": {
-        "en": "Cake Wallet wownero — tevador14-export (macos)",
-        "ru": "Cake Wallet wownero — tevador14-export (macos)"
-      },
-      "record_ids": [
-        "cake-wallet-wownero-tevador14-export-macos"
-      ],
-      "research_state": "terminal",
-      "status": "blocked",
       "historical": true
     },
     {
@@ -9216,19 +8605,6 @@
       ],
       "research_state": "terminal",
       "status": "documented",
-      "historical": true
-    },
-    {
-      "id": "wallet-cake-wallet-wownero-tevador14-export-linux",
-      "display_name": {
-        "en": "Cake Wallet wownero — tevador14-export (linux)",
-        "ru": "Cake Wallet wownero — tevador14-export (linux)"
-      },
-      "record_ids": [
-        "cake-wallet-wownero-tevador14-export-linux"
-      ],
-      "research_state": "terminal",
-      "status": "blocked",
       "historical": true
     },
     {
@@ -9323,56 +8699,2019 @@
       "historical": false
     },
     {
-      "id": "wallet-cake-wallet-monero-bip39-12-create-android",
+      "id": "scheme-cake-monero-polyseed-encrypted-cs",
       "display_name": {
-        "en": "Cake Wallet monero — bip39-12-create (android)",
-        "ru": "Cake Wallet monero — bip39-12-create (android)"
+        "en": "cake-monero-polyseed-encrypted-cs",
+        "ru": "cake-monero-polyseed-encrypted-cs"
       },
       "record_ids": [
-        "cake-wallet-monero-bip39-12-create-android"
+        "cake-monero-polyseed-encrypted-cs"
       ],
       "research_state": "terminal",
       "status": "documented",
       "historical": false
     },
     {
-      "id": "wallet-cake-wallet-monero-bip39-12-create-ios",
+      "id": "scheme-cake-monero-polyseed-encrypted-en",
       "display_name": {
-        "en": "Cake Wallet monero — bip39-12-create (ios)",
-        "ru": "Cake Wallet monero — bip39-12-create (ios)"
+        "en": "cake-monero-polyseed-encrypted-en",
+        "ru": "cake-monero-polyseed-encrypted-en"
       },
       "record_ids": [
-        "cake-wallet-monero-bip39-12-create-ios"
+        "cake-monero-polyseed-encrypted-en"
       ],
       "research_state": "terminal",
       "status": "documented",
       "historical": false
     },
     {
-      "id": "wallet-cake-wallet-monero-bip39-12-create-macos",
+      "id": "scheme-cake-monero-polyseed-encrypted-es",
       "display_name": {
-        "en": "Cake Wallet monero — bip39-12-create (macos)",
-        "ru": "Cake Wallet monero — bip39-12-create (macos)"
+        "en": "cake-monero-polyseed-encrypted-es",
+        "ru": "cake-monero-polyseed-encrypted-es"
       },
       "record_ids": [
-        "cake-wallet-monero-bip39-12-create-macos"
+        "cake-monero-polyseed-encrypted-es"
       ],
       "research_state": "terminal",
       "status": "documented",
       "historical": false
     },
     {
-      "id": "wallet-cake-wallet-monero-bip39-12-create-linux",
+      "id": "scheme-cake-monero-polyseed-encrypted-fr",
       "display_name": {
-        "en": "Cake Wallet monero — bip39-12-create (linux)",
-        "ru": "Cake Wallet monero — bip39-12-create (linux)"
+        "en": "cake-monero-polyseed-encrypted-fr",
+        "ru": "cake-monero-polyseed-encrypted-fr"
       },
       "record_ids": [
-        "cake-wallet-monero-bip39-12-create-linux"
+        "cake-monero-polyseed-encrypted-fr"
       ],
       "research_state": "terminal",
       "status": "documented",
       "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-encrypted-it",
+      "display_name": {
+        "en": "cake-monero-polyseed-encrypted-it",
+        "ru": "cake-monero-polyseed-encrypted-it"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-encrypted-it"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-encrypted-ja",
+      "display_name": {
+        "en": "cake-monero-polyseed-encrypted-ja",
+        "ru": "cake-monero-polyseed-encrypted-ja"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-encrypted-ja"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-encrypted-ko",
+      "display_name": {
+        "en": "cake-monero-polyseed-encrypted-ko",
+        "ru": "cake-monero-polyseed-encrypted-ko"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-encrypted-ko"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-encrypted-pt",
+      "display_name": {
+        "en": "cake-monero-polyseed-encrypted-pt",
+        "ru": "cake-monero-polyseed-encrypted-pt"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-encrypted-pt"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-encrypted-zh-hans",
+      "display_name": {
+        "en": "cake-monero-polyseed-encrypted-zh-hans",
+        "ru": "cake-monero-polyseed-encrypted-zh-hans"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-encrypted-zh-hans"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-encrypted-zh-hant",
+      "display_name": {
+        "en": "cake-monero-polyseed-encrypted-zh-hant",
+        "ru": "cake-monero-polyseed-encrypted-zh-hant"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-encrypted-zh-hant"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-offset-cs",
+      "display_name": {
+        "en": "cake-monero-polyseed-offset-cs",
+        "ru": "cake-monero-polyseed-offset-cs"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-offset-cs"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-offset-en",
+      "display_name": {
+        "en": "cake-monero-polyseed-offset-en",
+        "ru": "cake-monero-polyseed-offset-en"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-offset-en"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-offset-es",
+      "display_name": {
+        "en": "cake-monero-polyseed-offset-es",
+        "ru": "cake-monero-polyseed-offset-es"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-offset-es"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-offset-fr",
+      "display_name": {
+        "en": "cake-monero-polyseed-offset-fr",
+        "ru": "cake-monero-polyseed-offset-fr"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-offset-fr"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-offset-it",
+      "display_name": {
+        "en": "cake-monero-polyseed-offset-it",
+        "ru": "cake-monero-polyseed-offset-it"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-offset-it"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-offset-ja",
+      "display_name": {
+        "en": "cake-monero-polyseed-offset-ja",
+        "ru": "cake-monero-polyseed-offset-ja"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-offset-ja"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-offset-ko",
+      "display_name": {
+        "en": "cake-monero-polyseed-offset-ko",
+        "ru": "cake-monero-polyseed-offset-ko"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-offset-ko"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-offset-pt",
+      "display_name": {
+        "en": "cake-monero-polyseed-offset-pt",
+        "ru": "cake-monero-polyseed-offset-pt"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-offset-pt"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-offset-zh-hans",
+      "display_name": {
+        "en": "cake-monero-polyseed-offset-zh-hans",
+        "ru": "cake-monero-polyseed-offset-zh-hans"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-offset-zh-hans"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-offset-zh-hant",
+      "display_name": {
+        "en": "cake-monero-polyseed-offset-zh-hant",
+        "ru": "cake-monero-polyseed-offset-zh-hant"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-offset-zh-hant"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-plain-cs",
+      "display_name": {
+        "en": "cake-monero-polyseed-plain-cs",
+        "ru": "cake-monero-polyseed-plain-cs"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-plain-cs"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-plain-en",
+      "display_name": {
+        "en": "cake-monero-polyseed-plain-en",
+        "ru": "cake-monero-polyseed-plain-en"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-plain-en"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-plain-es",
+      "display_name": {
+        "en": "cake-monero-polyseed-plain-es",
+        "ru": "cake-monero-polyseed-plain-es"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-plain-es"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-plain-fr",
+      "display_name": {
+        "en": "cake-monero-polyseed-plain-fr",
+        "ru": "cake-monero-polyseed-plain-fr"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-plain-fr"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-plain-it",
+      "display_name": {
+        "en": "cake-monero-polyseed-plain-it",
+        "ru": "cake-monero-polyseed-plain-it"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-plain-it"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-plain-ja",
+      "display_name": {
+        "en": "cake-monero-polyseed-plain-ja",
+        "ru": "cake-monero-polyseed-plain-ja"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-plain-ja"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-plain-ko",
+      "display_name": {
+        "en": "cake-monero-polyseed-plain-ko",
+        "ru": "cake-monero-polyseed-plain-ko"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-plain-ko"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-plain-pt",
+      "display_name": {
+        "en": "cake-monero-polyseed-plain-pt",
+        "ru": "cake-monero-polyseed-plain-pt"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-plain-pt"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-plain-zh-hans",
+      "display_name": {
+        "en": "cake-monero-polyseed-plain-zh-hans",
+        "ru": "cake-monero-polyseed-plain-zh-hans"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-plain-zh-hans"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-monero-polyseed-plain-zh-hant",
+      "display_name": {
+        "en": "cake-monero-polyseed-plain-zh-hant",
+        "ru": "cake-monero-polyseed-plain-zh-hant"
+      },
+      "record_ids": [
+        "cake-monero-polyseed-plain-zh-hant"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "scheme-cake-wownero-14-unresolved",
+      "display_name": {
+        "en": "Cake Wownero — historical14 export, unresolved codec",
+        "ru": "Cake Wownero — historical14 export, unresolved codec"
+      },
+      "record_ids": [
+        "cake-wownero-14-unresolved"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": true
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-cs-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — encrypted restore (android)",
+        "ru": "Cake Monero Polyseed cs — encrypted restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-cs-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-cs-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — encrypted restore (ios)",
+        "ru": "Cake Monero Polyseed cs — encrypted restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-cs-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-cs-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — encrypted restore (linux)",
+        "ru": "Cake Monero Polyseed cs — encrypted restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-cs-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-cs-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — encrypted restore (macos)",
+        "ru": "Cake Monero Polyseed cs — encrypted restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-cs-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-en-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — encrypted restore (android)",
+        "ru": "Cake Monero Polyseed en — encrypted restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-en-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-en-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — encrypted restore (ios)",
+        "ru": "Cake Monero Polyseed en — encrypted restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-en-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-en-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — encrypted restore (linux)",
+        "ru": "Cake Monero Polyseed en — encrypted restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-en-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-en-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — encrypted restore (macos)",
+        "ru": "Cake Monero Polyseed en — encrypted restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-en-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-es-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — encrypted restore (android)",
+        "ru": "Cake Monero Polyseed es — encrypted restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-es-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-es-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — encrypted restore (ios)",
+        "ru": "Cake Monero Polyseed es — encrypted restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-es-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-es-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — encrypted restore (linux)",
+        "ru": "Cake Monero Polyseed es — encrypted restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-es-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-es-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — encrypted restore (macos)",
+        "ru": "Cake Monero Polyseed es — encrypted restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-es-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-fr-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — encrypted restore (android)",
+        "ru": "Cake Monero Polyseed fr — encrypted restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-fr-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-fr-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — encrypted restore (ios)",
+        "ru": "Cake Monero Polyseed fr — encrypted restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-fr-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-fr-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — encrypted restore (linux)",
+        "ru": "Cake Monero Polyseed fr — encrypted restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-fr-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-fr-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — encrypted restore (macos)",
+        "ru": "Cake Monero Polyseed fr — encrypted restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-fr-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-it-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — encrypted restore (android)",
+        "ru": "Cake Monero Polyseed it — encrypted restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-it-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-it-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — encrypted restore (ios)",
+        "ru": "Cake Monero Polyseed it — encrypted restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-it-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-it-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — encrypted restore (linux)",
+        "ru": "Cake Monero Polyseed it — encrypted restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-it-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-it-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — encrypted restore (macos)",
+        "ru": "Cake Monero Polyseed it — encrypted restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-it-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-ja-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — encrypted restore (android)",
+        "ru": "Cake Monero Polyseed ja — encrypted restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-ja-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-ja-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — encrypted restore (ios)",
+        "ru": "Cake Monero Polyseed ja — encrypted restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-ja-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-ja-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — encrypted restore (linux)",
+        "ru": "Cake Monero Polyseed ja — encrypted restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-ja-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-ja-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — encrypted restore (macos)",
+        "ru": "Cake Monero Polyseed ja — encrypted restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-ja-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-ko-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — encrypted restore (android)",
+        "ru": "Cake Monero Polyseed ko — encrypted restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-ko-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-ko-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — encrypted restore (ios)",
+        "ru": "Cake Monero Polyseed ko — encrypted restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-ko-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-ko-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — encrypted restore (linux)",
+        "ru": "Cake Monero Polyseed ko — encrypted restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-ko-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-ko-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — encrypted restore (macos)",
+        "ru": "Cake Monero Polyseed ko — encrypted restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-ko-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-pt-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — encrypted restore (android)",
+        "ru": "Cake Monero Polyseed pt — encrypted restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-pt-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-pt-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — encrypted restore (ios)",
+        "ru": "Cake Monero Polyseed pt — encrypted restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-pt-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-pt-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — encrypted restore (linux)",
+        "ru": "Cake Monero Polyseed pt — encrypted restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-pt-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-pt-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — encrypted restore (macos)",
+        "ru": "Cake Monero Polyseed pt — encrypted restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-pt-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — encrypted restore (android)",
+        "ru": "Cake Monero Polyseed zh-hans — encrypted restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-zh-hans-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — encrypted restore (ios)",
+        "ru": "Cake Monero Polyseed zh-hans — encrypted restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-zh-hans-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — encrypted restore (linux)",
+        "ru": "Cake Monero Polyseed zh-hans — encrypted restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-zh-hans-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — encrypted restore (macos)",
+        "ru": "Cake Monero Polyseed zh-hans — encrypted restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-zh-hans-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — encrypted restore (android)",
+        "ru": "Cake Monero Polyseed zh-hant — encrypted restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-zh-hant-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — encrypted restore (ios)",
+        "ru": "Cake Monero Polyseed zh-hant — encrypted restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-zh-hant-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — encrypted restore (linux)",
+        "ru": "Cake Monero Polyseed zh-hant — encrypted restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-zh-hant-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — encrypted restore (macos)",
+        "ru": "Cake Monero Polyseed zh-hant — encrypted restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-encrypted-zh-hant-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-cs-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — offset restore (android)",
+        "ru": "Cake Monero Polyseed cs — offset restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-cs-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-cs-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — offset restore (ios)",
+        "ru": "Cake Monero Polyseed cs — offset restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-cs-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-cs-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — offset restore (linux)",
+        "ru": "Cake Monero Polyseed cs — offset restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-cs-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-cs-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — offset restore (macos)",
+        "ru": "Cake Monero Polyseed cs — offset restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-cs-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-en-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — offset restore (android)",
+        "ru": "Cake Monero Polyseed en — offset restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-en-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-en-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — offset restore (ios)",
+        "ru": "Cake Monero Polyseed en — offset restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-en-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-en-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — offset restore (linux)",
+        "ru": "Cake Monero Polyseed en — offset restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-en-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-en-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — offset restore (macos)",
+        "ru": "Cake Monero Polyseed en — offset restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-en-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-es-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — offset restore (android)",
+        "ru": "Cake Monero Polyseed es — offset restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-es-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-es-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — offset restore (ios)",
+        "ru": "Cake Monero Polyseed es — offset restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-es-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-es-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — offset restore (linux)",
+        "ru": "Cake Monero Polyseed es — offset restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-es-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-es-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — offset restore (macos)",
+        "ru": "Cake Monero Polyseed es — offset restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-es-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-fr-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — offset restore (android)",
+        "ru": "Cake Monero Polyseed fr — offset restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-fr-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-fr-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — offset restore (ios)",
+        "ru": "Cake Monero Polyseed fr — offset restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-fr-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-fr-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — offset restore (linux)",
+        "ru": "Cake Monero Polyseed fr — offset restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-fr-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-fr-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — offset restore (macos)",
+        "ru": "Cake Monero Polyseed fr — offset restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-fr-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-it-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — offset restore (android)",
+        "ru": "Cake Monero Polyseed it — offset restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-it-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-it-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — offset restore (ios)",
+        "ru": "Cake Monero Polyseed it — offset restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-it-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-it-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — offset restore (linux)",
+        "ru": "Cake Monero Polyseed it — offset restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-it-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-it-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — offset restore (macos)",
+        "ru": "Cake Monero Polyseed it — offset restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-it-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-ja-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — offset restore (android)",
+        "ru": "Cake Monero Polyseed ja — offset restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-ja-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-ja-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — offset restore (ios)",
+        "ru": "Cake Monero Polyseed ja — offset restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-ja-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-ja-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — offset restore (linux)",
+        "ru": "Cake Monero Polyseed ja — offset restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-ja-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-ja-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — offset restore (macos)",
+        "ru": "Cake Monero Polyseed ja — offset restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-ja-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-ko-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — offset restore (android)",
+        "ru": "Cake Monero Polyseed ko — offset restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-ko-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-ko-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — offset restore (ios)",
+        "ru": "Cake Monero Polyseed ko — offset restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-ko-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-ko-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — offset restore (linux)",
+        "ru": "Cake Monero Polyseed ko — offset restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-ko-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-ko-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — offset restore (macos)",
+        "ru": "Cake Monero Polyseed ko — offset restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-ko-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-pt-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — offset restore (android)",
+        "ru": "Cake Monero Polyseed pt — offset restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-pt-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-pt-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — offset restore (ios)",
+        "ru": "Cake Monero Polyseed pt — offset restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-pt-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-pt-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — offset restore (linux)",
+        "ru": "Cake Monero Polyseed pt — offset restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-pt-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-pt-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — offset restore (macos)",
+        "ru": "Cake Monero Polyseed pt — offset restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-pt-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — offset restore (android)",
+        "ru": "Cake Monero Polyseed zh-hans — offset restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-zh-hans-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — offset restore (ios)",
+        "ru": "Cake Monero Polyseed zh-hans — offset restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-zh-hans-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — offset restore (linux)",
+        "ru": "Cake Monero Polyseed zh-hans — offset restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-zh-hans-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-zh-hans-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — offset restore (macos)",
+        "ru": "Cake Monero Polyseed zh-hans — offset restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-zh-hans-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — offset restore (android)",
+        "ru": "Cake Monero Polyseed zh-hant — offset restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-zh-hant-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — offset restore (ios)",
+        "ru": "Cake Monero Polyseed zh-hant — offset restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-zh-hant-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — offset restore (linux)",
+        "ru": "Cake Monero Polyseed zh-hant — offset restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-zh-hant-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-offset-zh-hant-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — offset restore (macos)",
+        "ru": "Cake Monero Polyseed zh-hant — offset restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-offset-zh-hant-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-cs-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — plain restore (android)",
+        "ru": "Cake Monero Polyseed cs — plain restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-cs-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-cs-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — plain restore (ios)",
+        "ru": "Cake Monero Polyseed cs — plain restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-cs-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-cs-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — plain restore (linux)",
+        "ru": "Cake Monero Polyseed cs — plain restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-cs-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-cs-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed cs — plain restore (macos)",
+        "ru": "Cake Monero Polyseed cs — plain restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-cs-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-en-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — plain restore (android)",
+        "ru": "Cake Monero Polyseed en — plain restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-en-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-en-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — plain restore (ios)",
+        "ru": "Cake Monero Polyseed en — plain restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-en-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-en-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — plain restore (linux)",
+        "ru": "Cake Monero Polyseed en — plain restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-en-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-en-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed en — plain restore (macos)",
+        "ru": "Cake Monero Polyseed en — plain restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-en-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-es-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — plain restore (android)",
+        "ru": "Cake Monero Polyseed es — plain restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-es-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-es-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — plain restore (ios)",
+        "ru": "Cake Monero Polyseed es — plain restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-es-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-es-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — plain restore (linux)",
+        "ru": "Cake Monero Polyseed es — plain restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-es-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-es-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed es — plain restore (macos)",
+        "ru": "Cake Monero Polyseed es — plain restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-es-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-fr-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — plain restore (android)",
+        "ru": "Cake Monero Polyseed fr — plain restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-fr-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-fr-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — plain restore (ios)",
+        "ru": "Cake Monero Polyseed fr — plain restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-fr-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-fr-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — plain restore (linux)",
+        "ru": "Cake Monero Polyseed fr — plain restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-fr-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-fr-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed fr — plain restore (macos)",
+        "ru": "Cake Monero Polyseed fr — plain restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-fr-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-it-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — plain restore (android)",
+        "ru": "Cake Monero Polyseed it — plain restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-it-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-it-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — plain restore (ios)",
+        "ru": "Cake Monero Polyseed it — plain restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-it-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-it-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — plain restore (linux)",
+        "ru": "Cake Monero Polyseed it — plain restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-it-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-it-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed it — plain restore (macos)",
+        "ru": "Cake Monero Polyseed it — plain restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-it-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-ja-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — plain restore (android)",
+        "ru": "Cake Monero Polyseed ja — plain restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-ja-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-ja-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — plain restore (ios)",
+        "ru": "Cake Monero Polyseed ja — plain restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-ja-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-ja-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — plain restore (linux)",
+        "ru": "Cake Monero Polyseed ja — plain restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-ja-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-ja-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed ja — plain restore (macos)",
+        "ru": "Cake Monero Polyseed ja — plain restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-ja-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-ko-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — plain restore (android)",
+        "ru": "Cake Monero Polyseed ko — plain restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-ko-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-ko-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — plain restore (ios)",
+        "ru": "Cake Monero Polyseed ko — plain restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-ko-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-ko-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — plain restore (linux)",
+        "ru": "Cake Monero Polyseed ko — plain restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-ko-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-ko-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed ko — plain restore (macos)",
+        "ru": "Cake Monero Polyseed ko — plain restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-ko-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-pt-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — plain restore (android)",
+        "ru": "Cake Monero Polyseed pt — plain restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-pt-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-pt-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — plain restore (ios)",
+        "ru": "Cake Monero Polyseed pt — plain restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-pt-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-pt-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — plain restore (linux)",
+        "ru": "Cake Monero Polyseed pt — plain restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-pt-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-pt-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed pt — plain restore (macos)",
+        "ru": "Cake Monero Polyseed pt — plain restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-pt-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — plain restore (android)",
+        "ru": "Cake Monero Polyseed zh-hans — plain restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-zh-hans-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — plain restore (ios)",
+        "ru": "Cake Monero Polyseed zh-hans — plain restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-zh-hans-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — plain restore (linux)",
+        "ru": "Cake Monero Polyseed zh-hans — plain restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-zh-hans-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-zh-hans-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hans — plain restore (macos)",
+        "ru": "Cake Monero Polyseed zh-hans — plain restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-zh-hans-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-android",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — plain restore (android)",
+        "ru": "Cake Monero Polyseed zh-hant — plain restore (android)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-zh-hant-import-android"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-ios",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — plain restore (ios)",
+        "ru": "Cake Monero Polyseed zh-hant — plain restore (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-zh-hant-import-ios"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-linux",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — plain restore (linux)",
+        "ru": "Cake Monero Polyseed zh-hant — plain restore (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-zh-hant-import-linux"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-monero-polyseed-plain-zh-hant-import-macos",
+      "display_name": {
+        "en": "Cake Monero Polyseed zh-hant — plain restore (macos)",
+        "ru": "Cake Monero Polyseed zh-hant — plain restore (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-monero-polyseed-plain-zh-hant-import-macos"
+      ],
+      "research_state": "terminal",
+      "status": "documented",
+      "historical": false
+    },
+    {
+      "id": "wallet-cake-wallet-wownero-legacy14-export-android",
+      "display_name": {
+        "en": "Cake Wownero historical14 export (android)",
+        "ru": "Cake Wownero historical14 export (android)"
+      },
+      "record_ids": [
+        "cake-wallet-wownero-legacy14-export-android"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": true
+    },
+    {
+      "id": "wallet-cake-wallet-wownero-legacy14-export-ios",
+      "display_name": {
+        "en": "Cake Wownero historical14 export (ios)",
+        "ru": "Cake Wownero historical14 export (ios)"
+      },
+      "record_ids": [
+        "cake-wallet-wownero-legacy14-export-ios"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": true
+    },
+    {
+      "id": "wallet-cake-wallet-wownero-legacy14-export-linux",
+      "display_name": {
+        "en": "Cake Wownero historical14 export (linux)",
+        "ru": "Cake Wownero historical14 export (linux)"
+      },
+      "record_ids": [
+        "cake-wallet-wownero-legacy14-export-linux"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": true
+    },
+    {
+      "id": "wallet-cake-wallet-wownero-legacy14-export-macos",
+      "display_name": {
+        "en": "Cake Wownero historical14 export (macos)",
+        "ru": "Cake Wownero historical14 export (macos)"
+      },
+      "record_ids": [
+        "cake-wallet-wownero-legacy14-export-macos"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": true
     }
   ]
 }

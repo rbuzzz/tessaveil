@@ -14,9 +14,9 @@
     "cake-nano-hd-create",
     "cake-nano-hd-import",
     "cake-nano-native",
-    "cake-wallet-monero-bip39-12-create-android",
-    "cake-wallet-monero-bip39-12-create-ios",
-    "cake-wallet-monero-bip39-12-create-linux",
-    "cake-wallet-monero-bip39-12-create-macos"
+    "cake-wallet-monero-bip39",
+    "cake-wallet-monero-bip39-create-ios",
+    "cake-wallet-monero-bip39-create-linux",
+    "cake-wallet-monero-bip39-create-macos"
   ]
 }

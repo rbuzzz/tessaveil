@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "cake-monero-polyseed-encrypted-ja",
+  "display_name": {
+    "en": "cake-monero-polyseed-encrypted-ja",
+    "ru": "cake-monero-polyseed-encrypted-ja"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-language-ui",
+    "cake-wallet-polyseed-dispatch"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "polyseed-ja"
+  ],
+  "supported_lengths": [
+    16
+  ],
+  "position_rules": [
+    "Source-order vocabulary per input language; no complete phrase validation."
+  ],
+  "external_secret": {
+    "kind": "required-passphrase",
+    "stored": false,
+    "guidance": "Condition: isEncrypted=true. Input dictionary polyseed-ja,16 words. polyseed.crypt(passphrase or empty) first, then polyseed.generateKey(POLYSEED_MONERO,32) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it."
+  },
+  "semantic_distinction": "Condition: isEncrypted=true. Input dictionary polyseed-ja,16 words. polyseed.crypt(passphrase or empty) first, then polyseed.generateKey(POLYSEED_MONERO,32) and restoreWalletFromSpendKeySync. Source permits an empty input; the encrypted flag selects this operation regardless of whether a nonempty passphrase was supplied. Not a native seed offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

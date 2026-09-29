@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "cake-wownero-14-unresolved",
+  "display_name": {
+    "en": "Cake Wownero — historical14 export, unresolved codec",
+    "ru": "Cake Wownero — historical14 export, unresolved codec"
+  },
+  "status": "blocked",
+  "historical": true,
+  "evidence_ids": [
+    "cake-wallet-wownero-doc",
+    "cake-wallet-wownero-deprecation",
+    "cake-wallet-wownero-wallet-seed",
+    "cake-wallet-wownero-seed-export"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [],
+  "supported_lengths": [
+    14
+  ],
+  "position_rules": [
+    "Historical14-word export identified by official Cake documentation; no inspected Dart14-word codec or dictionary order."
+  ],
+  "external_secret": {
+    "kind": "other",
+    "stored": false,
+    "guidance": "Native getter forwards stored seedOffset; exact14-word dependency semantics unresolved. No Feather passphrase behavior inferred. Tessaveil stores no secrets."
+  },
+  "semantic_distinction": "Cake documentation identifies existing wallets originally imported from14 words. Pinned deprecation path exposes wallet.seed through the native seed getter. Exact native codec, list, license and secret handling unresolved; no Feather Tevador or Monero coin-domain equivalence inferred. Export only, not current import/generation.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}
