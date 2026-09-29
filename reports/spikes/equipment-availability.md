@@ -13,6 +13,12 @@ This is a read-only inventory of resources already connected or explicitly confi
 | Mac/Xcode host | Unassigned | No verified Mac host access | 2026-09-29 | blocked | Current host is Windows; local Xcode command-line tools are absent and no configured Mac/Xcode host access was supplied. | Task 6 iOS build, deployment, and physical measurement evidence: BLOCKED |
 | pre-provisioned empty removable device for NTFS and exFAT | Unassigned | No verified removable test-media access | 2026-09-29 | blocked | Zero USB/SD disks and zero removable volumes were visible. No pre-provisioned empty physical media or separately safe NTFS and exFAT test paths were supplied. | Task 7 removable NTFS and removable exFAT interruption/atomicity evidence: BLOCKED |
 
+## Independent gate decisions
+
+- Task 5 — Windows stack selection and release evidence: NO-GO. Neither clean Windows 10 22H2 x64 nor clean Windows 11 x64 access and provenance is verified. Candidate build work may proceed, but stack selection and clean-machine release claims require both target results.
+- Task 6 — Vault-format/KDF freeze: NO-GO. The required physical Android and iPhone classes and Mac/Xcode access are unverified. Synthetic vectors and safe build work may proceed, but physical vault-open and Argon2id measurements are required before freezing the format or KDF profile.
+- Task 7 — Removable NTFS/exFAT atomicity claims: NO-GO. No pre-provisioned empty physical removable medium or safe separate NTFS and exFAT test paths are verified. Local NTFS work may proceed, but removable-media guarantees require interruption results on each physical filesystem.
+
 ## Read-only discovery
 
 - Queried the local operating-system class and version: Windows 11 Pro, x64, build 26200. This establishes only the development host, not a clean Windows target.
