@@ -111,6 +111,19 @@ def section(text, anchor):
     return match.group(1) if match else ""
 
 
+def claim_text(text):
+    """Expose ordinary Markdown wording before checking selected overclaims.
+
+    Keep punctuation and list/quote boundaries; formatting must not split a
+    subject from its verb, nor hide the English negative quantifier "No".
+    This is a bounded copy guard, not a complete Markdown or language parser.
+    """
+    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = re.sub(r"[*_`]", "", text)
+    return normalized(text)
+
+
 def contract_errors(text):
     errors = []
     for index, lang in enumerate(("en", "ru")):
@@ -137,6 +150,7 @@ def contract_errors(text):
                 if normalized(clause) not in body:
                     errors.append(f"{lang}:{contract}:{clause}")
     # Reject common positive overclaims even if warnings elsewhere remain intact.
+    visible = claim_text(text)
     for claim in (
         r"(?:tessaveil|spin) (?:is |makes .*? )?(?:unbreakable|indistinguishable)",
         r"(?:row|table) (?:updates?|re-randomization) (?:eliminates?|removes?) (?:all )?(?:comparison|intersection|cross-version) risk",
@@ -144,17 +158,23 @@ def contract_errors(text):
         r"(?:tessaveil|spin) (?:неуязвим|неразличим)",
         r"(?:обновление|рандомизация) (?:строки|таблицы) устраняет риск",
         r"(?:гарантирует безопасное стирание|гарантирует обнаружение отката|атомарно на всех файловых системах)",
-        # Start at a sentence/cell boundary so the real negative statement
-        # "No ... self-destruction policy prevents ..." remains permitted.
-        r"(?:^|[.!?]\s+|\|\s*)(?:password attempt limits? (?:or|and) self-destruction(?: policy)?|"
+        r"(?:password attempt limits? (?:or|and) self-destruction(?: policy)?|"
         r"(?:ui delays, )?attempt counters(?: and self-destruction)?|self-destruction(?: policy)?) "
         r"(?:prevents? offline guessing of copies|protects? copied ciphertext from offline guessing|can restrict a copied file)",
         r"самоуничтожение (?:предотвращает офлайн-подбор копий|ограничивают скопированный файл|"
         r"защищает скопированный шифротекст от офлайн-подбора)",
         r"счётчики попыток защищают скопированный шифротекст от офлайн-подбора",
     ):
-        if re.search(claim, normalized(text)):
+        for match in re.finditer(claim, visible):
+            # Match the whole subject, including its alternatives, so a skipped
+            # "No password ... or self-destruction ..." cannot be rematched as
+            # a positive claim starting halfway through that same subject.
+            # Other valid negatives (cannot, do not, не) do not match the
+            # adjacent positive subject/verb patterns in the first place.
+            if re.search(r"\b(?:no|not)\s+$", visible[:match.start()]):
+                continue
             errors.append(f"overclaim:{claim}")
+            break
     return errors
 
 
@@ -256,6 +276,53 @@ class RequiredClaimsTests(unittest.TestCase):
             with self.subTest(claim=claim):
                 errors = contract_errors(text + "\n" + claim)
                 self.assertTrue(any(error.startswith("overclaim:") for error in errors))
+
+    def test_offline_copy_overclaims_survive_markdown_and_cell_separators(self):
+        text = self.read_model()
+        claims = (
+            "Attempt counters protect copied ciphertext from offline guessing.",
+            "Password attempt limit or self-destruction policy prevents offline guessing of copies.",
+            "Самоуничтожение защищает скопированный шифротекст от офлайн-подбора.",
+        )
+        for claim in claims:
+            for wrapper in ("- {}", "1. {}", "**{}**", "__{}__", "> {}", "> - **{}**",
+                            "`{}`", "Advice: {}", "Existing statement; {}", "[{}](#offline)"):
+                with self.subTest(claim=claim, wrapper=wrapper):
+                    errors = contract_errors(text + "\n" + wrapper.format(claim))
+                    self.assertTrue(any(error.startswith("overclaim:") for error in errors))
+        for claim in (
+            "**Attempt counters** protect copied ciphertext from offline guessing.",
+            "Attempt counters **protect** copied ciphertext from offline guessing.",
+            "Attempt counters\nprotect copied ciphertext from offline guessing.",
+            "[Attempt counters](#offline) protect copied ciphertext from offline guessing.",
+            "<strong>Attempt counters</strong> protect copied ciphertext from offline guessing.",
+            "**Самоуничтожение** защищает скопированный шифротекст от офлайн-подбора.",
+        ):
+            with self.subTest(inline_markup=claim):
+                self.assertTrue(any(error.startswith("overclaim:")
+                                    for error in contract_errors(text + "\n" + claim)))
+        protection = "Argon2id is intended to raise cost per guess"
+        self.assertIn(protection, text)
+        for claim in claims:
+            with self.subTest(semicolon_in_guessing_cell=claim):
+                changed = text.replace(protection, protection + "; " + claim)
+                self.assertTrue(any(error.startswith("overclaim:") for error in contract_errors(changed)))
+
+    def test_offline_copy_negative_warnings_remain_accepted_with_markdown(self):
+        text = self.read_model()
+        for warning in (
+            "No password attempt limit or self-destruction policy prevents offline guessing of copies.",
+            "**No** password attempt limit or self-destruction policy prevents offline guessing of copies.",
+            "No **password attempt limit or self-destruction policy** prevents offline guessing of copies.",
+            "Attempt counters do not protect copied ciphertext from offline guessing.",
+            "UI delays, attempt counters and self-destruction cannot restrict a copied file.",
+            "Ограничение попыток пароля или самоуничтожение не предотвращает офлайн-подбор копий.",
+            "Самоуничтожение **не** защищает скопированный шифротекст от офлайн-подбора.",
+            "Счётчики попыток не защищают скопированный шифротекст от офлайн-подбора.",
+        ):
+            for wrapper in ("- {}", "> **{}**", "Existing statement; {}"):
+                with self.subTest(warning=warning, wrapper=wrapper):
+                    self.assertEqual([], contract_errors(text + "\n" + wrapper.format(warning)))
 
 
 if __name__ == "__main__":
