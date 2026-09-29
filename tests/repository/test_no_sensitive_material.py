@@ -32,7 +32,7 @@ class SensitiveMaterialTests(unittest.TestCase):
 
     def test_public_exception_requires_exact_windows_path_component(self):
         for drive in ("C", "d", "Z"):
-            for separator in ("\\", "/"):
+            for separator in ("\\", "/", "//", "\\/", "/\\", "\\\\"):
                 for users, public in (("Users", "Public"), ("uSeRs", "pUbLiC")):
                     prefix = drive + ":" + separator + users + separator
                     for suffix in (".Alice", "-Alice", " Alice", "_Alice", "'Alice"):
@@ -46,6 +46,39 @@ class SensitiveMaterialTests(unittest.TestCase):
         # The common Windows Public directory is not a POSIX profile exception.
         for prefix in ("/" + "Users/", "/" + "home/"):
             self.assertIn("personal-path", scan.inspect_text("sample.txt", prefix + "Public/file", frozenset()))
+
+    def test_posix_roots_in_uris_or_repeated_slashes_are_not_windows_exceptions(self):
+        cases = [("file:" + "/" * 3, "home", "Alice"),
+                 ("file:" + "/" * 3, "Users", "Public"),
+                 ("/" * 3, "Users", "Public.Alice"),
+                 ("/" * 2, "home", "Public"),
+                 ("file:" + "/", "Users", "Public"),
+                 ("file:" + "/" * 2, "Users", "Public"),
+                 ("file:" + "/" * 3, "Users", "Public-Alice"),
+                 ("/", "Users", "\\Alice"),
+                 ("/", "home", "\\Public"),
+                 ("prefixC:" + "/", "Users", "Public"),
+                 ("_C:" + "/", "Users", "Public"),
+                 ("1C:" + "/", "Users", "Public")]
+        for prefix, directory, profile in cases:
+            with self.subTest(prefix=prefix, directory=directory, profile=profile):
+                value = prefix + directory + "/" + profile + "/file"
+                self.assertIn("personal-path", scan.inspect_text("sample.txt", value, frozenset()))
+
+    def test_windows_public_with_repeated_or_mixed_root_separator(self):
+        for separator in ("/", "//", "\\/", "\\\\/"):
+            public = "C:" + separator + "Users" + "/Public"
+            self.assertNotIn("personal-path", scan.inspect_text("sample.txt", public, frozenset()))
+            self.assertNotIn("personal-path", scan.inspect_text("sample.txt", public + "\\file", frozenset()))
+            for suffix in (".Alice", "-Alice"):
+                self.assertIn("personal-path", scan.inspect_text("sample.txt", public + suffix + "/file", frozenset()))
+
+    def test_public_span_does_not_hide_other_private_paths_in_the_same_text(self):
+        public = "C:" + "/" + "Users" + "/Public/file"
+        private = "file:" + "/" * 3 + "home" + "/Alice/file"
+        for value in (public + " " + private, private + " " + public,
+                      public + "\n" + private + "\n" + public):
+            self.assertIn("personal-path", scan.inspect_text("sample.txt", value, frozenset()))
 
     def test_key_material_and_index_fixtures_require_exact_reviewed_hash(self):
         for value in ('{"seed_' + 'hex": "' + "ab" * 32 + '"}',

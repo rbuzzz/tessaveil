@@ -30,8 +30,9 @@ PATTERNS = {
     "private-key": re.compile(r"-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY(?: BLOCK)?-----"),
     "github-token": re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})"),
     "figma-token": re.compile(r"\bfig[du]_[A-Za-z0-9_-]{20,}"),
-    "personal-path": re.compile(r"(?:[A-Za-z]:[\\/]+Users[\\/]+(?!Public(?:[\\/]|\Z))[^\s\\/\"']+|(?<![:/\\])/(?:home|Users)/[^\s/\"']+)", re.I),
 }
+WINDOWS_USER_CANDIDATE = re.compile(r"[A-Za-z]:[\\/]+Users[\\/]+(?P<profile>[^\s\\/\"']+)", re.I)
+POSIX_USER_PATH = re.compile(r"/(?:home|Users)/+[^\s/\"']+", re.I)
 VECTOR = re.compile(r'"(?:seed_hex|secret_key|private_key|mnemonic|phrase|indices|word_indices)"\s*:\s*(?:"[^"\n]+"|\[\s*\d)', re.I)
 
 
@@ -39,8 +40,35 @@ def reviewed_vector(path, payload, allowlist=PUBLIC_VECTORS):
     return path in allowlist and hashlib.sha256(payload).hexdigest() == allowlist[path]
 
 
+def has_personal_path(text):
+    """Exempt only exact Windows Public roots, never surrounding POSIX matches."""
+    public_spans = []
+    for match in WINDOWS_USER_CANDIDATE.finditer(text):
+        start, end = match.span()
+        # A suffix of a word/scheme (notably the e in file:) is not a drive.
+        # Such ambiguous candidates stay findings instead of gaining exemption.
+        drive_boundary = start == 0 or not (text[start - 1].isalnum() or text[start - 1] == "_")
+        exact_public = (drive_boundary and match["profile"].casefold() == "public"
+                        and (end == len(text) or text[end] in "/\\"))
+        if not exact_public:
+            return True
+        public_spans.append((start, end))
+    index = 0
+    for match in POSIX_USER_PATH.finditer(text):
+        # Both streams are ordered. Only roots beginning inside a verified Windows
+        # prefix are exempt; backslashes in a standalone POSIX profile still count.
+        while index < len(public_spans) and public_spans[index][1] <= match.start():
+            index += 1
+        if index == len(public_spans) or not (
+                public_spans[index][0] <= match.start() < public_spans[index][1]):
+            return True
+    return False
+
+
 def inspect_text(path, text, words, *, reviewed=False):
     findings = [kind for kind, pattern in PATTERNS.items() if pattern.search(text)]
+    if has_personal_path(text):
+        findings.append("personal-path")
     if reviewed:
         return tuple(findings)
     if VECTOR.search(text):
