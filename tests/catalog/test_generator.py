@@ -37,12 +37,37 @@ WRAPPED_PATHS = (
     r"Backup=‘__C:\Synthetic\backup__’",
     "[backup](//synthetic-host/private-share/backup)",
     "（https://example.invalid）//synthetic-host/private-share/backup",
+    "~~/synthetic-vault~~", r"~~\\synthetic-host\private-share\backup~~", "~~~/synthetic-home~~",
+    "~~https://example.invalid/path~~//synthetic-host/private-share/backup",
+    "**https://example.invalid/path**/synthetic-vault",
+    "__https://example.invalid/path__/synthetic-vault",
+    "~https://example.invalid/path~/synthetic-vault",
 )
 BALANCED_URLS = (
     "https://example.invalid/help/(synthetic)/path",
     "http://example.invalid/search?q=(/help)&next=(nested(one))/end",
     "https://[2001:db8::1]/(synthetic)/path?next=(/help)",
     "https://example.invalid/search?q='/help'&next=(one)/end",
+)
+VALID_AUTHORITY_URLS = (
+    "https://docs.example.invalid/a%20b?next=%2Fhelp#part%31",
+    "http://192.0.2.10:8080/%E2%82%AC", "https://[2001:db8::1]:443/a%2Fb",
+    "https://EXAMPLE.invalid./(part)/~public?value=100%25",
+)
+INVALID_AUTHORITY_URLS = (
+    "https://example.invalid%ZZ//synthetic-host/private-share",
+    "https://example.invalid^//synthetic-host/private-share",
+    "https://synthetic-user@example.invalid/path", "https://synthetic-user:public@example.invalid/path",
+    "https://example.invalid/bad%", "https://example.invalid/?q=%0G", "https://example.invalid/#part%1",
+    "https://%65xample.invalid/path", "https://еxample.invalid/path",  # Cyrillic e, not ASCII DNS.
+    "https://example.invalid：443/path", "https://bad_host.invalid/path",
+    "https://-bad.invalid/path", "https://bad-.invalid/path", "https://bad..invalid/path",
+    "https://999.0.0.1/path", "https://192.0.2.01/path", "https://[2001:db8::1]suffix/path",
+    "https://[2001:db8::1%25zone]/path", "https://example.invalid:/path",
+    "https://example.invalid:65536/path", "https://example.invalid/path\x00suffix",
+    "https:// /path", "https://example.invalid: 443/path", "https://[2001:db8::1 ]/path",
+    "https://exam%20ple.invalid/path", "https://[2001:db8::1]:/path",
+    "https://exa,mple.invalid/path", "https://exa;mple.invalid/path", "https://exa!mple.invalid/path",
 )
 
 
@@ -200,6 +225,54 @@ class GeneratorTests(unittest.TestCase):
                     with self.assertRaises(ValueError):
                         self.render(replace(catalog, wallets=(modified,)), locale)
 
+    def test_strict_authorities_and_percent_escapes_in_both_locales(self):
+        catalog = load_catalog(FIXTURE)
+        wallet = catalog.wallets[0]
+        for locale in ("en", "ru"):
+            for url in INVALID_AUTHORITY_URLS:
+                with self.subTest(locale=locale, url=url):
+                    modified = replace(wallet, data={**wallet.data, "guidance": url})
+                    with self.assertRaises(ValueError):
+                        self.render(replace(catalog, wallets=(modified,)), locale)
+            for url in VALID_AUTHORITY_URLS:
+                with self.subTest(locale=locale, url=url):
+                    modified = replace(wallet, data={**wallet.data, "guidance": f"See ({url}) for details."})
+                    output = self.render(replace(catalog, wallets=(modified,)), locale)
+                    self.assertIn("for details.", output)
+                    self.assertIn("%", output)
+
+    def test_benign_tildes_render_as_inert_prose_in_both_locales(self):
+        catalog = load_catalog(FIXTURE)
+        wallet = catalog.wallets[0]
+        modified = replace(wallet, data={**wallet.data, "guidance": "About ~5 items; ~~obsolete~~ label."})
+        for locale in ("en", "ru"):
+            output = self.render(replace(catalog, wallets=(modified,)), locale)
+            self.assertIn(r"About \~5 items; \~\~obsolete\~\~ label.", output)
+
+    def test_markdown_wrapped_valid_uri_is_inert_but_not_rejected(self):
+        catalog = load_catalog(FIXTURE)
+        wallet = catalog.wallets[0]
+        for locale in ("en", "ru"):
+            for marker in ("*", "**", "***", "_", "__", "___", "~", "~~"):
+                with self.subTest(locale=locale, marker=marker):
+                    modified = replace(wallet, data={**wallet.data,
+                        "guidance": marker + "https://example.invalid/path" + marker})
+                    output = self.render(replace(catalog, wallets=(modified,)), locale)
+                    self.assertIn("example.invalid/path", output)
+                    self.assertNotIn("https://", output)
+
+    def test_sentence_punctuation_after_valid_uri_remains_prose(self):
+        catalog = load_catalog(FIXTURE)
+        wallet = catalog.wallets[0]
+        for locale in ("en", "ru"):
+            for punctuation in (",", ";", "!"):
+                with self.subTest(locale=locale, punctuation=punctuation):
+                    modified = replace(wallet, data={**wallet.data,
+                        "guidance": f"See https://example.invalid{punctuation} then read the guidance."})
+                    output = self.render(replace(catalog, wallets=(modified,)), locale)
+                    self.assertIn("example.invalid", output)
+                    self.assertIn("then read the guidance.", output)
+
 
 class GenerationCliTests(unittest.TestCase):
     def setUp(self):
@@ -291,6 +364,52 @@ class GenerationCliTests(unittest.TestCase):
             self.assertIn(b"/\\(synthetic\\)/path", content)
         self.assertEqual(self.cli("--check").returncode, 0)
         self.assertEqual(before, {p.name: (p.read_bytes(), p.stat().st_mtime_ns) for p in docs.iterdir()})
+
+    def test_strike_paths_and_bad_uris_reject_before_publication(self):
+        cases = (("~~/synthetic-vault~~", False),
+                 (r"~~\\synthetic-host\private-share\backup~~", True),
+                 ("~~~/synthetic-home~~", True),
+                 (INVALID_AUTHORITY_URLS[0], False), (INVALID_AUTHORITY_URLS[2], True))
+        for guidance, existing in cases:
+            with self.subTest(guidance=guidance), tempfile.TemporaryDirectory() as directory:
+                self.root = Path(directory)
+                shutil.copytree(FIXTURE, self.root, dirs_exist_ok=True)
+                docs = self.root / "docs"
+                if existing:
+                    docs.mkdir()
+                    for name in ("catalog.md", "catalog.ru.md"):
+                        (docs / name).write_bytes(b"previous\n")
+                path = self.root / "catalog/wallets/synthetic-wallet.json"
+                data = json.loads(path.read_text(encoding="utf-8"))
+                data["guidance"] = guidance
+                path.write_text(json.dumps(data), encoding="utf-8")
+
+                def snapshot():
+                    return {p.relative_to(self.root): (p.stat().st_mtime_ns,
+                            p.read_bytes() if p.is_file() else None)
+                            for p in self.root.rglob("*")}
+
+                before = snapshot()
+                result = self.cli()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertEqual(before, snapshot())
+                diagnostic = result.stdout + result.stderr
+                self.assertLess(len(diagnostic), 256)
+                for forbidden in (guidance, "synthetic-host", "synthetic-user", str(self.root), "Traceback"):
+                    self.assertNotIn(forbidden, diagnostic)
+
+    def test_dns_ipv4_ipv6_and_encoded_paths_publish_both_documents(self):
+        path = self.root / "catalog/wallets/synthetic-wallet.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["guidance"] = " ".join(VALID_AUTHORITY_URLS)
+        path.write_text(json.dumps(data), encoding="utf-8")
+        result = self.cli()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        for name in ("catalog.md", "catalog.ru.md"):
+            output = (self.root / "docs" / name).read_text(encoding="utf-8")
+            for fragment in ("192.0.2.10", "2001", "%20", "%2F", "%E2%82%AC", "%25"):
+                self.assertIn(fragment, output)
+        self.assertEqual(self.cli("--check").returncode, 0)
 
     def test_second_output_obstruction_does_not_replace_first(self):
         docs = self.root / "docs"

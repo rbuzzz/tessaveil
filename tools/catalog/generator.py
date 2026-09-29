@@ -1,7 +1,9 @@
 """Deterministic, offline catalogue metadata; never render word-list payloads."""
 
 import html
+import ipaddress
 from pathlib import PurePosixPath, PureWindowsPath
+import string
 from typing import Literal
 import unicodedata
 from urllib.parse import quote, urlsplit
@@ -9,6 +11,50 @@ from urllib.parse import quote, urlsplit
 from .loader import DEFAULT_LIMITS
 from .model import Catalog, Record
 from .validator import validate_catalog
+
+
+def _validate_uri(uri: str) -> None:
+    """Strict ASCII HTTP(S) URI grammar; no decoding, DNS or network lookup.
+
+    International hostnames must use ASCII DNS form, and non-ASCII path/query
+    bytes must be percent-encoded. Userinfo and scoped IPv6 are not public
+    catalogue provenance. Only complete percent escapes qualify as URI syntax.
+    """
+    allowed = string.ascii_letters + string.digits + "-._~:/?#[]@!$&'()*+,;=%"
+    if any(char not in allowed for char in uri):
+        raise ValueError("invalid URI character in rendered metadata")
+    for index, char in enumerate(uri):
+        if char == "%" and (len(uri[index + 1:index + 3]) != 2 or
+                            any(c not in string.hexdigits for c in uri[index + 1:index + 3])):
+            raise ValueError("invalid URI percent escape in rendered metadata")
+    url = urlsplit(uri)
+    authority = url.netloc
+    if url.scheme.lower() not in ("http", "https") or not authority or any(c in authority for c in "@%"):
+        raise ValueError("invalid URI authority in rendered metadata")
+    if authority.startswith("["):
+        host, closer, tail = authority[1:].partition("]")
+        if not closer or (tail and not tail.startswith(":")):
+            raise ValueError("invalid IPv6 authority in rendered metadata")
+        ipaddress.IPv6Address(host)
+        port_present, port = bool(tail), tail[1:]
+    else:
+        host, separator, port = authority.partition(":")
+        port_present = bool(separator)
+        if not host or "[" in host or "]" in host:
+            raise ValueError("invalid URI host in rendered metadata")
+        if all(c in string.digits + "." for c in host):
+            ipaddress.IPv4Address(host)
+        else:
+            dns = host[:-1] if host.endswith(".") else host
+            alphanumeric = string.ascii_letters + string.digits
+            if not dns or len(dns) > 253 or any(
+                    not label or len(label) > 63 or label[0] not in alphanumeric or
+                    label[-1] not in alphanumeric or any(c not in alphanumeric + "-" for c in label)
+                    for label in dns.split(".")):
+                raise ValueError("invalid DNS host in rendered metadata")
+    if port_present and (not port or len(port) > 5 or
+                         any(c not in string.digits for c in port) or int(port) > 65535):
+        raise ValueError("invalid URI port in rendered metadata")
 
 
 def _uri_end(value: str, start: int) -> int:
@@ -21,8 +67,15 @@ def _uri_end(value: str, start: int) -> int:
     end = start
     closers = []
     single_quoted = start > 0 and value[start - 1] == "'"
+    marker = next((m for m in ("***", "___", "**", "__", "~~", "*", "_", "~")
+                   if value[max(0, start - len(m)):start] == m), None)
     while end < len(value):
         char = value[end]
+        if marker and not closers and value.startswith(marker, end):
+            # An intraword underscore is URI content, not closing emphasis.
+            after = value[end + len(marker):end + len(marker) + 1]
+            if "_" not in marker or not after.isalnum():
+                break
         if (char.isspace() or char in '<>"`{}' or
                 (single_quoted and char == "'") or
                 (unicodedata.category(char) in ("Pi", "Pf", "Ps", "Pe") and char not in "()[]")):
@@ -39,10 +92,11 @@ def _uri_end(value: str, start: int) -> int:
         end += 1
     if closers:
         raise ValueError("unbalanced URL in rendered metadata")
-    url = urlsplit(value[start:end])
-    if not url.hostname or any(char in url.netloc for char in '\\(){}<>"\''):
-        raise ValueError("invalid URL authority in rendered metadata")
-    _ = url.port  # urlsplit otherwise defers malformed/range-invalid port errors.
+    # Sentence punctuation at a span boundary belongs to prose. Internal
+    # punctuation still passes through the strict authority/escape grammar.
+    while end > start and value[end - 1] in ",;!":
+        end -= 1
+    _validate_uri(value[start:end])
     return end
 
 
@@ -80,8 +134,9 @@ def _check_metadata(value: str) -> None:
         drive_colon = (char == ":" and len(candidate) == 1 and
                        candidate[0] in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" and
                        value[index + 1:index + 2] in ("/", "\\"))
+        home_tilde = char == "~" and not candidate and value[index + 1:index + 2] == "/"
         boundary = char.isspace() or (unicodedata.category(char)[0] in "PS" and
-                                     char not in "/\\.~" and not drive_colon)
+                                     char not in "/\\." and not drive_colon and not home_tilde)
         if boundary:
             check_candidate(candidate)
             candidate = []
@@ -100,7 +155,7 @@ def _text(value) -> str:
     value = str(value)
     _check_metadata(value)
     value = html.escape(" ".join(value.split()), quote=False)
-    for character in "\\`*_{}[]()#+!|:":
+    for character in "\\`*_{}[]()#+!|:~":
         value = value.replace(character, "\\" + character)
     return value
 
