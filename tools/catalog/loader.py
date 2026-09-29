@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass
 import json
+import os
 from pathlib import Path
 from types import MappingProxyType
 from typing import Any
@@ -117,10 +118,12 @@ def load_catalog(root: Path, limits: LoadLimits = DEFAULT_LIMITS) -> Catalog:
         if directory.is_symlink():
             raise ValueError("catalogue path rejected")
         if directory.is_dir():
-            for path in directory.glob("*.json"):
-                files.append((folder, path))
-                if len(files) > limits.max_records:
-                    raise ValueError("record count exceeds limit")
+            with os.scandir(directory) as entries:
+                for entry in entries:
+                    if entry.name.endswith(".json"):
+                        files.append((folder, directory / entry.name))
+                        if len(files) > limits.max_records:
+                            raise ValueError("record count exceeds limit")
     files.sort(key=lambda item: (FOLDERS.index(item[0]), str(item[1])))
     groups: dict[str, list[Any]] = {folder: [] for folder in FOLDERS}
     for folder, path in files:

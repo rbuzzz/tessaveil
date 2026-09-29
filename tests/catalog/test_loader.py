@@ -1,6 +1,7 @@
 """Boundary tests for untrusted catalogue input."""
 
 import json
+import os
 from pathlib import Path
 import shutil
 import tempfile
@@ -48,18 +49,42 @@ class LoaderTests(unittest.TestCase):
             load_catalog(self.root, LoadLimits(max_records=1))
 
     def test_record_limit_stops_enumeration_without_consuming_more_paths(self):
-        original_glob = Path.glob
+        original_scandir = os.scandir
+        yielded = []
 
-        def paths(directory, pattern):
-            if directory.name == "dictionaries":
-                yield directory / "first.json"
-                yield directory / "second.json"
-                raise AssertionError("enumerated beyond the record limit")
-            yield from original_glob(directory, pattern)
+        class Entry:
+            def __init__(self, name):
+                self.name = name
 
-        with patch.object(Path, "glob", paths):
+            def is_file(self, follow_symlinks=False):
+                return True
+
+        class Entries:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_):
+                return False
+
+            def __iter__(self):
+                return self
+
+            def __next__(self):
+                if len(yielded) == 2:
+                    raise AssertionError("consumed a third directory entry")
+                name = ("first.json", "second.json")[len(yielded)]
+                yielded.append(name)
+                return Entry(name)
+
+        def scandir(directory):
+            if Path(directory).name == "dictionaries":
+                return Entries()
+            return original_scandir(directory)
+
+        with patch("os.scandir", side_effect=scandir):
             with self.assertRaisesRegex(ValueError, "record count"):
                 load_catalog(self.root, LoadLimits(max_records=1))
+        self.assertEqual(yielded, ["first.json", "second.json"])
 
     def test_rejects_long_nested_string(self):
         payload = json.loads(self.wallet.read_text(encoding="utf-8"))
