@@ -10,10 +10,11 @@
     "windows-alpha": {
       "runs-on": "windows-2022",
       "timeout-minutes": 180,
-      "env": {"SOURCE_SHA": "${{ github.sha }}", "ALPHA_ROOT": "${{ runner.temp }}\\tessaveil-alpha"},
+      "env": {"SOURCE_SHA": "${{ github.sha }}"},
       "defaults": {"run": {"shell": "pwsh"}},
       "steps": [
         {"uses": "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1", "with": {"ref": "${{ github.sha }}", "fetch-depth": 0, "persist-credentials": false}},
+        {"name": "Resolve alpha root on the assigned runner", "id": "alpha-root", "run": "$ErrorActionPreference = 'Stop'\nSet-StrictMode -Version Latest\nforeach ($name in @('RUNNER_TEMP','GITHUB_ENV')) {\n  $value = [Environment]::GetEnvironmentVariable($name)\n  if ([string]::IsNullOrWhiteSpace($value) -or $value -match '[\\r\\n]' -or ![IO.Path]::IsPathFullyQualified($value)) { throw \"Missing or invalid runner input: $name\" }\n}\nif (!(Test-Path -LiteralPath $env:RUNNER_TEMP -PathType Container) -or !(Test-Path -LiteralPath $env:GITHUB_ENV -PathType Leaf)) { throw 'Runner environment paths unavailable' }\n$alphaRoot = Join-Path (Resolve-Path -LiteralPath $env:RUNNER_TEMP).Path 'tessaveil-alpha'\n[IO.File]::AppendAllText($env:GITHUB_ENV, \"ALPHA_ROOT=$alphaRoot`n\", [Text.UTF8Encoding]::new($false))"},
         {"name": "Pinned tool archives and real static Qt source build", "run": "./packaging/windows/bootstrap.ps1 -ToolchainRoot $env:ALPHA_ROOT"},
         {"name": "Real app build, root Rust, native headful E2E, Python, scanners, LGPL relink and artifact gate", "run": "./packaging/windows/ci.ps1 -ToolchainRoot $env:ALPHA_ROOT -SourceSha $env:SOURCE_SHA"},
         {"name": "Require exact artifact gate receipt", "run": "$receipt = Get-Content -Raw \"$env:ALPHA_ROOT/alpha-output/GATE-PASS.json\" | ConvertFrom-Json; if ($receipt.source_sha -ne $env:SOURCE_SHA) { throw 'Stale gate receipt' }; foreach ($kind in @('runtime','compliance')) { $expected = $receipt.($kind + '_sha256'); if ((Get-FileHash \"$env:ALPHA_ROOT/alpha-output/$kind.zip\" -Algorithm SHA256).Hash.ToLower() -ne $expected) { throw 'Artifact changed after audit' } }"},
