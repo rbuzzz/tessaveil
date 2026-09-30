@@ -65,7 +65,11 @@ enum ProfileField : uint32_t {
   ProfileName,
   ProfileId,
   ProfileMode,
-  ProfileReason
+  ProfileReason,
+  ProfilePlatform,
+  ProfileStatus,
+  ProfileVersionMin,
+  ProfileVersionMax
 };
 enum SheetField : uint32_t {
   SheetNameValue = 0,

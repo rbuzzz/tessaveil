@@ -1,212 +1,195 @@
-# Development-host Windows alpha observation
+# Development-host Windows candidate observation
 
-Date: 2026-09-30. Source base: `d0de2087ae1c62647590e3a26997b337a00dc5ac`.
-Scope: the Task 4 commit containing this document, native Qt Widgets plus the
-real `tessaveil-core`. **This is not clean-Windows evidence or release approval.**
-No executable was published. Unsigned alpha, synthetic only; release/freeze and
-static Qt redistribution remain NO-GO.
+Date: 2026-09-30. Reviewed source base:
+`be2b9c9a1c2162952f319080cde33e267dc6a353`. Scope: Task 5 Windows
+candidate workflows, native Qt Widgets and the real `tessaveil-core`.
+**This is development-host evidence, not clean-Windows, Narrator, release, or
+format/KDF-freeze approval.** All data was synthetic. No executable was
+published or signed; the release decision remains NO-GO.
 
-## Architecture and ownership
+## Architecture and interface boundary
 
-`apps/tessaveil-windows/controller` is a workspace Rust static library. One
-controller owns each `OpenVault`; decrypted payload, keys, dictionary and sheets
-remain inside the core's non-cloneable Rust owner. Qt holds an opaque integer
-handle and a fixed metadata reply. The virtualized `QAbstractTableModel` asks for
-one display cell at a time. No full-payload, phrase, order-key, target-column,
-serialized-plaintext or row-history API is exposed to C++. Core APIs required no
-extension and schema 2 is unchanged.
+One Rust controller owns each open vault. Decrypted payload, keys, dictionary,
+sheets and session state remain in the non-cloneable Rust owner. Qt keeps only
+an opaque handle, bounded replies, transient masked entry text and individual
+visible table-cell strings. It has no full-payload, phrase, order-key,
+target-column, plaintext-serialization or row-history API.
 
-ABI v1 uses fixed C layouts checked on both sides: 16,400-byte input and
-4,136-byte reply, text offset 40. Every input has an explicit byte length bounded
-at 4,096; invalid UTF-8/length/handles fail closed. Every extern boundary catches
-unwinding. A poisoned registry drops its session owners. Destroy is explicit;
-stale handles cannot mutate a replacement session. Null-peer rejection still
-wipes the valid buffer. Calls are synchronous, pointers are disjoint/exclusively
-borrowed, and neither side retains a foreign pointer. There are no callbacks or
-C++ exceptions across the ABI. Allocation aborts are outside unwind containment.
+ABI v1 retains its fixed C layouts, opcodes and reply bounds. Existing profile
+opcode 29 gained append-only selectors 5 through 8 for platform, status and
+minimum/maximum version. They project only already validated generated-catalog
+data; generated data, selectability, schema 2, KDF and persistence are
+unchanged. Rust and native tests check both layouts and bounded replies.
 
-Qt necessarily holds transient masked entry text and individual visible cell
-strings; it never owns the full decrypted payload. Entry widgets clear before
-the synchronous command. UTF-8 bridge buffers are passed by reference, zeroed by
-Rust on success and failure, and wiped again on the C++ side; temporary Qt input
-strings and replies are wiped. GUI/IME/framework/OS copies remain best effort,
-not a forensic-erasure or hostile-OS guarantee. No secrets are logged.
+All input lengths are explicit and bounded. Invalid UTF-8, invalid lengths and
+stale handles fail closed. Extern boundaries catch unwinding. Secret input is
+cleared before the synchronous call, Rust wipes the bridge buffer on success
+and failure, and C++ wipes its temporary buffers again. GUI, IME, framework and
+OS copies remain best-effort rather than a forensic-erasure guarantee. No
+secret is logged.
 
-Inactivity is enforced in Rust and by the UI privacy timer. Injected monotonic
-time tests check the default five-minute boundary without sleeping five minutes.
-Real key/mouse/wheel/touch events reset activity. Paint/timer events do not.
-Deactivation, Windows session lock and suspend cover the workspace, clear input
-and lock. Automatic locks discard dirty state; manual close/lock offers Save,
-Discard or Cancel. Save failure keeps the dirty session and previous file. The
-launch warning and guide explain that policy. Timeout choices last for the app run.
-Failure to register Windows session notifications disables vault access and
-locks the controller; an injected registration failure has a RED/GREEN regression.
+## Implemented candidate workflows
 
-## Actual builds and tests
+The focused Create and Open dialogs use native ciphertext pickers and expose a
+read-only selected path. Create confirms a new password; Open accepts the
+existing password. The workspace provides profile inspection, 10/36-column
+sheets, add/rename/delete, Spin, reversible `Verified by me`, protection and
+unlock, save, lock and close. It also provides bounded dialogs for backup,
+restore with the old password, password rotation, custom dictionary selection
+and replacement-dictionary selection. Backup is checked byte-for-byte. A denied
+save preserves the dirty session and permits a later retry. All recovery flows
+are covered with synthetic encrypted files. Successful Restore starts a fresh
+inactivity window and synchronizes the encrypted locale before localized profile
+details and their accessibility text are refreshed. Opening Add custom, Replace
+dictionary or Delete first clears pending word/symbol/sheet-password input and
+both acknowledgments. Cancellation or controller rejection preserves the vault
+session and current sheet while keeping that transient input scrubbed.
 
-Development host: Windows 11 Pro x64 build 26200, as characterized in the
-[stack spike](../../reports/spikes/windows.md). Pins: Rust/Cargo 1.90.0 GNU,
-Clang 20.1.8 / LLVM-MinGW 20250709 UCRT x64, QtBase 6.8.3 static, CMake 3.31.8,
-Ninja 1.12.1, PowerShell 7.6.5; UIA observer Windows PowerShell 5.1.
+The catalogue view provides a keyboard-operable search over all 733 profiles,
+including unavailable entries, using product, platform, version interval,
+status, mode, identifier and reason. Filtering never changes the exact profile
+projection or makes an unavailable profile selectable. The dynamically selected
+exact details and localized reason/guidance are also the current accessible name
+and description rather than being masked by a static override. Selectable
+profiles use controller-projected allowed row lengths rather than UI constants.
+Reason codes are converted to bounded plain-language RU/EN guidance that states
+why creation in Tessaveil is unavailable, directs verification to the exact mode
+and version, and points to the original wallet's own backup/export process.
+Unknown codes use a readable fail-safe explanation without displaying the
+internal value.
 
-Reproduction commands (external ASCII `$ToolchainRoot`, repository working dir):
+Russian and English strings are centralized. Before a vault is available, the
+locale is process-local, so Closed state and focused Create/Open dialogs use the
+current choice without QSettings, registry or another persistent side channel.
+Create writes a differing choice to the encrypted vault preference after the
+vault exists; Open then synchronizes from that encrypted preference. The
+system/light/dark theme choice remains process-only. Theme colors and the
+stylesheet are semantic and window-local, including owned dialogs.
+Dialog buttons, state labels and accessibility names change with the locale.
+Authentication and corruption share the same outward message.
+
+The actual Create dialog proactively states the minimum 15-Unicode-character
+master-password rule in RU/EN. Restore states that the selected backup requires
+the original/old password used when that backup was created; rotation continues
+to warn that old backups and old passwords are not revoked. Native regressions
+exercise the 4096-byte UTF-8 boundary for every new path, name, confirmation and
+password field family. Oversized multilingual values fail closed while preserving
+the required session/data state and clearing transient secret widgets.
+
+Ordinary window deactivation clears pending secrets and acknowledgments, then
+shows an opaque privacy cover without discarding the open session, dirty state,
+table or file identity. Returning Active uncovers the same session and refreshes
+the inactivity generation. A real Windows session lock, suspend/sleep or
+inactivity timeout instead discards dirty state and locks the controller. Owned
+sensitive dialogs are rejected before that transition. Manual close/lock offers
+localized Save, Discard and Cancel. Before any foreground process-owned native
+picker becomes usable, every pending secret and acknowledgment is scrubbed; the
+read-only selected-path field and controller session/data are unchanged when the
+picker is cancelled. The picker remains usable while a 50 ms ownership check
+continues throughout Inactive.
+Alt-Tab from that picker to an external process therefore closes the tracked
+owned window, scrubs transient secrets and displays the privacy cover without
+requiring a second application-state signal. Every return to Active rechecks
+the timeout generation even when no cover was shown. The same bounded foreground
+monitor remains active under the cover: if Win32 restores the exact main HWND
+before Qt publishes `ApplicationActive`, it uncovers that HWND only and continues
+watching so a subsequent external departure immediately re-covers.
+
+Focus order is explicit. Password widgets expose password semantics and masked
+values. The table is read-only, virtualized, content-sized and visually neutral
+with respect to the target column. Guidance lives in a scrollable sidebar so
+the table retains usable height at every tested scale.
+
+## Reproduction and exact results
+
+Pinned development toolchain: Rust/Cargo 1.90.0 GNU, Clang 20.1.8 with
+LLVM-MinGW 20250709 UCRT x64, static QtBase 6.8.3, CMake 3.31.8, Ninja 1.12.1,
+PowerShell 7.6.5 and Windows PowerShell 5.1 for UI Automation. Commands are run
+from the repository with an external ASCII-only `$ToolchainRoot`:
 
 ```powershell
 pwsh -NoProfile -File apps/tessaveil-windows/build.ps1 -ToolchainRoot $ToolchainRoot -Test
+
 . ./spikes/windows/environment.ps1 -ToolchainRoot $ToolchainRoot
-$env:CARGO_TARGET_DIR = "$ToolchainRoot/alpha-target"
+$env:CARGO_TARGET_DIR = "$ToolchainRoot/task5-target"
+cargo fmt --all --check
+cargo clippy --locked --all-targets -- -D warnings
+cargo test --locked --all-targets
 $env:RUSTDOCFLAGS = '-C link-self-contained=yes'
-cargo fmt --check
-cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
-cargo test --workspace --all-targets --locked
 cargo test --workspace --doc --locked
+
 python tools/run_tests.py
 python tools/alpha_catalog.py --check
 python -m tools.sensitive_material
 python -m tools.history_sensitive_material --root .
 ```
 
-Results: formatting and warning-denying clippy passed; workspace/all-targets
-passed 39 tests, followed by eight passing controller tests after two additional
-edge cases (the 33 unchanged core tests had passed in the workspace run). Both
-ownership doctests passed. The full Python suite passed 226 tests with four
-environment-dependent skips in 264.490 seconds. Catalogue generation check and
-both sensitive-material scanners passed with zero findings. Native UI tests
-passed at all three application scales, and the final 100% run additionally
-passed the session-registration failure regression.
+Results on the development host:
 
-The native test creates actual encrypted vaults in an owned `QTemporaryDir` and
-exercises warning gating, create, three selectable profiles, 10/36 columns,
-sheet selection, protection/unlock, explicit verification, Spin, save, close,
-reopen, inactivity, master unlock, wrong password, damaged ciphertext, sleep and
-deactivation. It also checks password echo semantics, shortcut rejection,
-no context popup, no selection/export, zero cell editors, both scrollbars,
-Tab leaving the table, control size and explicit Consolas table typography.
-The same production window/model/bridge is linked into app and tests.
+- native candidate build and native workflow suite passed;
+- the native suite passed again with `QT_ENABLE_HIGHDPI_SCALING=0` and
+  `QT_SCALE_FACTOR` 1, 1.5 and 2;
+- Rust formatting and warning-denying clippy passed;
+- Rust all-targets tests passed 67/67; ownership doctests passed 2/2;
+- Python discovered 249 tests and passed 249 with five documented
+  environment-dependent skips in 396.063 seconds;
+- catalogue consistency and both sensitive-material scanners passed with no
+  findings.
 
-Controller tests use real NTFS files and real crypto, with injected time only.
-They cover dirty-close refusal, failing save and save-before-close preserving the
-prior file, authentication/corruption equivalence, unsupported version/header,
-password policy, catalogue availability, dimensions, sheet verification and
-protection, Spin's empty outward result, reopen and timeout discard. Core
-valid/invalid Spin and ownership doctests remain mandatory. Supplemental edge
-coverage is distinguished from the initial RED/GREEN implementation batches.
+The first doctest invocation omitted the established GNU Rust
+`link-self-contained` rustdoc flag and therefore failed at link time on missing
+Windows CRT/import libraries. Repeating the same doctests with the pinned flag
+passed 2/2. This was an invocation/toolchain-environment error, not counted as a
+passing product test or hidden by an unexamined rerun.
 
-RED/GREEN records: initial controller workflow failed at unimplemented command
-stubs (3 failures); ABI test failed on zero handle; native window test failed on
-missing warning action. Subsequent regressions reproduced retained sessions after
-mutex poisoning, unwiped input with a null output peer, missing accessible next
-sheet navigation and the wrong table font. Their implementations pass. Layout
-checks exposed inherited host font clipping; explicit 13px UI type, a scrollable
-sidebar and bounded 29px table rows repaired it. Two test-only clippy findings
-were fixed without suppressions. No core invariant was weakened.
+The final unstripped development artifact is 26,534,912 bytes. The exact hash
+of the final local build is recorded in the ignored Task 5 evidence report;
+static-link output is not treated as reproducible. Task 8 will create the
+release manifest only after the final source SHA is selected. This artifact is
+not a stable or published release.
 
-## Live UIA, scales and reviewed images
+## Live UI Automation and scaling
 
-`tests/observe.ps1` launches the actual `Tessaveil.exe`, operates only that
-process's controls, and fails on missing controls or unexpected UIA responses.
-It observes Password semantics, two successful synthetic value mutations and
-mask-only reads; all five secret inputs expose masks rather than input values.
-Master-input keyboard focus is observed. Sheet selection must report the actual
-36-column sheet before its capture. It checks open, lock, generic authentication
-failure, unlock/reopen and close through live widget invocations.
+`apps/tessaveil-windows/tests/observe.ps1` launches the actual candidate,
+binds observation to its process and closes only that PID. It drives the real
+native `#32770` Open picker and Qt controls, then checks focused Open, read-only
+path selection, successful fixture opening, 10-to-36-column navigation, real
+lock, generic wrong-password handling, unlock and close.
 
-The observer uses an explicit child environment, disables automatic host DPI
-scaling and applies Qt scale factors 1, 1.5 and 2. It does not change Windows
-display settings. This verifies 100/150/200% **application scaling**, not moving
-between differently scaled physical monitors. Client layout is 1280×720 logical
-pixels, with native frame dimensions added by Windows. Native tests run at the
-same scales. On this host UIA combo popup selection alone did not commit its
-current value; the real, tested **Next sheet** button provides an accessible
-alternative. Narrator and a complete assistive-technology audit remain open.
+Fresh runs at application scale factors 1, 1.5 and 2 all passed against the
+same candidate hash. Each observed six distinct password roles, with password
+semantics, masked reads and keyboard focus; native picker and full workflow
+checks also passed. The observer keyboard-focuses the all-profile search, locates
+an unavailable profile and verifies that its exact product/platform/version/
+status/mode/reason and original-wallet guidance are dynamically exposed through
+UI Automation. The 1280 by 720 logical client retained a table height of at least
+150 pixels. These checks do not change Windows display settings and do not prove
+cross-monitor behavior.
 
-The following seven PNGs are bounded application-window captures, visually
-reviewed for synthetic content and exact-hash allowlisted by the repository
-scanner. All table cells come from the separate observation fixture's invented
-`synthetic-NNN` dictionary. There are no real mnemonic words, entered secrets,
-full phrases, local user paths or unrelated windows in these images:
+Fresh Task 5 captures and fixtures were kept outside the repository. The seven
+checked-in PNGs under `docs/alpha/screenshots` are historical Task 4 evidence,
+not claimed as captures of this Task 5 artifact. No real mnemonic, entered
+secret, local user path or unrelated window was added to the repository.
 
-- [Launch warning, 100%](screenshots/launch-scale-1.png)
-- [10 columns, 100%](screenshots/table-10-scale-1.png)
-- [36 columns, 100%](screenshots/table-36-scale-1.png)
-- [36 columns, 150%](screenshots/table-36-scale-1.5.png)
-- [36 columns, 200%](screenshots/table-36-scale-2.png)
-- [Locked, 100%](screenshots/locked-scale-1.png)
-- [Generic authentication error, 100%](screenshots/authentication-error-scale-1.png)
-
-The fixture creator is a development-only Cargo example, never linked into the
-app. It creates a new encrypted file using the real core; it does not bypass the
-production controller. The native happy-path tests separately exercise the three
-actual available profiles. Observation fixtures and redundant captures were
-removed after checking the exact owned paths; secure erasure on SSD is not claimed.
-
-No Tessaveil Figma file/node was supplied. The unrelated Renderis file was not
-accessed or used. Implementation follows the approved written focused-process
+No Figma file/node for Tessaveil was supplied. The unrelated Renderis design
+was not accessed. The implementation follows the approved written focused-flow
 direction; no pixel-perfect Figma comparison is claimed.
 
-## Artifact/runtime and remaining limits
+## Remaining gates and limitations
 
-Original Task 4 unstripped `Tessaveil.exe`: 26,347,520 bytes. SHA-256:
-`1b2eaa2ac5a7ccf1c15b40d2f73428b4f9007c8a7f38ed0a223cf3f72ca5b953`.
-This identifies a dev artifact, not a published or signed release. Qt's cache
-reports `BUILD_SHARED_LIBS=OFF` and `FEATURE_network=OFF`.
+This observation does not establish clean Windows 10/11 launch, Narrator or a
+complete assistive-technology audit, movement between physically differently
+scaled monitors, transient `%TEMP%`/file-event absence, packet-level network
+silence, physical Android/iPhone compatibility, removable-media durability,
+independent audit, signing readiness or lawful Qt redistribution packaging.
+The host clipboard limitation remains: shortcuts and application events are
+covered, but native OS clipboard-content observation is unverified. Existing
+host-injected modules noted by the stack spike also remain unresolved.
 
-PE imports were inspected with `llvm-readobj --coff-imports`: Windows API/UCRT
-families plus KERNEL32, SHCORE, WTSAPI32, ntdll, version, USER32, ole32, UxTheme,
-GDI32, WS2_32, WINMM, SHELL32, ADVAPI32, NETAPI32, AUTHZ, USERENV, DWrite,
-SETUPAPI, IMM32, dwmapi, SHLWAPI, d3d9, OLEAUT32, dxgi, d3d12, d3d11, bcrypt,
-bcryptprimitives and comdlg32. No Qt/LLVM/application DLL is required alongside
-the EXE. Networking-related system imports are not proof of network activity or
-its absence; no outbound packet/process trace was performed. Runtime enumeration
-also sees host `ebehmoni.dll` and `PSHook64.dll`, already observed in the spike;
-their provenance remains unresolved. No host component was modified.
-
-The host denied native clipboard opening and Qt could not retain even a public
-synthetic sentinel. Accordingly tests assert intercepted clipboard shortcuts,
-unchanged input and no clipboard-change signals; **OS clipboard-content
-observation is unverified**. No existing user clipboard content was read. Initial
-observer attempts that required empty password values were rejected until actual
-mask-only behavior was explicitly checked; no unknown error counted as success.
-
-No network, telemetry, update, provider submit, screenshot/export/print/import or
-clipboard feature exists in the app. The observer's capture capability is a
-separate development script. This observation does not establish clean Windows
-10/11 launch, transient TEMP/file-event absence, network silence, physical mobile,
-removable-media durability, independent audit or signing readiness.
-
-**Task 5 must not publish the binary** before the verified LGPLv3 corresponding
-source/object/relinking/install-information bundle or another lawful route is
-complete. A single runtime EXE does not satisfy that separate gate.
-
-## Review fix: pending-input context boundaries
-
-Internal review of `b1046b745cfa92d333693c5888cd5c7b2e9dbd23` found two
-live-widget gaps: privacy events returned before scrubbing Closed/Locked input,
-and adding a sheet bypassed the existing sheet-selection scrub. Both were
-reproduced as failing native regressions before their fixes.
-
-The shared `clearInputs` now runs before the privacy-state guard and before Add.
-It clears all five secret fields and both acknowledgments without clearing vault
-path, sheet name, profile or column selection. Secret erasure also explicitly
-overwrites the retained temporary QString after clearing the widget/undo state;
-historical framework/IME/OS copies remain outside this best-effort guarantee.
-The existing fixed ABI-buffer wipes are unchanged.
-
-Native regression coverage exercises Closed, Locked and dirty Open across six
-routes: inactive, hidden, suspended, Windows suspend, query-suspend and session
-lock. Each clears pending input/consents, while Active does not. Open still drops
-dirty Rust state, removes table access and preserves the exact last saved image;
-reopen proves the unsaved sheet was discarded. A separate two-sheet regression
-checks every stale field/consent, new selection and retained metadata, both table
-digests, separate verification/protection state, rejection of unacknowledged
-actions, and fresh synthetic input/acknowledgment on the new sheet.
-
-The rebuilt real app passed live UIA smoke at 100%: two masked master reads, all
-five password-semantic fields, focus, open/select/lock/auth-error/unlock/close.
-Its local unstripped EXE remains 26,347,520 bytes, SHA-256:
-`a73cdad8ca892f8b682474817025371239ae4c7470f0bc3a3387d6abbd4807bc`.
-The correction changes pending-input transitions, not layout or the seven
-previously captured empty-input safe states. Those reviewed screenshots and
-their exact hashes remain unchanged; new smoke captures stay outside Git and
-are disposed with the owned fixture. All previously stated limitations and the
-static Qt publication NO-GO remain in force.
+There is no application network, telemetry, update, provider-submit,
+screenshot/export/print/import or clipboard feature. The UIA observer is a
+separate development script. Static Qt publication still requires the verified
+LGPLv3 corresponding-source/object/relinking/install-information bundle or
+another lawful route. Until all explicit physical, packaging and signing gates
+are completed or separately dispositioned, the Windows release and vault/KDF
+freeze remain **NO-GO**.

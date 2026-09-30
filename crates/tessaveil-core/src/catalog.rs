@@ -12,6 +12,10 @@ pub struct Profile {
     id: String,
     mode: String,
     name: String,
+    platform: String,
+    status: String,
+    version_min: String,
+    version_max: String,
     reason: String,
     selectable: bool,
     lengths: Vec<usize>,
@@ -26,6 +30,18 @@ impl Profile {
     }
     pub fn name(&self) -> &str {
         &self.name
+    }
+    pub fn platform(&self) -> &str {
+        &self.platform
+    }
+    pub fn status(&self) -> &str {
+        &self.status
+    }
+    pub fn version_min(&self) -> &str {
+        &self.version_min
+    }
+    pub fn version_max(&self) -> &str {
+        &self.version_max
     }
     pub fn reason(&self) -> &str {
         &self.reason
@@ -106,6 +122,16 @@ fn parse(input: &str) -> Result<Vec<Profile>, VaultError> {
                 .as_str()
                 .ok_or(VaultError::InvalidPayload)?
                 .into(),
+            platform: text("platform")?,
+            status: text("status")?,
+            version_min: v["version_interval"]["min"]
+                .as_str()
+                .ok_or(VaultError::InvalidPayload)?
+                .into(),
+            version_max: v["version_interval"]["max"]
+                .as_str()
+                .ok_or(VaultError::InvalidPayload)?
+                .into(),
             reason,
             selectable: selected,
             lengths,
@@ -149,5 +175,24 @@ mod tests {
             selected["dictionaries"][0][field] = Value::String("synthetic-mismatched-asset".into());
             assert!(parse(&changed.to_string()).is_err());
         }
+    }
+
+    #[test]
+    fn profile_projection_keeps_exact_platform_status_and_version_interval() {
+        let profiles = profiles().unwrap();
+        let atomic = profiles
+            .iter()
+            .find(|profile| profile.id() == "atomic-wallet")
+            .unwrap();
+        assert_eq!(atomic.platform(), "windows");
+        assert_eq!(atomic.status(), "documented");
+        assert_eq!(
+            atomic.version_min(),
+            "version-unresolved-doc-2026-09-29-cd66b03392fb"
+        );
+        assert_eq!(
+            atomic.version_max(),
+            "version-unresolved-doc-2026-09-29-cd66b03392fb"
+        );
     }
 }

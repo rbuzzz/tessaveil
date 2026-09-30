@@ -861,7 +861,23 @@ fn structured_queries_and_preferences_are_bounded_and_state_preserving() {
     }
     let (profile, profile_id, mode_id) = selected.unwrap();
     assert_eq!(
-        call(&mut c, PROFILE_FIELD_OP, profile, 5, [""; 4]).unwrap_err(),
+        call(&mut c, PROFILE_FIELD_OP, 0, 5, [""; 4]).unwrap(),
+        "windows"
+    );
+    assert_eq!(
+        call(&mut c, PROFILE_FIELD_OP, 0, 6, [""; 4]).unwrap(),
+        "documented"
+    );
+    assert_eq!(
+        call(&mut c, PROFILE_FIELD_OP, 0, 7, [""; 4]).unwrap(),
+        "version-unresolved-doc-2026-09-29-cd66b03392fb"
+    );
+    assert_eq!(
+        call(&mut c, PROFILE_FIELD_OP, 0, 8, [""; 4]).unwrap(),
+        "version-unresolved-doc-2026-09-29-cd66b03392fb"
+    );
+    assert_eq!(
+        call(&mut c, PROFILE_FIELD_OP, profile, 9, [""; 4]).unwrap_err(),
         "invalid-payload"
     );
     assert_eq!(blank(&mut c, INFO).unwrap(), "");

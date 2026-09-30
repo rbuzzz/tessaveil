@@ -8,7 +8,8 @@ class Window : public QMainWindow {
 
 public:
   explicit Window(std::function<qint64()> clock = {},
-                  std::function<bool(quintptr)> registerSession = {});
+                  std::function<bool(quintptr)> registerSession = {},
+                  std::function<quintptr(quintptr)> ownedForegroundWindow = {});
   ~Window() override;
 
 protected:

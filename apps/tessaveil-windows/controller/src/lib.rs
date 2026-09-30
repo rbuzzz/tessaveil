@@ -393,6 +393,10 @@ impl Controller {
                     2 => (profile.id(), 128),
                     3 => (profile.mode(), 128),
                     4 => (profile.reason(), 160),
+                    5 => (profile.platform(), 64),
+                    6 => (profile.status(), 32),
+                    7 => (profile.version_min(), 128),
+                    8 => (profile.version_max(), 128),
                     _ => return Err(VaultError::InvalidPayload),
                 };
                 return bounded(value, bound);
