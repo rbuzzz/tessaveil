@@ -1,4 +1,4 @@
-use std::time::Instant;
+use std::{path::Path, time::Instant};
 use tessaveil_core::{
     catalog,
     session::Inactivity,
@@ -31,6 +31,11 @@ pub const CELL: u32 = 20;
 pub const PROFILE: u32 = 21;
 pub const PROFILE_COUNT: u32 = 22;
 pub const SHEET_NAME: u32 = 23;
+pub const PROFILE_LENGTHS: u32 = 24;
+pub const ADD_CUSTOM: u32 = 25;
+pub const REPLACE_DICTIONARY: u32 = 26;
+pub const RENAME_SHEET: u32 = 27;
+pub const DELETE_SHEET: u32 = 28;
 #[derive(Default)]
 pub struct State {
     pub state: u32,
@@ -155,15 +160,69 @@ impl Controller {
                     .get(a as usize)
                     .filter(|p| p.selectable())
                     .ok_or(VaultError::InvalidPayload)?;
+                let rows = if s[1].is_empty() {
+                    match profile.supported_lengths() {
+                        [only] => *only,
+                        _ => return Err(VaultError::InvalidPayload),
+                    }
+                } else {
+                    s[1].parse::<usize>()
+                        .map_err(|_| VaultError::InvalidPayload)?
+                };
                 self.selected = self.v()?.payload_mut()?.create_profile_sheet(
                     s[0],
                     profile.id(),
                     profile.mode(),
                     SheetSize {
-                        rows: 24,
+                        rows,
                         columns: b as usize,
                     },
                 )?;
+                self.dirty = true;
+            }
+            ADD_CUSTOM => {
+                self.selected = self.v()?.payload_mut()?.create_custom_sheet_from_file(
+                    s[0],
+                    SheetSize {
+                        rows: a as usize,
+                        columns: b as usize,
+                    },
+                    Path::new(s[1]),
+                )?;
+                self.dirty = true;
+            }
+            REPLACE_DICTIONARY => {
+                if a != 1 {
+                    return Err(VaultError::AccessDenied);
+                }
+                let selected = self.selected;
+                self.selected = self.v()?.payload_mut()?.new_dictionary_sheet_from_file(
+                    selected,
+                    s[0],
+                    Path::new(s[1]),
+                )?;
+                self.dirty = true;
+            }
+            RENAME_SHEET => {
+                let selected = self.selected;
+                self.v()?
+                    .payload_mut()?
+                    .edit_sheet(selected)?
+                    .rename(s[0])?;
+                self.dirty = true;
+            }
+            DELETE_SHEET => {
+                let selected = self.selected;
+                let next = {
+                    let mut payload = self.v()?.payload_mut()?;
+                    payload.delete_sheet(selected, s[0], a == 1)?;
+                    if payload.sheet_count() == 0 {
+                        0
+                    } else {
+                        selected.min(payload.sheet_count() - 1)
+                    }
+                };
+                self.selected = next;
                 self.dirty = true;
             }
             SELECT => {
@@ -254,6 +313,17 @@ impl Controller {
                     p.mode(),
                     p.reason()
                 ));
+            }
+            PROFILE_LENGTHS => {
+                let profile = catalog::profiles()?
+                    .get(a as usize)
+                    .ok_or(VaultError::InvalidPayload)?;
+                return Ok(profile
+                    .supported_lengths()
+                    .iter()
+                    .map(usize::to_string)
+                    .collect::<Vec<_>>()
+                    .join(","));
             }
             _ => return Err(VaultError::InvalidPayload),
         }

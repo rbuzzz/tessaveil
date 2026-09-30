@@ -6,12 +6,13 @@ use crate::{
     spin::{generate_row, OsRandom},
     VaultError,
 };
-use std::collections::HashSet;
+use std::{collections::HashSet, fs::File, io::Read, path::Path};
 use subtle::ConstantTimeEq;
-use unicode_normalization::UnicodeNormalization;
+use unicode_normalization::{char::is_combining_mark, UnicodeNormalization};
 use zeroize::{Zeroize, Zeroizing};
 
 pub const SUPPORTED_ROWS: &[usize] = &[12, 13, 15, 16, 18, 20, 21, 24, 25, 26, 27, 28, 29, 33];
+pub const MAX_CUSTOM_DICTIONARY_BYTES: usize = 1_056_771;
 #[derive(Clone, Copy)]
 pub struct SheetSize {
     pub rows: usize,
@@ -67,6 +68,17 @@ impl SheetEditor<'_> {
     pub fn set_verified_by_me(&mut self, verified: bool) {
         self.sheet.verified_by_user = verified;
     }
+    pub fn rename(&mut self, name: &str) -> Result<(), VaultError> {
+        let before = crate::model::text_len(&self.sheet.name);
+        self.sheet.rename(name, self.remaining)?;
+        let after = crate::model::text_len(&self.sheet.name);
+        if after >= before {
+            self.remaining -= after - before;
+        } else {
+            self.remaining += before - after;
+        }
+        Ok(())
+    }
     pub fn set_protection(&mut self, secret: &str) -> Result<(), VaultError> {
         if secret.is_empty() {
             return Err(VaultError::InvalidPassword);
@@ -115,10 +127,64 @@ fn normalized_dictionary(
         }
         result.push(std::mem::take(&mut *word));
     }
-    if result.iter().collect::<HashSet<_>>().len() != result.len() {
+    if result.iter().collect::<HashSet<_>>().len() != result.len()
+        || result
+            .iter()
+            .map(|word| comparison_key(word))
+            .collect::<HashSet<_>>()
+            .len()
+            != result.len()
+    {
         return Err(VaultError::InvalidPayload);
     }
     Ok(result)
+}
+
+fn comparison_key(word: &str) -> String {
+    word.nfkd()
+        .flat_map(char::to_lowercase)
+        .filter(|ch| !is_combining_mark(*ch))
+        .collect()
+}
+
+fn dictionary_from_file(path: &Path, columns: usize) -> Result<Zeroizing<Vec<String>>, VaultError> {
+    let file = File::open(path).map_err(|_| VaultError::Io)?;
+    let mut bytes = Zeroizing::new(Vec::new());
+    file.take((MAX_CUSTOM_DICTIONARY_BYTES + 1) as u64)
+        .read_to_end(&mut bytes)
+        .map_err(|_| VaultError::Io)?;
+    if bytes.len() > MAX_CUSTOM_DICTIONARY_BYTES {
+        return Err(VaultError::TooLarge);
+    }
+    let text = std::str::from_utf8(&bytes).map_err(|_| VaultError::InvalidPayload)?;
+    let text = text.strip_prefix('\u{feff}').unwrap_or(text);
+    if text.is_empty() || text.contains('\u{feff}') {
+        return Err(VaultError::InvalidPayload);
+    }
+    let mut lines = Zeroizing::new(Vec::new());
+    let mut parts = text.split('\n').peekable();
+    while let Some(mut line) = parts.next() {
+        if line.is_empty() && parts.peek().is_none() && !lines.is_empty() {
+            break;
+        }
+        let followed_by_lf = parts.peek().is_some();
+        if let Some(without_cr) = line.strip_suffix('\r') {
+            if !followed_by_lf {
+                return Err(VaultError::InvalidPayload);
+            }
+            line = without_cr;
+        } else if line.contains('\r') {
+            return Err(VaultError::InvalidPayload);
+        }
+        if line.is_empty() {
+            return Err(VaultError::InvalidPayload);
+        }
+        if lines.len() == 8192 {
+            return Err(VaultError::InvalidPayload);
+        }
+        lines.push(line.to_owned());
+    }
+    normalized_dictionary(&lines, columns)
 }
 impl Sheet {
     pub(crate) fn validate(&self) -> Result<(), VaultError> {
@@ -279,6 +345,16 @@ impl PayloadEditor<'_> {
         }
         self.insert_sheet(Sheet::create(name, "custom", "custom", size, words)?)
     }
+    pub fn create_custom_sheet_from_file(
+        &mut self,
+        name: &str,
+        size: SheetSize,
+        path: &Path,
+    ) -> Result<usize, VaultError> {
+        size.validate()?;
+        let dictionary = dictionary_from_file(path, size.columns)?;
+        self.create_custom_sheet(name, size, &dictionary)
+    }
     pub fn new_dictionary_sheet(
         &mut self,
         source: usize,
@@ -290,10 +366,52 @@ impl PayloadEditor<'_> {
             .sheets
             .get(source)
             .ok_or(VaultError::InvalidPayload)?;
+        if !sheet.unlocked {
+            return Err(VaultError::AccessDenied);
+        }
         let size = SheetSize {
             rows: sheet.rows.len(),
             columns: sheet.rows[0].len(),
         };
         self.create_custom_sheet(name, size, words)
+    }
+    pub fn new_dictionary_sheet_from_file(
+        &mut self,
+        source: usize,
+        name: &str,
+        path: &Path,
+    ) -> Result<usize, VaultError> {
+        let sheet = self
+            .payload
+            .sheets
+            .get(source)
+            .ok_or(VaultError::InvalidPayload)?;
+        if !sheet.unlocked {
+            return Err(VaultError::AccessDenied);
+        }
+        let size = SheetSize {
+            rows: sheet.rows.len(),
+            columns: sheet.rows[0].len(),
+        };
+        let dictionary = dictionary_from_file(path, size.columns)?;
+        self.create_custom_sheet(name, size, &dictionary)
+    }
+    pub fn delete_sheet(
+        &mut self,
+        index: usize,
+        exact_name: &str,
+        confirmed: bool,
+    ) -> Result<(), VaultError> {
+        let sheet = self
+            .payload
+            .sheets
+            .get(index)
+            .ok_or(VaultError::InvalidPayload)?;
+        if !sheet.unlocked || !confirmed || sheet.name.as_bytes() != exact_name.as_bytes() {
+            return Err(VaultError::AccessDenied);
+        }
+        let mut removed = self.payload.sheets.remove(index);
+        removed.zeroize();
+        Ok(())
     }
 }

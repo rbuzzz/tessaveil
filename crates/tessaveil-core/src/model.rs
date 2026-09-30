@@ -19,6 +19,20 @@ pub(crate) struct Sheet {
     // Session-only authorization. Never serialized; every open starts protected.
     pub(crate) unlocked: bool,
 }
+impl Sheet {
+    pub(crate) fn rename(&mut self, name: &str, remaining: usize) -> Result<(), VaultError> {
+        if name.is_empty() || name.len() > 256 || name.chars().any(char::is_control) {
+            return Err(VaultError::InvalidPayload);
+        }
+        let growth = text_len(name).saturating_sub(text_len(&self.name));
+        if growth > remaining {
+            return Err(VaultError::InvalidPayload);
+        }
+        self.name.zeroize();
+        self.name = name.to_owned();
+        Ok(())
+    }
+}
 impl Payload {
     pub fn name(&self) -> &str {
         &self.name
@@ -383,6 +397,61 @@ mod tests {
         assert_eq!(p.encode().unwrap().len(), crate::format::MAX_PAYLOAD);
     }
     #[test]
+    fn sheet_rename_requires_unlocked_state_and_preserves_exact_aggregate_boundary() {
+        let mut p = near_limit(0);
+        let before = p.encode().unwrap();
+        assert!(PayloadEditor { payload: &mut p }
+            .edit_sheet(8)
+            .unwrap()
+            .rename("x")
+            .is_err());
+        assert_eq!(p.encode().unwrap(), before);
+
+        let mut p = near_limit(1);
+        PayloadEditor { payload: &mut p }
+            .edit_sheet(8)
+            .unwrap()
+            .rename("x")
+            .unwrap();
+        assert_eq!(p.encode().unwrap().len(), crate::format::MAX_PAYLOAD);
+        let before = p.encode().unwrap();
+        p.sheets[8].unlocked = false;
+        assert!(PayloadEditor { payload: &mut p }
+            .edit_sheet(8)
+            .and_then(|mut sheet| sheet.rename("locked"))
+            .is_err());
+        p.sheets[8].unlocked = true;
+        for invalid in ["", "synthetic\nname", "synthetic\0name"] {
+            assert!(PayloadEditor { payload: &mut p }
+                .edit_sheet(8)
+                .unwrap()
+                .rename(invalid)
+                .is_err());
+        }
+        assert_eq!(p.encode().unwrap(), before);
+    }
+    #[test]
+    fn sheet_editor_tracks_rename_growth_before_a_second_mutation() {
+        let mut p = near_limit(49);
+        {
+            let mut payload = PayloadEditor { payload: &mut p };
+            let mut sheet = payload.edit_sheet(8).unwrap();
+            sheet.rename("x").unwrap();
+            assert!(sheet.set_protection("synthetic-sheet-password").is_err());
+        }
+        assert!(p.sheets[8].protection.is_none());
+        assert!(p.encoded_len().unwrap() <= crate::format::MAX_PAYLOAD);
+
+        let mut p = near_limit(50);
+        {
+            let mut payload = PayloadEditor { payload: &mut p };
+            let mut sheet = payload.edit_sheet(8).unwrap();
+            sheet.rename("x").unwrap();
+            sheet.set_protection("synthetic-sheet-password").unwrap();
+        }
+        assert_eq!(p.encoded_len().unwrap(), crate::format::MAX_PAYLOAD);
+    }
+    #[test]
     fn spin_budget_is_candidate_independent_and_failure_preserves_state() {
         use crate::spin::{RandomSource, SpinError, SpinRequest};
         struct CountRandom(usize);
@@ -651,6 +720,45 @@ mod tests {
         for n in 0..5 {
             assert!(Payload::decode(&[0x84, 2, 0x60, 0x60, 0x80][..n]).is_err());
         }
+    }
+    #[test]
+    fn schema_two_custom_collision_snapshot_remains_readable_without_migration() {
+        let mut words: Vec<_> = (0..10).map(|i| format!("synthetic-{i:02}")).collect();
+        words[0] = "synthetic-Case".into();
+        words[1] = "synthetic-case".into();
+        words[2] = "synthetic-re\u{301}sume\u{301}".into();
+        words[3] = "synthetic-resume".into();
+        let mut writer = Writer {
+            bytes: Some(Zeroizing::new(Vec::new())),
+            len: 0,
+        };
+        writer.array(4, 4).unwrap();
+        writer.number(0, 2).unwrap();
+        writer.text("synthetic-vault", 256).unwrap();
+        writer.text("en", 16).unwrap();
+        writer.array(1, 32).unwrap();
+        writer.array(7, 7).unwrap();
+        writer.text("legacy-custom", 256).unwrap();
+        writer.text("custom", 128).unwrap();
+        writer.text("custom", 128).unwrap();
+        writer.array(words.len(), 8192).unwrap();
+        for word in &words {
+            writer.text(word, 128).unwrap();
+        }
+        writer.array(12, 33).unwrap();
+        for _ in 0..12 {
+            writer.array(words.len(), 36).unwrap();
+            for word in &words {
+                writer.text(word, 128).unwrap();
+            }
+        }
+        writer.push(&[0xf4]).unwrap();
+        writer.number(2, 0).unwrap();
+        let encoded = writer.bytes.unwrap();
+
+        let decoded = Payload::decode(&encoded).unwrap();
+        assert_eq!(decoded.sheets[0].dictionary, words);
+        assert_eq!(&*decoded.encode().unwrap(), &*encoded);
     }
     #[test]
     fn bounded_tables_roundtrip_without_secret_metadata() {

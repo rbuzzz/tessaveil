@@ -42,5 +42,10 @@ enum Operation : uint32_t {
   Cell,
   Profile,
   ProfileCount,
-  SheetName
+  SheetName,
+  ProfileLengths,
+  AddCustom,
+  ReplaceDictionary,
+  RenameSheet,
+  DeleteSheet
 };
