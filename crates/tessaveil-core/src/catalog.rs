@@ -44,6 +44,13 @@ impl Profile {
         }
         Ok(WORDLIST.lines().map(str::to_owned).collect())
     }
+    pub(crate) fn matches_dictionary(&self, snapshot: &[String]) -> bool {
+        // load() has already bound this profile's dictionary ID and SHA-256 to
+        // WORDLIST. Compare exact ordered content without allocating another copy.
+        self.selectable
+            && self.dictionary_id.as_deref() == Some("bip39-en")
+            && snapshot.iter().map(String::as_str).eq(WORDLIST.lines())
+    }
 }
 
 fn load() -> Result<Vec<Profile>, VaultError> {

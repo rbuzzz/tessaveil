@@ -24,7 +24,11 @@ impl Payload {
         &self.name
     }
     pub fn rename(&mut self, name: &str) -> Result<(), VaultError> {
-        if name.len() > 256 {
+        if name.len() > 256 || name.contains('\0') {
+            return Err(VaultError::InvalidPayload);
+        }
+        let next = self.encoded_len()? - text_len(&self.name) + text_len(name);
+        if next > crate::format::MAX_PAYLOAD {
             return Err(VaultError::InvalidPayload);
         }
         self.name.zeroize();
@@ -32,9 +36,25 @@ impl Payload {
         Ok(())
     }
     pub(crate) fn encode(&self) -> Result<Zeroizing<Vec<u8>>, VaultError> {
-        let mut w = Writer(Zeroizing::new(Vec::with_capacity(
-            crate::format::MAX_PAYLOAD,
-        )));
+        let mut w = Writer {
+            bytes: Some(Zeroizing::new(Vec::with_capacity(
+                crate::format::MAX_PAYLOAD,
+            ))),
+            len: 0,
+        };
+        self.write(&mut w)?;
+        Ok(w.bytes.expect("encoding writer owns output"))
+    }
+    // The exact same validated codec can count without allocating/copying plaintext.
+    pub(crate) fn encoded_len(&self) -> Result<usize, VaultError> {
+        let mut w = Writer {
+            bytes: None,
+            len: 0,
+        };
+        self.write(&mut w)?;
+        Ok(w.len)
+    }
+    fn write(&self, w: &mut Writer) -> Result<(), VaultError> {
         w.number(4, 4)?;
         w.number(0, 2)?;
         w.text(&self.name, 256)?;
@@ -70,7 +90,7 @@ impl Payload {
             w.number(2, protection.len())?;
             w.push(protection)?;
         }
-        Ok(w.0)
+        Ok(())
     }
     pub(crate) fn decode(bytes: &[u8]) -> Result<Self, VaultError> {
         if bytes.len() > crate::format::MAX_PAYLOAD {
@@ -156,13 +176,29 @@ impl PayloadEditor<'_> {
     }
 }
 const ROWS: &[usize] = crate::sheet::SUPPORTED_ROWS;
-struct Writer(Zeroizing<Vec<u8>>);
+pub(crate) fn text_len(text: &str) -> usize {
+    text.len()
+        + if text.len() < 24 {
+            1
+        } else if text.len() <= 255 {
+            2
+        } else {
+            3
+        }
+}
+struct Writer {
+    bytes: Option<Zeroizing<Vec<u8>>>,
+    len: usize,
+}
 impl Writer {
     fn push(&mut self, bytes: &[u8]) -> Result<(), VaultError> {
-        if bytes.len() > crate::format::MAX_PAYLOAD - self.0.len() {
+        if bytes.len() > crate::format::MAX_PAYLOAD - self.len {
             return Err(VaultError::InvalidPayload);
         }
-        self.0.extend_from_slice(bytes);
+        if let Some(output) = &mut self.bytes {
+            output.extend_from_slice(bytes);
+        }
+        self.len += bytes.len();
         Ok(())
     }
     fn number(&mut self, major: u8, n: usize) -> Result<(), VaultError> {
@@ -262,6 +298,145 @@ impl<'a> Reader<'a> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    fn synthetic_sheet(count: usize, width: usize) -> Sheet {
+        let dictionary: Vec<_> = (0..count)
+            .map(|i| format!("s{i:04}{}", "x".repeat(width - 5)))
+            .collect();
+        Sheet {
+            name: String::new(),
+            profile_id: "custom".into(),
+            mode_id: "custom".into(),
+            rows: vec![dictionary[..10].to_vec(); 12],
+            dictionary,
+            unlocked: true,
+            verified_by_user: true,
+            ..Default::default()
+        }
+    }
+    fn near_limit(remaining: usize) -> Payload {
+        let mut p = Payload::default();
+        for _ in 0..7 {
+            p.sheets.push(synthetic_sheet(8192, 128));
+        }
+        let current = p.encode().unwrap().len();
+        let count = (crate::format::MAX_PAYLOAD - current - 30_000) / 130;
+        p.sheets.push(synthetic_sheet(count, 128));
+        p.sheets.push(synthetic_sheet(10, 5));
+        let target = crate::format::MAX_PAYLOAD - remaining;
+        let extra = (target - p.encode().unwrap().len()) / 130 - 1;
+        p.sheets[8]
+            .dictionary
+            .extend((0..extra).map(|i| format!("t{i:04}{}", "x".repeat(123))));
+        let base = p.encode().unwrap().len();
+        for n in 0..=256 {
+            for locale in 0..=16 {
+                let growth = n + if n < 24 {
+                    0
+                } else if n <= 255 {
+                    1
+                } else {
+                    2
+                };
+                if base + growth + locale == target {
+                    p.sheets[0].name = "n".repeat(n);
+                    p.locale = "l".repeat(locale);
+                    assert_eq!(p.encode().unwrap().len(), target);
+                    return p;
+                }
+            }
+        }
+        panic!("synthetic boundary fixture could not reach exact length");
+    }
+    #[test]
+    fn protection_and_rename_preserve_exact_aggregate_boundary() {
+        let mut p = near_limit(48);
+        let before = p.encode().unwrap();
+        assert!(PayloadEditor { payload: &mut p }
+            .edit_sheet(0)
+            .unwrap()
+            .set_protection("synthetic-sheet-password")
+            .is_err());
+        assert!(p.sheets[0].protection.is_none());
+        assert!(p.sheets[0].verified_by_user && p.sheets[0].unlocked);
+        assert_eq!(p.encode().unwrap(), before);
+        // Empty name -> 48 characters costs 49 additional CBOR bytes.
+        let longer = "n".repeat(48);
+        assert!(p.rename(&longer).is_err());
+        assert_eq!(p.encode().unwrap(), before);
+        assert!(p.rename("synthetic\0name").is_err());
+        assert_eq!(p.encode().unwrap(), before);
+        p.rename(&"n".repeat(47)).unwrap();
+        assert_eq!(p.encode().unwrap().len(), crate::format::MAX_PAYLOAD);
+        let mut p = near_limit(49);
+        PayloadEditor { payload: &mut p }
+            .edit_sheet(0)
+            .unwrap()
+            .set_protection("synthetic-sheet-password")
+            .unwrap();
+        assert_eq!(p.encode().unwrap().len(), crate::format::MAX_PAYLOAD);
+        // Replacing a verifier has no size growth, even at exactly MAX_PAYLOAD.
+        PayloadEditor { payload: &mut p }
+            .edit_sheet(0)
+            .unwrap()
+            .set_protection("synthetic-next-password")
+            .unwrap();
+        assert_eq!(p.encode().unwrap().len(), crate::format::MAX_PAYLOAD);
+    }
+    #[test]
+    fn spin_budget_is_candidate_independent_and_failure_preserves_state() {
+        use crate::spin::{RandomSource, SpinError, SpinRequest};
+        struct CountRandom(usize);
+        impl RandomSource for CountRandom {
+            fn fill(&mut self, bytes: &mut [u8]) -> Result<(), SpinError> {
+                self.0 += 1;
+                bytes.copy_from_slice(&u32::MAX.to_le_bytes());
+                Ok(())
+            }
+        }
+        // Ten 128-byte entries cost 1300 CBOR bytes; old ten 5-byte entries cost 60.
+        let mut p = near_limit(1239);
+        let before = p.encode().unwrap();
+        let long = p.sheets[8].dictionary[10].clone();
+        for word in [long.as_str(), "s0000", "synthetic-invalid"] {
+            let mut rng = CountRandom(0);
+            assert!(PayloadEditor { payload: &mut p }
+                .edit_sheet(8)
+                .unwrap()
+                .spin_row(
+                    SpinRequest {
+                        row: 0,
+                        first_symbol: "0",
+                        second_symbol: "0",
+                        word
+                    },
+                    &mut rng
+                )
+                .is_err());
+            assert_eq!(rng.0, 0);
+            assert_eq!(p.encode().unwrap(), before);
+            assert!(p.sheets[8].verified_by_user && p.sheets[8].unlocked);
+        }
+        let mut p = near_limit(1240);
+        let long = p.sheets[8].dictionary[10].clone();
+        let mut rng = CountRandom(0);
+        PayloadEditor { payload: &mut p }
+            .edit_sheet(8)
+            .unwrap()
+            .spin_row(
+                SpinRequest {
+                    row: 0,
+                    first_symbol: "0",
+                    second_symbol: "0",
+                    word: &long,
+                },
+                &mut rng,
+            )
+            .unwrap();
+        assert_eq!(rng.0, 10);
+        assert_eq!(p.sheets[8].rows[0][0], long);
+        assert!(!p.sheets[8].verified_by_user);
+        assert!(p.encode().unwrap().len() <= crate::format::MAX_PAYLOAD);
+    }
     #[test]
     fn protection_is_salted_and_spin_persists_only_current_rows() {
         use crate::{
@@ -484,8 +659,8 @@ mod tests {
         p.locale = "ru".into();
         p.sheets.push(Sheet {
             name: "synthetic".into(),
-            profile_id: "synthetic-only".into(),
-            mode_id: "synthetic-mode".into(),
+            profile_id: "custom".into(),
+            mode_id: "custom".into(),
             dictionary: (0..40).map(|i| format!("synthetic-{i}")).collect(),
             rows: vec![(0..10).map(|i| format!("synthetic-{i}")).collect(); 12],
             verified_by_user: false,

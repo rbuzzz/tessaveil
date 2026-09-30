@@ -88,6 +88,23 @@ impl SheetEditor<'_> {
         rng: &mut impl RandomSource,
     ) -> Result<ReplacementRow<'_>, SpinError> {
         let columns = self.sheet.rows.get(request.row).ok_or(SpinError)?.len();
+        let old_bytes: usize = self.sheet.rows[request.row]
+            .iter()
+            .map(|w| crate::model::text_len(w))
+            .sum();
+        let mut sizes: Vec<_> = self
+            .sheet
+            .dictionary
+            .iter()
+            .map(|w| crate::model::text_len(w))
+            .collect();
+        sizes.sort_unstable_by(|a, b| b.cmp(a));
+        let maximum_bytes: usize = sizes[..columns].iter().sum();
+        // Reserve the longest possible unique row before reading candidate input
+        // or drawing randomness. Budget failure cannot disclose validity.
+        if maximum_bytes - old_bytes > self.remaining {
+            return Err(SpinError);
+        }
         // Identical random work and public transition for every candidate.
         let mut row = generate_row(&self.sheet.dictionary, columns, rng)?;
         let alphabet = b"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -116,6 +133,8 @@ impl SheetEditor<'_> {
             }
         }
         use zeroize::Zeroize;
+        let next_bytes: usize = row.iter().map(|w| crate::model::text_len(w)).sum();
+        self.remaining = self.remaining + old_bytes - next_bytes;
         self.sheet.rows[request.row].zeroize();
         self.sheet.rows[request.row] = std::mem::take(&mut *row);
         self.sheet.verified_by_user = false;

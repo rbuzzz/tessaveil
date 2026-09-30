@@ -131,6 +131,150 @@ mod tests {
     use super::*;
     use crate::format::HEADER_LEN;
     const PASSWORD: &str = "synthetic-password-🦀-e\u{301}";
+    fn raw_sheet(
+        profile: &str,
+        mode: &str,
+        rows: usize,
+        columns: usize,
+        words: &[String],
+    ) -> Vec<u8> {
+        fn number(out: &mut Vec<u8>, major: u8, value: usize) {
+            if value < 24 {
+                out.push((major << 5) | value as u8);
+            } else if value <= 255 {
+                out.extend([(major << 5) | 24, value as u8]);
+            } else {
+                out.extend([(major << 5) | 25, (value >> 8) as u8, value as u8]);
+            }
+        }
+        fn text(out: &mut Vec<u8>, value: &str) {
+            number(out, 3, value.len());
+            out.extend_from_slice(value.as_bytes());
+        }
+        // Independent canonical v2 fixture encoder; deliberately bypasses domain
+        // constructors. Public dictionary words form repeated synthetic table
+        // rows, never a recovered/generated wallet phrase.
+        let mut out = vec![0x84, 2, 0x60, 0x60, 0x81, 0x87, 0x60];
+        text(&mut out, profile);
+        text(&mut out, mode);
+        number(&mut out, 4, words.len());
+        for word in words {
+            text(&mut out, word);
+        }
+        number(&mut out, 4, rows);
+        for _ in 0..rows {
+            number(&mut out, 4, columns);
+            for word in &words[..columns] {
+                text(&mut out, word);
+            }
+        }
+        out.extend([0xf4, 0x40]);
+        out
+    }
+    fn authenticate_fixture(image: &[u8], secrets: &Secrets, bytes: &[u8]) -> Vec<u8> {
+        let mut header = image[..HEADER_LEN].to_vec();
+        header[88..92].copy_from_slice(&((bytes.len() + 16) as u32).to_le_bytes());
+        let mut wrapped = Zeroizing::new(*secrets.dek);
+        let tag = XChaCha20Poly1305::new((&*secrets.kek).into())
+            .encrypt_in_place_detached(
+                XNonce::from_slice(&header[40..64]),
+                &header[..92],
+                &mut *wrapped,
+            )
+            .unwrap();
+        header[92..124].copy_from_slice(&*wrapped);
+        header[124..140].copy_from_slice(&tag);
+        let mut encrypted = Zeroizing::new(bytes.to_vec());
+        let tag = XChaCha20Poly1305::new((&*secrets.dek).into())
+            .encrypt_in_place_detached(XNonce::from_slice(&header[64..88]), &header, &mut encrypted)
+            .unwrap();
+        header.extend_from_slice(&encrypted);
+        header.extend_from_slice(&tag);
+        header
+    }
+    #[test]
+    fn authenticated_sheet_identity_length_and_dictionary_are_enforced() {
+        let bundled = crate::catalog::select("tonhub", "ton-native-generated")
+            .unwrap()
+            .dictionary()
+            .unwrap();
+        let synthetic: Vec<_> = (0..40).map(|i| format!("synthetic-{i:03}")).collect();
+        let mut reordered = bundled.clone();
+        reordered.swap(0, 1);
+        let valid = raw_sheet("tonhub", "ton-native-generated", 24, 10, &bundled);
+        assert!(Payload::decode(&valid).is_ok());
+        assert!(Payload::decode(&raw_sheet("custom", "custom", 12, 10, &synthetic)).is_ok());
+        let (image, secrets) = create(PASSWORD, &Payload::default()).unwrap();
+        let authenticated = authenticate_fixture(&image, &secrets, &valid);
+        let (opened, _) = open(&authenticated, PASSWORD).unwrap();
+        assert_eq!(opened.sheets[0].rows.len(), 24);
+        for (label, profile, mode, rows, columns, dictionary) in [
+            (
+                "wrong-length",
+                "tonhub",
+                "ton-native-generated",
+                12,
+                10,
+                &bundled,
+            ),
+            (
+                "wrong-columns",
+                "tonhub",
+                "ton-native-generated",
+                24,
+                11,
+                &bundled,
+            ),
+            (
+                "substituted-dictionary",
+                "tonhub",
+                "ton-native-generated",
+                24,
+                10,
+                &synthetic,
+            ),
+            (
+                "reordered-dictionary",
+                "tonhub",
+                "ton-native-generated",
+                24,
+                10,
+                &reordered,
+            ),
+            (
+                "unknown-profile",
+                "synthetic-profile",
+                "ton-native-generated",
+                24,
+                10,
+                &bundled,
+            ),
+            ("unknown-mode", "tonhub", "synthetic-mode", 24, 10, &bundled),
+            (
+                "mixed-custom",
+                "custom",
+                "ton-native-generated",
+                24,
+                10,
+                &bundled,
+            ),
+            ("mixed-profile", "tonhub", "custom", 24, 10, &bundled),
+        ] {
+            let raw = raw_sheet(profile, mode, rows, columns, dictionary);
+            assert!(
+                matches!(Payload::decode(&raw), Err(VaultError::InvalidPayload)),
+                "{label}"
+            );
+            let authenticated = authenticate_fixture(&image, &secrets, &raw);
+            assert!(
+                matches!(
+                    open(&authenticated, PASSWORD),
+                    Err(VaultError::Authentication)
+                ),
+                "{label}"
+            );
+        }
+    }
     #[test]
     fn retained_keys_use_zeroizing_owners() {
         use zeroize::Zeroize;

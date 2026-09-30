@@ -59,6 +59,8 @@ impl SheetView<'_> {
 }
 pub struct SheetEditor<'a> {
     pub(crate) sheet: &'a mut Sheet,
+    // Exact remaining aggregate budget while this exclusive borrow is held.
+    pub(crate) remaining: usize,
 }
 impl SheetEditor<'_> {
     /// Explicit user assertion after independent recovery checking, never inferred.
@@ -69,12 +71,22 @@ impl SheetEditor<'_> {
         if secret.is_empty() {
             return Err(VaultError::InvalidPassword);
         }
+        // Empty byte string costs 1 byte; a 48-byte verifier string costs 50.
+        let growth = if self.sheet.protection.is_none() {
+            49
+        } else {
+            0
+        };
+        if growth > self.remaining {
+            return Err(VaultError::InvalidPayload);
+        }
         let mut protection = Zeroizing::new([0; 48]);
         getrandom::getrandom(&mut protection[..16]).map_err(|_| VaultError::Io)?;
         let verifier = crate::crypto::derive(secret, &protection[..16])?;
         protection[16..].copy_from_slice(&*verifier);
         self.sheet.protection.zeroize();
         self.sheet.protection = Some(*protection);
+        self.remaining -= growth;
         Ok(())
     }
 }
@@ -116,6 +128,14 @@ impl Sheet {
             columns,
         }
         .validate()?;
+        if self.profile_id != "custom" || self.mode_id != "custom" {
+            let profile = catalog::select(&self.profile_id, &self.mode_id)?;
+            if !profile.supported_lengths().contains(&self.rows.len())
+                || !profile.matches_dictionary(&self.dictionary)
+            {
+                return Err(VaultError::InvalidPayload);
+            }
+        }
         if self.dictionary.len() < columns
             || self.dictionary.len() > 8192
             || self.profile_id.is_empty()
@@ -184,6 +204,7 @@ impl PayloadEditor<'_> {
         })
     }
     pub fn edit_sheet(&mut self, index: usize) -> Result<SheetEditor<'_>, VaultError> {
+        let remaining = crate::format::MAX_PAYLOAD - self.payload.encoded_len()?;
         let sheet = self
             .payload
             .sheets
@@ -192,7 +213,7 @@ impl PayloadEditor<'_> {
         if !sheet.unlocked {
             return Err(VaultError::AccessDenied);
         }
-        Ok(SheetEditor { sheet })
+        Ok(SheetEditor { sheet, remaining })
     }
     pub fn protect_sheet(&mut self, index: usize) -> Result<(), VaultError> {
         self.payload
@@ -223,7 +244,7 @@ impl PayloadEditor<'_> {
         let index = self.payload.sheets.len();
         self.payload.sheets.push(sheet);
         // Aggregate serialized bounds must hold before exposing the new sheet.
-        if self.payload.encode().is_err() {
+        if self.payload.encoded_len().is_err() {
             self.payload.sheets.pop();
             return Err(VaultError::InvalidPayload);
         }

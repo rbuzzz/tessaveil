@@ -127,6 +127,13 @@ wallet/scheme/dictionaries must still be verified and dictionary redistribution
 and SignPath decisions must still permit use. No separate Rust selectable list
 exists. The runtime verifies the compiled dictionary asset hash against the
 selected matrix records, failing closed on an unsupported/mismatched asset.
+The same binding is mandatory when validating and decoding sheets: only the
+explicit `custom/custom` pair bypasses catalogue compatibility. Every other pair
+must be currently selectable, have a scheme-supported row count, and contain the
+exact ordered bundled dictionary whose ID and hash are bound by that matrix.
+Unknown/mixed IDs, substituted/reordered dictionaries and incompatible dimensions
+are malformed payloads. Authenticated malformed payloads retain the outward
+`Authentication` error; snapshots are never silently rewritten or migrated.
 
 Profile sheets use the selected scheme's lengths (currently 24) and bundled
 dictionary. The explicit custom flow accepts the complete supported row set and
@@ -154,6 +161,20 @@ the master password. A successful save protects all sheets; failed saves retain
 the previous authorization state and previous authenticated disk image. Opening
 always starts protected. Only an authorized borrowed editor can change the
 explicit user verification state, set a password or perform Spin.
+
+Every size-changing domain mutation preserves the aggregate 8 MiB limit before
+committing. The private canonical writer also has a counting mode which traverses
+the same validated schema without allocating a serialized plaintext copy. A
+borrowed sheet editor holds the exact remaining budget during its exclusive
+borrow, updating it after each successful change. First protection setup needs
+49 additional bytes; replacing an existing verifier needs none. Rename checks
+its exact CBOR text-length delta, and sheet insertion checks the full new size.
+Spin reserves the sum of the largest eligible distinct word encodings for its
+column count before processing candidate input or drawing randomness. A budget
+failure is therefore candidate-independent and leaves the previous row, verifier,
+verification and protection state unchanged. Near the limit Spin can reject even
+when a particular shorter random row would fit; it must not turn row size into a
+validity signal. No persistent reservation or format field is added.
 
 `SheetEditor::spin_row(SpinRequest, rng)` accepts a row number, two borrowed
 symbol inputs and one borrowed word. It returns only a borrowed complete
