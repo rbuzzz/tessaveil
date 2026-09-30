@@ -1,6 +1,6 @@
 # Provisional encrypted alpha vault core
 
-Engineering-only format, version 1; synthetic data only. Extension:
+Engineering-only format, version 2; synthetic data only. Extension:
 `.tessaveil-alpha`. This is not `.tessaveil`, has no migration promise, is not a
 production backup format, and does not close the KDF, physical-mobile,
 cross-platform, clean-Windows, removable-media, audit or release gates.
@@ -14,7 +14,7 @@ Integers in the open header are unsigned little-endian. The header is exactly
 | Offset | Bytes | Meaning |
 | --- | --- | --- |
 | 0 | 8 | ASCII `TSVALPHA` |
-| 8 | 2 | Alpha envelope version 1 |
+| 8 | 2 | Alpha envelope version 2 |
 | 10 | 1 | KDF ID 1: Argon2id, Argon2 version 0x13 |
 | 11 | 1 | AEAD ID 1: XChaCha20-Poly1305 |
 | 12 | 4 | Memory in KiB |
@@ -71,12 +71,12 @@ lengths, non-shortest encodings, tags, maps, floats, negative integers, invalid
 UTF-8, embedded NUL, unexpected fields and trailing bytes are rejected.
 
 ```
-Payload = [1, name, locale, [Sheet...]]
-Sheet = [name, profile_id, [dictionary_word...], [[cell...], ...],
-         verified_by_user, protected]
+Payload = [2, name, locale, [Sheet...]]
+Sheet = [name, profile_id, mode_id, [dictionary_word...], [[cell...], ...],
+         verified_by_user, protection_bytes]
 ```
 
-The independent canonical vector for an empty payload is `84 01 60 60 80`.
+The independent canonical vector for an empty payload is `84 02 60 60 80`.
 The writer emits this same representation every time for the same model;
 encryption intentionally remains randomized.
 
@@ -84,28 +84,91 @@ encryption intentionally remains randomized.
 | --- | --- |
 | Name (vault or sheet) | 256 UTF-8 bytes |
 | Locale | 16 UTF-8 bytes |
-| Profile ID | 128 UTF-8 bytes |
+| Profile ID or mode ID | 128 UTF-8 bytes each |
 | Sheets | 32 |
 | Dictionary entries per sheet | 8,192 |
 | Dictionary word or table cell | 128 UTF-8 bytes |
-| Rows | Empty, or 12,13,15,16,18,20,21,24,25,26,27,28,29,33 |
+| Rows | 12,13,15,16,18,20,21,24,25,26,27,28,29,33 |
 | Columns | Exactly 10 or 36, identical for every row in a sheet |
 | Total encoded payload | 8 MiB |
 
 Count and text-size limits are checked before their associated allocations.
 The serializer uses one bounded buffer, avoiding plaintext reallocation copies.
-These are structural bounds, not catalogue/profile validation; domain sheet
-operations are the next task. Adding mandatory fields requires a schema
-discriminator/envelope version bump. A correctly decoded discriminator other
-than 1 returns `UnsupportedVersion`, including when the future array has a
+Dictionary words are nonempty NFKD text without whitespace or control characters;
+normalized duplicates are rejected. Every row uses only snapshot words and has
+unique cells; the snapshot must contain at least as many words as columns.
+Adding mandatory fields requires a schema discriminator/envelope version bump.
+A correctly decoded discriminator other
+than 2 returns `UnsupportedVersion`, including when the future array has a
 different arity. The canonical outer array/count and first discriminator are
-read before applying the exact v1 arity. Empty/overlong/noncanonical prefixes
+read before applying the exact v2 arity. Empty/overlong/noncanonical prefixes
 remain malformed; a shape change without a version bump is
 malformed authenticated data and returns `Authentication`.
 
 There are no stored fields for Spin input, target column, ordering information,
 whole phrases, validity, history, completion markers or prior versions. No
 generic metadata map is available to smuggle such fields into the schema.
+
+Version 2 intentionally rejects alpha version 1 files. The mode identifier and
+salted sheet verifier replace the previous incomplete sheet shape. There is no
+migration promise and no automatic conversion of earlier engineering vaults.
+
+## Catalogue, dictionaries and sheet protection
+
+`python tools/alpha_catalog.py` validates all source catalogue records, their
+evidence, dependency graph, dictionary bytes/counts/hashes and licensing before
+atomically publishing `generated/alpha/profile-matrix.json`. `--check` is read-only
+and fails on drift. Both generation and checking are required build gates; a
+previous generated matrix must never be used to bypass failed source validation.
+The matrix lists every terminal wallet/mode, including unavailable records with
+bounded status-derived reason codes and evidence identifiers. Its source digest
+covers sorted catalogue data. The three approved pairs form a ceiling: their
+wallet/scheme/dictionaries must still be verified and dictionary redistribution
+and SignPath decisions must still permit use. No separate Rust selectable list
+exists. The runtime verifies the compiled dictionary asset hash against the
+selected matrix records, failing closed on an unsupported/mismatched asset.
+
+Profile sheets use the selected scheme's lengths (currently 24) and bundled
+dictionary. The explicit custom flow accepts the complete supported row set and
+is labeled by `custom/custom`, never as verified wallet compatibility. All new
+tables draw decoys from the OS CSPRNG without replacement within each row.
+Each sheet owns its normalized immutable dictionary snapshot. A revised list
+creates a separate custom sheet with fresh rows, no inherited protection and
+`verified_by_user=false`. The old sheet remains unchanged. Retaining multiple
+tables carries the cross-version comparison risk described above.
+
+`protection_bytes` is a canonical CBOR byte string of length zero (master-password
+authorization only) or exactly 48 (16-byte independent OS-random salt followed by
+32-byte verifier). The fixed construction is Argon2id v0x13, 65,536 KiB memory,
+3 iterations, 4 lanes, 32-byte output, over the NFC UTF-8 sheet password and that
+salt. No KDF parameters are controlled by this payload field. Secret input has
+the same 4,096-byte/NUL bounds as the master password; empty sheet passwords are
+rejected. Comparison uses `subtle` constant-time equality. Passwords, derived
+outputs and the explicit Argon2 workspace have zeroizing owners; only salt and
+verifier persist. Every password change samples a new salt. This is an accidental
+editing guard inside the encrypted vault, not a second encryption boundary.
+
+Authorization is session-only and absent from the CBOR schema. New sheets start
+editable; protected sheets require their optional sheet password or re-entry of
+the master password. A successful save protects all sheets; failed saves retain
+the previous authorization state and previous authenticated disk image. Opening
+always starts protected. Only an authorized borrowed editor can change the
+explicit user verification state, set a password or perform Spin.
+
+`SheetEditor::spin_row(SpinRequest, rng)` accepts a row number, two borrowed
+symbol inputs and one borrowed word. It returns only a borrowed complete
+`ReplacementRow` or the generic `SpinError`. Matching ASCII symbols from the
+sheet's alphabet and a snapshot word may affect the resulting row, but never the
+error/control state or persisted metadata. Every candidate draws a complete fresh
+row first and clears the sheet-level verification flag. The word is transiently
+normalized to NFKD in a bounded zeroizing owner, without reallocating a live prefix.
+Inputs are neither copied into the model nor logged; the caller must wipe its
+masked input owners immediately.
+The UI must use `OsRandom`; injectable RNGs exist for deterministic/error testing.
+Sampling uses unbiased bounded rejection and a partial shuffle. The implementation
+does not claim constant execution time or resistance to process-memory observation.
+The invalid-input path, RNG failure, protected access and persistence bounds are
+covered with synthetic data; entropy failure leaves the previous row unchanged.
 
 ## Public ownership boundary
 
@@ -117,8 +180,10 @@ inactivity choice. No API returns serialized plaintext, keys, whole phrases,
 Spin validity or target columns. Crypto and serialization modules/functions
 are private. Payload and Sheet types/fields are crate-private; `payload_mut`
 returns a borrowed `PayloadEditor` without Deref, Default or ownership transfer.
-Its current domain operations are `name()` and bounded `rename()`.
-The next task can add narrow sheet operations inside this crate. Sensitive
+Its domain operations include `name`, bounded `rename`, profile/custom sheet
+creation, borrowed sheet views/editors, protection and dictionary-revision creation.
+`OpenVault::unlock_sheet_with_master` authorizes one sheet without exposing keys.
+Views expose current rows, dictionary and display state by borrow only. Sensitive
 model/key owners do not implement `Debug` or `Clone`.
 
 Timeouts are 1/5/15/30 minutes, default 5. Tokens contain session identity,
@@ -206,7 +271,9 @@ disclosure, just as manually retained old backups can.
 
 Direct exact pins: Argon2 0.5.3 (default PHC/password-hash features disabled,
 zeroize enabled); chacha20poly1305 0.10.1; getrandom 0.2.16; zeroize 1.8.1 with
-derive; unicode-normalization 0.1.24; test-only tempfile 3.23.0; Windows-only windows-sys
+derive; unicode-normalization 0.1.24; serde_json 1.0.145 (public catalogue only,
+never payload serialization); sha2 0.10.9 (public dictionary binding); subtle
+2.6.1 (verifier comparison); test-only tempfile 3.23.0; Windows-only windows-sys
 0.61.2 with Foundation/FileSystem. OS entropy supplies all cryptographic random
 bytes. There are no network, GUI, clipboard, export or telemetry dependencies
 in the core. The root workspace excludes all disposable spike crates.

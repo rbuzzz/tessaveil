@@ -11,10 +11,13 @@ pub(crate) struct Payload {
 pub(crate) struct Sheet {
     pub(crate) name: String,
     pub(crate) profile_id: String,
+    pub(crate) mode_id: String,
     pub(crate) dictionary: Vec<String>,
     pub(crate) rows: Vec<Vec<String>>,
     pub(crate) verified_by_user: bool,
-    pub(crate) protected: bool,
+    pub(crate) protection: Option<[u8; 48]>,
+    // Session-only authorization. Never serialized; every open starts protected.
+    pub(crate) unlocked: bool,
 }
 impl Payload {
     pub fn name(&self) -> &str {
@@ -33,14 +36,16 @@ impl Payload {
             crate::format::MAX_PAYLOAD,
         )));
         w.number(4, 4)?;
-        w.number(0, 1)?;
+        w.number(0, 2)?;
         w.text(&self.name, 256)?;
         w.text(&self.locale, 16)?;
         w.array(self.sheets.len(), 32)?;
         for s in &self.sheets {
-            w.array(6, 6)?;
+            s.validate()?;
+            w.array(7, 7)?;
             w.text(&s.name, 256)?;
             w.text(&s.profile_id, 128)?;
+            w.text(&s.mode_id, 128)?;
             w.array(s.dictionary.len(), 8192)?;
             for word in &s.dictionary {
                 w.text(word, 128)?;
@@ -60,10 +65,10 @@ impl Payload {
                     w.text(word, 128)?;
                 }
             }
-            w.push(&[
-                if s.verified_by_user { 0xf5 } else { 0xf4 },
-                if s.protected { 0xf5 } else { 0xf4 },
-            ])?;
+            w.push(&[if s.verified_by_user { 0xf5 } else { 0xf4 }])?;
+            let protection = s.protection.as_ref().map_or(&[][..], |v| &v[..]);
+            w.number(2, protection.len())?;
+            w.push(protection)?;
         }
         Ok(w.0)
     }
@@ -73,12 +78,12 @@ impl Payload {
         }
         let mut r = Reader { bytes, offset: 0 };
         // Recognize the canonical, bounded envelope of the schema before imposing
-        // v1's arity: a future mandatory field changes arity together with version.
+        // v2's arity: a future mandatory field changes arity together with version.
         let arity = r.array(65535)?;
         if arity == 0 {
             return Err(VaultError::InvalidPayload);
         }
-        if r.number(0)? != 1 {
+        if r.number(0)? != 2 {
             return Err(VaultError::UnsupportedVersion);
         }
         if arity != 4 {
@@ -89,12 +94,13 @@ impl Payload {
         p.locale = r.text(16)?;
         let count = r.array(32)?;
         for _ in 0..count {
-            if r.array(6)? != 6 {
+            if r.array(7)? != 7 {
                 return Err(VaultError::InvalidPayload);
             }
             let mut s = Sheet::default();
             s.name = r.text(256)?;
             s.profile_id = r.text(128)?;
+            s.mode_id = r.text(128)?;
             let dictionary_count = r.array(8192)?;
             for _ in 0..dictionary_count {
                 s.dictionary.push(r.text(128)?);
@@ -117,7 +123,18 @@ impl Payload {
                 s.rows.push(std::mem::take(&mut *row));
             }
             s.verified_by_user = r.boolean()?;
-            s.protected = r.boolean()?;
+            match r.number(2)? {
+                0 => (),
+                48 => {
+                    s.protection = Some(
+                        r.take(48)?
+                            .try_into()
+                            .map_err(|_| VaultError::InvalidPayload)?,
+                    )
+                }
+                _ => return Err(VaultError::InvalidPayload),
+            }
+            s.validate()?;
             p.sheets.push(s);
         }
         if r.offset != bytes.len() {
@@ -138,7 +155,7 @@ impl PayloadEditor<'_> {
         self.payload.rename(name)
     }
 }
-const ROWS: &[usize] = &[12, 13, 15, 16, 18, 20, 21, 24, 25, 26, 27, 28, 29, 33];
+const ROWS: &[usize] = crate::sheet::SUPPORTED_ROWS;
 struct Writer(Zeroizing<Vec<u8>>);
 impl Writer {
     fn push(&mut self, bytes: &[u8]) -> Result<(), VaultError> {
@@ -246,6 +263,122 @@ impl<'a> Reader<'a> {
 mod tests {
     use super::*;
     #[test]
+    fn protection_is_salted_and_spin_persists_only_current_rows() {
+        use crate::{
+            sheet::SheetSize,
+            spin::{RandomSource, SpinError, SpinRequest},
+        };
+        struct CountRandom(usize);
+        impl RandomSource for CountRandom {
+            fn fill(&mut self, bytes: &mut [u8]) -> Result<(), SpinError> {
+                self.0 += 1;
+                bytes.copy_from_slice(&(1_000_000u32 + self.0 as u32).to_le_bytes());
+                Ok(())
+            }
+        }
+        let mut p = Payload::default();
+        let words: Vec<_> = (0..80).map(|i| format!("synthetic-{i:03}")).collect();
+        let mut editor = PayloadEditor { payload: &mut p };
+        editor
+            .create_custom_sheet(
+                "synthetic",
+                SheetSize {
+                    rows: 12,
+                    columns: 10,
+                },
+                &words,
+            )
+            .unwrap();
+        editor
+            .edit_sheet(0)
+            .unwrap()
+            .set_protection("synthetic-protection-secret-marker")
+            .unwrap();
+        let first = p.sheets[0].protection.unwrap();
+        PayloadEditor { payload: &mut p }
+            .edit_sheet(0)
+            .unwrap()
+            .set_protection("synthetic-protection-secret-marker")
+            .unwrap();
+        assert_ne!(first[..16], p.sheets[0].protection.unwrap()[..16]);
+        assert_ne!(first[16..], p.sheets[0].protection.unwrap()[16..]);
+        for (a, b, word) in [
+            ("9", "9", "synthetic-001"),
+            ("A", "A", "synthetic-invalid-marker"),
+            ("9", "8", "synthetic-001"),
+        ] {
+            let mut rng = CountRandom(0);
+            let mut editor = PayloadEditor { payload: &mut p };
+            editor.edit_sheet(0).unwrap().set_verified_by_me(true);
+            editor
+                .edit_sheet(0)
+                .unwrap()
+                .spin_row(
+                    SpinRequest {
+                        row: 0,
+                        first_symbol: a,
+                        second_symbol: b,
+                        word,
+                    },
+                    &mut rng,
+                )
+                .unwrap();
+            assert_eq!(rng.0, 10);
+            assert!(!p.sheets[0].verified_by_user);
+            if a == b && a == "9" {
+                assert_eq!(p.sheets[0].rows[0][9], "synthetic-001");
+            }
+            let encoded = p.encode().unwrap();
+            for forbidden in [
+                b"synthetic-protection-secret-marker".as_slice(),
+                b"synthetic-invalid-marker",
+            ] {
+                assert!(!encoded.windows(forbidden.len()).any(|w| w == forbidden));
+            }
+            let round = Payload::decode(&encoded).unwrap();
+            assert!(!round.sheets[0].unlocked);
+            assert_eq!(round.encode().unwrap(), encoded);
+            // Independent shape walk: 7 sheet fields, never a candidate/target/
+            // validity extension. Only current rows and the salted verifier.
+            let mut r = Reader {
+                bytes: &encoded,
+                offset: 0,
+            };
+            assert_eq!(r.array(4).unwrap(), 4);
+            assert_eq!(r.number(0).unwrap(), 2);
+            r.text(256).unwrap();
+            r.text(16).unwrap();
+            assert_eq!(r.array(32).unwrap(), 1);
+            assert_eq!(r.array(7).unwrap(), 7);
+            r.text(256).unwrap();
+            r.text(128).unwrap();
+            r.text(128).unwrap();
+            for _ in 0..r.array(8192).unwrap() {
+                r.text(128).unwrap();
+            }
+            for _ in 0..r.array(33).unwrap() {
+                for _ in 0..r.array(36).unwrap() {
+                    r.text(128).unwrap();
+                }
+            }
+            assert!(!r.boolean().unwrap());
+            assert_eq!(r.number(2).unwrap(), 48);
+            r.take(48).unwrap();
+            assert_eq!(r.offset, encoded.len());
+        }
+    }
+    #[test]
+    fn mandatory_protection_schema_requires_v2() {
+        assert_eq!(
+            &**Payload::default().encode().unwrap(),
+            &[0x84, 2, 0x60, 0x60, 0x80]
+        );
+        assert!(matches!(
+            Payload::decode(&[0x84, 1, 0x60, 0x60, 0x80]),
+            Err(VaultError::UnsupportedVersion)
+        ));
+    }
+    #[test]
     fn payload_and_sheet_zeroization_clear_owned_data() {
         let mut p = Payload::default();
         p.name = "synthetic-label".into();
@@ -253,16 +386,23 @@ mod tests {
         p.sheets.push(Sheet {
             name: "synthetic-sheet".into(),
             profile_id: "synthetic-profile".into(),
+            mode_id: "synthetic-mode".into(),
             dictionary: vec!["synthetic-word".into()],
             rows: vec![vec!["synthetic-cell".into(); 10]; 12],
             verified_by_user: true,
-            protected: true,
+            protection: Some([42; 48]),
+            unlocked: true,
         });
         p.sheets[0].zeroize();
         assert!(p.sheets[0].name.is_empty());
         assert!(p.sheets[0].dictionary.is_empty());
         assert!(p.sheets[0].rows.is_empty());
         assert!(!p.sheets[0].verified_by_user);
+        assert!(!p.sheets[0].unlocked);
+        assert!(p.sheets[0]
+            .protection
+            .as_ref()
+            .is_none_or(|v| v.iter().all(|b| *b == 0)));
         p.zeroize();
         assert!(p.name.is_empty());
         assert!(p.locale.is_empty());
@@ -283,25 +423,35 @@ mod tests {
         p.sheets = (0..33).map(|_| Sheet::default()).collect();
         assert!(p.encode().is_err());
         p.sheets.truncate(1);
+        p.sheets[0].profile_id = "custom".into();
+        p.sheets[0].mode_id = "custom".into();
+        p.sheets[0].dictionary = (0..40).map(|i| format!("synthetic-{i}")).collect();
+        p.sheets[0].rows = vec![p.sheets[0].dictionary[..36].to_vec(); 12];
+        assert!(p.encode().is_ok());
         p.sheets[0].name = "x".repeat(257);
         assert!(p.encode().is_err());
         p.sheets[0].name.clear();
         p.sheets[0].profile_id = "x".repeat(129);
         assert!(p.encode().is_err());
-        p.sheets[0].profile_id.clear();
+        p.sheets[0].profile_id = "custom".into();
+        p.sheets[0].mode_id = "x".repeat(129);
+        assert!(p.encode().is_err());
+        p.sheets[0].mode_id = "custom".into();
         p.sheets[0].dictionary = vec!["synthetic".into(); 8193];
         assert!(p.encode().is_err());
-        p.sheets[0].dictionary.truncate(8192);
+        p.sheets[0].profile_id = "custom".into();
+        p.sheets[0].mode_id = "custom".into();
+        p.sheets[0].dictionary = (0..40).map(|i| format!("synthetic-{i}")).collect();
         for rows in ROWS {
-            p.sheets[0].rows = vec![vec!["synthetic-cell".into(); 36]; *rows];
+            p.sheets[0].rows = vec![p.sheets[0].dictionary[..36].to_vec(); *rows];
             assert!(Payload::decode(&p.encode().unwrap()).is_ok());
         }
         p.sheets[0].rows = vec![vec!["synthetic-cell".into(); 36]; 34];
         assert!(p.encode().is_err());
         for prefix in [
-            vec![0x84, 1, 0x60, 0x60, 0x99, 0xff, 0xff],
+            vec![0x84, 2, 0x60, 0x60, 0x99, 0xff, 0xff],
             vec![
-                0x84, 1, 0x60, 0x60, 0x81, 0x86, 0x60, 0x60, 0x99, 0xff, 0xff,
+                0x84, 2, 0x60, 0x60, 0x81, 0x87, 0x60, 0x60, 0x60, 0x99, 0xff, 0xff,
             ],
         ] {
             assert!(Payload::decode(&prefix).is_err());
@@ -310,21 +460,21 @@ mod tests {
     #[test]
     fn canonical_cbor_has_exact_schema_and_rejects_noncanonical_or_unbounded_data() {
         let p = Payload::default();
-        assert_eq!(&**p.encode().unwrap(), &[0x84, 1, 0x60, 0x60, 0x80]);
-        assert!(Payload::decode(&[0x84, 1, 0x60, 0x60, 0x80]).is_ok());
+        assert_eq!(&**p.encode().unwrap(), &[0x84, 2, 0x60, 0x60, 0x80]);
+        assert!(Payload::decode(&[0x84, 2, 0x60, 0x60, 0x80]).is_ok());
         for bad in [
-            vec![0x84, 0x18, 1, 0x60, 0x60, 0x80],
-            vec![0x84, 1, 0x60, 0x60, 0x98, 33],
-            vec![0x84, 1, 0x79, 0xff, 0xff],
-            vec![0x84, 1, 0x61, 0xff, 0x60, 0x80],
-            vec![0x84, 1, 0x60, 0x60, 0x80, 0],
-            vec![0x9f, 1, 0x60, 0x60, 0x80, 0xff],
-            vec![0x85, 1, 0x60, 0x60, 0x80, 0x60],
+            vec![0x84, 0x18, 2, 0x60, 0x60, 0x80],
+            vec![0x84, 2, 0x60, 0x60, 0x98, 33],
+            vec![0x84, 2, 0x79, 0xff, 0xff],
+            vec![0x84, 2, 0x61, 0xff, 0x60, 0x80],
+            vec![0x84, 2, 0x60, 0x60, 0x80, 0],
+            vec![0x9f, 2, 0x60, 0x60, 0x80, 0xff],
+            vec![0x85, 2, 0x60, 0x60, 0x80, 0x60],
         ] {
             assert!(Payload::decode(&bad).is_err());
         }
         for n in 0..5 {
-            assert!(Payload::decode(&[0x84, 1, 0x60, 0x60, 0x80][..n]).is_err());
+            assert!(Payload::decode(&[0x84, 2, 0x60, 0x60, 0x80][..n]).is_err());
         }
     }
     #[test]
@@ -335,16 +485,18 @@ mod tests {
         p.sheets.push(Sheet {
             name: "synthetic".into(),
             profile_id: "synthetic-only".into(),
+            mode_id: "synthetic-mode".into(),
             dictionary: (0..40).map(|i| format!("synthetic-{i}")).collect(),
-            rows: vec![vec!["synthetic-cell".into(); 10]; 12],
+            rows: vec![(0..10).map(|i| format!("synthetic-{i}")).collect(); 12],
             verified_by_user: false,
-            protected: true,
+            protection: Some([42; 48]),
+            unlocked: true,
         });
         let encoded = p.encode().unwrap();
         let round = Payload::decode(&encoded).unwrap();
         assert_eq!(round.name(), "synthetic table");
         assert_eq!(round.sheets[0].rows.len(), 12);
-        assert_eq!(round.sheets[0].rows[0][0], "synthetic-cell");
+        assert_eq!(round.sheets[0].rows[0][0], "synthetic-0");
         assert_eq!(round.encode().unwrap(), encoded);
         p.sheets[0].rows[0].push("extra".into());
         assert!(p.encode().is_err());

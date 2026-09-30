@@ -71,6 +71,71 @@ INVALID_AUTHORITY_URLS = (
 )
 
 
+class AlphaGeneratorTests(unittest.TestCase):
+    def test_script_entrypoint_checks_committed_matrix(self):
+        result = subprocess.run([sys.executable, str(ROOT / "tools/alpha_catalog.py"),
+                                 "--root", str(ROOT), "--check"], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def module(self):
+        try:
+            return importlib.import_module("tools.alpha_catalog")
+        except ModuleNotFoundError:
+            self.fail("alpha catalogue projection is not implemented")
+
+    def test_only_verified_approved_identities_are_selectable_and_all_modes_visible(self):
+        catalog = load_catalog(ROOT)
+        matrix = self.module().project(catalog)
+        profiles = matrix["profiles"]
+        self.assertEqual(len(profiles), len(catalog.wallets))
+        self.assertEqual({(p["profile_id"], p["mode_id"]) for p in profiles if p["selectable"]}, {
+            ("mytonwallet-native", "ton-native-generated"),
+            ("tonhub", "ton-native-generated"),
+            ("tonkeeper-classic", "ton-native-generated"),
+        })
+        for profile in profiles:
+            self.assertLessEqual(len(profile["reason"]), 160)
+            if not profile["selectable"]:
+                self.assertTrue(profile["reason"])
+                self.assertTrue(profile["evidence_ids"])
+
+    def test_dependency_license_and_evidence_drift_fail_closed(self):
+        module = self.module()
+        catalog = load_catalog(ROOT)
+        for group, identifier, changes in (
+            ("wallets", "tonhub", {"status": "documented"}),
+            ("schemes", "ton-native", {"status": "documented"}),
+            ("dictionaries", "bip39-en", {"status": "documented"}),
+            ("dictionaries", "bip39-en", {"license": {"repository_redistribution": "blocked"}}),
+            ("wallets", "tonhub", {"evidence_ids": []}),
+            ("wallets", "tonhub", {"scheme_id": "missing"}),
+        ):
+            with self.subTest(group=group, changes=changes):
+                records = tuple(replace(r, data={**r.data, **changes}) if r.id == identifier else r
+                                for r in getattr(catalog, group))
+                changed = replace(catalog, **{group: records})
+                try:
+                    projected = module.project(changed)
+                except ValueError:
+                    continue
+                self.assertFalse(next(p for p in projected["profiles"] if p["profile_id"] == "tonhub")["selectable"])
+
+    def test_projection_is_deterministic_and_check_detects_drift_without_writing(self):
+        module = self.module()
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "matrix.json"
+            self.assertEqual(module.main(["--root", str(ROOT), "--output", str(output)]), 0)
+            before = output.read_bytes()
+            self.assertEqual(module.main(["--root", str(ROOT), "--output", str(output), "--check"]), 0)
+            self.assertEqual(module.main(["--root", str(ROOT), "--output", str(output)]), 0)
+            self.assertEqual(before, output.read_bytes())
+            output.write_bytes(before + b" ")
+            stamp = output.stat().st_mtime_ns
+            self.assertNotEqual(module.main(["--root", str(ROOT), "--output", str(output), "--check"]), 0)
+            self.assertEqual(output.read_bytes(), before + b" ")
+            self.assertEqual(output.stat().st_mtime_ns, stamp)
+
+
 class GeneratorTests(unittest.TestCase):
     def render(self, catalog, locale="en"):
         try:

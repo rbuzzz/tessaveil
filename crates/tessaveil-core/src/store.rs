@@ -111,7 +111,38 @@ impl OpenVault {
         let u = self.unlocked.as_ref().ok_or(VaultError::Locked)?;
         check_storage(&self.path, self.storage)?;
         let image = crypto::seal(&u.payload, &u.secrets, &u.salt)?;
-        persist_image(&self.path, &image, &u.secrets, false, |_, _| Ok(()))
+        persist_image(&self.path, &image, &u.secrets, false, |_, _| Ok(()))?;
+        for sheet in &mut self
+            .unlocked
+            .as_mut()
+            .expect("checked session")
+            .payload
+            .sheets
+        {
+            sheet.unlocked = false;
+        }
+        Ok(())
+    }
+    /// Authorize one sheet using the master credential; never expose keys.
+    pub fn unlock_sheet_with_master(
+        &mut self,
+        index: usize,
+        password: &str,
+    ) -> Result<(), VaultError> {
+        use subtle::ConstantTimeEq;
+        self.expire(self.session.token(), Instant::now());
+        let u = self.unlocked.as_mut().ok_or(VaultError::Locked)?;
+        let sheet = u
+            .payload
+            .sheets
+            .get_mut(index)
+            .ok_or(VaultError::InvalidPayload)?;
+        let key = crypto::derive(password, &u.salt)?;
+        if !bool::from(key.as_slice().ct_eq(u.secrets.kek.as_slice())) {
+            return Err(VaultError::Authentication);
+        }
+        sheet.unlocked = true;
+        Ok(())
     }
     pub fn lock(&mut self) {
         self.unlocked = None;

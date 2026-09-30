@@ -24,7 +24,7 @@ fn every_truncation_and_structural_region_fails_before_password_processing() {
     }
     for (index, value, expected) in [
         (0, 0, VaultError::InvalidHeader),
-        (8, 2, VaultError::UnsupportedVersion),
+        (8, 1, VaultError::UnsupportedVersion),
         (10, 2, VaultError::InvalidHeader),
         (11, 2, VaultError::InvalidHeader),
         (15, 0xff, VaultError::KdfOutOfBounds),

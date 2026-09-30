@@ -6,7 +6,7 @@ use tessaveil_core::{
 fn header() -> [u8; HEADER_LEN] {
     let mut h = [0; HEADER_LEN];
     h[..8].copy_from_slice(b"TSVALPHA");
-    h[8..10].copy_from_slice(&1u16.to_le_bytes());
+    h[8..10].copy_from_slice(&2u16.to_le_bytes());
     h[10] = 1;
     h[11] = 1;
     h[12..16].copy_from_slice(&65536u32.to_le_bytes());
@@ -28,7 +28,7 @@ fn header_lengths_magic_version_algorithms_and_nonces_are_checked() {
     }
     for (index, value, expected) in [
         (0, 0, VaultError::InvalidHeader),
-        (8, 2, VaultError::UnsupportedVersion),
+        (8, 1, VaultError::UnsupportedVersion),
         (10, 2, VaultError::InvalidHeader),
         (11, 2, VaultError::InvalidHeader),
         (64, 0, VaultError::InvalidHeader),

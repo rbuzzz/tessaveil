@@ -16,7 +16,7 @@ pub(crate) struct Secrets {
 fn random(bytes: &mut [u8]) -> Result<(), VaultError> {
     getrandom::getrandom(bytes).map_err(|_| VaultError::Io)
 }
-fn derive(password: &str, salt: &[u8]) -> Result<Zeroizing<[u8; 32]>, VaultError> {
+pub(crate) fn derive(password: &str, salt: &[u8]) -> Result<Zeroizing<[u8; 32]>, VaultError> {
     let password = normalize_password(password)?;
     let params = Params::new(65536, 3, 4, Some(32)).map_err(|_| VaultError::UnsupportedKdf)?;
     let mut key = Zeroizing::new([0; 32]);
@@ -98,7 +98,7 @@ pub(crate) fn seal(
     let mut plain = payload.encode()?;
     let mut h = [0; HEADER_LEN];
     h[..8].copy_from_slice(MAGIC);
-    h[8..10].copy_from_slice(&1u16.to_le_bytes());
+    h[8..10].copy_from_slice(&2u16.to_le_bytes());
     h[10..12].copy_from_slice(&[1, 1]);
     let p = KdfParams::default();
     for (i, n) in [(12, p.memory_kib), (16, p.iterations), (20, p.parallelism)] {
@@ -149,12 +149,12 @@ mod tests {
         let (image, secrets) = create(PASSWORD, &Payload::default()).unwrap();
         for (bytes, expected) in [
             (
-                vec![0x85, 2, 0x60, 0x60, 0x80, 0],
+                vec![0x85, 3, 0x60, 0x60, 0x80, 0],
                 VaultError::UnsupportedVersion,
             ),
-            (vec![0x81, 2], VaultError::UnsupportedVersion),
+            (vec![0x81, 3], VaultError::UnsupportedVersion),
             (
-                vec![0x85, 1, 0x60, 0x60, 0x80, 0],
+                vec![0x85, 2, 0x60, 0x60, 0x80, 0],
                 VaultError::Authentication,
             ),
             (vec![0x80, 2], VaultError::Authentication),
@@ -163,11 +163,11 @@ mod tests {
                 VaultError::Authentication,
             ),
             (
-                vec![0x84, 2, 0x60, 0x60, 0x80],
+                vec![0x84, 3, 0x60, 0x60, 0x80],
                 VaultError::UnsupportedVersion,
             ),
-            (vec![0x84, 1, 0x61, 0xff, 0x80], VaultError::Authentication),
-            (vec![0x85, 1, 0x60, 0x60, 0x80], VaultError::Authentication),
+            (vec![0x84, 2, 0x61, 0xff, 0x80], VaultError::Authentication),
+            (vec![0x85, 2, 0x60, 0x60, 0x80], VaultError::Authentication),
         ] {
             let mut h = image[..HEADER_LEN].to_vec();
             h[88..92].copy_from_slice(&((bytes.len() + 16) as u32).to_le_bytes());

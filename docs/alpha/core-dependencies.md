@@ -32,8 +32,10 @@ inventory. No claim of an independent security/license audit is made.
 | getrandom | 0.2.16 | MIT OR Apache-2.0 |
 | getrandom | 0.3.4 | MIT OR Apache-2.0 |
 | inout | 0.1.4 | MIT OR Apache-2.0 |
+| itoa | 1.0.18 | MIT OR Apache-2.0 |
 | libc | 0.2.189 | MIT OR Apache-2.0 |
 | linux-raw-sys | 0.12.1 | Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT |
+| memchr | 2.8.3 | Unlicense OR MIT |
 | once_cell | 1.21.4 | MIT OR Apache-2.0 |
 | opaque-debug | 0.3.1 | MIT OR Apache-2.0 |
 | poly1305 | 0.8.0 | Apache-2.0 OR MIT |
@@ -42,8 +44,15 @@ inventory. No claim of an independent security/license audit is made.
 | r-efi | 5.3.0 | MIT OR Apache-2.0 OR LGPL-2.1-or-later |
 | rand_core | 0.6.4 | MIT OR Apache-2.0 |
 | rustix | 1.1.5 | Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT |
+| ryu | 1.0.23 | Apache-2.0 OR BSL-1.0 |
+| serde | 1.0.229 | MIT OR Apache-2.0 |
+| serde_core | 1.0.229 | MIT OR Apache-2.0 |
+| serde_derive | 1.0.229 | MIT OR Apache-2.0 |
+| serde_json | 1.0.145 | MIT OR Apache-2.0 |
+| sha2 | 0.10.9 | MIT OR Apache-2.0 |
 | subtle | 2.6.1 | BSD-3-Clause |
 | syn | 2.0.119 | MIT OR Apache-2.0 |
+| syn | 3.0.6 | MIT OR Apache-2.0 |
 | tempfile | 3.23.0 | MIT OR Apache-2.0 |
 | tessaveil-core | 0.1.0-alpha.1 | Apache-2.0 |
 | tinyvec | 1.13.3 | Zlib OR Apache-2.0 OR MIT |

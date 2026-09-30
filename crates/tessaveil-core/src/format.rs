@@ -19,7 +19,7 @@ impl Header {
         if &bytes[..8] != MAGIC {
             return Err(VaultError::InvalidHeader);
         }
-        if bytes[8..10] != 1u16.to_le_bytes() {
+        if bytes[8..10] != 2u16.to_le_bytes() {
             return Err(VaultError::UnsupportedVersion);
         }
         if bytes[10..12] != [1, 1] || bytes[40..64] == bytes[64..88] {
