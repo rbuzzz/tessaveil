@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import tempfile
 import unittest
 
 
@@ -20,6 +21,59 @@ METRICS = (
 
 
 class WindowsSpikeReportTests(unittest.TestCase):
+    def observer_case(self, case, *args):
+        if not shutil.which("powershell"):
+            self.skipTest("Windows PowerShell required for observer regression")
+        result = subprocess.run(
+            ["powershell", "-NoProfile", "-File", str(ROOT / "tests/repository/windows_observer_cases.ps1"),
+             "-Case", case, *args], capture_output=True, text=True, timeout=30, check=False)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        return json.loads(result.stdout)
+
+    def test_password_gate_rejects_failed_second_read_after_successful_setter(self):
+        data = self.observer_case("ReadFailure")
+        self.assertEqual(data["reads"], 2)
+        self.assertTrue(data["input_set_succeeded"])
+        self.assertFalse(data["gate_passed"], "unknown second read must never pass security gate")
+        observation = data["controls"][0]["password_observation"]
+        self.assertEqual(observation["before"]["status"], "OBSERVED")
+        self.assertEqual(observation["setter"]["status"], "SET")
+        self.assertEqual(observation["after"]["status"], "ERROR")
+        self.assertEqual(observation["after"]["error"]["kind"], "unexpected-provider-error")
+        self.assertEqual(observation["security_status"], "UNKNOWN")
+        self.assertIsNone(observation["synthetic_password_exposed"])
+
+    def test_temp_snapshots_include_hidden_system_files_inside_hidden_directories(self):
+        if not shutil.which("powershell"):
+            self.skipTest("Windows attributes required")
+        import ctypes
+        with tempfile.TemporaryDirectory(prefix="tessaveil-observer-") as directory:
+            hidden_dir = Path(directory) / "synthetic-hidden"
+            hidden_dir.mkdir()
+            hidden_file = hidden_dir / "synthetic.bin"
+            hidden_file.write_bytes(b"synthetic snapshot fixture")
+            for path in (hidden_dir, hidden_file):
+                self.assertTrue(ctypes.windll.kernel32.SetFileAttributesW(str(path), 0x2 | 0x4))
+            data = self.observer_case("Snapshot", "-FixtureRoot", directory)
+            for snapshot in ("before", "after"):
+                self.assertEqual(data[snapshot], [str(Path("synthetic-hidden") / "synthetic.bin")])
+
+    def test_password_gate_distinguishes_provider_failures_without_approving_them(self):
+        for fault, stage, category in (
+            ("AccessDenied", "after", "access-denied-unverified"),
+            ("ElementUnavailable", "after", "element-unavailable"),
+            ("FirstRead", "before", "unexpected-provider-error"),
+            ("Setter", "setter", "unexpected-provider-error"),
+        ):
+            with self.subTest(fault=fault):
+                data = self.observer_case("ReadFailure", "-FaultKind", fault)
+                self.assertFalse(data["gate_passed"])
+                observation = data["controls"][0]["password_observation"]
+                self.assertEqual(observation[stage]["status"], "ERROR")
+                self.assertEqual(observation[stage]["error"]["kind"], category)
+                self.assertEqual(observation["security_status"], "UNKNOWN")
+                self.assertIsNone(observation["synthetic_password_exposed"])
+
     def test_alpha_measurements_have_reproducible_candidate_evidence(self):
         """Missing measurements must stay unknown; every build needs exact provenance."""
         evidence = json.loads(self.read("spikes/windows/evidence.json"))
@@ -33,6 +87,13 @@ class WindowsSpikeReportTests(unittest.TestCase):
         passwords = [control for control in selected["uia"]["controls"] if control["password"]]
         self.assertEqual(len(passwords), 1)
         self.assertFalse(passwords[0]["synthetic_password_exposed"])
+        observation = passwords[0]["password_observation"]
+        self.assertEqual(observation["security_status"], "PASS")
+        for stage in ("before", "after"):
+            self.assertEqual(observation[stage]["status"], "OBSERVED")
+            self.assertFalse(observation[stage]["synthetic_password_exposed"])
+            self.assertIsNone(observation[stage]["error"])
+        self.assertEqual(observation["setter"]["status"], "SET")
         for name, candidate in evidence["candidates"].items():
             with self.subTest(candidate=name):
                 self.assertTrue(candidate["toolchains"])

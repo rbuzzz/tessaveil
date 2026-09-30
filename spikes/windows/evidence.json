@@ -233,13 +233,31 @@
       ],
       "uia": {
         "observer": "Windows PowerShell 5.1 / UIAutomationClient",
-        "observed_nodes": 8,
+        "observed_nodes": 9,
         "controls": [
           {
             "role": "ControlType.Edit",
             "name": "Test input",
             "password": true,
             "synthetic_password_exposed": true,
+            "password_observation": {
+              "before": {
+                "status": "OBSERVED",
+                "synthetic_password_exposed": true,
+                "error": null
+              },
+              "setter": {
+                "status": "SET",
+                "error": null
+              },
+              "after": {
+                "status": "OBSERVED",
+                "synthetic_password_exposed": true,
+                "error": null
+              },
+              "security_status": "FAIL",
+              "synthetic_password_exposed": true
+            },
             "keyboard_focusable": true,
             "offscreen": false
           },
@@ -248,6 +266,7 @@
             "name": "Invoke core",
             "password": false,
             "synthetic_password_exposed": false,
+            "password_observation": null,
             "keyboard_focusable": true,
             "offscreen": false
           },
@@ -256,6 +275,7 @@
             "name": "Theme",
             "password": false,
             "synthetic_password_exposed": false,
+            "password_observation": null,
             "keyboard_focusable": true,
             "offscreen": false
           },
@@ -264,14 +284,68 @@
             "name": "",
             "password": false,
             "synthetic_password_exposed": false,
+            "password_observation": null,
             "keyboard_focusable": false,
             "offscreen": false
           }
         ],
         "input_set_succeeded": true,
         "invoke_pattern_called": true,
-        "core_one_visible": false,
+        "core_one_visible": true,
         "limitation": "Bounded UIA smoke observation excluding table descendants; not Narrator or keyboard/scaling certification"
+      },
+      "uia_validation_exit_code": 1,
+      "temp_snapshot_scope": "Original launch-time snapshots omitted hidden/system entries; not retrospectively upgraded",
+      "temp_reinspection": {
+        "scope": "Later reinspection of retained original comparison run directories; not launch-time or file-event evidence",
+        "method": "Get-ChildItem -LiteralPath $RunDirectory -File -Recurse -Force -ErrorAction Stop",
+        "verified_utc": "2026-09-30",
+        "runs": [
+          {
+            "run": 0,
+            "files": []
+          },
+          {
+            "run": 1,
+            "files": []
+          },
+          {
+            "run": 2,
+            "files": []
+          },
+          {
+            "run": 3,
+            "files": []
+          },
+          {
+            "run": 4,
+            "files": []
+          },
+          {
+            "run": 5,
+            "files": []
+          },
+          {
+            "run": 6,
+            "files": []
+          },
+          {
+            "run": 7,
+            "files": []
+          },
+          {
+            "run": 8,
+            "files": []
+          },
+          {
+            "run": 9,
+            "files": []
+          }
+        ],
+        "limitations": [
+          "No transient create-delete tracing",
+          "Later emptiness does not prove historical hidden/system emptiness"
+        ]
       }
     },
     "qt-static": {
@@ -517,6 +591,24 @@
             "name": "Test input",
             "password": true,
             "synthetic_password_exposed": false,
+            "password_observation": {
+              "before": {
+                "status": "OBSERVED",
+                "synthetic_password_exposed": false,
+                "error": null
+              },
+              "setter": {
+                "status": "SET",
+                "error": null
+              },
+              "after": {
+                "status": "OBSERVED",
+                "synthetic_password_exposed": false,
+                "error": null
+              },
+              "security_status": "PASS",
+              "synthetic_password_exposed": false
+            },
             "keyboard_focusable": true,
             "offscreen": false
           },
@@ -525,6 +617,7 @@
             "name": "Invoke core",
             "password": false,
             "synthetic_password_exposed": false,
+            "password_observation": null,
             "keyboard_focusable": true,
             "offscreen": false
           },
@@ -533,6 +626,7 @@
             "name": "Theme",
             "password": false,
             "synthetic_password_exposed": false,
+            "password_observation": null,
             "keyboard_focusable": true,
             "offscreen": false
           },
@@ -541,6 +635,7 @@
             "name": "",
             "password": false,
             "synthetic_password_exposed": false,
+            "password_observation": null,
             "keyboard_focusable": true,
             "offscreen": false
           }
@@ -549,6 +644,59 @@
         "invoke_pattern_called": true,
         "core_one_visible": true,
         "limitation": "Bounded UIA smoke observation excluding table descendants; not Narrator or keyboard/scaling certification"
+      },
+      "uia_validation_exit_code": 0,
+      "temp_snapshot_scope": "Original launch-time snapshots omitted hidden/system entries; not retrospectively upgraded",
+      "temp_reinspection": {
+        "scope": "Later reinspection of retained original comparison run directories; not launch-time or file-event evidence",
+        "method": "Get-ChildItem -LiteralPath $RunDirectory -File -Recurse -Force -ErrorAction Stop",
+        "verified_utc": "2026-09-30",
+        "runs": [
+          {
+            "run": 0,
+            "files": []
+          },
+          {
+            "run": 1,
+            "files": []
+          },
+          {
+            "run": 2,
+            "files": []
+          },
+          {
+            "run": 3,
+            "files": []
+          },
+          {
+            "run": 4,
+            "files": []
+          },
+          {
+            "run": 5,
+            "files": []
+          },
+          {
+            "run": 6,
+            "files": []
+          },
+          {
+            "run": 7,
+            "files": []
+          },
+          {
+            "run": 8,
+            "files": []
+          },
+          {
+            "run": 9,
+            "files": []
+          }
+        ],
+        "limitations": [
+          "No transient create-delete tracing",
+          "Later emptiness does not prove historical hidden/system emptiness"
+        ]
       }
     }
   },
@@ -558,5 +706,6 @@
     "Both processes also load ebehmoni.dll and PSHook64.dll from this development host; these are not declared application payloads and their provenance is unresolved here.",
     "Empty dedicated TEMP/TMP snapshots do not prove no extract-then-delete, no normal-user-temp writes or no file I/O elsewhere.",
     "Runtime artifact inventory contains one EXE per feasible candidate. This does not discharge separate compliance/source/object artifact obligations."
-  ]
+  ],
+  "observer_revision": "review-1: separate UIA read/set/error states; hidden/system TEMP enumeration"
 }

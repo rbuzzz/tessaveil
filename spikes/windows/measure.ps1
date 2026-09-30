@@ -22,7 +22,7 @@ $timings = @(); $modules = @(); $temporary = @(); $peaks = @()
 for ($i = 0; $i -lt $Runs; $i++) {
     $temp = Join-Path $ObservationRoot "run-$i"
     New-Item -ItemType Directory -Path $temp | Out-Null
-    $before = @(Get-ChildItem -LiteralPath $temp -File -Recurse | ForEach-Object { $_.FullName.Substring($temp.Length + 1) })
+    $before = @(Get-ChildItem -LiteralPath $temp -File -Recurse -Force -ErrorAction Stop | ForEach-Object { $_.FullName.Substring($temp.Length + 1) })
     $start = [Diagnostics.ProcessStartInfo]::new($exe.FullName)
     $start.UseShellExecute = $false
     $start.WorkingDirectory = $exe.DirectoryName
@@ -55,7 +55,7 @@ for ($i = 0; $i -lt $Runs; $i++) {
         if (!$process.HasExited) { $process.Kill(); $process.WaitForExit() }
         $process.Dispose()
     }
-    $after = @(Get-ChildItem -LiteralPath $temp -File -Recurse | ForEach-Object { $_.FullName.Substring($temp.Length + 1) })
+    $after = @(Get-ChildItem -LiteralPath $temp -File -Recurse -Force -ErrorAction Stop | ForEach-Object { $_.FullName.Substring($temp.Length + 1) })
     $temporary += [ordered]@{ run=$i; before=$before; after=$after }
 }
 $imports = & $ReadObj --coff-imports $exe.FullName

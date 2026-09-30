@@ -1,6 +1,7 @@
 # Run with Windows PowerShell 5.1 (UIAutomationClient is the Windows framework assembly).
 param([Parameter(Mandatory)][string]$Executable, [switch]$ValidatePassword, [string]$InputScreenshot)
 $ErrorActionPreference = 'Stop'
+. (Join-Path $PSScriptRoot 'observer-support.ps1')
 Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
 $process = Start-Process -FilePath $Executable -PassThru
@@ -26,16 +27,20 @@ try {
         $c = $node.Current
         if ($c.ControlType.ProgrammaticName -in @('ControlType.Edit', 'ControlType.Button', 'ControlType.Table', 'ControlType.DataGrid')) {
             $exposed = $false
+            $passwordObservation = $null
             if ($c.IsPassword) {
                 $passwordCount++
-                try {
-                    $valuePattern = $node.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern)
-                    $value = $valuePattern.Current.Value; $exposed = ($value -eq 'TEST-INPUT-42!'); $value = $null
-                    $valuePattern.SetValue('TEST-EDIT-99!'); $inputSetSucceeded = $true
-                    $value = $valuePattern.Current.Value; $exposed = $exposed -or ($value -eq 'TEST-EDIT-99!'); $value = $null
-                } catch { }
+                $passwordObservation = Get-ProbePasswordObservation -ReadValue {
+                    # Invoke getters as methods: PowerShell member access can turn
+                    # a failing property getter into null and discard its HRESULT.
+                    $node.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern).get_Current().get_Value()
+                } -SetValue {
+                    $node.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern).SetValue('TEST-EDIT-99!')
+                }
+                $exposed = $passwordObservation.synthetic_password_exposed
+                $inputSetSucceeded = $passwordObservation.setter.status -eq 'SET'
             }
-            $controls += [ordered]@{ role=$c.ControlType.ProgrammaticName; name=$c.Name; password=$c.IsPassword; synthetic_password_exposed=$exposed; keyboard_focusable=$c.IsKeyboardFocusable; offscreen=$c.IsOffscreen }
+            $controls += [ordered]@{ role=$c.ControlType.ProgrammaticName; name=$c.Name; password=$c.IsPassword; synthetic_password_exposed=$exposed; password_observation=$passwordObservation; keyboard_focusable=$c.IsKeyboardFocusable; offscreen=$c.IsOffscreen }
         }
         if ($c.ControlType.ProgrammaticName -in @('ControlType.Table', 'ControlType.DataGrid', 'ControlType.List')) { continue }
         $child = $walker.GetFirstChild($node)
@@ -55,7 +60,7 @@ try {
     $core = $root.FindFirst([System.Windows.Automation.TreeScope]::Descendants,
         [System.Windows.Automation.PropertyCondition]::new([System.Windows.Automation.AutomationElement]::NameProperty, 'Core: 1'))
     [ordered]@{ observer='Windows PowerShell 5.1 / UIAutomationClient'; observed_nodes=$observed; controls=$controls; input_set_succeeded=$inputSetSucceeded; invoke_pattern_called=$invoked; core_one_visible=($null -ne $core); limitation='Bounded UIA smoke observation excluding table descendants; not Narrator or keyboard/scaling certification' } | ConvertTo-Json -Depth 6
-    if ($ValidatePassword -and ($passwordCount -ne 1 -or @($controls | Where-Object synthetic_password_exposed).Count -ne 0 -or !$inputSetSucceeded -or !$invoked -or !$core)) { throw 'Password/core UIA contract failed' }
+    if ($ValidatePassword -and ($passwordCount -ne 1 -or @($controls | Where-Object { $_.password -and $_.password_observation.security_status -ne 'PASS' }).Count -ne 0 -or !$inputSetSucceeded -or !$invoked -or !$core)) { throw 'Password/core UIA contract failed' }
 } finally {
     if (!$process.HasExited) {
         [void]$process.CloseMainWindow()

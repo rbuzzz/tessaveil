@@ -36,6 +36,11 @@ snapshots before/after each normal exit. Child PATH contains only Windows paths,
 so the development toolchain cannot supply a missing runtime DLL. Do not collect
 startup data while either compiler is running.
 
+Snapshots include hidden/system files and traverse hidden directories; access
+errors terminate observation. The original recorded launch-time snapshots predate
+this fix and exclude hidden/system entries. Their separate later full reinspection
+must not be mistaken for launch-time evidence or file-event tracing.
+
 Timing starts immediately before `Process.Start` and stops at a visible top-level
 window responding to WM_NULL followed by DwmFlush. It is a useful common readiness
 proxy, **not** an instrumented first-content-frame latency. These are warm dev-host
@@ -44,6 +49,10 @@ launches, not independent cold boots. `inspect-ui.ps1`, run with Windows PowerSh
 core button. It attempts to read only synthetic password markers through
 ValuePattern and records exposure booleans, never the input text. It does not
 certify Narrator or measure keyboard navigation, scaling or scrolling performance.
+Read-before, setter and read-after results are separate. Read/set errors are
+classified without exception messages; UNKNOWN always fails validation. Even an
+access-denied response is not accepted as protection without a separately validated
+provider contract. Qt's observed successful reads need no such exception route.
 
 The models expose the same 10,000 × 36 coordinate strings lazily. Framework-native
 table views, masked controls and keyboard behaviors are under test, not assumed to

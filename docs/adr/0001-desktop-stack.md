@@ -33,7 +33,10 @@ OpenGL and dynamic OpenGL consistently, without patching upstream source. Full
 commands, exact versions, hashes, initial failures and repaired configurations are
 in the report and [probe READMEs](../../spikes/windows/README.md).
 
-Empty dedicated TEMP before/after snapshots do not exclude transient extraction.
+Original dedicated TEMP snapshots omitted hidden/system entries; later full
+reinspection was empty but does not establish historical hidden-file absence or
+exclude transient extraction. Corrected UIA validation records both reads and the
+setter independently, fails closed on errors, and was repeated on both artifacts.
 Loaded host monitoring modules have unresolved provenance. Neither toolchain-free
 PATH runs nor this development host prove clean-machine dependencies, no-network
 operation, Narrator compatibility or full keyboard/scaling/performance acceptance.

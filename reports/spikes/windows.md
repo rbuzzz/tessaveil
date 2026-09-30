@@ -78,8 +78,26 @@ capture was rejected. Own-window captures later showed both real dense tables.
 No GUI screenshot includes user data, and screenshots are not release certification.
 
 UIA checks inspect IsPassword and attempt ValuePattern reading before and after
-setting a second synthetic value. Only exposed/not-exposed booleans are recorded.
+setting a second synthetic value. Exposure is recorded as booleans, never input text.
 They then invoke the real core button. No plaintext test input is copied to this report.
+
+Review correction (2026-09-30): UIA evidence now records separate before/after
+read statuses, setter status and sanitized error category/HRESULT. Unexpected
+errors, disappearance and unverified access-denied responses produce UNKNOWN and
+fail validation; no exception is treated as password protection. Explicit getter
+method calls preserve errors that PowerShell property access could collapse to null.
+Repeated Qt smoke reports OBSERVED/SET/OBSERVED, no exposure, core result visible,
+exit 0. Repeated Slint smoke reports exposure in both successful reads, setter and
+core invocation work, exit 1. Its core label was visible in this repeat, unlike
+the earlier observation; password exposure still independently rejects it.
+
+The original launch-time TEMP snapshots omitted hidden/system entries. They are
+retained with that scope, not silently upgraded. The corrected observer uses
+`-Force -ErrorAction Stop`. Later reinspection of all 20 retained comparison run
+directories with that enumeration found zero files, including hidden/system files;
+separate per-run results are in evidence.json. Later emptiness cannot prove earlier
+hidden/system emptiness or exclude create-delete activity. Native artifacts,
+startup samples and build results were unchanged; their hashes were rechecked.
 
 ## Measured comparison
 
@@ -93,7 +111,7 @@ They then invoke the real core button. No plaintext test input is copied to this
 | Single EXE / file count | BLOCKED: no published native EXE | MEASURED: one runtime EXE, 5,094,400 bytes | MEASURED: one runtime EXE, 18,018,304 bytes |
 | PE imports / loaded modules | BLOCKED: native publish failed | MEASURED: Windows API imports; module list in evidence; host hooks present | MEASURED: Windows/UCRT/graphics imports; module list in evidence; host hooks present |
 | Native libraries / runtime prerequisites | BLOCKED: static graphics/dependency shape not observed | MEASURED: single EXE launches with Windows-only PATH on dev host | MEASURED: single EXE launches with Windows-only PATH; no Qt/LLVM DLL shipped |
-| %TEMP% before/after | BLOCKED: no candidate launch | MEASURED: 10 empty-before/empty-after dedicated snapshots; transient extraction UNKNOWN | MEASURED: 10 empty-before/empty-after dedicated snapshots; transient extraction UNKNOWN |
+| %TEMP% before/after | BLOCKED: no candidate launch | MEASURED: 10 original snapshots excluding hidden/system were empty; 10 later full rechecks empty; historical hidden/transient state UNKNOWN | MEASURED: 10 original snapshots excluding hidden/system were empty; 10 later full rechecks empty; historical hidden/transient state UNKNOWN |
 | Accessibility / keyboard focus | BLOCKED: no native UI runtime | MEASURED: password role true but UIA value exposed; empty-value override fails; REJECTED | MEASURED: password role true, value not exposed, input setter and core invoke pass; full keyboard/Narrator pending |
 | Binary size | BLOCKED: no native artifact | MEASURED: 5,094,400 bytes, SHA-256 in evidence | MEASURED: 18,018,304 bytes, SHA-256 in evidence |
 | Startup measurement | BLOCKED: no native artifact | MEASURED: 10 warm runs; median 242.835 ms; range 224.476–471.031 ms | MEASURED: 10 warm runs; median 253.529 ms; range 229.370–753.770 ms |

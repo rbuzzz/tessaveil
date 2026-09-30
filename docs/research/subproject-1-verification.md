@@ -532,14 +532,14 @@ retains its bounded CLI presentation; `release_findings` contains all findings.
     }
   ],
   "evidence_sha256": {
-    "docs/adr/0001-desktop-stack.md": "235e6424aa3f14bd8b69c7e275fcdc24d0745a301253ae2692b082ddd4083bba",
+    "docs/adr/0001-desktop-stack.md": "5daca6909a5b865d602aaea04375be03e30c576cd64d96fbe337aa16bbc695b7",
     "docs/adr/0002-kdf-envelope-bounds.md": "57ead16d3d99229c4755e23b13bf2577ce4fdde32eea2ad6c1ee606856fadfd1",
     "docs/adr/0003-filesystem-replace.md": "5c488514db4fd63690b03dff5c80d9aa3cc8a1871097d5957f0b3402af734d09",
     "docs/research/third-party-notices-source.txt": "794df9aa484477325339568a1e7b539ea5ef90e54e5cf89ddd157b1cc6a2112a",
     "reports/spikes/equipment-availability.md": "9b7c1f4298ad347a282428cbf625d98a5c1da50e44fe022274c83839d97dc8e4",
     "reports/spikes/filesystem-matrix.md": "357659eed9466b34153874a069440d287a74e23d34fb64b4c60cf1727400e661",
     "reports/spikes/mobile-kdf.md": "23c3aabc2231a887419713b7fdac384a2e965444e8254ea81a3af21bd3460a1a",
-    "reports/spikes/windows.md": "4b988b0aaefd1d9e0a029ceb8a06b2fd45b44889202151ff7a5f22cf87bba9c2"
+    "reports/spikes/windows.md": "fca6267339db0dae094e65f749af5a01be4af59d3646aa83eb5ee24b3ad5aab3"
   }
 }
 ```
