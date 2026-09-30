@@ -1,0 +1,35 @@
+{
+  "name": "Windows alpha exact-SHA build (fail-closed engineering gate)",
+  "on": {
+    "push": {"branches": ["feature/windows-alpha"]},
+    "pull_request": {},
+    "workflow_dispatch": {}
+  },
+  "permissions": {"contents": "read"},
+  "jobs": {
+    "windows-alpha": {
+      "runs-on": "windows-2022",
+      "timeout-minutes": 180,
+      "env": {"SOURCE_SHA": "${{ github.sha }}", "ALPHA_ROOT": "${{ runner.temp }}\\tessaveil-alpha"},
+      "defaults": {"run": {"shell": "pwsh"}},
+      "steps": [
+        {"uses": "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1", "with": {"ref": "${{ github.sha }}", "fetch-depth": 0, "persist-credentials": false}},
+        {"name": "Pinned tool archives and real static Qt source build", "run": "./packaging/windows/bootstrap.ps1 -ToolchainRoot $env:ALPHA_ROOT"},
+        {"name": "Real app build, root Rust, native headful E2E, Python, scanners, LGPL relink and artifact gate", "run": "./packaging/windows/ci.ps1 -ToolchainRoot $env:ALPHA_ROOT -SourceSha $env:SOURCE_SHA"},
+        {"name": "Require exact artifact gate receipt", "run": "$receipt = Get-Content -Raw \"$env:ALPHA_ROOT/alpha-output/GATE-PASS.json\" | ConvertFrom-Json; if ($receipt.source_sha -ne $env:SOURCE_SHA) { throw 'Stale gate receipt' }; foreach ($kind in @('runtime','compliance')) { $expected = $receipt.($kind + '_sha256'); if ((Get-FileHash \"$env:ALPHA_ROOT/alpha-output/$kind.zip\" -Algorithm SHA256).Hash.ToLower() -ne $expected) { throw 'Artifact changed after audit' } }"},
+        {"name": "Upload only after complete same-run compliance gate", "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02", "with": {"name": "Tessaveil-unsigned-synthetic-alpha-${{ github.sha }}", "path": "${{ env.ALPHA_ROOT }}/alpha-output/runtime.zip\n${{ env.ALPHA_ROOT }}/alpha-output/compliance.zip", "if-no-files-found": "error", "retention-days": 30}},
+        {"name": "Visible failure status", "if": "failure()", "run": "'Windows release/freeze: NO-GO. No runtime upload is authorized unless every build, licensing, relink and artifact gate passes. Read failed step; no attestation success is implied.' >> $env:GITHUB_STEP_SUMMARY"}
+      ]
+    },
+    "provenance": {
+      "needs": ["windows-alpha"],
+      "runs-on": "windows-2022",
+      "permissions": {"contents": "read", "id-token": "write", "attestations": "write"},
+      "steps": [
+        {"uses": "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093", "with": {"name": "Tessaveil-unsigned-synthetic-alpha-${{ github.sha }}", "path": "verified-artifact"}},
+        {"name": "Official GitHub provenance; unsupported permissions fail visibly", "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6", "with": {"subject-path": "verified-artifact/*.zip", "create-storage-record": false}},
+        {"name": "Visible attestation failure", "if": "failure()", "shell": "pwsh", "run": "'GitHub provenance FAILED or unavailable. No successful attestation is claimed. This artifact is not Authenticode-signed and is not RC/stable.' >> $env:GITHUB_STEP_SUMMARY"}
+      ]
+    }
+  }
+}

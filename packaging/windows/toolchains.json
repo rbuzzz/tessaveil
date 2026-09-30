@@ -1,0 +1,16 @@
+{
+  "rust": "1.90.0-x86_64-pc-windows-gnu",
+  "downloads": [
+    {"file":"rustup-init.exe","url":"https://static.rust-lang.org/rustup/archive/1.28.2/x86_64-pc-windows-gnu/rustup-init.exe","sha256":"ccbfd951d8024856043b3a0c3903a59f39937bce8d3074768b0d3da55f21e817"},
+    {"file":"channel-rust-1.90.0.toml","url":"https://static.rust-lang.org/dist/channel-rust-1.90.0.toml","sha256":"489c19f20d331765ab2835661eb546de90f6446a107a8db83045e7371e45cae2"},
+    {"file":"llvm-mingw-20250709.zip","url":"https://github.com/mstorsjo/llvm-mingw/releases/download/20250709/llvm-mingw-20250709-ucrt-x86_64.zip","sha256":"82babcd6aae4dc3606e8e0471d816989c384b4bf86a139f184a8b4a1b2c2758d"},
+    {"file":"cmake-3.31.8.zip","url":"https://github.com/Kitware/CMake/releases/download/v3.31.8/cmake-3.31.8-windows-x86_64.zip","sha256":"81aa9964dbabd71fe02e7ec50472fd3ad56138c49944515ece9001efbff8d719"},
+    {"file":"ninja-1.12.1.zip","url":"https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-win.zip","sha256":"f550fec705b6d6ff58f2db3c374c2277a37691678d6aba463adcbb129108467a"},
+    {"file":"qtbase-6.8.3.zip","url":"https://download.qt.io/archive/qt/6.8/6.8.3/submodules/qtbase-everywhere-src-6.8.3.zip","sha256":"992bf7766e214a341ef793eb3665fb784787d2fd666955f5f507f4c6f1f770dd"},
+    {"file":"python-3.12.10-embed-amd64.zip","url":"https://www.python.org/ftp/python/3.12.10/python-3.12.10-embed-amd64.zip","sha256":"4acbed6dd1c744b0376e3b1cf57ce906f9dc9e95e68824584c8099a63025a3c3"},
+    {"file":"pip-25.0.1-py3-none-any.whl","url":"https://files.pythonhosted.org/packages/c9/bc/b7db44f5f39f9d0494071bddae6880eb645970366d0a200022a1a93d57f5/pip-25.0.1-py3-none-any.whl","sha256":"c46efd13b6aa8279f33f2864459c8ce587ea6a1a59ee20de055868d8f7688f7f"},
+    {"file":"cyclonedx-1.6.schema.json","url":"https://raw.githubusercontent.com/CycloneDX/specification/55343ba19dee1785acf1ce9191540d5fd7b590db/schema/bom-1.6.schema.json","sha256":"3e92dddbc30cf7f6a02b80f0942b1a4cfd4fb1c26f1dfc4310afa9d613cafb93"},
+    {"file":"spdx.schema.json","url":"https://raw.githubusercontent.com/CycloneDX/specification/55343ba19dee1785acf1ce9191540d5fd7b590db/schema/spdx.schema.json","sha256":"baa9d3bd1ed57b6751b0887edead6b5063ff53ff7429cf85d476c6c94af0166e"},
+    {"file":"jsf-0.82.schema.json","url":"https://raw.githubusercontent.com/CycloneDX/specification/55343ba19dee1785acf1ce9191540d5fd7b590db/schema/jsf-0.82.schema.json","sha256":"8bae002c25e723db7ee1f26afde680ae1a2b1a8f6b4b4b0fd65dc3becb090aae"}
+  ]
+}

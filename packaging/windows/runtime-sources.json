@@ -1,0 +1,14 @@
+{
+  "llvm_mingw_source_commit": "a1f6413e5c21fd74b64137b56167f4fba500d1d8",
+  "mingw_source_commit": "a0e69f7bc83a29b40e68355aac3e0c39b113b20f",
+  "llvm_source_commit": "87f0227cb60147a26a1eeb4fb06e3b505e9c7261",
+  "rust_source_commit": "1159e78c4747b02ef996e55082b704c09b970588",
+  "rust_library_lock_sha256": "124a2a5a0aa83d9831534aea4e9cddf804829b286bc584b4ae09143358d630b5",
+  "downloads": [
+    {"file":"mingw-w64-a0e69f7.zip","url":"https://codeload.github.com/mingw-w64/mingw-w64/zip/a0e69f7bc83a29b40e68355aac3e0c39b113b20f","sha256":"ec6337cffabfe45d37a5eed3c7da2dbdde740a762a1a1758326103ce6495b35f"},
+    {"file":"libcxx-LICENSE.TXT","url":"https://raw.githubusercontent.com/llvm/llvm-project/87f0227cb60147a26a1eeb4fb06e3b505e9c7261/libcxx/LICENSE.TXT","sha256":"539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"},
+    {"file":"libcxxabi-LICENSE.TXT","url":"https://raw.githubusercontent.com/llvm/llvm-project/87f0227cb60147a26a1eeb4fb06e3b505e9c7261/libcxxabi/LICENSE.TXT","sha256":"e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"},
+    {"file":"libunwind-LICENSE.TXT","url":"https://raw.githubusercontent.com/llvm/llvm-project/87f0227cb60147a26a1eeb4fb06e3b505e9c7261/libunwind/LICENSE.TXT","sha256":"b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d"},
+    {"file":"compiler-rt-LICENSE.TXT","url":"https://raw.githubusercontent.com/llvm/llvm-project/87f0227cb60147a26a1eeb4fb06e3b505e9c7261/compiler-rt/LICENSE.TXT","sha256":"1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d"}
+  ]
+}

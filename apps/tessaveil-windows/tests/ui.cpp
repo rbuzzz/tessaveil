@@ -359,7 +359,10 @@ int main(int argc, char **argv) {
           "The password is incorrect or the vault is damaged.");
   REQUIRE(password->text().isEmpty());
   find<QPushButton>(w, "closeVault")->click();
-  QFile damaged(dir.filePath("synthetic.tessaveil-alpha"));
+  const auto corruptPath = dir.filePath("corrupt-copy.tessaveil-alpha");
+  REQUIRE(QFile::copy(dir.filePath("synthetic.tessaveil-alpha"), corruptPath));
+  path->setText(corruptPath);
+  QFile damaged(corruptPath);
   REQUIRE(damaged.open(QIODevice::ReadWrite));
   REQUIRE(damaged.seek(damaged.size() - 1));
   auto byte = damaged.read(1);
@@ -372,6 +375,11 @@ int main(int argc, char **argv) {
   find<QPushButton>(w, "open")->click();
   REQUIRE(state->text() == "Closed");
   REQUIRE(find<QLabel>(w, "message")->text() == authentication);
+  path->setText(dir.filePath("synthetic.tessaveil-alpha"));
+  password->setText("synthetic-master-password");
+  find<QPushButton>(w, "open")->click();
+  REQUIRE(state->text() == "Open / saved");
+  find<QPushButton>(w, "closeVault")->click();
   path->setText(dir.filePath("second.tessaveil-alpha"));
   password->setText("synthetic-master-password");
   create->click();

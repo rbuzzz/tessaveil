@@ -3,10 +3,20 @@
 **Unsigned engineering alpha. Synthetic data only. Never use real assets, a real
 seed, order key, private key or wallet backup. No migration promise.** This alpha
 uses `.tessaveil-alpha` schema 2, not the final `.tessaveil` format. Windows v1,
-RC/stable release, final format/KDF freeze and static Qt redistribution remain
+RC/stable release and final format/KDF freeze remain
 **NO-GO**. Security audit: not yet independently completed.
 
 ## Build and launch on the development host
+
+If an exact-SHA CI package is available, keep `runtime.zip` and `compliance.zip`
+together. Verify both archives against their official GitHub build attestations
+and the independent packaging verifier before extracting `runtime.zip`. Launch
+`Tessaveil.exe` from the extracted directory; no Qt/application DLL, installer or
+update channel is provided. The executable has **no Authenticode signature**.
+SHA-256 checksums detect byte changes but do not establish publisher identity.
+Local analysis archives are not attested artifacts and must not be distributed.
+The separate compliance archive contains source, notices and relinking material;
+it is not needed beside the EXE for normal synthetic testing.
 
 Use the pinned external toolchain provisioned by the
 [Windows spike](../../spikes/windows/qt-static/README.md): Rust 1.90.0 GNU,
@@ -72,7 +82,7 @@ Wrong password and authenticated corruption share “The password is incorrect o
 the vault is damaged.” Unsupported version and structural/KDF policy failures
 remain separate safe messages. Authentication failure never opens an empty vault.
 
-## Boundaries and handoff to Task 5
+## Boundaries and redistribution gate
 
 Multiple saved versions, copied backups or interrupted-save temporary images can
 leak invariant words when compared after password disclosure. Regenerating decoys
@@ -91,9 +101,10 @@ remain future Windows-v1 work. These are development-host observations, not clea
 Windows 10/11 or physical mobile evidence. The approved written focused-process
 direction was used because no authorized Tessaveil Figma file/node was supplied.
 
-**Do not publish/upload the static Qt binary yet.** Task 5 must first complete and
-verify the LGPLv3 corresponding-source, notices, application object/relinking and
-applicable installation-information bundle, including a successful relinking
-exercise, or establish another lawful route. A single runtime EXE does not remove
-those obligations. Signing, audit, clean Windows, physical mobile and removable
-filesystem gates remain open. See [development observations](dev-host-ui-observation.md).
+**Never distribute the runtime alone or bypass a failed compliance gate.** Each
+candidate requires verified exact corresponding Qt source, notices, unchanged
+application material, replacement information and an actual modified-Qt relink
+and synthetic smoke in the same exact-SHA run. GitHub attestation is separate
+from this local technical evidence and from Authenticode. No legal assurance is
+claimed. Signing, audit, clean Windows, physical mobile and removable filesystem
+gates remain open; Windows release/freeze remains NO-GO.

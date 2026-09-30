@@ -1,0 +1,7 @@
+{
+  "archive_sha256": "82babcd6aae4dc3606e8e0471d816989c384b4bf86a139f184a8b4a1b2c2758d",
+  "members": {
+    "llvm-mingw-20250709-ucrt-x86_64/x86_64-w64-mingw32/lib/libc++abi.a": "18489b91b04dd2c35925979f125fe9a88f2c522a742c5841092feb62a18c1c0f",
+    "llvm-mingw-20250709-ucrt-x86_64/x86_64-w64-mingw32/lib/crt2.o": "c7d196b50e010555f7e8585dfd07e4e1bd3003599c4ec515accc60b14ea66101"
+  }
+}
