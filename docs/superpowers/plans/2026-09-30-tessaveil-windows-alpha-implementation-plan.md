@@ -83,7 +83,7 @@
 - Create: `generated/alpha/profile-matrix.json`
 - Modify: `crates/tessaveil-core/src/{catalog,sheet,spin,model}.rs`
 - Create: `crates/tessaveil-core/tests/{catalog_gate,sheet_contract,spin_contract}.rs`
-- Modify: `tests/catalog/test_generation.py`
+- Modify: `tests/catalog/test_generator.py`
 
 **Steps**
 
