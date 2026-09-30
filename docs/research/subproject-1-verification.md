@@ -12,6 +12,16 @@ results in this historical handoff remain dated evidence, not claims about the
 alpha tools. Windows v1 freeze, clean-target and redistribution gates remain NO-GO;
 see the desktop ADR for the additional static Qt compliance-bundle prerequisite.
 
+Windows alpha evidence-binding update (2026-09-30): the desktop ADR fingerprint
+now binds its reviewed bytes from `8162e8018568560fdbb9cdafc9b65dd46385098e`.
+The original research results and Task 1 statements here remain historical.
+The [alpha evidence ledger](../alpha/release-evidence.md) records the working
+unsigned synthetic-only alpha and the static-Qt compliance/relink/provenance PASS
+for the exact predecessor artifact at `4c3e9de5b0e7936edc030992584ae6cdd59493ed`,
+not a success claim for later candidates. Windows release/freeze remains NO-GO.
+The historical audited input below is unchanged; each new candidate must pass
+the existing exact-HEAD, clean-tree, ancestry and evidence checks independently.
+
 ## Commit identity and reproducible binding
 
 Audited input/base commit: `f0f70f738ee3cdd6c3a9052358e8e8d10374218c`.
@@ -532,7 +542,7 @@ retains its bounded CLI presentation; `release_findings` contains all findings.
     }
   ],
   "evidence_sha256": {
-    "docs/adr/0001-desktop-stack.md": "5daca6909a5b865d602aaea04375be03e30c576cd64d96fbe337aa16bbc695b7",
+    "docs/adr/0001-desktop-stack.md": "7c5262865b31915a99071b1bf5f8300488af3ee54bb9036f10d8f70f357fae2e",
     "docs/adr/0002-kdf-envelope-bounds.md": "57ead16d3d99229c4755e23b13bf2577ce4fdde32eea2ad6c1ee606856fadfd1",
     "docs/adr/0003-filesystem-replace.md": "5c488514db4fd63690b03dff5c80d9aa3cc8a1871097d5957f0b3402af734d09",
     "docs/research/third-party-notices-source.txt": "794df9aa484477325339568a1e7b539ea5ef90e54e5cf89ddd157b1cc6a2112a",
