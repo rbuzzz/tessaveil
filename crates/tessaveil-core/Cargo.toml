@@ -12,6 +12,8 @@ chacha20poly1305 = "=0.10.1"
 getrandom = "=0.2.16"
 zeroize = { version = "=1.8.1", features = ["derive"] }
 unicode-normalization = "=0.1.24"
+
+[dev-dependencies]
 tempfile = "=3.23.0"
 
 [target.'cfg(windows)'.dependencies]

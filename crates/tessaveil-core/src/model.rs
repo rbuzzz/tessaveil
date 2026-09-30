@@ -72,11 +72,17 @@ impl Payload {
             return Err(VaultError::InvalidPayload);
         }
         let mut r = Reader { bytes, offset: 0 };
-        if r.number(4)? != 4 {
+        // Recognize the canonical, bounded envelope of the schema before imposing
+        // v1's arity: a future mandatory field changes arity together with version.
+        let arity = r.array(65535)?;
+        if arity == 0 {
             return Err(VaultError::InvalidPayload);
         }
         if r.number(0)? != 1 {
             return Err(VaultError::UnsupportedVersion);
+        }
+        if arity != 4 {
+            return Err(VaultError::InvalidPayload);
         }
         let mut p = Self::default();
         p.name = r.text(256)?;

@@ -50,7 +50,10 @@ its Windows handle with write sharing denied during authentication.
 ## Password input
 
 Explicit-length Rust UTF-8 strings are normalized to NFC inside the core.
-Embedded NUL and input/output over 4,096 UTF-8 bytes are rejected. Creation
+Embedded NUL and input/output over 4,096 UTF-8 bytes are rejected. The output
+owner reserves 4,096 bytes before receiving secret bytes; checked pushes cannot
+grow it and free unwiped prefixes. The ASCII blocklist uses allocation-free
+case-insensitive comparison and creates no lowercase password copy. Creation
 requires at least 15 normalized Unicode scalar values; 64 characters and
 non-BMP characters are supported. No composition rules apply. A small local
 alpha blocklist rejects four common long passwords and a repeated single
@@ -94,7 +97,10 @@ The serializer uses one bounded buffer, avoiding plaintext reallocation copies.
 These are structural bounds, not catalogue/profile validation; domain sheet
 operations are the next task. Adding mandatory fields requires a schema
 discriminator/envelope version bump. A correctly decoded discriminator other
-than 1 returns `UnsupportedVersion`; a shape change without a version bump is
+than 1 returns `UnsupportedVersion`, including when the future array has a
+different arity. The canonical outer array/count and first discriminator are
+read before applying the exact v1 arity. Empty/overlong/noncanonical prefixes
+remain malformed; a shape change without a version bump is
 malformed authenticated data and returns `Authentication`.
 
 There are no stored fields for Spin input, target column, ordering information,
@@ -142,9 +148,12 @@ creation-password policy, insufficient space, access/sharing denial, invalid
 path, existing target, unsupported filesystem, locked state and other I/O
 have distinct safe categories. No failure becomes an empty vault.
 
-`TemporaryRemains { cause, path }` identifies the exact owned encrypted temp
-image if best-effort cleanup fails. The Display text omits the path; the UI may
-present the explicit path safely together with the version-comparison warning.
+`TemporaryRemains { cause, path }` reports an owned encrypted temp image if
+best-effort cleanup fails. `path: Some(...)` is queried from the owned handle
+after cleanup failure, so a concurrent rename does not report a stale creation
+name. `None` explicitly means the OS could not resolve a current name. Display
+omits the path; the UI may present it with the version-comparison warning, but
+must not infer a missing name or blindly delete it later by pathname.
 
 ## Storage capability and observed evidence
 
@@ -159,19 +168,33 @@ other filesystem/device classes and non-Windows writers fail closed with
 `UnsupportedFilesystem`. Future tested backends need not change the format.
 
 Save creates a random adjacent `.tessaveil-alpha-*.tmp` via exclusive creation,
-with `FILE_FLAG_WRITE_THROUGH`, writes **only** header and ciphertext, flushes
-and `sync_all`s, closes the writer, reopens/structurally validates/authenticates
-the entire image, and then uses `MoveFileExW` with `MOVEFILE_WRITE_THROUGH`
-and `MOVEFILE_REPLACE_EXISTING` (the latter is absent for create). The reopened
-handle denies writes through the replacement. `MOVEFILE_COPY_ALLOWED` is never
-used; no cross-volume copy fallback exists. Nothing after successful replacement
-can turn success into a failed-save result. Failed pre-replacement operations
-retain the previous target and remove only the operation's owned temp path.
+with read/write/DELETE access and `FILE_FLAG_WRITE_THROUGH`, writes **only**
+header and ciphertext, flushes and `sync_all`s. The owner denies write sharing
+and stays open. `ReOpenFile` obtains a read view of that same file object for
+complete structural/AEAD/schema verification. Replacement uses the owner handle
+with `SetFileInformationByHandle(FileRenameInfo)`; replace-if-exists is false
+for creation. It has no cross-volume copy fallback. Cleanup, including Drop,
+uses that same handle with `FileDispositionInfo`, never an old pathname.
+These APIs address the open file object even when another participant renames
+the temp and places a different file under its former name.
+[Microsoft API contracts](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfileinformationbyhandle),
+[identity-preserving reopen](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-reopenfile).
+
+Sharing permits rename/delete, and the regression tests exercise actual name
+substitution. Only the verified object reaches the target; the substituted file
+is neither committed nor cleaned. Failed pre-replacement operations retain the
+previous target and mark only the owned object for deletion. A cleanup failure
+returns `TemporaryRemains` instead. Nothing after successful replacement can
+turn success into a failed-save result. The new handle-based rename protocol
+does **not** claim a write-through metadata barrier or power-loss durability;
+the explicit write-through/flush guarantee applies to the image contents.
 
 Evidence: Windows 11 Pro 10.0.26200, development fixed NTFS volume; successful
 same-directory replacement, injected failures before write/after write/after
 flush/after verification/before replace, deliberately corrupted temp-image
-verification, and actual Windows sharing-denial replacement failure. Tests use
+verification, actual Windows sharing-denial replacement failure, source-name
+substitution before replace/error cleanup, and a renamed read-only owned temp
+whose failed cleanup reports its current handle-derived path. Tests use
 owned temporary directories and synthetic values only. This evidence does not
 establish crash/power-loss durability, clean Windows 10/11 behavior, removable
 NTFS/exFAT, FAT32, network-share or cloud-folder guarantees. No secure-erasure
@@ -183,7 +206,7 @@ disclosure, just as manually retained old backups can.
 
 Direct exact pins: Argon2 0.5.3 (default PHC/password-hash features disabled,
 zeroize enabled); chacha20poly1305 0.10.1; getrandom 0.2.16; zeroize 1.8.1 with
-derive; unicode-normalization 0.1.24; tempfile 3.23.0; Windows-only windows-sys
+derive; unicode-normalization 0.1.24; test-only tempfile 3.23.0; Windows-only windows-sys
 0.61.2 with Foundation/FileSystem. OS entropy supplies all cryptographic random
 bytes. There are no network, GUI, clipboard, export or telemetry dependencies
 in the core. The root workspace excludes all disposable spike crates.

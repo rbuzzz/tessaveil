@@ -30,7 +30,6 @@ fn derive(password: &str, salt: &[u8]) -> Result<Zeroizing<[u8; 32]>, VaultError
 pub(crate) fn create(password: &str, payload: &Payload) -> Result<(Vec<u8>, Secrets), VaultError> {
     let normalized = normalize_password(password)?;
     let chars = normalized.chars().count();
-    let lower = Zeroizing::new(normalized.to_lowercase());
     let common = [
         "passwordpassword",
         "123456789012345",
@@ -39,7 +38,9 @@ pub(crate) fn create(password: &str, payload: &Payload) -> Result<(Vec<u8>, Secr
     ];
     if chars < 15
         || normalized.chars().all(|c| normalized.starts_with(c))
-        || common.contains(&lower.as_str())
+        || common
+            .iter()
+            .any(|candidate| normalized.eq_ignore_ascii_case(candidate))
     {
         return Err(VaultError::PasswordPolicy);
     }
@@ -148,6 +149,20 @@ mod tests {
         let (image, secrets) = create(PASSWORD, &Payload::default()).unwrap();
         for (bytes, expected) in [
             (
+                vec![0x85, 2, 0x60, 0x60, 0x80, 0],
+                VaultError::UnsupportedVersion,
+            ),
+            (vec![0x81, 2], VaultError::UnsupportedVersion),
+            (
+                vec![0x85, 1, 0x60, 0x60, 0x80, 0],
+                VaultError::Authentication,
+            ),
+            (vec![0x80, 2], VaultError::Authentication),
+            (
+                vec![0x98, 5, 2, 0x60, 0x60, 0x80, 0],
+                VaultError::Authentication,
+            ),
+            (
                 vec![0x84, 2, 0x60, 0x60, 0x80],
                 VaultError::UnsupportedVersion,
             ),
@@ -209,6 +224,7 @@ mod tests {
         for pw in [
             "short",
             "passwordpassword",
+            "PASSWORDpassword",
             "123456789012345",
             "aaaaaaaaaaaaaaa",
         ] {

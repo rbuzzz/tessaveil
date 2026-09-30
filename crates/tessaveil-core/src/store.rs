@@ -191,7 +191,9 @@ fn read_image(path: &Path) -> Result<(Vec<u8>, File), VaultError> {
         use std::os::windows::fs::OpenOptionsExt;
         options.share_mode(1 | 4);
     }
-    let mut file = options.open(path).map_err(io_error)?;
+    read_image_handle(options.open(path).map_err(io_error)?)
+}
+fn read_image_handle(mut file: File) -> Result<(Vec<u8>, File), VaultError> {
     let len = file.metadata().map_err(io_error)?.len();
     if len > MAX_FILE as u64 {
         return Err(VaultError::TooLarge);
@@ -230,54 +232,85 @@ fn persist_image(
     create: bool,
     mut hook: impl FnMut(Stage, &Path) -> Result<(), VaultError>,
 ) -> Result<(), VaultError> {
-    let mut temp = tempfile::Builder::new()
-        .prefix(".tessaveil-alpha-")
-        .suffix(".tmp")
-        .make_in(path.parent().ok_or(VaultError::InvalidPath)?, |p| {
-            let mut options = OpenOptions::new();
-            options.read(true).write(true).create_new(true);
-            #[cfg(windows)]
-            {
-                use std::os::windows::fs::OpenOptionsExt;
-                options
-                    .custom_flags(windows_sys::Win32::Storage::FileSystem::FILE_FLAG_WRITE_THROUGH);
-            }
-            options.open(p)
-        })
-        .map_err(io_error)?;
-    let early = (|| {
-        hook(Stage::BeforeWrite, temp.path())?;
-        temp.write_all(image).map_err(io_error)?;
-        hook(Stage::AfterWrite, temp.path())?;
-        temp.flush().map_err(io_error)?;
-        temp.as_file().sync_all().map_err(io_error)
-    })();
-    let temp = temp.into_temp_path();
-    let temporary_path = temp.to_path_buf();
-    let result = early.and_then(|()| {
-        hook(Stage::AfterFlush, &temp)?;
-        let (reopened, _guard) = read_image(&temp)?;
+    let mut temp = OwnedTemp::create(path.parent().ok_or(VaultError::InvalidPath)?)?;
+    let result = (|| {
+        hook(Stage::BeforeWrite, &temp.name)?;
+        temp.file.write_all(image).map_err(io_error)?;
+        hook(Stage::AfterWrite, &temp.name)?;
+        temp.file.flush().map_err(io_error)?;
+        temp.file.sync_all().map_err(io_error)?;
+        hook(Stage::AfterFlush, &temp.name)?;
+        // ReOpenFile binds the read view to the owned object, never its pathname.
+        let (reopened, _guard) = read_image_handle(platform::reopen(&temp.file)?)?;
         crypto::verify(&reopened, secrets)?;
-        hook(Stage::AfterVerify, &temp)?;
-        hook(Stage::BeforeReplace, &temp)?;
-        platform::replace(&temp, path, create)
-    });
+        hook(Stage::AfterVerify, &temp.name)?;
+        hook(Stage::BeforeReplace, &temp.name)?;
+        platform::replace(&temp.file, path, create)
+    })();
     if let Err(cause) = result {
-        if temp.close().is_err() {
+        let cleanup = platform::delete(&temp.file);
+        // After an explicit cleanup attempt, preserve any survivor for reporting.
+        temp.finished = true;
+        if cleanup.is_err() {
             return Err(VaultError::TemporaryRemains {
                 cause: Box::new(cause),
-                path: temporary_path,
+                path: platform::current_path(&temp.file).ok(),
             });
         }
         return Err(cause);
     }
-    // The source name no longer exists after replacement; TempPath drop is harmless.
+    temp.finished = true;
     Ok(())
+}
+// This owner never removes a pathname. Even unwinding cleanup uses the handle.
+struct OwnedTemp {
+    file: File,
+    name: PathBuf,
+    finished: bool,
+}
+impl OwnedTemp {
+    fn create(parent: &Path) -> Result<Self, VaultError> {
+        for _ in 0..16 {
+            let mut random = [0; 16];
+            getrandom::getrandom(&mut random).map_err(|_| VaultError::Io)?;
+            let name = parent.join(format!(
+                ".tessaveil-alpha-{:032x}.tmp",
+                u128::from_le_bytes(random)
+            ));
+            match platform::create(&name) {
+                Ok(file) => {
+                    return Ok(Self {
+                        file,
+                        name,
+                        finished: false,
+                    })
+                }
+                Err(VaultError::AlreadyExists) => continue,
+                Err(e) => return Err(e),
+            }
+        }
+        Err(VaultError::Io)
+    }
+}
+impl Drop for OwnedTemp {
+    fn drop(&mut self) {
+        if !self.finished {
+            let _ = platform::delete(&self.file);
+        }
+    }
 }
 #[cfg(windows)]
 mod platform {
     use super::*;
-    use std::{os::windows::ffi::OsStrExt, ptr};
+    use std::{
+        os::windows::{
+            ffi::{OsStrExt, OsStringExt},
+            fs::OpenOptionsExt,
+            io::{AsRawHandle, FromRawHandle},
+        },
+        ptr,
+    };
+    use windows_sys::Win32::Foundation::{GENERIC_READ, GENERIC_WRITE, INVALID_HANDLE_VALUE};
     use windows_sys::Win32::Storage::FileSystem::*;
     fn wide(path: &Path) -> Result<Vec<u16>, VaultError> {
         let mut v: Vec<u16> = path.as_os_str().encode_wide().collect();
@@ -318,15 +351,97 @@ mod platform {
         }
         Ok(())
     }
-    pub(super) fn replace(from: &Path, to: &Path, create: bool) -> Result<(), VaultError> {
-        let from = wide(from)?;
-        let to = wide(to)?;
-        let flags = MOVEFILE_WRITE_THROUGH | if create { 0 } else { MOVEFILE_REPLACE_EXISTING };
-        // SAFETY: terminated UTF-16 buffers live through the synchronous OS call.
-        if unsafe { MoveFileExW(from.as_ptr(), to.as_ptr(), flags) } == 0 {
+    pub(super) fn create(path: &Path) -> Result<File, VaultError> {
+        OpenOptions::new()
+            .create_new(true)
+            .write(true)
+            .read(true)
+            .access_mode(GENERIC_READ | GENERIC_WRITE | DELETE)
+            .share_mode(FILE_SHARE_READ | FILE_SHARE_DELETE)
+            .custom_flags(FILE_FLAG_WRITE_THROUGH)
+            .open(path)
+            .map_err(io_error)
+    }
+    pub(super) fn reopen(file: &File) -> Result<File, VaultError> {
+        // SAFETY: borrowed live handle. ReOpenFile creates a distinct owned handle
+        // to the same object; sharing permits the existing owner's write/delete access.
+        let handle = unsafe {
+            ReOpenFile(
+                file.as_raw_handle(),
+                GENERIC_READ,
+                FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
+                0,
+            )
+        };
+        if handle == INVALID_HANDLE_VALUE {
+            return Err(io_error(std::io::Error::last_os_error()));
+        }
+        // SAFETY: successful ReOpenFile returns a new handle transferred exactly once.
+        Ok(unsafe { File::from_raw_handle(handle) })
+    }
+    pub(super) fn replace(file: &File, to: &Path, create: bool) -> Result<(), VaultError> {
+        let name = wide(to)?;
+        if name.len() > 32768 {
+            return Err(VaultError::InvalidPath);
+        }
+        let offset = std::mem::offset_of!(FILE_RENAME_INFO, FileName);
+        let bytes = (offset + name.len() * 2).max(std::mem::size_of::<FILE_RENAME_INFO>());
+        // u64 storage supplies FILE_RENAME_INFO's alignment on Windows x64.
+        let mut buffer = vec![0u64; bytes.div_ceil(8)];
+        let info = buffer.as_mut_ptr().cast::<FILE_RENAME_INFO>();
+        // SAFETY: aligned, zero-initialized buffer holds the full struct plus UTF-16
+        // tail; all pointers remain live through the synchronous handle-based call.
+        unsafe {
+            (*info).Anonymous.ReplaceIfExists = !create;
+            (*info).FileNameLength = ((name.len() - 1) * 2) as u32;
+            ptr::copy_nonoverlapping(
+                name.as_ptr(),
+                buffer.as_mut_ptr().cast::<u8>().add(offset).cast::<u16>(),
+                name.len(),
+            );
+            if SetFileInformationByHandle(
+                file.as_raw_handle(),
+                FileRenameInfo,
+                info.cast(),
+                bytes as u32,
+            ) == 0
+            {
+                return Err(io_error(std::io::Error::last_os_error()));
+            }
+        }
+        Ok(())
+    }
+    pub(super) fn delete(file: &File) -> Result<(), VaultError> {
+        let info = FILE_DISPOSITION_INFO { DeleteFile: true };
+        // SAFETY: the live owner has DELETE access; only its identity is marked.
+        if unsafe {
+            SetFileInformationByHandle(
+                file.as_raw_handle(),
+                FileDispositionInfo,
+                ptr::from_ref(&info).cast(),
+                std::mem::size_of_val(&info) as u32,
+            )
+        } == 0
+        {
             return Err(io_error(std::io::Error::last_os_error()));
         }
         Ok(())
+    }
+    pub(super) fn current_path(file: &File) -> Result<PathBuf, VaultError> {
+        let mut name = vec![0u16; 32768];
+        // SAFETY: live handle and explicitly sized writable UTF-16 buffer.
+        let size = unsafe {
+            GetFinalPathNameByHandleW(
+                file.as_raw_handle(),
+                name.as_mut_ptr(),
+                name.len() as u32,
+                0,
+            )
+        } as usize;
+        if size == 0 || size >= name.len() {
+            return Err(VaultError::Io);
+        }
+        Ok(PathBuf::from(std::ffi::OsString::from_wide(&name[..size])))
     }
 }
 #[cfg(not(windows))]
@@ -335,7 +450,19 @@ mod platform {
     pub(super) fn check(_path: &Path) -> Result<(), VaultError> {
         Err(VaultError::UnsupportedFilesystem)
     }
-    pub(super) fn replace(_from: &Path, _to: &Path, _create: bool) -> Result<(), VaultError> {
+    pub(super) fn replace(_from: &File, _to: &Path, _create: bool) -> Result<(), VaultError> {
+        Err(VaultError::UnsupportedFilesystem)
+    }
+    pub(super) fn create(_path: &Path) -> Result<File, VaultError> {
+        Err(VaultError::UnsupportedFilesystem)
+    }
+    pub(super) fn reopen(_file: &File) -> Result<File, VaultError> {
+        Err(VaultError::UnsupportedFilesystem)
+    }
+    pub(super) fn delete(_file: &File) -> Result<(), VaultError> {
+        Err(VaultError::UnsupportedFilesystem)
+    }
+    pub(super) fn current_path(_file: &File) -> Result<PathBuf, VaultError> {
         Err(VaultError::UnsupportedFilesystem)
     }
 }
@@ -343,6 +470,70 @@ mod platform {
 mod tests {
     use super::*;
     use crate::crypto;
+    #[test]
+    fn replaced_temp_name_never_commits_unverified_bytes() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("target.tessaveil-alpha");
+        let mut p = Payload::default();
+        p.rename("synthetic-old").unwrap();
+        let (old, s) = crypto::create("synthetic-fix-password", &p).unwrap();
+        std::fs::write(&path, &old).unwrap();
+        p.rename("synthetic-new").unwrap();
+        let new = crypto::seal(&p, &s, &old[24..40]).unwrap();
+        let displaced = dir.path().join("owned-displaced.tmp");
+        let mut substitute = new.clone();
+        *substitute.last_mut().unwrap() ^= 1;
+        let mut original_name = None;
+        let result = persist_image(&path, &new, &s, false, |stage, temp| {
+            if stage == Stage::AfterVerify {
+                std::fs::rename(temp, &displaced).unwrap();
+                std::fs::write(temp, &substitute).unwrap();
+                original_name = Some(temp.to_path_buf());
+            }
+            Ok(())
+        });
+        assert_eq!(result, Ok(()));
+        assert_eq!(
+            std::fs::read(&path).unwrap(),
+            new,
+            "only the verified file object may be committed"
+        );
+        assert_eq!(
+            std::fs::read(original_name.unwrap()).unwrap(),
+            substitute,
+            "foreign replacement name must remain untouched"
+        );
+        assert!(!displaced.exists());
+    }
+    #[test]
+    fn replaced_temp_name_error_cleanup_deletes_only_owned_identity() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("target.tessaveil-alpha");
+        let (old, s) = crypto::create("synthetic-fix-password", &Payload::default()).unwrap();
+        std::fs::write(&path, &old).unwrap();
+        let displaced = dir.path().join("owned-displaced.tmp");
+        let mut original_name = None;
+        let result = persist_image(&path, &old, &s, false, |stage, temp| {
+            if stage == Stage::AfterVerify {
+                std::fs::rename(temp, &displaced).unwrap();
+                std::fs::write(temp, b"synthetic-foreign-file").unwrap();
+                original_name = Some(temp.to_path_buf());
+                return Err(VaultError::Io);
+            }
+            Ok(())
+        });
+        assert_eq!(std::fs::read(&path).unwrap(), old);
+        assert_eq!(
+            std::fs::read(original_name.unwrap()).ok().as_deref(),
+            Some(b"synthetic-foreign-file".as_slice()),
+            "cleanup must not remove the substituted name"
+        );
+        assert_eq!(result, Err(VaultError::Io));
+        assert!(
+            !displaced.exists(),
+            "owned object must be cleaned or explicitly reported"
+        );
+    }
     #[test]
     fn overdue_activity_cannot_revive_secrets_and_overdue_access_locks() {
         fn overdue() -> OpenVault {
@@ -409,43 +600,46 @@ mod tests {
             assert_eq!(std::fs::read(&path).unwrap(), old);
             assert_eq!(std::fs::read_dir(dir.path()).unwrap().count(), 1);
         }
+        let mut broken = new.clone();
+        *broken.last_mut().unwrap() ^= 1;
         assert_eq!(
-            persist_image(&path, &new, &s, false, |stage, temp| {
-                if stage == Stage::AfterFlush {
-                    let mut broken = new.clone();
-                    *broken.last_mut().unwrap() ^= 1;
-                    std::fs::write(temp, broken).unwrap();
-                }
-                Ok(())
-            }),
+            persist_image(&path, &broken, &s, false, |_, _| Ok(())),
             Err(VaultError::Authentication)
         );
         assert_eq!(std::fs::read(&path).unwrap(), old);
         // A denied cleanup identifies only this operation's encrypted temp image.
-        use std::os::windows::fs::OpenOptionsExt;
-        let mut held = None;
+        let displaced = dir.path().join("owned-displaced.tmp");
+        let mut foreign_name = None;
+        let mut original_permissions = None;
         let failure = persist_image(&path, &new, &s, false, |stage, temp| {
-            if stage == Stage::AfterFlush {
-                held = Some(
-                    OpenOptions::new()
-                        .read(true)
-                        .share_mode(1)
-                        .open(temp)
-                        .unwrap(),
-                );
+            if stage == Stage::AfterVerify {
+                std::fs::rename(temp, &displaced).unwrap();
+                std::fs::write(temp, b"synthetic-foreign-file").unwrap();
+                foreign_name = Some(temp.to_path_buf());
+                let mut permissions = std::fs::metadata(&displaced).unwrap().permissions();
+                original_permissions = Some(permissions.clone());
+                permissions.set_readonly(true);
+                std::fs::set_permissions(&displaced, permissions).unwrap();
                 return Err(VaultError::InsufficientSpace);
             }
             Ok(())
         });
         match failure {
-            Err(VaultError::TemporaryRemains { cause, path: temp }) => {
+            Err(VaultError::TemporaryRemains {
+                cause,
+                path: Some(temp),
+            }) => {
                 assert_eq!(*cause, VaultError::InsufficientSpace);
-                assert_eq!(temp.parent(), path.parent());
-                assert_eq!(std::fs::read(temp).unwrap(), new);
+                assert_eq!(temp, displaced.canonicalize().unwrap());
+                assert_eq!(std::fs::read(&temp).unwrap(), new);
+                std::fs::set_permissions(&temp, original_permissions.take().unwrap()).unwrap();
             }
             _ => panic!("cleanup failure must identify the encrypted temporary image"),
         }
         assert_eq!(std::fs::read(&path).unwrap(), old);
-        drop(held);
+        assert_eq!(
+            std::fs::read(foreign_name.unwrap()).unwrap(),
+            b"synthetic-foreign-file"
+        );
     }
 }

@@ -19,7 +19,7 @@ pub enum VaultError {
     InvalidPayload,
     TemporaryRemains {
         cause: Box<VaultError>,
-        path: std::path::PathBuf,
+        path: Option<std::path::PathBuf>,
     },
 }
 impl std::fmt::Display for VaultError {
