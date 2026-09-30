@@ -146,7 +146,7 @@ direction; no pixel-perfect Figma comparison is claimed.
 
 ## Artifact/runtime and remaining limits
 
-Locally built, unstripped `Tessaveil.exe`: 26,347,520 bytes. SHA-256:
+Original Task 4 unstripped `Tessaveil.exe`: 26,347,520 bytes. SHA-256:
 `1b2eaa2ac5a7ccf1c15b40d2f73428b4f9007c8a7f38ed0a223cf3f72ca5b953`.
 This identifies a dev artifact, not a published or signed release. Qt's cache
 reports `BUILD_SHARED_LIBS=OFF` and `FEATURE_network=OFF`.
@@ -177,3 +177,36 @@ removable-media durability, independent audit or signing readiness.
 **Task 5 must not publish the binary** before the verified LGPLv3 corresponding
 source/object/relinking/install-information bundle or another lawful route is
 complete. A single runtime EXE does not satisfy that separate gate.
+
+## Review fix: pending-input context boundaries
+
+Internal review of `b1046b745cfa92d333693c5888cd5c7b2e9dbd23` found two
+live-widget gaps: privacy events returned before scrubbing Closed/Locked input,
+and adding a sheet bypassed the existing sheet-selection scrub. Both were
+reproduced as failing native regressions before their fixes.
+
+The shared `clearInputs` now runs before the privacy-state guard and before Add.
+It clears all five secret fields and both acknowledgments without clearing vault
+path, sheet name, profile or column selection. Secret erasure also explicitly
+overwrites the retained temporary QString after clearing the widget/undo state;
+historical framework/IME/OS copies remain outside this best-effort guarantee.
+The existing fixed ABI-buffer wipes are unchanged.
+
+Native regression coverage exercises Closed, Locked and dirty Open across six
+routes: inactive, hidden, suspended, Windows suspend, query-suspend and session
+lock. Each clears pending input/consents, while Active does not. Open still drops
+dirty Rust state, removes table access and preserves the exact last saved image;
+reopen proves the unsaved sheet was discarded. A separate two-sheet regression
+checks every stale field/consent, new selection and retained metadata, both table
+digests, separate verification/protection state, rejection of unacknowledged
+actions, and fresh synthetic input/acknowledgment on the new sheet.
+
+The rebuilt real app passed live UIA smoke at 100%: two masked master reads, all
+five password-semantic fields, focus, open/select/lock/auth-error/unlock/close.
+Its local unstripped EXE remains 26,347,520 bytes, SHA-256:
+`a73cdad8ca892f8b682474817025371239ae4c7470f0bc3a3387d6abbd4807bc`.
+The correction changes pending-input transitions, not layout or the seven
+previously captured empty-input safe states. Those reviewed screenshots and
+their exact hashes remain unchanged; new smoke captures stay outside Git and
+are disposed with the owned fixture. All previously stated limitations and the
+static Qt publication NO-GO remain in force.

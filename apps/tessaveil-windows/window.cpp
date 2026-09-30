@@ -38,7 +38,11 @@ public:
     setText(QString());
     field(in, slot, std::move(value));
   }
-  void erase() { setText(QString()); }
+  void erase() {
+    QString value = text();
+    setText(QString()); // Also drops the widget's undo state.
+    wipe(value.data(), value.size() * sizeof(QChar));
+  }
 
 protected:
   bool event(QEvent *e) override {
@@ -543,6 +547,7 @@ public:
     connect(closeVault, &QPushButton::clicked, this, [this] { finish(Close); });
     connect(lock, &QPushButton::clicked, this, [this] { finish(Lock); });
     connect(add, &QPushButton::clicked, this, [this] {
+      clearInputs();
       TvInput input{};
       field(input, 0, sheetName->text());
       if (action(Add, profiles->currentData().toUInt(),
@@ -628,11 +633,12 @@ public:
   ~Impl() override { qApp->removeEventFilter(this); }
   bool close() { return finish(Close); }
   void forceLock() {
+    // Pending UI input exists even without an open Rust session.
+    clearInputs();
     if (core.state.state != 2)
       return;
     const bool dirty = core.state.dirty;
     workspace->hide();
-    clearInputs();
     action(Lock, 2);
     message->setText(dirty ? "Locked. Unsaved synthetic changes were "
                              "discarded; the last saved vault is unchanged."

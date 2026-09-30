@@ -4,6 +4,7 @@
 #include <QtWidgets>
 #include <cstdio>
 #include <windows.h>
+#include <wtsapi32.h>
 #define REQUIRE(x)                                                             \
   do {                                                                         \
     if (!(x)) {                                                                \
@@ -14,8 +15,198 @@
 template <class T> T *find(Window &w, const char *name) {
   return w.findChild<T *>(name);
 }
+// These helpers seed only invented pending input, never a real phrase.
+void pendingContext(Window &w) {
+  for (const auto name :
+       {"master", "sheetPassword", "word", "symbol1", "symbol2"})
+    find<QLineEdit>(w, name)->setText("synthetic-pending");
+  for (const auto name : {"spinConsent", "verificationConsent"})
+    find<QCheckBox>(w, name)->setChecked(true);
+}
+bool contextIsClear(Window &w) {
+  for (const auto name :
+       {"master", "sheetPassword", "word", "symbol1", "symbol2"}) {
+    const auto input = find<QLineEdit>(w, name);
+    if (!input->text().isEmpty() || input->isUndoAvailable())
+      return false;
+  }
+  return !find<QCheckBox>(w, "spinConsent")->isChecked() &&
+         !find<QCheckBox>(w, "verificationConsent")->isChecked();
+}
+int privacyEventsScrubEveryState(QApplication &app) {
+  Window w;
+  w.show();
+  QTest::qWait(100);
+  find<QPushButton>(w, "warningAccept")->click();
+  QTemporaryDir dir;
+  REQUIRE(dir.isValid());
+  const auto vaultPath = dir.filePath("privacy-synthetic.tessaveil-alpha");
+  auto path = find<QLineEdit>(w, "path");
+  path->setText(vaultPath);
+  auto master = find<QLineEdit>(w, "master");
+  auto state = find<QLabel>(w, "state");
+  QByteArray savedImage;
+  for (int initialState = 0; initialState < 3; ++initialState) {
+    if (initialState == 1) {
+      master->setText("synthetic-master-password");
+      find<QPushButton>(w, "create")->click();
+      find<QPushButton>(w, "add")->click();
+      find<QPushButton>(w, "save")->click();
+      REQUIRE(state->text() == "Open / saved");
+      QFile vault(vaultPath);
+      REQUIRE(vault.open(QIODevice::ReadOnly));
+      savedImage = vault.readAll(); // Encrypted file, not the payload.
+      find<QPushButton>(w, "lock")->click();
+    }
+    for (int route = 0; route < 6; ++route) {
+      if (initialState == 2) {
+        master->setText("synthetic-master-password");
+        find<QPushButton>(w, "unlock")->click();
+        REQUIRE(find<QComboBox>(w, "sheets")->count() == 1);
+        find<QPushButton>(w, "add")->click();
+        REQUIRE(state->text() == "Open / unsaved changes");
+      }
+      pendingContext(w);
+      REQUIRE(!contextIsClear(w));
+      Q_EMIT app.applicationStateChanged(Qt::ApplicationActive);
+      REQUIRE(!contextIsClear(w));
+      switch (route) {
+      case 0:
+        Q_EMIT app.applicationStateChanged(Qt::ApplicationInactive);
+        break;
+      case 1:
+        Q_EMIT app.applicationStateChanged(Qt::ApplicationHidden);
+        break;
+      case 2:
+        Q_EMIT app.applicationStateChanged(Qt::ApplicationSuspended);
+        break;
+      case 3:
+        SendMessage(reinterpret_cast<HWND>(w.winId()), WM_POWERBROADCAST,
+                    PBT_APMSUSPEND, 0);
+        break;
+      case 4:
+        SendMessage(reinterpret_cast<HWND>(w.winId()), WM_POWERBROADCAST,
+                    PBT_APMQUERYSUSPEND, 0);
+        break;
+      case 5:
+        SendMessage(reinterpret_cast<HWND>(w.winId()), WM_WTSSESSION_CHANGE,
+                    WTS_SESSION_LOCK, 0);
+        break;
+      }
+      REQUIRE(contextIsClear(w));
+      REQUIRE(path->text() == vaultPath);
+      REQUIRE(initialState == 0 ? state->text() == "Closed"
+                                : state->text().startsWith("Locked"));
+      REQUIRE(find<QTableView>(w, "table")->model()->rowCount() == 0);
+      if (initialState != 0) {
+        QFile vault(vaultPath);
+        REQUIRE(vault.open(QIODevice::ReadOnly));
+        REQUIRE(vault.readAll() == savedImage);
+      }
+    }
+  }
+  master->setText("synthetic-master-password");
+  find<QPushButton>(w, "unlock")->click();
+  REQUIRE(find<QComboBox>(w, "sheets")->count() == 1);
+  find<QPushButton>(w, "closeVault")->click();
+  return 0;
+}
+QByteArray tableDigest(QTableView *table) {
+  QCryptographicHash hash(QCryptographicHash::Sha256);
+  auto model = table->model();
+  for (int row = 0; row < model->rowCount(); ++row)
+    for (int column = 0; column < model->columnCount(); ++column) {
+      hash.addData(model->data(model->index(row, column)).toString().toUtf8());
+      hash.addData(QByteArray(1, '\0'));
+    }
+  return hash.result(); // Retain a digest, not a copy of the whole table.
+}
+int addingSheetScrubsPreviousContext() {
+  Window w;
+  w.show();
+  QTest::qWait(100);
+  find<QPushButton>(w, "warningAccept")->click();
+  QTemporaryDir dir;
+  REQUIRE(dir.isValid());
+  const auto vaultPath =
+      dir.filePath("sheet-context-synthetic.tessaveil-alpha");
+  find<QLineEdit>(w, "path")->setText(vaultPath);
+  find<QLineEdit>(w, "master")->setText("synthetic-master-password");
+  find<QPushButton>(w, "create")->click();
+  auto add = find<QPushButton>(w, "add");
+  auto columns = find<QComboBox>(w, "columns");
+  columns->setCurrentIndex(0);
+  add->click();
+  auto table = find<QTableView>(w, "table");
+  REQUIRE(table->model()->columnCount() == 10);
+  auto verifyConsent = find<QCheckBox>(w, "verificationConsent");
+  verifyConsent->setChecked(true);
+  find<QPushButton>(w, "verify")->click();
+  find<QLineEdit>(w, "sheetPassword")->setText("synthetic-sheet-password");
+  find<QPushButton>(w, "setSheetPassword")->click();
+  find<QPushButton>(w, "protect")->click();
+  const auto firstDigest = tableDigest(table);
+  auto sheetState = find<QLabel>(w, "sheetState");
+  REQUIRE(sheetState->text().contains("Protected"));
+  REQUIRE(sheetState->text().contains("Verified by me"));
+  auto sheetName = find<QLineEdit>(w, "sheetName");
+  sheetName->setText("Synthetic second sheet");
+  columns->setCurrentIndex(1);
+  auto profiles = find<QComboBox>(w, "profiles");
+  const int profile = profiles->currentIndex();
+  pendingContext(w);
+  REQUIRE(!contextIsClear(w));
+  add->click();
+  REQUIRE(contextIsClear(w));
+  auto sheets = find<QComboBox>(w, "sheets");
+  REQUIRE(sheets->count() == 2 && sheets->currentIndex() == 1);
+  REQUIRE(sheets->currentText() == "Synthetic second sheet");
+  REQUIRE(sheetName->text() == "Synthetic second sheet");
+  REQUIRE(find<QLineEdit>(w, "path")->text() == vaultPath);
+  REQUIRE(profiles->currentIndex() == profile);
+  REQUIRE(columns->currentIndex() == 1);
+  REQUIRE(table->model()->rowCount() == 24);
+  REQUIRE(table->model()->columnCount() == 36);
+  REQUIRE(sheetState->text().contains("Editing enabled"));
+  REQUIRE(!sheetState->text().contains("Verified by me"));
+  const auto secondDigest = tableDigest(table);
+  // Neither old acknowledgment may authorize an action in the new context.
+  find<QPushButton>(w, "verify")->click();
+  REQUIRE(!sheetState->text().contains("Verified by me"));
+  find<QPushButton>(w, "spin")->click();
+  REQUIRE(tableDigest(table) == secondDigest);
+  REQUIRE(contextIsClear(w));
+  find<QLineEdit>(w, "symbol1")->setText("?");
+  find<QLineEdit>(w, "symbol2")->setText("!");
+  find<QLineEdit>(w, "word")->setText("synthetic-fresh-invalid-token");
+  find<QCheckBox>(w, "spinConsent")->setChecked(true);
+  find<QPushButton>(w, "spin")->click();
+  REQUIRE(contextIsClear(w));
+  const auto spunDigest = tableDigest(table);
+  REQUIRE(spunDigest != secondDigest);
+  verifyConsent->setChecked(true);
+  find<QPushButton>(w, "verify")->click();
+  REQUIRE(sheetState->text().contains("Verified by me"));
+  pendingContext(w);
+  sheets->setCurrentIndex(0);
+  REQUIRE(contextIsClear(w));
+  REQUIRE(table->model()->columnCount() == 10);
+  REQUIRE(tableDigest(table) == firstDigest);
+  REQUIRE(sheetState->text().contains("Protected"));
+  REQUIRE(sheetState->text().contains("Verified by me"));
+  sheets->setCurrentIndex(1);
+  REQUIRE(table->model()->columnCount() == 36);
+  REQUIRE(tableDigest(table) == spunDigest);
+  REQUIRE(sheetState->text().contains("Editing enabled"));
+  REQUIRE(sheetState->text().contains("Verified by me"));
+  find<QPushButton>(w, "save")->click();
+  find<QPushButton>(w, "closeVault")->click();
+  return 0;
+}
 int main(int argc, char **argv) {
   QApplication app(argc, argv);
+  REQUIRE(privacyEventsScrubEveryState(app) == 0);
+  REQUIRE(addingSheetScrubsPreviousContext() == 0);
   {
     Window unavailable({}, [](quintptr) { return false; });
     REQUIRE(!unavailable.centralWidget()->isEnabled());
