@@ -192,7 +192,34 @@
 
   Run native tests, UIA observation, full Rust and Python suites. Commit: `feat: complete Tessaveil Windows candidate workflows`.
 
-### Task 6: Harden exact-candidate security, failure, and release-decision gates
+### Task 6: Reconcile the Tessaveil Figma system with implemented Windows flows
+
+**Files:**
+- Modify only an explicitly identified Figma file named `Tessaveil — Product Design`
+- Create: `reports/windows-v1/figma-handoff.md`
+- Modify: `tests/repository/**`
+
+**Interfaces:**
+- Consumes: the completed Task 5 Windows flows and semantic UI states.
+- Produces: inspected Figma evidence for required Windows screens/states and a code-to-design handoff report; never modifies an unrelated Renderis or other project file.
+
+- [ ] **Step 1: Identify the authorized design target**
+
+  Use the connected Figma integration to locate an explicitly Tessaveil-owned file and record its file identity. If none exists or identity is ambiguous, make no Figma mutation and record `blocked` with the exact owner action needed; never reuse an open unrelated file.
+
+- [ ] **Step 2: Reconcile required Windows screens and security states**
+
+  When an authorized file exists, update the component instances and Windows pages for vault selection/create/unlock, profile status, custom dictionary, sheet creation/edit/protection/delete, Spin/repeat warning, verification, backup/restore/password change, lock/privacy cover and every actionable error. Keep examples synthetic and remove local paths/tokens/secrets.
+
+- [ ] **Step 3: Check foundations and accessibility handoff**
+
+  Verify light/dark semantic variables, Russian/English copy coverage, focus order, 1280x720 and 100/150/200% layouts, no target-cell emphasis, and explicit annotations for controls that must not expose secret values to accessibility APIs.
+
+- [ ] **Step 4: Record evidence and commit**
+
+  Write the exact Figma identity/node links or the exact blocker to `reports/windows-v1/figma-handoff.md`, add a repository gate preventing an absent/ambiguous disposition, run the focused and full Python suites, and commit: `docs: record Windows v1 Figma handoff`.
+
+### Task 7: Harden exact-candidate security, failure, and release-decision gates
 
 **Files:**
 - Modify/Create: `crates/tessaveil-core/tests/**`
@@ -221,7 +248,7 @@
 
   Run the full Rust/Python/native/security/package gate locally. Commit: `test: add Windows v1 release decision gates`.
 
-### Task 7: Update Russian guidance and exact-candidate distribution evidence
+### Task 8: Update Russian guidance and exact-candidate distribution evidence
 
 **Files:**
 - Modify: `README.md`, `README.ru.md`
@@ -231,7 +258,7 @@
 - Modify: `THIRD_PARTY_ALPHA.md`
 
 **Interfaces:**
-- Consumes: final Task 6 decision and exact candidate build outputs.
+- Consumes: final Task 7 decision and exact candidate build outputs.
 - Produces: bilingual user/reviewer instructions and an unsigned candidate package that cannot be mistaken for stable or real-data-approved software.
 
 - [ ] **Step 1: Document supported exact profiles**
