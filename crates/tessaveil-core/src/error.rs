@@ -16,6 +16,7 @@ pub enum VaultError {
     InvalidPath,
     UnsupportedFilesystem,
     Locked,
+    UnsavedChanges,
     InvalidPayload,
     TemporaryRemains {
         cause: Box<VaultError>,
@@ -41,6 +42,7 @@ impl std::fmt::Display for VaultError {
             Self::InvalidPath=>"Select a regular .tessaveil-alpha file.",
             Self::UnsupportedFilesystem=>"Saving requires an explicitly enabled development local NTFS target.",
             Self::Locked=>"The vault is locked.",
+            Self::UnsavedChanges=>"Save or reopen the vault before making a backup.",
             Self::InvalidPayload=>"The requested vault data exceeds the alpha schema limits.",
             Self::TemporaryRemains{..}=>"Save failed; an encrypted temporary image remains. Comparing saved versions after password disclosure may reveal unchanged words.",
         })

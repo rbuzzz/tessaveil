@@ -13,8 +13,29 @@ pub(crate) struct Secrets {
     pub(crate) kek: Zeroizing<[u8; 32]>,
     pub(crate) dek: Zeroizing<[u8; 32]>,
 }
-fn random(bytes: &mut [u8]) -> Result<(), VaultError> {
-    getrandom::getrandom(bytes).map_err(|_| VaultError::Io)
+#[cfg(test)]
+type FillRandom<'a> = &'a mut dyn FnMut(&mut [u8]) -> Result<(), VaultError>;
+#[derive(Default)]
+pub(crate) struct Random<'a> {
+    #[cfg(test)]
+    fill: Option<FillRandom<'a>>,
+    lifetime: std::marker::PhantomData<&'a ()>,
+}
+impl<'a> Random<'a> {
+    #[cfg(test)]
+    pub(crate) fn injected(fill: FillRandom<'a>) -> Self {
+        Self {
+            fill: Some(fill),
+            lifetime: std::marker::PhantomData,
+        }
+    }
+    fn fill(&mut self, bytes: &mut [u8]) -> Result<(), VaultError> {
+        #[cfg(test)]
+        if let Some(fill) = self.fill.as_mut() {
+            return fill(bytes);
+        }
+        getrandom::getrandom(bytes).map_err(|_| VaultError::Io)
+    }
 }
 pub(crate) fn derive(password: &str, salt: &[u8]) -> Result<Zeroizing<[u8; 32]>, VaultError> {
     let password = normalize_password(password)?;
@@ -28,6 +49,13 @@ pub(crate) fn derive(password: &str, salt: &[u8]) -> Result<Zeroizing<[u8; 32]>,
     Ok(key)
 }
 pub(crate) fn create(password: &str, payload: &Payload) -> Result<(Vec<u8>, Secrets), VaultError> {
+    create_with_random(password, payload, &mut Random::default())
+}
+pub(crate) fn create_with_random(
+    password: &str,
+    payload: &Payload,
+    random: &mut Random<'_>,
+) -> Result<(Vec<u8>, Secrets), VaultError> {
     let normalized = normalize_password(password)?;
     let chars = normalized.chars().count();
     let common = [
@@ -45,13 +73,13 @@ pub(crate) fn create(password: &str, payload: &Payload) -> Result<(Vec<u8>, Secr
         return Err(VaultError::PasswordPolicy);
     }
     let mut salt = [0; 16];
-    random(&mut salt)?;
+    random.fill(&mut salt)?;
     let mut secrets = Secrets {
         kek: derive(&normalized, &salt)?,
         dek: Zeroizing::new([0; 32]),
     };
-    random(&mut *secrets.dek)?;
-    let image = seal(payload, &secrets, &salt)?;
+    random.fill(&mut *secrets.dek)?;
+    let image = seal_with_random(payload, &secrets, &salt, random)?;
     Ok((image, secrets))
 }
 pub(crate) fn open(image: &[u8], password: &str) -> Result<(Payload, Secrets), VaultError> {
@@ -90,10 +118,24 @@ fn decrypt(image: &[u8], kek: Zeroizing<[u8; 32]>) -> Result<(Payload, Secrets),
 pub(crate) fn verify(image: &[u8], secrets: &Secrets) -> Result<(), VaultError> {
     decrypt(image, Zeroizing::new(*secrets.kek)).map(|_| ())
 }
+pub(crate) fn authenticated_payload(
+    image: &[u8],
+    secrets: &Secrets,
+) -> Result<Payload, VaultError> {
+    decrypt(image, Zeroizing::new(*secrets.kek)).map(|(payload, _)| payload)
+}
 pub(crate) fn seal(
     payload: &Payload,
     secrets: &Secrets,
     salt: &[u8],
+) -> Result<Vec<u8>, VaultError> {
+    seal_with_random(payload, secrets, salt, &mut Random::default())
+}
+fn seal_with_random(
+    payload: &Payload,
+    secrets: &Secrets,
+    salt: &[u8],
+    random: &mut Random<'_>,
 ) -> Result<Vec<u8>, VaultError> {
     let mut plain = payload.encode()?;
     let mut h = [0; HEADER_LEN];
@@ -105,7 +147,7 @@ pub(crate) fn seal(
         h[i..i + 4].copy_from_slice(&n.to_le_bytes());
     }
     h[24..40].copy_from_slice(salt);
-    random(&mut h[40..88])?;
+    random.fill(&mut h[40..88])?;
     // Fail closed on the astronomically unlikely equal-nonce draw; never reuse it.
     if h[40..64] == h[64..88] {
         return Err(VaultError::Io);

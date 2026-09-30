@@ -41,6 +41,28 @@ struct Unlocked {
     salt: [u8; 16],
 }
 impl VaultService {
+    pub fn restore(
+        source: impl AsRef<Path>,
+        destination: impl AsRef<Path>,
+        password: &str,
+        storage: StoragePolicy,
+    ) -> Result<OpenVault, VaultError> {
+        let source = resolve(source.as_ref())?;
+        let (image, _source_guard) = read_recovery_image(&source)?;
+        let (payload, secrets) = crypto::open(&image, password)?;
+        let path = recovery_destination(destination.as_ref(), storage)?;
+        persist_image(&path, &image, &secrets, true, |_, _| Ok(()))?;
+        Ok(OpenVault {
+            path,
+            storage,
+            session: Session::new(Inactivity::default(), Instant::now()),
+            unlocked: Some(Unlocked {
+                payload,
+                secrets,
+                salt: image[24..40].try_into().expect("fixed header range"),
+            }),
+        })
+    }
     pub fn create(
         path: impl AsRef<Path>,
         password: &str,
@@ -85,6 +107,58 @@ impl VaultService {
     }
 }
 impl OpenVault {
+    /// Copy the authenticated saved ciphertext; unsaved or stale payloads fail closed.
+    pub fn backup_to(&mut self, destination: impl AsRef<Path>) -> Result<(), VaultError> {
+        self.expire(self.session.token(), Instant::now());
+        let u = self.unlocked.as_ref().ok_or(VaultError::Locked)?;
+        let (image, _source_guard) = read_recovery_image(&self.path)?;
+        let saved = crypto::authenticated_payload(&image, &u.secrets)?;
+        if saved.encode()?.as_slice() != u.payload.encode()?.as_slice() {
+            return Err(VaultError::UnsavedChanges);
+        }
+        let destination = recovery_destination(destination.as_ref(), self.storage)?;
+        persist_image(&destination, &image, &u.secrets, true, |_, _| Ok(()))
+    }
+    /// Atomically save the complete current payload under freshly generated keys.
+    pub fn change_master_password(
+        &mut self,
+        current: &str,
+        replacement: &str,
+    ) -> Result<(), VaultError> {
+        self.rotate(
+            current,
+            replacement,
+            &mut crypto::Random::default(),
+            |_, _| Ok(()),
+        )
+    }
+    fn rotate(
+        &mut self,
+        current: &str,
+        replacement: &str,
+        random: &mut crypto::Random<'_>,
+        hook: impl FnMut(Stage, &Path) -> Result<(), VaultError>,
+    ) -> Result<(), VaultError> {
+        use subtle::ConstantTimeEq;
+        self.expire(self.session.token(), Instant::now());
+        let u = self.unlocked.as_ref().ok_or(VaultError::Locked)?;
+        let current_key = crypto::derive(current, &u.salt)?;
+        if !bool::from(current_key.as_slice().ct_eq(u.secrets.kek.as_slice())) {
+            return Err(VaultError::Authentication);
+        }
+        check_storage(&self.path, self.storage)?;
+        let (image, secrets) = crypto::create_with_random(replacement, &u.payload, random)?;
+        let salt = image[24..40].try_into().expect("fixed header range");
+        persist_image(&self.path, &image, &secrets, false, hook)?;
+        // There are no fallible operations after the atomic commit.
+        let u = self.unlocked.as_mut().expect("checked session");
+        u.secrets = secrets;
+        u.salt = salt;
+        for sheet in &mut u.payload.sheets {
+            sheet.unlocked = false;
+        }
+        Ok(())
+    }
     /// Borrow a narrow editor, without transferring ownership of the payload.
     ///
     /// ```
@@ -181,6 +255,36 @@ impl OpenVault {
     }
 }
 fn resolve(path: &Path) -> Result<PathBuf, VaultError> {
+    // Reject ADS, reserved DOS device names and ambiguous Win32 trailing aliases
+    // before canonicalizing the parent (which produces an extended-length path).
+    for component in path.components() {
+        if let std::path::Component::Normal(name) = component {
+            let name = name.to_str().ok_or(VaultError::InvalidPath)?;
+            let stem = name
+                .split('.')
+                .next()
+                .unwrap_or("")
+                .trim_end_matches(' ')
+                .to_ascii_uppercase();
+            if name.contains([':', '\0'])
+                || name.ends_with([' ', '.'])
+                || matches!(
+                    stem.as_str(),
+                    "CON" | "PRN" | "AUX" | "NUL" | "CONIN$" | "CONOUT$"
+                )
+                || ["COM", "LPT"].iter().any(|prefix| {
+                    stem.strip_prefix(prefix).is_some_and(|suffix| {
+                        matches!(
+                            suffix,
+                            "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "¹" | "²" | "³"
+                        )
+                    })
+                })
+            {
+                return Err(VaultError::InvalidPath);
+            }
+        }
+    }
     if path.extension().and_then(|s| s.to_str()) != Some("tessaveil-alpha") {
         return Err(VaultError::InvalidPath);
     }
@@ -222,6 +326,36 @@ fn read_image(path: &Path) -> Result<(Vec<u8>, File), VaultError> {
         use std::os::windows::fs::OpenOptionsExt;
         options.share_mode(1 | 4);
     }
+    read_image_handle(options.open(path).map_err(io_error)?)
+}
+fn recovery_destination(path: &Path, storage: StoragePolicy) -> Result<PathBuf, VaultError> {
+    let path = resolve(path)?;
+    if path.try_exists().map_err(io_error)? {
+        return Err(VaultError::AlreadyExists);
+    }
+    check_storage(&path, storage)?;
+    Ok(path)
+}
+fn read_recovery_image(path: &Path) -> Result<(Vec<u8>, File), VaultError> {
+    let mut options = OpenOptions::new();
+    options.read(true);
+    #[cfg(windows)]
+    {
+        use std::os::windows::fs::{MetadataExt, OpenOptionsExt};
+        use windows_sys::Win32::Storage::FileSystem::{
+            FILE_ATTRIBUTE_REPARSE_POINT, FILE_FLAG_OPEN_REPARSE_POINT, FILE_SHARE_READ,
+        };
+        options
+            .share_mode(FILE_SHARE_READ)
+            .custom_flags(FILE_FLAG_OPEN_REPARSE_POINT);
+        let file = options.open(path).map_err(io_error)?;
+        let metadata = file.metadata().map_err(io_error)?;
+        if !metadata.is_file() || metadata.file_attributes() & FILE_ATTRIBUTE_REPARSE_POINT != 0 {
+            return Err(VaultError::InvalidPath);
+        }
+        read_image_handle(file)
+    }
+    #[cfg(not(windows))]
     read_image_handle(options.open(path).map_err(io_error)?)
 }
 fn read_image_handle(mut file: File) -> Result<(Vec<u8>, File), VaultError> {
@@ -501,6 +635,136 @@ mod platform {
 mod tests {
     use super::*;
     use crate::crypto;
+    #[test]
+    fn rotation_entropy_and_each_persistence_failure_preserve_session_and_image() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("rotation.tessaveil-alpha");
+        let password = "synthetic-current-password";
+        let replacement = "synthetic-replacement-password";
+        let mut vault = VaultService::create(
+            &path,
+            password,
+            CreateOptions {
+                storage: StoragePolicy::DevelopmentLocalNtfs,
+                ..Default::default()
+            },
+        )
+        .unwrap();
+        let words: Vec<_> = (0..40).map(|i| format!("synthetic-{i:03}")).collect();
+        vault
+            .payload_mut()
+            .unwrap()
+            .create_custom_sheet(
+                "synthetic-table",
+                crate::sheet::SheetSize {
+                    rows: 12,
+                    columns: 10,
+                },
+                &words,
+            )
+            .unwrap();
+        vault
+            .payload_mut()
+            .unwrap()
+            .edit_sheet(0)
+            .unwrap()
+            .set_verified_by_me(true);
+        vault.save().unwrap();
+        vault.unlock_sheet_with_master(0, password).unwrap();
+        let old_payload = vault.unlocked.as_ref().unwrap().payload.encode().unwrap();
+        let old = std::fs::read(&path).unwrap();
+        let old_salt = vault.unlocked.as_ref().unwrap().salt;
+        let old_dek = zeroize::Zeroizing::new(*vault.unlocked.as_ref().unwrap().secrets.dek);
+        let old_kek = zeroize::Zeroizing::new(*vault.unlocked.as_ref().unwrap().secrets.kek);
+        // Fail salt, DEK, then nonce entropy. Successful draws remain OS-random.
+        for fail_call in 0..3 {
+            let mut call = 0;
+            let mut fill = |bytes: &mut [u8]| {
+                let this = call;
+                call += 1;
+                if this == fail_call {
+                    return Err(VaultError::Io);
+                }
+                getrandom::getrandom(bytes).map_err(|_| VaultError::Io)
+            };
+            let mut random = crypto::Random::injected(&mut fill);
+            assert_eq!(
+                vault.rotate(password, replacement, &mut random, |_, _| Ok(())),
+                Err(VaultError::Io)
+            );
+            let u = vault.unlocked.as_ref().unwrap();
+            assert_eq!(u.salt, old_salt);
+            assert_eq!(*u.secrets.dek, *old_dek);
+            assert_eq!(*u.secrets.kek, *old_kek);
+            assert_eq!(*u.payload.encode().unwrap(), *old_payload);
+            assert!(u.payload.sheets[0].unlocked);
+            assert_eq!(std::fs::read(&path).unwrap(), old);
+            assert_eq!(std::fs::read_dir(dir.path()).unwrap().count(), 1);
+        }
+        for failure in [
+            Stage::BeforeWrite,
+            Stage::AfterWrite,
+            Stage::AfterFlush,
+            Stage::AfterVerify,
+            Stage::BeforeReplace,
+        ] {
+            assert_eq!(
+                vault.rotate(
+                    password,
+                    replacement,
+                    &mut crypto::Random::default(),
+                    |stage, _| {
+                        if stage == failure {
+                            Err(VaultError::InsufficientSpace)
+                        } else {
+                            Ok(())
+                        }
+                    }
+                ),
+                Err(VaultError::InsufficientSpace)
+            );
+            let u = vault.unlocked.as_ref().unwrap();
+            assert_eq!(u.salt, old_salt);
+            assert_eq!(*u.secrets.dek, *old_dek);
+            assert_eq!(*u.secrets.kek, *old_kek);
+            assert_eq!(*u.payload.encode().unwrap(), *old_payload);
+            assert!(u.payload.sheets[0].unlocked);
+            assert_eq!(std::fs::read(&path).unwrap(), old);
+            assert_eq!(std::fs::read_dir(dir.path()).unwrap().count(), 1);
+        }
+        vault.change_master_password(password, replacement).unwrap();
+        assert_ne!(*vault.unlocked.as_ref().unwrap().secrets.dek, *old_dek);
+        assert_eq!(
+            *vault.unlocked.as_ref().unwrap().payload.encode().unwrap(),
+            *old_payload
+        );
+        assert!(!vault.unlocked.as_ref().unwrap().payload.sheets[0].unlocked);
+        let (reopened, _) = crypto::open(&std::fs::read(&path).unwrap(), replacement).unwrap();
+        assert_eq!(*reopened.encode().unwrap(), *old_payload);
+    }
+    #[test]
+    fn source_guard_and_nonreplacing_commit_defeat_recovery_name_races() {
+        let dir = tempfile::tempdir().unwrap();
+        let source = dir.path().join("source.tessaveil-alpha");
+        let destination = dir.path().join("destination.tessaveil-alpha");
+        let (image, secrets) =
+            crypto::create("synthetic-recovery-password", &Payload::default()).unwrap();
+        std::fs::write(&source, &image).unwrap();
+        let (_, guard) = read_recovery_image(&source).unwrap();
+        assert!(std::fs::rename(&source, dir.path().join("displaced.tessaveil-alpha")).is_err());
+        assert!(std::fs::write(&source, b"synthetic-substitute").is_err());
+        let result = persist_image(&destination, &image, &secrets, true, |stage, _| {
+            if stage == Stage::BeforeReplace {
+                std::fs::hard_link(&source, &destination).unwrap();
+            }
+            Ok(())
+        });
+        assert!(result.is_err());
+        assert_eq!(std::fs::read(&source).unwrap(), image);
+        assert_eq!(std::fs::read(&destination).unwrap(), image);
+        drop(guard);
+        assert_eq!(std::fs::read_dir(dir.path()).unwrap().count(), 2);
+    }
     #[test]
     fn replaced_temp_name_never_commits_unverified_bytes() {
         let dir = tempfile::tempdir().unwrap();

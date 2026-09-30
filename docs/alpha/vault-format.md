@@ -31,8 +31,9 @@ Integers in the open header are unsigned little-endian. The header is exactly
 Wrapping AAD is the exact bytes `[0,92)`. Payload AAD is the exact complete
 header `[0,140)`, including wrapped DEK and tag. Both nonces are independently
 drawn and must differ. Every save draws two fresh nonces; creation draws new
-salt and DEK. Open retains KEK and DEK, never the password. Password change is
-not implemented by this task; it must create a new salt, KEK, DEK and nonces.
+salt and DEK. Open retains KEK and DEK, never the password. Master-password
+rotation creates a new salt, KEK, DEK and both nonces, then atomically persists
+the complete current payload. It retains schema 2 and `.tessaveil-alpha`.
 
 Absolute encoding bounds are 65,536–262,144 KiB, 3–6 iterations, 1–8 lanes,
 32-byte output and 16-byte salt. The **only** alpha creation/open allowlist
@@ -193,10 +194,12 @@ covered with synthetic data; entropy failure leaves the previous row unchanged.
 
 ## Public ownership boundary
 
-`VaultService::create(path, password, CreateOptions)` and `open(path, password)`
+`VaultService::create(path, password, CreateOptions)`, `open(path, password)` and
+`restore(source, destination, password, storage)`
 return `OpenVault`. Its operations are `save`, `lock`, `is_locked`,
 `payload_mut`, `activity`, `timeout_token`, `expire`, `set_inactivity`, and
-`set_storage_policy`. `CreateOptions` carries a label, storage policy and
+`set_storage_policy`, `backup_to(destination)`, and
+`change_master_password(current, replacement)`. `CreateOptions` carries a label, storage policy and
 inactivity choice. No API returns serialized plaintext, keys, whole phrases,
 Spin validity or target columns. Crypto and serialization modules/functions
 are private. Payload and Sheet types/fields are crate-private; `payload_mut`
@@ -232,7 +235,9 @@ algorithm identifiers or equal nonces return `InvalidHeader`. Unsupported KDF,
 out-of-bounds KDF, truncated file, excessive size, invalid password input,
 creation-password policy, insufficient space, access/sharing denial, invalid
 path, existing target, unsupported filesystem, locked state and other I/O
-have distinct safe categories. No failure becomes an empty vault.
+have distinct safe categories. `UnsavedChanges` requires saving or reopening
+before a backup when the authenticated saved payload differs from the session.
+No failure becomes an empty vault.
 
 `TemporaryRemains { cause, path }` reports an owned encrypted temp image if
 best-effort cleanup fails. `path: Some(...)` is queried from the owned handle
@@ -242,6 +247,44 @@ omits the path; the UI may present it with the version-comparison warning, but
 must not infer a missing name or blindly delete it later by pathname.
 
 ## Storage capability and observed evidence
+
+### Authenticated recovery operations
+
+Backup reads and authenticates the saved image using the session key, then
+compares its canonical payload with the current payload in zeroizing buffers.
+A borrowed editor or session-only sheet authorization does not mark a vault
+dirty; persisted data differences, including another session's saved changes,
+refuse backup. The result is byte-for-byte identical encrypted data, with no
+plaintext disk staging. Backup uses the session's explicitly selected storage
+policy for the destination.
+
+Restore authenticates the complete source with the supplied password before
+any destination mutation. It returns a new session at the destination with the
+explicitly supplied storage policy. Both operations retain the source handle
+through commit, deny write/delete sharing, and reject a source reparse point
+on the opened object. Destination creation uses the same verified temporary
+file protocol below, with replacement disabled at the final atomic rename.
+Existing destinations, self paths and existing hard-link aliases cannot be
+overwritten, including aliases introduced between preflight and commit. There
+is no overwrite or copy fallback. ADS, trailing space/dot components and DOS
+device names are rejected before parent canonicalization. These checks do not
+claim safety against arbitrary concurrent parent-directory/volume changes,
+rollback detection, or broader storage support.
+
+Password rotation verifies the current credential against the live session
+using constant-time key comparison, enforces the creation policy for the new
+password, and saves the complete current payload (including unsaved edits).
+Only after successful replacement are session keys and salt replaced and
+sheet editing authorizations cleared. Entropy or persistence failure preserves
+the old file, keys, salt, payload and authorization state. As with save, callers
+must avoid concurrent editing sessions; rotation does not add conflict detection.
+The private per-call crypto random source always uses the OS CSPRNG in production;
+only unit-test builds can inject failures, without process-global hooks or a
+public deterministic encryption API. Existing backups remain encrypted under
+their original password and must be managed separately. Retained versions carry
+the cross-version comparison risk already documented here.
+
+### Existing storage boundary
 
 The format/crypto/model/session do not impose NTFS semantics. A separate
 Windows path backend implements the alpha persistence capability. Policy
