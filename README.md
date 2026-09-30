@@ -1,6 +1,8 @@
 # Tessaveil
 
-Tessaveil is public research toward an offline mnemonic backup table. The repository contains specifications, a source-backed wallet and dictionary catalogue, a threat model, and disposable feasibility probes. It does **not** contain a usable vault application or a release binary. Windows is the first proposed product; Android and iOS compatibility is a future requirement, not a current feature.
+Tessaveil is public research toward an offline mnemonic backup table. The repository now contains a working **unsigned Windows engineering alpha for synthetic data only**, alongside specifications, a source-backed wallet and dictionary catalogue, a threat model, and feasibility probes. It is **not production-ready, RC or stable** and must never be used for real secrets or funds. Android and iOS compatibility remains a future requirement, not a current feature.
+
+The exact predecessor branch artifact at `4c3e9de5b0e7936edc030992584ae6cdd59493ed` passed the static-Qt source/notices/relink and artifact gates and official GitHub provenance verification. That evidence does not approve later commits or PR runs, nor clear Windows release/freeze NO-GO. See the [exact-SHA evidence ledger and remaining gates](docs/alpha/release-evidence.md) and [synthetic-only alpha guide](docs/alpha/user-guide.md).
 
 Security audit: not yet independently completed
 

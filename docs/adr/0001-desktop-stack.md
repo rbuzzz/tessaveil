@@ -2,14 +2,24 @@
 
 Date: 2026-09-30. Selected candidate: Qt 6.8.3 static Widgets, **alpha only**.
 This is **not a Windows v1 technology freeze**.
-Windows release readiness: NO-GO. Qt redistribution readiness: NO-GO.
+Windows release readiness: NO-GO. The static-Qt alpha redistribution/compliance
+and modified-library relink gate **PASSED for the exact predecessor branch
+artifact** at `4c3e9de5b0e7936edc030992584ae6cdd59493ed`,
+[Windows run 36691081137](https://github.com/rbuzzz/tessaveil/actions/runs/36691081137).
+This is engineering evidence for an unsigned, synthetic-only alpha, not general
+redistribution/legal assurance, production/RC/stable approval or signing acceptance.
+Never use it for real secrets or funds. The [evidence ledger](../alpha/release-evidence.md)
+records exact artifact hashes, official provenance verification and the separate
+current-candidate gate; this predecessor success does not approve later commits.
 
-## Evidence and decision
+## Original stack-selection evidence and decision
 
-Use a C++/Qt Widgets frontend for the Windows alpha, retaining the existing Rust
-core and introducing a narrow C ABI in the dependent integration task. The probe
-calls a separate constant-only C++ archive; it does **not** prove Rust integration,
-vault interoperability, cryptography or safe secret handling in the eventual app.
+The original decision selected a C++/Qt Widgets frontend for the Windows alpha,
+retaining the Rust core with a narrow C ABI implemented in the subsequent tasks.
+The initial probe called a separate constant-only C++ archive; that probe did
+**not** prove Rust integration, vault interoperability, cryptography or safe secret
+handling. The repository now contains the working synthetic-only alpha; its later
+integration and packaging evidence is separate from this historical comparison.
 
 The [comparison report](../../reports/spikes/windows.md) and
 [raw evidence](../../spikes/windows/evidence.json) replace the previous unbuilt
@@ -47,10 +57,10 @@ Unknown complete release criteria remain U, not zero and not a weighted ranking.
 Technical suitability is separate from permission to distribute. The inspected
 QtBase 6.8.3 Core/Gui/Widgets and Windows-platform source headers offer
 `LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only`.
-The proposed route is LGPLv3, not an assertion that our current build is ready for
-distribution. Original project code remains Apache-2.0.
+The alpha gate uses the LGPLv3 route. Original project code remains Apache-2.0;
+passing the documented engineering checks is not legal advice or assurance.
 
-Before Task 5 publishes **any** alpha binary, verify and preserve a lawful Qt
+Before uploading **any** alpha binary, the exact-SHA workflow must verify and preserve the Qt
 redistribution bundle: exact corresponding library source and modifications,
 notices and license texts, application object files or equivalent material and
 instructions that actually permit relinking the static executable against a
@@ -59,8 +69,11 @@ information where LGPLv3 section 4(e)/GPLv3 section 6 requires it. Verify the
 relinking procedure, all enabled Qt modules and bundled third-party obligations,
 and how this interacts with signing. Alternatively establish a different valid
 license route with evidence. A single runtime EXE does not eliminate separate
-source, object or compliance artifacts. This gate is open; no commercial license
-purchase, redistribution approval or SignPath compatibility is implied.
+source, object or compliance artifacts. These source/notices/application-material/
+modified-Qt-relink checks passed for the exact predecessor artifact/run named
+above, including independent archive and official provenance verification.
+Every later candidate must pass its own gate; no blanket redistribution approval,
+commercial license purchase or SignPath compatibility is implied.
 
 ## Remaining release gates
 
@@ -73,8 +86,10 @@ Repeat the same artifact checks on both documented clean targets as a non-admin,
 offline and without development runtimes. Add process-tree file events, ordinary
 user-temp observation, network capture, cold boots and first-frame timing. Complete
 keyboard order, table corners and scrolling, realized-control counts, Narrator,
-light/dark fidelity and 100/150/200% scaling checks. Implement and test the Rust C ABI
-and shared synthetic-vault vectors. Finish SBOM/license/relinking/SignPath review.
-Physical mobile/KDF and filesystem gates remain independent and are not replaced
-by this spike. A later evidence-backed ADR must explicitly approve a Windows v1
-freeze; this alpha decision grants no release exception.
+light/dark fidelity and 100/150/200% scaling checks. The alpha Rust C ABI, synthetic
+vault workflow and exact-artifact SBOM/license/relink checks have been exercised;
+they do not establish final cross-platform compatibility. Independent security
+audit, SignPath/Authenticode acceptance, physical Android/iPhone KDF/format checks,
+removable NTFS/exFAT interruption and power-loss tests remain open. Final format,
+KDF and migration guarantees remain unapproved. A later evidence-backed ADR must
+explicitly approve a Windows v1 freeze; this alpha decision grants no release exception.
