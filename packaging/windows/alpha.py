@@ -127,6 +127,7 @@ def audit_runtime(files, source_sha, words, public_dictionary=b"", vendor_source
     evidence = json.loads(files["release-evidence.json"])
     if evidence.get("source_sha") != source_sha or evidence.get("exe_sha256") != digest(files["Tessaveil.exe"]):
         raise ValueError("runtime evidence is stale")
+    check_observation(json.loads(files["runtime-observation.json"]), source_sha, digest(files["Tessaveil.exe"]))
     scanned_exe, vendor_report = vendor_scan_copy(files["Tessaveil.exe"], vendor_sources or {}, vendor_pins or {})
     if json.loads(files["vendor-build-prefixes.json"]) != vendor_report:
         raise ValueError("vendor prefix evidence is stale")
@@ -233,10 +234,45 @@ def check_relink_proof(proof, source_sha, executable_sha256, application_hashes)
             or proof.get("application_sha256") != application_hashes
             or not application_hashes
             or proof.get("modified_qt_marker_in_application") is not True
-            or proof.get("marker_probe") != "MODIFIED_QT_CONFIRMED"
-            or any(proof.get("synthetic_smoke", {}).get(key) is not True for key in
-                   ("open_close_reopen_lock", "authentication_safe", "all_five_password_controls_masked"))):
+            or proof.get("marker_probe") != "MODIFIED_QT_CONFIRMED"):
         raise ValueError("relink proof missing, stale or not a modified-library exercise")
+    try:
+        check_observation(proof.get("synthetic_smoke"), source_sha, proof["modified_exe_sha256"])
+    except ValueError as error:
+        raise ValueError("relink observation missing, false or stale") from error
+
+
+def check_observation(observation, source_sha, executable_sha256):
+    required = {"source_sha", "exe_sha256", "scale", "password_observations", "modules", "scope",
+                "open_close_reopen_lock", "authentication_safe", "all_five_password_controls_masked", "keyboard_focus_observed"}
+    if (not isinstance(observation, dict) or set(observation) != required
+            or observation.get("source_sha") != source_sha
+            or observation.get("exe_sha256") != executable_sha256
+            or not re.fullmatch(r"[a-f0-9]{40}", source_sha)
+            or not re.fullmatch(r"[a-f0-9]{64}", executable_sha256)
+            or observation.get("scale") not in ("1", "1.5", "2")
+            or any(observation.get(key) is not True for key in
+                   ("open_close_reopen_lock", "authentication_safe", "all_five_password_controls_masked", "keyboard_focus_observed"))
+            or observation.get("scope") != "Development host UIA only; no clean Windows, Narrator, clipboard contents, network trace or release claim"):
+        raise ValueError("observation identity, shape or mandatory UIA result invalid")
+    passwords = observation["password_observations"]
+    modules = observation["modules"]
+    if (not isinstance(passwords, list) or len(passwords) != 2
+            or any(not isinstance(item, dict) or set(item) != {"getter", "setter", "password"}
+                   or item.get("password") is not True or item.get("getter") != "OBSERVED_MASKED"
+                   or item.get("setter") != "SET" for item in passwords)
+            or not isinstance(modules, list) or not modules
+            or any(not isinstance(name, str) or not re.fullmatch(r"[A-Za-z0-9_.-]+\.(?:dll|exe)", name, re.I) for name in modules)
+            or len({name.lower() for name in modules}) != len(modules)
+            or "tessaveil.exe" not in {name.lower() for name in modules}):
+        raise ValueError("observation password or module evidence invalid")
+
+
+def check_sbom(actual, expected):
+    # Expected is reconstructed from source-controlled locked metadata and
+    # independently inspected source/PE inputs, never from the supplied SBOM.
+    if actual != expected:
+        raise ValueError("SBOM component identities, licenses, checksums or dependency graph differ from source inventory")
 
 
 def verify_license_bindings(files, bindings):

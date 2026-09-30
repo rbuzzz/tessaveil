@@ -1,8 +1,10 @@
 """Finalize only an independently audited clean-SHA build and real Qt relink."""
 import argparse
 import json
+import os
 from pathlib import Path
 import subprocess
+import sys
 
 import alpha
 import verify
@@ -55,6 +57,8 @@ def finish(output, relink, smoke_path, source_sha):
     alpha.write_archive(output / "runtime.zip", runtime)
     alpha.write_archive(output / "compliance.zip", compliance)
     result = verify.verify(output / "runtime.zip", output / "compliance.zip", source_sha, distribution=True)
+    subprocess.run([sys.executable, "-m", "unittest", "tests.repository.test_windows_alpha_distribution", "-v"],
+                   cwd=alpha.ROOT, env=dict(os.environ, TESSAVEIL_ALPHA_AUDIT_ROOT=str(output.resolve())), check=True)
     # Workflow checks this receipt as well as process success before uploading.
     (output / "GATE-PASS.json").write_bytes(encode(result))
     print(json.dumps(result))

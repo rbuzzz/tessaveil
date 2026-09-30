@@ -11,6 +11,7 @@ import zipfile
 import alpha
 import inventory
 import runtime_material
+import sbom
 
 ROOT = alpha.ROOT
 QT_HASH = "992bf7766e214a341ef793eb3665fb784787d2fd666955f5f507f4c6f1f770dd"
@@ -49,11 +50,14 @@ def prepare(args):
     # Keep the exact licensed public list distinct from an unreviewed phrase.
     words = frozenset(wordlist.decode().splitlines())
     metadata = json.loads(run("cargo", "metadata", "--locked", "--offline", "--format-version", "1"))
+    source_inventory = sbom.source_inventory()
+    sbom.check_metadata(metadata, source_inventory["cargo_metadata"])
     packages = tomllib.loads((ROOT / "Cargo.lock").read_text(encoding="utf-8"))["package"]
     components = alpha.rust_components(packages, metadata)
     linked = inventory.inventory(args.toolchain_root, args.build, args.rust_library)
     linked_rust = frozenset(match[1] for name in linked["members"] if (match := re.match(r"^([a-zA-Z0-9_]+)-[0-9a-f]{16}\.", name)))
     runtime_notices, runtime_components = runtime_material.material(args.toolchain_root, linked_rust=linked_rust, linked_members=linked["members"])
+    sbom.check_runtime_metadata(runtime_components, source_inventory["runtime_metadata"])
     components.extend(runtime_components)
     runtime_policy = json.loads((ROOT / "packaging/windows/runtime-sources.json").read_bytes())
     builtin = next(package for package in tomllib.loads(runtime_notices["rust/library-Cargo.lock"].decode())["package"] if package["name"] == "compiler_builtins")
@@ -61,8 +65,6 @@ def prepare(args):
                        "licenses": [{"expression": "MIT AND (Apache-2.0 WITH LLVM-exception)"}],
                        "externalReferences": [{"type": "vcs", "url": "https://github.com/rust-lang/rust/tree/" + runtime_policy["rust_source_commit"] + "/library/compiler-builtins"}],
                        "description": "Exact rust-src library lock and compound compiler-builtins license preserved in compliance material"})
-    id_to_ref = {p["id"]: f"pkg:cargo/{p['name']}@{p['version']}" for p in metadata["packages"]}
-    dependencies = [{"ref": id_to_ref[n["id"]], "dependsOn": sorted(id_to_ref[d] for d in n["dependencies"])} for n in metadata["resolve"]["nodes"]]
     components.extend([
         {"type": "library", "bom-ref": "qtbase", "name": "QtBase", "version": "6.8.3", "licenses": [{"expression": "LGPL-3.0-only"}], "hashes": [{"alg": "SHA-256", "content": QT_HASH}], "description": "Core, Gui, Widgets, EntryPoint, Windows/style/image plugins; exact complete corresponding source bundled separately"},
         {"type": "data", "bom-ref": "bip39-en", "name": "bip39-en", "version": dictionary["source"]["revision"], "licenses": [{"license": {"id": "MIT"}}], "hashes": [{"alg": "SHA-256", "content": dictionary["sha256"]}], "externalReferences": [{"type": "distribution", "url": dictionary["source"]["url"]}]},
@@ -157,15 +159,16 @@ def prepare(args):
     if not imports or any(re.search(r"(?:qt[0-9]|libstdc|libgcc|libwinpthread|vcruntime|msvcp[0-9])", name, re.I) for name in imports):
         raise ValueError("PE runtime dependency gate failed")
     components.extend({"type": "operating-system", "bom-ref": "windows:" + name.lower(), "name": name, "description": "Host Windows/UCRT system import; supplied by the OS, not redistributed"} for name in imports)
+    document = sbom.document(compliance, exe, sha)
+    alpha.check_sbom({"components": components}, {"components": document["components"]})
+    alpha.check_observation(json.loads(args.observation.read_bytes()), sha, alpha.digest(exe))
     evidence = {"source_sha": sha, "working_tree_dirty": dirty, "exe_sha256": alpha.digest(exe), "exe_bytes": len(exe),
                 "status": "LOCAL_ANALYSIS_ONLY", "unsigned": True, "authenticode": False,
                 "synthetic_only": True, "release_freeze": "NO-GO", "github_provenance": "NOT RUN",
                 "compliance": json.loads((ROOT / "packaging/windows/distribution-review.json").read_bytes()),
                 "alpha_matrix_sha256": alpha.digest((ROOT / "generated/alpha/profile-matrix.json").read_bytes()), "cargo_lock_sha256": alpha.digest((ROOT / "Cargo.lock").read_bytes())}
     runtime = {"Tessaveil.exe": exe, "SOURCE_SHA": (sha + "\n").encode(),
-               "sbom.cdx.json": encode({"bomFormat": "CycloneDX", "specVersion": "1.6", "version": 1,
-                                       "metadata": {"component": {"type": "application", "bom-ref": "Tessaveil", "name": "Tessaveil", "version": sha}},
-                                       "components": components, "dependencies": dependencies}),
+               "sbom.cdx.json": encode(document),
                "release-evidence.json": encode(evidence), "PE-imports.json": encode({"exe_sha256": alpha.digest(exe), "imports": imports}),
                "runtime-observation.json": args.observation.read_bytes(),
                "vendor-build-prefixes.json": encode(vendor_report)}

@@ -10,6 +10,7 @@ from jsonschema import Draft7Validator
 from referencing import Registry, Resource
 
 import alpha
+import sbom
 
 
 def verify(runtime_path, compliance_path, source_sha, distribution=False):
@@ -50,6 +51,7 @@ def verify(runtime_path, compliance_path, source_sha, distribution=False):
     registry = Registry().with_resources((schema["$id"], Resource.from_contents(schema)) for schema in schemas.values())
     if next(Draft7Validator(schemas["cyclonedx-1.6.schema.json"], registry=registry).iter_errors(json.loads(runtime["sbom.cdx.json"])), None):
         raise ValueError("SBOM fails pinned official CycloneDX 1.6 schema")
+    alpha.check_sbom(json.loads(runtime["sbom.cdx.json"]), sbom.document(compliance, runtime["Tessaveil.exe"], source_sha))
     with zipfile.ZipFile(io.BytesIO(compliance["qtbase-6.8.3.zip"])) as qt_source:
         for name, data in compliance.items():
             if name.startswith("qt-licenses/"):

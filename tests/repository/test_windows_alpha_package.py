@@ -1,21 +1,95 @@
 """Behavioral packaging boundaries: reject bad bytes before publication."""
 
 import importlib.util
+import copy
 import json
 from pathlib import Path
 import tempfile
 import struct
+import sys
 import unittest
 import warnings
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "packaging/windows"))
 SPEC = importlib.util.spec_from_file_location("alpha_package", ROOT / "packaging/windows/alpha.py")
 alpha = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(alpha)
 
 
 class WindowsAlphaPackageTests(unittest.TestCase):
+    @staticmethod
+    def observation(exe_sha="b" * 64):
+        return {"source_sha": "a" * 40, "exe_sha256": exe_sha, "scale": "1",
+                "password_observations": [{"getter": "OBSERVED_MASKED", "setter": "SET", "password": True}] * 2,
+                "all_five_password_controls_masked": True, "keyboard_focus_observed": True,
+                "open_close_reopen_lock": True, "authentication_safe": True,
+                "modules": ["Tessaveil.exe", "KERNEL32.dll"],
+                "scope": "Development host UIA only; no clean Windows, Narrator, clipboard contents, network trace or release claim"}
+
+    def test_observation_rejects_empty_false_missing_malformed_and_stale_receipts(self):
+        good = self.observation()
+        alpha.check_observation(good, "a" * 40, "b" * 64)
+        bad = [{}, dict(good, source_sha="c" * 40), dict(good, exe_sha256="d" * 64),
+               dict(good, password_observations=[]), dict(good, modules=[]),
+               dict(good, scale="9"), dict(good, scope=""),
+               dict(good, password_observations=[{"getter": "EXPOSED", "setter": "SET", "password": True}] * 2)]
+        for key in ("all_five_password_controls_masked", "keyboard_focus_observed", "open_close_reopen_lock", "authentication_safe"):
+            bad.extend([dict(good, **{key: False}), dict(good, **{key: 1}), {k: v for k, v in good.items() if k != key}])
+        for value in bad:
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, "observation"):
+                alpha.check_observation(value, "a" * 40, "b" * 64)
+
+    def test_sbom_rejects_schema_valid_incomplete_substituted_or_disconnected_graph(self):
+        expected = {"bomFormat": "CycloneDX", "specVersion": "1.6", "version": 1,
+                    "metadata": {"component": {"type": "application", "bom-ref": "Tessaveil", "name": "Tessaveil", "version": "a" * 40}},
+                    "components": [{"type": "library", "bom-ref": "pkg:cargo/example@1.0.0", "name": "example", "version": "1.0.0",
+                                    "licenses": [{"expression": "MIT"}], "hashes": [{"alg": "SHA-256", "content": "b" * 64}]}],
+                    "dependencies": [{"ref": "Tessaveil", "dependsOn": ["pkg:cargo/example@1.0.0"]}, {"ref": "pkg:cargo/example@1.0.0", "dependsOn": []}]}
+        alpha.check_sbom(expected, copy.deepcopy(expected))
+        invalid = [{"bomFormat": "CycloneDX", "specVersion": "1.6", "version": 1}]
+        for key in ("components", "dependencies"):
+            value = copy.deepcopy(expected)
+            value[key] = []
+            invalid.append(value)
+        for key, replacement in (("version", "2.0.0"), ("licenses", [{"expression": "GPL-3.0-only"}]),
+                                 ("hashes", [{"alg": "SHA-256", "content": "c" * 64}]), ("bom-ref", "substituted")):
+            value = copy.deepcopy(expected)
+            value["components"][0][key] = replacement
+            invalid.append(value)
+        for refs in ([], ["missing"]):
+            value = copy.deepcopy(expected)
+            value["dependencies"][0]["dependsOn"] = refs
+            invalid.append(value)
+        value = copy.deepcopy(expected)
+        value["metadata"]["component"]["version"] = "d" * 40
+        invalid.append(value)
+        for value in invalid:
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, "SBOM"):
+                alpha.check_sbom(value, expected)
+
+    def test_sbom_source_inventory_rejects_live_license_or_dependency_graph_drift(self):
+        spec = importlib.util.spec_from_file_location("alpha_sbom", ROOT / "packaging/windows/sbom.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        metadata = {"packages": [{"id": "local-app", "name": "application", "version": "1.0.0", "source": None, "license": "Apache-2.0"},
+                                 {"id": "registry-lib", "name": "library", "version": "2.0.0", "source": "registry", "license": "MIT"}],
+                    "resolve": {"nodes": [{"id": "local-app", "dependencies": ["registry-lib"]}, {"id": "registry-lib", "dependencies": []}]}}
+        expected = {"packages": [{"id": "pkg:cargo/application@1.0.0", "name": "application", "version": "1.0.0", "source": None, "license": "Apache-2.0"},
+                                 {"id": "pkg:cargo/library@2.0.0", "name": "library", "version": "2.0.0", "source": "registry", "license": "MIT"}],
+                    "resolve": {"nodes": [{"id": "pkg:cargo/application@1.0.0", "dependencies": ["pkg:cargo/library@2.0.0"]}, {"id": "pkg:cargo/library@2.0.0", "dependencies": []}]}}
+        self.assertEqual(module.normalize_metadata(metadata), expected)
+        module.check_metadata(metadata, expected)
+        for field in ("license", "graph"):
+            changed = copy.deepcopy(metadata)
+            if field == "license":
+                changed["packages"][1]["license"] = "GPL-3.0-only"
+            else:
+                changed["resolve"]["nodes"][0]["dependencies"] = []
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, "inventory"):
+                module.check_metadata(changed, expected)
+
     def test_clean_ci_fetches_complete_locked_graph_before_offline_packaging(self):
         script = (ROOT / "packaging/windows/ci.ps1").read_text()
         self.assertIn("cargo fetch --locked\n", script)
@@ -64,11 +138,14 @@ class WindowsAlphaPackageTests(unittest.TestCase):
         proof = {"source_sha": "a" * 40, "original_exe_sha256": "b" * 64,
                  "modified_exe_sha256": "d" * 64, "application_sha256": objects,
                  "modified_qt_marker_in_application": True, "marker_probe": "MODIFIED_QT_CONFIRMED",
-                 "synthetic_smoke": {"open_close_reopen_lock": True, "authentication_safe": True, "all_five_password_controls_masked": True}}
+                 "synthetic_smoke": self.observation("d" * 64)}
         alpha.check_relink_proof(proof, "a" * 40, "b" * 64, objects)
-        for changed in ({"source_sha": "e" * 40}, {"modified_exe_sha256": "b" * 64}, {"application_sha256": {}}, {"synthetic_smoke": {}}):
+        for changed in ({"source_sha": "e" * 40}, {"modified_exe_sha256": "b" * 64}, {"application_sha256": {}}, {"synthetic_smoke": {}}, {"synthetic_smoke": None}):
             with self.subTest(changed=changed), self.assertRaisesRegex(ValueError, "relink"):
                 alpha.check_relink_proof(dict(proof, **changed), "a" * 40, "b" * 64, objects)
+        for changed in ({"keyboard_focus_observed": False}, {"source_sha": "e" * 40}, {"exe_sha256": "b" * 64}):
+            with self.subTest(changed=changed), self.assertRaisesRegex(ValueError, "relink"):
+                alpha.check_relink_proof(dict(proof, synthetic_smoke=dict(proof["synthetic_smoke"], **changed)), "a" * 40, "b" * 64, objects)
 
     def test_license_bindings_require_every_notice_and_exact_bytes(self):
         files = {"LICENSE": b"public notice", "runtime-notices/one": b"primary terms"}
@@ -133,9 +210,15 @@ class WindowsAlphaPackageTests(unittest.TestCase):
                       "release-evidence.json": json.dumps({"source_sha": "a" * 40, "exe_sha256": alpha.digest(executable)}).encode()})
         files["vendor-build-prefixes.json"] = json.dumps(alpha.vendor_scan_copy(executable, {}, {})[1]).encode()
         files["PE-imports.json"] = json.dumps({"exe_sha256": alpha.digest(executable), "imports": ["KERNEL32.dll"]}).encode()
+        files["runtime-observation.json"] = json.dumps(self.observation(alpha.digest(executable))).encode()
         files["SHA256SUMS"] = alpha.make_manifest(files)
         alpha.audit_runtime(files, "a" * 40, frozenset({"abandon"}), dictionary)
         self.assertEqual(files["Tessaveil.exe"], executable)
+        substituted = dict(files, **{"runtime-observation.json": b"{}"})
+        substituted.pop("SHA256SUMS")
+        substituted["SHA256SUMS"] = alpha.make_manifest(substituted)
+        with self.assertRaisesRegex(ValueError, "observation"):
+            alpha.audit_runtime(substituted, "a" * 40, frozenset({"abandon"}), dictionary)
         files["Tessaveil.exe"] += b"changed"
         with self.assertRaisesRegex(ValueError, "manifest"):
             alpha.audit_runtime(files, "a" * 40, frozenset({"abandon"}), dictionary)

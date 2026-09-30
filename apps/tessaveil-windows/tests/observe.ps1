@@ -1,6 +1,7 @@
 # Development-host UIA, not clean Windows or Narrator certification.
-param([Parameter(Mandatory)][string]$Executable,[Parameter(Mandatory)][string]$Fixture,[Parameter(Mandatory)][string]$ScreenshotRoot,[ValidateSet('1','1.5','2')][string]$Scale='1',[switch]$LaunchOnly)
+param([Parameter(Mandatory)][string]$Executable,[Parameter(Mandatory)][string]$Fixture,[Parameter(Mandatory)][string]$ScreenshotRoot,[ValidateSet('1','1.5','2')][string]$Scale='1',[switch]$LaunchOnly,[ValidatePattern('^[a-f0-9]{40}$')][string]$SourceSha)
 $ErrorActionPreference='Stop'
+$observedExeHash=(Get-FileHash -LiteralPath $Executable -Algorithm SHA256).Hash.ToLowerInvariant()
 Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
 Add-Type -AssemblyName System.Drawing
@@ -84,7 +85,8 @@ try{
  [void](Find 'The password is incorrect or the vault is damaged.');Capture 'authentication-error'
  SetValue 'Master password' 'synthetic-master-password';Invoke 'Unlock vault';[void](Find 'Open / saved')
  Invoke 'Close vault';[void](Find 'Closed')
- [ordered]@{scale=$Scale;password_observations=$passwordResults;all_five_password_controls_masked=$true;keyboard_focus_observed=$focus;open_close_reopen_lock=$true;authentication_safe=$true;modules=@($process.Modules|ForEach-Object{$_.ModuleName}|Sort-Object -Unique);scope='Development host UIA only; no clean Windows, Narrator, clipboard contents, network trace or release claim'}|ConvertTo-Json -Depth 5
+ if((Get-FileHash -LiteralPath $Executable -Algorithm SHA256).Hash.ToLowerInvariant() -ne $observedExeHash){throw 'Observed executable changed during UIA smoke'}
+ [ordered]@{source_sha=$SourceSha;exe_sha256=$observedExeHash;scale=$Scale;password_observations=$passwordResults;all_five_password_controls_masked=$true;keyboard_focus_observed=$focus;open_close_reopen_lock=$true;authentication_safe=$true;modules=@($process.Modules|ForEach-Object{$_.ModuleName}|Sort-Object -Unique);scope='Development host UIA only; no clean Windows, Narrator, clipboard contents, network trace or release claim'}|ConvertTo-Json -Depth 5
 }finally{
  if(!$process.HasExited){[void]$process.CloseMainWindow();if(!$process.WaitForExit(5000)){$process.Kill()}}
  $process.Dispose()

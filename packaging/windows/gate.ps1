@@ -19,7 +19,7 @@ try{
  try{
   cargo run --locked -p tessaveil-windows-controller --example synthetic_fixture -- $fixture
   if($LASTEXITCODE){throw 'Synthetic fixture creation failed'}
-  $observation=& powershell -NoProfile -File "$repo/apps/tessaveil-windows/tests/observe.ps1" -Executable "$ToolchainRoot/build/alpha-package/Tessaveil.exe" -Fixture $fixture -ScreenshotRoot "$scratch/captures"
+  $observation=& powershell -NoProfile -File "$repo/apps/tessaveil-windows/tests/observe.ps1" -Executable "$ToolchainRoot/build/alpha-package/Tessaveil.exe" -Fixture $fixture -ScreenshotRoot "$scratch/captures" -SourceSha $SourceSha
   if($LASTEXITCODE){throw 'Live headful smoke unavailable or failed; no upload permitted'}
   [IO.File]::WriteAllText("$scratch/observation.json",($observation -join "`n"),[Text.UTF8Encoding]::new($false))
   python "$PSScriptRoot/prepare.py" --toolchain-root $ToolchainRoot --build "$ToolchainRoot/build/alpha-package" --rust-library "$ToolchainRoot/alpha-package-target/release/libtessaveil_windows_controller.a" --output $OutputRoot --observation "$scratch/observation.json" --source-sha $SourceSha --analysis-only
@@ -30,7 +30,7 @@ try{
   if($original -eq $modified){throw 'Same-input relink is not a modified Qt exercise'}
   python -c "from pathlib import Path; import sys; assert b'6.8.3-tessaveil-relink-test' in Path(sys.argv[1]).read_bytes()" "$scratch/relink/app/Tessaveil.exe"
   if($LASTEXITCODE){throw 'Modified Qt marker missing from relinked application'}
-  $relinkObservation=& powershell -NoProfile -File "$repo/apps/tessaveil-windows/tests/observe.ps1" -Executable "$scratch/relink/app/Tessaveil.exe" -Fixture $fixture -ScreenshotRoot "$scratch/relink-captures"
+  $relinkObservation=& powershell -NoProfile -File "$repo/apps/tessaveil-windows/tests/observe.ps1" -Executable "$scratch/relink/app/Tessaveil.exe" -Fixture $fixture -ScreenshotRoot "$scratch/relink-captures" -SourceSha $SourceSha
   if($LASTEXITCODE){throw 'Relinked application synthetic smoke failed'}
   [IO.File]::WriteAllText("$scratch/relink-observation.json",($relinkObservation -join "`n"),[Text.UTF8Encoding]::new($false))
   python "$PSScriptRoot/finish.py" --output $OutputRoot --relink "$scratch/relink" --smoke "$scratch/relink-observation.json" --source-sha $SourceSha
