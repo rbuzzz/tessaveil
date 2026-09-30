@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "substrate-vector-license",
+  "source_type": "official-source",
+  "claim": "Apache-2.0 public test projections modified and attributed to Copyright2019-2020 Parity Technologies (UK) Ltd. Complete Apache license already retained; no library bundled.",
+  "url": "https://raw.githubusercontent.com/paritytech/substrate-bip39/ceb4fe5a3c7ac91da2e272037797ebecb56aa177/LICENSE",
+  "revision": "ceb4fe5a3c7ac91da2e272037797ebecb56aa177",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "substrate-bip39"
+  ]
+}

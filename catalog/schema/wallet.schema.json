@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tessaveil:schema:wallet:v1",
+  "title": "wallet",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "display_name",
+    "status",
+    "historical",
+    "evidence_ids",
+    "verified_on",
+    "version_interval",
+    "product_id",
+    "product_name",
+    "aliases",
+    "platform",
+    "mode_id",
+    "network_ids",
+    "scheme_id",
+    "generates_mnemonic",
+    "import_only",
+    "limitations",
+    "guidance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "display_name": {
+      "type": "object",
+      "required": [
+        "en",
+        "ru"
+      ],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ru": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "documented",
+        "blocked",
+        "no-mnemonic-confirmed"
+      ]
+    },
+    "historical": {
+      "type": "boolean"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "verified_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "version_interval": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "string",
+          "minLength": 1
+        },
+        "max": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "product_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "product_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "platform": {
+      "enum": [
+        "windows",
+        "macos",
+        "linux",
+        "android",
+        "ios",
+        "mobile-app",
+        "web",
+        "hardware",
+        "cross-platform"
+      ]
+    },
+    "mode_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "network_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "scheme_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "generates_mnemonic": {
+      "type": "boolean"
+    },
+    "import_only": {
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "guidance": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [{
+    "if": {"properties": {"status": {"const": "verified"}}, "required": ["status"]},
+    "then": {"properties": {"scheme_id": {"type": "string", "minLength": 1}}}
+  }],
+  "additionalProperties": false
+}

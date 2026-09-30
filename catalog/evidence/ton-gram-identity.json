@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-gram-identity",
+  "source_type": "official-documentation",
+  "claim": "gramwallet.io identifies the current self-custodial TON wallet and links installation; current identity must not inherit historical Telegram Gram behavior. Reviewed 2026-09-29; byte SHA-256 c498efe1d81425f59fb294f1184c5a64ddd913c5cc22784759d2bd58691e7da2. See docs/research/batches/bip39-ton.md.",
+  "url": "https://gramwallet.io/",
+  "revision": "sha256:c498efe1d81425f59fb294f1184c5a64ddd913c5cc22784759d2bd58691e7da2",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "gram-wallet"
+  ]
+}

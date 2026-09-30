@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-passport-backup",
+  "source_type": "official-source",
+  "claim": "Pinned backup flow requires its Backup Code to decrypt the microSD file and explicitly excludes the active passphrase from backup.",
+  "url": "https://raw.githubusercontent.com/Foundation-Devices/passport2/670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0/ports/stm32/boards/Passport/modules/flows/backup_flow.py",
+  "revision": "670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "passport-microsd"
+  ]
+}

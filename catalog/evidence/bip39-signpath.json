@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "bip39-signpath",
+  "source_type": "official-documentation",
+  "claim": "Local component review by Codex: the exact MIT-licensed lists are source data with no executable dependencies or proprietary restrictions. Together with retained MIT notices and OSI approval this supports signpath_compatible=compatible for this payload only. SignPath terms require OSS components; this is not Foundation acceptance or project release/signing approval. Reviewed 2026-09-29; byte SHA-256 6610cf889bbe0dc7533abaa310bc7a5cc9a61ae6c2ce0798a08109c925b46c51. See docs/research/batches/bip39-ton.md.",
+  "url": "https://signpath.org/terms.html",
+  "revision": "sha256:6610cf889bbe0dc7533abaa310bc7a5cc9a61ae6c2ce0798a08109c925b46c51",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "bip39-en",
+    "bip39-ja",
+    "bip39-ko",
+    "bip39-es",
+    "bip39-zh-hans",
+    "bip39-zh-hant",
+    "bip39-fr",
+    "bip39-it",
+    "bip39-cs",
+    "bip39-pt"
+  ]
+}

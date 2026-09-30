@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-leap",
+  "source_type": "official-documentation",
+  "claim": "Official indexed guide describes Keplr/Cosmostation phrase import. Direct URL currently returns 404; indexed content is evidence of a documented procedure, not current service availability.",
+  "url": "https://www.leapwallet.io/support/import-your-existing-keplr-wallet-into-leap",
+  "revision": "web-extract-sha256:e16436522b5c4a6bce9948720a8b5ea87347d27d8eaf6889fc080bf5445e9828",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "leap"
+  ]
+}

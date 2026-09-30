@@ -1,0 +1,53 @@
+{
+  "verified_utc": "2026-09-29",
+  "format_freeze": "NO-GO",
+  "kdf_freeze": "NO-GO",
+  "candidate_profiles": [[65536, 3, 4]],
+  "host_rust": {
+    "target": "x86_64-pc-windows-gnu",
+    "rustc": "1.90.0",
+    "cargo": "1.90.0",
+    "rustfmt": "1.8.0-stable",
+    "locked_check": "PASS",
+    "tests": "PASS: 2 unit + 5 vector + 2 independent crypto",
+    "native_android_build": "BLOCKED",
+    "native_ios_build": "BLOCKED"
+  },
+  "targets": [
+    {
+      "class": "physical arm64 Android 4 GiB lower-bound",
+      "status": "BLOCKED",
+      "blocker": "No present portable-device entry; adb unavailable. No physical device identity, arm64 architecture, or 4 GiB RAM evidence was supplied.",
+      "model": null, "os": null, "duration_us": null, "peak_memory_bytes": null,
+      "oom": null, "thermal": null, "normalization_match": null
+    },
+    {
+      "class": "current mid-range physical Android",
+      "status": "BLOCKED",
+      "blocker": "No present portable-device entry; adb unavailable. No current mid-range physical Android model or access evidence was supplied.",
+      "model": null, "os": null, "duration_us": null, "peak_memory_bytes": null,
+      "oom": null, "thermal": null, "normalization_match": null
+    },
+    {
+      "class": "physical iPhone 11/A13/4 GiB-class lower-bound",
+      "status": "BLOCKED",
+      "blocker": "No present portable-device entry and no accessible Mac/Xcode host; physical iPhone class and access were not supplied.",
+      "model": null, "os": null, "duration_us": null, "peak_memory_bytes": null,
+      "oom": null, "thermal": null, "normalization_match": null
+    },
+    {
+      "class": "current physical iPhone",
+      "status": "BLOCKED",
+      "blocker": "No present portable-device entry and no accessible Mac/Xcode host; current physical iPhone class and access were not supplied.",
+      "model": null, "os": null, "duration_us": null, "peak_memory_bytes": null,
+      "oom": null, "thermal": null, "normalization_match": null
+    },
+    {
+      "class": "Mac/Xcode host",
+      "status": "BLOCKED",
+      "blocker": "Current host is Windows; local Xcode command-line tools are absent and no configured Mac/Xcode host access was supplied.",
+      "model": null, "os": null, "duration_us": null, "peak_memory_bytes": null,
+      "oom": null, "thermal": null, "normalization_match": null
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "typhon",
+  "display_name": {
+    "en": "Typhon — web mnemonic creation unresolved",
+    "ru": "Typhon — web mnemonic creation unresolved"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "cardano-typhon-create"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "app-version-unresolved-doc-2026-09-29",
+    "max": "app-version-unresolved-doc-2026-09-29"
+  },
+  "product_id": "typhon",
+  "product_name": "Typhon",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "web-mnemonic-created-unresolved",
+  "network_ids": [
+    "cardano"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Creation supported by official help, but12/15/24 selector and derivation not established by primary retrieved article. Import choices and testnet UI are not production generation evidence. No extension/mobile inference.",
+    "Non-selectable: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence."
+  ],
+  "guidance": "Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil."
+}

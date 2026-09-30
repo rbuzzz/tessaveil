@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "guarda-mnemonic-import",
+  "display_name": {
+    "en": "Guarda — mnemonic-imported",
+    "ru": "Guarda — mnemonic-imported"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-guarda-import"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-c6f3e00c7303",
+    "max": "version-unresolved-doc-2026-09-29-c6f3e00c7303"
+  },
+  "product_id": "guarda",
+  "product_name": "Guarda",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "mnemonic-imported",
+  "network_ids": [
+    "multi-chain"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Browser import accepts an existing mnemonic, then encrypts a backup with a new password. This does not establish newly generated BIP39 wallets.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

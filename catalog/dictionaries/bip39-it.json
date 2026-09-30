@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "id": "bip39-it",
+  "display_name": {
+    "en": "BIP39 — Italian",
+    "ru": "BIP39 — Итальянский"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "bip39-spec",
+    "bip39-guidance",
+    "bip39-license",
+    "bip39-signpath",
+    "bip39-osi-mit",
+    "bip39-vectors"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "3a10b5b5f0a7586df8928d580a3009744ebb2079",
+    "max": "3a10b5b5f0a7586df8928d580a3009744ebb2079"
+  },
+  "language": "it",
+  "script": "Latn",
+  "source": {
+    "url": "https://raw.githubusercontent.com/bitcoin/bips/3a10b5b5f0a7586df8928d580a3009744ebb2079/bip-0039/italian.txt",
+    "revision": "3a10b5b5f0a7586df8928d580a3009744ebb2079"
+  },
+  "license": {
+    "spdx_or_name": "MIT",
+    "source_url": "https://raw.githubusercontent.com/trezor/python-mnemonic/b57a5ad77a981e743f4167ab2f7927a55c1e82a8/LICENSE",
+    "attribution": "BIP39 authors Marek Palatinus, Pavol Rusnak, Aaron Voisine, Sean Bowe and word-list contributors. Byte-identical reference copy: Copyright (c) 2013-2016 Pavol Rusnak. Full license and language credits in THIRD_PARTY_NOTICES.",
+    "repository_redistribution": "allowed",
+    "signpath_compatible": "compatible",
+    "decision_evidence": [
+      "bip39-license",
+      "bip39-osi-mit",
+      "bip39-signpath"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "NFKD",
+  "word_count": 2048,
+  "sha256": "d392c49fdb700a24cd1fceb237c1f65dcc128f6b34a8aacb58b59384b5c648c2",
+  "order_rule": "Exact upstream source line order; zero-based 11-bit indices 0 through 2047. UTF-8 LF bytes and final newline preserved without transformation.",
+  "position_rules": [
+    "The same dictionary is eligible at every word position. Phrase checksum or seed validity is never evaluated by Tessaveil."
+  ],
+  "duplicate_analysis": {
+    "normalized_unique_count": 2048,
+    "collisions": []
+  },
+  "test_vector_ids": [
+    "bip39-vectors"
+  ],
+  "wordlist_path": "wordlists/bip39-it/3a10b5b5f0a7586df8928d580a3009744ebb2079.txt"
+}

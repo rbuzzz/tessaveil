@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-tangem-seed",
+  "source_type": "official-documentation",
+  "claim": "The new-card FAQ documents app-generated BIP39 phrases and import. It contradicts itself about 12-word creation; exact supported lengths and model/version are unresolved. FAQ lists 12/15/18/21/24-word import; it warns that supported networks and derivation paths constrain recovery. Imported lengths do not establish generation.",
+  "url": "https://tangem.com/en/blog/post/seed-phrase-faq/",
+  "revision": "body-sha256:39be36bfad5ad935f17768dba15a1b81035df02c685890ef4be42b577ba601a8",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tangem-seed",
+    "tangem-seed-import"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "zano-codec",
+  "source_type": "official-source",
+  "claim": "Exact 1626 English indices; eight native little-endian 32-bit groups become 24 words in eight dependent modulo-1626 triplets. List equals Electrum v1 tuple in order, not Monero current English or BIP39. Case-sensitive membership; no lowercase or Unicode normalization is applied by this codec.",
+  "url": "https://raw.githubusercontent.com/hyle-team/zano/e55c8ec47b76ed809162a958cf4600e03256a96a/src/common/mnemonic-encoding.cpp",
+  "revision": "e55c8ec47b76ed809162a958cf4600e03256a96a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zano-modern",
+    "zano-legacy-24",
+    "zano-en"
+  ]
+}

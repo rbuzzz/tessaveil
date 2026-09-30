@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "cake-monero-polyseed-offset-en",
+  "display_name": {
+    "en": "cake-monero-polyseed-offset-en",
+    "ru": "cake-monero-polyseed-offset-en"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-language-ui",
+    "cake-wallet-polyseed-dispatch",
+    "cake-wallet-polyseed-offset-native"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "polyseed-en"
+  ],
+  "supported_lengths": [
+    16
+  ],
+  "position_rules": [
+    "Source-order vocabulary per input language; no complete phrase validation."
+  ],
+  "external_secret": {
+    "kind": "required-passphrase",
+    "stored": false,
+    "guidance": "Condition: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-en,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified. Store required external material only with the original trusted wallet backup; Tessaveil never stores it."
+  },
+  "semantic_distinction": "Condition: isEncrypted=false; passphrase nonempty. Input dictionary polyseed-en,16 words. restoreWalletFromPolyseedWithOffset returns before polyseed.crypt/generateKey. Native createWalletFromPolyseed receives seedOffset. Wrapper comment is English-only because normalization; language argument is not forwarded. Non-English acceptance and exact native normalization/derivation remain unresolved. Never substitute Polyseed encryption for this offset. Source route only; exact native/dependency parity, Unicode normalization and independent wallet recovery unverified.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

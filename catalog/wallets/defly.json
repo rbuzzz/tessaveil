@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "defly",
+  "display_name": {
+    "en": "Defly — native account backup unresolved",
+    "ru": "Defly — native account backup unresolved"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "algorand-defly-create"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "app-version-unresolved-doc-2026-09-29",
+    "max": "app-version-unresolved-doc-2026-09-29"
+  },
+  "product_id": "defly",
+  "product_name": "Defly",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "native-account-created-backup-unresolved",
+  "network_ids": [
+    "algorand"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Manual proves account creation and mnemonic display; exact Android artifact, word count and semantics not proven.25-word mapping remains blocked. Android is the scoped research target, not proof of parity with iOS.",
+    "Non-selectable: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence."
+  ],
+  "guidance": "Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil."
+}

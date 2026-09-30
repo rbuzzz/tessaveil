@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "temple",
+  "display_name": {
+    "en": "Temple — mnemonic-generated",
+    "ru": "Temple — mnemonic-generated"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-temple-source"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "7770f23fffd85a96c2148335bca7c946c84d9337",
+    "max": "7770f23fffd85a96c2148335bca7c946c84d9337"
+  },
+  "product_id": "temple",
+  "product_name": "Temple",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "mnemonic-generated",
+  "network_ids": [
+    "tezos",
+    "ethereum"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Pinned vault spawn generates Bip39.generateMnemonic(128) when no mnemonic is supplied, then creates separate Tezos and EVM account credentials.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

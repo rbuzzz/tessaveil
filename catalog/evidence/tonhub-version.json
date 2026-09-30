@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "tonhub-version",
+  "source_type": "official-source",
+  "claim": "package.json is version 2.5.45 at the exact source commit. No binary or other-version identity is asserted. Reviewed 2026-09-29; byte SHA-256 ef41072e6abb6d6f983d669e0f8e9a8f182fd73a98406b251ad68f31379c6386. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/tonwhales/wallet/a2503f79d14868d65349ad7035d18389c6e2f996/package.json",
+  "revision": "a2503f79d14868d65349ad7035d18389c6e2f996",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tonhub"
+  ]
+}

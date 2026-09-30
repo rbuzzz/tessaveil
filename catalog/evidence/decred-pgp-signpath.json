@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "decred-pgp-signpath",
+  "source_type": "official-documentation",
+  "claim": "Reviewed 2026-09-29: OSS terms require OSI-approved licensing across components. Exact ISC list projections with notices satisfy local component licensing assessment; this is not Foundation acceptance or signing/release approval.",
+  "url": "https://signpath.org/terms.html",
+  "revision": "retrieved-2026-09-29",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pgp-even",
+    "pgp-odd"
+  ]
+}

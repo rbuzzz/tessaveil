@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "wallet-metamask",
+  "source_type": "official-documentation",
+  "claim": "New MetaMask setup generates a 12-word SRP. The reviewed page does not bind the exact dictionary, dependency or shipped extension version. Google, Apple or Telegram onboarding still generates an SRP, split into encrypted online pieces. Login credentials and MetaMask password are separate recovery dependencies. Private keys control individual accounts and have an import/export route; they are not an SRP or an additional mnemonic row. Extension SRP users can configure biometric unlock through passkeys. Local unlock must not be confused with mnemonic replacement or smart-account recovery.",
+  "url": "https://support.metamask.io/start/user-guide-secret-recovery-phrase-password-and-private-keys",
+  "revision": "body-sha256:c245a4907a21d310270069c3488f20961f8cbebd12ed288bf54225bc8b903189",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "metamask",
+    "metamask-passkey-unlock",
+    "metamask-private-key",
+    "metamask-social-login"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "id": "monero-en-old",
+  "display_name": {
+    "en": "monero-en-old",
+    "ru": "monero-en-old"
+  },
+  "status": "blocked",
+  "historical": true,
+  "evidence_ids": [
+    "monero-en-old-source",
+    "electrum-legacy-list",
+    "electrum-legacy-license",
+    "monero-monero-rules",
+    "monero-signpath",
+    "monero-osi-bsd",
+    "monero-monero-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+    "max": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa"
+  },
+  "language": "en",
+  "script": "Latn",
+  "source": {
+    "url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/mnemonics/english_old.h",
+    "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa"
+  },
+  "license": {
+    "spdx_or_name": "BSD-3-Clause file header; Electrum/Wiktionary cumulative rights unresolved",
+    "source_url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/LICENSE",
+    "attribution": "Monero EnglishOld file credits the Electrum project and Thomas Voegtlin; Electrum's pinned source cites a Wiktionary frequency list. Cumulative data rights require review.",
+    "repository_redistribution": "unclear",
+    "signpath_compatible": "pending",
+    "decision_evidence": [
+      "monero-signpath",
+      "monero-osi-bsd",
+      "monero-monero-license",
+      "monero-en-old-source",
+      "electrum-legacy-list",
+      "electrum-legacy-license"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "none",
+  "word_count": 1626,
+  "sha256": "c8da327d316f8ee758b790068e618077ac271a89fd77ec1250c59ae40e7b599e",
+  "order_rule": "Exact upstream array order; zero-based indices. Extract literal UTF-8 tokens unchanged; remove C/C++ wrapper and indentation, append LF after every token. No sorting, lowercasing or Unicode rewriting. Source file and extracted byte hashes in batch note.",
+  "position_rules": [
+    "Same vocabulary at every eligible position; upstream prefix length 4. Never evaluate a user phrase checksum.",
+    "Source-native lookup: Unicode codepoint lowercase and language-specific prefix, with no NFC/NFKD transform; normalization=none preserves source characters.",
+    "Historical restore-only EnglishOld: excluded from generation language list; duplicate prefixes and short words explicitly allowed by upstream."
+  ],
+  "duplicate_analysis": {
+    "normalized_unique_count": 1626,
+    "collisions": []
+  },
+  "test_vector_ids": [],
+  "wordlist_path": null
+}

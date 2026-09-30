@@ -841,7 +841,7 @@ Expected: all safe/applicable checks pass and every unavailable physical check h
 
 - [ ] **Step 3: Switch CI from incremental to strict catalogue validation**
 
-Replace `--allow-incomplete-required` with mandatory `python -m tools.catalog.cli validate --root . --require-terminal` and make generated-document drift, threat claims, spike-report contracts, schema/Python parity, positive test discovery, and sensitive-material scanning mandatory jobs. Add a separate reported release-readiness job that runs `--require-release-ready`; a red result blocks release/promotion but does not mislabel the research branch as incomplete.
+Replace `--allow-incomplete-required` with mandatory `python -m tools.catalog.cli validate --root . --require-terminal` and make generated-document drift, threat claims, spike-report contracts, schema/Python parity, positive test discovery, and sensitive-material scanning mandatory jobs. Add a separate release-readiness reporting job that runs `--require-release-ready`, captures its exit code and blocker output, and verifies they exactly match the committed `GO`/`NO-GO` report. On the research branch that job succeeds when an honest `NO-GO` is recorded; a future release/promotion workflow must invoke `--require-release-ready` directly and require exit code 0.
 
 - [ ] **Step 4: Review licences and generated notices**
 
@@ -860,4 +860,4 @@ Do not push from the task agent. The controller pushes `feature/tessaveil-resear
 - [ ] **Step 7: Wait for exact-SHA GitHub CI and stop**
 
 Run: `gh run list --commit "$(git rev-parse HEAD)" --limit 5` and watch the mandatory run to completion.
-Expected: mandatory research CI is green for the exact SHA and the report records the independent release-readiness result. Report blockers honestly and do not merge, release, or start production implementation while a required release blocker remains unresolved.
+Expected: mandatory research CI is green for the exact SHA and the report records the independent release-readiness result. After final review, history audit and exact-SHA green CI, the research PR may merge with an evidence-backed release NO-GO. This does not authorize RC/stable release, promote documented/blocked records, freeze the vault/KDF format, or clear hardware, audit and signing blockers. Report those blockers honestly and do not start production implementation under this research handoff.

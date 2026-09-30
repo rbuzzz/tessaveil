@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "zcash-vector-license",
+  "source_type": "official-source",
+  "claim": "MIT branch chosen for modified public doc-test projection, Copyright2020 Qinxuan Chen; full notice retained. Codex2026-09-29 data redistribution allowed/local SignPath compatible. No Rust dependency or wallet binary bundled.",
+  "url": "https://raw.githubusercontent.com/koushiro/rust-bips/1a6cc63a53721781aabd695307cc41b82ca76813/bip0039/LICENSE-MIT",
+  "revision": "1a6cc63a53721781aabd695307cc41b82ca76813",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zcash-bip39"
+  ]
+}

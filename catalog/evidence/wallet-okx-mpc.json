@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-okx-mpc",
+  "source_type": "official-documentation",
+  "claim": "Keyless MPC uses distributed shares and cloud restoration. Creation entry was removed on 2025-05-23; extension service suspended 2025-04-07. Existing app wallets are a distinct limited mode.",
+  "url": "https://www.okx.com/en-gb/help/what-is-okx-keyless-wallet",
+  "revision": "body-sha256:a31421d257c5bc95c13672d58b41464c9eff0677a784d30e72aebbde9a7e89e3",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "okx-wallet-mpc"
+  ]
+}

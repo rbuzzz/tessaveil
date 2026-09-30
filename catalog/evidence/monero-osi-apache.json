@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "monero-osi-apache",
+  "source_type": "official-documentation",
+  "url": "https://opensource.org/license/apache-2-0",
+  "revision": "snapshot-2026-09-29-sha256-1377faaaa81ba356528c4053d80e32fd12d84b794ed2667f09bf94aaca7458eb",
+  "verified_on": "2026-09-29",
+  "claim": "OSI lists Apache-2.0 as approved. This corroborates only the component-license decision, not project acceptance. Response-body SHA-256 1377faaaa81ba356528c4053d80e32fd12d84b794ed2667f09bf94aaca7458eb.",
+  "record_ids": [
+    "polyseed-en",
+    "polyseed-ja",
+    "polyseed-ko",
+    "polyseed-es",
+    "polyseed-fr",
+    "polyseed-it",
+    "polyseed-cs",
+    "polyseed-pt",
+    "polyseed-zh-hans",
+    "polyseed-zh-hant"
+  ]
+}

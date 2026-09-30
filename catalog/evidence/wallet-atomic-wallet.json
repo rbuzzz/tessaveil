@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-atomic-wallet",
+  "source_type": "official-documentation",
+  "claim": "Atomic documents randomly generated 12-word setup and individual coin private keys. The page does not bind an exact Windows build, dictionary or recovery vector.",
+  "url": "https://support.atomicwallet.io/article/35-what-is-12-word-recovery-phrase",
+  "revision": "body-sha256:cd66b03392fb8c0584673194407955126af7977bfd6b81c0fe022ce568fb2290",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "atomic-wallet"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-evidence",
+  "source_type": "official-source",
+  "claim": "Synthetic mutable branch must not qualify as pinned primary evidence.",
+  "url": "https://example.invalid/source/main/file",
+  "revision": "main",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "synthetic-en", "synthetic-blocked", "synthetic-scheme",
+    "synthetic-blocked-scheme", "synthetic-non-mnemonic", "synthetic-wallet"
+  ]
+}

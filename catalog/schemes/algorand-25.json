@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "algorand-25",
+  "display_name": {
+    "en": "Algorand — legacy25 account key",
+    "ru": "Algorand — legacy25 account key"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "algorand-algorithm",
+    "algorand-dictionary",
+    "algorand-vectors",
+    "algorand-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "189855d43cba5d20e66248693d74332052ccb08e",
+    "max": "189855d43cba5d20e66248693d74332052ccb08e"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    25
+  ],
+  "position_rules": [
+    "Words1-23 are11-bit little-endian indices. Word24 holds the remaining3 seed bits (indices0..7); eight padding bits must be zero.",
+    "Word25 is an11-bit SHA-512/256 checksum index from the same dictionary; it is not a passphrase or a repeated Monero checksum word. Tessaveil never checks complete user phrases."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred."
+  },
+  "semantic_distinction": "Shares BIP39 English words only; legacy32-byte account seed encoding differs from BIP39 and Pera Universal 24 HD. Public tests establish encoding only; no independent wallet recovery demonstrated.",
+  "test_vector_ids": [
+    "algorand-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

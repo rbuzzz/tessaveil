@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "decred-pgp33-reference",
+  "source_type": "public-test-vector",
+  "claim": "Reviewed pinned independent official JavaScript encodeMnemonic produces expected 33-word outputs for synthetic zero and ascending 32-byte seeds using Node24.13 WebCrypto; no wallet process or network execution. Used as reference, not implementation under test.",
+  "url": "https://raw.githubusercontent.com/decred/decrediton/942eed0b34d09316d753942abdbec8dc5320cbed/app/helpers/seed.js",
+  "revision": "942eed0b34d09316d753942abdbec8dc5320cbed",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pgp-even",
+    "pgp-odd",
+    "decred-pgp33"
+  ]
+}

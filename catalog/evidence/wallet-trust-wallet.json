@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-trust-wallet",
+  "source_type": "official-documentation",
+  "claim": "SWIFT is an account-abstraction wallet with passkey recovery tied to a Google account on Android; it is separate from the traditional phrase wallet. This is not a BIP39 profile.",
+  "url": "https://trustwallet.com/blog/security/what-are-passkeys",
+  "revision": "body-sha256:9a714d9eac177eb8b7861d211cdc11eda9c38d3346d63fe437fb790340596314",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "trust-wallet-swift"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "decrediton",
+  "display_name": {
+    "en": "Decrediton — Windows native PGP33 creation",
+    "ru": "Decrediton — Windows native PGP33 creation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "decred-decrediton-create",
+    "decred-bip39-doc"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "2.1.6-source-942eed0b34d09316d753942abdbec8dc5320cbed",
+    "max": "2.1.6-source-942eed0b34d09316d753942abdbec8dc5320cbed"
+  },
+  "product_id": "decrediton",
+  "product_name": "Decrediton",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "native-pgp33",
+  "network_ids": [
+    "decred"
+  ],
+  "scheme_id": "decred-pgp33",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Source2.1.6 and docs prove native seed creation; backend release binding and recovery not tested. BIP39 conversion to hex is external, not native phrase generation.",
+    "Non-selectable: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise."
+  ],
+  "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
+}

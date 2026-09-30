@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "wallet-coinbase-wallet",
+  "source_type": "official-documentation",
+  "claim": "The current wallet-type table describes a 12-word mnemonic import route, not mnemonic generation. Coinbase Wallet, the exchange account and Base smart account must not be collapsed. The smart wallet uses passkeys and supports EVM chains; it is a distinct wallet type from the mnemonic and CDP email/social wallets. The table distinguishes a CDP email/social login wallet. No dictionary or mnemonic generation is established for this mode. Mnemonic import and CDP email/social modes are described in the Coinbase Wallet app; only smart wallet is explicitly assigned web access here.",
+  "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet",
+  "revision": "body-sha256:1d65b63ed007b5b405e1aca52d0f939a483144ecd9db2bd37941344aa31148b2",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "coinbase-wallet",
+    "coinbase-wallet-passkey",
+    "coinbase-wallet-social-login"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "cardano-yoroi-create",
+  "source_type": "official-source",
+  "claim": "generateAdaMnemonic explicitly generates160 bits/15 words; generateWalletRootKey passes BIP39 entropy and empty mnemonic password to from_bip39_entropy. Distinct Ledger helper is not default software generation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 cb4e95b9bc4e8a30ecd3f6520424e556560155503ad03456988bf5a3fed4fa21.",
+  "url": "https://raw.githubusercontent.com/Emurgo/yoroi-frontend/91febfc95a288d3436b891356c87645611ea603a/packages/yoroi-extension/app/api/ada/lib/cardanoCrypto/cryptoWallet.js",
+  "revision": "91febfc95a288d3436b891356c87645611ea603a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "yoroi",
+    "cardano-icarus-15"
+  ]
+}

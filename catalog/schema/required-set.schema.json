@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tessaveil:schema:required-set:v1",
+  "title": "required-set",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "requirements"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "display_name",
+          "record_ids",
+          "research_state",
+          "status",
+          "historical"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+          "pattern": "^(dictionary|scheme|wallet|network)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "display_name": {
+            "type": "object",
+            "required": [
+              "en",
+              "ru"
+            ],
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ru": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          },
+          "record_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            },
+            "uniqueItems": true
+          },
+          "research_state": {
+            "enum": [
+              "pending",
+              "terminal"
+            ]
+          },
+          "status": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "verified",
+                  "documented",
+                  "blocked",
+                  "no-mnemonic-confirmed"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "historical": {
+            "type": "boolean"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "research_state": {
+                  "const": "pending"
+                }
+              },
+              "required": [
+                "research_state"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "type": "null"
+                },
+                "record_ids": {
+                  "maxItems": 0
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "research_state": {
+                  "const": "terminal"
+                }
+              },
+              "required": [
+                "research_state"
+              ]
+            },
+            "then": {
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "verified",
+                    "documented",
+                    "blocked",
+                    "no-mnemonic-confirmed"
+                  ]
+                },
+                "record_ids": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ],
+        "additionalProperties": false
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

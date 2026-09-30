@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "slip39-vectors",
+  "source_type": "public-test-vector",
+  "claim": "Public cases 1, 4, 17, 20, 42, 44 projected into indices/fingerprints; tests check individual-share metadata/padding/RS1024 only. No combining, master-secret recovery, decryption or wallet derivation is executed. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 13ebecebdd869dd2bc2cdf69e7ce3a158cf106cac76c39d17682b1c6cdabbdc4.",
+  "url": "https://raw.githubusercontent.com/trezor/python-shamir-mnemonic/17fcce14736afe498871d3018e4fa9330443471a/vectors.json",
+  "revision": "17fcce14736afe498871d3018e4fa9330443471a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "slip39-en",
+    "slip39-share",
+    "slip39-share-20"
+  ]
+}

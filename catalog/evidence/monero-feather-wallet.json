@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-feather-wallet",
+  "source_type": "official-source",
+  "claim": "Feather 2.9.1 source: new seeds are English Polyseed only. Source creation and display examined; no released-binary recovery/vector claim. Reviewed 2026-09-29; response byte SHA-256 53c8e05132d18d59a27df07231bbb4fe7a4aa0d559f5d32c28262810e73bce89. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/feather-wallet/feather/948773cf13c7486ee230eb67b6bac06b2f94c874/src/wizard/PageWalletSeed.cpp",
+  "revision": "948773cf13c7486ee230eb67b6bac06b2f94c874",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "feather"
+  ]
+}

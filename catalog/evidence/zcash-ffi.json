@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "zcash-ffi",
+  "source_type": "official-source",
+  "claim": "ZIP339 interface selects BIP39 languages and explicitly derives with empty passphrase. This batch is English24 only; standalone keys and legacy raw HD seeds are separate.",
+  "url": "https://raw.githubusercontent.com/zcash/zcash/558f686599586f55def3db86955d74d3be44605e/src/rust/src/zip339_ffi.rs",
+  "revision": "558f686599586f55def3db86955d74d3be44605e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zcash-bip39",
+    "zcash-official"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-zcash-derive",
+  "source_type": "official-source",
+  "claim": "Zcash fresh generation12/24, group reuse, separate passphrase and birthday; restoreKeys requires secret-extended-key-main1. Native zkool derivation/Unicode and Zashi change-address compatibility remain unresolved; do not inherit Zallet empty-passphrase scheme.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_zcash/lib/src/zcash_wallet.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-zcash-bip39-create-android",
+    "cake-wallet-zcash-bip39-create-ios",
+    "cake-wallet-zcash-bip39-group-android",
+    "cake-wallet-zcash-bip39-group-ios",
+    "cake-wallet-zcash-bip39-import-android",
+    "cake-wallet-zcash-bip39-import-ios",
+    "cake-zcash-create",
+    "cake-zcash-import"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "ton-tep3",
+  "source_type": "official-specification",
+  "claim": "TEP-3 sections 2-4 and 8-12 distinguish native 24-word TON and multichain BIP39 12/24-word modes sharing the English vocabulary, with TON path hardened path components 44, 607, 0 for the latter. It recommends new 12-word multichain or native 24-word generation, not new 24-word multichain. Import may encounter both. TEP is guidance, not proof of any product release transition; Pro MAM is a separate derivation. Reviewed 2026-09-29; byte SHA-256 4049020b927f72f7187b04f3e61e27f478caf1669fd528f21b815417b428be4b. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/ton-blockchain/TEPs/fe8a154e4dad9f5c0bf7240df278cb50ec6cd908/text/0003-wallets.md",
+  "revision": "fe8a154e4dad9f5c0bf7240df278cb50ec6cd908",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "ton-native",
+    "ton-multichain-bip39",
+    "tonkeeper-classic",
+    "tonkeeper-multichain",
+    "mytonwallet",
+    "mytonwallet-native",
+    "tonhub",
+    "openmask"
+  ]
+}

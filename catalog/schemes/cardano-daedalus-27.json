@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "cardano-daedalus-27",
+  "display_name": {
+    "en": "Daedalus — historical paper 27",
+    "ru": "Daedalus — historical paper 27"
+  },
+  "status": "documented",
+  "historical": true,
+  "evidence_ids": [
+    "cardano-daedalus-lengths",
+    "cardano-paper-rules",
+    "cardano-paper-vector",
+    "cardano-paper-license",
+    "cardano-daedalus-dictionary"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "6c57eb94753211f66d3a63f49d031bf746044755",
+    "max": "6c57eb94753211f66d3a63f49d031bf746044755"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    27
+  ],
+  "position_rules": [
+    "Positions1-18: scrambled paper-certificate mnemonic. Positions19-27: nine-word input to certificate-password KDF. All use English dictionary; concatenation is not a BIP39 mnemonic."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred."
+  },
+  "semantic_distinction": "Historical27 =18+9 certificate for a Byron 12 wallet. Never concatenate into Icarus, generic BIP39 or modern Lace PGP paper mode. Offline vector only verifies dictionary/partition/password; full rust-cardano-crypto unscrambling remains unverified.",
+  "test_vector_ids": [
+    "cardano-paper-vector"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

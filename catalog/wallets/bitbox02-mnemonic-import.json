@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "bitbox02-mnemonic-import",
+  "display_name": {
+    "en": "BitBox02 — mnemonic-imported",
+    "ru": "BitBox02 — mnemonic-imported"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-bitbox02-import"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-a54492f733f6",
+    "max": "version-unresolved-doc-2026-09-29-a54492f733f6"
+  },
+  "product_id": "bitbox02",
+  "product_name": "BitBox02",
+  "aliases": [],
+  "platform": "hardware",
+  "mode_id": "mnemonic-imported",
+  "network_ids": [
+    "bitcoin"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Restore accepts 12 or 24 words and optional separate passphrase; address types and accounts can differ even after successful seed import.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

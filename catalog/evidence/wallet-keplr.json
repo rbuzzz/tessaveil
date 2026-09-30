@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-keplr",
+  "source_type": "official-documentation",
+  "claim": "Mobile guide separately offers Create new recovery phrase and Google onboarding. It does not bind the exact phrase scheme or Android release. For Google Login via Web3Auth the guide explicitly provides only a private key, not a recovery phrase. Google access and independent private-key backup are distinct dependencies.",
+  "url": "https://help.keplr.app/mobile-app/5R3bMyjtr3iKzMhqyCqu56/create-a-new-wallet-with-keplr-mobile/5R3bMyjtr5cEFHpvssu2G4",
+  "revision": "body-sha256:52e4154a556731e3e193d7f08852f497b33389801b66abbc70b3eb6cd3a7dcf4",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "keplr",
+    "keplr-social-login"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "trust-wallet-swift",
+  "display_name": {
+    "en": "Trust Wallet — swift-passkey",
+    "ru": "Trust Wallet — swift-passkey"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-trust-wallet",
+    "wallet-trust-wallet-swift"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-9a714d9eac17",
+    "max": "version-unresolved-doc-2026-09-29-9a714d9eac17"
+  },
+  "product_id": "trust-wallet",
+  "product_name": "Trust Wallet",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "swift-passkey",
+  "network_ids": [
+    "base",
+    "arbitrum",
+    "bnb-chain",
+    "avalanche"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "SWIFT is an account-abstraction wallet with passkey recovery tied to a Google account on Android; it is separate from the traditional phrase wallet. This is not a BIP39 profile.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

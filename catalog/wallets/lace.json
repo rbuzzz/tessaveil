@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "lace",
+  "display_name": {
+    "en": "Lace — extension24 creation",
+    "ru": "Lace — extension24 creation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cardano-lace-create"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "app-version-unresolved-doc-2026-07-14",
+    "max": "app-version-unresolved-doc-2026-07-14"
+  },
+  "product_id": "lace",
+  "product_name": "Lace",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "software-24-created-unresolved",
+  "network_ids": [
+    "cardano"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "24-word generation/display confirmed. No exact version or algorithm/library binding to Icarus established; leave unmapped. Modern PGP paper backup is not Daedalus27. Hardware pairing, import and mobile are distinct.",
+    "Non-selectable: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence."
+  ],
+  "guidance": "Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil."
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "zcash-zallet-export",
+  "source_type": "official-source",
+  "claim": "Official book distinguishes mnemonic accounts from z_importkey and standalone migrated keys; encrypted mnemonic export also requires its age identity. Exported phrase alone does not cover all wallet material.",
+  "url": "https://raw.githubusercontent.com/zcash/zallet/f9dcd4d31439feb813c95ac2516814421f5b04df/book/src/cli/export-mnemonic.md",
+  "revision": "f9dcd4d31439feb813c95ac2516814421f5b04df",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zcash-non-mnemonic",
+    "zallet"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "substrate-polkadot-ui",
+  "source_type": "official-source",
+  "claim": "CreateAccount generates fresh seed, displays it and creates selected network account; this profile is browser extension default sr25519 for Polkadot/Kusama, excluding Ethereum.",
+  "url": "https://raw.githubusercontent.com/polkadot-js/extension/54f44022004f4cefb4a2b929f3a397715a134d6f/packages/extension-ui/src/Popup/CreateAccount/index.tsx",
+  "revision": "54f44022004f4cefb4a2b929f3a397715a134d6f",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "polkadot-js"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "zcash-standalone",
+  "source_type": "official-source",
+  "claim": "dumpprivkey and z_exportkey export standalone transparent or shielded private-key encodings. These are not mnemonic word-table profiles; mnemonic backup cannot be assumed to cover imported keys.",
+  "url": "https://raw.githubusercontent.com/zcash/zcash/558f686599586f55def3db86955d74d3be44605e/src/wallet/rpcdump.cpp",
+  "revision": "558f686599586f55def3db86955d74d3be44605e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zcash-non-mnemonic",
+    "zcash-official-standalone"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "siad",
+  "display_name": {
+    "en": "siad — legacy28 seed export",
+    "ru": "siad — legacy28 seed export"
+  },
+  "status": "documented",
+  "historical": true,
+  "evidence_ids": [
+    "sia-siad-seed",
+    "sia-siad-dependency"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "66e7fc630585887c30033379d2a0a8bf5c618177",
+    "max": "66e7fc630585887c30033379d2a0a8bf5c618177"
+  },
+  "product_id": "siad",
+  "product_name": "siad — legacy28 seed export",
+  "aliases": [],
+  "platform": "linux",
+  "mode_id": "legacy28-export",
+  "network_ids": [
+    "sia"
+  ],
+  "scheme_id": "sia-legacy-28",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Legacy codec can produce28 or29 depending on input; separate profile29 covers other length. Historical software, not a current network-support promise.",
+    "Non-selectable: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "tonkeeper-classic",
+  "display_name": {
+    "en": "Tonkeeper Classic",
+    "ru": "Tonkeeper Classic"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "tonkeeper-create",
+    "tonkeeper-derive",
+    "tonkeeper-version",
+    "ton-tep3",
+    "ton-native-source"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-4942adcdcddf55d57e3d3fc3676f019caf87357e",
+    "max": "source-4942adcdcddf55d57e3d3fc3676f019caf87357e"
+  },
+  "product_id": "tonkeeper",
+  "product_name": "Tonkeeper Classic",
+  "aliases": [
+    "Tonkeeper"
+  ],
+  "platform": "web",
+  "mode_id": "ton-native-generated",
+  "network_ids": [
+    "ton"
+  ],
+  "scheme_id": "ton-native",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Source snapshot only: extension manifest 3.0.0; web package is 0.0.0 and supplies no deployed release boundary. No claim for every installed Tonkeeper or Keeper version.",
+    "CreateStandardWallet creates and displays native 24 words; TRON integration does not turn that phrase into a BIP39 root. Pro multi-account MAM is excluded."
+  ],
+  "guidance": "Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website."
+}

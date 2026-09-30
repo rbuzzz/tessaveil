@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "electrum-v1-import",
+  "display_name": {
+    "en": "Electrum — Windows legacy v1 restore",
+    "ru": "Electrum — Windows legacy v1 restore"
+  },
+  "status": "blocked",
+  "historical": true,
+  "evidence_ids": [
+    "electrum-v2-source",
+    "electrum-wizard-modes",
+    "electrum-version"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb",
+    "max": "4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb"
+  },
+  "product_id": "electrum",
+  "product_name": "Electrum",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "legacy-v1-import",
+  "network_ids": [
+    "bitcoin"
+  ],
+  "scheme_id": "electrum-v1",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Legacy12/24 recognition only. No legacy dictionary bundled pending provenance/license review. No native v1 creation claimed.",
+    "Non-selectable: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise."
+  ],
+  "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
+}

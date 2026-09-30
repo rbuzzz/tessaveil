@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "zano-modern",
+  "display_name": {
+    "en": "Zano native26",
+    "ru": "Zano native26"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "zano-codec",
+    "zano-modes",
+    "zano-timestamp-password",
+    "zano-history-vector"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "e55c8ec47b76ed809162a958cf4600e03256a96a",
+    "max": "e55c8ec47b76ed809162a958cf4600e03256a96a"
+  },
+  "dictionary_ids": [
+    "zano-en"
+  ],
+  "supported_lengths": [
+    26
+  ],
+  "position_rules": [
+    "Words1..24 encode32 bytes; word25 is timestamp/password flag; word26 is checksum/auditable flag."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Exact original seed password and mode are required for recovery when used; never store the secret in Tessaveil."
+  },
+  "semantic_distinction": "Native Zano; not BIP39, Monero25 or Cake BIP39. Dictionary provenance blocks selection; no local recovery test.",
+  "test_vector_ids": [
+    "zano-history-vector"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

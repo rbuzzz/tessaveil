@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "sia-ui",
+  "display_name": {
+    "en": "Sia-UI v1.3.3 — legacy import",
+    "ru": "Sia-UI v1.3.3 — legacy import"
+  },
+  "status": "documented",
+  "historical": true,
+  "evidence_ids": [
+    "sia-ui-history",
+    "sia-siad-seed"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "cd7e221b98fc7a395de25bd8dfaa4f4de2a6e3d2",
+    "max": "cd7e221b98fc7a395de25bd8dfaa4f4de2a6e3d2"
+  },
+  "product_id": "sia-ui",
+  "product_name": "Sia-UI v1.3.3 — legacy import",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "legacy28-import",
+  "network_ids": [
+    "sia"
+  ],
+  "scheme_id": "sia-legacy-28",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Historical GUI accepts seed string; exact bundled siad version unverified. Paired29 profile preserves variable-length codec identity; no current network support promised.",
+    "Non-selectable: exact shipped binary/dependency binding and independent restoration were not verified. Singleton source boundary is not an all-version compatibility claim."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

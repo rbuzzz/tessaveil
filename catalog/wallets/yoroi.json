@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "yoroi",
+  "display_name": {
+    "en": "Yoroi — extension15 creation",
+    "ru": "Yoroi — extension15 creation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cardano-yoroi-create",
+    "cardano-yoroi-backup"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-91febfc95a288d3436b891356c87645611ea603a",
+    "max": "source-91febfc95a288d3436b891356c87645611ea603a"
+  },
+  "product_id": "yoroi",
+  "product_name": "Yoroi",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "icarus-15-created",
+  "network_ids": [
+    "cardano"
+  ],
+  "scheme_id": "cardano-icarus-15",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Chrome-family extension source singleton; no mobile or all-releases claim.15 words, empty mnemonic password; spending password separately encrypts local wallet. Later seed re-export not established.",
+    "Non-selectable: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence."
+  ],
+  "guidance": "Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil."
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "algorand-pera-backup",
+  "source_type": "official-documentation",
+  "claim": "Updated 2026-08-31: mobile backup at creation and later view are described separately; article includes24 and 25 without exact app version. Scope iOS only in records; no equivalence between formats. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 4fad7c798ef8891ca31f4ee64051c570fd8d4952665f70738635c26eb425c9d6.",
+  "url": "https://support.perawallet.app/en/article/backing-up-your-recovery-passphrase-uacy9k/",
+  "revision": "snapshot-2026-09-29-sha256-4fad7c798ef8891ca31f4ee64051c570fd8d4952665f70738635c26eb425c9d6",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pera-wallet",
+    "pera-wallet-universal"
+  ]
+}

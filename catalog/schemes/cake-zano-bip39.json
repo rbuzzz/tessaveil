@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "cake-zano-bip39",
+  "display_name": {
+    "en": "Cake Zano BIP39-derived12/24",
+    "ru": "Cake Zano BIP39-derived12/24"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "zano-cake-modes",
+    "zano-cake-bip39"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    24
+  ],
+  "position_rules": [
+    "Dart BIP39 mnemonic -> BIP32 hardened44, hardened128, hardened0, child0, child0 -> little-endian modulo Ed25519 order."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Exact original seed password and mode are required for recovery when used; never store the secret in Tessaveil."
+  },
+  "semantic_distinction": "Unverified Dart dependency normalization and native derivation binding; separate from native Zano26.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

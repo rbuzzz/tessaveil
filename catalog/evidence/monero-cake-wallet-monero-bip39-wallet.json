@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-cake-wallet-monero-bip39-wallet",
+  "source_type": "official-source",
+  "claim": "Distinct 12-word BIP39-derived mode exists in source; Monero derivation path/transform is not generic BIP39 wallet compatibility. Task16 now binds the exact English12 source path to cake-monero-bip39-create; the older unmapped boundary is superseded, but support remains non-selectable and is never substituted for Polyseed/legacy. Reviewed 2026-09-29; response byte SHA-256 18d553ebf4da1994bd39be740c417a8c708c5d54aff82d8c364fa4927cb8fd77. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_monero/lib/bip39_seed.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-monero-bip39"
+  ]
+}

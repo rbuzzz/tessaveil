@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "tonhub-derive",
+  "source_type": "official-source",
+  "claim": "createWalletFromMnemonics calls @ton/crypto mnemonicToWalletKey; this is TON-native, not ordinary BIP39 derivation. Reviewed 2026-09-29; byte SHA-256 b8341c61165ac9778a00e7eb7546b29a43ed0cc09ad520fdd3ce63011f8a5795. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/tonwhales/wallet/a2503f79d14868d65349ad7035d18389c6e2f996/app/utils/createWalletFromMnemonics.ts",
+  "revision": "a2503f79d14868d65349ad7035d18389c6e2f996",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tonhub"
+  ]
+}

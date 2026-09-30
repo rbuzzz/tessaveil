@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "sia-license",
+  "source_type": "official-source",
+  "claim": "Codex2026-09-29 reviewed MIT root grant (Copyright2015 Nebulous) and cumulative Monero2014-2015 BSD-3-Clause english.go terms; full notices retained for list and modified public codec projections. Data-only redistribution allowed, local SignPath OSS compatibility assessed compatible, not Foundation acceptance.",
+  "url": "https://gitlab.com/NebulousLabs/entropy-mnemonics/-/blob/7532f67e35008b0f36bbebb20d5a6ee8f14a22f5/LICENSE",
+  "revision": "7532f67e35008b0f36bbebb20d5a6ee8f14a22f5",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sia-legacy"
+  ]
+}

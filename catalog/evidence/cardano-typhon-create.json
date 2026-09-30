@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cardano-typhon-create",
+  "source_type": "official-documentation",
+  "claim": "Official help distinguishes web/extension creation, import and hardware connection. Web Create Wallet creates a new mnemonic. Retrieved article does not give exact mnemonic count or algorithm/version. See docs/research/batches/slip39-algorand-cardano.md. Read through web retrieval; direct response was HTTP 403. No raw-body hash or immutable capture asserted.",
+  "url": "https://typhonwallet.tawk.help/article/create-a-new-wallet",
+  "revision": "reviewed-2026-09-29-version-unpublished",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "typhon"
+  ]
+}

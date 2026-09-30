@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "monero-cli-version",
+  "source_type": "official-source",
+  "claim": "Development source declares 0.18.1.0; exact commit singleton is authoritative, not a release range. Reviewed 2026-09-29; response byte SHA-256 cddb09cd7a59eefe5486766145baf2849a9161a504545a649d83e034a81ea83a. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/version.cpp.in",
+  "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "monero-cli-polyseed",
+    "monero-gui-cli"
+  ]
+}

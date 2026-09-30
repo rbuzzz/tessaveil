@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "substrate-talisman",
+  "source_type": "official-source",
+  "claim": "Talisman uses scure BIP39 English generation12/24; sr25519/ed25519/ecdsa use entropy-based32-byte PBKDF2 result, Ethereum/Solana sentence-based64-byte classic result. Its NFKD password normalization is a consumer behavior, absent from raw substrate-bip39 function.",
+  "url": "https://raw.githubusercontent.com/TalismanSociety/talisman/2cee3ef46633cdc3e90bb0fed6855fa25fc87692/packages/crypto/src/mnemonic/index.ts",
+  "revision": "2cee3ef46633cdc3e90bb0fed6855fa25fc87692",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "talisman"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-blocked-scheme",
+  "display_name": {
+    "en": "Synthetic blocked scheme",
+    "ru": "Синтетическая заблокированная схема"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "synthetic-evidence"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "1.0",
+    "max": null
+  },
+  "dictionary_ids": [],
+  "supported_lengths": [],
+  "position_rules": [],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "Unknown format; use the source wallet's backup procedure."
+  },
+  "semantic_distinction": "The format cannot be confirmed from available evidence.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

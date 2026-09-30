@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "zcash-bip0039-vector",
+  "source_type": "public-test-vector",
+  "claim": "Published to_seed(\"\") doc-test projected to12 word indices plus literal expected64-byte seed. Primitive corroboration only, not24-word Zallet recovery.",
+  "url": "https://raw.githubusercontent.com/koushiro/rust-bips/1a6cc63a53721781aabd695307cc41b82ca76813/bip0039/src/mnemonic.rs",
+  "revision": "1a6cc63a53721781aabd695307cc41b82ca76813",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zcash-bip39"
+  ]
+}

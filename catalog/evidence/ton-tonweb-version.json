@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-tonweb-version",
+  "source_type": "official-source",
+  "claim": "Reviewed tonweb-mnemonic package is version 1.0.1 at this exact commit. Reviewed 2026-09-29; byte SHA-256 3a5777133b2ccfa280a3ab0bcd030d63a93ec07f97370f589845e26a1b158574. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/toncenter/tonweb-mnemonic/a338a00d4ca0ed833431e0e49e4cfad766ac713c/package.json",
+  "revision": "a338a00d4ca0ed833431e0e49e4cfad766ac713c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "openmask"
+  ]
+}

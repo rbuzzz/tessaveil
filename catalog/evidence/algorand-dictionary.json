@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "algorand-dictionary",
+  "source_type": "official-source",
+  "claim": "Extracted word_list_raw literal equals verified bip39-en entry-for-entry and in order (2048); LF serialization matches SHA-256 2f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda. Reuse existing dictionary reference; no second word file. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 bacc048829f092449fea722912b268ec9d6f5494776ca4ece50f463bb80e77d7.",
+  "url": "https://raw.githubusercontent.com/algorand/py-algorand-sdk/189855d43cba5d20e66248693d74332052ccb08e/algosdk/wordlist.py",
+  "revision": "189855d43cba5d20e66248693d74332052ccb08e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "algorand-25"
+  ]
+}

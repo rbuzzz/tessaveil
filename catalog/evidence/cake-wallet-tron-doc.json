@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-tron-doc",
+  "source_type": "official-documentation",
+  "claim": "Official tron per-cryptocurrency Seed Format/Seed Types and recovery guidance, retrieved2026-09-29. Source snapshot controls exact implementation; mutable documentation is not a binary attestation. Decred native15 predates6.4.2; Zano native26 predates6.4.3 where applicable.",
+  "url": "https://docs.cakewallet.com/cryptos/tron/",
+  "revision": "HTTP-body-sha256-e28d3f77f3416b6f54b01981923cdb206dd791ac3e55154ac9803e0c31cfb6ff",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-tron-bip39-create-android",
+    "cake-wallet-tron-bip39-create-ios",
+    "cake-wallet-tron-bip39-create-linux",
+    "cake-wallet-tron-bip39-create-macos",
+    "cake-wallet-tron-bip39-group-android",
+    "cake-wallet-tron-bip39-group-ios",
+    "cake-wallet-tron-bip39-group-linux",
+    "cake-wallet-tron-bip39-group-macos",
+    "cake-wallet-tron-bip39-import-android",
+    "cake-wallet-tron-bip39-import-ios",
+    "cake-wallet-tron-bip39-import-linux",
+    "cake-wallet-tron-bip39-import-macos",
+    "cake-wallet-tron-private-key-android",
+    "cake-wallet-tron-private-key-ios",
+    "cake-wallet-tron-private-key-linux",
+    "cake-wallet-tron-private-key-macos"
+  ]
+}

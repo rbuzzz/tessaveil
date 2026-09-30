@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "cake-audit-feather14-code",
+  "source_type": "official-source",
+  "claim": "Tevador restore invokes monero_seed with coinName, birthday and error correction. Independent recovery and dependency pin absent; not Polyseed or generic BIP39.",
+  "url": "https://raw.githubusercontent.com/feather-wallet/feather/948773cf13c7486ee230eb67b6bac06b2f94c874/src/utils/Seed.cpp",
+  "revision": "948773cf13c7486ee230eb67b6bac06b2f94c874",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "feather-tevador-import",
+    "tevador-14-unresolved"
+  ]
+}

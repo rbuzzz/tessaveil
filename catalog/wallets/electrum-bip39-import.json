@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "electrum-bip39-import",
+  "display_name": {
+    "en": "Electrum — Windows BIP39 import",
+    "ru": "Electrum — Windows BIP39 import"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "electrum-wizard-modes",
+    "electrum-version"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb",
+    "max": "4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb"
+  },
+  "product_id": "electrum",
+  "product_name": "Electrum",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "bip39-import",
+  "network_ids": [
+    "bitcoin"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Native Electrum generation is not BIP39. Exact imported path and script selection require original backup metadata.",
+    "Non-selectable: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise."
+  ],
+  "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
+}

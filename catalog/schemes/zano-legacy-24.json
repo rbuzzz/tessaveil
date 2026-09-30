@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "zano-legacy-24",
+  "display_name": {
+    "en": "Zano historical24 — rejected by inspected current core",
+    "ru": "Zano historical24 — rejected by inspected current core"
+  },
+  "status": "blocked",
+  "historical": true,
+  "evidence_ids": [
+    "zano-codec",
+    "zano-modes",
+    "zano-history-vector"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "e55c8ec47b76ed809162a958cf4600e03256a96a",
+    "max": "e55c8ec47b76ed809162a958cf4600e03256a96a"
+  },
+  "dictionary_ids": [
+    "zano-en"
+  ],
+  "supported_lengths": [
+    24
+  ],
+  "position_rules": [
+    "Historical24 has no timestamp/checksum words. Inspected restore explicitly rejects24."
+  ],
+  "external_secret": {
+    "kind": "other",
+    "stored": false,
+    "guidance": "Exact original seed password and mode are required for recovery when used; never store the secret in Tessaveil."
+  },
+  "semantic_distinction": "Historical generating release and password behavior unresolved; length is research identity, not accepted current input.",
+  "test_vector_ids": [
+    "zano-history-vector"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

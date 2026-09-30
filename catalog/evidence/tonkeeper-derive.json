@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "tonkeeper-derive",
+  "source_type": "official-source",
+  "claim": "mnemonicService distinguishes explicit ton from bip39; BIP39 follows hardened path components 44, 607, 0. This proves handling/derivation, not multichain generation by all products. Reviewed 2026-09-29; byte SHA-256 9852941011f82ec14e865c0cf33d78fa3944eeed5c61deeade94b65412d87643. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/tonkeeper/tonkeeper-web/4942adcdcddf55d57e3d3fc3676f019caf87357e/packages/core/src/service/mnemonicService.ts",
+  "revision": "4942adcdcddf55d57e3d3fc3676f019caf87357e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tonkeeper-classic",
+    "tonkeeper-multichain"
+  ]
+}

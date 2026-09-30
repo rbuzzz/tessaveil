@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-decred-bip39",
+  "display_name": {
+    "en": "Cake Wallet Decred — Android current12/24 creation",
+    "ru": "Cake Wallet Decred — Android current12/24 creation"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "decred-cake-create",
+    "decred-cake-build",
+    "decred-cake-nfc",
+    "decred-cake-doc",
+    "cake-wallet-inventory",
+    "cake-wallet-decred-service",
+    "cake-wallet-decred-doc",
+    "cake-wallet-build-android",
+    "cake-wallet-version-android",
+    "cake-wallet-create-ui",
+    "cake-wallet-lock",
+    "cake-wallet-bip39-pbkdf"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "bip39-shaped-12-24",
+  "network_ids": [
+    "decred"
+  ],
+  "scheme_id": "cake-decred-bip39-12-24",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "English12/24; native layer uses NFC passphrase, not normative NFKD. Native15 dispatch is separate and rejects recovery passphrase. Current docs date native15 creation before6.4.2. ",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
+  ],
+  "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
+}

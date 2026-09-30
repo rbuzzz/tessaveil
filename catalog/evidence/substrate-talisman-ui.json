@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "substrate-talisman-ui",
+  "source_type": "official-source",
+  "claim": "Mnemonic creation UI explicitly generates12 and24 independently, default12. Source version3.10.0; no binary recovery asserted.",
+  "url": "https://raw.githubusercontent.com/TalismanSociety/talisman/2cee3ef46633cdc3e90bb0fed6855fa25fc87692/apps/extension/src/ui/apps/dashboard/routes/Settings/Mnemonics/MnemonicCreateModal/context.ts",
+  "revision": "2cee3ef46633cdc3e90bb0fed6855fa25fc87692",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "talisman"
+  ]
+}

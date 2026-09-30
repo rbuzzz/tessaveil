@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-exodus",
+  "source_type": "official-documentation",
+  "claim": "Exodus documents 12-word generation using the BIP39 list and separate Desktop backup steps; the global phrase is distinct from its Monero export. The Mobile section recommends a separate passkey backup. The Web3 exception concerns screenshot and screen-recording protection, not passkey backup availability. This source does not establish Web3 passkey support or its absence; exact mobile version and recovery dependencies remain unverified.",
+  "url": "https://www.exodus.com/support/en/articles/8598627-everything-you-need-to-know-about-your-12-word-secret-recovery-phrase",
+  "revision": "body-sha256:069661f51ab1b253d632fdcc820738b240ff478290963826f90bd1157da207f5",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "exodus",
+    "exodus-passkey"
+  ]
+}

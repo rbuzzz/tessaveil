@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "zano-modes",
+  "source_type": "official-source",
+  "claim": "get_seed_phrase emits 24 data words, timestamp/password-flag word25 and checksum/auditable word26. restore_from_seed_phrase accepts25/26 and rejects24 at this exact commit. Seed password encrypts binary seed with legacy ChaCha; it is not BIP39 extension.",
+  "url": "https://raw.githubusercontent.com/hyle-team/zano/e55c8ec47b76ed809162a958cf4600e03256a96a/src/currency_core/account.cpp",
+  "revision": "e55c8ec47b76ed809162a958cf4600e03256a96a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zano-modern",
+    "zano-legacy-24",
+    "zano-legacy-25",
+    "zano-wallet",
+    "zano-wallet-legacy25"
+  ]
+}

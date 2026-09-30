@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-zano-bip39",
+  "display_name": {
+    "en": "Cake Wallet Zano — BIP39 creation",
+    "ru": "Cake Wallet Zano — BIP39 creation"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "zano-cake-modes",
+    "zano-cake-bip39",
+    "cake-wallet-inventory",
+    "cake-wallet-zano-service",
+    "cake-wallet-zano-doc",
+    "cake-wallet-build-android",
+    "cake-wallet-version-android",
+    "cake-wallet-create-ui",
+    "cake-wallet-lock",
+    "cake-wallet-bip39-pbkdf"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet Zano — BIP39 creation",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "bip39-derived-create",
+  "network_ids": [
+    "zano"
+  ],
+  "scheme_id": "cake-zano-bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "English12/24 documented creation/restoration; underlying Dart precheck can accept15/18/21 but native binding/UI acceptance beyond docs remains unproven. BIP32 path and scalar reduction distinct from native26; Unicode/native binary parity blocked. Current docs date native26 creation before6.4.3. ",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

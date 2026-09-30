@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-temple-cloud",
+  "source_type": "official-source",
+  "claim": "Pinned overlay implements Google Drive backup of encrypted mnemonic data. Cloud authentication, encryption and version-specific restore are separate dependencies.",
+  "url": "https://raw.githubusercontent.com/madfish-solutions/templewallet-extension/7770f23fffd85a96c2148335bca7c946c84d9337/src/app/layouts/PageLayout/BackupMnemonicOverlay/google-backup-modal-content.tsx",
+  "revision": "7770f23fffd85a96c2148335bca7c946c84d9337",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "temple-cloud-backup"
+  ]
+}

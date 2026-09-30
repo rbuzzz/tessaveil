@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "sparrow",
+  "display_name": {
+    "en": "Sparrow — bip39-generated",
+    "ru": "Sparrow — bip39-generated"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-sparrow"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-853a96de90ae",
+    "max": "version-unresolved-doc-2026-09-29-853a96de90ae"
+  },
+  "product_id": "sparrow",
+  "product_name": "Sparrow",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "bip39-generated",
+  "network_ids": [
+    "bitcoin"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Quick Start explicitly generates 12 BIP39 words with Generate New; import software wallets and watch-only xpubs are distinct choices.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

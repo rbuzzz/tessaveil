@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "monero-legacy",
+  "display_name": {
+    "en": "monero-legacy",
+    "ru": "monero-legacy"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-monero-legacy-scheme",
+    "monero-legacy-vectors"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+    "max": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa"
+  },
+  "dictionary_ids": [
+    "monero-en",
+    "monero-de",
+    "monero-es",
+    "monero-fr",
+    "monero-it",
+    "monero-nl",
+    "monero-pt",
+    "monero-ru",
+    "monero-ja",
+    "monero-zh-hans",
+    "monero-eo",
+    "monero-jbo"
+  ],
+  "supported_lengths": [
+    25
+  ],
+  "position_rules": [
+    "One dictionary per phrase; same vocabulary at each position. Last word is repeated checksum for 25/13; first word is Polyseed checksum for 16. No complete user phrase validation."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Keep any supported seed offset/encryption passphrase separately. Tessaveil never stores it. App login passwords/PINs are not automatically mnemonic secrets; verify exact wallet mode."
+  },
+  "semantic_distinction": "Eight little-endian 32-bit chunks map to 24 base-1626 words; CRC32 of language-specific prefixes selects repeated 25th checksum word. Not BIP39. EnglishOld has a separate historical dictionary and is excluded from current-generation language list; no selectable historical 25-word mode is inferred. Source supports additional checksumless restore lengths; this profile covers standard 25 only. Documented: offline tests establish encoding/checksum only; full independent key derivation and exact wallet artifact binding are not established.",
+  "test_vector_ids": [
+    "monero-legacy-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

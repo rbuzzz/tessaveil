@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "tangem-seed-import",
+  "display_name": {
+    "en": "Tangem — mnemonic-imported",
+    "ru": "Tangem — mnemonic-imported"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-tangem-seed"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-39be36bfad5a",
+    "max": "version-unresolved-doc-2026-09-29-39be36bfad5a"
+  },
+  "product_id": "tangem",
+  "product_name": "Tangem",
+  "aliases": [],
+  "platform": "hardware",
+  "mode_id": "mnemonic-imported",
+  "network_ids": [
+    "multi-chain"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "FAQ lists 12/15/18/21/24-word import; it warns that supported networks and derivation paths constrain recovery. Imported lengths do not establish generation.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

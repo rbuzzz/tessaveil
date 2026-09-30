@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "id": "monero-ru",
+  "display_name": {
+    "en": "monero-ru",
+    "ru": "monero-ru"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-ru-source",
+    "monero-monero-rules",
+    "monero-signpath",
+    "monero-osi-bsd",
+    "monero-monero-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+    "max": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa"
+  },
+  "language": "ru",
+  "script": "Cyrl",
+  "source": {
+    "url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/mnemonics/russian.h",
+    "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa"
+  },
+  "license": {
+    "spdx_or_name": "BSD-3-Clause",
+    "source_url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/LICENSE",
+    "attribution": "Exact source file notices and upstream license retained in THIRD_PARTY_NOTICES; dabura667 / The Monero Project and original dictionary contributors.",
+    "repository_redistribution": "allowed",
+    "signpath_compatible": "compatible",
+    "decision_evidence": [
+      "monero-signpath",
+      "monero-osi-bsd",
+      "monero-monero-license",
+      "monero-ru-source"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "none",
+  "word_count": 1626,
+  "sha256": "fd225689dda9d342acae6bd58ecbdba3274ded07d89936ce979a95f6d60c64ea",
+  "order_rule": "Exact upstream array order; zero-based indices. Extract literal UTF-8 tokens unchanged; remove C/C++ wrapper and indentation, append LF after every token. No sorting, lowercasing or Unicode rewriting. Source file and extracted byte hashes in batch note.",
+  "position_rules": [
+    "Same vocabulary at every eligible position; upstream prefix length 4. Never evaluate a user phrase checksum.",
+    "Source-native lookup: Unicode codepoint lowercase and language-specific prefix, with no NFC/NFKD transform; normalization=none preserves source characters.",
+    "Language coverage is not a wallet generation claim."
+  ],
+  "duplicate_analysis": {
+    "normalized_unique_count": 1626,
+    "collisions": []
+  },
+  "test_vector_ids": [],
+  "wordlist_path": "wordlists/monero-ru/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa.txt"
+}

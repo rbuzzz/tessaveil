@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "substrate-subwallet",
+  "source_type": "official-source",
+  "claim": "General mnemonic creation handler defaults12 and has12/15/18/21/24 validation lengths. It constructs sr25519 plus other coin types; this record is only general sr25519 Polkadot/Kusama. TON-native and Ethereum not equated. Dependency/UI/artifact binding unresolved.",
+  "url": "https://raw.githubusercontent.com/Koniverse/SubWallet-Extension/1f9b2a4cb6fea68193e5e012dcca7284a1dd0d80/packages/extension-base/src/services/keyring-service/context/handlers/Mnemonic.ts",
+  "revision": "1f9b2a4cb6fea68193e5e012dcca7284a1dd0d80",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "subwallet"
+  ]
+}

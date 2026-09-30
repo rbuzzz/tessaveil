@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-decred-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official decred documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://decred.org/",
+  "revision": "body-sha256:68a647b0a9ffb13345c551c09e54dc8c25197042958ea1d93ac17bdcfc95c9cb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-decred"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "zano-en",
+  "display_name": {
+    "en": "Zano English — provenance blocked",
+    "ru": "Zano English — provenance blocked"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "zano-codec",
+    "zano-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "e55c8ec47b76ed809162a958cf4600e03256a96a",
+    "max": "e55c8ec47b76ed809162a958cf4600e03256a96a"
+  },
+  "language": "en",
+  "script": "Latn",
+  "source": {
+    "url": "https://raw.githubusercontent.com/hyle-team/zano/e55c8ec47b76ed809162a958cf4600e03256a96a/src/common/mnemonic-encoding.cpp",
+    "revision": "e55c8ec47b76ed809162a958cf4600e03256a96a"
+  },
+  "license": {
+    "spdx_or_name": "BSD-3-Clause file; original frequency-list rights unresolved",
+    "source_url": "https://raw.githubusercontent.com/hyle-team/zano/e55c8ec47b76ed809162a958cf4600e03256a96a/LICENSE",
+    "attribution": "Monero2014; Zano/Louisdor2014-2018; Electrum-old/Wiktionary source chain requires review.",
+    "repository_redistribution": "unclear",
+    "signpath_compatible": "pending",
+    "decision_evidence": [
+      "zano-license"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "none",
+  "word_count": 1626,
+  "sha256": null,
+  "order_rule": "Exact numeric indices; matches Electrum-old tuple. No approved committed byte artifact.",
+  "position_rules": [
+    "Triplets encode32-bit groups; metadata words25/26 also use same1626 indices."
+  ],
+  "duplicate_analysis": {
+    "normalized_unique_count": 1626,
+    "collisions": []
+  },
+  "test_vector_ids": [],
+  "wordlist_path": null
+}

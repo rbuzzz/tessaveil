@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "electrum-v2",
+  "display_name": {
+    "en": "Electrum v2 — English native seed",
+    "ru": "Electrum v2 — English native seed"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "electrum-v2-source",
+    "electrum-v2-dictionary",
+    "electrum-version",
+    "electrum-public-vectors",
+    "electrum-vector-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "ede66c89887234c83b0def133b3100fe92a160eb",
+    "max": "ede66c89887234c83b0def133b3100fe92a160eb"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    13
+  ],
+  "position_rules": [
+    "English132-bit default generation normally12 words; nonce overflow may yield13. This is a scoped generation profile, not every accepted Electrum length.",
+    "HMAC-SHA512 Seed version prefix determines type; normalized sentence uses electrum salt for PBKDF2. Standard01 and segwit100 remain different wallet modes."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Any supported recovery passphrase and derivation path stay outside Tessaveil. Local encryption/unlock passwords are distinct."
+  },
+  "semantic_distinction": "Same dictionary as BIP39, different integrity and derivation. Only English default standard/segwit generation lengths researched; no2FA, multisig or arbitrary-bit CLI support inferred.",
+  "test_vector_ids": [
+    "electrum-public-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

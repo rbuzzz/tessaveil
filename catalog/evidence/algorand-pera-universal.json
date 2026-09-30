@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "algorand-pera-universal",
+  "source_type": "official-documentation",
+  "claim": "Updated 2025-06-04: iOS onboarding generates24-word BIP39 HD Universal wallets; Android described as forthcoming there. Dated source not generalized to current Android. Exact derivation/dependency binding not established. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 d54c39508a76f426bd3958cfbae5600d8f737aa05d4356540be617986a4c0b81.",
+  "url": "https://support.perawallet.app/en/article/universal-wallet-faq-1ssu0sq/",
+  "revision": "snapshot-2026-09-29-sha256-d54c39508a76f426bd3958cfbae5600d8f737aa05d4356540be617986a4c0b81",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pera-wallet-universal"
+  ]
+}

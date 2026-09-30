@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-scheme",
+  "display_name": {
+    "en": "Synthetic scheme",
+    "ru": "Синтетическая схема"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "synthetic-evidence"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "1.0",
+    "max": null
+  },
+  "dictionary_ids": [
+    "synthetic-en"
+  ],
+  "supported_lengths": [
+    12
+  ],
+  "position_rules": [],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "No external secret in this fixture."
+  },
+  "semantic_distinction": "Synthetic fixture only; no real wallet compatibility.",
+  "test_vector_ids": [
+    "synthetic-evidence"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

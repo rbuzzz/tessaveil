@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "gram-wallet",
+  "display_name": {
+    "en": "Gram Wallet",
+    "ru": "Gram Wallet"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "ton-gram-identity",
+    "ton-gram-store"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "documentation-snapshot-2026-09-29-version-unresolved",
+    "max": "documentation-snapshot-2026-09-29-version-unresolved"
+  },
+  "product_id": "gram-wallet-my-wallet-apps",
+  "product_name": "Gram Wallet",
+  "aliases": [
+    "Gram"
+  ],
+  "platform": "android",
+  "mode_id": "mnemonic-backup-unresolved",
+  "network_ids": [
+    "ton"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Identity fixed to My Wallet Apps Ltd., Android package io.gramwallet.app linked by gramwallet.io. Publisher says it uses My Wallet's engine; this does not prove a shared mnemonic algorithm or backup flow.",
+    "No exact app version, exportable phrase length, generation method or source-to-package binding established. generates_mnemonic=false means generation is not confirmed, not that the product has no mnemonic.",
+    "Do not inherit the behavior of Telegram's historical Gram test wallet or other similarly named products."
+  ],
+  "guidance": "Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website."
+}

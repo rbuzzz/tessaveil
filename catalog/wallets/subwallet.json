@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "subwallet",
+  "display_name": {
+    "en": "SubWallet — extension general sr25519 creation",
+    "ru": "SubWallet — extension general sr25519 creation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "substrate-subwallet"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-1f9b2a4cb6fea68193e5e012dcca7284a1dd0d80",
+    "max": "source-1f9b2a4cb6fea68193e5e012dcca7284a1dd0d80"
+  },
+  "product_id": "subwallet",
+  "product_name": "SubWallet",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "general-sr25519",
+  "network_ids": [
+    "polkadot",
+    "kusama"
+  ],
+  "scheme_id": "substrate-bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Source handler defaults12; validation lengths do not prove every UI creation option. Forked keyring and frontend dependency binding unresolved; no TON-native/Ethereum/mobile mapping.",
+    "Non-selectable: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise."
+  ],
+  "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
+}

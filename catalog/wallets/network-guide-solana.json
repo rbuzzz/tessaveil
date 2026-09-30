@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "network-guide-solana",
+  "display_name": {
+    "en": "solana — network search guidance — network-search-guidance",
+    "ru": "solana — network search guidance — network-search-guidance"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "network-solana-guidance"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-8ae6154eb164",
+    "max": "version-unresolved-doc-2026-09-29-8ae6154eb164"
+  },
+  "product_id": "network-guide-solana",
+  "product_name": "solana — network search guidance",
+  "aliases": [
+    "SOL"
+  ],
+  "platform": "cross-platform",
+  "mode_id": "network-search-guidance",
+  "network_ids": [
+    "solana"
+  ],
+  "scheme_id": "bip39",
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Network identity/search guidance only. Solana accounts and program-derived addresses do not establish a wallet mnemonic scheme. Original wallet derivation and account selection remain necessary.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.",
+    "Search candidates only: bip39. Scheme links are navigation, not recovery compatibility."
+  ],
+  "guidance": "Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs: bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil."
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "substrate-entropy",
+  "source_type": "official-source",
+  "claim": "substrate-bip39 0.4.6 uses recovered BIP39 entropy bytes as PBKDF2-HMAC-SHA512 password, mnemonic+password salt, 2048 rounds, 64-byte result; mini-secret first32. Not standard sentence-based BIP39 seed derivation. Function itself does not normalize passwords; consumers must be distinguished.",
+  "url": "https://raw.githubusercontent.com/paritytech/substrate-bip39/ceb4fe5a3c7ac91da2e272037797ebecb56aa177/src/lib.rs",
+  "revision": "ceb4fe5a3c7ac91da2e272037797ebecb56aa177",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "substrate-bip39"
+  ]
+}

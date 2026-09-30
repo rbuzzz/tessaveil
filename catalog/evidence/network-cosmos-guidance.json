@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-cosmos-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official cosmos documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.cosmos.network/",
+  "revision": "body-sha256:eb58d7c87a4b3ef9ac07188e2f8fc51bf8a6cfb7f3896c2ed45ea6958fa6b490",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-cosmos"
+  ]
+}

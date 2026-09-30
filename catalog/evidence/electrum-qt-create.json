@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "electrum-qt-create",
+  "source_type": "official-source",
+  "claim": "Qt WCCreateSeed selects default segwit (standard only with WIZARD_DONT_CREATE_SEGWIT); creates English mnemonic and displays SeedWidget. This pins a native desktop creation flow, not just an import API.",
+  "url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/electrum/gui/qt/wizard/wallet.py",
+  "revision": "ede66c89887234c83b0def133b3100fe92a160eb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "electrum"
+  ]
+}

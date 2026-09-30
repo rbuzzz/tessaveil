@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "monero-mymonero-vectors",
+  "source_type": "public-test-vector",
+  "claim": "Published 13-word prefix mnemonic resolves to the same address as published 16-byte seed 9c973aa296b79bbf452781dd3d32ad7f. Offline projection tests entropy and checksum only; no address/Keccak claim. Reviewed 2026-09-29; response byte SHA-256 8292f763a1b2bf70052dc959a2672e73a1b4035d5c379bbccb4e03f6a2de6634. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/mymonero/mymonero-core-cpp/9637c91cbe5f46e67156c66c739932294808109d/test/test_all.cpp",
+  "revision": "9637c91cbe5f46e67156c66c739932294808109d",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "monero-en",
+    "mymonero-13"
+  ]
+}

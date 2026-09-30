@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "id": "windows-v1",
+  "requirements": [
+    {
+      "id": "dictionary-synthetic-en",
+      "display_name": {
+        "en": "dictionary:synthetic-en",
+        "ru": "dictionary:synthetic-en"
+      },
+      "record_ids": [
+        "synthetic-en"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
+      "historical": false
+    },
+    {
+      "id": "scheme-synthetic-scheme",
+      "display_name": {
+        "en": "scheme:synthetic-scheme",
+        "ru": "scheme:synthetic-scheme"
+      },
+      "record_ids": [
+        "synthetic-scheme"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
+      "historical": false
+    },
+    {
+      "id": "scheme-synthetic-blocked-scheme",
+      "display_name": {
+        "en": "Synthetic blocked scheme",
+        "ru": "Синтетическая заблокированная схема"
+      },
+      "record_ids": [
+        "synthetic-blocked-scheme"
+      ],
+      "research_state": "terminal",
+      "status": "blocked",
+      "historical": false
+    },
+    {
+      "id": "scheme-synthetic-non-mnemonic",
+      "display_name": {
+        "en": "Synthetic non-mnemonic mode",
+        "ru": "Синтетический режим без мнемоники"
+      },
+      "record_ids": [
+        "synthetic-non-mnemonic"
+      ],
+      "research_state": "terminal",
+      "status": "no-mnemonic-confirmed",
+      "historical": false
+    },
+    {
+      "id": "wallet-synthetic-wallet",
+      "display_name": {
+        "en": "wallet:synthetic-wallet",
+        "ru": "wallet:synthetic-wallet"
+      },
+      "record_ids": [
+        "synthetic-wallet"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
+      "historical": false
+    },
+    {
+      "id": "network-synthetic-network",
+      "display_name": {
+        "en": "network:synthetic-network",
+        "ru": "network:synthetic-network"
+      },
+      "record_ids": [
+        "synthetic-wallet"
+      ],
+      "research_state": "terminal",
+      "status": "verified",
+      "historical": false
+    }
+  ]
+}

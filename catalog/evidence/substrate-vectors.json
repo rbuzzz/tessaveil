@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "substrate-vectors",
+  "source_type": "public-test-vector",
+  "claim": "Published VECTORS with Substrate password projected to entropy, BIP39-English indices and expected seed SHA256. Offline reproduction proves only this primitive, not a wallet/network/derivation path.",
+  "url": "https://raw.githubusercontent.com/paritytech/substrate-bip39/ceb4fe5a3c7ac91da2e272037797ebecb56aa177/src/lib.rs",
+  "revision": "ceb4fe5a3c7ac91da2e272037797ebecb56aa177",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "substrate-bip39"
+  ]
+}

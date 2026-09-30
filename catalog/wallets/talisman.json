@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "talisman",
+  "display_name": {
+    "en": "Talisman — extension Substrate mnemonic creation",
+    "ru": "Talisman — extension Substrate mnemonic creation"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "substrate-talisman",
+    "substrate-talisman-ui"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "3.10.0-source-2cee3ef46633cdc3e90bb0fed6855fa25fc87692",
+    "max": "3.10.0-source-2cee3ef46633cdc3e90bb0fed6855fa25fc87692"
+  },
+  "product_id": "talisman",
+  "product_name": "Talisman",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "substrate-sr25519-12-24",
+  "network_ids": [
+    "polkadot",
+    "kusama"
+  ],
+  "scheme_id": "substrate-bip39",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "UI generates12/24; NFKD password normalization in this consumer differs from raw primitive behavior. Hardware, Ethereum, Solana and derived paths not equated.",
+    "Non-selectable: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise."
+  ],
+  "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
+}

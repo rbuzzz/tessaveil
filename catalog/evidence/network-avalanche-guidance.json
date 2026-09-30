@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-avalanche-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official avalanche documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://build.avax.network/docs/quick-start/networks",
+  "revision": "body-sha256:07aa1c4f21f565cbc50139515e7fa4e4485d0b33c021b54999530e608594c69f",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-avalanche"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "monero-monero-license",
+  "source_type": "official-source",
+  "claim": "BSD-3-Clause source-data redistribution allowed with exact copyright/license/disclaimer retention and no endorsement. File-level MIT overrides for dabura667 lists retained. Reviewed by Codex for this source-data payload only. Reviewed 2026-09-29; response byte SHA-256 1f99d6b6e1ae17de27147ff2e1e0238fa8c7d5a8accd0f1ac062c89365516abd. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/LICENSE",
+  "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "monero-de",
+    "monero-en",
+    "monero-en-old",
+    "monero-eo",
+    "monero-es",
+    "monero-fr",
+    "monero-it",
+    "monero-ja",
+    "monero-jbo",
+    "monero-nl",
+    "monero-pt",
+    "monero-ru",
+    "monero-zh-hans"
+  ]
+}

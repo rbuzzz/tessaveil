@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "decred-cake-dispatch",
+  "source_type": "official-source",
+  "claim": "createWallet dispatches every15-word mnemonic to dcrdex native decoder,12/24 to libwallet BIP39-shaped decoder, otherwise errors. Thus ordinary15-word BIP39 input is not general BIP39 import here.",
+  "url": "https://raw.githubusercontent.com/decred/libwallet/ecc4a5fb9594368777848de42d7e072d62406507/cgo/walletloader.go",
+  "revision": "ecc4a5fb9594368777848de42d7e072d62406507",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-decred-15",
+    "cake-decred-bip39-12-24",
+    "cake-wallet-decred"
+  ]
+}

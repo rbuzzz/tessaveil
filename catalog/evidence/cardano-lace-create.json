@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cardano-lace-create",
+  "source_type": "official-documentation",
+  "claim": "Edited 2026-07-14 Route B: browser-extension software wallet creates/displays24-word backup. Route A hardware connection creates no new phrase in Lace. Exact app version/derivation unspecified. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 ce02d32706cf597d8f3861e3040d487d7e8862020069ccdf6e40aa48b7a83f19.",
+  "url": "https://www.lace.io/blog/moving-your-funds-to-lace-carefully",
+  "revision": "snapshot-2026-09-29-sha256-ce02d32706cf597d8f3861e3040d487d7e8862020069ccdf6e40aa48b7a83f19",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "lace"
+  ]
+}

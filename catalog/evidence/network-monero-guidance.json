@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-monero-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official monero documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://www.getmonero.org/resources/moneropedia/mnemonicseed.html",
+  "revision": "body-sha256:7b12e0abdde1eb836bcab38f1cf8528db3d642272dafe8e29f78a57fbc7c237e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-monero"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "rainbow",
+  "display_name": {
+    "en": "Rainbow — mnemonic-generated",
+    "ru": "Rainbow — mnemonic-generated"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-rainbow"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-be686dc3c5b3",
+    "max": "version-unresolved-doc-2026-09-29-be686dc3c5b3"
+  },
+  "product_id": "rainbow",
+  "product_name": "Rainbow",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "mnemonic-generated",
+  "network_ids": [
+    "ethereum"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Extension onboarding creates an Ethereum wallet and requires secret-phrase backup. Exact length, codec and released extension remain unresolved.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

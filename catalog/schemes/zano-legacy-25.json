@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "zano-legacy-25",
+  "display_name": {
+    "en": "Zano historical25 import",
+    "ru": "Zano historical25 import"
+  },
+  "status": "blocked",
+  "historical": true,
+  "evidence_ids": [
+    "zano-modes",
+    "zano-timestamp-password",
+    "zano-history-vector"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "e55c8ec47b76ed809162a958cf4600e03256a96a",
+    "max": "e55c8ec47b76ed809162a958cf4600e03256a96a"
+  },
+  "dictionary_ids": [
+    "zano-en"
+  ],
+  "supported_lengths": [
+    25
+  ],
+  "position_rules": [
+    "Words1..24 binary data; word25 timestamp/password flag; no word26 checksum."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Exact original seed password and mode are required for recovery when used; never store the secret in Tessaveil."
+  },
+  "semantic_distinction": "Accepted by inspected current core; original historical generation boundary not established. Not Monero25.",
+  "test_vector_ids": [
+    "zano-history-vector"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

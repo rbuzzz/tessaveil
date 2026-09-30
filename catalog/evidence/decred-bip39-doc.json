@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "decred-bip39-doc",
+  "source_type": "official-source",
+  "claim": "Official source documentation distinguishes PGP33 direct wallet seed from BIP39 sentence+passphrase seed; describes external conversion to hex for Decrediton/dcrwallet. This does not prove native BIP39 phrase generation or direct phrase import in Decrediton.",
+  "url": "https://raw.githubusercontent.com/decred/dcrdocs/30e042a46a97cf78f9766904d3ca4e5ed253266d/docs/advanced/mnemonic-seed.md",
+  "revision": "30e042a46a97cf78f9766904d3ca4e5ed253266d",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "decred-bip39",
+    "decrediton"
+  ]
+}

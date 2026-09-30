@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "electrum-v1",
+  "display_name": {
+    "en": "Electrum v1 — legacy import12/24",
+    "ru": "Electrum v1 — legacy import12/24"
+  },
+  "status": "blocked",
+  "historical": true,
+  "evidence_ids": [
+    "electrum-legacy-list",
+    "electrum-v2-source"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "ede66c89887234c83b0def133b3100fe92a160eb",
+    "max": "ede66c89887234c83b0def133b3100fe92a160eb"
+  },
+  "dictionary_ids": [
+    "electrum-v1-en"
+  ],
+  "supported_lengths": [
+    12,
+    24
+  ],
+  "position_rules": [
+    "Three-word groups encode32-bit chunks using modulo1626 relative indices; no BIP39 checksum. Current old recognition accepts12/24, not all historical variants."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "No derivation passphrase in this profile. Local wallet encryption password is distinct and is never stored."
+  },
+  "semantic_distinction": "Legacy pre2.0 encoding as recognized by pinned4.8.2 source; no current generation claim. Dictionary licensing blocks selection.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

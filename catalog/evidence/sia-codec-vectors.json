@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "sia-codec-vectors",
+  "source_type": "public-test-vector",
+  "claim": "Ten published codec boundary cases project to byte inputs and dictionary indices; [90,5] maps to[0,0]. These are codec vectors, not28/29-word wallet recovery vectors.",
+  "url": "https://gitlab.com/NebulousLabs/entropy-mnemonics/-/blob/7532f67e35008b0f36bbebb20d5a6ee8f14a22f5/mnemonics_test.go",
+  "revision": "7532f67e35008b0f36bbebb20d5a6ee8f14a22f5",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sia-legacy"
+  ]
+}

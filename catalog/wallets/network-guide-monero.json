@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "network-guide-monero",
+  "display_name": {
+    "en": "monero — network search guidance — network-search-guidance",
+    "ru": "monero — network search guidance — network-search-guidance"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "network-monero-guidance"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-7b12e0abdde1",
+    "max": "version-unresolved-doc-2026-09-29-7b12e0abdde1"
+  },
+  "product_id": "network-guide-monero",
+  "product_name": "monero — network search guidance",
+  "aliases": [
+    "XMR"
+  ],
+  "platform": "cross-platform",
+  "mode_id": "network-search-guidance",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Network identity/search guidance only. Legacy25, MyMonero13 and Polyseed16 have different codecs and dependencies despite sharing a network.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.",
+    "Search candidates only: monero-legacy, mymonero-13, polyseed-16. Scheme links are navigation, not recovery compatibility."
+  ],
+  "guidance": "Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs: monero-legacy, mymonero-13, polyseed-16. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil."
+}

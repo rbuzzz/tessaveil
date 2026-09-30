@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "decred-cake-build",
+  "source_type": "official-source",
+  "claim": "Android build source pins decred/libwallet ecc4a5fb9594368777848de42d7e072d62406507. This proves declared source binding, not executed release-binary contents. No iOS/macOS/Windows parity inferred.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/scripts/android/build_decred.sh",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-decred-15",
+    "cake-decred-bip39-12-24",
+    "cake-wallet-decred",
+    "cake-wallet-decred-bip39"
+  ]
+}

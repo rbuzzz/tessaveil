@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-base-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official base documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.base.org/base-chain/quickstart/connecting-to-base",
+  "revision": "body-sha256:337f996551fbf9a7cd197210a9140e9ac46b3644ee64e76f22f49cae607f64c3",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-base"
+  ]
+}

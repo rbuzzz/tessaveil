@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-native-wordlist",
+  "source_type": "official-source",
+  "claim": "TON crypto's wordlist.ts contains exactly the same 2048 English tokens in the same order as the pinned BIP39 English list. Compared by extracting its single-quoted alphabetic tokens; only the unchanged BIP39 text file is bundled. Source byte SHA-256 2bc9a19c24279d659c4d02e08f9381af16cd62bdbb5103ce1815db4a7861c9db. Reviewed 2026-09-29; see docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/ton-org/ton-crypto/c3435833a0da52a96f674c352c4c6f91fcc07f6d/src/mnemonic/wordlist.ts",
+  "revision": "c3435833a0da52a96f674c352c4c6f91fcc07f6d",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "ton-native"
+  ]
+}

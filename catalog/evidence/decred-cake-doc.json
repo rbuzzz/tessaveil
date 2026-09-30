@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "decred-cake-doc",
+  "source_type": "official-documentation",
+  "claim": "Task16 correction of Task13 reading: retrieved2026-09-29 official documentation describes current12/24 BIP39 with optional passphrase, native15 creation before v6.4.2 and continued15-word restoration. There is no demonstrated documentation/source conflict. Exact historical binary interval and independent recovery remain unverified.",
+  "url": "https://docs.cakewallet.com/cryptos/decred/",
+  "revision": "HTTP-body-sha256-60b015b6925b3c3e8af1cde9b06e34f017f4eb5c53ad8ebc76d2f4fe37100854",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-decred-15",
+    "cake-wallet-decred",
+    "cake-wallet-decred-bip39"
+  ]
+}

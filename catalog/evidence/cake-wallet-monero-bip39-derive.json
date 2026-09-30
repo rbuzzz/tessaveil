@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-monero-bip39-derive",
+  "source_type": "official-source",
+  "claim": "Monero BIP39 generation defaults128bits/12 words; import accepts locked BIP39 validation lengths. Derives hardened 44, hardened 128, hardened account, then 0 and 0 then little-endian scalar reduction and English legacy conversion. Not an ordinary Monero legacy phrase or generic BIP39 wallet.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_monero/lib/bip39_seed.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-monero-bip39-create",
+    "cake-monero-bip39-import",
+    "cake-wallet-monero-bip39",
+    "cake-wallet-monero-bip39-create-ios",
+    "cake-wallet-monero-bip39-create-linux",
+    "cake-wallet-monero-bip39-create-macos",
+    "cake-wallet-monero-bip39-group-android",
+    "cake-wallet-monero-bip39-group-ios",
+    "cake-wallet-monero-bip39-group-linux",
+    "cake-wallet-monero-bip39-group-macos",
+    "cake-wallet-monero-bip39-import-android",
+    "cake-wallet-monero-bip39-import-ios",
+    "cake-wallet-monero-bip39-import-linux",
+    "cake-wallet-monero-bip39-import-macos"
+  ]
+}

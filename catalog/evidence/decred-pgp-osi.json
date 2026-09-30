@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "decred-pgp-osi",
+  "source_type": "official-documentation",
+  "claim": "OSI identifies ISC as an approved license; actual grant and scope are supplied by pinned Decred source/header. Component compatibility only.",
+  "url": "https://opensource.org/license/isc",
+  "revision": "retrieved-2026-09-29",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pgp-even",
+    "pgp-odd"
+  ]
+}

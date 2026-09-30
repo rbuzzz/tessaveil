@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "zcash-non-mnemonic",
+  "display_name": {
+    "en": "Zcash standalone keys / raw legacy HD seed — no word table",
+    "ru": "Zcash standalone keys / raw legacy HD seed — no word table"
+  },
+  "status": "no-mnemonic-confirmed",
+  "historical": false,
+  "evidence_ids": [
+    "zcash-standalone",
+    "zcash-zallet-empty",
+    "zcash-zallet-export"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "558f686599586f55def3db86955d74d3be44605e",
+    "max": "558f686599586f55def3db86955d74d3be44605e"
+  },
+  "dictionary_ids": [],
+  "supported_lengths": [],
+  "position_rules": [
+    "Not applicable: non-mnemonic material has no word positions or candidate table."
+  ],
+  "external_secret": {
+    "kind": "other",
+    "stored": false,
+    "guidance": "Exact original seed password and mode are required for recovery when used; never store the secret in Tessaveil."
+  },
+  "semantic_distinction": "Non-mnemonic key material requires native wallet backup/export and any encryption identity. No vocabulary, word count, table, or universal mnemonic conversion.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

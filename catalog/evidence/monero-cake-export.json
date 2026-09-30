@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "monero-cake-export",
+  "source_type": "official-source",
+  "claim": "Backup UI obtains wallet.seed; separate from import service branches. Reviewed 2026-09-29; response byte SHA-256 e57829ad9284056ec12b705e5e2c289434a6d952966ad232adfaca0c8616986c. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/lib/view_model/wallet_seed_view_model.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-monero",
+    "cake-wallet-monero-legacy"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "wallet-seedsigner",
+  "source_type": "official-documentation",
+  "claim": "Official feature list creates a BIP39 phrase from D6 dice. Stateless signing requires the original seed and any passphrase; no live device tested. Photo-entropy BIP39 generation is a separate listed feature from dice entropy and from existing SeedQR input. SeedQR storage/input is a transport for an existing seed, not evidence of generation. Feature list includes indexed BIP85 child phrases. Parent seed, index and parameters matter; it is not interchangeable with direct entropy generation.",
+  "url": "https://seedsigner.com/",
+  "revision": "body-sha256:106362fa6af27750e9bf76ea1d09dee0f066cf8005253d5c94d16e0c95a1ab82",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "seedsigner",
+    "seedsigner-bip85",
+    "seedsigner-photo",
+    "seedsigner-seedqr"
+  ]
+}

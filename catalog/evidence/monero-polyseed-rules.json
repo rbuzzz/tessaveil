@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "monero-polyseed-rules",
+  "source_type": "official-source",
+  "claim": "Ten lists, NFKD word invariant, ordinal index lookup, language-dependent prefixes/accent handling; no BIP39 substitution. Reviewed 2026-09-29; response byte SHA-256 f30f867f5afd3bab323d85a8678868862d94dde09ed7801ab45a74f9b563b447. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/tevador/polyseed/56f634647d4f75596de20a6259b0cf1933949fdc/src/lang.c",
+  "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "polyseed-cs",
+    "polyseed-en",
+    "polyseed-es",
+    "polyseed-fr",
+    "polyseed-it",
+    "polyseed-ja",
+    "polyseed-ko",
+    "polyseed-pt",
+    "polyseed-zh-hans",
+    "polyseed-zh-hant"
+  ]
+}

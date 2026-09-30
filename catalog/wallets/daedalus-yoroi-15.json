@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "daedalus-yoroi-15",
+  "display_name": {
+    "en": "Daedalus — icarus-15-import",
+    "ru": "Daedalus — icarus-15-import"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cardano-daedalus-restore",
+    "cardano-daedalus-lengths",
+    "cardano-daedalus-version"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755",
+    "max": "11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755"
+  },
+  "product_id": "daedalus",
+  "product_name": "Daedalus",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "icarus-15-import",
+  "network_ids": [
+    "cardano"
+  ],
+  "scheme_id": "cardano-icarus-15",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Yoroi15 import is separate from Daedalus24 creation.",
+    "Non-selectable: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence."
+  ],
+  "guidance": "Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil."
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-chia-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official chia documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.chia.net/chia-blockchain/keys/keys-and-signatures/",
+  "revision": "body-sha256:5d633c523485ed1c47186f4ea42257e705ae42e489aca65cbd5fcd34b32ca2c4",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-chia"
+  ]
+}

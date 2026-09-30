@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-wownero-doc",
+  "source_type": "official-documentation",
+  "claim": "Wownero no longer create/restore/sync/transact; existing wallets only export seed/keys. Former16 Polyseed,25 legacy and imported14 formats remain distinct; export is not current creation.",
+  "url": "https://docs.cakewallet.com/cryptos/wownero/",
+  "revision": "HTTP-body-sha256-e8e0871bc282b83696979608b64aa582738d728d131041a57395d8aad9c3ac80",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-wownero-legacy25-export-android",
+    "cake-wallet-wownero-legacy25-export-ios",
+    "cake-wallet-wownero-legacy25-export-linux",
+    "cake-wallet-wownero-legacy25-export-macos",
+    "cake-wallet-wownero-polyseed16-export-android",
+    "cake-wallet-wownero-polyseed16-export-ios",
+    "cake-wallet-wownero-polyseed16-export-linux",
+    "cake-wallet-wownero-polyseed16-export-macos",
+    "cake-wallet-wownero-legacy14-export-android",
+    "cake-wallet-wownero-legacy14-export-ios",
+    "cake-wallet-wownero-legacy14-export-linux",
+    "cake-wallet-wownero-legacy14-export-macos",
+    "cake-wownero-14-unresolved"
+  ]
+}

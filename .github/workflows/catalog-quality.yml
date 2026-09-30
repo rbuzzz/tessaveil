@@ -1,0 +1,92 @@
+name: Catalog quality
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1; node24
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0; node24
+        with:
+          python-version: '3.12'
+      - name: Install development requirements
+        run: python -m pip install -r requirements-dev.txt
+      - name: Non-empty suite including threat, spike contracts and schema parity
+        run: python tools/run_tests.py
+      - name: Require terminal research catalogue
+        run: python -m tools.catalog.cli validate --root . --require-terminal
+      - name: Require generated catalogue and notices without drift or pending bundled decisions
+        run: |
+          python -m tools.catalog.cli generate --root . --check
+          python -m tools.notices --check
+
+  sensitive-material:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1; node24
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0; node24
+        with:
+          python-version: '3.12'
+      - name: Install development requirements
+        run: python -m pip install -r requirements-dev.txt
+      - name: Scan tracked files and verify exact public-vector exceptions
+        run: python -m tools.sensitive_material
+      - name: Scan all blobs reachable from full checkout refs
+        run: python -m tools.history_sensitive_material
+
+  release-readiness-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1; node24
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0; node24
+        with:
+          python-version: '3.12'
+      - name: Install development requirements
+        run: python -m pip install -r requirements-dev.txt
+      - name: Bind report to candidate and compare exact independent release result
+        run: python -m tools.research_gate --candidate-sha "$GITHUB_SHA"
+      # An honest NO-GO passes this REPORT check only. Future promotion MUST run
+      # tools.catalog.cli validate --require-release-ready directly, require exit 0,
+      # and independently clear every physical, format, audit and signing gate.
+
+  rust-host-evidence:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: spikes/mobile/core
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1; node24
+        with:
+          persist-credentials: false
+      - name: Install the pinned official Rust toolchain
+        run: rustup toolchain install 1.90.0 --profile minimal --component rustfmt
+      - name: Fetch exact locked dependencies
+        run: cargo +1.90.0 fetch --locked
+      - name: Check formatting
+        run: cargo +1.90.0 fmt --check
+      - name: Check all targets offline against the lockfile
+        run: cargo +1.90.0 check --locked --offline --all-targets
+      - name: Test synthetic host evidence offline against the lockfile
+        run: cargo +1.90.0 test --locked --offline
+
+# Host compilation/vectors do not prove physical mobile or clean-machine readiness.
+# Filesystem interruption probes remain opt-in and are never enabled in this CI.

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-bitcoin-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official bitcoin documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://bitcoin.org/en/choose-your-wallet",
+  "revision": "body-sha256:ecf8cd25398eb5590b5ba770420402a928058503b0aa2e13ada734a554ceb70a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-bitcoin"
+  ]
+}

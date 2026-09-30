@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "zcash-bip0039",
+  "source_type": "official-source",
+  "claim": "Zallet Cargo.lock pins bip0039 0.12.0; downloaded crate SHA256 matches568b6890865156d9043af490d4c4081c385dd68ea10acd6ca15733d511e6b51c and vcs commit. NFKD PBKDF2-HMAC-SHA512/2048, salt mnemonic+passphrase. English ordered list equals existing BIP39-English. zcashd dependency binding is not inferred from Zallet's lock.",
+  "url": "https://raw.githubusercontent.com/koushiro/rust-bips/1a6cc63a53721781aabd695307cc41b82ca76813/bip0039/src/mnemonic.rs",
+  "revision": "1a6cc63a53721781aabd695307cc41b82ca76813",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "zcash-bip39"
+  ]
+}

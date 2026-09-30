@@ -1,0 +1,27 @@
+{
+  "verified_utc": "2026-09-29T13:00:49Z",
+  "os": "Майкрософт Windows 11 Pro",
+  "os_version": "10.0.26200",
+  "os_build": "26200.9457",
+  "os_architecture": "64-разрядная",
+  "display_version": "25H2",
+  "powershell": "7.6.5",
+  "dotnet": ".NET 10.0.11",
+  "filesystem": "NTFS",
+  "device_class": "local fixed development volume",
+  "scope": "process interruption at named boundaries only",
+  "release_readiness": "NO-GO",
+  "api": "FileStream.CreateNew -> Write -> Flush(true) -> close/reopen -> AES-GCM verify -> File.Replace(no backup, ignoreMetadataErrors=false)",
+  "fixture_sha256": "bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01",
+  "nonempty_rejected": true,
+  "junction_rejected": true,
+  "matrix": [
+    {"phase":"AfterCreate","exit_code":86,"observed":"old","authenticated":true,"target_length":4140,"temporary_length":0,"temporary_authenticated":false,"old_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01","new_sha256":"20596b22eb939fc0440cf39045c1b79df16ba854eed0e9c39ca4e7a1d09e8d27","actual_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01"},
+    {"phase":"AfterWrite","exit_code":86,"observed":"old","authenticated":true,"target_length":4140,"temporary_length":0,"temporary_authenticated":false,"old_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01","new_sha256":"d865b2cdffdf570f265efc3e00086313625fd4b5ac35b7f3646f1c67da06d35d","actual_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01"},
+    {"phase":"AfterFlush","exit_code":86,"observed":"old","authenticated":true,"target_length":4140,"temporary_length":4140,"temporary_authenticated":true,"old_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01","new_sha256":"f64b85ad00d7fccb6bc57bae42adb595a3a54dd2302efbbfac0e139d4addfa5e","actual_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01"},
+    {"phase":"AfterVerify","exit_code":86,"observed":"old","authenticated":true,"target_length":4140,"temporary_length":4140,"temporary_authenticated":true,"old_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01","new_sha256":"e612e23083467f38d810cc139cbfc28c80935fb341c2ff20d1c51a3f1e33b4d1","actual_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01"},
+    {"phase":"BeforeReplace","exit_code":86,"observed":"old","authenticated":true,"target_length":4140,"temporary_length":4140,"temporary_authenticated":true,"old_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01","new_sha256":"8720a1da4ec3adeab19dcb5d127989214890870f16f8823d025298282e123829","actual_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01"},
+    {"phase":"AfterReplace","exit_code":86,"observed":"new","authenticated":true,"target_length":4140,"temporary_length":null,"temporary_authenticated":null,"old_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01","new_sha256":"b5c69a5323d6160d5280ee5e98a89719e7b8767f2646bc56ccd1bf60b277ce62","actual_sha256":"b5c69a5323d6160d5280ee5e98a89719e7b8767f2646bc56ccd1bf60b277ce62"},
+    {"phase":"None","exit_code":0,"observed":"new","authenticated":true,"target_length":4140,"temporary_length":null,"temporary_authenticated":null,"old_sha256":"bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01","new_sha256":"eea31c4288a710299dc72017ee8b2d8dd26af11516edf672501a5418f21a0796","actual_sha256":"eea31c4288a710299dc72017ee8b2d8dd26af11516edf672501a5418f21a0796"}
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "kukai",
+  "display_name": {
+    "en": "Kukai — mnemonic-generated",
+    "ru": "Kukai — mnemonic-generated"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-kukai"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-88483abb0163",
+    "max": "version-unresolved-doc-2026-09-29-88483abb0163"
+  },
+  "product_id": "kukai",
+  "product_name": "Kukai",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "mnemonic-generated",
+  "network_ids": [
+    "tezos"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "New-wallet guide generates seed words, verifies selected positions and creates an encrypted wallet file. This is separate from DirectAuth; codec is not inferred.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

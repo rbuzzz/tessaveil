@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "slip39-signpath",
+  "source_type": "official-documentation",
+  "claim": "Codex local component assessment: MIT data and public test projections impose no proprietary or commercial dual-license requirement; required attribution/license are retained. Compatible only at component-license level. Foundation acceptance and project/release eligibility remain unproven. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 6610cf889bbe0dc7533abaa310bc7a5cc9a61ae6c2ce0798a08109c925b46c51.",
+  "url": "https://signpath.org/terms.html",
+  "revision": "snapshot-2026-09-29-sha256-6610cf889bbe0dc7533abaa310bc7a5cc9a61ae6c2ce0798a08109c925b46c51",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "slip39-en"
+  ]
+}

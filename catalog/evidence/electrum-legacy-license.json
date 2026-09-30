@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "electrum-legacy-license",
+  "source_type": "official-source",
+  "claim": "MIT grant covers Electrum software; old_mnemonic.py separately credits a Wiktionary frequency list. Codex review 2026-09-29 cannot establish original list revision, attribution chain or cumulative terms: redistribution unclear and SignPath pending for that list. This is uncertainty, not a finding of infringement.",
+  "url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/LICENCE",
+  "revision": "ede66c89887234c83b0def133b3100fe92a160eb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "electrum-v1-en",
+    "monero-en-old"
+  ]
+}

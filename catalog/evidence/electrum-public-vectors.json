@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "electrum-public-vectors",
+  "source_type": "public-test-vector",
+  "claim": "Public English segwit vectors with empty and explicit passphrase; projections preserve indices and expected seed fingerprints, tested offline. Tests also show old12/24 and 13-word native seed recognition. No user phrases or recovery.",
+  "url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/tests/test_mnemonic.py",
+  "revision": "ede66c89887234c83b0def133b3100fe92a160eb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "electrum-v2"
+  ]
+}

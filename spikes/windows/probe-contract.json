@@ -1,0 +1,14 @@
+{
+  "contract_version": 1,
+  "status": "source-contract-only; builds blocked",
+  "table": {"rows": 10000, "columns": 36, "cell": "TEST-R{row:05}-C{column:02}", "virtualized": true},
+  "input": {"masked": true, "test_value": "TEST-INPUT-42!", "persist": false},
+  "themes": ["light", "dark"],
+  "tokens": {
+    "light": {"background": "#FFFFFF", "foreground": "#171717", "focus": "#005FCC"},
+    "dark": {"background": "#171717", "foreground": "#FFFFFF", "focus": "#80BFFF"}
+  },
+  "focus_order": ["input", "invoke", "theme", "table"],
+  "boundary": {"name": "probe_core_version", "input": null, "output_u32": 1},
+  "forbidden": ["cryptography", "mnemonics", "network", "persistent input", "clipboard"]
+}

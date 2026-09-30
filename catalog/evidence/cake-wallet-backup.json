@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-backup",
+  "source_type": "official-source",
+  "claim": "App backup v3 is an encrypted file/container route with legacyv1/v2 handling, settings/wallet metadata and a backup password; not a dictionary mnemonic. Exact cross-platform roundtrip and dependency security audit unverified.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/lib/core/backup_service_v3.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-app-backup-android",
+    "cake-wallet-app-backup-ios",
+    "cake-wallet-app-backup-linux",
+    "cake-wallet-app-backup-macos"
+  ]
+}

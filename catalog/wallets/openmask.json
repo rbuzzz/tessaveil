@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "openmask",
+  "display_name": {
+    "en": "OpenMask",
+    "ru": "OpenMask"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "ton-openmask-create",
+    "ton-openmask-version",
+    "ton-openmask-identity",
+    "ton-tonweb-generate",
+    "ton-tonweb-seed",
+    "ton-tonweb-version",
+    "ton-tep3"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "0.22.0-source-9150d57d530296f8b27ae59e4dfce865be81550e",
+    "max": "0.22.0-source-9150d57d530296f8b27ae59e4dfce865be81550e"
+  },
+  "product_id": "openmask-openproduct",
+  "product_name": "OpenMask",
+  "aliases": [
+    "OpenMask Browser Extension"
+  ],
+  "platform": "web",
+  "mode_id": "ton-native-generated",
+  "network_ids": [
+    "ton"
+  ],
+  "scheme_id": "ton-native",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "OpenProduct's Chrome extension source creates and displays a tonweb-mnemonic phrase. Package declares tonweb-mnemonic ^1.0.1; reviewed library 1.0.1 defaults to native 24.",
+    "Exact deployed extension/dependency artifact binding and a wallet-level reproducible recovery vector remain unproven; this source-backed mapping is documented, not selectable. Ledger and imported modes excluded."
+  ],
+  "guidance": "Use the original trusted wallet's backup and recovery procedure. Match exact product, platform, source version and mode. Never enter a complete recovery phrase into Tessaveil or a website."
+}

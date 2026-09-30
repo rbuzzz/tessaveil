@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "slip39-license",
+  "source_type": "official-source",
+  "claim": "Codex review 2026-09-29: MIT covers this repository word-list and public-vector projection; retain SatoshiLabs 2019 copyright and full permission/disclaimer in THIRD_PARTY_NOTICES. No implementation library is bundled. Repository redistribution allowed for these exact bytes. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 332f92f7f90a1c957b473b902a5daf39ad5eb179d8828e0304b4c40faa0123c0.",
+  "url": "https://raw.githubusercontent.com/trezor/python-shamir-mnemonic/17fcce14736afe498871d3018e4fa9330443471a/LICENSE",
+  "revision": "17fcce14736afe498871d3018e4fa9330443471a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "slip39-en"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-scheme",
+  "display_name": {
+    "en": "Synthetic scheme",
+    "ru": "Синтетическая схема"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "synthetic-evidence"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "1.0",
+    "max": null
+  },
+  "dictionary_ids": [],
+  "supported_lengths": [],
+  "position_rules": [],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "Unknown format; use the source wallet's backup procedure."
+  },
+  "semantic_distinction": "Invalid fixture: a verified scheme cannot omit dictionary, lengths, or vectors.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

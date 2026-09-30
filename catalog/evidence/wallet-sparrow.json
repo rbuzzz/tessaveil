@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-sparrow",
+  "source_type": "official-documentation",
+  "claim": "Quick Start explicitly generates 12 BIP39 words with Generate New; import software wallets and watch-only xpubs are distinct choices. Quick Start lists Electrum import separately from BIP39 generation. Exact Electrum seed subtype/version is unresolved; scheme link is a research candidate only.",
+  "url": "https://www.sparrowwallet.com/docs/quick-start.html",
+  "revision": "body-sha256:853a96de90aedc07ed80fbd2d003765db03bb568ffd7b1517e6c1adcac7e6f25",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sparrow",
+    "sparrow-electrum-import"
+  ]
+}

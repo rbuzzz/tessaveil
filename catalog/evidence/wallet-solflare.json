@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-solflare",
+  "source_type": "official-documentation",
+  "claim": "Desktop web flow creates a recovery phrase, confirms it and optionally sets a local passcode. Phrase length/codec are not inferred from screenshots.",
+  "url": "https://help.solflare.com/en/articles/6134545-how-to-generate-a-wallet-with-a-recovery-phrase-desktop",
+  "revision": "body-sha256:a4468500040d56fa04d5729504527f337d64590578fdf90e99ecf00f25811317",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "solflare"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-phantom",
+  "source_type": "official-documentation",
+  "claim": "Current creation page explicitly offers a 12-word SRP route distinct from Google/Apple onboarding. Exact chain derivation and extension build are not established. Current creation page documents Google/Apple login. This record does not assert absence of an underlying phrase; export and recovery dependencies require mode-specific verification.",
+  "url": "https://help.phantom.com/articles/how-to-create-a-new-wallet-in-phantom-8071074929043",
+  "revision": "body-sha256:14c729c88449e342d194a63d059a89a9f3c50a0bb2699e27caf44972d1495ee2",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "phantom",
+    "phantom-social-login"
+  ]
+}

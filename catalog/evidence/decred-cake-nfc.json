@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "decred-cake-nfc",
+  "source_type": "official-source",
+  "claim": "ApplyPassphrase normalizes words/pass to NFC, while BIP39 requires NFKD. ASCII examples do not establish general compatibility. Keep source-specific12/24 profile blocked pending Unicode behavior and released-artifact recovery review.",
+  "url": "https://raw.githubusercontent.com/decred/libwallet/ecc4a5fb9594368777848de42d7e072d62406507/mnemonic/seed.go",
+  "revision": "ecc4a5fb9594368777848de42d7e072d62406507",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-decred-bip39-12-24",
+    "cake-wallet-decred-bip39",
+    "cake-wallet-decred-bip39-create-ios",
+    "cake-wallet-decred-bip39-group-android",
+    "cake-wallet-decred-bip39-group-ios",
+    "cake-wallet-decred-bip39-import-android",
+    "cake-wallet-decred-bip39-import-ios"
+  ]
+}

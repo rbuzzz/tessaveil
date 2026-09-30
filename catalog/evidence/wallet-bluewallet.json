@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "wallet-bluewallet",
+  "source_type": "official-documentation",
+  "claim": "Official FAQ creates Bitcoin wallets with phrase backup. It separately lists Lightning/LNDhub; no mnemonic recovery promise is made for Lightning. Import detects recovery phrases and may require original passphrase, accounts and derivation path. Detection is not guaranteed recovery compatibility. FAQ supports private-key import separately from phrase backups.",
+  "url": "https://bluewallet.io/docs/intro/",
+  "revision": "body-sha256:47a847355b7d79459cbb21207184a4ca4aff561e3144b8a18df7fdc8d3d85eba",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "bluewallet",
+    "bluewallet-import",
+    "bluewallet-private-key"
+  ]
+}

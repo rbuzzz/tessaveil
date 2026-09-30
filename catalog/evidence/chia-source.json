@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "chia-source",
+  "source_type": "official-source",
+  "claim": "generate_mnemonic uses32 random bytes =>24 BIP39-English words. mnemonic_to_seed normalizes NFKD, PBKDF2-HMAC-SHA5122048, salt mnemonic with no user extension. Master keyring passphrase is separate; BLS derivation is not BIP32.",
+  "url": "https://raw.githubusercontent.com/Chia-Network/chia-blockchain/af0d7eab5fb12bbd8af51f47a7123ee700d74c2a/chia/util/keychain.py",
+  "revision": "af0d7eab5fb12bbd8af51f47a7123ee700d74c2a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "chia-bip39",
+    "chia-wallet"
+  ]
+}

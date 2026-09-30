@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "algorand-algorithm",
+  "source_type": "official-source",
+  "claim": "Legacy account key representation: 32 seed bytes become 24 little-endian 11-bit indices with eight zero padding bits; word 25 is the first little-endian 11 bits of SHA-512/256(seed). The 24th data index is 0..7, not any of 2048. No BIP39 checksum, PBKDF2 seed or universal-HD mapping is implied. from_private_key exports the first 32 bytes separately from generation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 6d9387e3ee7213c14a1dec9f53a22f2880ee80b00df8457430f5ecae21f2c74e.",
+  "url": "https://raw.githubusercontent.com/algorand/py-algorand-sdk/189855d43cba5d20e66248693d74332052ccb08e/algosdk/mnemonic.py",
+  "revision": "189855d43cba5d20e66248693d74332052ccb08e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "algorand-25"
+  ]
+}

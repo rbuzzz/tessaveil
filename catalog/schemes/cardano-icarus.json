@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "cardano-icarus",
+  "display_name": {
+    "en": "Cardano — Icarus 15/24",
+    "ru": "Cardano — Icarus 15/24"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cardano-cip3",
+    "cardano-icarus-rules",
+    "cardano-daedalus-lengths"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "4ca4dcefccc7143672cf07a0b760d9e5abfc7797",
+    "max": "4ca4dcefccc7143672cf07a0b760d9e5abfc7797"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    15,
+    24
+  ],
+  "position_rules": [
+    "Same BIP39 English dictionary at every position; entropy/checksum packing is BIP39, master-key derivation is Icarus.",
+    "15-word Yoroi creation and 24-word Daedalus creation are separate exact source modes; listed lengths are scoped profiles, not all theoretical Icarus inputs."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred."
+  },
+  "semantic_distinction": "Icarus 96-byte root, 4096-round PBKDF2, entropy salt, separate optional mnemonic password. Yoroi/Nami examined source uses empty mnemonic password; spending password is not this secret. No wallet-level recovery vector independently reproduced. Trezor 24 checksum deviation is excluded.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

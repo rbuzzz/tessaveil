@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "decred-decrediton-create",
+  "source_type": "official-source",
+  "claim": "Decrediton2.1.6-source generateSeed obtains a seed service response; createWallet accepts seed separately. Combined with official PGP33 docs this establishes software seed creation, not BIP39 creation. Exact backend binary binding remains unresolved.",
+  "url": "https://raw.githubusercontent.com/decred/decrediton/942eed0b34d09316d753942abdbec8dc5320cbed/app/actions/WalletLoaderActions.js",
+  "revision": "942eed0b34d09316d753942abdbec8dc5320cbed",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "decrediton"
+  ]
+}

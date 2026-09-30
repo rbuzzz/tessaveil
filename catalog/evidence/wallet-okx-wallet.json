@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "wallet-okx-wallet",
+  "source_type": "official-documentation",
+  "claim": "App wallet creation includes manual seed backup and verification. Product documentation establishes a phrase route, not an exact Android binary or scheme. App import accepts seed phrases as a separate route; accepted input is not generation evidence. App import includes private keys, separate from phrase wallets. A private-key backup is not a word table. App backup offers cloud and manual alternatives. Cloud credentials and encryption requirements must be retained separately from a mnemonic. The app guide describes wallet creation on first sign-in with Google, Apple or email without manual seed phrase backup. It does not establish the presence or absence of an underlying mnemonic, its scheme, exact mobile OS version or recovery dependencies.",
+  "url": "https://www.okx.com/en-gb/help/how-do-i-manage-my-wallet-app",
+  "revision": "body-sha256:b06df9a2d93a88de2735af96ba233d05687108047c781042d09140d5bc357083",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "okx-wallet",
+    "okx-wallet-cloud-backup",
+    "okx-wallet-mnemonic-import",
+    "okx-wallet-private-key",
+    "okx-wallet-social-login"
+  ]
+}

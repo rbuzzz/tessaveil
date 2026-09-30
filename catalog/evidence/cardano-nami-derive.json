@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cardano-nami-derive",
+  "source_type": "official-source",
+  "claim": "createWallet converts BIP39 mnemonic to entropy, then from_bip39_entropy(entropy, empty bytes). Local encryption password is separate; hardware helpers not same mode. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 8c50628956578649ab228d7cfb6a29dcf8ac104e53f2c0a4fa67731ac913ce57.",
+  "url": "https://raw.githubusercontent.com/input-output-hk/nami/e52e0bdb02eb1ec224db26f48b0192685a30f99e/src/api/extension/index.js",
+  "revision": "e52e0bdb02eb1ec224db26f48b0192685a30f99e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "nami"
+  ]
+}

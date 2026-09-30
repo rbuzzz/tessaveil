@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-bnb-chain-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official bnb-chain documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.bnbchain.org/",
+  "revision": "body-sha256:68b333d42320adfeeba0a2ab1ca9a4a46b84d6ddce4deee64ca43c633bd92996",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-bnb-chain"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-monero-bip39",
+  "display_name": {
+    "en": "Cake Wallet Monero — BIP39-derived mode",
+    "ru": "Cake Wallet Monero — BIP39-derived mode"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-cake-wallet-monero-bip39-wallet",
+    "monero-cake-ui",
+    "monero-cake-version",
+    "cake-wallet-inventory",
+    "cake-wallet-monero-service",
+    "cake-wallet-monero-doc",
+    "cake-wallet-build-android",
+    "cake-wallet-version-android",
+    "cake-wallet-create-ui",
+    "cake-wallet-lock",
+    "cake-wallet-bip39-pbkdf",
+    "cake-wallet-monero-bip39-derive",
+    "cake-wallet-bip39-list",
+    "cake-wallet-bip39-code"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet Monero",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "monero-bip39-create",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": "cake-monero-bip39-create",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "English12 fresh creation through getBip39Seed only. Imported/group phrases may have other lengths, but they use distinct non-generation profiles. Optional passphrase and Monero path/scalar conversion are bound to the exact blocked scheme; Unicode/native recovery remains unverified.",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
+  ],
+  "guidance": "Use the trusted original wallet backup/recovery procedure; match product, platform, exact version and concrete mode. Never type a full phrase into Tessaveil or a website."
+}

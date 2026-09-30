@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "passport-microsd",
+  "display_name": {
+    "en": "Passport — encrypted-microsd-backup",
+    "ru": "Passport — encrypted-microsd-backup"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-passport-backup"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0",
+    "max": "670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0"
+  },
+  "product_id": "passport",
+  "product_name": "Passport",
+  "aliases": [],
+  "platform": "hardware",
+  "mode_id": "encrypted-microsd-backup",
+  "network_ids": [
+    "bitcoin"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Pinned backup flow requires its Backup Code to decrypt the microSD file and explicitly excludes the active passphrase from backup.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

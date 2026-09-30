@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "bip39-vectors",
+  "source_type": "public-test-vector",
+  "claim": "Trezor's public vectors.json supplies 24 independent entropy/mnemonic/seed known answers per language for all ten lists, with passphrase TREZOR. Offline test reconstructs words from entropy, checks published normalized sentence fingerprints and PBKDF2 seed. Public, non-funded data only; fixture projection contains no user phrase. Reviewed 2026-09-29; byte SHA-256 fa3b937b7cff9c9b8ecd3aa011faeb8d6dd67993174b72326e83f4de8fdb30f8. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/trezor/python-mnemonic/b57a5ad77a981e743f4167ab2f7927a55c1e82a8/vectors.json",
+  "revision": "b57a5ad77a981e743f4167ab2f7927a55c1e82a8",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "bip39-en",
+    "bip39-ja",
+    "bip39-ko",
+    "bip39-es",
+    "bip39-zh-hans",
+    "bip39-zh-hant",
+    "bip39-fr",
+    "bip39-it",
+    "bip39-cs",
+    "bip39-pt",
+    "bip39",
+    "ton-multichain-bip39"
+  ]
+}

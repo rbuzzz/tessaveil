@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "sia-legacy",
+  "display_name": {
+    "en": "Sia legacy English1626",
+    "ru": "Sia legacy English1626"
+  },
+  "status": "verified",
+  "historical": true,
+  "evidence_ids": [
+    "sia-list",
+    "sia-codec",
+    "sia-codec-vectors",
+    "sia-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "7532f67e35008b0f36bbebb20d5a6ee8f14a22f5",
+    "max": "7532f67e35008b0f36bbebb20d5a6ee8f14a22f5"
+  },
+  "language": "en",
+  "script": "Latn",
+  "source": {
+    "url": "https://gitlab.com/NebulousLabs/entropy-mnemonics/-/blob/7532f67e35008b0f36bbebb20d5a6ee8f14a22f5/english.go",
+    "revision": "7532f67e35008b0f36bbebb20d5a6ee8f14a22f5"
+  },
+  "license": {
+    "spdx_or_name": "BSD-3-Clause AND MIT",
+    "source_url": "https://gitlab.com/NebulousLabs/entropy-mnemonics/-/blob/7532f67e35008b0f36bbebb20d5a6ee8f14a22f5/english.go",
+    "attribution": "Copyright2014-2015 The Monero Project; Copyright2015 Nebulous. Full terms in THIRD_PARTY_NOTICES; modified UTF-8 LF projection.",
+    "repository_redistribution": "allowed",
+    "signpath_compatible": "compatible",
+    "decision_evidence": [
+      "sia-license",
+      "sia-list"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "NFC",
+  "word_count": 1626,
+  "sha256": "eaa6bce7dd92f4d6dd74f224264e0ef4ad21095d68ec77616b26ceb599baf4f7",
+  "order_rule": "EnglishDictionary array order, zero-based; UTF-8 LF with final newline.",
+  "position_rules": [
+    "Shared 1626-entry vocabulary with unique 3-character English prefixes; eligible indices depend on position and encoded payload length, not Monero triplet semantics.",
+    "38-byte length envelope: a 28-word encoding requires final zero-based index 253..1625; a 29-word encoding requires final index 0..39. Boundary indices 253 and 39 additionally depend on lower positions. Checksum validity is a separate constraint."
+  ],
+  "duplicate_analysis": {
+    "normalized_unique_count": 1626,
+    "collisions": []
+  },
+  "test_vector_ids": [
+    "sia-codec-vectors"
+  ],
+  "wordlist_path": "wordlists/sia-legacy/7532f67e35008b0f36bbebb20d5a6ee8f14a22f5.txt"
+}

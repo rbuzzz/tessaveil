@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-sia-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official sia documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.sia.tech/",
+  "revision": "body-sha256:8b0763a91182eabce60b2b60c0e319a4fb91a1af7ea8d05c40bab96431b15e18",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-sia"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "wallet-keystone-shamir",
+  "source_type": "official-documentation",
+  "claim": "Official Essential/Pro procedure explicitly creates SLIP39 Shamir shares. Threshold/share metadata and extension secret remain necessary; no share-length inference. SLIP39 share import has a separate procedure. Compatible revision, thresholds and exact firmware are unresolved.",
+  "url": "https://support.keyst.one/advanced-features/recovery-phrase/import-or-create-shamir-backup",
+  "revision": "body-sha256:c9e4fc678240b68de31a9a25a7ed12e2d5e5e88860ba9349f556cec8d673be35",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "keystone-shamir",
+    "keystone-shamir-import"
+  ]
+}

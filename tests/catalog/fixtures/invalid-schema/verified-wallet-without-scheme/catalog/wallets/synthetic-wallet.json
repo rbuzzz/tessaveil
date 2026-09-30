@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "synthetic-wallet",
+  "display_name": {"en": "Synthetic Wallet", "ru": "Synthetic Wallet"},
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": ["synthetic-evidence"],
+  "verified_on": "2026-09-29",
+  "version_interval": {"min": "1.0", "max": null},
+  "product_id": "synthetic-wallet",
+  "product_name": "Synthetic Wallet",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "generated-mnemonic",
+  "network_ids": ["synthetic-network"],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [],
+  "guidance": "Test-only synthetic profile."
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-tonweb-generate",
+  "source_type": "official-source",
+  "claim": "Reviewed tonweb-mnemonic generator defaults to 24 words from its English list and TON basic-seed predicate. This does not bind every OpenMask installation to this source. Reviewed 2026-09-29; byte SHA-256 f0f05bd83dd03b22463be3deb85787ba3c69e094c88ad889ceed17073dea7249. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/toncenter/tonweb-mnemonic/a338a00d4ca0ed833431e0e49e4cfad766ac713c/src/functions/generate-mnemonic.ts",
+  "revision": "a338a00d4ca0ed833431e0e49e4cfad766ac713c",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "openmask"
+  ]
+}

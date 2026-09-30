@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "daedalus-paper-27",
+  "display_name": {
+    "en": "Daedalus — byron-paper-27-import",
+    "ru": "Daedalus — byron-paper-27-import"
+  },
+  "status": "documented",
+  "historical": true,
+  "evidence_ids": [
+    "cardano-daedalus-restore",
+    "cardano-daedalus-lengths",
+    "cardano-daedalus-version",
+    "cardano-paper-rules"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755",
+    "max": "11.4.0-source-6c57eb94753211f66d3a63f49d031bf746044755"
+  },
+  "product_id": "daedalus",
+  "product_name": "Daedalus",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "byron-paper-27-import",
+  "network_ids": [
+    "cardano"
+  ],
+  "scheme_id": "cardano-daedalus-27",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Historical18+9 paper certificate import; no current reachable paper creation proven.",
+    "Non-selectable: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence."
+  ],
+  "guidance": "Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil."
+}

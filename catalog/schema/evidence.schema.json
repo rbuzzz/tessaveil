@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tessaveil:schema:evidence:v1",
+  "title": "evidence",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "source_type",
+    "claim",
+    "url",
+    "revision",
+    "verified_on",
+    "record_ids"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "source_type": {
+      "enum": [
+        "official-specification",
+        "official-documentation",
+        "official-source",
+        "public-test-vector"
+      ]
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verified_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "record_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    }
+  },
+  "allOf": [{
+    "if": {"properties": {"source_type": {"const": "official-source"}}, "required": ["source_type"]},
+    "then": {"properties": {"revision": {"pattern": "^[a-f0-9]{40}(?:[a-f0-9]{24})?(?![\\s\\S])"}}}
+  }],
+  "additionalProperties": false
+}

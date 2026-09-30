@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "decred-decrediton-license",
+  "source_type": "official-source",
+  "claim": "ISC notice retained for modified synthetic output projections from the official Decrediton encoder. No implementation/library or wallet binary bundled.",
+  "url": "https://raw.githubusercontent.com/decred/decrediton/942eed0b34d09316d753942abdbec8dc5320cbed/LICENSE",
+  "revision": "942eed0b34d09316d753942abdbec8dc5320cbed",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "pgp-even",
+    "pgp-odd",
+    "decred-pgp33"
+  ]
+}

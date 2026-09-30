@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-glow",
+  "source_type": "official-documentation",
+  "claim": "Official site establishes a Solana browser wallet; support says users hold their recovery phrase. These pages do not prove generation lengths, import methods or cloud backup.",
+  "url": "https://glow.app/",
+  "revision": "body-sha256:77d6d9331b55f325d74c2194560fdd4fff81437e229773be671f98349c195e20",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "glow"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-decred",
+  "display_name": {
+    "en": "Cake Wallet Decred — Android native15 import",
+    "ru": "Cake Wallet Decred — Android native15 import"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "decred-cake-create",
+    "decred-cake-build",
+    "decred-cake-dispatch",
+    "decred-cake-dependency",
+    "decred-cake-native",
+    "decred-cake-seed",
+    "decred-cake-doc",
+    "cake-wallet-inventory",
+    "cake-wallet-decred-service",
+    "cake-wallet-decred-doc",
+    "cake-wallet-build-android",
+    "cake-wallet-version-android"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "native-15-import",
+  "network_ids": [
+    "decred"
+  ],
+  "scheme_id": "cake-decred-15",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "English native15 imported, never current creation. Embedded birthday; no recovery passphrase. Android native dispatch pinned in Task13; iOS dependency parity unverified. ",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
+  ],
+  "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
+}

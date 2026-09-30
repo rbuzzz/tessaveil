@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-coinbase-recovery",
+  "source_type": "official-documentation",
+  "claim": "An optional recovery phrase creates a new on-chain signer which can add a replacement passkey. Setup requires existing access and a per-chain fee; it is not evidence for ordinary EOA derivation.",
+  "url": "https://help.coinbase.com/en/wallet/getting-started/smart-wallet-recovery",
+  "revision": "body-sha256:12e56c471b07282398e28380ee5128f9ff2e6be7066e2cafed57c3d65d6552c5",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "coinbase-wallet-smart-recovery"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "id": "bip39",
+  "display_name": {
+    "en": "BIP39",
+    "ru": "BIP39"
+  },
+  "status": "verified",
+  "historical": false,
+  "evidence_ids": [
+    "bip39-spec",
+    "bip39-vectors"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "3a10b5b5f0a7586df8928d580a3009744ebb2079",
+    "max": "3a10b5b5f0a7586df8928d580a3009744ebb2079"
+  },
+  "dictionary_ids": [
+    "bip39-en",
+    "bip39-ja",
+    "bip39-ko",
+    "bip39-es",
+    "bip39-zh-hans",
+    "bip39-zh-hant",
+    "bip39-fr",
+    "bip39-it",
+    "bip39-cs",
+    "bip39-pt"
+  ],
+  "supported_lengths": [
+    12,
+    15,
+    18,
+    21,
+    24
+  ],
+  "position_rules": [
+    "The same dictionary is eligible at every word position. Phrase checksum or seed validity is never evaluated by Tessaveil."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "A scheme passphrase is external and never stored by Tessaveil. A wallet PIN or application password is not proof of a mnemonic passphrase; verify support in the exact source wallet."
+  },
+  "semantic_distinction": "Entropy plus SHA-256 checksum selects 11-bit word indices. UTF-8 NFKD sentence and passphrase feed PBKDF2-HMAC-SHA512 with 2048 iterations and mnemonic-prefixed salt. The research tests reproduce public vectors only; Tessaveil never derives user keys or validates a complete phrase. Language changes produce different seeds.",
+  "test_vector_ids": [
+    "bip39-vectors"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

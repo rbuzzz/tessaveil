@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-arbitrum-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official arbitrum documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.arbitrum.io/for-devs/dev-tools-and-resources/chain-info",
+  "revision": "body-sha256:ceda32c7434bafd551b361441e520df6902cdf1983fa877e3f9f8c2d256aefbb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-arbitrum"
+  ]
+}

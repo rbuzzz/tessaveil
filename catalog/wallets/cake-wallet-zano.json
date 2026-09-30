@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-zano",
+  "display_name": {
+    "en": "Cake Wallet Zano — native seed import",
+    "ru": "Cake Wallet Zano — native seed import"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "zano-cake-modes",
+    "cake-wallet-inventory",
+    "cake-wallet-zano-service",
+    "cake-wallet-zano-doc",
+    "cake-wallet-build-android",
+    "cake-wallet-version-android"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet Zano — native seed import",
+  "aliases": [],
+  "platform": "android",
+  "mode_id": "native26-import",
+  "network_ids": [
+    "zano"
+  ],
+  "scheme_id": "zano-modern",
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "Native Zano26 import documented. Global historical24/25 schemes are not asserted as Cake modes without Cake release/native dependency evidence. Native dictionary license unresolved, no bytes bundled. Native seed password differs from BIP39. ",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
+  ],
+  "guidance": "Match original product, platform, version and mode; use its native backup procedure. Never enter a complete phrase, private key or external secret into Tessaveil."
+}

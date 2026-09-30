@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "cardano-daedalus-restore",
+  "source_type": "official-source",
+  "claim": "Restore options map regular24, legacy Byron 12, Yoroi15, and certificate 27 separately. Import capability is not evidence of current12/15/27 creation. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 2535b05897dc65e3dbb3654462c426ca07ad12eb62f957dbbf88f77321b93e85.",
+  "url": "https://raw.githubusercontent.com/input-output-hk/daedalus/6c57eb94753211f66d3a63f49d031bf746044755/source/renderer/app/config/walletsConfig.ts",
+  "revision": "6c57eb94753211f66d3a63f49d031bf746044755",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "daedalus-byron",
+    "daedalus-paper-27",
+    "daedalus-yoroi-15"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-solana-service",
+  "source_type": "official-source",
+  "claim": "solana source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_solana/lib/solana_wallet_service.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-solana-bip39-create-android",
+    "cake-wallet-solana-bip39-create-ios",
+    "cake-wallet-solana-bip39-create-linux",
+    "cake-wallet-solana-bip39-create-macos",
+    "cake-wallet-solana-bip39-group-android",
+    "cake-wallet-solana-bip39-group-ios",
+    "cake-wallet-solana-bip39-group-linux",
+    "cake-wallet-solana-bip39-group-macos",
+    "cake-wallet-solana-bip39-import-android",
+    "cake-wallet-solana-bip39-import-ios",
+    "cake-wallet-solana-bip39-import-linux",
+    "cake-wallet-solana-bip39-import-macos",
+    "cake-wallet-solana-private-key-android",
+    "cake-wallet-solana-private-key-ios",
+    "cake-wallet-solana-private-key-linux",
+    "cake-wallet-solana-private-key-macos"
+  ]
+}

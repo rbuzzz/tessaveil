@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-rabby-import",
+  "source_type": "official-source",
+  "claim": "Pinned import state handles existing mnemonic accounts. It is separate from generation and remains non-selectable.",
+  "url": "https://raw.githubusercontent.com/RabbyHub/Rabby/e2b98a27e9ef979ab121e81e591fcf5ad79d6e19/src/ui/state/importMnemonics.ts",
+  "revision": "e2b98a27e9ef979ab121e81e591fcf5ad79d6e19",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "rabby-import"
+  ]
+}

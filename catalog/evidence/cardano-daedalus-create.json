@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cardano-daedalus-create",
+  "source_type": "official-source",
+  "claim": "getWalletRecoveryPhrase calls generateAccountMnemonics(WALLET_RECOVERY_PHRASE_WORD_COUNT); cryptoConfig defines24. English list supplied in crypto.ts. No current27-word creation inferred. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 55fdbd3fd1851cf46fee7444bb90323ff440e46f99dbe30fb67d2cfc36991d7c.",
+  "url": "https://raw.githubusercontent.com/input-output-hk/daedalus/6c57eb94753211f66d3a63f49d031bf746044755/source/renderer/app/api/api.ts",
+  "revision": "6c57eb94753211f66d3a63f49d031bf746044755",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "daedalus"
+  ]
+}

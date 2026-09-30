@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "electrum-v2-dictionary",
+  "source_type": "official-source",
+  "claim": "Exact upstream English bytes equal existing bip39-en SHA-256; equality proves vocabulary only.",
+  "url": "https://raw.githubusercontent.com/spesmilo/electrum/ede66c89887234c83b0def133b3100fe92a160eb/electrum/wordlist/english.txt",
+  "revision": "ede66c89887234c83b0def133b3100fe92a160eb",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "electrum-v2"
+  ]
+}

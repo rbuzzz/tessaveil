@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "sia-bip39",
+  "display_name": {
+    "en": "Sia12 — BIP39 encoding, BLAKE2b entropy seed",
+    "ru": "Sia12 — BIP39 encoding, BLAKE2b entropy seed"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "sia-current-codec",
+    "sia-web-sdk"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "024db888b8bb80b5e54876baaf868c03c9aa0902",
+    "max": "024db888b8bb80b5e54876baaf868c03c9aa0902"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12
+  ],
+  "position_rules": [
+    "128 entropy bits and4 SHA256 checksum bits;12 English11-bit indices."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "No mnemonic derivation extension in this exact mode. Local storage/unlock passwords are separate; never enter them into Tessaveil."
+  },
+  "semantic_distinction": "BLAKE2b-256 over entropy yields Sia32-byte seed. Not standard BIP39 sentence PBKDF2; no passphrase.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-monero-polyseed-zh-hant-create-ios",
+  "display_name": {
+    "en": "Cake Wallet monero — polyseed-zh-hant-create (ios)",
+    "ru": "Cake Wallet monero — polyseed-zh-hant-create (ios)"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-language-ui",
+    "cake-wallet-monero-service",
+    "cake-wallet-build-ios"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "product_id": "cake-wallet",
+  "product_name": "Cake Wallet",
+  "aliases": [],
+  "platform": "ios",
+  "mode_id": "monero-polyseed-zh-hant-create",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": "cake-monero-polyseed-zh-hant",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Explicit zh-hant list, 16 words. Selector-backed creation; restored language recognition/native dependency and wallet recovery remain unverified. Optional external seed passphrase; not wallet unlock password.",
+    "Source-bound research only: non-selectable; no installed binary, independent wallet recovery, hardware transport, signing or Windows release approval. Match original wallet platform/version/mode and use its own backup procedure."
+  ],
+  "guidance": "Use the original wallet backup procedure. Never enter a complete phrase, private key or recovery passphrase into Tessaveil."
+}

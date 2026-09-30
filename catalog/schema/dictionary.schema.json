@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:tessaveil:schema:dictionary:v1",
+  "title": "dictionary",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "display_name",
+    "status",
+    "historical",
+    "evidence_ids",
+    "verified_on",
+    "version_interval",
+    "language",
+    "script",
+    "source",
+    "license",
+    "encoding",
+    "normalization",
+    "word_count",
+    "sha256",
+    "order_rule",
+    "position_rules",
+    "duplicate_analysis",
+    "test_vector_ids",
+    "wordlist_path"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "display_name": {
+      "type": "object",
+      "required": [
+        "en",
+        "ru"
+      ],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ru": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "documented",
+        "blocked",
+        "no-mnemonic-confirmed"
+      ]
+    },
+    "historical": {
+      "type": "boolean"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "verified_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "version_interval": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "string",
+          "minLength": 1
+        },
+        "max": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "script": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": ["object", "null"],
+      "required": [
+        "url",
+        "revision"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "license": {
+      "type": "object",
+      "required": [
+        "spdx_or_name",
+        "source_url",
+        "attribution",
+        "repository_redistribution",
+        "signpath_compatible",
+        "decision_evidence"
+      ],
+      "properties": {
+        "spdx_or_name": {
+          "anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]
+        },
+        "source_url": {
+          "anyOf": [{"type": "string", "format": "uri", "pattern": "^https://"}, {"type": "null"}]
+        },
+        "attribution": {
+          "anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]
+        },
+        "repository_redistribution": {
+          "enum": [
+            "allowed",
+            "forbidden",
+            "unclear"
+          ]
+        },
+        "signpath_compatible": {
+          "enum": [
+            "compatible",
+            "incompatible",
+            "pending"
+          ]
+        },
+        "decision_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "encoding": {
+      "const": "UTF-8"
+    },
+    "normalization": {
+      "enum": [
+        "none",
+        "NFC",
+        "NFD",
+        "NFKC",
+        "NFKD"
+      ]
+    },
+    "word_count": {
+      "anyOf": [{"type": "integer", "minimum": 1}, {"type": "null"}]
+    },
+    "sha256": {
+      "anyOf": [{"type": "string", "pattern": "^[a-f0-9]{64}$"}, {"type": "null"}]
+    },
+    "order_rule": {
+      "anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]
+    },
+    "position_rules": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "duplicate_analysis": {
+      "type": ["object", "null"],
+      "required": [
+        "normalized_unique_count",
+        "collisions"
+      ],
+      "properties": {
+        "normalized_unique_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "collisions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "test_vector_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "minItems": 0
+    },
+    "wordlist_path": {
+      "anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]
+    }
+  },
+  "allOf": [{
+    "if": {"properties": {"status": {"const": "verified"}}, "required": ["status"]},
+    "then": {"properties": {
+      "source": {"type": "object"},
+      "license": {"properties": {
+        "spdx_or_name": {"type": "string"},
+        "source_url": {"type": "string"},
+        "attribution": {"type": "string"},
+        "repository_redistribution": {"const": "allowed"},
+        "signpath_compatible": {"const": "compatible"}
+      }},
+      "word_count": {"type": "integer"},
+      "sha256": {"type": "string"},
+      "order_rule": {"type": "string"},
+      "duplicate_analysis": {"type": "object"},
+      "test_vector_ids": {"minItems": 1},
+      "wordlist_path": {"type": "string"}
+    }}
+  }],
+  "additionalProperties": false
+}

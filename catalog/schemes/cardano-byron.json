@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "cardano-byron",
+  "display_name": {
+    "en": "Cardano — historical Daedalus Byron 12",
+    "ru": "Cardano — historical Daedalus Byron 12"
+  },
+  "status": "documented",
+  "historical": true,
+  "evidence_ids": [
+    "cardano-cip3",
+    "cardano-byron-rules",
+    "cardano-daedalus-lengths"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "4ca4dcefccc7143672cf07a0b760d9e5abfc7797",
+    "max": "4ca4dcefccc7143672cf07a0b760d9e5abfc7797"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12
+  ],
+  "position_rules": [
+    "Twelve BIP39 dictionary words encode entropy/checksum; legacy random/Byron master-key semantics, not Icarus or Ledger."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "Any supported mnemonic passphrase stays outside Tessaveil; wallet login/spending passwords are distinct. Paper27 already includes its nine password words; no extra secret is inferred."
+  },
+  "semantic_distinction": "Deprecated random-address Daedalus mode; initial entropy preprocessing, backend artifact and full fixed recovery not reproduced. Non-selectable.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

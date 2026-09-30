@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-bitcoin-cash-service",
+  "source_type": "official-source",
+  "claim": "bitcoin-cash source create/import/keys service at exact commit; credential branches distinguish new12/24 words from existing phrase and non-mnemonic key material. See batch matrix for exact exceptions and dependency limits.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/cw_bitcoin_cash/lib/src/bitcoin_cash_wallet_service.dart",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-bitcoin-cash-bip39-create-android",
+    "cake-wallet-bitcoin-cash-bip39-create-ios",
+    "cake-wallet-bitcoin-cash-bip39-create-linux",
+    "cake-wallet-bitcoin-cash-bip39-create-macos",
+    "cake-wallet-bitcoin-cash-bip39-group-android",
+    "cake-wallet-bitcoin-cash-bip39-group-ios",
+    "cake-wallet-bitcoin-cash-bip39-group-linux",
+    "cake-wallet-bitcoin-cash-bip39-group-macos",
+    "cake-wallet-bitcoin-cash-bip39-import-android",
+    "cake-wallet-bitcoin-cash-bip39-import-ios",
+    "cake-wallet-bitcoin-cash-bip39-import-linux",
+    "cake-wallet-bitcoin-cash-bip39-import-macos"
+  ]
+}

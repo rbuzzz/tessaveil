@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-en-old-source",
+  "source_type": "official-source",
+  "claim": "Pinned Monero EnglishOld has 1626 words in the same order as Electrum old_mnemonic.py. Its file header credits Electrum and Thomas Voegtlin; the Electrum source cites a Wiktionary frequency list. The Monero file-level BSD notice alone does not resolve cumulative upstream data rights. No list bytes are bundled while repository redistribution and signing decisions remain unclear/pending. Reviewed 2026-09-29; response byte SHA-256 20c9090994c5b441f2e550cddbf266d604b64e495d9b172e45a8031e1aa5d578. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/monero-project/monero/2f9d1bbb2c553dc75f3335bd1452117dfddd86fa/src/mnemonics/english_old.h",
+  "revision": "2f9d1bbb2c553dc75f3335bd1452117dfddd86fa",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "monero-en-old"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ton-space-security",
+  "source_type": "official-documentation",
+  "claim": "Vendor Security headings What is a Secret Recovery Phrase and How can I find my seed phrase describe 24 words, viewing backup in settings, and use the term BIP-39 without publishing derivation/version details. This evidence gap prevents native/multichain mapping. Reviewed 2026-09-29; byte SHA-256 7f5a40f0e43d00d2a620972b9f2a1a5370ed4ad660f6d65d5ca25bc36f71b8dd. See docs/research/batches/bip39-ton.md.",
+  "url": "https://help.walt.io/article/86-security",
+  "revision": "sha256:7f5a40f0e43d00d2a620972b9f2a1a5370ed4ad660f6d65d5ca25bc36f71b8dd",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "ton-space"
+  ]
+}

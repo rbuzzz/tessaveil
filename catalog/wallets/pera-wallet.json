@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "pera-wallet",
+  "display_name": {
+    "en": "Pera Wallet — existing legacy25 backup export",
+    "ru": "Pera Wallet — existing legacy25 backup export"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "algorand-pera-backup",
+    "algorand-pera-migration"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "app-version-unresolved-doc-2026-08-31",
+    "max": "app-version-unresolved-doc-2026-08-31"
+  },
+  "product_id": "pera-wallet",
+  "product_name": "Pera Wallet",
+  "aliases": [],
+  "platform": "ios",
+  "mode_id": "legacy-algo25-existing-backup-export",
+  "network_ids": [
+    "algorand"
+  ],
+  "scheme_id": "algorand-25",
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "25-word legacy recovery is documented; backup page permits later viewing. Record is export of an existing key; new25-word creation at current versions is unproven. Universal 24 is a separate mode. No web/Android/rekeyed/Ledger/Quantum generalization.",
+    "Non-selectable: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence."
+  ],
+  "guidance": "Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil."
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "slip39-rules",
+  "source_type": "official-source",
+  "claim": "Big-endian 10-bit indices; 4 metadata words, padded share value, 3 checksum words; threshold/count fields are encoded minus one. All positions use the same list. Source-native input lowercases and splits whitespace, without Unicode normalization. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 3ee6f46415ba34dd8c1bc5f92601b17151854a35425e098d1de857ca714205c5.",
+  "url": "https://raw.githubusercontent.com/trezor/python-shamir-mnemonic/17fcce14736afe498871d3018e4fa9330443471a/shamir_mnemonic/share.py",
+  "revision": "17fcce14736afe498871d3018e4fa9330443471a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "slip39-en",
+    "slip39-share",
+    "slip39-share-20"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "decred-pgp33",
+  "display_name": {
+    "en": "Decred — native PGP33",
+    "ru": "Decred — native PGP33"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "decred-pgp-position",
+    "decred-pgp-checksum",
+    "decred-pgp-vectors",
+    "decred-pgp33-reference",
+    "decred-decrediton-license"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "c0fee6b52ad30961cfc3e06017d5e7516952615e",
+    "max": "c0fee6b52ad30961cfc3e06017d5e7516952615e"
+  },
+  "dictionary_ids": [
+    "pgp-even",
+    "pgp-odd"
+  ],
+  "supported_lengths": [
+    33
+  ],
+  "position_rules": [
+    "positions 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33: pgp-even",
+    "positions 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32: pgp-odd",
+    "Position numbers above are one-based. Bytes determine index within a half; positions determine half. Word33 encodes first byte SHA256(SHA256(seed)) and is even-half, not a passphrase."
+  ],
+  "external_secret": {
+    "kind": "none",
+    "stored": false,
+    "guidance": "No derivation passphrase in this profile. Local wallet encryption password is distinct and is never stored."
+  },
+  "semantic_distinction": "32-byte raw wallet seed plus one checksum byte. Never substitute BIP39 or Cake native15 even though all target Decred.",
+  "test_vector_ids": [
+    "decred-pgp-vectors",
+    "decred-pgp33-reference"
+  ],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "id": "polyseed-pt",
+  "display_name": {
+    "en": "polyseed-pt",
+    "ru": "polyseed-pt"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "polyseed-pt-source",
+    "monero-polyseed-rules",
+    "monero-signpath",
+    "monero-osi-apache",
+    "monero-polyseed-license",
+    "monero-polyseed-notice"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "56f634647d4f75596de20a6259b0cf1933949fdc",
+    "max": "56f634647d4f75596de20a6259b0cf1933949fdc"
+  },
+  "language": "pt",
+  "script": "Latn",
+  "source": {
+    "url": "https://raw.githubusercontent.com/tevador/polyseed/56f634647d4f75596de20a6259b0cf1933949fdc/src/lang_pt.c",
+    "revision": "56f634647d4f75596de20a6259b0cf1933949fdc"
+  },
+  "license": {
+    "spdx_or_name": "Apache-2.0 AND MIT",
+    "source_url": "https://raw.githubusercontent.com/tevador/polyseed/56f634647d4f75596de20a6259b0cf1933949fdc/LICENSE",
+    "attribution": "Copyright (c) 2020-2026 tevador; BIP-39 authors copyright 2013. Upstream NOTICE and Apache/MIT terms retained in THIRD_PARTY_NOTICES.",
+    "repository_redistribution": "allowed",
+    "signpath_compatible": "compatible",
+    "decision_evidence": [
+      "monero-signpath",
+      "monero-osi-apache",
+      "monero-polyseed-license",
+      "polyseed-pt-source",
+      "monero-polyseed-notice"
+    ]
+  },
+  "encoding": "UTF-8",
+  "normalization": "NFKD",
+  "word_count": 2048,
+  "sha256": "2685e9c194c82ae67e10ba59d9ea5345a23dc093e92276fc5361f6667d79cd3f",
+  "order_rule": "Exact upstream array order; zero-based indices. Extract literal UTF-8 tokens unchanged; remove C/C++ wrapper and indentation, append LF after every token. No sorting, lowercasing or Unicode rewriting. Source file and extracted byte hashes in batch note.",
+  "position_rules": [
+    "Same 2048-entry vocabulary at all 16 positions. First word is polynomial checksum; no BIP39 checksum semantics.",
+    "Input uses NFKD; output may compose NFC for accented/Japanese/Korean language flags. Latin prefix matching and French/Spanish accent-insensitivity are separate from stored NFKD bytes.",
+    "Language coverage is not a wallet generation claim."
+  ],
+  "duplicate_analysis": {
+    "normalized_unique_count": 2048,
+    "collisions": []
+  },
+  "test_vector_ids": [],
+  "wordlist_path": "wordlists/polyseed-pt/56f634647d4f75596de20a6259b0cf1933949fdc.txt"
+}

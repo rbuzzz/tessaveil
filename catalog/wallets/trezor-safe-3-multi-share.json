@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "trezor-safe-3-multi-share",
+  "display_name": {
+    "en": "Trezor Safe 3 — suite-multi-share-20-created",
+    "ru": "Trezor Safe 3 — suite-multi-share-20-created"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "slip39-trezor-safe-3"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "suite-firmware-version-unresolved-doc-2026-09-29",
+    "max": "suite-firmware-version-unresolved-doc-2026-09-29"
+  },
+  "product_id": "trezor-safe-3",
+  "product_name": "Trezor Safe3",
+  "aliases": [],
+  "platform": "hardware",
+  "mode_id": "suite-multi-share-20-created",
+  "network_ids": [
+    "multi-chain"
+  ],
+  "scheme_id": "slip39-share-20",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "before June2024 BIP39 default; from June2024 SLIP39 default; dates describe setup era, not a firmware number. Hardware platform only; Suite host OS/version and firmware bounds unresolved. No promise for all firmware, Model One, 33-word Suite creation or CLI advanced groups. See exact device row.",
+    "Non-selectable: exact released-artifact binding and independent wallet recovery have not been verified. A dated unresolved-version marker is not a release interval; false generation means no generation claim for this specific record, not proof of absence."
+  ],
+  "guidance": "Use the original trusted wallet backup/recovery procedure. Match product, platform, exact version and specific mode. Never enter a complete phrase/share or extra passphrase into Tessaveil."
+}

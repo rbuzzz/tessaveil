@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "cake-wallet-bip39-code",
+  "source_type": "official-source",
+  "claim": "Locked dependency encodes English BIP39 entropy/checksum and accepts12/15/18/21/24 in its parser. Raw split ASCII space, case-sensitive lookup; no normalization here. Default RNG nextInt(255) excludes255; entropy security is not certified by format research.",
+  "url": "https://raw.githubusercontent.com/anicdh/bip39/3633daa2026b98c523ae9a091322be2903f7a8ab/lib/src/bip39_base.dart",
+  "revision": "3633daa2026b98c523ae9a091322be2903f7a8ab",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-bip39-create",
+    "cake-bip39-import",
+    "cake-monero-bip39-create",
+    "cake-monero-bip39-import",
+    "cake-wallet-monero-bip39",
+    "cake-wallet-monero-bip39-create-ios",
+    "cake-wallet-monero-bip39-create-linux",
+    "cake-wallet-monero-bip39-create-macos"
+  ]
+}

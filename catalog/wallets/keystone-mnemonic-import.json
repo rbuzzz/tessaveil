@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "keystone-mnemonic-import",
+  "display_name": {
+    "en": "Keystone Essential/Pro — single-backup-imported",
+    "ru": "Keystone Essential/Pro — single-backup-imported"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-keystone"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-13706e85e7f0",
+    "max": "version-unresolved-doc-2026-09-29-13706e85e7f0"
+  },
+  "product_id": "keystone",
+  "product_name": "Keystone Essential/Pro",
+  "aliases": [],
+  "platform": "hardware",
+  "mode_id": "single-backup-imported",
+  "network_ids": [
+    "multi-chain"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": true,
+  "limitations": [
+    "The guide lists 12/18/24-word imports separately from default 24-word creation; exact codec/binary binding remains unresolved.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

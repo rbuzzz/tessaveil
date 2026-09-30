@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-cosmostation-source",
+  "source_type": "official-source",
+  "claim": "Pinned extension UI calls bip39.generateMnemonic with 128/192/256-bit choices for 12/18/24 words; password encrypts stored mnemonic. Package/binary recovery binding remains unverified.",
+  "url": "https://raw.githubusercontent.com/cosmostation/cosmostation-chrome-extension/278e29ab131cff4dda2ac2700863108d3b25e36a/src/pages/account/create-wallet/mnemonic/-entry.tsx",
+  "revision": "278e29ab131cff4dda2ac2700863108d3b25e36a",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cosmostation"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "cake-zcash-import",
+  "display_name": {
+    "en": "cake-zcash-import",
+    "ru": "cake-zcash-import"
+  },
+  "status": "blocked",
+  "historical": false,
+  "evidence_ids": [
+    "cake-wallet-zcash-service",
+    "cake-wallet-zcash-derive",
+    "cake-wallet-zcash-doc"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+    "max": "source-9679f91a8c9f63d00500c2b7cc18daf00949bdef"
+  },
+  "dictionary_ids": [
+    "bip39-en"
+  ],
+  "supported_lengths": [
+    12,
+    15,
+    18,
+    21,
+    24
+  ],
+  "position_rules": [
+    "Source-order indices; complete phrase checksum/derivation is outside Tessaveil. Dart accepts five BIP39 lengths but native zkool/UI acceptance is unverified. Zashi change-address caveat remains. Native normalization and dependency binding unresolved."
+  ],
+  "external_secret": {
+    "kind": "optional-passphrase",
+    "stored": false,
+    "guidance": "External recovery secrets are never stored by Tessaveil. Dart accepts five BIP39 lengths but native zkool/UI acceptance is unverified. Zashi change-address caveat remains. Native normalization and dependency binding unresolved."
+  },
+  "semantic_distinction": "Dart accepts five BIP39 lengths but native zkool/UI acceptance is unverified. Zashi change-address caveat remains. Native normalization and dependency binding unresolved.",
+  "test_vector_ids": [],
+  "no_key_derivation": true,
+  "no_complete_phrase_validation": true
+}

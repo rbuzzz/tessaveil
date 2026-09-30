@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "cardano-nami-create",
+  "source_type": "official-source",
+  "claim": "Creation calls generateMnemonic(256), displays indexed words then verifies chosen positions before createWallet. Restore branch separate. Establishes24-word creation, not later re-export. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 d79776a12f8f7c4c6a4dc93e159c58110509494e169f84f2c556f139ccaf109c.",
+  "url": "https://raw.githubusercontent.com/input-output-hk/nami/e52e0bdb02eb1ec224db26f48b0192685a30f99e/src/ui/app/tabs/createWallet.jsx",
+  "revision": "e52e0bdb02eb1ec224db26f48b0192685a30f99e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "nami"
+  ]
+}

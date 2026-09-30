@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "wallet-coinomi",
+  "source_type": "official-documentation",
+  "claim": "Mobile recovery uses a phrase and any original BIP39 passphrase; the transaction password is separate. This recovery page is not fresh-generation evidence.",
+  "url": "https://coinomi.freshdesk.com/support/solutions/articles/29000019254",
+  "revision": "body-sha256:6242fd9e4de599577e70d398a4c3cfb4537d84de409a0b72a2b392c1759546aa",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "coinomi"
+  ]
+}

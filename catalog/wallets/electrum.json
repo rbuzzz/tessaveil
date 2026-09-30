@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "electrum",
+  "display_name": {
+    "en": "Electrum — Windows native English segwit",
+    "ru": "Electrum — Windows native English segwit"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "electrum-v2-source",
+    "electrum-wizard-modes",
+    "electrum-version",
+    "electrum-qt-create"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb",
+    "max": "4.8.2-source-ede66c89887234c83b0def133b3100fe92a160eb"
+  },
+  "product_id": "electrum",
+  "product_name": "Electrum",
+  "aliases": [],
+  "platform": "windows",
+  "mode_id": "native-english-segwit",
+  "network_ids": [
+    "bitcoin"
+  ],
+  "scheme_id": "electrum-v2",
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Scoped to native segwit source generation. Standard,2FA, multisig, Android, BIP39 import and legacy restore are different modes.",
+    "Non-selectable: exact released artifact and independent wallet recovery not verified. A source commit is a singleton evidence boundary, not an all-version support promise."
+  ],
+  "guidance": "Use the original wallet backup procedure and match exact product, platform, version and mode. Never enter a complete phrase or external recovery secret into Tessaveil."
+}

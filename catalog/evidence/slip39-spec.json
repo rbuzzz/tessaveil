@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "slip39-spec",
+  "source_type": "official-specification",
+  "claim": "Format of the share mnemonic, Two-level scheme, Checksum and Passphrase sections define 20/33 words for 128/256 bits; 15-bit ID, extendable flag, exponent, group/member fields and three RS1024 words. Standard allows other lengths; catalogue scope only 20/33. Tessaveil stores neither complete shares nor thresholds as recovered secrets and never combines/reconstructs shares. See docs/research/batches/slip39-algorand-cardano.md. Retrieved byte SHA-256 7b4269f66f10f03ac685ea7c76f742bfbf56211af1af29339eadef9acba1f856.",
+  "url": "https://raw.githubusercontent.com/satoshilabs/slips/570ed55b7fde158f1116be34fc2faa35dada5912/slip-0039.md",
+  "revision": "570ed55b7fde158f1116be34fc2faa35dada5912",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "slip39-en",
+    "slip39-share",
+    "slip39-share-20"
+  ]
+}

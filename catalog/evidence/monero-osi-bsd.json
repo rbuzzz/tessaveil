@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "monero-osi-bsd",
+  "source_type": "official-documentation",
+  "url": "https://opensource.org/license/bsd-3-clause",
+  "revision": "snapshot-2026-09-29-sha256-0dfece33194f06d15b862c323f7ed32ba6ab7f512a7fda11880bb2e1401518f8",
+  "verified_on": "2026-09-29",
+  "claim": "OSI lists BSD-3-Clause as approved. This corroborates only the component-license decision, not project acceptance. Response-body SHA-256 0dfece33194f06d15b862c323f7ed32ba6ab7f512a7fda11880bb2e1401518f8.",
+  "record_ids": [
+    "monero-en",
+    "monero-de",
+    "monero-es",
+    "monero-fr",
+    "monero-it",
+    "monero-nl",
+    "monero-pt",
+    "monero-ru",
+    "monero-ja",
+    "monero-zh-hans",
+    "monero-eo",
+    "monero-jbo",
+    "monero-en-old"
+  ]
+}

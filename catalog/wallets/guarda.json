@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "guarda",
+  "display_name": {
+    "en": "Guarda — encrypted-backup-file",
+    "ru": "Guarda — encrypted-backup-file"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-guarda"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-174800cedf36",
+    "max": "version-unresolved-doc-2026-09-29-174800cedf36"
+  },
+  "product_id": "guarda",
+  "product_name": "Guarda",
+  "aliases": [],
+  "platform": "web",
+  "mode_id": "encrypted-backup-file",
+  "network_ids": [
+    "multi-chain"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Guarda describes a TXT file containing encrypted private keys; both file and password are needed, and backups change when wallets or passwords change.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

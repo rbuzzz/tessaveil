@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "sia-list",
+  "source_type": "official-source",
+  "claim": "Exact siad go.mod dependency: 1626 English words, source order, unique3-character prefixes, NFC. Explicit Monero BSD-3-Clause file grant; UTF-8 LF extraction changes representation only.",
+  "url": "https://gitlab.com/NebulousLabs/entropy-mnemonics/-/blob/7532f67e35008b0f36bbebb20d5a6ee8f14a22f5/english.go",
+  "revision": "7532f67e35008b0f36bbebb20d5a6ee8f14a22f5",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "sia-legacy"
+  ]
+}

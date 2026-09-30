@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "monero-polyseed-notice",
+  "source_type": "official-source",
+  "claim": "Polyseed attribution and BIP39-derived dictionary MIT obligations apply cumulatively with Apache-2.0; complete upstream NOTICE retained in THIRD_PARTY_NOTICES. Reviewed 2026-09-29; response byte SHA-256 442cd16cdc8913cd76a9f7bd1047a0aea68ede782d94db3556392e18f39ad64e. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/tevador/polyseed/56f634647d4f75596de20a6259b0cf1933949fdc/NOTICE",
+  "revision": "56f634647d4f75596de20a6259b0cf1933949fdc",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "polyseed-cs",
+    "polyseed-en",
+    "polyseed-es",
+    "polyseed-fr",
+    "polyseed-it",
+    "polyseed-ja",
+    "polyseed-ko",
+    "polyseed-pt",
+    "polyseed-zh-hans",
+    "polyseed-zh-hant"
+  ]
+}

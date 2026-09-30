@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "exodus-monero-export",
+  "display_name": {
+    "en": "Exodus Desktop — Monero 25-word export",
+    "ru": "Exodus Desktop — Monero 25-word export"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "monero-exodus-doc"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-01-20",
+    "max": "version-unresolved-doc-2026-01-20"
+  },
+  "product_id": "exodus",
+  "product_name": "Exodus",
+  "aliases": [
+    "Exodus Desktop"
+  ],
+  "platform": "windows",
+  "mode_id": "monero-25-export",
+  "network_ids": [
+    "monero"
+  ],
+  "scheme_id": "monero-legacy",
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Export of an existing Monero wallet only; generates_mnemonic=false does not deny export. App versions and full export derivation vector are unresolved, so documented/non-selectable.",
+    "Windows Desktop path documented (Mac also mentioned but not generalized here); Mobile must sync to Desktop. No 25-word import-into-Exodus or fresh XMR creation claim. The global Exodus 12-word backup is distinct."
+  ],
+  "guidance": "Use the vendor migration instructions and a trusted compatible wallet; do not enter the full phrase in Tessaveil. XMR support cessation does not mean seed export is absent."
+}

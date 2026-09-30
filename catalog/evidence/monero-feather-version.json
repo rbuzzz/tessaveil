@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "id": "monero-feather-version",
+  "source_type": "official-source",
+  "claim": "Project version 2.9.1 at this source revision. Reviewed 2026-09-29; response byte SHA-256 d1eb1b67c42fbeb682a945225097cec2c434040d42d1ce583e640f9f6450e8b7. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/feather-wallet/feather/948773cf13c7486ee230eb67b6bac06b2f94c874/CMakeLists.txt",
+  "revision": "948773cf13c7486ee230eb67b6bac06b2f94c874",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "feather",
+    "feather-legacy-import"
+  ]
+}

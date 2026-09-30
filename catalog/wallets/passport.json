@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "passport",
+  "display_name": {
+    "en": "Passport — mnemonic-generated",
+    "ru": "Passport — mnemonic-generated"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "wallet-passport-source",
+    "wallet-passport-flow"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0",
+    "max": "670c3886e8373cbe9ade5b8d48e7ceae2e4cd0d0"
+  },
+  "product_id": "passport",
+  "product_name": "Passport",
+  "aliases": [],
+  "platform": "hardware",
+  "mode_id": "mnemonic-generated",
+  "network_ids": [
+    "bitcoin"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": true,
+  "import_only": false,
+  "limitations": [
+    "Pinned NewSeedFlow chooses a seed length, creates seed entropy and displays words. Source-only behavior; no hardware recovery or exact release claim.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence."
+  ],
+  "guidance": "Use the original trusted wallet's backup procedure; match exact product, version, platform, network and mode. Local unlock passwords, cloud credentials and passphrases are separate dependencies. Never enter full phrases, private keys or external secrets into Tessaveil."
+}

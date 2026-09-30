@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "network-guide-sia",
+  "display_name": {
+    "en": "sia — network search guidance — network-search-guidance",
+    "ru": "sia — network search guidance — network-search-guidance"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "network-sia-guidance"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-8b0763a91182",
+    "max": "version-unresolved-doc-2026-09-29-8b0763a91182"
+  },
+  "product_id": "network-guide-sia",
+  "product_name": "sia — network search guidance",
+  "aliases": [
+    "SC",
+    "Siacoin"
+  ],
+  "platform": "cross-platform",
+  "mode_id": "network-search-guidance",
+  "network_ids": [
+    "sia"
+  ],
+  "scheme_id": null,
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Network identity/search guidance only. Current walletd English12 and legacy28/29 are different codecs; current UI and legacy backend compatibility are not interchangeable.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.",
+    "Search candidates only: sia-bip39, sia-legacy-28, sia-legacy-29. Scheme links are navigation, not recovery compatibility."
+  ],
+  "guidance": "Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs: sia-bip39, sia-legacy-28, sia-legacy-29. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil."
+}

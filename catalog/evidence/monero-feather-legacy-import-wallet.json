@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "monero-feather-legacy-import-wallet",
+  "source_type": "official-source",
+  "claim": "Legacy 25-word (also checksumless 24-word) restore is separate from generation. 14-word Tevador restore is another format and is not mapped to Polyseed/MyMonero. Reviewed 2026-09-29; response byte SHA-256 dc79e1b6aace91076f1f9da96411706661830f55fda93926776d83e22d3ab8e5. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/feather-wallet/feather/948773cf13c7486ee230eb67b6bac06b2f94c874/src/utils/Seed.cpp",
+  "revision": "948773cf13c7486ee230eb67b6bac06b2f94c874",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "feather-legacy-import"
+  ]
+}

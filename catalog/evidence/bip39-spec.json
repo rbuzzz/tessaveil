@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "bip39-spec",
+  "source_type": "official-specification",
+  "claim": "Bitcoin BIP39 specifies 2048 indexed words, 12/15/18/21/24 lengths and UTF-8 NFKD for words, sentence and optional passphrase; equal vocabulary does not establish TON derivation. Reviewed 2026-09-29; byte SHA-256 afcbcbed36fe9eb734bd607398a8c124683ded2a75c3830e1b16c47b043a9134. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/bitcoin/bips/3a10b5b5f0a7586df8928d580a3009744ebb2079/bip-0039.mediawiki",
+  "revision": "3a10b5b5f0a7586df8928d580a3009744ebb2079",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "bip39-en",
+    "bip39-ja",
+    "bip39-ko",
+    "bip39-es",
+    "bip39-zh-hans",
+    "bip39-zh-hant",
+    "bip39-fr",
+    "bip39-it",
+    "bip39-cs",
+    "bip39-pt",
+    "bip39",
+    "ton-multichain-bip39"
+  ]
+}

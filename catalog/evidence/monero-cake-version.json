@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "monero-cake-version",
+  "source_type": "official-source",
+  "claim": "Root version template 0.0.0 is not a released version; source SHA singleton only. Reviewed 2026-09-29; response byte SHA-256 bc50a0936bf299070e19fcd721af9d5c76f374da719d720cea8ff029f289a21b. See docs/research/batches/monero-polyseed.md.",
+  "url": "https://raw.githubusercontent.com/cake-tech/cake_wallet/9679f91a8c9f63d00500c2b7cc18daf00949bdef/pubspec_description.yaml",
+  "revision": "9679f91a8c9f63d00500c2b7cc18daf00949bdef",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "cake-wallet-monero",
+    "cake-wallet-monero-bip39",
+    "cake-wallet-monero-legacy"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "tonkeeper-create",
+  "source_type": "official-source",
+  "claim": "CreateStandardWallet invokes mnemonicNew(24), displays Words, checks backup and persists mnemonicType=ton. Reviewed 2026-09-29; byte SHA-256 a60930c7ec15e52b5cd5735738199b2cce50c3da510a424fe29b4eb7e642e74e. See docs/research/batches/bip39-ton.md.",
+  "url": "https://raw.githubusercontent.com/tonkeeper/tonkeeper-web/4942adcdcddf55d57e3d3fc3676f019caf87357e/packages/uikit/src/pages/import/CreateStandardWallet.tsx",
+  "revision": "4942adcdcddf55d57e3d3fc3676f019caf87357e",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "tonkeeper-classic"
+  ]
+}

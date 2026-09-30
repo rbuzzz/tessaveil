@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "network-polkadot-guidance",
+  "source_type": "official-documentation",
+  "claim": "Official polkadot documentation establishes the network identity or account context for search guidance. It does not establish any wallet mnemonic generation or recovery compatibility. Candidate scheme IDs are navigation to separately researched records, not claims derived from this page.",
+  "url": "https://docs.polkadot.com/reference/parachains/accounts/",
+  "revision": "body-sha256:2c97d5dfd5b7adcdc3ce53197fd24edc560a142662589a776dbace7a0d4f133b",
+  "verified_on": "2026-09-29",
+  "record_ids": [
+    "network-guide-polkadot"
+  ]
+}

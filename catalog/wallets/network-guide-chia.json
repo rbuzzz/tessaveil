@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "network-guide-chia",
+  "display_name": {
+    "en": "chia — network search guidance — network-search-guidance",
+    "ru": "chia — network search guidance — network-search-guidance"
+  },
+  "status": "documented",
+  "historical": false,
+  "evidence_ids": [
+    "network-chia-guidance"
+  ],
+  "verified_on": "2026-09-29",
+  "version_interval": {
+    "min": "version-unresolved-doc-2026-09-29-5d633c523485",
+    "max": "version-unresolved-doc-2026-09-29-5d633c523485"
+  },
+  "product_id": "network-guide-chia",
+  "product_name": "chia — network search guidance",
+  "aliases": [
+    "XCH"
+  ],
+  "platform": "cross-platform",
+  "mode_id": "network-search-guidance",
+  "network_ids": [
+    "chia"
+  ],
+  "scheme_id": "chia-bip39",
+  "generates_mnemonic": false,
+  "import_only": false,
+  "limitations": [
+    "Network identity/search guidance only. Chia derives BLS keys, not Bitcoin BIP32. BIP39 words alone do not prove another wallet's recovery compatibility.",
+    "Non-selectable. The singleton source/document boundary is not a supported release interval. No shipped-binary binding, independent wallet recovery, unlisted platform or network compatibility has been verified. A false generation flag means generation is not claimed for this mode; it does not prove absence.",
+    "Search candidates only: chia-bip39. Scheme links are navigation, not recovery compatibility."
+  ],
+  "guidance": "Search the original wallet's product, exact version, platform and mode. Candidate scheme/profile IDs: chia-bip39. Use its native backup procedure; do not enter a full phrase or external secret into Tessaveil."
+}
