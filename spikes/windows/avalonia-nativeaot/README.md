@@ -1,31 +1,26 @@
-# Avalonia/NativeAOT — Source contract
+# Avalonia NativeAOT executable source
 
-Build: BLOCKED — .NET SDK, Rust/Cargo, MSVC and Windows SDK availability are
-unverified; command/default-location checks found no usable toolchain.
-No exact framework/compiler version, lockfile, compiled UI or binary is available.
+Implements [probe-contract.json](../probe-contract.json), pinned to .NET SDK 8.0.414,
+Avalonia 11.3.7 and Rust 1.90.0. The lazy 10,000-row DataGrid has 36 template columns,
+masked input and a constant-only direct C ABI call into a Rust static archive.
+The compiled XAML includes Fluent/DataGrid resources without a dynamic StyleInclude.
 
-Implement [the shared contract](../probe-contract.json) in a small C# Avalonia shell:
-`Program.cs`, `App.axaml`, `ProbeWindow.axaml`, `SyntheticTableModel.cs`, and
-`Probe.csproj`. Use a masked TextBox, virtualizing read-only DataGrid with 36 explicit
-columns and lazy rows, automation names, focus order and theme resources. If the
-selected control cannot meet virtualization/NativeAOT requirements, record failure;
-do not replace it with a smaller or eager table.
+Development-host result: managed compilation and the Rust MSVC static archive succeed;
+NativeAOT publish is BLOCKED by the missing Visual C++ platform linker. This is a
+host-toolchain blocker, not proof that Avalonia cannot satisfy packaging requirements.
+No native executable, byte-size or startup measurement is claimed.
 
-The companion Rust crate has only `probe_core_version() -> u32 { 1 }`, exported
-through a C ABI from a `staticlib`. The NativeAOT link must resolve the function from
-that archive into the EXE; the input field never crosses the boundary. Do not use a
-runtime-loaded Rust DLL and call that static linkage. Keep the link map, archive
-hash, managed interop declaration and PE/module evidence.
+```powershell
+. ./spikes/windows/environment.ps1 -ToolchainRoot $ToolchainRoot
+$env:RUSTFLAGS = ''
+$env:CARGO_TARGET_DIR = Join-Path $ToolchainRoot 'build/avalonia-core'
+& "$ToolchainRoot/downloads/rustup.exe" target add x86_64-pc-windows-msvc --toolchain 1.90.0-x86_64-pc-windows-gnu
+cargo build --locked --release --target x86_64-pc-windows-msvc --manifest-path spikes/windows/avalonia-nativeaot/probe-core/Cargo.toml
+Push-Location spikes/windows/avalonia-nativeaot
+dotnet publish -p:RestoreLockedMode=true -c Release -r win-x64 -p:ProbeCoreLibrary="$env:CARGO_TARGET_DIR/x86_64-pc-windows-msvc/release/probe_core.lib" -o "$ToolchainRoot/build/avalonia"
+Pop-Location
+```
 
-Once exact versions are provisioned and pinned, build the core for
-`x86_64-pc-windows-msvc`, then publish with `PublishAot=true`, `win-x64`, Release,
-trimming/AOT diagnostics enabled and explicit native archive linkage. Freeze the
-SDK in `global.json`, package versions/lockfile and Rust toolchain/Cargo lockfile
-before collecting measurements. Resolve every relevant analyzer warning explicitly.
-The NativeAOT publish shape is documented by Microsoft; native graphics/text DLLs
-and resources must still be inventoried, not assumed embedded.
-
-Follow [the common evidence procedure](../README.md). Single EXE, static Rust,
-no extraction, no runtime requirement, secure-control behavior and accessibility
-are all unknown until built and observed. This source contract is not compilation
-evidence. Preliminary licenses and exact blockers are in the comparison report.
+After supplying the missing official C++ workload/SDK in an appropriately provisioned
+build environment, use the same [measurement script](../measure.ps1) and inspect all
+native graphics/text dependencies. Static archive existence does not prove EXE linkage.

@@ -1,0 +1,18 @@
+[package]
+name = "tessaveil-slint-probe"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+publish = false
+
+[dependencies]
+slint = { version = "=1.13.1", default-features = false, features = ["std", "backend-winit", "renderer-software", "compat-1-2", "accessibility"] }
+probe-core = { path = "probe-core" }
+
+[build-dependencies]
+slint-build = "=1.13.1"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

@@ -1,0 +1,562 @@
+{
+  "schema_version": 1,
+  "verified_utc": "2026-09-30",
+  "source_baseline": "b77dabf96c5689e0676634d2264aaa647c89cd0a",
+  "scope": "development-host; not clean Windows evidence",
+  "selected_alpha_candidate": "qt-static",
+  "redistribution_ready": false,
+  "host": {
+    "os": "Windows 11 Pro x64 development host, build 26200",
+    "cpu": "Intel Core Ultra 7 258V, 8 cores/8 logical processors",
+    "physical_memory_bytes": 33880342528,
+    "powershell": "7.6.5",
+    "uia_powershell": "5.1.26100.9444",
+    "python": "3.14.2"
+  },
+  "candidates": {
+    "avalonia-nativeaot": {
+      "status": "BLOCKED",
+      "toolchains": [
+        {
+          "name": ".NET SDK",
+          "version": "8.0.414",
+          "sha256": "4b7084ea97216c1f98e19bac1960b7715dfad7678d963d482976a284a8332e34",
+          "hashed_artifact": "dotnet-sdk-8.0.414-win-x64.zip"
+        },
+        {
+          "name": "Avalonia",
+          "version": "11.3.7",
+          "sha256": "16c073de6c129fe259bd2002105646cd805d5fee2b14748541f97d4584fb0403",
+          "hashed_artifact": "avalonia.11.3.7.nupkg"
+        },
+        {
+          "name": "rustc",
+          "version": "1.90.0 (1159e78c4 2025-09-14)",
+          "sha256": "511d566f5950e657074a6e71afc1e72e43e73bc4f6d51581de2d0a9d9678aa55",
+          "hashed_artifact": "rustc.exe"
+        }
+      ],
+      "build_command": "From spikes/windows/avalonia-nativeaot: dotnet publish -p:RestoreLockedMode=true -c Release -r win-x64 -p:ProbeCoreLibrary=$ProbeCoreLibrary -o $Output; Rust staticlib: cargo build --locked --release --target x86_64-pc-windows-msvc --manifest-path spikes/windows/avalonia-nativeaot/probe-core/Cargo.toml",
+      "measurement_command": "pwsh -NoProfile -File spikes/windows/measure.ps1 -Executable $CandidateExe -ReadObj $ReadObj -ObservationRoot $NewObservationRoot (not executable: native publish failed)",
+      "build_exit_code": 1,
+      "blockers": [
+        "NativeAOT Microsoft.DotNet.ILCompiler 8.0.20: Platform linker not found. Ensure you have all the required prerequisites documented at https://aka.ms/nativeaot-prerequisites, in particular the Desktop Development for C++ workload in Visual Studio.",
+        "Managed compilation and Rust MSVC static archive succeed; no official Visual C++/Windows SDK workload is provisioned. This is a host-toolchain blocker, not proof of framework impossibility."
+      ],
+      "artifacts": null,
+      "startup_ms": null,
+      "pe_imports": null,
+      "temp_before": null,
+      "temp_after": null
+    },
+    "slint": {
+      "scope": "development-host; not clean Windows evidence",
+      "startup_definition": "Process.Start to visible top-level HWND answering WM_NULL plus DwmFlush; not instrumented first-content-frame",
+      "startup_ms": [
+        312.748,
+        224.476,
+        471.031,
+        251.397,
+        242.69,
+        238.563,
+        242.98,
+        237.668,
+        238.781,
+        251.506
+      ],
+      "artifacts": [
+        {
+          "path": "tessaveil-slint-probe.exe",
+          "bytes": 5094400,
+          "sha256": "a798c561f79f35969b52fa80f51a37948b117c1797b9cb630780efbb044410e4"
+        }
+      ],
+      "pe_imports": [
+        "advapi32.dll",
+        "dwmapi.dll",
+        "imm32.dll",
+        "kernel32.dll",
+        "ntdll.dll",
+        "user32.dll",
+        "uxtheme.dll",
+        "KERNEL32.dll",
+        "msvcrt.dll",
+        "api-ms-win-core-synch-l1-2-0.dll",
+        "bcryptprimitives.dll",
+        "kernel32.dll",
+        "ntdll.dll",
+        "user32.dll",
+        "oleaut32.dll",
+        "gdi32.dll",
+        "shell32.dll",
+        "comctl32.dll",
+        "ole32.dll",
+        "uiautomationcore.dll"
+      ],
+      "loaded_modules": [
+        "advapi32.dll",
+        "bcryptprimitives.dll",
+        "clbcatq.dll",
+        "combase.dll",
+        "comctl32.dll",
+        "dataexchange.dll",
+        "dwmapi.dll",
+        "ebehmoni.dll",
+        "explorerframe.dll",
+        "GDI32.dll",
+        "gdi32full.dll",
+        "imm32.dll",
+        "kernel.appcore.dll",
+        "KERNEL32.DLL",
+        "KERNELBASE.dll",
+        "MSCTF.dll",
+        "msvcp_win.dll",
+        "msvcrt.dll",
+        "ntdll.dll",
+        "ole32.dll",
+        "oleaut32.dll",
+        "powrprof.dll",
+        "PSHook64.dll",
+        "RPCRT4.dll",
+        "sechost.dll",
+        "SHCORE.dll",
+        "shell32.dll",
+        "SHLWAPI.dll",
+        "sxs.dll",
+        "tessaveil-slint-probe.exe",
+        "textinputframework.dll",
+        "twinapi.appcore.dll",
+        "ucrtbase.dll",
+        "uiautomationcore.dll",
+        "UMPDC.dll",
+        "user32.dll",
+        "uxtheme.dll",
+        "win32u.dll"
+      ],
+      "peak_working_set_bytes": [
+        35389440,
+        35385344,
+        35262464,
+        35233792,
+        35184640,
+        34852864,
+        35229696,
+        35139584,
+        35180544,
+        35246080
+      ],
+      "temp_before": [],
+      "temp_after": [],
+      "temp_runs": [
+        {
+          "run": 0,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 1,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 2,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 3,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 4,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 5,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 6,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 7,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 8,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 9,
+          "before": [],
+          "after": []
+        }
+      ],
+      "limitations": [
+        "Warm sequential dev-host launches, no cold boots",
+        "Snapshots cannot detect create-delete extraction; no full process-tree event trace",
+        "No clean-machine, Narrator, network or scaling certification"
+      ],
+      "status": "MEASURED",
+      "toolchains": [
+        {
+          "name": "rustc",
+          "version": "1.90.0 (1159e78c4 2025-09-14)",
+          "sha256": "511d566f5950e657074a6e71afc1e72e43e73bc4f6d51581de2d0a9d9678aa55",
+          "hashed_artifact": "rustc.exe"
+        },
+        {
+          "name": "LLVM-MinGW",
+          "version": "20.1.8 / archive 20250709",
+          "sha256": "82babcd6aae4dc3606e8e0471d816989c384b4bf86a139f184a8b4a1b2c2758d",
+          "hashed_artifact": "llvm-mingw-20250709-ucrt-x86_64.zip"
+        },
+        {
+          "name": "Slint",
+          "version": "1.13.1",
+          "sha256": "f467a64a49620e41807016dc1d519ba0ebb9d1322f734853059f93b8c3f3d2bd",
+          "hashed_artifact": "slint-1.13.1.crate"
+        }
+      ],
+      "build_command": "pwsh -NoProfile -File spikes/windows/slint/build.ps1 -ToolchainRoot $ToolchainRoot; cargo rustc --locked --release with final -C linker=$RustLld -C linker-flavor=ld.lld",
+      "measurement_command": "pwsh -NoProfile -File spikes/windows/measure.ps1 -Executable $SlintExe -ReadObj $ReadObj -ObservationRoot $NewObservationRoot",
+      "blockers": [
+        "REJECTED for alpha: UIA ValuePattern exposed the synthetic masked value, both before and after accessible-value override; inspect-ui.ps1 -ValidatePassword exits 1.",
+        "Initial GNU ld 2.42 executable/test harness crashed with 0xC0000005 (fault in import-area RVA); final Rust LLD 20.1.8 linked executable and native model test pass. Exact lower-level GNU/LLVM import incompatibility is not conclusively attributed."
+      ],
+      "uia": {
+        "observer": "Windows PowerShell 5.1 / UIAutomationClient",
+        "observed_nodes": 8,
+        "controls": [
+          {
+            "role": "ControlType.Edit",
+            "name": "Test input",
+            "password": true,
+            "synthetic_password_exposed": true,
+            "keyboard_focusable": true,
+            "offscreen": false
+          },
+          {
+            "role": "ControlType.Button",
+            "name": "Invoke core",
+            "password": false,
+            "synthetic_password_exposed": false,
+            "keyboard_focusable": true,
+            "offscreen": false
+          },
+          {
+            "role": "ControlType.Button",
+            "name": "Theme",
+            "password": false,
+            "synthetic_password_exposed": false,
+            "keyboard_focusable": true,
+            "offscreen": false
+          },
+          {
+            "role": "ControlType.Table",
+            "name": "",
+            "password": false,
+            "synthetic_password_exposed": false,
+            "keyboard_focusable": false,
+            "offscreen": false
+          }
+        ],
+        "input_set_succeeded": true,
+        "invoke_pattern_called": true,
+        "core_one_visible": false,
+        "limitation": "Bounded UIA smoke observation excluding table descendants; not Narrator or keyboard/scaling certification"
+      }
+    },
+    "qt-static": {
+      "scope": "development-host; not clean Windows evidence",
+      "startup_definition": "Process.Start to visible top-level HWND answering WM_NULL plus DwmFlush; not instrumented first-content-frame",
+      "startup_ms": [
+        396.896,
+        253.114,
+        753.77,
+        229.37,
+        645.79,
+        249.475,
+        237.85,
+        253.943,
+        238.343,
+        643.848
+      ],
+      "artifacts": [
+        {
+          "path": "TessaveilQtProbe.exe",
+          "bytes": 18018304,
+          "sha256": "bf726cf33c583f83201d0a30796267450f4813e72dbc16eb75c861aa97ef0ec6"
+        }
+      ],
+      "pe_imports": [
+        "api-ms-win-core-synch-l1-2-0.dll",
+        "KERNEL32.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-private-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-multibyte-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "SHCORE.dll",
+        "USER32.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "ole32.dll",
+        "GDI32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "UxTheme.dll",
+        "VERSION.dll",
+        "WS2_32.dll",
+        "WINMM.dll",
+        "SHELL32.dll",
+        "ADVAPI32.dll",
+        "NETAPI32.dll",
+        "AUTHZ.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "USERENV.dll",
+        "DWrite.dll",
+        "dxgi.dll",
+        "d3d12.dll",
+        "d3d11.dll",
+        "WTSAPI32.dll",
+        "SETUPAPI.dll",
+        "IMM32.dll",
+        "dwmapi.dll",
+        "SHLWAPI.dll",
+        "api-ms-win-core-winrt-string-l1-1-0.dll",
+        "api-ms-win-core-winrt-l1-1-0.dll",
+        "d3d9.dll",
+        "OLEAUT32.dll",
+        "comdlg32.dll"
+      ],
+      "loaded_modules": [
+        "ADVAPI32.dll",
+        "AUTHZ.dll",
+        "bcryptPrimitives.dll",
+        "cfgmgr32.dll",
+        "clbcatq.dll",
+        "combase.dll",
+        "COMCTL32.dll",
+        "comdlg32.dll",
+        "CRYPT32.dll",
+        "CRYPTBASE.DLL",
+        "d3d11.dll",
+        "d3d12.dll",
+        "d3d9.dll",
+        "dataexchange.dll",
+        "DEVOBJ.dll",
+        "directxdatabasehelper.dll",
+        "dwmapi.dll",
+        "DWrite.dll",
+        "dxcore.dll",
+        "dxgi.dll",
+        "ebehmoni.dll",
+        "GDI32.dll",
+        "gdi32full.dll",
+        "IMM32.dll",
+        "kernel.appcore.dll",
+        "KERNEL32.DLL",
+        "KERNELBASE.dll",
+        "MSASN1.dll",
+        "MSCTF.dll",
+        "msvcp_win.dll",
+        "msvcrt.dll",
+        "NETAPI32.dll",
+        "NETUTILS.DLL",
+        "ntdll.dll",
+        "ole32.dll",
+        "OLEAUT32.dll",
+        "powrprof.dll",
+        "profapi.dll",
+        "PSHook64.dll",
+        "RPCRT4.dll",
+        "sechost.dll",
+        "SETUPAPI.dll",
+        "SHCORE.dll",
+        "SHELL32.dll",
+        "SHLWAPI.dll",
+        "SRVCLI.DLL",
+        "SspiCli.dll",
+        "TessaveilQtProbe.exe",
+        "textinputframework.dll",
+        "twinapi.appcore.dll",
+        "ucrtbase.dll",
+        "UMPDC.dll",
+        "USER32.dll",
+        "USERENV.dll",
+        "UxTheme.dll",
+        "VERSION.dll",
+        "win32u.dll",
+        "windows.storage.dll",
+        "WINMM.dll",
+        "WINTRUST.dll",
+        "WS2_32.dll",
+        "WTSAPI32.dll"
+      ],
+      "peak_working_set_bytes": [
+        43294720,
+        43220992,
+        43335680,
+        43204608,
+        43225088,
+        43290624,
+        43311104,
+        43286528,
+        43266048,
+        43225088
+      ],
+      "temp_before": [],
+      "temp_after": [],
+      "temp_runs": [
+        {
+          "run": 0,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 1,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 2,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 3,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 4,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 5,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 6,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 7,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 8,
+          "before": [],
+          "after": []
+        },
+        {
+          "run": 9,
+          "before": [],
+          "after": []
+        }
+      ],
+      "limitations": [
+        "Warm sequential dev-host launches, no cold boots",
+        "Snapshots cannot detect create-delete extraction; no full process-tree event trace",
+        "No clean-machine, Narrator, network or scaling certification"
+      ],
+      "status": "MEASURED",
+      "toolchains": [
+        {
+          "name": "LLVM-MinGW",
+          "version": "20.1.8 / archive 20250709",
+          "sha256": "82babcd6aae4dc3606e8e0471d816989c384b4bf86a139f184a8b4a1b2c2758d",
+          "hashed_artifact": "llvm-mingw-20250709-ucrt-x86_64.zip"
+        },
+        {
+          "name": "QtBase",
+          "version": "6.8.3",
+          "sha256": "992bf7766e214a341ef793eb3665fb784787d2fd666955f5f507f4c6f1f770dd",
+          "hashed_artifact": "qtbase-everywhere-src-6.8.3.zip"
+        },
+        {
+          "name": "CMake",
+          "version": "3.31.8",
+          "sha256": "81aa9964dbabd71fe02e7ec50472fd3ad56138c49944515ece9001efbff8d719",
+          "hashed_artifact": "cmake-3.31.8-windows-x86_64.zip"
+        },
+        {
+          "name": "Ninja",
+          "version": "1.12.1",
+          "sha256": "f550fec705b6d6ff58f2db3c374c2277a37691678d6aba463adcbb129108467a",
+          "hashed_artifact": "ninja-1.12.1.zip"
+        }
+      ],
+      "build_command": "Exact QtBase configure/build/install and probe commands in spikes/windows/qt-static/README.md; probe: cmake -S spikes/windows/qt-static -B $QtBuild -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$QtPrefix -DCMAKE_CXX_COMPILER=clang++; cmake --build $QtBuild; llvm-strip --strip-all $CandidateExe",
+      "measurement_command": "pwsh -NoProfile -File spikes/windows/measure.ps1 -Executable $QtExe -ReadObj $ReadObj -ObservationRoot $NewObservationRoot",
+      "blockers": [
+        "Engineering selection only; static LGPLv3 redistribution/source/relink bundle is not assembled or verified.",
+        "Clean Windows 10/11, full file-event tracing, network observation, Narrator/scaling and Rust C ABI vault integration remain unverified."
+      ],
+      "uia": {
+        "observer": "Windows PowerShell 5.1 / UIAutomationClient",
+        "observed_nodes": 7,
+        "controls": [
+          {
+            "role": "ControlType.Edit",
+            "name": "Test input",
+            "password": true,
+            "synthetic_password_exposed": false,
+            "keyboard_focusable": true,
+            "offscreen": false
+          },
+          {
+            "role": "ControlType.Button",
+            "name": "Invoke core",
+            "password": false,
+            "synthetic_password_exposed": false,
+            "keyboard_focusable": true,
+            "offscreen": false
+          },
+          {
+            "role": "ControlType.Button",
+            "name": "Theme",
+            "password": false,
+            "synthetic_password_exposed": false,
+            "keyboard_focusable": true,
+            "offscreen": false
+          },
+          {
+            "role": "ControlType.Table",
+            "name": "",
+            "password": false,
+            "synthetic_password_exposed": false,
+            "keyboard_focusable": true,
+            "offscreen": false
+          }
+        ],
+        "input_set_succeeded": true,
+        "invoke_pattern_called": true,
+        "core_one_visible": true,
+        "limitation": "Bounded UIA smoke observation excluding table descendants; not Narrator or keyboard/scaling certification"
+      }
+    }
+  },
+  "shared_limitations": [
+    "Measurements are ten sequential warm launches, performed after candidate compilation and UIA checks completed; a preliminary overlapping-observer batch was discarded.",
+    "Windows-title filtering excludes transient toolkit helper windows; DwmFlush/WM_NULL readiness is not an instrumented first-content-frame benchmark.",
+    "Both processes also load ebehmoni.dll and PSHook64.dll from this development host; these are not declared application payloads and their provenance is unresolved here.",
+    "Empty dedicated TEMP/TMP snapshots do not prove no extract-then-delete, no normal-user-temp writes or no file I/O elsewhere.",
+    "Runtime artifact inventory contains one EXE per feasible candidate. This does not discharge separate compliance/source/object artifact obligations."
+  ]
+}

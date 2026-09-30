@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType><TargetFramework>net8.0</TargetFramework>
+    <PublishAot>true</PublishAot><RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <Nullable>enable</Nullable><RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <AssemblyName>Tessaveil.Avalonia.Probe</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.7" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.7" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.7" />
+    <DirectPInvoke Include="probe_core" />
+    <NativeLibrary Include="$(ProbeCoreLibrary)" Condition="'$(ProbeCoreLibrary)' != ''" />
+  </ItemGroup>
+</Project>
