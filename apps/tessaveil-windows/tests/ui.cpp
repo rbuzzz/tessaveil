@@ -121,6 +121,56 @@ QByteArray tableDigest(QTableView *table) {
     }
   return hash.result(); // Retain a digest, not a copy of the whole table.
 }
+int oversizedUnicodeKeepsDirtySession() {
+  Window w;
+  w.show();
+  QTest::qWait(100);
+  find<QPushButton>(w, "warningAccept")->click();
+  QTemporaryDir dir;
+  REQUIRE(dir.isValid());
+  const auto vaultPath = dir.filePath("unicode-synthetic.tessaveil-alpha");
+  find<QLineEdit>(w, "path")->setText(vaultPath);
+  find<QLineEdit>(w, "master")->setText("synthetic-master-password");
+  find<QPushButton>(w, "create")->click();
+  auto add = find<QPushButton>(w, "add");
+  add->click();
+  find<QPushButton>(w, "save")->click();
+  QFile vault(vaultPath);
+  REQUIRE(vault.open(QIODevice::ReadOnly));
+  const auto savedImage = vault.readAll();
+  vault.close();
+  add->click();
+  auto state = find<QLabel>(w, "state");
+  auto table = find<QTableView>(w, "table");
+  auto sheets = find<QComboBox>(w, "sheets");
+  auto password = find<QLineEdit>(w, "sheetPassword");
+  REQUIRE(state->text() == "Open / unsaved changes");
+  const auto digest = tableDigest(table);
+  const int rows = table->model()->rowCount();
+  const int sheetCount = sheets->count();
+  password->setText(QString(2049, QChar(0x044f)));
+  find<QPushButton>(w, "setSheetPassword")->click();
+  REQUIRE(state->text() == "Open / unsaved changes");
+  REQUIRE(password->text().isEmpty());
+  REQUIRE(sheets->count() == sheetCount);
+  REQUIRE(table->model()->rowCount() == rows);
+  REQUIRE(tableDigest(table) == digest);
+  const auto error = find<QLabel>(w, "message")->text();
+  REQUIRE(error.contains("4096") && error.contains("Shorten"));
+  REQUIRE(vault.open(QIODevice::ReadOnly));
+  REQUIRE(vault.readAll() == savedImage);
+  vault.close();
+  password->setText("synthetic-sheet-password");
+  find<QPushButton>(w, "setSheetPassword")->click();
+  REQUIRE(state->text() == "Open / unsaved changes");
+  find<QPushButton>(w, "save")->click();
+  REQUIRE(state->text() == "Open / saved");
+  REQUIRE(vault.open(QIODevice::ReadOnly));
+  REQUIRE(vault.readAll() != savedImage);
+  vault.close();
+  find<QPushButton>(w, "closeVault")->click();
+  return 0;
+}
 int addingSheetScrubsPreviousContext() {
   Window w;
   w.show();
@@ -206,6 +256,7 @@ int addingSheetScrubsPreviousContext() {
 int main(int argc, char **argv) {
   QApplication app(argc, argv);
   REQUIRE(privacyEventsScrubEveryState(app) == 0);
+  REQUIRE(oversizedUnicodeKeepsDirtySession() == 0);
   REQUIRE(addingSheetScrubsPreviousContext() == 0);
   {
     Window unavailable({}, [](quintptr) { return false; });

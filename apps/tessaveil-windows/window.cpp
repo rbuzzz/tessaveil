@@ -8,13 +8,16 @@
 
 namespace {
 void wipe(void *p, size_t size) { SecureZeroMemory(p, size); }
-void field(TvInput &in, int slot, QString value) {
+bool field(TvInput &in, int slot, QString value) {
   auto bytes = value.toUtf8();
-  in.len[slot] = static_cast<uint32_t>(bytes.size());
-  if (bytes.size() <= 4096)
+  const bool fits = bytes.size() <= sizeof(in.data[slot]);
+  if (fits) {
+    in.len[slot] = static_cast<uint32_t>(bytes.size());
     std::memcpy(in.data[slot], bytes.constData(), bytes.size());
+  }
   wipe(bytes.data(), bytes.size());
   wipe(value.data(), value.size() * sizeof(QChar));
+  return fits;
 }
 class Secret : public QLineEdit {
 public:
@@ -33,10 +36,10 @@ public:
     setInputMethodHints(Qt::ImhHiddenText | Qt::ImhSensitiveData |
                         Qt::ImhNoPredictiveText);
   }
-  void consume(TvInput &in, int slot) {
+  bool consume(TvInput &in, int slot) {
     QString value = text();
     setText(QString());
-    field(in, slot, std::move(value));
+    return field(in, slot, std::move(value));
   }
   void erase() {
     QString value = text();
@@ -223,7 +226,14 @@ class Window::Impl : public QObject {
   QList<QPushButton *> vaultButtons, editButtons;
   QPushButton *create, *open, *unlock, *save, *closeVault, *lock, *add,
       *protect, *unlockSheet, *unlockMaster;
-  bool action(uint32_t op, uint32_t a, uint32_t b, TvInput &in) {
+  bool action(uint32_t op, uint32_t a, uint32_t b, TvInput &in,
+              bool fieldsValid = true) {
+    if (!fieldsValid) {
+      wipe(&in, sizeof(in));
+      message->setText("Input exceeds the 4096-byte UTF-8 limit. Shorten it "
+                       "and try again.");
+      return false;
+    }
     QString text;
     int code = core.action(op, a, b, in, text);
     message->setText(text);
@@ -530,14 +540,15 @@ public:
       connect(pair.first, &QPushButton::clicked, this,
               [this, op = pair.second] {
                 TvInput input{};
+                bool fieldsValid = true;
                 if (op == Unlock)
-                  master->consume(input, 0);
+                  fieldsValid &= master->consume(input, 0);
                 else {
-                  field(input, 0, path->text());
-                  master->consume(input, 1);
-                  field(input, 2, "Synthetic vault");
+                  fieldsValid &= field(input, 0, path->text());
+                  fieldsValid &= master->consume(input, 1);
+                  fieldsValid &= field(input, 2, "Synthetic vault");
                 }
-                if (action(op, 0, 0, input))
+                if (action(op, 0, 0, input, fieldsValid))
                   lastInput = clock();
               });
     connect(save, &QPushButton::clicked, this, [this] {
@@ -549,9 +560,9 @@ public:
     connect(add, &QPushButton::clicked, this, [this] {
       clearInputs();
       TvInput input{};
-      field(input, 0, sheetName->text());
+      const bool fieldsValid = field(input, 0, sheetName->text());
       if (action(Add, profiles->currentData().toUInt(),
-                 columns->currentData().toUInt(), input)) {
+                 columns->currentData().toUInt(), input, fieldsValid)) {
         updating = true;
         sheets->setCurrentIndex(sheets->count() - 1);
         updating = false;
@@ -575,8 +586,8 @@ public:
       connect(pair.first, &QPushButton::clicked, this,
               [this, op = pair.second] {
                 TvInput input{};
-                sheetPassword->consume(input, 0);
-                action(op, 0, 0, input);
+                const bool fieldsValid = sheetPassword->consume(input, 0);
+                action(op, 0, 0, input, fieldsValid);
               });
     connect(protect, &QPushButton::clicked, this, [this] {
       clearInputs();
@@ -596,11 +607,12 @@ public:
         return;
       }
       TvInput input{};
-      symbol1->consume(input, 0);
-      symbol2->consume(input, 1);
-      word->consume(input, 2);
+      bool fieldsValid = true;
+      fieldsValid &= symbol1->consume(input, 0);
+      fieldsValid &= symbol2->consume(input, 1);
+      fieldsValid &= word->consume(input, 2);
       spinConsent->setChecked(false);
-      action(Spin, row->value() - 1, 0, input);
+      action(Spin, row->value() - 1, 0, input, fieldsValid);
       symbol1->setFocus();
     });
     auto timer = new QTimer(this);
