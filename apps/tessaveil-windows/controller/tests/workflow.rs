@@ -446,7 +446,7 @@ fn warning_gates_create_and_auth_failure_does_not_open_empty_vault() {
     assert_eq!(c.state().state, 2);
     blank(&mut c, CLOSE).unwrap();
     let bad = call(&mut c, OPEN, 0, 0, [p, "synthetic-wrong-password", "", ""]).unwrap_err();
-    assert_eq!(bad, "The password is incorrect or the vault is damaged.");
+    assert_eq!(bad, "authentication");
     assert_eq!(c.state().state, 0);
     let mut bytes = std::fs::read(p).unwrap();
     *bytes.last_mut().unwrap() ^= 1;
@@ -569,11 +569,15 @@ fn timeout_real_activity_choices_and_forced_dirty_lock() {
     setup(&mut c, p.to_str().unwrap());
     assert_eq!(c.state().minutes, 5);
     let now = Instant::now();
-    c.run(ACTIVITY, 0, 0, [""; 4], now).unwrap();
-    c.run(TICK, 0, 0, [""; 4], now + Duration::from_secs(299))
+    let token = c
+        .run(ACTIVITY, 0, 0, [""; 4], now)
+        .unwrap()
+        .parse::<u32>()
+        .unwrap();
+    c.run(TICK, token, 0, [""; 4], now + Duration::from_secs(299))
         .unwrap();
     assert_eq!(c.state().state, 2);
-    c.run(TICK, 0, 0, [""; 4], now + Duration::from_secs(300))
+    c.run(TICK, token, 0, [""; 4], now + Duration::from_secs(300))
         .unwrap();
     assert_eq!(c.state().state, 1);
     assert!(c.run(ACTIVITY, 0, 0, [""; 4], now).is_err());
@@ -618,8 +622,11 @@ fn failed_save_preserves_dirty_session_and_last_file_then_timeout_discards_edits
         .share_mode(1)
         .open(&p)
         .unwrap();
-    assert!(blank(&mut c, SAVE).is_err());
-    assert!(call(&mut c, CLOSE, 1, 0, [""; 4]).is_err());
+    assert_eq!(blank(&mut c, SAVE).unwrap_err(), "access-denied");
+    assert_eq!(
+        call(&mut c, CLOSE, 1, 0, [""; 4]).unwrap_err(),
+        "access-denied"
+    );
     assert_eq!(c.state().state, 2);
     assert_eq!(c.state().dirty, 1);
     assert_eq!(std::fs::read(&p).unwrap(), old);
@@ -627,8 +634,12 @@ fn failed_save_preserves_dirty_session_and_last_file_then_timeout_discards_edits
     blank(&mut c, SAVE).unwrap();
     call(&mut c, ADD, profile, 36, ["synthetic-unsaved", "", "", ""]).unwrap();
     let now = Instant::now();
-    c.run(ACTIVITY, 0, 0, [""; 4], now).unwrap();
-    c.run(TICK, 0, 0, [""; 4], now + Duration::from_secs(300))
+    let token = c
+        .run(ACTIVITY, 0, 0, [""; 4], now)
+        .unwrap()
+        .parse::<u32>()
+        .unwrap();
+    c.run(TICK, token, 0, [""; 4], now + Duration::from_secs(300))
         .unwrap();
     assert_eq!(c.state().state, 1);
     assert_eq!(c.state().dirty, 0);
@@ -649,10 +660,9 @@ fn structural_version_and_creation_errors_remain_safe_and_closed() {
     let p = d.path().join("synthetic.tessaveil-alpha");
     let mut c = Controller::default();
     blank(&mut c, ACK).unwrap();
-    assert!(
-        call(&mut c, CREATE, 0, 0, [p.to_str().unwrap(), "short", "", ""])
-            .unwrap_err()
-            .starts_with("Use at least 15")
+    assert_eq!(
+        call(&mut c, CREATE, 0, 0, [p.to_str().unwrap(), "short", "", ""]).unwrap_err(),
+        "password-policy"
     );
     assert_eq!(c.state().state, 0);
     assert!(!p.exists());
@@ -670,7 +680,7 @@ fn structural_version_and_creation_errors_remain_safe_and_closed() {
             [p.to_str().unwrap(), "synthetic-master-password", "", ""]
         )
         .unwrap_err(),
-        "Unsupported vault or payload version."
+        "unsupported-version"
     );
     assert_eq!(c.state().state, 0);
     bytes[0] = 0;
@@ -684,6 +694,493 @@ fn structural_version_and_creation_errors_remain_safe_and_closed() {
             [p.to_str().unwrap(), "synthetic-master-password", "", ""]
         )
         .unwrap_err(),
-        "Invalid vault header."
+        "invalid-header"
+    );
+}
+
+#[test]
+fn dirty_lock_close_choices_preserve_or_commit_or_discard_exact_state() {
+    let d = tempfile::tempdir().unwrap();
+    let p = d.path().join("lifecycle.tessaveil-alpha");
+    let mut c = Controller::default();
+    setup(&mut c, p.to_str().unwrap());
+    let profile = (0..blank(&mut c, PROFILE_COUNT)
+        .unwrap()
+        .parse::<u32>()
+        .unwrap())
+        .find(|index| {
+            call(&mut c, PROFILE, *index, 0, [""; 4])
+                .unwrap()
+                .starts_with("1\t")
+        })
+        .unwrap();
+
+    call(&mut c, ADD, profile, 10, ["saved", "24", "", ""]).unwrap();
+    blank(&mut c, SAVE).unwrap();
+    call(&mut c, ADD, profile, 36, ["unsaved", "24", "", ""]).unwrap();
+    assert_eq!(c.state().sheets, 2);
+
+    assert_eq!(blank(&mut c, LOCK).unwrap_err(), "access-denied");
+    assert_eq!(blank(&mut c, CLOSE).unwrap_err(), "access-denied");
+    let preserved = c.state();
+    assert_eq!(preserved.state, 2);
+    assert_eq!(preserved.dirty, 1);
+    assert_eq!(preserved.sheets, 2);
+    assert_eq!(preserved.rows, 24);
+    assert_eq!(preserved.columns, 36);
+
+    call(&mut c, LOCK, 2, 0, [""; 4]).unwrap();
+    assert_eq!(c.state().state, 1);
+    assert_eq!(c.state().dirty, 0);
+    call(
+        &mut c,
+        UNLOCK,
+        0,
+        0,
+        ["synthetic-master-password", "", "", ""],
+    )
+    .unwrap();
+    assert_eq!(c.state().sheets, 1);
+
+    call(&mut c, ADD, profile, 10, ["saved-by-lock", "24", "", ""]).unwrap();
+    call(&mut c, LOCK, 1, 0, [""; 4]).unwrap();
+    call(
+        &mut c,
+        UNLOCK,
+        0,
+        0,
+        ["synthetic-master-password", "", "", ""],
+    )
+    .unwrap();
+    assert_eq!(c.state().sheets, 2);
+    call(
+        &mut c,
+        UNLOCK_MASTER,
+        0,
+        0,
+        ["synthetic-master-password", "", "", ""],
+    )
+    .unwrap();
+    call(&mut c, VERIFY, 1, 0, [""; 4]).unwrap();
+    call(&mut c, CLOSE, 2, 0, [""; 4]).unwrap();
+    assert_eq!(c.state().state, 0);
+    assert_eq!(c.state().dirty, 0);
+}
+
+#[test]
+fn activity_tokens_reject_stale_timeout_and_current_timeout_discards_dirty_state() {
+    let d = tempfile::tempdir().unwrap();
+    let p = d.path().join("stale-timeout.tessaveil-alpha");
+    let mut c = Controller::default();
+    setup(&mut c, p.to_str().unwrap());
+    let profile = (0..blank(&mut c, PROFILE_COUNT)
+        .unwrap()
+        .parse::<u32>()
+        .unwrap())
+        .find(|index| {
+            call(&mut c, PROFILE, *index, 0, [""; 4])
+                .unwrap()
+                .starts_with("1\t")
+        })
+        .unwrap();
+    call(&mut c, ADD, profile, 10, ["unsaved", "24", "", ""]).unwrap();
+
+    let now = Instant::now();
+    let stale = c
+        .run(ACTIVITY, 0, 0, [""; 4], now)
+        .unwrap()
+        .parse::<u32>()
+        .unwrap();
+    let current = c
+        .run(ACTIVITY, 0, 0, [""; 4], now + Duration::from_secs(1))
+        .unwrap()
+        .parse::<u32>()
+        .unwrap();
+    assert_ne!(stale, current);
+
+    c.run(TICK, stale, 0, [""; 4], now + Duration::from_secs(601))
+        .unwrap();
+    assert_eq!(c.state().state, 2);
+    assert_eq!(c.state().dirty, 1);
+    c.run(TICK, current, 0, [""; 4], now + Duration::from_secs(601))
+        .unwrap();
+    assert_eq!(c.state().state, 1);
+    assert_eq!(c.state().dirty, 0);
+}
+
+#[test]
+fn structured_queries_and_preferences_are_bounded_and_state_preserving() {
+    const PROFILE_FIELD_OP: u32 = 29;
+    const PROFILE_LENGTH_COUNT_OP: u32 = 30;
+    const PROFILE_LENGTH_OP: u32 = 31;
+    const SHEET_FIELD_OP: u32 = 32;
+    const LOCALE_OP: u32 = 36;
+    const THEME_OP: u32 = 37;
+
+    let d = tempfile::tempdir().unwrap();
+    let p = d.path().join("preferences.tessaveil-alpha");
+    let mut c = Controller::default();
+    setup(&mut c, p.to_str().unwrap());
+    let profile_count = blank(&mut c, PROFILE_COUNT)
+        .unwrap()
+        .parse::<u32>()
+        .unwrap();
+    let mut selected = None;
+    for index in 0..profile_count {
+        let legacy: Vec<_> = call(&mut c, PROFILE, index, 0, [""; 4])
+            .unwrap()
+            .split('\t')
+            .map(str::to_owned)
+            .collect();
+        assert_eq!(legacy.len(), 5);
+        for (field, bound) in [256, 256, 128, 128, 160].into_iter().enumerate() {
+            let value = call(&mut c, PROFILE_FIELD_OP, index, field as u32, [""; 4]).unwrap();
+            assert_eq!(value, legacy[field]);
+            assert!(value.len() <= bound);
+        }
+        let lengths = call(&mut c, PROFILE_LENGTHS, index, 0, [""; 4]).unwrap();
+        let expected: Vec<_> = if lengths.is_empty() {
+            Vec::new()
+        } else {
+            lengths.split(',').map(str::to_owned).collect()
+        };
+        let count = call(&mut c, PROFILE_LENGTH_COUNT_OP, index, 0, [""; 4])
+            .unwrap()
+            .parse::<usize>()
+            .unwrap();
+        assert_eq!(count, expected.len());
+        for (item, expected) in expected.iter().enumerate() {
+            assert_eq!(
+                call(&mut c, PROFILE_LENGTH_OP, index, item as u32, [""; 4]).unwrap(),
+                *expected
+            );
+        }
+        if legacy[0] == "1" && selected.is_none() {
+            selected = Some((index, legacy[2].clone(), legacy[3].clone()));
+        }
+    }
+    let (profile, profile_id, mode_id) = selected.unwrap();
+    assert_eq!(
+        call(&mut c, PROFILE_FIELD_OP, profile, 5, [""; 4]).unwrap_err(),
+        "invalid-payload"
+    );
+    assert_eq!(blank(&mut c, INFO).unwrap(), "");
+
+    assert_eq!(call(&mut c, LOCALE_OP, 0, 0, [""; 4]).unwrap(), "en");
+    assert_eq!(call(&mut c, THEME_OP, 0, 0, [""; 4]).unwrap(), "system");
+    let before = c.state();
+    call(&mut c, THEME_OP, 1, 0, ["dark", "", "", ""]).unwrap();
+    assert_eq!(call(&mut c, THEME_OP, 0, 0, [""; 4]).unwrap(), "dark");
+    assert_eq!(c.state().dirty, before.dirty);
+    assert_eq!(c.state().sheets, before.sheets);
+    assert_eq!(
+        call(&mut c, THEME_OP, 1, 0, ["sepia", "", "", ""]).unwrap_err(),
+        "invalid-payload"
+    );
+    assert_eq!(call(&mut c, THEME_OP, 0, 0, [""; 4]).unwrap(), "dark");
+    assert_eq!(
+        call(&mut c, LOCALE_OP, 1, 0, ["de", "", "", ""]).unwrap_err(),
+        "invalid-payload"
+    );
+    assert_eq!(c.state().dirty, 0);
+
+    call(&mut c, ADD, profile, 10, ["structured-sheet", "24", "", ""]).unwrap();
+    let fields = [
+        "structured-sheet".to_owned(),
+        profile_id,
+        mode_id,
+        "24".to_owned(),
+        "10".to_owned(),
+        "0".to_owned(),
+        "0".to_owned(),
+        "0".to_owned(),
+    ];
+    for (field, expected) in fields.iter().enumerate() {
+        let value = call(&mut c, SHEET_FIELD_OP, 0, field as u32, [""; 4]).unwrap();
+        assert_eq!(&value, expected);
+        assert!(value.len() <= 256);
+    }
+    blank(&mut c, SAVE).unwrap();
+    call(&mut c, LOCALE_OP, 1, 0, ["ru", "", "", ""]).unwrap();
+    assert_eq!(c.state().dirty, 1);
+    assert_eq!(call(&mut c, LOCALE_OP, 0, 0, [""; 4]).unwrap(), "ru");
+    blank(&mut c, SAVE).unwrap();
+    blank(&mut c, CLOSE).unwrap();
+
+    assert_eq!(call(&mut c, THEME_OP, 0, 0, [""; 4]).unwrap(), "dark");
+    call(
+        &mut c,
+        OPEN,
+        0,
+        0,
+        [p.to_str().unwrap(), "synthetic-master-password", "", ""],
+    )
+    .unwrap();
+    assert_eq!(call(&mut c, LOCALE_OP, 0, 0, [""; 4]).unwrap(), "ru");
+    assert_eq!(
+        call(&mut c, SHEET_FIELD_OP, 0, 0, [""; 4]).unwrap(),
+        "structured-sheet"
+    );
+    blank(&mut c, CLOSE).unwrap();
+
+    let mut fresh = Controller::default();
+    blank(&mut fresh, ACK).unwrap();
+    assert_eq!(call(&mut fresh, THEME_OP, 0, 0, [""; 4]).unwrap(), "system");
+    call(
+        &mut fresh,
+        OPEN,
+        0,
+        0,
+        [p.to_str().unwrap(), "synthetic-master-password", "", ""],
+    )
+    .unwrap();
+    assert_eq!(call(&mut fresh, LOCALE_OP, 0, 0, [""; 4]).unwrap(), "ru");
+}
+
+#[test]
+fn recovery_chain_preserves_failures_and_rotation_commits_current_payload() {
+    const SHEET_FIELD_OP: u32 = 32;
+    const BACKUP_OP: u32 = 33;
+    const RESTORE_OP: u32 = 34;
+    const CHANGE_PASSWORD_OP: u32 = 35;
+    const CURRENT: &str = "synthetic-master-password";
+    const REPLACEMENT: &str = "synthetic-rotated-password";
+
+    let d = tempfile::tempdir().unwrap();
+    let source = d.path().join("source.tessaveil-alpha");
+    let backup = d.path().join("backup.tessaveil-alpha");
+    let dirty_backup = d.path().join("dirty-backup.tessaveil-alpha");
+    let restored = d.path().join("restored.tessaveil-alpha");
+    let refused_restore = d.path().join("refused-restore.tessaveil-alpha");
+    let damaged = d.path().join("damaged.tessaveil-alpha");
+    let damaged_restore = d.path().join("damaged-restore.tessaveil-alpha");
+    let mut c = Controller::default();
+    setup(&mut c, source.to_str().unwrap());
+    let profile = (0..blank(&mut c, PROFILE_COUNT)
+        .unwrap()
+        .parse::<u32>()
+        .unwrap())
+        .find(|index| {
+            call(&mut c, PROFILE, *index, 0, [""; 4])
+                .unwrap()
+                .starts_with("1\t")
+        })
+        .unwrap();
+    call(&mut c, ADD, profile, 10, ["first", "24", "", ""]).unwrap();
+    call(&mut c, SPIN, 0, 0, ["0", "0", "abandon", ""]).unwrap();
+    call(&mut c, VERIFY, 1, 0, [""; 4]).unwrap();
+    call(&mut c, ADD, profile, 36, ["second", "24", "", ""]).unwrap();
+    call(&mut c, SPIN, 0, 0, ["0", "0", "ability", ""]).unwrap();
+    call(&mut c, VERIFY, 1, 0, [""; 4]).unwrap();
+    blank(&mut c, SAVE).unwrap();
+
+    call(
+        &mut c,
+        BACKUP_OP,
+        0,
+        0,
+        [backup.to_str().unwrap(), "", "", ""],
+    )
+    .unwrap();
+    assert_eq!(
+        std::fs::read(&source).unwrap(),
+        std::fs::read(&backup).unwrap()
+    );
+    assert_eq!(c.state().dirty, 0);
+    assert_eq!(
+        call(
+            &mut c,
+            BACKUP_OP,
+            0,
+            0,
+            [backup.to_str().unwrap(), "", "", ""]
+        )
+        .unwrap_err(),
+        "already-exists"
+    );
+    assert_eq!(blank(&mut c, INFO).unwrap(), "");
+
+    call(&mut c, UNLOCK_MASTER, 0, 0, [CURRENT, "", "", ""]).unwrap();
+    call(&mut c, VERIFY, 0, 0, [""; 4]).unwrap();
+    assert_eq!(
+        call(
+            &mut c,
+            BACKUP_OP,
+            0,
+            0,
+            [dirty_backup.to_str().unwrap(), "", "", ""]
+        )
+        .unwrap_err(),
+        "unsaved-changes"
+    );
+    assert!(!dirty_backup.exists());
+    assert_eq!(c.state().state, 2);
+    assert_eq!(c.state().dirty, 1);
+    blank(&mut c, SAVE).unwrap();
+    call(&mut c, TIMEOUT, 15, 0, [""; 4]).unwrap();
+    blank(&mut c, CLOSE).unwrap();
+
+    assert_eq!(
+        call(
+            &mut c,
+            RESTORE_OP,
+            0,
+            0,
+            [
+                backup.to_str().unwrap(),
+                restored.to_str().unwrap(),
+                "synthetic-wrong-password",
+                ""
+            ]
+        )
+        .unwrap_err(),
+        "authentication"
+    );
+    assert_eq!(c.state().state, 0);
+    assert!(!restored.exists());
+    let mut damaged_bytes = std::fs::read(&backup).unwrap();
+    *damaged_bytes.last_mut().unwrap() ^= 1;
+    std::fs::write(&damaged, damaged_bytes).unwrap();
+    assert_eq!(
+        call(
+            &mut c,
+            RESTORE_OP,
+            0,
+            0,
+            [
+                damaged.to_str().unwrap(),
+                damaged_restore.to_str().unwrap(),
+                CURRENT,
+                ""
+            ]
+        )
+        .unwrap_err(),
+        "authentication"
+    );
+    assert_eq!(c.state().state, 0);
+    assert!(!damaged_restore.exists());
+
+    call(
+        &mut c,
+        RESTORE_OP,
+        0,
+        0,
+        [
+            backup.to_str().unwrap(),
+            restored.to_str().unwrap(),
+            CURRENT,
+            "",
+        ],
+    )
+    .unwrap();
+    assert_eq!(c.state().state, 2);
+    assert_eq!(c.state().dirty, 0);
+    assert_eq!(c.state().sheets, 2);
+    assert_eq!(c.state().minutes, 15);
+    assert_eq!(
+        call(&mut c, SHEET_FIELD_OP, 0, 0, [""; 4]).unwrap(),
+        "first"
+    );
+    assert_eq!(call(&mut c, CELL, 0, 0, [""; 4]).unwrap(), "abandon");
+
+    call(&mut c, SELECT, 1, 0, [""; 4]).unwrap();
+    call(&mut c, UNLOCK_MASTER, 0, 0, [CURRENT, "", "", ""]).unwrap();
+    call(&mut c, RENAME_SHEET, 0, 0, ["current-unsaved", "", "", ""]).unwrap();
+    assert_eq!(c.state().dirty, 1);
+    assert_eq!(
+        call(
+            &mut c,
+            RESTORE_OP,
+            0,
+            0,
+            [
+                backup.to_str().unwrap(),
+                refused_restore.to_str().unwrap(),
+                CURRENT,
+                ""
+            ]
+        )
+        .unwrap_err(),
+        "access-denied"
+    );
+    assert!(!refused_restore.exists());
+    assert_eq!(c.state().state, 2);
+    assert_eq!(c.state().dirty, 1);
+    assert_eq!(c.state().sheets, 2);
+    assert_eq!(
+        call(&mut c, RENAME_SHEET, 0, 0, ["still-selected", "", "", ""]).unwrap(),
+        ""
+    );
+    assert_eq!(
+        call(&mut c, SHEET_FIELD_OP, 1, 0, [""; 4]).unwrap(),
+        "still-selected"
+    );
+
+    for (current, replacement, expected) in [
+        ("synthetic-wrong-password", REPLACEMENT, "authentication"),
+        (CURRENT, "short", "password-policy"),
+    ] {
+        assert_eq!(
+            call(
+                &mut c,
+                CHANGE_PASSWORD_OP,
+                0,
+                0,
+                [current, replacement, "", ""]
+            )
+            .unwrap_err(),
+            expected
+        );
+        assert_eq!(c.state().state, 2);
+        assert_eq!(c.state().dirty, 1);
+        assert_eq!(c.state().sheets, 2);
+        assert_eq!(
+            call(&mut c, SHEET_FIELD_OP, 1, 0, [""; 4]).unwrap(),
+            "still-selected"
+        );
+        assert_eq!(c.state().protected, 0);
+        assert_eq!(call(&mut c, CELL, 0, 0, [""; 4]).unwrap(), "ability");
+    }
+    call(
+        &mut c,
+        CHANGE_PASSWORD_OP,
+        0,
+        0,
+        [CURRENT, REPLACEMENT, "", ""],
+    )
+    .unwrap();
+    assert_eq!(c.state().dirty, 0);
+    assert_eq!(c.state().sheets, 2);
+    assert_eq!(c.state().protected, 1);
+    assert_eq!(call(&mut c, CELL, 0, 0, [""; 4]).unwrap(), "ability");
+    assert_eq!(call(&mut c, SHEET_FIELD_OP, 0, 5, [""; 4]).unwrap(), "1");
+    assert_eq!(call(&mut c, SHEET_FIELD_OP, 1, 5, [""; 4]).unwrap(), "1");
+    blank(&mut c, CLOSE).unwrap();
+    assert_eq!(
+        call(
+            &mut c,
+            OPEN,
+            0,
+            0,
+            [restored.to_str().unwrap(), CURRENT, "", ""]
+        )
+        .unwrap_err(),
+        "authentication"
+    );
+    assert_eq!(c.state().state, 0);
+    call(
+        &mut c,
+        OPEN,
+        0,
+        0,
+        [restored.to_str().unwrap(), REPLACEMENT, "", ""],
+    )
+    .unwrap();
+    assert_eq!(c.state().state, 2);
+    assert_eq!(c.state().dirty, 0);
+    assert_eq!(c.state().sheets, 2);
+    assert_eq!(
+        call(&mut c, SHEET_FIELD_OP, 1, 0, [""; 4]).unwrap(),
+        "still-selected"
     );
 }

@@ -36,6 +36,39 @@ pub const ADD_CUSTOM: u32 = 25;
 pub const REPLACE_DICTIONARY: u32 = 26;
 pub const RENAME_SHEET: u32 = 27;
 pub const DELETE_SHEET: u32 = 28;
+pub const PROFILE_FIELD: u32 = 29;
+pub const PROFILE_LENGTH_COUNT: u32 = 30;
+pub const PROFILE_LENGTH: u32 = 31;
+pub const SHEET_FIELD: u32 = 32;
+pub const BACKUP: u32 = 33;
+pub const RESTORE: u32 = 34;
+pub const CHANGE_PASSWORD: u32 = 35;
+pub const LOCALE: u32 = 36;
+pub const THEME: u32 = 37;
+
+#[derive(Clone, Copy)]
+enum Theme {
+    System,
+    Light,
+    Dark,
+}
+impl Theme {
+    fn parse(value: &str) -> Result<Self, VaultError> {
+        match value {
+            "system" => Ok(Self::System),
+            "light" => Ok(Self::Light),
+            "dark" => Ok(Self::Dark),
+            _ => Err(VaultError::InvalidPayload),
+        }
+    }
+    fn as_str(self) -> &'static str {
+        match self {
+            Self::System => "system",
+            Self::Light => "light",
+            Self::Dark => "dark",
+        }
+    }
+}
 #[derive(Default)]
 pub struct State {
     pub state: u32,
@@ -54,6 +87,8 @@ pub struct Controller {
     dirty: bool,
     selected: usize,
     minutes: u8,
+    timeout_generation: u32,
+    theme: Theme,
 }
 impl Default for Controller {
     fn default() -> Self {
@@ -64,6 +99,8 @@ impl Default for Controller {
             dirty: false,
             selected: 0,
             minutes: 5,
+            timeout_generation: 0,
+            theme: Theme::System,
         }
     }
 }
@@ -76,10 +113,19 @@ impl Controller {
     }
     fn expire(&mut self, now: Instant) {
         if let Some(v) = &mut self.vault {
-            if v.expire(v.timeout_token(), now) {
+            if !v.is_locked() && v.expire(v.timeout_token(), now) {
                 self.dirty = false;
+                self.selected = 0;
+                self.bump_timeout_generation();
             }
         }
+    }
+    fn bump_timeout_generation(&mut self) -> u32 {
+        self.timeout_generation = self.timeout_generation.wrapping_add(1);
+        if self.timeout_generation == 0 {
+            self.timeout_generation = 1;
+        }
+        self.timeout_generation
     }
     pub fn run(
         &mut self,
@@ -89,7 +135,8 @@ impl Controller {
         s: [&str; 4],
         now: Instant,
     ) -> Result<String, String> {
-        self.execute(op, a, b, s, now).map_err(|e| e.to_string())
+        self.execute(op, a, b, s, now)
+            .map_err(|error| error_key(&error).into())
     }
     fn execute(
         &mut self,
@@ -99,7 +146,9 @@ impl Controller {
         s: [&str; 4],
         now: Instant,
     ) -> Result<String, VaultError> {
-        self.expire(now);
+        if op != TICK {
+            self.expire(now);
+        }
         match op {
             ACK => self.ack = true,
             CREATE | OPEN | UNLOCK => {
@@ -130,6 +179,7 @@ impl Controller {
                 self.vault = Some(v);
                 self.dirty = false;
                 self.selected = 0;
+                return Ok(self.bump_timeout_generation().to_string());
             }
             SAVE => {
                 self.v()?.save()?;
@@ -154,6 +204,7 @@ impl Controller {
                 if op == CLOSE {
                     self.path = None;
                 }
+                self.bump_timeout_generation();
             }
             ADD => {
                 let profile = catalog::profiles()?
@@ -284,11 +335,18 @@ impl Controller {
                     }
                 }
                 self.minutes = a as u8;
+                return Ok(self.bump_timeout_generation().to_string());
             }
             ACTIVITY => {
                 self.v()?.activity(now)?;
+                return Ok(self.bump_timeout_generation().to_string());
             }
-            TICK | INFO => {}
+            TICK => {
+                if a == self.timeout_generation {
+                    self.expire(now);
+                }
+            }
+            INFO => {}
             CELL => {
                 let selected = self.selected;
                 let p = self.v()?.payload_mut()?;
@@ -325,6 +383,102 @@ impl Controller {
                     .collect::<Vec<_>>()
                     .join(","));
             }
+            PROFILE_FIELD => {
+                let profile = catalog::profiles()?
+                    .get(a as usize)
+                    .ok_or(VaultError::InvalidPayload)?;
+                let (value, bound) = match b {
+                    0 => (if profile.selectable() { "1" } else { "0" }, 1),
+                    1 => (profile.name(), 256),
+                    2 => (profile.id(), 128),
+                    3 => (profile.mode(), 128),
+                    4 => (profile.reason(), 160),
+                    _ => return Err(VaultError::InvalidPayload),
+                };
+                return bounded(value, bound);
+            }
+            PROFILE_LENGTH_COUNT => {
+                let profile = catalog::profiles()?
+                    .get(a as usize)
+                    .ok_or(VaultError::InvalidPayload)?;
+                return Ok(profile.supported_lengths().len().to_string());
+            }
+            PROFILE_LENGTH => {
+                let profile = catalog::profiles()?
+                    .get(a as usize)
+                    .ok_or(VaultError::InvalidPayload)?;
+                return Ok(profile
+                    .supported_lengths()
+                    .get(b as usize)
+                    .ok_or(VaultError::InvalidPayload)?
+                    .to_string());
+            }
+            SHEET_FIELD => {
+                let payload = self.v()?.payload_mut()?;
+                let sheet = payload.sheet(a as usize)?;
+                let value = match b {
+                    0 => return bounded(sheet.name(), 256),
+                    1 => return bounded(sheet.profile_id(), 128),
+                    2 => return bounded(sheet.mode_id(), 128),
+                    3 => sheet.row_count().to_string(),
+                    4 => sheet.row(0).map_or(0, |row| row.len()).to_string(),
+                    5 => u8::from(sheet.is_protected()).to_string(),
+                    6 => u8::from(sheet.verified_by_me()).to_string(),
+                    7 => u8::from(sheet.has_sheet_password()).to_string(),
+                    _ => return Err(VaultError::InvalidPayload),
+                };
+                return Ok(value);
+            }
+            BACKUP => {
+                self.v()?.backup_to(Path::new(s[0]))?;
+            }
+            RESTORE => {
+                if !self.ack || self.path.is_some() || self.vault.is_some() {
+                    return Err(VaultError::AccessDenied);
+                }
+                let mut vault = VaultService::restore(
+                    Path::new(s[0]),
+                    Path::new(s[1]),
+                    s[2],
+                    StoragePolicy::DevelopmentLocalNtfs,
+                )?;
+                vault.set_storage_policy(StoragePolicy::DevelopmentLocalNtfs);
+                vault.set_inactivity(Inactivity::from_minutes(self.minutes)?, now)?;
+                self.path = Some(s[1].into());
+                self.vault = Some(vault);
+                self.dirty = false;
+                self.selected = 0;
+                return Ok(self.bump_timeout_generation().to_string());
+            }
+            CHANGE_PASSWORD => {
+                self.v()?.change_master_password(s[0], s[1])?;
+                self.dirty = false;
+            }
+            LOCALE => match a {
+                0 => {
+                    let locale = {
+                        let payload = self.v()?.payload_mut()?;
+                        if payload.locale().is_empty() {
+                            "en".into()
+                        } else {
+                            payload.locale().into()
+                        }
+                    };
+                    return Ok(locale);
+                }
+                1 => {
+                    let changed = self.v()?.payload_mut()?.set_locale(s[0])?;
+                    if changed {
+                        self.dirty = true;
+                    }
+                }
+                _ => return Err(VaultError::InvalidPayload),
+            },
+            THEME => match a {
+                0 => return Ok(self.theme.as_str().into()),
+                1 => self.theme = Theme::parse(s[0])?,
+                _ => return Err(VaultError::InvalidPayload),
+            },
             _ => return Err(VaultError::InvalidPayload),
         }
         Ok(String::new())
@@ -351,5 +505,80 @@ impl Controller {
         }
         state.dirty = self.dirty.into();
         state
+    }
+}
+
+fn bounded(value: &str, bound: usize) -> Result<String, VaultError> {
+    if value.len() > bound {
+        Err(VaultError::InvalidPayload)
+    } else {
+        Ok(value.into())
+    }
+}
+
+fn error_key(error: &VaultError) -> &'static str {
+    match error {
+        VaultError::InvalidHeader => "invalid-header",
+        VaultError::UnsupportedVersion => "unsupported-version",
+        VaultError::KdfOutOfBounds => "kdf-out-of-bounds",
+        VaultError::UnsupportedKdf => "unsupported-kdf",
+        VaultError::Truncated => "truncated",
+        VaultError::TooLarge => "too-large",
+        VaultError::Authentication => "authentication",
+        VaultError::InvalidPassword => "invalid-password",
+        VaultError::PasswordPolicy => "password-policy",
+        VaultError::AccessDenied => "access-denied",
+        VaultError::InsufficientSpace => "insufficient-space",
+        VaultError::Io => "io",
+        VaultError::AlreadyExists => "already-exists",
+        VaultError::InvalidPath => "invalid-path",
+        VaultError::UnsupportedFilesystem => "unsupported-filesystem",
+        VaultError::Locked => "locked",
+        VaultError::UnsavedChanges => "unsaved-changes",
+        VaultError::InvalidPayload => "invalid-payload",
+        VaultError::TemporaryRemains { .. } => "temporary-remains",
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn every_domain_error_has_a_unique_bounded_localization_key() {
+        let errors = vec![
+            VaultError::InvalidHeader,
+            VaultError::UnsupportedVersion,
+            VaultError::KdfOutOfBounds,
+            VaultError::UnsupportedKdf,
+            VaultError::Truncated,
+            VaultError::TooLarge,
+            VaultError::Authentication,
+            VaultError::InvalidPassword,
+            VaultError::PasswordPolicy,
+            VaultError::AccessDenied,
+            VaultError::InsufficientSpace,
+            VaultError::Io,
+            VaultError::AlreadyExists,
+            VaultError::InvalidPath,
+            VaultError::UnsupportedFilesystem,
+            VaultError::Locked,
+            VaultError::UnsavedChanges,
+            VaultError::InvalidPayload,
+            VaultError::TemporaryRemains {
+                cause: Box::new(VaultError::Io),
+                path: Some(std::path::PathBuf::from("x".repeat(5000))),
+            },
+        ];
+        let keys: Vec<_> = errors.iter().map(error_key).collect();
+        assert!(keys.iter().all(|key| {
+            !key.is_empty()
+                && key.len() <= 32
+                && key
+                    .bytes()
+                    .all(|byte| byte.is_ascii_lowercase() || byte == b'-')
+        }));
+        let unique: std::collections::HashSet<_> = keys.iter().copied().collect();
+        assert_eq!(unique.len(), keys.len());
     }
 }

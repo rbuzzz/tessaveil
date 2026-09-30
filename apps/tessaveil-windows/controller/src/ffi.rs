@@ -108,6 +108,7 @@ pub unsafe extern "C" fn tv_call(
             output.text.zeroize();
             *output = Reply::default();
         }
+        tv_free(id);
         return -1;
     }
     let input = unsafe { &mut *input };
@@ -171,7 +172,18 @@ mod tests {
             let _guard = controllers().lock().unwrap();
             panic!("synthetic boundary fault");
         });
-        tv_free(id);
+        let mut input = Input::default();
+        input.data[0][0] = 42;
+        input.len[0] = 1;
+        let mut output = Reply::default();
+        assert_eq!(
+            unsafe { tv_call(id, INFO, 0, 0, &mut input, &mut output) },
+            -1
+        );
+        assert!(input.data.iter().flatten().all(|byte| *byte == 0));
+        assert_eq!(input.len, [0; 4]);
+        assert_eq!(output.state, 0);
+        assert!(output.text.iter().all(|byte| *byte == 0));
         let guard = controllers().lock().unwrap_or_else(|e| e.into_inner());
         assert!(!guard.contains_key(&id));
     }

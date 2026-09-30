@@ -188,6 +188,24 @@ impl PayloadEditor<'_> {
     pub fn rename(&mut self, name: &str) -> Result<(), VaultError> {
         self.payload.rename(name)
     }
+    pub fn locale(&self) -> &str {
+        &self.payload.locale
+    }
+    pub fn set_locale(&mut self, locale: &str) -> Result<bool, VaultError> {
+        if !matches!(locale, "en" | "ru") {
+            return Err(VaultError::InvalidPayload);
+        }
+        if self.payload.locale == locale {
+            return Ok(false);
+        }
+        let next = self.payload.encoded_len()? - text_len(&self.payload.locale) + text_len(locale);
+        if next > crate::format::MAX_PAYLOAD {
+            return Err(VaultError::InvalidPayload);
+        }
+        self.payload.locale.zeroize();
+        self.payload.locale = locale.into();
+        Ok(true)
+    }
 }
 const ROWS: &[usize] = crate::sheet::SUPPORTED_ROWS;
 pub(crate) fn text_len(text: &str) -> usize {
@@ -786,5 +804,41 @@ mod tests {
         p.sheets[0].rows.clear();
         p.sheets[0].dictionary = vec!["x".repeat(129)];
         assert!(p.encode().is_err());
+    }
+
+    #[test]
+    fn locale_access_is_en_ru_only_bounded_and_schema_two_roundtrips() {
+        let mut p = Payload::default();
+        let before = p.encode().unwrap();
+        {
+            let mut editor = PayloadEditor { payload: &mut p };
+            assert_eq!(editor.locale(), "");
+            assert!(editor.set_locale("de").is_err());
+            assert_eq!(editor.locale(), "");
+            assert!(editor.set_locale("en").unwrap());
+            assert!(!editor.set_locale("en").unwrap());
+            assert_eq!(editor.locale(), "en");
+            assert!(editor.set_locale("ru").unwrap());
+        }
+        assert_ne!(p.encode().unwrap(), before);
+        let encoded = p.encode().unwrap();
+        let mut round = Payload::decode(&encoded).unwrap();
+        let editor = PayloadEditor {
+            payload: &mut round,
+        };
+        assert_eq!(editor.locale(), "ru");
+        assert_eq!(round.encode().unwrap(), encoded);
+
+        let mut full = near_limit(0);
+        let locale_bytes = full.locale.len();
+        assert!((1..24).contains(&locale_bytes));
+        full.locale.clear();
+        full.sheets[1].name = "n".repeat(locale_bytes);
+        assert_eq!(full.encode().unwrap().len(), crate::format::MAX_PAYLOAD);
+        assert!(PayloadEditor { payload: &mut full }
+            .set_locale("en")
+            .is_err());
+        assert!(full.locale.is_empty());
+        assert_eq!(full.encode().unwrap().len(), crate::format::MAX_PAYLOAD);
     }
 }

@@ -47,5 +47,34 @@ enum Operation : uint32_t {
   AddCustom,
   ReplaceDictionary,
   RenameSheet,
-  DeleteSheet
+  DeleteSheet,
+  ProfileFieldValue,
+  ProfileLengthCount,
+  ProfileLength,
+  SheetFieldValue,
+  Backup,
+  Restore,
+  ChangePassword,
+  Locale,
+  Theme
 };
+static_assert(Ack == 1 && SheetName == 23 && ProfileLengths == 24 &&
+              DeleteSheet == 28 && ProfileFieldValue == 29 && Theme == 37);
+enum ProfileField : uint32_t {
+  ProfileSelectable = 0,
+  ProfileName,
+  ProfileId,
+  ProfileMode,
+  ProfileReason
+};
+enum SheetField : uint32_t {
+  SheetNameValue = 0,
+  SheetProfileId,
+  SheetModeId,
+  SheetRows,
+  SheetColumns,
+  SheetProtected,
+  SheetVerified,
+  SheetHasPassword
+};
+enum PreferenceAction : uint32_t { PreferenceGet = 0, PreferenceSet = 1 };
