@@ -394,6 +394,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "tessaveil-windows-controller"
+version = "0.1.0"
+dependencies = [
+ "tempfile",
+ "tessaveil-core",
+ "zeroize",
+]
+
+[[package]]
 name = "tinyvec"
 version = "1.13.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"

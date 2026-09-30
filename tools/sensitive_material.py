@@ -23,6 +23,15 @@ PUBLIC_VECTORS = {
     "tests/catalog/fixtures/public/zano-sia-zcash-chia.json": "4485e6ba9bb273679cf7863a1c9c8c4db14e649de44d362ee7088b4d9160f733",
 }
 SYNTHETIC_BINARIES = {
+    # Visually reviewed task-owned alpha captures: invented synthetic-NNN cells,
+    # no real mnemonic/input/user paths. Exact hashes only, never a PNG wildcard.
+    "docs/alpha/screenshots/authentication-error-scale-1.png": "d2da32c02277ed6319ec182c5869d7178f64db5e1000d4c7a7f2cb1d2651664d",
+    "docs/alpha/screenshots/launch-scale-1.png": "5cf5678b6ba5e6f78d3f06c3ecfec7241f11108c67d5ea934712892ef9b06d60",
+    "docs/alpha/screenshots/locked-scale-1.png": "77ebe81dfbe7ece23883942b0a57163ad350cd68068b692a49c4dbc35dd78e95",
+    "docs/alpha/screenshots/table-10-scale-1.png": "8221a2d85470526a98b6e005ee995dc6e11a68543822c03e538e6fc36e12ccfa",
+    "docs/alpha/screenshots/table-36-scale-1.png": "4f7deed6b7c3ff2ced72cbd36cf4dca6c890305f9fb766d8ea1ee182acc966f4",
+    "docs/alpha/screenshots/table-36-scale-1.5.png": "5c00de9d0db6ae3af4acc000238cf9ed32f870eb2e2cee434fb9b9a73786a7c0",
+    "docs/alpha/screenshots/table-36-scale-2.png": "f0b29199ce17e6f8906206c608435c88fea4430ca828427836b42ba7c2beb7aa",
     "spikes/mobile/vectors/synthetic-vault-v0.bin": "2a18dd58f2711fa3ca3cbbc2433df3dea48cc9596765ee9fbfe676ad3ee2d50c",
     "spikes/filesystems/fixtures/header-and-ciphertext.bin": "bc5ea167e4fd6ce42b623f3a2d268fbba7b6bd60201344a0b32dfe6a922a0c01",
 }
