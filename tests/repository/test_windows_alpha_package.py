@@ -16,6 +16,14 @@ SPEC.loader.exec_module(alpha)
 
 
 class WindowsAlphaPackageTests(unittest.TestCase):
+    def test_clean_ci_fetches_complete_locked_graph_before_offline_packaging(self):
+        script = (ROOT / "packaging/windows/ci.ps1").read_text()
+        self.assertIn("cargo fetch --locked\n", script)
+        self.assertLess(script.index("cargo fetch --locked"), script.index("cargo clippy"))
+        fetch_line = next(line for line in script.splitlines() if "cargo fetch" in line)
+        self.assertNotIn("--target", fetch_line)
+        self.assertIn("if($LASTEXITCODE){throw 'Complete locked Cargo fetch failed'}", script)
+
     def test_compliance_inventory_rejects_unrelated_files_even_with_valid_manifest(self):
         files = {"SOURCE_SHA": b"public", "application/main.obj": b"public"}
         alpha.verify_inventory(files, sorted(files))

@@ -9,6 +9,9 @@ $env:RUSTDOCFLAGS='-C link-self-contained=yes'
 Push-Location $repo
 try{
  if((git rev-parse HEAD).Trim() -ne $SourceSha -or (git status --porcelain)){throw 'Exact clean checkout required'}
+ # SBOM metadata includes all locked platforms, not only the Windows build graph.
+ cargo fetch --locked
+ if($LASTEXITCODE){throw 'Complete locked Cargo fetch failed'}
  cargo fmt --check
  if($LASTEXITCODE){throw 'Rust format failed'}
  cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
