@@ -21,12 +21,34 @@ SPEC.loader.exec_module(alpha)
 class WindowsAlphaPackageTests(unittest.TestCase):
     @staticmethod
     def observation(exe_sha="b" * 64):
+        password_ids = (
+            "openMaster",
+            "openMaster",
+            "master",
+            "sheetPassword",
+            "word",
+            "symbol1",
+            "symbol2",
+            "master",
+        )
         return {"source_sha": "a" * 40, "exe_sha256": exe_sha, "scale": "1",
-                "password_observations": [{"getter": "OBSERVED_MASKED", "setter": "SET", "password": True}] * 2,
-                "all_five_password_controls_masked": True, "keyboard_focus_observed": True,
+                "password_observations": [
+                    {"getter": "OBSERVED_MASKED", "setter": "SET", "password": True,
+                     "automation_id": automation_id}
+                    for automation_id in password_ids
+                ],
+                "password_control_count": 6,
+                "all_observed_password_controls_masked": True,
+                "keyboard_focus_observed": True,
+                "profile_search_keyboard_focus_observed": True,
+                "dynamic_profile_details_accessible": True,
+                "native_ciphertext_picker_observed": True,
                 "open_close_reopen_lock": True, "authentication_safe": True,
                 "modules": ["Tessaveil.exe", "KERNEL32.dll"],
                 "scope": "Development host UIA only; no clean Windows, Narrator, clipboard contents, network trace or release claim"}
+
+    def test_observation_accepts_current_expanded_uia_receipt(self):
+        alpha.check_observation(self.observation(), "a" * 40, "b" * 64)
 
     def test_observation_rejects_empty_false_missing_malformed_and_stale_receipts(self):
         good = self.observation()
@@ -34,8 +56,64 @@ class WindowsAlphaPackageTests(unittest.TestCase):
         bad = [{}, dict(good, source_sha="c" * 40), dict(good, exe_sha256="d" * 64),
                dict(good, password_observations=[]), dict(good, modules=[]),
                dict(good, scale="9"), dict(good, scope=""),
-               dict(good, password_observations=[{"getter": "EXPOSED", "setter": "SET", "password": True}] * 2)]
-        for key in ("all_five_password_controls_masked", "keyboard_focus_observed", "open_close_reopen_lock", "authentication_safe"):
+               dict(good, password_control_count=5),
+               dict(good, password_control_count=True),
+               dict(good, unexpected=True)]
+        too_few_roles = copy.deepcopy(good)
+        too_few_roles["password_observations"] = [
+            item for item in too_few_roles["password_observations"]
+            if item["automation_id"] != "symbol2"
+        ]
+        too_few_roles["password_control_count"] = 5
+        bad.append(too_few_roles)
+        too_few_observations = copy.deepcopy(good)
+        too_few_observations["password_observations"] = [
+            next(item for item in good["password_observations"]
+                 if item["automation_id"] == automation_id)
+            for automation_id in
+            ("openMaster", "master", "sheetPassword", "word", "symbol1", "symbol2")
+        ]
+        bad.append(too_few_observations)
+        too_many_observations = copy.deepcopy(good)
+        too_many_observations["password_observations"].append(
+            copy.deepcopy(too_many_observations["password_observations"][0])
+        )
+        bad.append(too_many_observations)
+        one_role_observed_three_times = copy.deepcopy(good)
+        one_role_observed_three_times["password_observations"][-1]["automation_id"] = "openMaster"
+        bad.append(one_role_observed_three_times)
+        for mutation in (
+            {"getter": "EXPOSED"},
+            {"setter": "IGNORED"},
+            {"password": False},
+            {"automation_id": ""},
+            {"automation_id": 7},
+            {"extra": True},
+        ):
+            changed = copy.deepcopy(good)
+            changed["password_observations"][0].update(mutation)
+            bad.append(changed)
+        missing_automation_id = copy.deepcopy(good)
+        del missing_automation_id["password_observations"][0]["automation_id"]
+        bad.append(missing_automation_id)
+        legacy = {
+            key: value for key, value in good.items()
+            if key not in {
+                "password_control_count",
+                "all_observed_password_controls_masked",
+                "profile_search_keyboard_focus_observed",
+                "dynamic_profile_details_accessible",
+                "native_ciphertext_picker_observed",
+            }
+        }
+        legacy["password_observations"] = [
+            {"getter": "OBSERVED_MASKED", "setter": "SET", "password": True}
+        ] * 2
+        legacy["all_five_password_controls_masked"] = True
+        bad.append(legacy)
+        for key in ("all_observed_password_controls_masked", "keyboard_focus_observed",
+                    "profile_search_keyboard_focus_observed", "dynamic_profile_details_accessible",
+                    "native_ciphertext_picker_observed", "open_close_reopen_lock", "authentication_safe"):
             bad.extend([dict(good, **{key: False}), dict(good, **{key: 1}), {k: v for k, v in good.items() if k != key}])
         for value in bad:
             with self.subTest(value=value), self.assertRaisesRegex(ValueError, "observation"):

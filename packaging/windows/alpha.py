@@ -249,23 +249,40 @@ def check_relink_proof(proof, source_sha, executable_sha256, application_hashes)
 
 def check_observation(observation, source_sha, executable_sha256):
     required = {"source_sha", "exe_sha256", "scale", "password_observations", "modules", "scope",
-                "open_close_reopen_lock", "authentication_safe", "all_five_password_controls_masked", "keyboard_focus_observed"}
+                "password_control_count", "all_observed_password_controls_masked",
+                "keyboard_focus_observed", "profile_search_keyboard_focus_observed",
+                "dynamic_profile_details_accessible", "native_ciphertext_picker_observed",
+                "open_close_reopen_lock", "authentication_safe"}
+    mandatory_results = ("all_observed_password_controls_masked", "keyboard_focus_observed",
+                         "profile_search_keyboard_focus_observed", "dynamic_profile_details_accessible",
+                         "native_ciphertext_picker_observed", "open_close_reopen_lock",
+                         "authentication_safe")
     if (not isinstance(observation, dict) or set(observation) != required
             or observation.get("source_sha") != source_sha
             or observation.get("exe_sha256") != executable_sha256
             or not re.fullmatch(r"[a-f0-9]{40}", source_sha)
             or not re.fullmatch(r"[a-f0-9]{64}", executable_sha256)
             or observation.get("scale") not in ("1", "1.5", "2")
-            or any(observation.get(key) is not True for key in
-                   ("open_close_reopen_lock", "authentication_safe", "all_five_password_controls_masked", "keyboard_focus_observed"))
+            or any(observation.get(key) is not True for key in mandatory_results)
+            or type(observation.get("password_control_count")) is not int
+            or observation["password_control_count"] < 6
             or observation.get("scope") != "Development host UIA only; no clean Windows, Narrator, clipboard contents, network trace or release claim"):
         raise ValueError("observation identity, shape or mandatory UIA result invalid")
     passwords = observation["password_observations"]
     modules = observation["modules"]
-    if (not isinstance(passwords, list) or len(passwords) != 2
-            or any(not isinstance(item, dict) or set(item) != {"getter", "setter", "password"}
+    password_count = observation["password_control_count"]
+    if (not isinstance(passwords, list)
+            or len(passwords) not in (password_count + 1, password_count + 2)
+            or any(not isinstance(item, dict)
+                   or set(item) != {"getter", "setter", "password", "automation_id"}
                    or item.get("password") is not True or item.get("getter") != "OBSERVED_MASKED"
-                   or item.get("setter") != "SET" for item in passwords)
+                   or item.get("setter") != "SET"
+                   or not isinstance(item.get("automation_id"), str)
+                   or not re.fullmatch(r"[A-Za-z][A-Za-z0-9_.-]{0,127}", item["automation_id"])
+                   for item in passwords)
+            or len({item["automation_id"] for item in passwords}) != password_count
+            or any(sum(item["automation_id"] == automation_id for item in passwords) > 2
+                   for automation_id in {item["automation_id"] for item in passwords})
             or not isinstance(modules, list) or not modules
             or any(not isinstance(name, str) or not re.fullmatch(r"[A-Za-z0-9_.-]+\.(?:dll|exe)", name, re.I) for name in modules)
             or len({name.lower() for name in modules}) != len(modules)

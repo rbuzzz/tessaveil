@@ -52,7 +52,9 @@ class WindowsAlphaDistributionTests(unittest.TestCase):
             mutations.append((label, "sbom.cdx.json", changed, "SBOM"))
         observed = json.loads(runtime["runtime-observation.json"])
         mutations.append(("empty observation", "runtime-observation.json", {}, "observation"))
-        for key in ("all_five_password_controls_masked", "keyboard_focus_observed", "open_close_reopen_lock", "authentication_safe"):
+        for key in ("all_observed_password_controls_masked", "keyboard_focus_observed",
+                    "profile_search_keyboard_focus_observed", "dynamic_profile_details_accessible",
+                    "native_ciphertext_picker_observed", "open_close_reopen_lock", "authentication_safe"):
             for missing in (True, False):
                 changed = copy.deepcopy(observed)
                 if missing:
@@ -62,6 +64,9 @@ class WindowsAlphaDistributionTests(unittest.TestCase):
                 mutations.append((key + str(missing), "runtime-observation.json", changed, "observation"))
         for key, value in (("source_sha", "f" * 40), ("exe_sha256", "f" * 64), ("password_observations", [])):
             mutations.append(("stale/malformed " + key, "runtime-observation.json", dict(observed, **{key: value}), "observation"))
+        mutations.append(("password count mismatch", "runtime-observation.json",
+                          dict(observed, password_control_count=observed["password_control_count"] + 1),
+                          "observation"))
         for label, name, value, error in mutations:
             modified = dict(runtime)
             modified[name] = json.dumps(value).encode()
