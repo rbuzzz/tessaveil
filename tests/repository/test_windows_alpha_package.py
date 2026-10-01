@@ -89,6 +89,66 @@ class WindowsAlphaPackageTests(unittest.TestCase):
                     ValueError, "password automation ID invalid at index 0"):
                 alpha.check_observation(receipt, "a" * 40, "b" * 64)
 
+    def test_observation_accepts_safe_windows_loaded_image_names(self):
+        receipt = self.observation()
+        receipt["modules"] = [
+            "Tessaveil.exe",
+            "WINSPOOL.DRV",
+            "bthprops.cpl",
+            "kswdmcap.ax",
+            "_socket.pyd",
+            "better_sqlite3.node",
+            "Windows accessibility bridge (desktop).dll",
+        ]
+        alpha.check_observation(receipt, "a" * 40, "b" * 64)
+
+    def test_observation_rejects_unsafe_windows_module_names(self):
+        unsafe = (
+            "", "   ", ".", "..", "trailing-space.dll ", "trailing-dot.dll.",
+            "C:\\Windows\\System32\\KERNEL32.dll", "\\\\server\\share\\module.dll",
+            "relative/path.dll", "bad:name.dll", "bad?.dll", "bad*.dll",
+            "bad|name.dll", "bad<name.dll", 'bad"name.dll', "bad\x00name.dll",
+            "bad\nname.dll", "x" * 252 + ".dll",
+            "bad" + chr(0xE000) + ".dll", "bad" + chr(0x200B) + ".dll",
+            "bad" + chr(0xD800) + ".dll",
+        )
+        for name in unsafe:
+            receipt = self.observation()
+            receipt["modules"] = ["Tessaveil.exe", name]
+            with self.subTest(kind=repr(name)), self.assertRaisesRegex(
+                    ValueError, "module evidence invalid: name format"):
+                alpha.check_observation(receipt, "a" * 40, "b" * 64)
+
+    def test_observation_module_binding_and_casefold_uniqueness_remain_strict(self):
+        for modules, message in (
+            (["KERNEL32.dll", "WINSPOOL.DRV"], "application missing"),
+            (["Tessaveil.exe", "tessaveil.EXE"], "duplicate"),
+        ):
+            receipt = self.observation()
+            receipt["modules"] = modules
+            with self.subTest(message=message), self.assertRaisesRegex(
+                    ValueError, "module evidence invalid: " + message):
+                alpha.check_observation(receipt, "a" * 40, "b" * 64)
+
+    def test_observation_rejects_unicode_expansion_as_tessaveil_binding(self):
+        receipt = self.observation()
+        receipt["modules"] = ["Te\u00dfaveil.exe", "KERNEL32.dll"]
+        with self.assertRaisesRegex(ValueError, "module evidence invalid: application missing"):
+            alpha.check_observation(receipt, "a" * 40, "b" * 64)
+
+    def test_observation_module_unicode_case_collisions_fail_closed(self):
+        for first, second in (
+            ("module\u03c3.dll", "module\u03c2.dll"),
+            ("Stra\u00dfe.dll", "STRASSE.DLL"),
+            ("module\u212a.dll", "moduleK.dll"),
+            ("caf\u00e9.dll", "cafe\u0301.dll"),
+        ):
+            receipt = self.observation()
+            receipt["modules"] = ["tESSAVEIL.ExE", first, second]
+            with self.subTest(first=first, second=second), self.assertRaisesRegex(
+                    ValueError, "module evidence invalid: duplicate"):
+                alpha.check_observation(receipt, "a" * 40, "b" * 64)
+
     def test_observation_rejects_empty_false_missing_malformed_and_stale_receipts(self):
         good = self.observation()
         alpha.check_observation(good, "a" * 40, "b" * 64)

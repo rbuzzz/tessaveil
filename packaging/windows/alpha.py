@@ -260,6 +260,26 @@ def _valid_observation_id(value):
     )
 
 
+def _valid_windows_module_name(value):
+    if (not isinstance(value, str) or not value or value != value.strip()
+            or value in (".", "..") or value.endswith(".")
+            or any(character in '<>:"/\\|?*' for character in value)
+            or any(unicodedata.category(character).startswith("C") for character in value)):
+        return False
+    try:
+        encoded = value.encode("utf-16-le")
+    except UnicodeEncodeError:
+        return False
+    return len(encoded) <= 510
+
+
+def _windows_module_comparison_key(value):
+    # Casefold plus canonical composition covers known Windows ordinal
+    # ignore-case collisions (for example sigma forms) and deliberately rejects
+    # additional Unicode spellings rather than accept ambiguous evidence.
+    return unicodedata.normalize("NFC", value).casefold()
+
+
 def check_observation(observation, source_sha, executable_sha256):
     required = {"source_sha", "exe_sha256", "scale", "password_observations", "modules", "scope",
                 "password_control_count", "all_observed_password_controls_masked",
@@ -319,13 +339,12 @@ def check_observation(observation, source_sha, executable_sha256):
         raise ValueError("observation module evidence invalid: not a list")
     if not modules:
         raise ValueError("observation module evidence invalid: empty")
-    if any(not isinstance(name, str)
-           or not re.fullmatch(r"[A-Za-z0-9_.-]+\.(?:dll|exe)", name, re.I)
-           for name in modules):
+    if any(not _valid_windows_module_name(name) for name in modules):
         raise ValueError("observation module evidence invalid: name format")
-    if len({name.lower() for name in modules}) != len(modules):
+    module_keys = [_windows_module_comparison_key(name) for name in modules]
+    if len(set(module_keys)) != len(modules):
         raise ValueError("observation module evidence invalid: duplicate")
-    if "tessaveil.exe" not in {name.lower() for name in modules}:
+    if not any(name.isascii() and name.lower() == "tessaveil.exe" for name in modules):
         raise ValueError("observation module evidence invalid: application missing")
 
 
