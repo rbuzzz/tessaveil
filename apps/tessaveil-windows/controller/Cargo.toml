@@ -1,0 +1,15 @@
+[package]
+name = "tessaveil-windows-controller"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["staticlib", "rlib"]
+
+[dependencies]
+tessaveil-core = { path = "../../../crates/tessaveil-core" }
+zeroize = "=1.8.1"
+
+[dev-dependencies]
+tempfile = "=3.23.0"

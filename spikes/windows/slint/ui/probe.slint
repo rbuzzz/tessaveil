@@ -1,0 +1,27 @@
+import { Button, LineEdit, StandardTableView, Palette } from "std-widgets.slint";
+
+export component Probe inherits Window {
+    title: "Tessaveil synthetic Slint probe";
+    width: 1280px;
+    height: 720px;
+    in property <[[StandardListViewItem]]> rows;
+    in property <[TableColumn]> columns;
+    in-out property <bool> dark: false;
+    callback invoke-core() -> int;
+    property <int> core-value: 0;
+    background: dark ? #171717 : #FFFFFF;
+    init => { Palette.color-scheme = ColorScheme.light; }
+    VerticalLayout {
+        padding: 12px;
+        spacing: 8px;
+        Text { text: "Synthetic probe — 10,000 × 36; no vault or real input"; color: dark ? #FFFFFF : #171717; }
+        HorizontalLayout {
+            Text { text: "Test input"; color: dark ? #FFFFFF : #171717; }
+            input := LineEdit { accessible-label: "Test input"; accessible-value: ""; input-type: InputType.password; text: "TEST-INPUT-42!"; }
+            Button { text: "Invoke core"; clicked => { root.core-value = root.invoke-core(); input.text = ""; } }
+            Button { text: "Theme"; clicked => { root.dark = !root.dark; Palette.color-scheme = root.dark ? ColorScheme.dark : ColorScheme.light; } }
+            Text { text: "Core: " + root.core-value; color: dark ? #FFFFFF : #171717; }
+        }
+        StandardTableView { columns: root.columns; rows: root.rows; }
+    }
+}

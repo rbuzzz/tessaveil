@@ -1,0 +1,7 @@
+[
+  "-G", "Ninja", "-DCMAKE_BUILD_TYPE=Release", "-DBUILD_SHARED_LIBS=OFF",
+  "-DFEATURE_static_runtime=ON", "-DQT_BUILD_TESTS=OFF", "-DQT_BUILD_EXAMPLES=OFF",
+  "-DINPUT_opengl=no", "-DFEATURE_opengl=OFF", "-DFEATURE_opengl_dynamic=OFF",
+  "-DFEATURE_sql=OFF", "-DFEATURE_network=OFF", "-DCMAKE_C_COMPILER=clang",
+  "-DCMAKE_CXX_COMPILER=clang++"
+]

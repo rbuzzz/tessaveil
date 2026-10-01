@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "policy": {
+    "candidate_binding": "source-sha-plus-runtime-compliance-executable-sha256",
+    "real_data_rule": "all-mandatory-gates-pass",
+    "missing_evidence": "blocked"
+  },
+  "candidate": {
+    "kind": "policy-template",
+    "source_sha": null,
+    "artifacts": {},
+    "provenance_subject_sha256": []
+  },
+  "verdict": "NO-GO для реальных данных",
+  "gates": [
+    {
+      "id": "catalogue-research-readiness",
+      "result": "blocked",
+      "evidence": {"scope": "Complete terminal catalogue, including release-blocking documented and blocked rows", "sha256": "503af1cb9fc88a62fb62c7b5ba55bf2d343632b32dc7bbeded31e85e9ab5a3db", "environment": "deterministic repository catalogue", "date": "2026-10-01", "receipts": [], "references": ["generated/alpha/profile-matrix.json", "docs/catalog.md"]},
+      "blocker": "Terminal research coverage is complete, but mandatory catalogue rows remain blocked or documented and therefore do not authorize Windows v1.",
+      "clearance_action": "Resolve every release-blocking mandatory catalogue row with primary evidence and rerun catalogue validation on the exact candidate."
+    },
+    {
+      "id": "selectable-profile-vectors",
+      "result": "pass",
+      "evidence": {"scope": "Three selectable exact product/platform/version/mode profiles and their pinned vectors", "sha256": "503af1cb9fc88a62fb62c7b5ba55bf2d343632b32dc7bbeded31e85e9ab5a3db", "environment": "deterministic repository catalogue and vector tests", "date": "2026-10-01", "receipts": [], "references": ["generated/alpha/profile-matrix.json", "crates/tessaveil-core/tests/catalog_gate.rs"]},
+      "blocker": null,
+      "clearance_action": null
+    },
+    {
+      "id": "core-security-failure-suite",
+      "result": "pass",
+      "evidence": {"scope": "Independent TSVALPHA schema-2 vector, envelope/KDF matrix and private failure injections", "sha256": "5dd9fdf034c396b4f1fd63d14f5f4a47292e94335347ddaf8ec16d59564da6cb", "environment": "Windows development host with pinned Rust and independent Python fixture tools", "date": "2026-10-01", "receipts": [], "references": ["crates/tessaveil-core/tests/security_gate.rs", "crates/tessaveil-core/tests/fixtures/tsvalpha-schema2.json"]},
+      "blocker": null,
+      "clearance_action": null
+    },
+    {
+      "id": "parser-fuzz-evidence",
+      "result": "blocked",
+      "evidence": {"scope": "Deterministic bounded header/payload parser corpora only", "sha256": "af176c7350aa5cf10342e291768c57ed0ea2db8cd141a7f71ea6643c5ce0eb46", "environment": "Windows development host; no sanitizer or sustained fuzz campaign", "date": "2026-10-01", "receipts": [], "references": ["crates/tessaveil-core/tests/format_contract.rs", "crates/tessaveil-core/src/model.rs"]},
+      "blocker": "Deterministic CI corpora exist, but no full sanitizer-backed envelope/CBOR/catalogue fuzz campaign has been completed for the candidate.",
+      "clearance_action": "Run and archive bounded sanitizer and fuzz campaigns for every parser against the exact source SHA, with tool versions, corpora, duration and zero unresolved findings."
+    },
+    {
+      "id": "format-kdf-physical-freeze",
+      "result": "blocked",
+      "evidence": {"scope": "Host vector interoperability only; physical format/KDF matrix unmeasured", "sha256": "23c3aabc2231a887419713b7fdac384a2e965444e8254ea81a3af21bd3460a1a", "environment": "Windows development host, not a physical mobile class", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/mobile-kdf.md", "docs/adr/0002-kdf-envelope-bounds.md"]},
+      "blocker": "The required two physical Android and two physical iPhone classes have not opened the shared vault or measured Argon2id.",
+      "clearance_action": "Execute the physical mobile protocol on all four classes and Mac/Xcode, record NFC bytes, repeated timing, peak memory, OOM/failure and thermal evidence, then make an explicit freeze decision."
+    },
+    {
+      "id": "figma-handoff",
+      "result": "blocked",
+      "evidence": {"scope": "Complete Tessaveil Figma handoff except exact production typography", "sha256": "96d78fb2d5aa4351a021d57c4ef7c10f5254b9ce8e3b052203e24a8f67e6e958", "environment": "Authorized Figma file using Inter and Roboto Mono preview substitutes", "date": "2026-10-01", "receipts": [], "references": ["reports/windows-v1/figma-handoff.md"]},
+      "blocker": "Segoe UI and Consolas were unavailable in the connected Figma plan, so exact production typography was not validated.",
+      "clearance_action": "Make Segoe UI and Consolas available or explicitly approve the documented substitutes, then rerun rendered typography validation and update the handoff disposition."
+    },
+    {
+      "id": "complete-windows-workflows",
+      "result": "pass",
+      "evidence": {"scope": "Implemented native Windows workflows, UIA smoke and 100/150/200 percent native regression coverage", "sha256": "9ff8f8f24bdf115ff38dc2192c69d1b9b9a6d64e74088577b3eec02c081be56f", "environment": "Windows development host implementation evidence only", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/dev-host-ui-observation.md", "apps/tessaveil-windows/tests/ui.cpp"]},
+      "blocker": null,
+      "clearance_action": null
+    },
+    {
+      "id": "clean-windows-10",
+      "result": "blocked",
+      "evidence": {"scope": "Availability inventory; no clean Windows 10 22H2 target", "sha256": "9b7c1f4298ad347a282428cbf625d98a5c1da50e44fe022274c83839d97dc8e4", "environment": "No verified clean Windows 10 environment", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/equipment-availability.md"]},
+      "blocker": "No clean Windows 10 22H2 x64 target and provenance were supplied.",
+      "clearance_action": "Run the exact unsigned candidate offline and non-admin on a provenance-recorded clean Windows 10 22H2 x64 system and capture the full protocol evidence."
+    },
+    {
+      "id": "clean-windows-11",
+      "result": "blocked",
+      "evidence": {"scope": "Availability inventory; current Windows 11 machine is a development host", "sha256": "9b7c1f4298ad347a282428cbf625d98a5c1da50e44fe022274c83839d97dc8e4", "environment": "Windows 11 development host, not a clean target", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/equipment-availability.md"]},
+      "blocker": "No separate clean Windows 11 x64 target and provenance were supplied.",
+      "clearance_action": "Run the exact unsigned candidate offline and non-admin on a provenance-recorded clean Windows 11 x64 system and capture the full protocol evidence."
+    },
+    {
+      "id": "physical-android-4gib",
+      "result": "blocked",
+      "evidence": {"scope": "No physical arm64 Android 4 GiB lower-bound measurement", "sha256": "9b7c1f4298ad347a282428cbf625d98a5c1da50e44fe022274c83839d97dc8e4", "environment": "No verified physical device", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/equipment-availability.md", "reports/spikes/mobile-kdf.md"]},
+      "blocker": "A physical arm64 Android 4 GiB lower-bound device is unavailable.",
+      "clearance_action": "Provide the physical device, record sanitized provenance, and run repeated vault-open, normalization and Argon2id measurements."
+    },
+    {
+      "id": "physical-android-current",
+      "result": "blocked",
+      "evidence": {"scope": "No current mid-range physical Android measurement", "sha256": "9b7c1f4298ad347a282428cbf625d98a5c1da50e44fe022274c83839d97dc8e4", "environment": "No verified physical device", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/equipment-availability.md", "reports/spikes/mobile-kdf.md"]},
+      "blocker": "A current mid-range physical Android device is unavailable.",
+      "clearance_action": "Provide the physical device, record sanitized provenance, and run repeated vault-open, normalization and Argon2id measurements."
+    },
+    {
+      "id": "physical-iphone-a13",
+      "result": "blocked",
+      "evidence": {"scope": "No physical iPhone 11/A13/4 GiB-class lower-bound measurement", "sha256": "9b7c1f4298ad347a282428cbf625d98a5c1da50e44fe022274c83839d97dc8e4", "environment": "No verified physical device or Mac/Xcode host", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/equipment-availability.md", "reports/spikes/mobile-kdf.md"]},
+      "blocker": "A physical iPhone 11/A13/4 GiB-class device and Mac/Xcode host are unavailable.",
+      "clearance_action": "Provide the physical device and Mac/Xcode host, record sanitized provenance, and run repeated vault-open, normalization and Argon2id measurements."
+    },
+    {
+      "id": "physical-iphone-current",
+      "result": "blocked",
+      "evidence": {"scope": "No current physical iPhone measurement", "sha256": "9b7c1f4298ad347a282428cbf625d98a5c1da50e44fe022274c83839d97dc8e4", "environment": "No verified physical device or Mac/Xcode host", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/equipment-availability.md", "reports/spikes/mobile-kdf.md"]},
+      "blocker": "A current physical iPhone and Mac/Xcode host are unavailable.",
+      "clearance_action": "Provide the physical device and Mac/Xcode host, record sanitized provenance, and run repeated vault-open, normalization and Argon2id measurements."
+    },
+    {
+      "id": "mac-xcode-native-build",
+      "result": "blocked",
+      "evidence": {"scope": "No native iOS build-host execution", "sha256": "9b7c1f4298ad347a282428cbf625d98a5c1da50e44fe022274c83839d97dc8e4", "environment": "No verified Mac/Xcode host", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/equipment-availability.md", "spikes/mobile/ios/README.md"]},
+      "blocker": "No accessible Mac/Xcode host was supplied.",
+      "clearance_action": "Build the pinned native harness on a provenance-recorded Mac/Xcode host and archive compiler, SDK, wrapper and device-run evidence."
+    },
+    {
+      "id": "removable-ntfs",
+      "result": "blocked",
+      "evidence": {"scope": "Local fixed NTFS process boundaries only; removable NTFS untested", "sha256": "357659eed9466b34153874a069440d287a74e23d34fb64b4c60cf1727400e661", "environment": "No pre-identified dedicated removable device", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/filesystem-matrix.md"]},
+      "blocker": "No pre-identified empty physical removable NTFS device and no destructive-test authorization were supplied.",
+      "clearance_action": "Identify a dedicated empty device, separately authorize destructive preparation, and execute every interruption point with old/new authentication and leftover capture."
+    },
+    {
+      "id": "removable-exfat",
+      "result": "blocked",
+      "evidence": {"scope": "Local fixed NTFS process boundaries only; removable exFAT untested", "sha256": "357659eed9466b34153874a069440d287a74e23d34fb64b4c60cf1727400e661", "environment": "No pre-identified dedicated removable device", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/filesystem-matrix.md"]},
+      "blocker": "No pre-identified empty physical removable exFAT device and no destructive-test authorization were supplied.",
+      "clearance_action": "Identify a dedicated empty device, separately authorize destructive preparation, and execute every interruption point with old/new authentication and leftover capture."
+    },
+    {
+      "id": "controlled-power-loss",
+      "result": "blocked",
+      "evidence": {"scope": "Process-exit boundaries only; no controlled hardware power-loss run", "sha256": "357659eed9466b34153874a069440d287a74e23d34fb64b4c60cf1727400e661", "environment": "Development host; destructive power interruption not authorized", "date": "2026-10-01", "receipts": [], "references": ["reports/spikes/filesystem-matrix.md"]},
+      "blocker": "No safe dedicated device, power-control setup or destructive authorization exists.",
+      "clearance_action": "Provide dedicated expendable media and controlled power hardware, approve the exact destructive protocol, and record authenticated old-or-new outcomes for each interruption point."
+    },
+    {
+      "id": "network-trace",
+      "result": "blocked",
+      "evidence": {"scope": "Application has no network module, but no packet-level exact-candidate trace", "sha256": "9ff8f8f24bdf115ff38dc2192c69d1b9b9a6d64e74088577b3eec02c081be56f", "environment": "Windows development host without packet capture", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/dev-host-ui-observation.md"]},
+      "blocker": "No packet-level offline/online network trace covers startup and every vault workflow for the exact executable.",
+      "clearance_action": "Capture a bounded packet/process network trace on the exact candidate through all workflows and demonstrate zero application-originated network activity."
+    },
+    {
+      "id": "temp-extraction-trace",
+      "result": "blocked",
+      "evidence": {"scope": "Static single-EXE build evidence without complete TEMP file-event trace", "sha256": "9ff8f8f24bdf115ff38dc2192c69d1b9b9a6d64e74088577b3eec02c081be56f", "environment": "Windows development host without full TEMP instrumentation", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/dev-host-ui-observation.md", "docs/adr/0001-desktop-stack.md"]},
+      "blocker": "No exact-candidate trace proves absence of application payload extraction to TEMP during startup and workflows.",
+      "clearance_action": "Capture process-correlated TEMP/file events on clean Windows 10 and 11 for startup and all workflows, and review every created path."
+    },
+    {
+      "id": "process-file-startup-log-trace",
+      "result": "blocked",
+      "evidence": {"scope": "Development-host modules and UIA only; no complete process/file/startup-log trace", "sha256": "9ff8f8f24bdf115ff38dc2192c69d1b9b9a6d64e74088577b3eec02c081be56f", "environment": "Windows development host with bounded UIA observation", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/dev-host-ui-observation.md"]},
+      "blocker": "Complete child-process, file-event and sanitized startup-log evidence is absent for the exact candidate.",
+      "clearance_action": "Record bounded process/file/startup-log traces on both clean Windows targets and prove no secret content, unexpected child, sidecar or paid/provider operation."
+    },
+    {
+      "id": "accessibility-narrator-scaling",
+      "result": "blocked",
+      "evidence": {"scope": "Automated UIA and 100/150/200 percent regression only", "sha256": "9ff8f8f24bdf115ff38dc2192c69d1b9b9a6d64e74088577b3eec02c081be56f", "environment": "Windows development host; no independent Narrator session", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/dev-host-ui-observation.md", "apps/tessaveil-windows/tests/observe.ps1"]},
+      "blocker": "Narrator, real monitor scaling and independent keyboard review have not been executed on clean supported Windows.",
+      "clearance_action": "Run the accessibility protocol with Narrator, keyboard-only operation and 100/150/200 percent real display scaling on clean Windows 10 and 11."
+    },
+    {
+      "id": "independent-security-audit",
+      "result": "blocked",
+      "evidence": {"scope": "Internal tests and reviews only", "sha256": "f75dfe24bcf9bb771c82b9d3fd5e994d397b5fddf6f946397706fcc33b6f56cd", "environment": "Repository self-review; not independent", "date": "2026-10-01", "receipts": [], "references": ["THREAT_MODEL.md", "SECURITY.md"]},
+      "blocker": "No independent security audit of the exact candidate and vault boundary has been completed.",
+      "clearance_action": "Commission an independent review, publish scope and disposition, remediate findings, and rerun exact-candidate verification."
+    },
+    {
+      "id": "signpath-authenticode",
+      "result": "blocked",
+      "evidence": {"scope": "Unsigned candidate policy; no SignPath acceptance or Authenticode signature", "sha256": "8c6364f076bad338c37d57d7429bd1218c97258095a8be7361bc28e40534abe8", "environment": "Unsigned engineering candidate", "date": "2026-10-01", "receipts": [], "references": ["CODE_SIGNING_POLICY.md", "packaging/windows/license-review.md"]},
+      "blocker": "SignPath Foundation has not accepted the project and the executable is not Authenticode-signed.",
+      "clearance_action": "Publish the separately approved unsigned RC, satisfy SignPath prerequisites, obtain acceptance, sign a subsequent RC, and repeat all exact signed-artifact gates."
+    },
+    {
+      "id": "licensing",
+      "result": "pass",
+      "evidence": {"scope": "Engineering review of linked Qt, Rust, LLVM-MinGW and bundled dictionary obligations", "sha256": "f094fc85850d75160ca11e38214fbfb39639e392e5f4f07bba186ccfa650504e", "environment": "Source-bound engineering license review; not legal advice", "date": "2026-10-01", "receipts": [], "references": ["packaging/windows/license-review.md", "docs/research/licensing.md"]},
+      "blocker": null,
+      "clearance_action": null
+    },
+    {
+      "id": "sbom-notices",
+      "result": "blocked",
+      "evidence": {"scope": "Pinned source inventory exists; final exact-candidate SBOM/notices not yet materialized", "sha256": "bd6023bcb2a9657f7cd03f57c35f23f03b6b67edd8969550b357a701f5bd5931", "environment": "Repository source inventory before final artifact", "date": "2026-10-01", "receipts": [], "references": ["packaging/windows/sbom-source-inventory.json", "THIRD_PARTY_NOTICES"]},
+      "blocker": "The final source SHA executable, SBOM, notices and archive manifests do not yet exist.",
+      "clearance_action": "Build the exact clean candidate, regenerate SBOM/notices from its locked graph and linked inputs, validate schemas and hashes, and independently audit downloaded bytes."
+    },
+    {
+      "id": "qt-source-relink",
+      "result": "blocked",
+      "evidence": {"scope": "Relink mechanism exists; no final exact-candidate relink proof", "sha256": "ecbb0dcdf5a53853702301842b712691d0cb72fb66bea39d52881b0df48abbd5", "environment": "Repository relink instructions before final artifact", "date": "2026-10-01", "receipts": [], "references": ["packaging/windows/RELINKING.md", "packaging/windows/relink.ps1"]},
+      "blocker": "Modified-Qt relink and smoke evidence has not been regenerated for the final exact candidate.",
+      "clearance_action": "Rebuild modified Qt from bundled source, relink unchanged candidate application material, run the synthetic smoke and bind proof hashes into compliance evidence."
+    },
+    {
+      "id": "exact-sha-ci",
+      "result": "blocked",
+      "evidence": {"scope": "Predecessor CI never transfers to a later source SHA", "sha256": "a2af7a6ec30bbe2c928c961875627adc99ecf7d8c497abc109ff7c22e154f0cc", "environment": "No hosted run for the final source SHA", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/release-evidence.md", ".github/workflows/windows-alpha.yml"]},
+      "blocker": "The final candidate SHA has not completed the required branch/PR workflow.",
+      "clearance_action": "Push the reviewed final source SHA, wait for mandatory workflow success, and bind the exact event SHA, run URL and artifact digests."
+    },
+    {
+      "id": "github-provenance",
+      "result": "blocked",
+      "evidence": {"scope": "No GitHub attestation exists for final runtime/compliance decision subjects", "sha256": "a2af7a6ec30bbe2c928c961875627adc99ecf7d8c497abc109ff7c22e154f0cc", "environment": "No hosted provenance for the final source SHA", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/release-evidence.md", ".github/workflows/windows-alpha.yml"]},
+      "blocker": "Runtime, compliance and decision artifacts for the final SHA have no verified GitHub provenance.",
+      "clearance_action": "Attest the exact downloaded subjects with the pinned workflow and verify every hosted byte using strict machine-readable gh attestation verification with self-hosted runners denied."
+    },
+    {
+      "id": "bilingual-docs-threat-limitations-parity",
+      "result": "blocked",
+      "evidence": {"scope": "Bilingual source guidance and threat model updated; exact hosted candidate receipts remain pending", "sha256": "f75dfe24bcf9bb771c82b9d3fd5e994d397b5fddf6f946397706fcc33b6f56cd", "environment": "Repository documentation before exact hosted artifact verification", "date": "2026-10-01", "receipts": [], "references": ["THREAT_MODEL.md", "README.md", "README.ru.md", "docs/alpha/known-limitations.md"]},
+      "blocker": "RU/EN source guidance is reconciled, but final exact hosted bytes, manifest/provenance receipts and independent review of their parity do not yet exist.",
+      "clearance_action": "Build and download the exact candidate, verify the manifest/provenance and packaged guidance bytes, then record an independent bilingual parity receipt."
+    }
+  ]
+}

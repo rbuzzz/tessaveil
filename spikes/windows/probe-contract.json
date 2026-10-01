@@ -1,6 +1,14 @@
 {
-  "contract_version": 1,
-  "status": "source-contract-only; builds blocked",
+  "contract_version": 2,
+  "status": "executable alpha probes; see evidence.json for per-candidate results and blockers",
+  "measurement": {
+    "scope": "development-host; not clean Windows evidence",
+    "script": "measure.ps1",
+    "warm_launches": 10,
+    "startup": "Process.Start to visible top-level HWND answering WM_NULL plus DwmFlush; not instrumented first-content-frame",
+    "temp": "dedicated TEMP/TMP before/after snapshots; transient extraction remains unverified without event tracing",
+    "release_readiness": "NO-GO"
+  },
   "table": {"rows": 10000, "columns": 36, "cell": "TEST-R{row:05}-C{column:02}", "virtualized": true},
   "input": {"masked": true, "test_value": "TEST-INPUT-42!", "persist": false},
   "themes": ["light", "dark"],

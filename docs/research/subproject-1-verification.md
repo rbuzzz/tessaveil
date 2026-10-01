@@ -5,6 +5,23 @@ blockers. Windows release readiness: NO-GO. Vault-format/KDF freeze: NO-GO.
 Production implementation, Figma production work, release and signing are not
 authorized by this research result.
 
+Windows alpha Task 1 update (2026-09-30): the desktop report/ADR now contain real
+development-host measurements and select static Qt for alpha engineering only.
+The two corresponding evidence fingerprints below are refreshed. Earlier local
+results in this historical handoff remain dated evidence, not claims about the
+alpha tools. Windows v1 freeze, clean-target and redistribution gates remain NO-GO;
+see the desktop ADR for the additional static Qt compliance-bundle prerequisite.
+
+Windows alpha evidence-binding update (2026-09-30): the desktop ADR fingerprint
+now binds its reviewed bytes from `8162e8018568560fdbb9cdafc9b65dd46385098e`.
+The original research results and Task 1 statements here remain historical.
+The [alpha evidence ledger](../alpha/release-evidence.md) records the working
+unsigned synthetic-only alpha and the static-Qt compliance/relink/provenance PASS
+for the exact predecessor artifact at `4c3e9de5b0e7936edc030992584ae6cdd59493ed`,
+not a success claim for later candidates. Windows release/freeze remains NO-GO.
+The historical audited input below is unchanged; each new candidate must pass
+the existing exact-HEAD, clean-tree, ancestry and evidence checks independently.
+
 ## Commit identity and reproducible binding
 
 Audited input/base commit: `f0f70f738ee3cdd6c3a9052358e8e8d10374218c`.
@@ -72,10 +89,11 @@ blocks both clean Windows classes, both physical Android classes, both physical
 iPhone classes, Mac/Xcode and physical removable NTFS/exFAT. The inventory's exact
 reasons are repeated below; the owner supplied no new target access in Task 18.
 
-- [Desktop ADR](../adr/0001-desktop-stack.md): provisional/blocked, no selected
-  winner. The three GUI candidates are source contracts; packaging, one-EXE,
-  static linkage, dependency/TEMP inventory, accessibility and scores remain
-  unmeasured. Safe isolated Rust success does not close GUI build/clean-host gates.
+- [Desktop ADR](../adr/0001-desktop-stack.md): superseded for alpha engineering by
+  the 2026-09-30 measured static Qt selection. Slint is rejected for observed UIA
+  password exposure; Avalonia NativeAOT has a dev-host linker blocker. Clean-target,
+  full accessibility/performance and static Qt redistribution gates remain open;
+  this is not a Windows v1 technology freeze or release approval.
 - [KDF ADR](../adr/0002-kdf-envelope-bounds.md): format and KDF freeze remain NO-GO.
   Keep provisional 64 MiB / 3 / 4 and absolute bounds unchanged. Native wrapper
   builds, native NFC parity, repeated physical timings, memory/OOM and thermal
@@ -524,14 +542,14 @@ retains its bounded CLI presentation; `release_findings` contains all findings.
     }
   ],
   "evidence_sha256": {
-    "docs/adr/0001-desktop-stack.md": "665407350b5d0898b4ef1f1c1393b4c1da2931b37d48131cea191cdddd54aed8",
+    "docs/adr/0001-desktop-stack.md": "7c5262865b31915a99071b1bf5f8300488af3ee54bb9036f10d8f70f357fae2e",
     "docs/adr/0002-kdf-envelope-bounds.md": "57ead16d3d99229c4755e23b13bf2577ce4fdde32eea2ad6c1ee606856fadfd1",
     "docs/adr/0003-filesystem-replace.md": "5c488514db4fd63690b03dff5c80d9aa3cc8a1871097d5957f0b3402af734d09",
     "docs/research/third-party-notices-source.txt": "794df9aa484477325339568a1e7b539ea5ef90e54e5cf89ddd157b1cc6a2112a",
     "reports/spikes/equipment-availability.md": "9b7c1f4298ad347a282428cbf625d98a5c1da50e44fe022274c83839d97dc8e4",
     "reports/spikes/filesystem-matrix.md": "357659eed9466b34153874a069440d287a74e23d34fb64b4c60cf1727400e661",
     "reports/spikes/mobile-kdf.md": "23c3aabc2231a887419713b7fdac384a2e965444e8254ea81a3af21bd3460a1a",
-    "reports/spikes/windows.md": "763f236b687fc4906f58047e38448085126d7f89e7f116d2400eb91bf22936cc"
+    "reports/spikes/windows.md": "fca6267339db0dae094e65f749af5a01be4af59d3646aa83eb5ee24b3ad5aab3"
   }
 }
 ```
