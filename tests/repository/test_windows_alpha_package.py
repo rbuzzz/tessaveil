@@ -50,6 +50,45 @@ class WindowsAlphaPackageTests(unittest.TestCase):
     def test_observation_accepts_current_expanded_uia_receipt(self):
         alpha.check_observation(self.observation(), "a" * 40, "b" * 64)
 
+    def test_observation_accepts_safe_provider_ids_without_letter_prefix(self):
+        receipt = self.observation()
+        provider_ids = {
+            "openMaster": "42",
+            "master": ":master password",
+            "sheetPassword": "sheet password #2",
+            "word": "[word]",
+            "symbol1": "1/symbol",
+            "symbol2": "symbol 2",
+        }
+        for item in receipt["password_observations"]:
+            item["automation_id"] = provider_ids[item["automation_id"]]
+        alpha.check_observation(receipt, "a" * 40, "b" * 64)
+
+    def test_observation_errors_identify_the_failed_safe_clause(self):
+        good = self.observation()
+        cases = (
+            (dict(good, unexpected=True), "top-level fields invalid"),
+            (dict(good, dynamic_profile_details_accessible=False),
+             "mandatory UIA result invalid: dynamic_profile_details_accessible"),
+            (dict(good, password_control_count=7), "password control count mismatch"),
+            (dict(good, modules=[]), "module evidence invalid: empty"),
+        )
+        invalid_id = copy.deepcopy(good)
+        invalid_id["password_observations"][0]["automation_id"] = "bad\x00id"
+        cases += ((invalid_id, "password automation ID invalid at index 0"),)
+        for receipt, message in cases:
+            with self.subTest(message=message), self.assertRaisesRegex(ValueError, message):
+                alpha.check_observation(receipt, "a" * 40, "b" * 64)
+
+    def test_observation_rejects_unicode_provider_control_categories(self):
+        for label, codepoint in (("private-use", 0xE000), ("format", 0x200B),
+                                 ("surrogate", 0xD800)):
+            receipt = copy.deepcopy(self.observation())
+            receipt["password_observations"][0]["automation_id"] = chr(codepoint)
+            with self.subTest(category=label), self.assertRaisesRegex(
+                    ValueError, "password automation ID invalid at index 0"):
+                alpha.check_observation(receipt, "a" * 40, "b" * 64)
+
     def test_observation_rejects_empty_false_missing_malformed_and_stale_receipts(self):
         good = self.observation()
         alpha.check_observation(good, "a" * 40, "b" * 64)
@@ -87,6 +126,9 @@ class WindowsAlphaPackageTests(unittest.TestCase):
             {"setter": "IGNORED"},
             {"password": False},
             {"automation_id": ""},
+            {"automation_id": "   "},
+            {"automation_id": "bad\nidentifier"},
+            {"automation_id": "x" * 257},
             {"automation_id": 7},
             {"extra": True},
         ):

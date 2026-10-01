@@ -7,6 +7,7 @@ import re
 import stat
 import struct
 import sys
+import unicodedata
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -247,6 +248,18 @@ def check_relink_proof(proof, source_sha, executable_sha256, application_hashes)
         raise ValueError("relink observation missing, false or stale") from error
 
 
+def _valid_observation_id(value):
+    if not isinstance(value, str) or not value.strip():
+        return False
+    try:
+        encoded = value.encode("utf-8")
+    except UnicodeEncodeError:
+        return False
+    return len(encoded) <= 256 and not any(
+        unicodedata.category(character).startswith("C") for character in value
+    )
+
+
 def check_observation(observation, source_sha, executable_sha256):
     required = {"source_sha", "exe_sha256", "scale", "password_observations", "modules", "scope",
                 "password_control_count", "all_observed_password_controls_masked",
@@ -257,37 +270,63 @@ def check_observation(observation, source_sha, executable_sha256):
                          "profile_search_keyboard_focus_observed", "dynamic_profile_details_accessible",
                          "native_ciphertext_picker_observed", "open_close_reopen_lock",
                          "authentication_safe")
-    if (not isinstance(observation, dict) or set(observation) != required
-            or observation.get("source_sha") != source_sha
-            or observation.get("exe_sha256") != executable_sha256
+    if not isinstance(observation, dict) or set(observation) != required:
+        raise ValueError("observation top-level fields invalid")
+    if (observation["source_sha"] != source_sha
+            or observation["exe_sha256"] != executable_sha256
             or not re.fullmatch(r"[a-f0-9]{40}", source_sha)
-            or not re.fullmatch(r"[a-f0-9]{64}", executable_sha256)
-            or observation.get("scale") not in ("1", "1.5", "2")
-            or any(observation.get(key) is not True for key in mandatory_results)
-            or type(observation.get("password_control_count")) is not int
-            or observation["password_control_count"] < 6
-            or observation.get("scope") != "Development host UIA only; no clean Windows, Narrator, clipboard contents, network trace or release claim"):
-        raise ValueError("observation identity, shape or mandatory UIA result invalid")
+            or not re.fullmatch(r"[a-f0-9]{64}", executable_sha256)):
+        raise ValueError("observation source or executable identity invalid")
+    if observation["scale"] not in ("1", "1.5", "2"):
+        raise ValueError("observation scale invalid")
+    for key in mandatory_results:
+        if observation[key] is not True:
+            raise ValueError("observation mandatory UIA result invalid: " + key)
+    if (type(observation["password_control_count"]) is not int
+            or observation["password_control_count"] < 6):
+        raise ValueError("observation password control count invalid")
+    if observation["scope"] != "Development host UIA only; no clean Windows, Narrator, clipboard contents, network trace or release claim":
+        raise ValueError("observation scope invalid")
     passwords = observation["password_observations"]
     modules = observation["modules"]
     password_count = observation["password_control_count"]
-    if (not isinstance(passwords, list)
-            or len(passwords) not in (password_count + 1, password_count + 2)
-            or any(not isinstance(item, dict)
-                   or set(item) != {"getter", "setter", "password", "automation_id"}
-                   or item.get("password") is not True or item.get("getter") != "OBSERVED_MASKED"
-                   or item.get("setter") != "SET"
-                   or not isinstance(item.get("automation_id"), str)
-                   or not re.fullmatch(r"[A-Za-z][A-Za-z0-9_.-]{0,127}", item["automation_id"])
-                   for item in passwords)
-            or len({item["automation_id"] for item in passwords}) != password_count
-            or any(sum(item["automation_id"] == automation_id for item in passwords) > 2
-                   for automation_id in {item["automation_id"] for item in passwords})
-            or not isinstance(modules, list) or not modules
-            or any(not isinstance(name, str) or not re.fullmatch(r"[A-Za-z0-9_.-]+\.(?:dll|exe)", name, re.I) for name in modules)
-            or len({name.lower() for name in modules}) != len(modules)
-            or "tessaveil.exe" not in {name.lower() for name in modules}):
-        raise ValueError("observation password or module evidence invalid")
+    if not isinstance(passwords, list):
+        raise ValueError("observation password evidence invalid: not a list")
+    if len(passwords) not in (password_count + 1, password_count + 2):
+        raise ValueError(
+            f"observation password observation count invalid: declared={password_count}, observed={len(passwords)}"
+        )
+    for index, item in enumerate(passwords):
+        if (not isinstance(item, dict)
+                or set(item) != {"getter", "setter", "password", "automation_id"}):
+            raise ValueError(f"observation password fields invalid at index {index}")
+        if (item["password"] is not True or item["getter"] != "OBSERVED_MASKED"
+                or item["setter"] != "SET"):
+            raise ValueError(f"observation password masking result invalid at index {index}")
+        if not _valid_observation_id(item["automation_id"]):
+            raise ValueError(f"observation password automation ID invalid at index {index}")
+    role_counts = {}
+    for item in passwords:
+        role = item["automation_id"]
+        role_counts[role] = role_counts.get(role, 0) + 1
+    if len(role_counts) != password_count:
+        raise ValueError(
+            f"observation password control count mismatch: declared={password_count}, unique={len(role_counts)}"
+        )
+    if any(count > 2 for count in role_counts.values()):
+        raise ValueError("observation password role repetition invalid")
+    if not isinstance(modules, list):
+        raise ValueError("observation module evidence invalid: not a list")
+    if not modules:
+        raise ValueError("observation module evidence invalid: empty")
+    if any(not isinstance(name, str)
+           or not re.fullmatch(r"[A-Za-z0-9_.-]+\.(?:dll|exe)", name, re.I)
+           for name in modules):
+        raise ValueError("observation module evidence invalid: name format")
+    if len({name.lower() for name in modules}) != len(modules):
+        raise ValueError("observation module evidence invalid: duplicate")
+    if "tessaveil.exe" not in {name.lower() for name in modules}:
+        raise ValueError("observation module evidence invalid: application missing")
 
 
 def check_sbom(actual, expected):
