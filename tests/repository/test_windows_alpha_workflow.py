@@ -40,6 +40,47 @@ class WindowsAlphaWorkflowTests(unittest.TestCase):
             with self.subTest(expression=expression), self.assertRaisesRegex(ValueError, "unavailable job env context"):
                 check_job_env_contexts(changed)
 
+    def test_provenance_bootstraps_exact_locked_python_before_verification(self):
+        workflow = json.loads(WORKFLOW.read_bytes())
+        steps = workflow["jobs"]["provenance"]["steps"]
+        setups = [
+            (index, step)
+            for index, step in enumerate(steps)
+            if step.get("uses", "").startswith("actions/setup-python@")
+        ]
+        self.assertEqual(len(setups), 1, "provenance needs one pinned Python bootstrap")
+        setup_index, setup = setups[0]
+        self.assertEqual(
+            setup,
+            {
+                "uses": "actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+                "with": {"python-version": "3.12.10"},
+            },
+        )
+        installs = [
+            (index, step)
+            for index, step in enumerate(steps)
+            if step.get("name") == "Install exact locked verifier dependencies"
+        ]
+        self.assertEqual(len(installs), 1, "provenance needs one locked dependency install")
+        install_index, install = installs[0]
+        self.assertEqual(install.get("shell"), "pwsh")
+        self.assertEqual(
+            install.get("run", "").split(),
+            [
+                "python", "-m", "pip", "install", "--disable-pip-version-check",
+                "--only-binary=:all:", "--require-hashes", "-r",
+                "packaging/windows/requirements.lock",
+            ],
+        )
+        verify_index = next(
+            index
+            for index, step in enumerate(steps)
+            if step.get("name") == "Strict machine-readable attestation verification"
+        )
+        self.assertLess(setup_index, install_index)
+        self.assertLess(install_index, verify_index)
+
     @unittest.skipUnless(os.name == "nt" and shutil.which("pwsh"), "requires Windows PowerShell 7")
     def test_runtime_root_step_exports_exact_path_and_fails_without_runner_inputs(self):
         workflow = json.loads(WORKFLOW.read_bytes())
