@@ -126,10 +126,12 @@ class WindowsAlphaPackageTests(unittest.TestCase):
         self.assertFalse(build["steps"][0]["with"]["persist-credentials"])
         upload = next(i for i, step in enumerate(build["steps"]) if step.get("uses", "").startswith("actions/upload-artifact@"))
         self.assertIn("GATE-PASS.json", build["steps"][upload - 1]["run"])
-        self.assertIn("decision_sha256", build["steps"][upload - 1]["run"])
+        self.assertIn("($kind + '_sha256')", build["steps"][upload - 1]["run"])
+        self.assertIn("manifest", build["steps"][upload - 1]["run"])
         self.assertNotIn("if", build["steps"][upload])
         self.assertEqual(build["steps"][upload]["with"]["if-no-files-found"], "error")
         self.assertIn("release-decision.json", build["steps"][upload]["with"]["path"])
+        self.assertIn("-manifest.json", build["steps"][upload]["with"]["path"])
         provenance = workflow["jobs"]["provenance"]
         self.assertEqual(provenance["needs"], ["windows-alpha"])
         self.assertEqual(provenance["permissions"], {"contents": "read", "id-token": "write", "attestations": "write"})
@@ -146,9 +148,10 @@ class WindowsAlphaPackageTests(unittest.TestCase):
         self.assertFalse(checkout["with"]["persist-credentials"])
         attest = next(step for step in provenance["steps"] if step.get("uses", "").startswith("actions/attest@"))
         self.assertEqual(attest["with"].get("create-storage-record"), False)
-        self.assertIn("verified-artifact/runtime.zip", attest["with"]["subject-path"])
-        self.assertIn("verified-artifact/compliance.zip", attest["with"]["subject-path"])
-        self.assertIn("verified-artifact/release-decision.json", attest["with"]["subject-path"])
+        self.assertIn("-runtime.zip", attest["with"]["subject-path"])
+        self.assertIn("-compliance.zip", attest["with"]["subject-path"])
+        self.assertIn("-release-decision.json", attest["with"]["subject-path"])
+        self.assertIn("-manifest.json", attest["with"]["subject-path"])
         self.assertFalse(any(key.startswith("predicate") for key in attest["with"]))
         strict = next(step for step in provenance["steps"] if step.get("name") == "Strict machine-readable attestation verification")
         self.assertLess(checkout_index, provenance_steps.index(strict))
@@ -157,7 +160,9 @@ class WindowsAlphaPackageTests(unittest.TestCase):
         self.assertIn("--signer-workflow", strict["run"])
         self.assertIn("--source-digest $env:GITHUB_SHA", strict["run"])
         self.assertIn("--source-ref $env:GITHUB_REF", strict["run"])
-        self.assertIn("release_decision.py verify", strict["run"])
+        self.assertIn("packaging/windows/verify.py", strict["run"])
+        self.assertIn("--distribution", strict["run"])
+        self.assertIn("--manifest", strict["run"])
         for job in workflow["jobs"].values():
             for step in job["steps"]:
                 self.assertFalse(step.get("continue-on-error", False))
@@ -167,6 +172,8 @@ class WindowsAlphaPackageTests(unittest.TestCase):
     def test_distribution_review_requires_the_fail_closed_release_decision(self):
         review = json.loads((ROOT / "packaging/windows/distribution-review.json").read_bytes())
         self.assertIs(review.get("release_decision_required"), True)
+        self.assertIs(review.get("candidate_manifest_required"), True)
+        self.assertIs(review.get("candidate_guidance_required"), True)
         self.assertEqual(review.get("real_data_authorization"), "all-mandatory-gates-pass")
 
     def test_relink_proof_rejects_same_input_stale_sha_or_changed_application_objects(self):
@@ -240,10 +247,10 @@ class WindowsAlphaPackageTests(unittest.TestCase):
     def test_dictionary_scan_exclusion_does_not_change_manifest_or_executable_hash(self):
         dictionary = b"abandon\n" * 12
         executable = self.sample_pe() + dictionary
-        files = {name: b"public" for name in ("THIRD_PARTY_ALPHA.md", "THIRD_PARTY_NOTICES", "LICENSE", "user-guide.md", "known-limitations.md", "PE-imports.json", "runtime-observation.json")}
+        files = {name: b"public" for name in ("THIRD_PARTY_ALPHA.md", "THIRD_PARTY_NOTICES", "LICENSE", "README.md", "README.ru.md", "THREAT_MODEL.md", "user-guide.md", "known-limitations.md", "release-evidence.md", "PE-imports.json", "runtime-observation.json")}
         files.update({"Tessaveil.exe": executable, "SOURCE_SHA": b"a" * 40 + b"\n",
                       "sbom.cdx.json": b'{"bomFormat":"CycloneDX","specVersion":"1.6"}',
-                      "release-evidence.json": json.dumps({"source_sha": "a" * 40, "exe_sha256": alpha.digest(executable)}).encode()})
+                      "release-evidence.json": json.dumps({"source_sha": "a" * 40, "exe_sha256": alpha.digest(executable), "unsigned": True, "synthetic_only": True, "real_data_verdict": "NO-GO для реальных данных"}).encode()})
         files["vendor-build-prefixes.json"] = json.dumps(alpha.vendor_scan_copy(executable, {}, {})[1]).encode()
         files["PE-imports.json"] = json.dumps({"exe_sha256": alpha.digest(executable), "imports": ["KERNEL32.dll"]}).encode()
         files["runtime-observation.json"] = json.dumps(self.observation(alpha.digest(executable))).encode()

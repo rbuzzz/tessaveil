@@ -9,7 +9,7 @@ Security audit: not yet independently completed
 <!-- en:boundary -->
 ### Scope and trust boundary
 
-This is the public threat contract for a proposed offline backup table, not a usable vault or an audited security product. Protections below are design requirements unless a linked research report explicitly measures them. Do not use this repository to protect real funds or enter real recovery material into its probes.
+This is the public threat contract for the working unsigned Windows v1 candidate for synthetic data only, not an audited or real-data-approved security product. Implemented controls are distinguished from external evidence gates; a linked exact-candidate receipt is required before any physical, clean-machine, filesystem, accessibility, signing or provenance result is claimed. Do not use this repository or candidate to protect real funds, and never enter real recovery material into Tessaveil, tests, CI, agents or websites.
 
 Tessaveil briefly sees the current word and column while placing one word. It cannot defeat a compromised OS. It does not validate complete phrases, reconstruct their order, check mnemonic checksums, derive keys or addresses, or verify balances. It does not replace a separate cold backup or trusted hardware-wallet process. A catalogue profile's `verified` status concerns researched compatibility; it does not verify the user's phrase. "Verified by me" is the user's independent confirmation through the original trusted wallet or official hardware-wallet backup check, not a Tessaveil cryptographic check.
 
@@ -58,6 +58,8 @@ If the true word is retained while decoys change, intersections across a row's v
 
 Warn before editing a previously saved row and before creating a replacement sheet: old files may still exist and become readable after later password disclosure. Absence of built-in history does not prevent manual backups, filesystem/cloud versions or deleted-data recovery. Best-effort cleanup is not secure erasure. Changing the master password re-encrypts the current image but does not revoke old copies or their old passwords. Redundancy guidance must never imply that retaining changed versions is equally safe or instruct users to destroy their only usable recovery copy.
 
+The implemented Backup operation is available only for a clean saved session. It reopens and authenticates the saved image, rejects self/alias/overwrite/unsafe targets and creates a byte-identical encrypted redundancy copy. Restore authenticates the source with its existing master password before creating a new destination; it never bypasses a lost password, repairs arbitrary damage or overwrites an existing file. Password rotation creates new salt, DEK and nonces for the current image, but cannot revoke, locate or erase earlier copies. Verify recovery with the original trusted wallet procedure and keep an independent cold backup; neither Tessaveil's verification flag nor the order key recovers a lost master password.
+
 <!-- en:dictionary-contract -->
 ### Custom dictionary changes
 
@@ -79,7 +81,7 @@ FAT32, network shares, cloud-synchronized folders and unverified filesystems car
 <!-- en:gates -->
 ### Evidence and open gates
 
-Research completion does not grant release permission. This matrix documents intended controls, not implemented product guarantees. Windows release: NO-GO. Format/KDF freeze: NO-GO. Physical mobile evidence: blocked. Removable-media guarantees: NO-GO. Desktop selection remains provisional. Host crypto tests, catalogue completeness and this document cannot clear physical, signing, independent review or release gates.
+Research completion does not grant release permission. This matrix documents intended controls, not implemented product guarantees. Windows release: NO-GO. Implementation completion also does not grant real-data permission: the candidate combines implemented controls with explicitly unclosed external guarantees. Format/KDF freeze: NO-GO. Physical mobile evidence: blocked. Removable-media guarantees: NO-GO. The static Qt candidate is development-host evidence, not clean Windows acceptance. Host crypto/UI tests, catalogue completeness, packaging integrity and this document cannot clear physical, signing, independent-review or exact-hosted gates.
 
 See the [foundation specification](docs/superpowers/specs/2026-09-29-tessaveil-foundation-windows-v1-design.md), [research specification](docs/superpowers/specs/2026-09-29-tessaveil-registry-threat-model-design.md), [desktop ADR](docs/adr/0001-desktop-stack.md), [format/KDF ADR](docs/adr/0002-kdf-envelope-bounds.md) and [equipment blockers](reports/spikes/equipment-availability.md). The [catalogue](docs/catalog.md) separates terminal research coverage from release blockers. Changes to the threat boundary or copy require review in both languages; automated wording checks are not a security audit.
 
@@ -88,7 +90,7 @@ See the [foundation specification](docs/superpowers/specs/2026-09-29-tessaveil-f
 <!-- ru:boundary -->
 ### Область действия и граница доверия
 
-Это публичная модель угроз для предлагаемой офлайн-таблицы резервного хранения, а не рабочее хранилище или прошедший аудит продукт. Описанная защита — требования к будущему продукту, если связанный исследовательский отчёт прямо не подтверждает конкретное измерение. Не защищайте этим репозиторием реальные средства и не вводите настоящие секреты в прототипы.
+Это публичная модель угроз работающего неподписанного кандидата Windows v1 только для синтетических данных, а не прошедший аудит или допущенный к реальным данным продукт. Реализованные меры отделены от внешних evidence gates; физический, clean-machine, filesystem, accessibility, signing или provenance результат можно заявлять только с receipt точного кандидата. Не защищайте этим репозиторием или кандидатом реальные средства и никогда не вводите настоящие секреты в Tessaveil, тесты, CI, агентам или на сайты.
 
 Tessaveil кратковременно видит текущее слово и столбец при размещении одного слова. Он не может противостоять скомпрометированной ОС. Он не проверяет целые фразы, не восстанавливает их порядок, не проверяет контрольную сумму мнемоники, не выводит ключи и адреса и не проверяет баланс. Он не заменяет отдельную холодную резервную копию или доверенную процедуру аппаратного кошелька. Статус профиля `verified` относится к исследованной совместимости, а не к проверке фразы пользователя. "Verified by me" — подтверждение самого пользователя через исходный доверенный кошелёк или официальную проверку резервной копии аппаратного кошелька, а не криптографическая проверка Tessaveil.
 
@@ -137,6 +139,8 @@ Tessaveil кратковременно видит текущее слово и �
 
 Предупреждайте перед изменением ранее сохранённой строки и перед созданием заменяющего листа: старые файлы могут сохраниться и стать читаемыми после раскрытия пароля. Отсутствие встроенной истории не исключает ручные копии, версии файловой системы/облака и восстановление удалённых данных. Очистка по мере возможности не является гарантированным стиранием. Смена мастер-пароля заново шифрует текущий образ, но не отзывает старые копии или их старые пароли. Рекомендации по резервированию не должны приравнивать безопасность изменённых версий к идентичным копиям или предлагать уничтожить единственную пригодную копию восстановления.
 
+Реализованный Backup доступен только для чистой сохранённой сессии. Он повторно открывает и аутентифицирует образ, запрещает self/alias/overwrite/опасную цель и создаёт побайтно идентичную зашифрованную резервную копию. Restore аутентифицирует источник его действующим мастер-паролем до создания нового файла; он не обходит потерянный пароль, не чинит произвольное повреждение и не перезаписывает существующую цель. Смена пароля создаёт новые соль, DEK и nonce текущего образа, но не может отозвать, найти или стереть старые копии. Проверяйте восстановление исходной доверенной процедурой кошелька и храните независимую холодную копию; ни отметка Tessaveil, ни ключ порядка не восстанавливают потерянный мастер-пароль.
+
 <!-- ru:dictionary-contract -->
 ### Изменения пользовательского словаря
 
@@ -158,6 +162,6 @@ FAT32, сетевые ресурсы, папки облачной синхрон
 <!-- ru:gates -->
 ### Доказательства и незакрытые условия
 
-Завершение исследования не разрешает релиз. Эта матрица описывает предполагаемые меры, не реализованные гарантии продукта. Релиз Windows: NO-GO. Фиксация формата/KDF: NO-GO. Физические мобильные проверки: blocked. Гарантии съёмных носителей: NO-GO. Выбор настольной технологии остаётся предварительным. Криптографические тесты на рабочем компьютере, полнота каталога и этот документ не закрывают физические проверки, подпись, независимую проверку или релизные условия.
+Завершение исследования не разрешает релиз. Эта матрица описывает предполагаемые меры, не реализованные гарантии продукта. Релиз Windows: NO-GO. Завершение реализации также не разрешает реальные данные: кандидат сочетает реализованные меры и явно незакрытые внешние гарантии. Фиксация формата/KDF: NO-GO. Физические мобильные проверки: blocked. Гарантии съёмных носителей: NO-GO. Кандидат на статическом Qt подтверждён на рабочем компьютере, но не принят на чистых Windows. Криптографические/UI-тесты, полнота каталога, целостность упаковки и этот документ не закрывают физические проверки, подпись, независимый аудит и exact-hosted gates.
 
 См. [основную спецификацию](docs/superpowers/specs/2026-09-29-tessaveil-foundation-windows-v1-design.md), [исследовательскую спецификацию](docs/superpowers/specs/2026-09-29-tessaveil-registry-threat-model-design.md), [ADR настольной технологии](docs/adr/0001-desktop-stack.md), [ADR формата/KDF](docs/adr/0002-kdf-envelope-bounds.md) и [блокеры оборудования](reports/spikes/equipment-availability.md). [Каталог](docs/catalog.ru.md) разделяет завершённость исследования и препятствия релизу. Изменения границ защиты и формулировок проверяются в обоих языках; автоматические проверки текста не являются аудитом безопасности.

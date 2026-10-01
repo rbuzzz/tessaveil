@@ -15,6 +15,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "packaging/windows"))
 import alpha
+import candidate_manifest
 
 
 class WindowsAlphaDistributionTests(unittest.TestCase):
@@ -22,7 +23,9 @@ class WindowsAlphaDistributionTests(unittest.TestCase):
     def test_distribution_rejects_rechecksummed_sbom_and_observation_substitution(self):
         import verify
         output = Path(os.environ["TESSAVEIL_ALPHA_AUDIT_ROOT"])
-        runtime_path, compliance_path = output / "runtime.zip", output / "compliance.zip"
+        source_sha = os.environ["TESSAVEIL_CANDIDATE_SHA"]
+        paths = candidate_manifest.paths(output, source_sha)
+        runtime_path, compliance_path = paths["runtime"], paths["compliance"]
         runtime, compliance = alpha.read_archive(runtime_path), alpha.read_archive(compliance_path)
         sha = runtime["SOURCE_SHA"].decode().strip()
         original = json.loads(runtime["sbom.cdx.json"])
@@ -66,4 +69,11 @@ class WindowsAlphaDistributionTests(unittest.TestCase):
             modified["SHA256SUMS"] = alpha.make_manifest(modified)
             with self.subTest(mutation=label), patch.object(alpha, "read_archive", side_effect=lambda path: modified if path == runtime_path else compliance):
                 with self.assertRaisesRegex(ValueError, error):
-                    verify.verify(runtime_path, compliance_path, sha, distribution=True)
+                    verify.verify(
+                        runtime_path,
+                        compliance_path,
+                        sha,
+                        distribution=True,
+                        decision_path=paths["decision"],
+                        manifest_path=paths["manifest"],
+                    )

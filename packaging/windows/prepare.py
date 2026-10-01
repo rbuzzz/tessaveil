@@ -9,6 +9,7 @@ import tomllib
 import zipfile
 
 import alpha
+import candidate_manifest
 import inventory
 import runtime_material
 import sbom
@@ -79,11 +80,12 @@ def prepare(args):
     if receipt.get("files") != {"Tessaveil.exe": alpha.digest((args.build / "Tessaveil.exe").read_bytes()), **{name: alpha.digest(data) for name, data in compliance.items() if name.startswith("application/")}}:
         raise ValueError("built application material changed after tests")
     compliance["build-receipt.json"] = encode(receipt)
-    for relative in ("release_decision.py", "relink.ps1", "qt-options.json", "toolchains.json", "runtime-sources.json", "vendor-members.json", "distribution-review.json", "license-review.md", "relink/CMakeLists.txt", "relink/marker.cpp", "RELINKING.md"):
+    for relative in ("candidate_manifest.py", "release_decision.py", "relink.ps1", "qt-options.json", "toolchains.json", "runtime-sources.json", "vendor-members.json", "distribution-review.json", "license-review.md", "relink/CMakeLists.txt", "relink/marker.cpp", "RELINKING.md"):
         compliance[relative] = (ROOT / "packaging/windows" / relative).read_bytes()
     compliance["release-decision-template.json"] = (
         ROOT / "reports/windows-v1/release-decision.json"
     ).read_bytes()
+    compliance.update(candidate_manifest.guidance_material(ROOT))
     for pin in json.loads(compliance["toolchains.json"])["downloads"]:
         if pin["file"].endswith(".schema.json"):
             data = (args.toolchain_root / "downloads" / pin["file"]).read_bytes()
@@ -168,6 +170,7 @@ def prepare(args):
     evidence = {"source_sha": sha, "working_tree_dirty": dirty, "exe_sha256": alpha.digest(exe), "exe_bytes": len(exe),
                 "status": "LOCAL_ANALYSIS_ONLY", "unsigned": True, "authenticode": False,
                 "synthetic_only": True, "release_freeze": "NO-GO", "github_provenance": "NOT RUN",
+                "real_data_verdict": candidate_manifest.NO_GO_VERDICT,
                 "compliance": json.loads((ROOT / "packaging/windows/distribution-review.json").read_bytes()),
                 "alpha_matrix_sha256": alpha.digest((ROOT / "generated/alpha/profile-matrix.json").read_bytes()), "cargo_lock_sha256": alpha.digest((ROOT / "Cargo.lock").read_bytes())}
     runtime = {"Tessaveil.exe": exe, "SOURCE_SHA": (sha + "\n").encode(),
@@ -175,7 +178,7 @@ def prepare(args):
                "release-evidence.json": encode(evidence), "PE-imports.json": encode({"exe_sha256": alpha.digest(exe), "imports": imports}),
                "runtime-observation.json": args.observation.read_bytes(),
                "vendor-build-prefixes.json": encode(vendor_report)}
-    for source, destination in (("LICENSE", "LICENSE"), ("THIRD_PARTY_NOTICES", "THIRD_PARTY_NOTICES"), ("THIRD_PARTY_ALPHA.md", "THIRD_PARTY_ALPHA.md"), ("docs/alpha/user-guide.md", "user-guide.md"), ("docs/alpha/known-limitations.md", "known-limitations.md")):
+    for source, destination in (("LICENSE", "LICENSE"), ("THIRD_PARTY_NOTICES", "THIRD_PARTY_NOTICES"), ("THIRD_PARTY_ALPHA.md", "THIRD_PARTY_ALPHA.md"), ("README.md", "README.md"), ("README.ru.md", "README.ru.md"), ("THREAT_MODEL.md", "THREAT_MODEL.md"), ("docs/alpha/user-guide.md", "user-guide.md"), ("docs/alpha/known-limitations.md", "known-limitations.md"), ("docs/alpha/release-evidence.md", "release-evidence.md")):
         runtime[destination] = (ROOT / source).read_bytes()
     # Do not bypass the scanner for opaque application objects. Only the exact,
     # separately hashed dictionary may be removed for phrase-run detection.

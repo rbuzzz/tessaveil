@@ -163,7 +163,7 @@
     {
       "id": "independent-security-audit",
       "result": "blocked",
-      "evidence": {"scope": "Internal tests and reviews only", "sha256": "9fed7dc54cdade517295fdc569432623d35cd3fbb9d7ea7e2f47c45d948601c3", "environment": "Repository self-review; not independent", "date": "2026-10-01", "receipts": [], "references": ["THREAT_MODEL.md", "SECURITY.md"]},
+      "evidence": {"scope": "Internal tests and reviews only", "sha256": "f75dfe24bcf9bb771c82b9d3fd5e994d397b5fddf6f946397706fcc33b6f56cd", "environment": "Repository self-review; not independent", "date": "2026-10-01", "receipts": [], "references": ["THREAT_MODEL.md", "SECURITY.md"]},
       "blocker": "No independent security audit of the exact candidate and vault boundary has been completed.",
       "clearance_action": "Commission an independent review, publish scope and disposition, remediate findings, and rerun exact-candidate verification."
     },
@@ -177,7 +177,7 @@
     {
       "id": "licensing",
       "result": "pass",
-      "evidence": {"scope": "Engineering review of linked Qt, Rust, LLVM-MinGW and bundled dictionary obligations", "sha256": "ee1aebde832c112ad269a2ad13028f6ddcfc997f22f2dcaa0e1c14488bc178db", "environment": "Source-bound engineering license review; not legal advice", "date": "2026-10-01", "receipts": [], "references": ["packaging/windows/license-review.md", "docs/research/licensing.md"]},
+      "evidence": {"scope": "Engineering review of linked Qt, Rust, LLVM-MinGW and bundled dictionary obligations", "sha256": "f094fc85850d75160ca11e38214fbfb39639e392e5f4f07bba186ccfa650504e", "environment": "Source-bound engineering license review; not legal advice", "date": "2026-10-01", "receipts": [], "references": ["packaging/windows/license-review.md", "docs/research/licensing.md"]},
       "blocker": null,
       "clearance_action": null
     },
@@ -191,30 +191,30 @@
     {
       "id": "qt-source-relink",
       "result": "blocked",
-      "evidence": {"scope": "Relink mechanism exists; no final exact-candidate relink proof", "sha256": "7efd771ab7bb2742a2640bacd3b4b41024616d005710e30027b72cf061ac5604", "environment": "Repository relink instructions before final artifact", "date": "2026-10-01", "receipts": [], "references": ["packaging/windows/RELINKING.md", "packaging/windows/relink.ps1"]},
+      "evidence": {"scope": "Relink mechanism exists; no final exact-candidate relink proof", "sha256": "ecbb0dcdf5a53853702301842b712691d0cb72fb66bea39d52881b0df48abbd5", "environment": "Repository relink instructions before final artifact", "date": "2026-10-01", "receipts": [], "references": ["packaging/windows/RELINKING.md", "packaging/windows/relink.ps1"]},
       "blocker": "Modified-Qt relink and smoke evidence has not been regenerated for the final exact candidate.",
       "clearance_action": "Rebuild modified Qt from bundled source, relink unchanged candidate application material, run the synthetic smoke and bind proof hashes into compliance evidence."
     },
     {
       "id": "exact-sha-ci",
       "result": "blocked",
-      "evidence": {"scope": "Predecessor CI never transfers to a later source SHA", "sha256": "eb7657d4afcf6b38646ec8af09e7ec1d30f0ee15312d687daf998208fb1cb791", "environment": "No hosted run for the final source SHA", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/release-evidence.md", ".github/workflows/windows-alpha.yml"]},
+      "evidence": {"scope": "Predecessor CI never transfers to a later source SHA", "sha256": "a2af7a6ec30bbe2c928c961875627adc99ecf7d8c497abc109ff7c22e154f0cc", "environment": "No hosted run for the final source SHA", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/release-evidence.md", ".github/workflows/windows-alpha.yml"]},
       "blocker": "The final candidate SHA has not completed the required branch/PR workflow.",
       "clearance_action": "Push the reviewed final source SHA, wait for mandatory workflow success, and bind the exact event SHA, run URL and artifact digests."
     },
     {
       "id": "github-provenance",
       "result": "blocked",
-      "evidence": {"scope": "No GitHub attestation exists for final runtime/compliance decision subjects", "sha256": "eb7657d4afcf6b38646ec8af09e7ec1d30f0ee15312d687daf998208fb1cb791", "environment": "No hosted provenance for the final source SHA", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/release-evidence.md", ".github/workflows/windows-alpha.yml"]},
+      "evidence": {"scope": "No GitHub attestation exists for final runtime/compliance decision subjects", "sha256": "a2af7a6ec30bbe2c928c961875627adc99ecf7d8c497abc109ff7c22e154f0cc", "environment": "No hosted provenance for the final source SHA", "date": "2026-10-01", "receipts": [], "references": ["docs/alpha/release-evidence.md", ".github/workflows/windows-alpha.yml"]},
       "blocker": "Runtime, compliance and decision artifacts for the final SHA have no verified GitHub provenance.",
       "clearance_action": "Attest the exact downloaded subjects with the pinned workflow and verify every hosted byte using strict machine-readable gh attestation verification with self-hosted runners denied."
     },
     {
       "id": "bilingual-docs-threat-limitations-parity",
       "result": "blocked",
-      "evidence": {"scope": "Threat model is bilingual; final candidate guidance and limitations update is pending", "sha256": "9fed7dc54cdade517295fdc569432623d35cd3fbb9d7ea7e2f47c45d948601c3", "environment": "Repository documentation before Windows v1 candidate update", "date": "2026-10-01", "receipts": [], "references": ["THREAT_MODEL.md", "README.md", "README.ru.md", "docs/alpha/known-limitations.md"]},
-      "blocker": "Final RU/EN guidance, supported-profile list, recovery flow and exact candidate evidence have not yet been reconciled.",
-      "clearance_action": "Complete Task 8 bilingual documentation, rerun parity and sensitive-material checks, and bind the final documents into the runtime manifest."
+      "evidence": {"scope": "Bilingual source guidance and threat model updated; exact hosted candidate receipts remain pending", "sha256": "f75dfe24bcf9bb771c82b9d3fd5e994d397b5fddf6f946397706fcc33b6f56cd", "environment": "Repository documentation before exact hosted artifact verification", "date": "2026-10-01", "receipts": [], "references": ["THREAT_MODEL.md", "README.md", "README.ru.md", "docs/alpha/known-limitations.md"]},
+      "blocker": "RU/EN source guidance is reconciled, but final exact hosted bytes, manifest/provenance receipts and independent review of their parity do not yet exist.",
+      "clearance_action": "Build and download the exact candidate, verify the manifest/provenance and packaged guidance bytes, then record an independent bilingual parity receipt."
     }
   ]
 }

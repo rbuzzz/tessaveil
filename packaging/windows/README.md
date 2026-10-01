@@ -1,7 +1,7 @@
-# Windows alpha packaging
+# Unsigned synthetic Windows v1 candidate packaging
 
-Unsigned engineering alpha; synthetic data only. Not RC/stable. No Authenticode,
-real funds or final format/KDF/migration promise. Windows release/freeze: NO-GO.
+Unsigned synthetic candidate only. Not RC/stable. No Authenticode, real funds or
+final format/KDF/migration promise. Verdict: NO-GO для реальных данных.
 
 Use an external ASCII `$ToolchainRoot`, a clean exact-SHA checkout and a NEW
 external `$OutputRoot`. The tool/source identities and SHA-256 hashes are in
@@ -15,7 +15,13 @@ From the repository root with the variables explicitly assigned:
 & packaging/windows/build.ps1 -ToolchainRoot $ToolchainRoot
 $SourceSha = (git rev-parse HEAD).Trim()
 & packaging/windows/gate.ps1 -ToolchainRoot $ToolchainRoot -SourceSha $SourceSha -OutputRoot $OutputRoot
-& "$ToolchainRoot/python/python.exe" packaging/windows/verify.py --runtime "$OutputRoot/runtime.zip" --compliance "$OutputRoot/compliance.zip" --source-sha $SourceSha --distribution
+$Base = "Tessaveil-unsigned-synthetic-windows-v1-candidate-$SourceSha"
+& "$ToolchainRoot/python/python.exe" packaging/windows/verify.py `
+  --runtime "$OutputRoot/$Base-runtime.zip" `
+  --compliance "$OutputRoot/$Base-compliance.zip" `
+  --decision "$OutputRoot/$Base-release-decision.json" `
+  --manifest "$OutputRoot/$Base-manifest.json" `
+  --source-sha $SourceSha --distribution
 ```
 
 For the complete CI-equivalent checks, `ci.ps1` takes ToolchainRoot and SourceSha
@@ -53,9 +59,13 @@ and empty/false/stale observations must all be rejected. These tests require act
 Windows artifacts and are explicitly skipped only in the earlier generic Python run.
 
 `prepare.py --analysis-only` is diagnostic: dirty-tree archives remain analysis
-only. Only successful finalization writes `GATE-PASS.json` and candidate ZIPs.
+only. Only successful finalization writes `GATE-PASS.json` and the conspicuously
+named runtime/compliance ZIPs, materialized decision and external manifest.
 Never distribute analysis archives, the runtime alone, or a failed candidate.
-Keep the complete source/compliance ZIP alongside the runtime ZIP. ZIP metadata
+Keep compliance, decision and manifest alongside runtime. The manifest records
+exact source SHA, filenames, sizes and SHA-256 for both ZIPs, inner EXE, decision,
+SBOM and notices. Verified compliance also includes the Task 7 protocols and
+decision template plus exact bilingual threat/limitations guidance. ZIP metadata
 is deterministic for identical inputs; byte-identical compiler outputs across
 hosts are not established. There is no release/tag/installer/update operation.
 

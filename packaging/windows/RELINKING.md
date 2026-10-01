@@ -1,8 +1,8 @@
-# Static Qt relinking material — engineering alpha
+# Static Qt relinking material — unsigned synthetic candidate
 
-Unsigned Windows engineering alpha, synthetic data only. Not RC/stable. No
+Unsigned Windows v1 candidate, synthetic data only. Not RC/stable. No
 Authenticode, no real funds, no final format/KDF/migration promise. Windows
-release and freeze remain NO-GO. This material is not legal assurance.
+real-data use and freeze remain NO-GO. This material is not legal assurance.
 
 Original Tessaveil application code remains Apache-2.0. QtBase 6.8.3 is used
 under the LGPL-3.0-only route. The source archive is the exact unmodified archive

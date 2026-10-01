@@ -7,6 +7,7 @@ import subprocess
 import sys
 
 import alpha
+import candidate_manifest
 import release_decision
 import verify
 
@@ -40,9 +41,12 @@ def finish(output, relink, smoke_path, source_sha):
              "scope": "Actual modified Qt rebuilt from bundled source and unchanged application material relinked; primary EXE remains unmodified Qt"}
     alpha.check_relink_proof(proof, source_sha, alpha.digest(runtime["Tessaveil.exe"]), application)
     review = json.loads(compliance["distribution-review.json"])
-    if review.get("release_decision_required") is not True or review.get(
-        "real_data_authorization"
-    ) != "all-mandatory-gates-pass":
+    if (
+        review.get("release_decision_required") is not True
+        or review.get("candidate_manifest_required") is not True
+        or review.get("candidate_guidance_required") is not True
+        or review.get("real_data_authorization") != "all-mandatory-gates-pass"
+    ):
         raise ValueError("distribution review does not require the fail-closed release decision")
     clearance = {"status": "PASS", "source_sha": source_sha,
                  "corresponding_source": True, "application_material": True,
@@ -51,34 +55,48 @@ def finish(output, relink, smoke_path, source_sha):
                  "rust_runtime_review": review.get("rust_runtime_review"),
                  "dictionary_review": review.get("dictionary_review"), "artifact_audit": True}
     alpha.require_distribution_clearance(clearance, source_sha)
-    evidence.update({"status": "LOCAL_EXACT_SHA_ALPHA_GATE_PASS", "compliance": clearance,
+    evidence.update({"status": "LOCAL_EXACT_SHA_CANDIDATE_GATE_PASS", "compliance": clearance,
                      "github_provenance": "NOT CLAIMED BY LOCAL GATE; official CI attestation required",
+                     "real_data_verdict": candidate_manifest.NO_GO_VERDICT,
                      "relink_proof_sha256": alpha.digest(encode(proof))})
     runtime["release-evidence.json"] = encode(evidence)
     compliance["relink-proof.json"] = encode(proof)
     for files in (runtime, compliance):
         files.pop("SHA256SUMS")
         files["SHA256SUMS"] = alpha.make_manifest(files)
-    alpha.write_archive(output / "runtime.zip", runtime)
-    alpha.write_archive(output / "compliance.zip", compliance)
+    artifact_paths = candidate_manifest.paths(output, source_sha)
+    alpha.write_archive(artifact_paths["runtime"], runtime)
+    alpha.write_archive(artifact_paths["compliance"], compliance)
     decision = release_decision.materialize(
         json.loads((alpha.ROOT / "reports/windows-v1/release-decision.json").read_bytes()),
         source_sha,
-        output / "runtime.zip",
-        output / "compliance.zip",
+        artifact_paths["runtime"],
+        artifact_paths["compliance"],
         output / "runtime/Tessaveil.exe",
     )
-    decision_path = output / "release-decision.json"
+    decision_path = artifact_paths["decision"]
     decision_path.write_bytes(release_decision.encode(decision))
+    manifest_path = artifact_paths["manifest"]
+    manifest_path.write_bytes(
+        candidate_manifest.encode(
+            candidate_manifest.materialize(
+                source_sha,
+                artifact_paths["runtime"],
+                artifact_paths["compliance"],
+                decision_path,
+            )
+        )
+    )
     result = verify.verify(
-        output / "runtime.zip",
-        output / "compliance.zip",
+        artifact_paths["runtime"],
+        artifact_paths["compliance"],
         source_sha,
         distribution=True,
         decision_path=decision_path,
+        manifest_path=manifest_path,
     )
     subprocess.run([sys.executable, "-m", "unittest", "tests.repository.test_windows_alpha_distribution", "-v"],
-                   cwd=alpha.ROOT, env=dict(os.environ, TESSAVEIL_ALPHA_AUDIT_ROOT=str(output.resolve())), check=True)
+                   cwd=alpha.ROOT, env=dict(os.environ, TESSAVEIL_ALPHA_AUDIT_ROOT=str(output.resolve()), TESSAVEIL_CANDIDATE_SHA=source_sha), check=True)
     # Workflow checks this receipt as well as process success before uploading.
     (output / "GATE-PASS.json").write_bytes(encode(result))
     print(json.dumps(result))

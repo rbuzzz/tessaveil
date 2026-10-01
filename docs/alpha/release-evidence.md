@@ -1,101 +1,144 @@
-# Windows alpha packaging evidence — fail-closed engineering gate
+# Windows v1 candidate evidence — exact-byte fail-closed gate
 
-Unsigned Windows engineering alpha, synthetic data only. Not RC/stable. No
-Authenticode, no real funds, no final format/KDF/migration promise. Windows
-release/freeze remains NO-GO. No GitHub Release, tag, installer or update channel.
+Unsigned synthetic candidate only. Not RC/stable. No Authenticode, real funds,
+final format/KDF freeze, migration promise, tag, GitHub Release, installer, or
+update channel. Verdict: **NO-GO для реальных данных**.
 
-## Exact-SHA evidence ledger
+Security audit: not yet independently completed
 
-The repository contains a working synthetic-only Windows engineering alpha, not
-a production-ready application or permission to use real secrets/funds. The
-following successful record belongs to a **predecessor branch artifact**, not to
-the later documentation-fix commit or an unverified PR event/merge SHA.
+[English](#english) · [Русский](#русский)
 
-| Evidence | Exact scope and result |
-| --- | --- |
-| Source | `4c3e9de5b0e7936edc030992584ae6cdd59493ed`, `refs/heads/feature/windows-alpha` |
-| Hosted Windows run | [36691081137](https://github.com/rbuzzz/tessaveil/actions/runs/36691081137): build/upload and separate provenance jobs PASSED |
-| Static-Qt alpha gate | Exact corresponding source, notices/licenses, application relink material, real modified-Qt rebuild/relink/smoke and independent distribution audit PASSED for this artifact |
-| Official provenance | Pinned official GitHub attestation succeeded; both ZIPs separately passed strict `gh attestation verify` with repository, signer workflow, exact source digest/ref, standard SLSA predicate and `--deny-self-hosted-runners` enforced |
-| Product release/freeze | **NO-GO**; alpha gate/provenance success is not Authenticode, a security audit or RC/stable approval |
+## English
 
-The signer workflow was `rbuzzz/tessaveil/.github/workflows/windows-alpha.yml`.
-Independently downloaded, hashed and distribution-verified hosted outputs:
+### Current candidate contract
 
-| Item | Bytes | SHA-256 |
-| --- | ---: | --- |
-| runtime.zip | 26,662,567 | `ce0dd44acbb448e9938448f0e1bb158d63398f2af4839e8b5e552bae525ea83e` |
-| compliance.zip | 94,570,940 | `e7298b56f9e06759c8df522309ae8d3f558cc90a32984d647c8bd4d0a7580536` |
-| Tessaveil.exe inside runtime.zip | 26,347,520 | `1cdca1bb70e822f952d8a01ed8638ea3ee4f28dc6480e9f47e3648279e5dc0c8` |
+The source-controlled decision in
+[`reports/windows-v1/release-decision.json`](../../reports/windows-v1/release-decision.json)
+has 29 mandatory rows. At the Task 7 review point it recorded 4 engineering
+passes and 25 blocked rows. It is a policy template and deliberately contains no
+source SHA or artifact hash. Packaging materializes a copy for one clean exact
+source SHA and binds that copy to runtime ZIP, compliance ZIP, and the inner EXE.
+Missing evidence remains `blocked`; a predecessor build, PR run, local host, VM,
+simulator, or Windows Server runner never transfers evidence to another row/SHA.
 
-Attestations cover the ZIP digests; the EXE is bound through the verified runtime
-archive/manifest and receipt, not claimed as a separately attested subject.
-Local b43e6d1-era outputs are separate local evidence, not these hosted artifacts.
+The exact hosted container name is:
 
-## Current-candidate gate (separate from the ledger)
+`Tessaveil-unsigned-synthetic-windows-v1-candidate-<source-sha>`
 
-[PR #2](https://github.com/rbuzzz/tessaveil/pull/2) must be evaluated on its own
-exact event/merge SHA. At the documentation check on **2026-09-30 10:34 UTC**,
-[PR Windows run 36699910534](https://github.com/rbuzzz/tessaveil/actions/runs/36699910534)
-was in progress. That is a timestamped observation, not a permanent pending status
-or a claim that the PR run succeeded. Consult the linked run/current PR checks for
-later results. This ledger records no successful build, artifact or attestation
-for the subsequent documentation-fix commit; a predecessor result never transfers
-to a new SHA. No merge/release permission is implied.
+It must contain exactly these externally verified subjects:
 
-Clean Windows 10/11, physical Android/iPhone format/KDF compatibility, removable
-NTFS/exFAT interruption and power loss, full process/file/network tracing, Narrator,
-independent security audit and SignPath/Authenticode signing remain open. Final
-format/KDF freeze and migration guarantees remain unapproved. See
-[known limitations](known-limitations.md); all Windows release/freeze gates remain NO-GO.
+| Role | Exact filename suffix | Required binding |
+| --- | --- | --- |
+| Runtime | `-runtime.zip` | EXE, SBOM, notices, bilingual guidance, internal `SHA256SUMS`, source SHA and runtime observations |
+| Compliance | `-compliance.zip` | full Qt source/relink material, application objects, build receipt, license/source inventory, decision template, test protocols and threat/limitations guidance |
+| Decision | `-release-decision.json` | exact source SHA plus runtime/compliance/EXE SHA-256 and all 29 gate dispositions |
+| External manifest | `-manifest.json` | filenames, byte sizes and SHA-256 for both ZIPs, EXE, decision, SBOM and notices |
 
-## Gate mechanics and evidence boundaries
+`GATE-PASS.json` is local/CI control output, not an uploaded release subject. It
+is written only after `verify.py --distribution` validates exact archive bytes,
+decision, external manifest, license/source bindings, SBOM, PE imports,
+observations, modified-Qt relink proof, and adversarial archive mutations.
+A technical PASS leaves `real_data_authorized=false` and the NO-GO verdict.
 
-The Windows workflow checks out the exact event SHA (the merge SHA for a PR),
-builds pinned QtBase 6.8.3 from its unmodified source archive, and builds the actual
-Rust/Qt application. Root Rust formatting/lint/workspace tests/doctests, native
-headful synthetic E2E, full discovered Python tests, generation and sensitive/history
-checks precede the packaging gate. Generic Linux catalogue/mobile CI remains
-research evidence and does not compile the Windows application.
+### Exact-SHA sequence
 
-The local gate is `packaging/windows/gate.ps1`, with explicit ToolchainRoot,
-SourceSha and OutputRoot parameters. Existing external Qt/Rust tools may be reused;
-packaging/windows/build.ps1 rebuilds application material with private-path
-remapping. No local machine path is hardcoded in those scripts. The independent
-archive verifier is `packaging/windows/verify.py --runtime ... --compliance ...
---source-sha ...`; `--distribution` additionally requires every compliance gate.
-Analysis archives cannot be renamed into a distribution candidate.
+1. Finish every tracked documentation and packaging-source change.
+2. Commit once and require an exact clean `HEAD`; later tracked edits invalidate
+   the candidate.
+3. Build pinned Rust 1.90.0, LLVM-MinGW 20250709 / Clang 20.1.8, QtBase 6.8.3,
+   CMake 3.31.8, Ninja 1.12.1, and Python 3.12.10 inputs.
+4. Run Rust formatting/clippy/tests/doctests, all discovered Python tests,
+   catalogue/schema/generated/notices/sensitive/history gates, native synthetic
+   UI, package audit, actual modified-Qt rebuild/relink, and relinked UI smoke.
+5. Materialize the four conspicuously named files, independently verify them,
+   then upload only after the same-run receipt matches every name and hash.
+6. The separate least-privilege provenance job re-verifies downloaded bytes,
+   attests all four subjects, and runs strict `gh attestation verify` with exact
+   repository, signer workflow, source digest/ref, JSON output, and self-hosted
+   runners denied.
 
-The compliance exercise extracts the bundled exact Qt source, changes qVersion()
-to a harmless diagnostic marker, rebuilds Qt and relinks unchanged application
-objects. Marker probe, changed application digest, marker presence in that EXE,
-and real synthetic application smoke are required. The primary EXE is built from
-unmodified Qt. Corresponding library source is bundled, not just linked externally.
+The local development desktop may fail before packaging if the candidate-owned
+dialog cannot retain foreground. Task 7 repeatedly observed the Windows system
+`LockApp` owning the secure foreground; the gate stopped before staging and no
+ZIP/decision/manifest/PASS was claimed. Do not bypass or special-case that
+condition. Hosted CI or a later unlocked interactive desktop must satisfy the
+same observer.
 
-The workflow's mandatory gate refuses upload until every source, licensing,
-relink and artifact check passes for its exact SHA. Analysis-only material is
-local engineering evidence, not a released/attested candidate. Machine-readable
-per-run evidence records the exact source SHA, dirty-tree status, EXE size/hash,
-PE imports, runtime observation, SBOM and content-audit findings without secrets.
-The actual link inputs are mapped to static archive members; MinGW objects are
-bound to individual source files, and Rust std subdependencies to its exact
-source lock. License texts are preserved and hashed, not inferred from names.
-Known vendor build-prefix spans require exact supplier bytes and hashes; private
-user/worktree paths remain forbidden. The shipped EXE is never patched to hide paths.
+### Mandatory blockers
 
-The independent verifier checks the original bytes, exhaustive manifests,
-AMD64 PE imports/no Authenticode, source/configuration/notice/object bindings,
-and relink proof. `GATE-PASS.json` exists only after final archives pass the
-distribution-mode audit. Local execution cannot establish GitHub provenance or
-clean consumer-Windows certification. It does not authorize RC/stable release.
+The machine-readable decision is authoritative. Principal unresolved work is:
 
-Official GitHub attestations are wired after the successful artifact-producing
-job using pinned `actions/attest`, with only contents-read, id-token-write and
-attestations-write in that separate job. Unsupported repository/PR permissions
-fail visibly. Locally authored manifests are checksums/evidence, never substituted
-for GitHub provenance. The successful hosted run and strict verification above
-establish provenance only for their exact recorded ZIPs/source SHA; they do not
-turn a local receipt or a later unchecked candidate into GitHub-provenance evidence.
+- resolve release-blocking catalogue rows and complete sustained sanitizer fuzz;
+- run format/KDF/open/normalization measurements on two physical Android classes,
+  two physical iPhone classes, and a provenance-recorded Mac/Xcode host;
+- approve exact Figma fonts or the documented substitution;
+- run exact unsigned bytes offline/non-admin on clean Windows 10 22H2 and 11;
+- test pre-identified removable NTFS/exFAT and separately authorized controlled
+  power loss without formatting or mutating an unidentified device;
+- capture packet, TEMP, process/file/startup-log, Narrator, keyboard, and real
+  display-scaling evidence;
+- complete independent security audit and SignPath/Authenticode path;
+- materialize/download/re-hash the final exact-SHA package, SBOM/relink proof,
+  branch/PR CI, manifest, and strict provenance receipts;
+- prove final bilingual documentation/threat/limitations parity on those exact
+  bytes.
 
-Primary mechanism references: [GitHub artifact attestations](https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations)
-and [Qt 6.8 licensing](https://doc.qt.io/qt-6.8/licensing.html).
+Each action and pass/fail criterion is specified in
+[`reports/windows-v1/test-protocols.md`](../../reports/windows-v1/test-protocols.md).
+No physical-device, removable-media, independent-audit, signing, or exact hosted
+result is claimed by this source document.
+
+### Historical evidence
+
+Older artifacts and workflow runs are historical diagnostics only. They are
+intentionally omitted from the normative candidate ledger because their SHA,
+package content, release decision, and manifest do not match the current source.
+They may not satisfy any current decision row.
+
+## Русский
+
+### Контракт текущего кандидата
+
+Версионируемое решение
+[`reports/windows-v1/release-decision.json`](../../reports/windows-v1/release-decision.json)
+содержит 29 обязательных строк. На проверенном этапе Task 7 было 4 инженерных
+`pass` и 25 `blocked`. Это шаблон политики без source SHA и хешей артефактов.
+Упаковка материализует его для одного чистого точного SHA и связывает с runtime,
+compliance и EXE. Отсутствующее доказательство остаётся `blocked`; старый билд,
+PR-run, рабочий компьютер, VM, симулятор и Windows Server не передают результат
+другой строке или SHA.
+
+Контейнер имеет имя
+`Tessaveil-unsigned-synthetic-windows-v1-candidate-<source-sha>` и содержит
+четыре проверяемых файла: `-runtime.zip`, `-compliance.zip`,
+`-release-decision.json` и `-manifest.json`. Внешний манифест связывает имена,
+размеры и SHA-256 обоих ZIP, EXE, решения, SBOM и уведомлений. Compliance включает
+полный исходный Qt/relink material, объекты приложения, build receipt, лицензии,
+операторские протоколы, модель угроз и ограничения. Технический PASS оставляет
+`real_data_authorized=false` и **NO-GO для реальных данных**.
+
+Сначала завершаются все tracked-изменения и создаётся единственный commit. Затем
+чистый точный HEAD без новых tracked-правок проходит полный build/test/package,
+независимый `verify.py --distribution`, загрузку четырёх файлов, повторную
+проверку downloaded bytes и строгий GitHub provenance с точными repository,
+workflow, source digest/ref и запретом self-hosted runner.
+
+На рабочем компьютере Task 7 системный `LockApp` удерживал secure foreground.
+Gate честно остановился до staging; ZIP, решение, манифест и PASS не заявлялись.
+Ослаблять observer или делать исключение для LockApp нельзя.
+
+### Что остаётся закрыть
+
+Авторитетный перечень находится в machine-readable решении. Основные действия:
+закрыть блокирующие записи каталога и sanitizer fuzz; выполнить физические
+Android/iPhone и Mac/Xcode измерения; решить точные шрифты Figma; проверить чистые
+Windows 10/11; испытать заранее указанные съёмные NTFS/exFAT и отдельно
+разрешённую потерю питания; собрать network/TEMP/process/file/log/Narrator/scale
+evidence; пройти независимый аудит и SignPath/Authenticode; затем проверить
+точные hosted SHA, архивы, SBOM/relink, CI, манифест, provenance и двуязычную
+документацию. Нельзя форматировать или разрушительно изменять неуказанный носитель.
+
+Команды, receipts и критерии описаны в
+[`reports/windows-v1/test-protocols.md`](../../reports/windows-v1/test-protocols.md).
+Этот документ не заявляет физические, audit, signing или hosted результаты.
+Старые артефакты — только историческая диагностика и не закрывают текущие строки.

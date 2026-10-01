@@ -1,8 +1,8 @@
-# Static Windows alpha: engineering licensing review
+# Static Windows candidate: engineering licensing review
 
-Unsigned engineering alpha for synthetic data only; not RC/stable, no
+Unsigned Windows v1 candidate for synthetic data only; not RC/stable, no
 Authenticode, no real funds, no final format/KDF/migration promise. Windows
-release/freeze remains NO-GO. This is documented engineering evidence, not legal
+real-data use/freeze remains NO-GO. This is documented engineering evidence, not legal
 assurance. Original Tessaveil code remains Apache-2.0.
 
 ## Scope and binding

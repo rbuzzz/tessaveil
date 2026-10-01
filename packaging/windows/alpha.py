@@ -113,7 +113,8 @@ def qt_attributions(data):
 def audit_runtime(files, source_sha, words, public_dictionary=b"", vendor_sources=None, vendor_pins=None):
     required = {"Tessaveil.exe", "SOURCE_SHA", "SHA256SUMS", "sbom.cdx.json",
                 "THIRD_PARTY_ALPHA.md", "THIRD_PARTY_NOTICES", "LICENSE",
-                "user-guide.md", "known-limitations.md", "release-evidence.json",
+                "README.md", "README.ru.md", "THREAT_MODEL.md", "user-guide.md",
+                "known-limitations.md", "release-evidence.md", "release-evidence.json",
                 "PE-imports.json", "runtime-observation.json", "vendor-build-prefixes.json"}
     if set(files) != required or files["SOURCE_SHA"] != (source_sha + "\n").encode():
         raise ValueError("runtime inventory or source SHA mismatch")
@@ -125,7 +126,11 @@ def audit_runtime(files, source_sha, words, public_dictionary=b"", vendor_source
     if sbom.get("bomFormat") != "CycloneDX" or sbom.get("specVersion") != "1.6":
         raise ValueError("invalid SBOM")
     evidence = json.loads(files["release-evidence.json"])
-    if evidence.get("source_sha") != source_sha or evidence.get("exe_sha256") != digest(files["Tessaveil.exe"]):
+    if (evidence.get("source_sha") != source_sha
+            or evidence.get("exe_sha256") != digest(files["Tessaveil.exe"])
+            or evidence.get("unsigned") is not True
+            or evidence.get("synthetic_only") is not True
+            or evidence.get("real_data_verdict") != "NO-GO для реальных данных"):
         raise ValueError("runtime evidence is stale")
     check_observation(json.loads(files["runtime-observation.json"]), source_sha, digest(files["Tessaveil.exe"]))
     scanned_exe, vendor_report = vendor_scan_copy(files["Tessaveil.exe"], vendor_sources or {}, vendor_pins or {})

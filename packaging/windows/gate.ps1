@@ -13,6 +13,9 @@ Push-Location $repo
 try{
  if((git rev-parse HEAD).Trim() -ne $SourceSha -or (git status --porcelain)){throw 'Exact clean checkout required'}
  if(Test-Path -LiteralPath $OutputRoot){throw 'Output directory must be new'}
+ $candidateNamesJson=python -c "import json,sys; sys.path.insert(0,sys.argv[1]); import candidate_manifest; print(json.dumps(candidate_manifest.names(sys.argv[2])))" $PSScriptRoot $SourceSha
+ if($LASTEXITCODE){throw 'Candidate artifact naming failed'}
+ $candidateNames=$candidateNamesJson | ConvertFrom-Json
  $scratch=Join-Path $ToolchainRoot ('tmp/alpha-gate-'+[Guid]::NewGuid().ToString('N'))
  New-Item -ItemType Directory -Path $scratch | Out-Null
  $fixture=Join-Path $scratch 'observation.tessaveil-alpha'
@@ -36,9 +39,15 @@ try{
   python "$PSScriptRoot/finish.py" --output $OutputRoot --relink "$scratch/relink" --smoke "$scratch/relink-observation.json" --source-sha $SourceSha
   if($LASTEXITCODE){throw 'Distribution BLOCKED: independent finalization failed; no upload permitted'}
   if(!(Test-Path -LiteralPath "$OutputRoot/GATE-PASS.json")){throw 'Final gate receipt missing'}
-  if(!(Test-Path -LiteralPath "$OutputRoot/release-decision.json")){throw 'Materialized release decision missing'}
-  python "$PSScriptRoot/release_decision.py" verify --report "$OutputRoot/release-decision.json" --source-sha $SourceSha --runtime "$OutputRoot/runtime.zip" --compliance "$OutputRoot/compliance.zip" --executable "$OutputRoot/runtime/Tessaveil.exe"
-  if($LASTEXITCODE){throw 'Materialized release decision integrity failed'}
+  $runtimeArchive=Join-Path $OutputRoot $candidateNames.runtime
+  $complianceArchive=Join-Path $OutputRoot $candidateNames.compliance
+  $decision=Join-Path $OutputRoot $candidateNames.decision
+  $manifest=Join-Path $OutputRoot $candidateNames.manifest
+  foreach($path in @($runtimeArchive,$complianceArchive,$decision,$manifest)){
+   if(!(Test-Path -LiteralPath $path -PathType Leaf)){throw "Candidate artifact missing: $path"}
+  }
+  python "$PSScriptRoot/verify.py" --runtime $runtimeArchive --compliance $complianceArchive --source-sha $SourceSha --distribution --decision $decision --manifest $manifest
+  if($LASTEXITCODE){throw 'Candidate distribution, decision or manifest integrity failed'}
  }finally{
   # Only explicit task-created synthetic fixture/capture paths are removed.
   if(Test-Path -LiteralPath $fixture){Remove-Item -LiteralPath $fixture}

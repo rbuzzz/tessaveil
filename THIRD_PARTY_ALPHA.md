@@ -1,11 +1,16 @@
-# Tessaveil unsigned Windows engineering alpha — third-party status
+# Tessaveil unsigned synthetic Windows v1 candidate — third-party status
 
 Synthetic data only. Not RC/stable; no real funds. No Authenticode. No final
-format, KDF or migration promise. Windows release/freeze: NO-GO.
+format, KDF or migration promise. Verdict: NO-GO для реальных данных.
 Distribution is permitted by this engineering pipeline only after all same-SHA
 source, notice, relink, synthetic smoke and independent archive gates pass.
-No artifact publication or GitHub attestation is claimed by this file; it is not
-legal assurance or release approval.
+The candidate uses the conspicuous
+`Tessaveil-unsigned-synthetic-windows-v1-candidate-<source-sha>` container and
+runtime/compliance/decision/manifest files. The external manifest binds exact
+names, byte sizes and SHA-256 for both ZIPs, `Tessaveil.exe`, SBOM, notices and
+decision; the compliance inventory also binds the bilingual guidance, threat
+model and operator protocols. No artifact publication or GitHub attestation is
+claimed by this file; it is not legal assurance, signing or real-data approval.
 
 Original Tessaveil code is Apache-2.0 (LICENSE). It does not relicense Qt,
 third-party dependencies, word lists or trademarks.
@@ -42,7 +47,7 @@ Only BIP39 English dictionary bytes are embedded by the application. Their
 SHA-256 is `2f5eed53a4727b4bf8880d8f3f199efc90e58503646d9ff8eff3a2ed3b24dbda`.
 MIT license/copyright and language credits are retained in THIRD_PARTY_NOTICES.
 The catalogue's explicit allowed/compatible decisions remain prerequisites,
-including for this unsigned, GitHub-attested alpha path. No SignPath project
+including for this unsigned GitHub-provenance candidate path. No SignPath project
 acceptance is claimed. Only the three approved TON native profile identities
 are selectable; sharing a word list does not activate other wallet modes.
 
