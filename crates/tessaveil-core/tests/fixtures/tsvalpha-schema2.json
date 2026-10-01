@@ -1,0 +1,42 @@
+{
+  "fixture": "tsvalpha-schema2.hex",
+  "fixture_bytes": 186,
+  "fixture_sha256": "0298259eccd7ecb9d4ca47383f93d0982a00c1e0ae1b9bd850ca8b89935edf25",
+  "format": {
+    "magic": "TSVALPHA",
+    "schema_version": 2,
+    "argon2id": {
+      "memory_kib": 65536,
+      "iterations": 3,
+      "parallelism": 4,
+      "version": 19,
+      "output_bytes": 32
+    },
+    "aead": "XChaCha20-Poly1305-IETF",
+    "payload_cbor_hex": "8402777075626c69632d747376616c7068612d6669787475726562656e80",
+    "payload_description": "schema-2 vault named public-tsvalpha-fixture, locale en, zero sheets"
+  },
+  "generator": {
+    "path": "tests/repository/fixtures/tsvalpha-v2/generate.py",
+    "sha256": "3b7789be9e7c354dc8fda2d2bb173018f69f070035574edac08876567d2c3532",
+    "requirements_path": "tests/repository/fixtures/tsvalpha-v2/requirements.lock",
+    "requirements_sha256": "a8b2bfebe98dacc01219a2cfb428c8c2a7038d3b963b2d423d12be7a7e6579fc",
+    "python": "CPython 3.12.10",
+    "packages": {
+      "argon2-cffi": "25.1.0",
+      "argon2-cffi-bindings": "26.1.0",
+      "PyNaCl": "1.6.0",
+      "cffi": "2.0.0",
+      "pycparser": "2.23"
+    },
+    "sources": {
+      "argon2-cffi": "https://pypi.org/project/argon2-cffi/25.1.0/",
+      "argon2-cffi-bindings": "https://pypi.org/project/argon2-cffi-bindings/26.1.0/",
+      "PyNaCl": "https://pypi.org/project/PyNaCl/1.6.0/",
+      "cffi": "https://pypi.org/project/cffi/2.0.0/",
+      "pycparser": "https://pypi.org/project/pycparser/2.23/"
+    },
+    "independence": "Generated outside RustCrypto with argon2-cffi/libargon2 bindings and PyNaCl/libsodium bindings; no Tessaveil Rust encoder or crypto implementation imported."
+  },
+  "data_classification": "public deterministic synthetic fixture; no mnemonic, key for funds, user vault, credential, or local path"
+}

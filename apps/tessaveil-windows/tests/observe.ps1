@@ -37,6 +37,7 @@ public static class AlphaCapture {
  public static IntPtr FindDialog(int processId){IntPtr result=IntPtr.Zero;EnumWindows((h,data)=>{uint candidate;GetWindowThreadProcessId(h,out candidate);if(candidate==processId&&HasClass(h,"#32770")){result=h;return false;}return true;},IntPtr.Zero);return result;}
  public static IntPtr LastActivePopup(IntPtr h){return GetLastActivePopup(h);}
  public static IntPtr FindChild(IntPtr parent,int id,string className){IntPtr result=IntPtr.Zero;EnumChildWindows(parent,(h,data)=>{if(GetDlgCtrlID(h)==id&&HasClass(h,className)){result=h;return false;}return true;},IntPtr.Zero);return result;}
+ public static string ActivationState(IntPtr candidate){uint candidateProcess;uint candidateThread=GetWindowThreadProcessId(candidate,out candidateProcess);IntPtr foreground=GetForegroundWindow();uint foregroundProcess;uint foregroundThread=GetWindowThreadProcessId(foreground,out foregroundProcess);string foregroundName="unavailable";try{foregroundName=System.Diagnostics.Process.GetProcessById((int)foregroundProcess).ProcessName;}catch{}return String.Format("candidate={0} candidateValid={1} candidatePid={2} candidateTid={3} foreground={4} foregroundPid={5} foregroundTid={6} foregroundName={7}",candidate.ToInt64(),IsWindow(candidate),candidateProcess,candidateThread,foreground.ToInt64(),foregroundProcess,foregroundThread,foregroundName);}
  public static void SetText(IntPtr h,string value){SendMessage(h,0x000C,IntPtr.Zero,value);}
  public static bool Activate(IntPtr h){uint processId;uint target=GetWindowThreadProcessId(h,out processId);uint foregroundProcess;uint foreground=GetWindowThreadProcessId(GetForegroundWindow(),out foregroundProcess);uint current=GetCurrentThreadId();bool foregroundAttached=current!=foreground&&AttachThreadInput(current,foreground,true);bool targetAttached=current!=target&&AttachThreadInput(current,target,true);try{ShowWindow(h,9);BringWindowToTop(h);SetActiveWindow(h);SetFocus(h);SetForegroundWindow(h);bool active=GetForegroundWindow()==h;if(active)SendMessage(h,0x0006,(IntPtr)1,IntPtr.Zero);return active;}finally{if(targetAttached)AttachThreadInput(current,target,false);if(foregroundAttached)AttachThreadInput(current,foreground,false);}}
  public static void ClickAndActivateOwner(IntPtr button,IntPtr dialog,IntPtr main){IntPtr target=GetWindow(dialog,4);if(target==IntPtr.Zero)target=main;PostMessage(button,0x00F5,IntPtr.Zero,IntPtr.Zero);new Thread(()=>{DateTime deadline=DateTime.UtcNow.AddSeconds(5);while(IsWindow(dialog)&&DateTime.UtcNow<deadline)Thread.Sleep(1);for(int i=0;i<25;i++){Activate(target);Thread.Sleep(10);}}){IsBackground=true}.Start();}
@@ -109,13 +110,15 @@ function ActivateApplication(){
 function ActivateOwnedDialog(){
  $deadline=[DateTime]::UtcNow.AddSeconds(5)
  $stable=0
+ $lastState='no candidate observed'
  do{
   $candidate=[AlphaCapture]::LastActivePopup($script:mainWindowHandle)
   if($candidate -eq [IntPtr]::Zero){$candidate=$script:mainWindowHandle}
   if([AlphaCapture]::Activate($candidate)){$stable++}else{$stable=0}
+  $lastState=[AlphaCapture]::ActivationState($candidate)
   Start-Sleep -Milliseconds 25
  }until($stable -ge 4 -or [DateTime]::UtcNow -gt $deadline)
- if($stable -lt 4){throw 'The owning application dialog could not retain foreground through the bounded activation window'}
+ if($stable -lt 4){throw "The owning application dialog could not retain foreground through the bounded activation window: $lastState"}
  $script:root=[Windows.Automation.AutomationElement]::FromHandle($script:mainWindowHandle)
 }
 function DiagnosticState(){

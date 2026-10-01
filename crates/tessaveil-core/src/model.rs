@@ -841,4 +841,88 @@ mod tests {
         assert!(full.locale.is_empty());
         assert_eq!(full.encode().unwrap().len(), crate::format::MAX_PAYLOAD);
     }
+
+    #[test]
+    fn forbidden_order_spin_phrase_and_history_metadata_never_serialize() {
+        struct FixedRandom(u32);
+        impl crate::spin::RandomSource for FixedRandom {
+            fn fill(&mut self, bytes: &mut [u8]) -> Result<(), crate::spin::SpinError> {
+                bytes.copy_from_slice(&self.0.to_le_bytes());
+                self.0 = self.0.wrapping_add(1_000_003);
+                Ok(())
+            }
+        }
+
+        let mut payload = Payload::default();
+        let words: Vec<_> = (0..40)
+            .map(|index| format!("synthetic-{index:03}"))
+            .collect();
+        let mut editor = PayloadEditor {
+            payload: &mut payload,
+        };
+        let sheet = editor
+            .create_custom_sheet(
+                "synthetic-security",
+                crate::sheet::SheetSize {
+                    rows: 12,
+                    columns: 10,
+                },
+                &words,
+            )
+            .unwrap();
+        editor
+            .edit_sheet(sheet)
+            .unwrap()
+            .spin_row(
+                crate::spin::SpinRequest {
+                    row: 0,
+                    first_symbol: "§",
+                    second_symbol: "§",
+                    word: "transient-spin-input-marker",
+                },
+                &mut FixedRandom(17),
+            )
+            .unwrap();
+        let encoded = payload.encode().unwrap();
+        for forbidden in [
+            b"transient-spin-input-marker".as_slice(),
+            b"order-key-marker".as_slice(),
+            b"order-verifier-marker".as_slice(),
+            b"order-hint-marker".as_slice(),
+            b"target-column-marker".as_slice(),
+            b"validity-marker".as_slice(),
+            b"spin-history-marker".as_slice(),
+            b"complete-phrase-marker".as_slice(),
+            b"phrase-order-marker".as_slice(),
+        ] {
+            assert!(!encoded
+                .windows(forbidden.len())
+                .any(|window| window == forbidden));
+        }
+        let decoded = Payload::decode(&encoded).unwrap();
+        assert_eq!(decoded.encode().unwrap(), encoded);
+    }
+
+    #[test]
+    fn deterministic_payload_parser_mutation_corpus_is_panic_free_and_canonical() {
+        let original = Payload::default().encode().unwrap();
+        let mut state = 0x4d595df4d0f33173u64;
+        for case in 0..1024usize {
+            state = state
+                .wrapping_mul(6364136223846793005)
+                .wrapping_add(1442695040888963407);
+            let mut candidate = original.to_vec();
+            match case % 3 {
+                0 => {
+                    let index = (state as usize) % candidate.len();
+                    candidate[index] ^= (state >> 32) as u8 | 1;
+                }
+                1 => candidate.truncate((state as usize) % (candidate.len() + 1)),
+                _ => candidate.extend_from_slice(&(state as u32).to_le_bytes()),
+            }
+            if let Ok(decoded) = Payload::decode(&candidate) {
+                assert_eq!(&*decoded.encode().unwrap(), candidate.as_slice());
+            }
+        }
+    }
 }

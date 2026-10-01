@@ -79,8 +79,11 @@ def prepare(args):
     if receipt.get("files") != {"Tessaveil.exe": alpha.digest((args.build / "Tessaveil.exe").read_bytes()), **{name: alpha.digest(data) for name, data in compliance.items() if name.startswith("application/")}}:
         raise ValueError("built application material changed after tests")
     compliance["build-receipt.json"] = encode(receipt)
-    for relative in ("relink.ps1", "qt-options.json", "toolchains.json", "runtime-sources.json", "vendor-members.json", "distribution-review.json", "license-review.md", "relink/CMakeLists.txt", "relink/marker.cpp", "RELINKING.md"):
+    for relative in ("release_decision.py", "relink.ps1", "qt-options.json", "toolchains.json", "runtime-sources.json", "vendor-members.json", "distribution-review.json", "license-review.md", "relink/CMakeLists.txt", "relink/marker.cpp", "RELINKING.md"):
         compliance[relative] = (ROOT / "packaging/windows" / relative).read_bytes()
+    compliance["release-decision-template.json"] = (
+        ROOT / "reports/windows-v1/release-decision.json"
+    ).read_bytes()
     for pin in json.loads(compliance["toolchains.json"])["downloads"]:
         if pin["file"].endswith(".schema.json"):
             data = (args.toolchain_root / "downloads" / pin["file"]).read_bytes()

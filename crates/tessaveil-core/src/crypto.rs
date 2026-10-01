@@ -29,7 +29,7 @@ impl<'a> Random<'a> {
             lifetime: std::marker::PhantomData,
         }
     }
-    fn fill(&mut self, bytes: &mut [u8]) -> Result<(), VaultError> {
+    pub(crate) fn fill(&mut self, bytes: &mut [u8]) -> Result<(), VaultError> {
         #[cfg(test)]
         if let Some(fill) = self.fill.as_mut() {
             return fill(bytes);
@@ -419,5 +419,45 @@ mod tests {
                 Err(VaultError::PasswordPolicy)
             ));
         }
+    }
+
+    #[test]
+    fn create_fails_closed_at_every_entropy_draw_and_on_equal_nonces() {
+        for fail_call in 0..3 {
+            let mut call = 0;
+            let mut fill = |bytes: &mut [u8]| {
+                let current = call;
+                call += 1;
+                if current == fail_call {
+                    Err(VaultError::Io)
+                } else {
+                    bytes.fill((current + 1) as u8);
+                    Ok(())
+                }
+            };
+            assert!(matches!(
+                create_with_random(
+                    PASSWORD,
+                    &Payload::default(),
+                    &mut Random::injected(&mut fill)
+                ),
+                Err(VaultError::Io)
+            ));
+        }
+
+        let mut call = 0;
+        let mut equal_nonce = |bytes: &mut [u8]| {
+            call += 1;
+            bytes.fill(if call == 1 { 1 } else { 2 });
+            Ok(())
+        };
+        assert!(matches!(
+            create_with_random(
+                PASSWORD,
+                &Payload::default(),
+                &mut Random::injected(&mut equal_nonce)
+            ),
+            Err(VaultError::Io)
+        ));
     }
 }

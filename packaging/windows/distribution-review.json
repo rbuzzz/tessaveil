@@ -3,7 +3,9 @@
   "qt_third_party_review": true,
   "rust_runtime_review": true,
   "dictionary_review": true,
+  "release_decision_required": true,
+  "real_data_authorization": "all-mandatory-gates-pass",
   "review": "See license-review.md. Engineering evidence, not legal assurance or release approval. These fields alone never authorize distribution.",
   "qt_runtime_archives": ["libQt6BundledFreetype.a", "libQt6BundledHarfbuzz.a", "libQt6BundledLibjpeg.a", "libQt6BundledLibpng.a", "libQt6BundledPcre2.a", "libQt6BundledZLIB.a", "libQt6Core.a", "libQt6EntryPoint.a", "libQt6Gui.a", "libQt6Widgets.a", "libqgif.a", "libqico.a", "libqjpeg.a", "libqwindows.a", "libqmodernwindowsstyle.a"],
-  "requirements": ["same-SHA source/configuration and complete notices", "unchanged application material relinked with modified Qt", "real synthetic smoke of modified application", "independent artifact audit", "no real funds or release/freeze approval"]
+  "requirements": ["same-SHA source/configuration and complete notices", "unchanged application material relinked with modified Qt", "real synthetic smoke of modified application", "independent artifact audit", "materialized exact-candidate release decision bound to runtime/compliance/executable hashes", "no real funds or release/freeze approval unless every mandatory release gate passes"]
 }

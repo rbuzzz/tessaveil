@@ -7,6 +7,7 @@ import subprocess
 import sys
 
 import alpha
+import release_decision
 import verify
 
 
@@ -39,6 +40,10 @@ def finish(output, relink, smoke_path, source_sha):
              "scope": "Actual modified Qt rebuilt from bundled source and unchanged application material relinked; primary EXE remains unmodified Qt"}
     alpha.check_relink_proof(proof, source_sha, alpha.digest(runtime["Tessaveil.exe"]), application)
     review = json.loads(compliance["distribution-review.json"])
+    if review.get("release_decision_required") is not True or review.get(
+        "real_data_authorization"
+    ) != "all-mandatory-gates-pass":
+        raise ValueError("distribution review does not require the fail-closed release decision")
     clearance = {"status": "PASS", "source_sha": source_sha,
                  "corresponding_source": True, "application_material": True,
                  "modified_qt_relink": True, "replacement_information": True,
@@ -56,7 +61,22 @@ def finish(output, relink, smoke_path, source_sha):
         files["SHA256SUMS"] = alpha.make_manifest(files)
     alpha.write_archive(output / "runtime.zip", runtime)
     alpha.write_archive(output / "compliance.zip", compliance)
-    result = verify.verify(output / "runtime.zip", output / "compliance.zip", source_sha, distribution=True)
+    decision = release_decision.materialize(
+        json.loads((alpha.ROOT / "reports/windows-v1/release-decision.json").read_bytes()),
+        source_sha,
+        output / "runtime.zip",
+        output / "compliance.zip",
+        output / "runtime/Tessaveil.exe",
+    )
+    decision_path = output / "release-decision.json"
+    decision_path.write_bytes(release_decision.encode(decision))
+    result = verify.verify(
+        output / "runtime.zip",
+        output / "compliance.zip",
+        source_sha,
+        distribution=True,
+        decision_path=decision_path,
+    )
     subprocess.run([sys.executable, "-m", "unittest", "tests.repository.test_windows_alpha_distribution", "-v"],
                    cwd=alpha.ROOT, env=dict(os.environ, TESSAVEIL_ALPHA_AUDIT_ROOT=str(output.resolve())), check=True)
     # Workflow checks this receipt as well as process success before uploading.

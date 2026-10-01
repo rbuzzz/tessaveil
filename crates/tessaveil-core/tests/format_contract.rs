@@ -110,3 +110,79 @@ fn passwords_use_nfc_explicit_unicode_without_nul() {
     ));
     assert_eq!(normalize_password(&"x".repeat(64)).unwrap().len(), 64);
 }
+
+#[test]
+fn complete_kdf_boundary_matrix_accepts_only_the_current_allowlist_tuple() {
+    let base = header();
+    let dimensions = [
+        (
+            12usize,
+            vec![65535u32, 65536, 65537, 262143, 262144, 262145],
+        ),
+        (16usize, vec![2u32, 3, 4, 5, 6, 7]),
+        (20usize, vec![0u32, 1, 2, 7, 8, 9]),
+    ];
+    for (offset, values) in dimensions {
+        for value in values {
+            let mut candidate = base;
+            candidate[offset..offset + 4].copy_from_slice(&value.to_le_bytes());
+            let memory = u32::from_le_bytes(candidate[12..16].try_into().unwrap());
+            let iterations = u32::from_le_bytes(candidate[16..20].try_into().unwrap());
+            let parallelism = u32::from_le_bytes(candidate[20..24].try_into().unwrap());
+            let in_bounds = (65536..=262144).contains(&memory)
+                && (3..=6).contains(&iterations)
+                && (1..=8).contains(&parallelism);
+            let default = (memory, iterations, parallelism) == (65536, 3, 4);
+            let result = Header::parse(&candidate, 157);
+            if default {
+                assert!(result.is_ok(), "default tuple");
+            } else if in_bounds {
+                assert!(matches!(result, Err(VaultError::UnsupportedKdf)));
+            } else {
+                assert!(matches!(result, Err(VaultError::KdfOutOfBounds)));
+            }
+        }
+    }
+
+    // Exhaust the complete in-bounds tuple space, not only the edge samples
+    // above. This stays cheap because validation does no KDF work.
+    for memory_kib in 65536..=262144 {
+        for iterations in 3..=6 {
+            for parallelism in 1..=8 {
+                let params = KdfParams {
+                    memory_kib,
+                    iterations,
+                    parallelism,
+                };
+                if params == KdfParams::default() {
+                    assert_eq!(params.validate(), Ok(()));
+                } else {
+                    assert_eq!(params.validate(), Err(VaultError::UnsupportedKdf));
+                }
+            }
+        }
+    }
+}
+
+#[test]
+fn deterministic_header_parser_corpus_is_bounded_and_classified() {
+    let base = header();
+    for index in 0..HEADER_LEN {
+        for bit in [1u8, 2, 4, 8, 16, 32, 64, 128] {
+            let mut candidate = base;
+            candidate[index] ^= bit;
+            match Header::parse(&candidate, 157) {
+                Ok(_) => {}
+                Err(error) => assert!(matches!(
+                    error,
+                    VaultError::InvalidHeader
+                        | VaultError::UnsupportedVersion
+                        | VaultError::KdfOutOfBounds
+                        | VaultError::UnsupportedKdf
+                        | VaultError::Truncated
+                        | VaultError::TooLarge
+                )),
+            }
+        }
+    }
+}

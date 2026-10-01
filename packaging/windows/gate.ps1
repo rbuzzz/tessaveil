@@ -36,6 +36,9 @@ try{
   python "$PSScriptRoot/finish.py" --output $OutputRoot --relink "$scratch/relink" --smoke "$scratch/relink-observation.json" --source-sha $SourceSha
   if($LASTEXITCODE){throw 'Distribution BLOCKED: independent finalization failed; no upload permitted'}
   if(!(Test-Path -LiteralPath "$OutputRoot/GATE-PASS.json")){throw 'Final gate receipt missing'}
+  if(!(Test-Path -LiteralPath "$OutputRoot/release-decision.json")){throw 'Materialized release decision missing'}
+  python "$PSScriptRoot/release_decision.py" verify --report "$OutputRoot/release-decision.json" --source-sha $SourceSha --runtime "$OutputRoot/runtime.zip" --compliance "$OutputRoot/compliance.zip" --executable "$OutputRoot/runtime/Tessaveil.exe"
+  if($LASTEXITCODE){throw 'Materialized release decision integrity failed'}
  }finally{
   # Only explicit task-created synthetic fixture/capture paths are removed.
   if(Test-Path -LiteralPath $fixture){Remove-Item -LiteralPath $fixture}

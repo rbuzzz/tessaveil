@@ -98,6 +98,14 @@ class WindowsAlphaPackageTests(unittest.TestCase):
         self.assertNotIn("--target", fetch_line)
         self.assertIn("if($LASTEXITCODE){throw 'Complete locked Cargo fetch failed'}", script)
 
+    def test_headful_gate_fails_closed_with_foreground_owner_diagnostics(self):
+        observer = (ROOT / "apps/tessaveil-windows/tests/observe.ps1").read_text()
+        self.assertIn("candidateValid=", observer)
+        self.assertIn("foregroundName=", observer)
+        self.assertIn("if($stable -lt 4){throw", observer)
+        self.assertIn("could not retain foreground", observer)
+        self.assertNotIn("LockApp", observer)
+
     def test_compliance_inventory_rejects_unrelated_files_even_with_valid_manifest(self):
         files = {"SOURCE_SHA": b"public", "application/main.obj": b"public"}
         alpha.verify_inventory(files, sorted(files))
@@ -118,20 +126,48 @@ class WindowsAlphaPackageTests(unittest.TestCase):
         self.assertFalse(build["steps"][0]["with"]["persist-credentials"])
         upload = next(i for i, step in enumerate(build["steps"]) if step.get("uses", "").startswith("actions/upload-artifact@"))
         self.assertIn("GATE-PASS.json", build["steps"][upload - 1]["run"])
+        self.assertIn("decision_sha256", build["steps"][upload - 1]["run"])
         self.assertNotIn("if", build["steps"][upload])
         self.assertEqual(build["steps"][upload]["with"]["if-no-files-found"], "error")
+        self.assertIn("release-decision.json", build["steps"][upload]["with"]["path"])
         provenance = workflow["jobs"]["provenance"]
         self.assertEqual(provenance["needs"], ["windows-alpha"])
         self.assertEqual(provenance["permissions"], {"contents": "read", "id-token": "write", "attestations": "write"})
+        provenance_steps = provenance["steps"]
+        provenance_checkouts = [
+            (index, step)
+            for index, step in enumerate(provenance_steps)
+            if step.get("uses", "").startswith("actions/checkout@")
+        ]
+        self.assertEqual(len(provenance_checkouts), 1)
+        checkout_index, checkout = provenance_checkouts[0]
+        self.assertEqual(checkout["with"]["ref"], "${{ github.sha }}")
+        self.assertEqual(checkout["with"]["fetch-depth"], 1)
+        self.assertFalse(checkout["with"]["persist-credentials"])
         attest = next(step for step in provenance["steps"] if step.get("uses", "").startswith("actions/attest@"))
         self.assertEqual(attest["with"].get("create-storage-record"), False)
-        self.assertEqual(attest["with"]["subject-path"], "verified-artifact/*.zip")
+        self.assertIn("verified-artifact/runtime.zip", attest["with"]["subject-path"])
+        self.assertIn("verified-artifact/compliance.zip", attest["with"]["subject-path"])
+        self.assertIn("verified-artifact/release-decision.json", attest["with"]["subject-path"])
         self.assertFalse(any(key.startswith("predicate") for key in attest["with"]))
+        strict = next(step for step in provenance["steps"] if step.get("name") == "Strict machine-readable attestation verification")
+        self.assertLess(checkout_index, provenance_steps.index(strict))
+        self.assertIn("--deny-self-hosted-runners", strict["run"])
+        self.assertIn("--format json", strict["run"])
+        self.assertIn("--signer-workflow", strict["run"])
+        self.assertIn("--source-digest $env:GITHUB_SHA", strict["run"])
+        self.assertIn("--source-ref $env:GITHUB_REF", strict["run"])
+        self.assertIn("release_decision.py verify", strict["run"])
         for job in workflow["jobs"].values():
             for step in job["steps"]:
                 self.assertFalse(step.get("continue-on-error", False))
                 if "uses" in step:
                     self.assertRegex(step["uses"], r"^actions/[a-z-]+@[a-f0-9]{40}$")
+
+    def test_distribution_review_requires_the_fail_closed_release_decision(self):
+        review = json.loads((ROOT / "packaging/windows/distribution-review.json").read_bytes())
+        self.assertIs(review.get("release_decision_required"), True)
+        self.assertEqual(review.get("real_data_authorization"), "all-mandatory-gates-pass")
 
     def test_relink_proof_rejects_same_input_stale_sha_or_changed_application_objects(self):
         objects = {"application/main.obj": "c" * 64}

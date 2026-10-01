@@ -10,10 +10,11 @@ from jsonschema import Draft7Validator
 from referencing import Registry, Resource
 
 import alpha
+import release_decision
 import sbom
 
 
-def verify(runtime_path, compliance_path, source_sha, distribution=False):
+def verify(runtime_path, compliance_path, source_sha, distribution=False, decision_path=None):
     runtime = alpha.read_archive(runtime_path)
     compliance = alpha.read_archive(compliance_path)
     expected = json.loads((alpha.ROOT / "packaging/windows/compliance-inventory.json").read_bytes())
@@ -29,6 +30,7 @@ def verify(runtime_path, compliance_path, source_sha, distribution=False):
                 "qt-options.json", "qt-generated/features.json", "RELINKING.md",
                 "qt-licenses/GPL-3.0-only.txt", "qt-licenses/LGPL-3.0-only.txt",
                 "license-bindings.json", "license-review.md", "build-receipt.json",
+                "release_decision.py", "release-decision-template.json",
                 "runtime-notices/rust/compiler-builtins-LICENSE.txt",
                 "runtime-notices/rust/library-Cargo.lock", "runtime-notices/mingw-linked-sources.json",
                 "runtime-notices/llvm/libcxx-LICENSE.TXT", "runtime-notices/llvm/libcxxabi-LICENSE.TXT",
@@ -37,9 +39,13 @@ def verify(runtime_path, compliance_path, source_sha, distribution=False):
         raise ValueError("compliance bundle incomplete")
     if alpha.digest(compliance["qtbase-6.8.3.zip"]) != "992bf7766e214a341ef793eb3665fb784787d2fd666955f5f507f4c6f1f770dd":
         raise ValueError("compliance Qt source hash mismatch")
-    for relative in ("relink.ps1", "relink/CMakeLists.txt", "relink/marker.cpp", "qt-options.json", "distribution-review.json", "runtime-sources.json", "toolchains.json", "RELINKING.md", "license-review.md"):
+    for relative in ("release_decision.py", "relink.ps1", "relink/CMakeLists.txt", "relink/marker.cpp", "qt-options.json", "distribution-review.json", "runtime-sources.json", "toolchains.json", "RELINKING.md", "license-review.md"):
         if compliance.get(relative) != (alpha.ROOT / "packaging/windows" / relative).read_bytes():
             raise ValueError("compliance source/configuration policy drift")
+    if compliance.get("release-decision-template.json") != (
+        alpha.ROOT / "reports/windows-v1/release-decision.json"
+    ).read_bytes():
+        raise ValueError("release-decision policy drift")
     alpha.verify_license_bindings(compliance, json.loads(compliance["license-bindings.json"]))
     schemas = {}
     for pin in json.loads(compliance["toolchains.json"])["downloads"]:
@@ -107,8 +113,19 @@ def verify(runtime_path, compliance_path, source_sha, distribution=False):
         alpha.check_relink_proof(json.loads(compliance["relink-proof.json"]), source_sha, alpha.digest(runtime["Tessaveil.exe"]), application_hashes)
         if evidence.get("relink_proof_sha256") != alpha.digest(compliance["relink-proof.json"]):
             raise ValueError("runtime and compliance relink evidence differ")
+        if decision_path is None:
+            raise ValueError("materialized release decision missing")
+        decision = json.loads(decision_path.read_bytes())
+        release_decision.validate_exact_candidate_hashes(
+            decision,
+            source_sha,
+            alpha.digest(runtime_path.read_bytes()),
+            alpha.digest(compliance_path.read_bytes()),
+            alpha.digest(runtime["Tessaveil.exe"]),
+        )
     return {"source_sha": source_sha, "runtime_sha256": alpha.digest(runtime_path.read_bytes()),
-            "compliance_sha256": alpha.digest(compliance_path.read_bytes())}
+            "compliance_sha256": alpha.digest(compliance_path.read_bytes()),
+            "decision_sha256": alpha.digest(decision_path.read_bytes()) if decision_path else None}
 
 
 if __name__ == "__main__":
@@ -117,9 +134,10 @@ if __name__ == "__main__":
     parser.add_argument("--compliance", type=Path, required=True)
     parser.add_argument("--source-sha", required=True)
     parser.add_argument("--distribution", action="store_true")
+    parser.add_argument("--decision", type=Path)
     args = parser.parse_args()
     try:
-        print(json.dumps(verify(args.runtime, args.compliance, args.source_sha, args.distribution)))
+        print(json.dumps(verify(args.runtime, args.compliance, args.source_sha, args.distribution, args.decision)))
     except (ValueError, KeyError) as error:
         print("BLOCKED: " + str(error), file=sys.stderr)
         raise SystemExit(1)

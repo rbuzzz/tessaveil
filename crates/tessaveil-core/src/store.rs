@@ -435,9 +435,24 @@ struct OwnedTemp {
 }
 impl OwnedTemp {
     fn create(parent: &Path) -> Result<Self, VaultError> {
+        Self::create_from(parent, |bytes| {
+            getrandom::getrandom(bytes).map_err(|_| VaultError::Io)
+        })
+    }
+    #[cfg(test)]
+    fn create_with_random(
+        parent: &Path,
+        random: &mut crypto::Random<'_>,
+    ) -> Result<Self, VaultError> {
+        Self::create_from(parent, |bytes| random.fill(bytes))
+    }
+    fn create_from(
+        parent: &Path,
+        mut fill: impl FnMut(&mut [u8]) -> Result<(), VaultError>,
+    ) -> Result<Self, VaultError> {
         for _ in 0..16 {
             let mut random = [0; 16];
-            getrandom::getrandom(&mut random).map_err(|_| VaultError::Io)?;
+            fill(&mut random)?;
             let name = parent.join(format!(
                 ".tessaveil-alpha-{:032x}.tmp",
                 u128::from_le_bytes(random)
@@ -635,6 +650,17 @@ mod platform {
 mod tests {
     use super::*;
     use crate::crypto;
+    #[test]
+    fn temp_name_entropy_failure_creates_no_file() {
+        let dir = tempfile::tempdir().unwrap();
+        let mut fail = |_bytes: &mut [u8]| Err(VaultError::Io);
+        let mut random = crypto::Random::injected(&mut fail);
+        assert!(matches!(
+            OwnedTemp::create_with_random(dir.path(), &mut random),
+            Err(VaultError::Io)
+        ));
+        assert_eq!(std::fs::read_dir(dir.path()).unwrap().count(), 0);
+    }
     #[test]
     fn rotation_entropy_and_each_persistence_failure_preserve_session_and_image() {
         let dir = tempfile::tempdir().unwrap();

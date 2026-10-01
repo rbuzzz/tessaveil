@@ -165,6 +165,8 @@
   "qt-third-party/src/testlib/3rdparty/valgrind/LICENSE.txt",
   "qt-third-party/util/gradientgen/WEBGRADIENTS_LICENSE.txt",
   "qtbase-6.8.3.zip",
+  "release-decision-template.json",
+  "release_decision.py",
   "relink.ps1",
   "relink/CMakeLists.txt",
   "relink/marker.cpp",
